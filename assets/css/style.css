@@ -1122,6 +1122,9 @@ footer .newsLetter .formDiv button {
     box-shadow: 0px 18px 49px #01254814;
     border: none;
 }
+.relatedService .multiRelatedService .card .line{
+    margin: 0px;
+}
 
 .relatedService .multiRelatedService .card .cardContent {
     padding: 25px;
@@ -1415,11 +1418,986 @@ footer .newsLetter .formDiv button {
 #current_order .orderHeader {
     background: #F7F7F7 0% 0% no-repeat padding-box;
     opacity: 1;
+    position: relative;
 }
 
 #completed .orderHeader {
     background: #f0f0f0;
 }
+
+/*********** Profile - CSS ************/
+.profileHeader {
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+}
+
+.profileDiv {
+    background: #F6F7F8;
+    padding: 450px 100px 200px;
+}
+
+.profileDiv h5 {
+    color: #EE2143;
+    font-size: 30px;
+    font-family: MoskauMedium;
+}
+
+.profileBox {
+    box-shadow: 0px 17px 49px #00000029;
+    margin-top: 50px;
+    background: #FAFAFA;
+}
+
+.profileBox .profileBoxHeader {
+    padding: 100px 0px 140px;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+}
+
+.profileBox .profileBoxHeader .uploadCover p {
+    position: absolute;
+    top: 13%;
+    left: 9%;
+    font-size: 26px;
+    font-family: MoskauMedium;
+}
+
+.profileBox .profileBoxHeader .uploadCover input {
+    opacity: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 999999;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.profileBox .profileBoxHeader .uploadCover {
+    width: 100%;
+    max-width: 303px;
+    margin: auto;
+    border: 2px solid #d9d9d9;
+    position: relative;
+}
+
+.profileBox .profileBoxHeader .profileAvatar {
+    margin-top: 40px;
+    position: absolute;
+    left: 45%;
+    bottom: -25%;
+}
+
+.profileBox .profileFormDiv {
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+    padding: 180px 0px;
+}
+
+.profileBox .profileFormDiv .inputDiv {
+    margin-bottom: 16px;
+}
+
+.profileBox .profileFormDiv .inputDiv input,
+.profileBox .profileFormDiv .inputDiv select,
+.multiSelect .select2-container {
+    border: 1px solid #0000000a;
+    background-color: #fff;
+    padding: 25px;
+    border: none;
+    width: 100% !important;
+    font-size: 19px;
+    color: #5D6D75;
+    font-family: MoskauMedium;
+}
+
+.profileBox .profileFormDiv .inputDiv .iti--allow-dropdown {
+    width: 100%;
+}
+
+.profileBox .profileFormDiv .inputDiv .iti--separate-dial-code .iti__selected-flag {
+    background-color: transparent;
+    box-shadow: 0px 6px 16px #03223108;
+    opacity: 1;
+}
+
+#phone {
+    padding-left: 100px !important;
+}
+
+.line {
+    width: 100%;
+    margin: 80px 0px;
+    text-align: center;
+}
+
+.line img {
+    width: 100%;
+}
+
+.profileBox .aboutProfile {
+    padding: 35px;
+    border: 1px solid #0000000a;
+    background-color: #fff;
+}
+
+.profileBox .aboutProfile p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    letter-spacing: 0.27px;
+    color: #000000;
+    opacity: 0.67;
+    font-family: GelionRegular;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default .select2-selection--multiple {
+    border: none !important;
+}
+
+.profileBox .multiSelect {
+    position: relative;
+}
+
+.profileBox .multiSelect .imgDiv {
+    position: absolute;
+    right: 20px;
+    top: 28px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background: #F4F4F4 0% 0% no-repeat padding-box !important;
+    border: none !important;
+    font-size: 18px !important;
+    font-family: GelionRegular;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    border: none !important;
+}
+
+.profileBox .profileFormDiv h5 {
+    font-size: 18px;
+    font-family: GelionMedium;
+    color: #000;
+    margin-bottom: 36px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    padding-left: initial !important;
+    padding-right: 20px !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    left: initial !important;
+    right: 0px;
+}
+
+.profileBox .profileFormDiv button {
+    padding: 14px 63px;
+    border: none;
+    float: right;
+    margin-top: 50px;
+    background: rgb(239, 29, 48);
+    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    color: #fff;
+    font-size: 26px;
+    font-family: MoskauMedium;
+}
+
+/************ Phone & Contact - CSS *******/
+.unanswerdDiv,
+.answereDiv {
+    margin-top: 90px;
+    box-shadow: 0px 17px 49px #00000029;
+    background: #fff;
+    padding: 90px 80px 150px;
+}
+
+.unanswerdDiv h4,
+.answereDiv h4 {
+    font-size: 40px;
+    font-family: MoskauMedium;
+}
+
+.unanswerdDiv .questionDiv {
+    margin-top: 70px;
+}
+
+.unanswerdDiv .questionDiv span,
+.accordiansDiv span {
+    font-size: 18px;
+    font-family: GelionMedium;
+    color: #000;
+    opacity: 47%;
+}
+
+.unanswerdDiv .questionDiv p {
+    font-size: 30px;
+    font-family: MoskauMedium;
+    margin-top: 26px;
+}
+
+.unanswerdDiv .questionDiv .question p {
+    font-size: 20px;
+    font-family: GelionRegular;
+    color: #707070;
+}
+
+.unanswerdDiv span.commonSpan {
+    border: 1px solid #ededed;
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    padding: 5px;
+    margin-right: 15px;
+    position: relative;
+    top: 25px;
+    color: #676C71;
+    opacity: 1;
+}
+
+.postAnswere {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 16px #03223108;
+    border: 1px solid #0000000D;
+    opacity: 1;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.postAnswere textarea {
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    font-family: MoskauMedium;
+    opacity: 40%;
+    padding: 45px 25px;
+}
+
+.postAnswere button,
+.formBtn {
+    padding: 14px 63px;
+    border: none;
+    float: right;
+    margin-top: 50px;
+    background: rgb(239, 29, 48);
+    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    color: #fff;
+    font-size: 26px;
+    font-family: MoskauMedium;
+}
+
+.accordiansDiv .card-header button,
+.accordiansDiv .card-header button:hover,
+.accordiansDiv .card-header button:focus {
+    padding: 0px;
+    font-size: 30px;
+    font-family: MoskauMedium;
+    color: #032231;
+    display: initial;
+    white-space: inherit;
+    text-align: left;
+    text-decoration: none;
+}
+
+.accordiansDiv .card-header {
+    background-color: transparent;
+    border: none;
+    padding: 10px 0px;
+    margin-top: 25px;
+}
+
+.accordiansDiv .card {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.accordiansDiv .card .card-body {
+    padding: 20px 0px;
+}
+
+.answereDiv .accordiansDiv .card .card-body p {
+    color: #707070;
+    font-size: 20px;
+    font-family: GelionRegular;
+}
+
+.answereBox {
+    border: 2px solid #e8e8e8;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.answereBox .boxHeader .profileAnswereDiv {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.answereBox .boxHeader .profileAnswereDiv img {
+    width: 55px;
+    margin-right: 15px;
+}
+
+.answereBox .boxHeader .profileAnswereDiv h4 {
+    font-size: 26px;
+    font-family: MoskauMedium;
+}
+
+.answereBox .boxHeader .profileAnswereDiv p {
+    font-size: 10px;
+}
+
+.answereBox .boxHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.answereBox .boxHeader button {
+    width: 150px;
+    height: 45px;
+    font-size: 23px;
+    font-family: MoskauMedium;
+    border: 1px solid #c1c1c1;
+    background-color: transparent;
+}
+
+.answereBox .questioner {
+    margin-top: 45px;
+    margin-left: 70px;
+}
+
+.answereBox .questioner p {
+    margin-bottom: 20px;
+}
+
+.callRequest {
+    margin-top: 90px;
+    box-shadow: 0px 17px 49px #00000029;
+    background: #fff;
+    height: 96.7%;
+}
+
+.callRequest .callContent .requestBox .profileRequestDiv {
+    display: flex;
+    align-items: center;
+}
+
+.callRequest .header {
+    background: #F7F7F7 0% 0% no-repeat padding-box;
+    opacity: 1;
+    padding: 25px 35px;
+}
+
+.callRequest .header p {
+    font-size: 18px;
+    font-family: GelionMedium;
+}
+
+.callRequest .callContent {
+    padding: 35px 40px;
+}
+
+.callRequest .callContent .requestBox .profileRequestDiv img {
+    margin-right: 10px;
+}
+
+.callRequest .callContent .requestBox .profileRequestDiv h4 {
+    font-size: 22px;
+    font-family: GelionRegular;
+}
+
+.callRequest .callContent .requestBox .profileRequestDiv p {
+    font-size: 14px;
+    font-family: GelionRegular;
+    color: #000;
+    opacity: 50%;
+}
+
+.callRequest .callContent .requestBox .contactDiv {
+    margin-left: 60px;
+    margin-top: 25px;
+}
+
+.callRequest .callContent .requestBox .contactDiv p {
+    font-size: 14px;
+    font-family: GelionRegular;
+    color: #000;
+    opacity: 80%;
+    margin-bottom: 15px;
+}
+
+.callRequest .callContent .messageBox {
+    border: 2px solid hsl(0deg 0% 90%);
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+.callRequest .callContent .messageBox p {
+    font-size: 18px;
+    font-family: GelionRegular;
+    color: #000;
+    opacity: 80%;
+    margin-bottom: 15px;
+}
+
+.callRequest .callContent .requestBox {
+    border-bottom: 1px solid hsl(0deg 0% 18% / 23%);
+    padding: 45px 0px;
+}
+
+/********** Fixed - Service - CSS ************/
+.fixedServiceDiv {
+    width: 100%;
+    max-width: 90%;
+    margin: auto;
+    margin-top: 110px;
+    box-shadow: 0px 17px 49px #00000029;
+    background: #fff;
+}
+
+.fixedServiceDiv .banner {
+    position: relative;
+}
+
+.fixedServiceDiv .banner img {
+    width: 100%;
+}
+
+.fixedServiceDiv .banner .tagLine {
+    background-color: hsl(345deg 85% 54% / 40%);
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.fixedServiceDiv .banner .tagLine .textDiv p {
+    font-size: 26px;
+    color: #fff;
+    font-family: GelionMedium;
+}
+
+.fixedServiceDiv .banner .tagLine .textDiv span {
+    font-size: 21px;
+    color: #D3D3D3;
+    font-family: GelionRegular;
+    font-size: 20px;
+}
+
+.fixedServiceDiv .banner .tagLine .priceText h4 {
+    font-size: 60px;
+    font-family: GelionBold;
+    color: #fff;
+}
+
+.fixedServiceDiv .banner .tagLine .priceText h4 span {
+    font-family: GelionRegular;
+    font-size: 20px;
+}
+
+.fixedServiceDiv .operationDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 65px;
+}
+.fixedServiceDiv .multiOption{
+    display: flex;
+    align-items: center;
+}
+
+.fixedServiceDiv .operationDiv p {
+    font-size: 22px;
+    font-family: GelionMedium;
+    color: #606060;
+    opacity: 72%;
+}
+
+.fixedServiceDiv .operationDiv .multiOption span {
+    border: 1px solid #d8dde1;
+    display: block;
+    width: 145px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 9px;
+    margin-left: 20px;
+    font-size: 24px;
+    font-family: MoskauMedium;
+    color: #000;
+    cursor: pointer;
+}
+.fixedServiceDiv .contentDiv{
+    padding: 0px 65px 65px;
+}
+.fixedServiceDiv .contentDiv p{
+    font-size: 18px;
+    font-family: GelionRegular;
+    color: #000;
+    opacity: 67%;
+}
+.fixedServiceDiv .contentDiv h4{
+    font-size: 18px;
+    font-family: GelionMedium;
+    margin-bottom: 25px;
+}
+.fixedServiceDiv .contentDiv ul li::before {
+    content: "\2022";
+    color: #ED2456;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+  }
+  .fixedServiceDiv .contentDiv ul{
+    margin-left: 20px;
+  }
+.fixedServiceDiv .contentDiv ul li{
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: GelionRegular;
+}
+.createFixedService,
+.mainFixedService .earning{
+    padding: 100px 150px;
+    box-shadow: 0px 17px 49px #00000029;
+    background: #fff;
+    margin-top: 50px;
+}
+.mainFixedService{
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+}
+.mainFixedService .relatedService .multiRelatedService{
+    max-width: 100%;
+}
+.createFixedService h4{
+    font-size: 40px;
+    font-family: MoskauMedium;
+    color: #000;
+}
+.createFixedService .formDiv{
+    margin-top: 46px;
+}
+.createFixedService .formDiv .inputDiv{
+    position: relative;
+    margin-bottom: 50px;
+}
+.createFixedService .formDiv .inputDiv input,
+.createFixedService .formDiv .inputDiv textarea{
+    border: 1px solid #0000000a;
+    background-color: #fff;
+    padding: 25px;
+    border: none;
+    width: 100% !important;
+    font-size: 19px;
+    color: #5D6D75;
+    font-family: MoskauMedium;
+    box-shadow: 0px 6px 16px #03223108;
+    opacity: 1;
+    width: 100%;
+}
+.createFixedService .formDiv .inputDiv span{
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    font-size: 18px;
+    color: #5D6D75;
+    opacity: 47%;
+    font-family: MoskauMedium;
+}
+.createFixedService .formDiv .inputDiv select{
+    background-color: #fff;
+    padding: 25px;
+    border: none;
+    width: 50% !important;
+    font-size: 19px;
+    color: #5D6D75;
+    font-family: MoskauMedium;
+    box-shadow: 0px 6px 16px #03223108;
+    opacity: 1;
+}
+.createFixedService .formDiv .uploadDiv {
+    text-align: right;
+}
+.createFixedService .formDiv .uploadDiv input{
+    max-width: 60%;
+    float: right !important; 
+    box-shadow: none !important;
+    opacity: 0;
+    position: absolute;
+    right: 0px;
+    z-index: 999999;
+    cursor: pointer;
+
+}
+.createFixedService .formDiv .uploadDiv p{
+    position: relative;
+    border: 2px solid hsl(0deg 0% 0% / 15%);
+    font-size: 26px;
+    font-family: MoskauMedium;
+    color: #022331;
+    padding: 12px 0px;
+    width: 100%;
+    max-width: 60%;
+    margin-right: 0px !important;
+    margin: auto;
+    text-align: center;
+    
+}
+.mainFixedService .relatedService .multiRelatedService .line{
+    margin: 20px 0px !important;
+}
+/*********** Earning - CSS *************/
+.mainFixedService .earning .opertionDiv .availableBalance{
+    padding-left: 45px;
+}
+.mainFixedService .earning .opertionDiv{
+    margin-left: 60%;
+}
+.mainFixedService .earning .opertionDiv h4,
+.mainFixedService .earning .readingItems .commonDiv h4{
+    font-size: 60px;
+    font-family: MoskauMedium;
+    color: #000000;
+}
+.mainFixedService .earning .opertionDiv p{
+    font-family: MoskauMedium;
+    font-size: 18px;
+    color: #519526;
+}
+.mainFixedService .earning .opertionDiv .multiBtn{
+    margin-top: 15px;
+    text-align: right;
+}
+.mainFixedService .earning .opertionDiv .multiBtn span{
+    border: 2px solid hsl(0deg 0% 0% / 15%);
+    font-size: 22px;
+    font-family: MoskauMedium;
+    color: #022331;
+    padding: 5px 25px;
+    margin-left: 17px;
+}
+.mainFixedService .earning .readingItems{
+    margin-top: 45px;
+}
+.mainFixedService .earning .readingItems .commonDiv{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid rgb(112 112 112 / 37%);
+    padding: 35px;
+}
+.mainFixedService .earning .readingItems .commonDiv p{
+    font-size: 18px;
+    color: #ED2456;
+    font-family: MoskauMedium;
+}
+.mainFixedService .earning .graphDiv{
+    border: 1px solid rgb(112 112 112 / 35%);
+    padding: 50px;
+}
+.mainFixedService .earning .graphDiv .graphHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mainFixedService .earning .graphDiv .graphHeader select{
+    font-size: 22px;
+    font-family: MoskauMedium;
+    padding: 5px 15px;
+}
+.mainFixedService .earning .graphDiv .graphHeader .reading h4{
+    font-size: 22px;
+    font-family: MoskauMedium;
+    color: #022331;
+}
+.mainFixedService .earning .graphDiv .graphHeader .reading p{
+    color: #7C828A;
+    font-size: 18px;
+    font-family: MoskauMedium;
+}
+/****************** Blog - CSS ***************/
+.commonCard .blogDetailCard .card{
+    max-width: 100%;
+    position: relative;
+    top: initial;
+    left: initial;
+}
+.commonCard .blogDetailCard{
+    margin-top: 50px;
+    height: auto;
+    margin-bottom: 100px;
+}
+.commonCard .blogDetailCard .card .cardContent .dateLikeDiv{
+    justify-content: space-between;
+}
+.commonCard .blogDetailCard .card .cardContent .dateLikeDiv .dateLike{
+    display: flex;
+    align-items: center;
+}
+.commonCard .blogDetailCard .card .cardContent .editDiv p{
+    border: 1px solid #032231;
+    padding: 6px 48px;
+    font-size: 22px;
+    font-family: MoskauMedium;
+    color: #000;
+}
+.blogDetailCard .card .cardContent .postedBy b{ 
+    color: #000;
+}
+/************** Create Blog - CSS **************/
+.createBlog .formDiv .uploadDiv p{
+        margin-right: initial !important;
+        margin: initial;
+        width: 40%;
+}
+.createBlog .formDiv .uploadDiv input{
+    right: initial;
+    left: 0px;
+    width: 40%;
+}
+.mainFixedService .bolgSection{
+    padding: 100px 0px;
+}
+.mainFixedService .bolgSection .multiBlog{
+    max-width: 100%;
+    margin-top: 0px !important;
+}
+.mainFixedService .bolgSection .multiBlog h4{
+    margin-bottom: 80px;
+}
+/************* Edit - Profile - CSS ************/
+.profileDiv .editBar{
+    display: flex;
+    align-items: center;
+}
+.profileDiv .editBar span{
+    margin-left: 25px;
+    padding: 10px 30px;
+    font-size: 26px;
+    font-family: MoskauMedium;
+    color: #022331;
+    border: 2px solid hsl(0deg 0% 0% / 15%);
+}
+.profileDiv .editProfileBox{
+    margin-top: 45px;
+}
+.profileDiv .editProfileBox .profileImg img{
+    width: 100%;
+}
+.profileDiv .editProfileBox .editProfile{
+    position: relative;
+    padding: 100px 50px;
+    box-shadow:0px 6px 16px #03223108;
+    background: #fff;
+}
+.profileDiv .editProfileBox .editProfile .userDetail{
+    position: absolute;
+    top: -30px;
+    display: flex;
+    align-items: center;
+    left: 6%;
+}
+.profileDiv .editProfileBox .editProfile .userDetail h4{
+    font-size: 30px;
+    font-family: MoskauMedium;
+    color: #022331;
+}
+.profileDiv .editProfileBox .editProfile .userDetail p{
+    font-size: 14px;
+    font-family: MoskauMedium;
+    color: #022331;
+}
+.profileDiv .editProfileBox .editProfile .avatar{
+    position: relative;
+    top: -50px;
+}
+.profileDiv .editProfileBox .editProfile .line{
+    margin: 40px 0px;
+}
+.profileDiv .editProfileBox .editProfile .listDiv ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 60%;
+}
+.profileDiv .editProfileBox .editProfile .listDiv ul li{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.profileDiv .editProfileBox .editProfile .listDiv ul li span{
+    color: #848484;
+    font-size: 16px;
+    font-family: GelionRegular;
+}
+.profileDiv .editProfileBox .editProfile .listDiv ul li  .imgDiv {
+    width: 13%;
+}
+.profileDiv .editProfileBox .editProfile .editProfileContent h4{
+    font-family: GelionMedium;
+    font-size: 18px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+.profileDiv .editProfileBox .editProfile .editProfileContent p{
+    font-family: GelionRegular;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+/*************** Register - CSS ****************/
+.registerAuthBox .inputDiv input{
+    box-shadow: 0px 6px 16px #03223108;
+}
+.registerAuthBox .inputDiv .iti--separate-dial-code .iti__selected-flag {
+    background-color: transparent;
+    opacity: 1;
+    width: 100%;
+    justify-content: center;
+}
+.registerAuthBox .inputDiv .iti--allow-dropdown .iti__flag-container, .iti--separate-dial-code .iti__flag-container{
+    width: 100%;
+}
+.registerAuthBox .applyForMembership{
+    text-align: right;
+}
+.registerAuthBox .applyForMembership button{
+    color: #000 !important;
+    margin-left: 40px;
+}
+
+main .mainBanner .registerAuthRightBox{
+    height: 100%;
+}
+/************* Your - Order - CSS ***********/
+.titleBanner{
+    background-color: #fff;
+    margin-top: 350px;
+    padding: 0px 100px 30px;
+}
+.titleBanner h4{
+    font-size: 55px;
+    font-family: MoskauMedium;
+}
+.yourOrderSection{
+    padding: 0px;
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 70px;
+    padding-bottom: 200px;
+}
+.postOrderText{
+    font-size: 24px;
+    font-family: GelionMedium;
+    color: #000;
+    opacity: 45%;
+    margin-bottom: 40px;
+}
+.completed{
+    font-size: 24px !important;
+    font-family: GelionMedium !important;
+    color: #50774D !important;
+    position: absolute;
+    right: 0px;
+    text-transform: uppercase;
+}
+/************** Expert - Detail - CSS *************/
+.experDetailHeader{
+    height: 600px;
+}
+.expertDetailProfile .editProfileBox{
+    position: relative;
+    top: -180px;
+    z-index: 9998;
+}
+.expertDetailProfile{
+    padding: 450px 250px 200px;
+}
+.recentQuestionDiv,
+.recentBlog{
+    padding: 50px;
+    box-shadow: 0px 6px 16px #03223108;
+    background-color: #fff;
+    position: relative;
+    top: -100px;
+    margin-bottom: 80px;
+}
+.recentQuestionDiv h4,
+.recentBlog h4{
+    font-size: 18px;
+}
+.recentQuestionDiv img,
+.recentBlog img{
+    margin-right: 15px;
+}
+.recentQuestionDiv .accordiansDiv .card-header button{
+    font-size: 16px;
+    color: #ED2456;
+    font-family: GelionRegular;
+}
+.recentQuestionDiv .accordiansDiv .card-header{
+    padding-bottom: 30px;
+}
+.recentBlog .bolgSection{
+    padding: 0px;
+    background-color: transparent;
+    margin-top: 60px;
+}
+.recentBlog .bolgSection .blogCard{
+    margin: 0px 10px;
+    height: auto;
+}
+
+.recentBlog .blogCard .cardContent h4{
+    font-size: 18px;
+}
+.recentBlog  .blogCard .cardContent p{
+    font-size: 14px;
+}
+.recentBlog .blogCard .cardContent a{
+    font-size: 16px;
+}
+.recentBlog .blogCard .cardContent a img,
+.freeServicesSlider .relatedService .multiRelatedService .card  .learnMore img{
+    width: 14px;
+    display: initial;
+}
+.recentBlog .slick-prev{
+    left: initial !important;
+    right: 100px !important;
+    top: -65px;
+}
+.recentBlog .slick-next{
+    right: 0px !important;
+    top: -65px;
+}
+.recentBlog .bolgSection .blogCard .cardContent h4 {
+    height: 60px;
+}
+.freeServicesSlider .relatedService{
+    padding: 0px;
+}
+.freeServicesSlider .relatedService .multiRelatedService{
+    max-width: 100%;
+}
+.freeServicesSlider .relatedService .multiRelatedService .card{
+    height: auto;
+    background: #fff;
+    margin: 0px 10px;
+}
+.freeServicesSlider .relatedService .multiRelatedService .card img{
+    width: 100%;
+}
+
+
 
 
 
@@ -1475,9 +2453,54 @@ footer .newsLetter .formDiv button {
     main .mainBanner .bannerLeft p {
         font-size: 45px;
     }
+    .mainFixedService .earning{
+        padding: 100px;
+    }
 }
 
 @media screen and (max-width: 1600px) {
+    .yourOrderSection{
+        padding: 0px !important;
+        padding-bottom: 200px !important;
+    }
+    .titleBanner{
+        margin-top: 250px;
+    }
+    .commonCard .blogDetailCard .card .cardContent .editDiv p{
+        padding: 5px 30px;
+        font-size: 16px;
+    }
+    .mainFixedService .earning .opertionDiv .multiBtn{
+        text-align: left;
+    }
+    .mainFixedService .earning .opertionDiv .multiBtn span{
+        margin-left: 0px;
+        margin-right: 20px;
+    }
+    .mainFixedService .earning .opertionDiv{
+        margin-left: 45%;
+    }
+    .mainFixedService .earning .opertionDiv .availableBalance{
+        padding-left: 0px;
+    }
+    .mainFixedService .earning .opertionDiv h4, .mainFixedService .earning .readingItems .commonDiv h4{
+        font-size: 45px;
+    }
+    .fixedServiceDiv .operationDiv .multiOption span {
+        width: 120px;
+        padding: 3px;
+        font-size: 18px;
+    }
+    .profileDiv {
+        padding: 350px 100px 200px;
+    }
+
+    .profileBox .profileBoxHeader .uploadCover p {
+        top: 16%;
+        left: 16%;
+        font-size: 22px;
+    }
+
     .orderSection .tabDiv ul li {
         padding-right: 50px;
     }
@@ -1486,7 +2509,8 @@ footer .newsLetter .formDiv button {
         margin-top: 50px;
     }
 
-    .subHeader h4 {
+    .subHeader h4,
+    .titleBanner h4 {
         font-size: 35px;
     }
 
@@ -1498,17 +2522,30 @@ footer .newsLetter .formDiv button {
         max-width: 80%;
     }
 
-    .bolgSection .selectDiv p {
-        font-size: 14px;
+    .bolgSection .selectDiv p,
+    .applyMemberShip {
+        font-size: 14px !important;
     }
 
     .orderSection .orderHeader p {
         padding-right: 70px;
     }
+    .mainFixedService .earning .readingItems .commonDiv{
+        padding: 18px;
+    }
 
     .bolgSection .selectDiv select,
     .orderSection .orderHeader p,
-    .markedCompleted {
+    .markedCompleted,
+    .profileBox .profileFormDiv .inputDiv input,
+    .profileBox .profileFormDiv .inputDiv select,
+    .multiSelect .select2-container,
+    .createFixedService .formDiv .uploadDiv p,
+    .mainFixedService .earning .opertionDiv p,
+    .mainFixedService .earning .opertionDiv .multiBtn span,
+    .mainFixedService .earning .readingItems .commonDiv p,
+    .mainFixedService .earning .graphDiv .graphHeader select,
+    .profileDiv .editBar span {
         font-size: 16px;
     }
 
@@ -1523,7 +2560,8 @@ footer .newsLetter .formDiv button {
 
     .bolgSection .paginationDiv .paginationList ul li a,
     .orderSection .tabDiv ul li a,
-    .orderSection .orderHeader .newOrder {
+    .orderSection .orderHeader .newOrder,
+    .profileBox .profileFormDiv button {
         font-size: 20px;
     }
 
@@ -1534,7 +2572,9 @@ footer .newsLetter .formDiv button {
     .bolgSection .selectDiv {
         width: 20%;
     }
-
+    .completed{
+        font-size: 18px !important;
+    }
     .blogBanner .bannerLeft {
         padding: 400px 70px 0px !important;
     }
@@ -1584,7 +2624,9 @@ footer .newsLetter .formDiv button {
     .requestInformation .informationContent .formDiv button,
     .requestInformation .imgText .imgTextMiddle p,
     footer .newsLetter .newLetterContent p,
-    .relatedService .multiRelatedService .card .cardContent h4 {
+    .relatedService .multiRelatedService .card .cardContent h4,
+    .postAnswere button,
+    .formBtn {
         font-size: 20px;
     }
 
@@ -1600,10 +2642,19 @@ footer .newsLetter .formDiv button {
         left: -530px !important;
     }
 
+    .answereBox .boxHeader button {
+        width: 120px;
+        height: 45px;
+        font-size: 18px;
+    }
+
     .ourService .sliderDiv .serviceBox h2,
     .leatestNews .newsCard .cardContent h4,
     .bolgSection .blogCard .cardContent h4,
-    .blogDetailCard .card .cardContent h4 {
+    .blogDetailCard .card .cardContent h4,
+    .unanswerdDiv .questionDiv p,
+    .accordiansDiv .card-header button,
+    .profileDiv .editProfileBox .editProfile .userDetail h4 {
         font-size: 24px;
     }
 
@@ -1700,7 +2751,8 @@ footer .newsLetter .formDiv button {
         width: 250px;
     }
 
-    header #collapsibleNavbar .nav-item .nav-link {
+    header #collapsibleNavbar .nav-item .nav-link,
+    .createFixedService .formDiv .inputDiv input, .createFixedService .formDiv .inputDiv textarea {
         font-size: 16px;
     }
 
@@ -1746,12 +2798,36 @@ footer .newsLetter .formDiv button {
     .relatedService .multiRelatedService .card .cardContent .line {
         font-size: 12px;
     }
+
+    .unanswerdDiv h4,
+    .answereDiv h4,
+    .createFixedService h4 {
+        font-size: 30px;
+    }
 }
 
 @media screen and (max-width: 1400px) {
+    .registerAuthBox{
+        padding-bottom: 50px !important;
+    }
+    .registerAuthBox .applyForMembership{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .line{
+        margin: 40px 0px;
+    }
+    .profileBox .profileBoxHeader .profileAvatar {
+        left: 45%;
+    }
+    .createFixedService {
+        padding: 100px 100px;
+    }
 
     .orderSection .tabContent,
-    .orderSection .tabDiv {
+    .orderSection .tabDiv,
+    .mainFixedService {
         max-width: 90%;
     }
 
@@ -1864,10 +2940,28 @@ footer .newsLetter .formDiv button {
     .requestInformation .informationContent {
         padding: 0px 0px 0px 50px;
     }
+    .mainFixedService .earning .readingItems .commonDiv p,
+    .registerAuthBox .applyForMembership button{
+        font-size: 14px !important;
+    }
+    .mainFixedService .earning {
+        padding: 100px 60px;
+    }
+    .profileDiv .editProfileBox .editProfile .listDiv ul{
+        max-width: 90%;
+    }
 
 }
 
 @media screen and (max-width: 1200px) {
+    .profileDiv {
+        padding: 350px 50px 200px;
+    }
+
+    .profileBox .profileBoxHeader .profileAvatar {
+        left: 42%;
+    }
+
     .orderSection .orderContent .multiBtn button {
         font-size: 14px;
     }
@@ -1989,6 +3083,66 @@ footer .newsLetter .formDiv button {
 }
 
 @media screen and (max-width: 992px) {
+    .completed {
+        font-size: 14px !important;
+        padding: 10px !important;
+
+    top: 80px;
+
+    }
+    .mainFixedService .earning .opertionDiv{
+        margin-left: 0px;
+        text-align: center;
+    }
+    .mainFixedService .earning .opertionDiv .multiBtn{
+        text-align: center;
+    }
+    .mainFixedService .earning .readingItems .commonDiv{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .createFixedService {
+        padding: 50px;
+    }
+    .mainFixedService{
+        max-width: 100%;
+    }
+    .createFixedService .formDiv .inputDiv select{
+        width: 100% !important;
+    }
+    
+    .fixedServiceDiv .operationDiv .multiOption span {
+        width: 90px;
+        font-size: 14px;
+    }
+    .fixedDiv{
+        padding: 300px 50px 200px !important; 
+    }
+    .fixedServiceDiv{
+        max-width: 100%;
+    }
+    .fixedServiceDiv .banner .tagLine{
+        padding: 15px 30px;
+    }
+    .profileDiv {
+        padding: 300px 100px 200px;
+    }
+
+    .profileBox .profileBoxHeader .profileAvatar {
+        left: 40%;
+    }
+
+    .profileBox .profileBoxHeader .uploadCover p {
+        top: 19%;
+        left: 10%;
+        font-size: 20px;
+    }
+
+    .profileBox .profileBoxHeader .uploadCover {
+        width: 100%;
+        max-width: 230px;
+    }
+
     .markedCompleted {
         max-width: 35%;
         left: 0px;
@@ -2001,7 +3155,7 @@ footer .newsLetter .formDiv button {
     }
 
     .orderSection .orderContent .postedBy p {
-        left: 0px;
+        left: 0px !important;
     }
 
     .orderSection .orderContent .postedBy ul li {
@@ -2055,7 +3209,8 @@ footer .newsLetter .formDiv button {
     }
 
     .contactBanner .bannerRight,
-    .commonBanner .bannerRight {
+    .commonBanner .bannerRight,
+    main .mainBanner .registerAuthRightBox {
         display: none;
     }
 
@@ -2081,8 +3236,24 @@ footer .newsLetter .formDiv button {
     .contactBanner .container-fluid .row,
     .commonBanner,
     .commonBanner .container-fluid,
-    .commonBanner .container-fluid .row {
+    .commonBanner .container-fluid .row,
+    .registerBanner .container-fluid,
+    .registerBanner .container-fluid .row,
+    .registerBanner{
         height: auto !important;
+    }
+    .registerAuthBox .applyForMembership{
+        justify-content: flex-end;
+    }
+    .registerAuthBox .iti--allow-dropdown{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .registerAuthBox .iti--allow-dropdown input{
+        margin-bottom: 20px;
+    }
+    .registerAuthBox{
+        position: relative !important;
     }
 
     footer .navigationWigets {
@@ -2112,7 +3283,7 @@ footer .newsLetter .formDiv button {
     }
 
     .requestInformation {
-        padding: 120px;
+        padding: 120px 20px;
     }
 
     .newsSlider .slick-next {
@@ -2210,12 +3381,20 @@ footer .newsLetter .formDiv button {
         padding: 0px;
     }
 
-    header #collapsibleNavbar .nav-item .nav-link {
+    header #collapsibleNavbar .nav-item .nav-link,
+    .fixedServiceDiv .banner .tagLine .textDiv span,
+    .fixedServiceDiv .banner .tagLine .priceText h4 span {
         font-size: 12px;
     }
 
     .ourService {
         padding: 150px 0px;
+    }
+    .fixedServiceDiv .operationDiv{
+        padding: 40px;
+    }
+    .fixedServiceDiv .contentDiv{
+       padding: 0px 40px 40px;
     }
 
     .ourService h2,
@@ -2223,10 +3402,10 @@ footer .newsLetter .formDiv button {
     .fixedService h2,
     .excellence h2,
     footer .newsLetter .newLetterContent h2,
-    .commonHeading {
+    .commonHeading,
+    .fixedServiceDiv .banner .tagLine .priceText h4 {
         font-size: 40px;
     }
-
     footer {
         padding: 200px 0px 70px;
     }
@@ -2258,9 +3437,50 @@ footer .newsLetter .formDiv button {
     .blogDetailBanner {
         height: 400px !important;
     }
+    .fixedServiceDiv .banner .tagLine .textDiv p,
+    .fixedServiceDiv .operationDiv p{
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .yourOrderSection{
+        max-width: 90%;
+    }
+    .titleBanner{
+        margin-top: 150px !important;
+        padding: 0px 20px 30px;
+    }
+    .createFixedService,
+    .mainFixedService .earning .graphDiv {
+        padding: 50px 20px;
+    }
+    
+    .createFixedService h4 {
+        font-size: 22px;
+    }
+    .ourService h2, .experts h2, .fixedService h2, .excellence h2, footer .newsLetter .newLetterContent h2, .commonHeading, .fixedServiceDiv .banner .tagLine .priceText h4{
+        font-size: 30px;
+    }
+    
+
+    .unanswerdDiv,
+    .answereDiv {
+        padding: 50px 40px 150px;
+    }
+
+    .profileDiv {
+        padding: 300px 50px 200px;
+    }
+
+    .line {
+        margin: 40px 0px;
+    }
+
+    .profileBox .profileBoxHeader .profileAvatar {
+        left: 38%;
+    }
+
     .orderSection .orderContent .postedBy {
         text-align: left;
         margin-top: 50px;
@@ -2403,7 +3623,9 @@ footer .newsLetter .formDiv button {
         padding: 100px 0px;
     }
 
-    .experts .expertSlider .sliderbox .expertHeader h4 {
+    .experts .expertSlider .sliderbox .expertHeader h4,
+    .unanswerdDiv h4,
+    .answereDiv h4 {
         font-size: 24px;
     }
 
@@ -2411,7 +3633,12 @@ footer .newsLetter .formDiv button {
         max-width: 90%;
     }
 
-    .leatestNews .newsCard .cardContent h4 {
+    .leatestNews .newsCard .cardContent h4,
+    .unanswerdDiv .questionDiv p,
+    .accordiansDiv .card-header button,
+    .postAnswere button,
+    .postAnswere textarea,
+    .formBtn {
         font-size: 18px;
     }
 
@@ -2419,7 +3646,10 @@ footer .newsLetter .formDiv button {
         max-width: 120px;
     }
 
-    .bolgSection .selectDiv p {
+    .bolgSection .selectDiv p,
+    .unanswerdDiv .questionDiv span,
+    .accordiansDiv span,
+    .answereDiv .accordiansDiv .card .card-body p {
         font-size: 14px;
     }
 
@@ -2435,9 +3665,115 @@ footer .newsLetter .formDiv button {
         justify-content: flex-end;
         margin-right: 40px;
     }
+
+    .answereBox .boxHeader .profileAnswereDiv h4 {
+        font-size: 20px;
+    }
+
+    .unanswerdDiv,
+    .answereDiv {
+        margin-top: 40px;
+    }
 }
 
 @media screen and (max-width: 580px) {
+    .registerAuthBox .applyForMembership span,
+    .registerAuthBox .applyForMembership button{
+        font-size: 10px !important;
+    }
+    main .mainBanner .registerAuthBox {
+        padding: 200px 0px 50px !important;
+    }
+    .profileDiv .editProfileBox .editProfile .listDiv ul {
+        max-width: 100%;
+    }
+    
+    .profileDiv .editProfileBox .editProfile .listDiv ul li span {
+        font-size: 10px;
+    }    
+    .profileDiv .editProfileBox .editProfile{
+        padding: 100px 20px;
+    }
+    .profileDiv .editProfileBox .editProfile .avatar {
+        position: relative;
+        top: -40px;
+    }
+    .profileDiv .editProfileBox .editProfile .avatar img{
+        width: 100px;
+    }
+    .profileDiv .editProfileBox .editProfile .userDetail{
+        top: -10px;
+    }
+    
+    .createBlog .formDiv .uploadDiv p{
+        width: 60%;
+    }
+    .blogDetailCard .card .cardContent .dateLikeDiv .date{
+        margin-right: 12px;
+    }
+    .commonCard .blogDetailCard .card .cardContent .dateLikeDiv{
+        display: block;
+    }
+    .commonCard .blogDetailCard .card .cardContent .editDiv p{
+        max-width: 60%;
+        margin-top: 30px;
+        width: 100%;
+        text-align: center;
+    }
+    .mainFixedService .earning .opertionDiv .multiBtn{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .mainFixedService .earning .opertionDiv .multiBtn span{
+        margin: 0px;
+        margin-bottom: 20px;
+    }
+    .mainFixedService .earning {
+        padding: 50px 30px;
+    }
+    .mainFixedService .earning .graphDiv {
+        padding: 20px;
+    }
+    .mainFixedService .relatedService{
+        padding-bottom: 0px;
+    }
+    .fixedDiv {
+        padding: 250px 20px 200px !important;
+    }
+    .fixedServiceDiv .operationDiv,
+    .fixedServiceDiv .banner .tagLine{
+        display: block;
+    }
+    .fixedServiceDiv .operationDiv .multiOption span{
+        margin-left: 0px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+    .answereBox .questioner,
+    .callRequest .callContent .requestBox .contactDiv {
+        margin-left: 0px;
+    }
+
+    .profileDiv {
+        padding: 250px 20px 200px;
+    }
+
+    .profileBox .profileFormDiv {
+        max-width: 90%;
+    }
+
+    .profileBox .profileBoxHeader .profileAvatar {
+        left: 27%;
+    }
+
+
+
+    .profileDiv h5 {
+        font-size: 24px;
+    }
+
+
     .markedCompleted {
         max-width: 50%;
         font-size: 14px;
@@ -2475,7 +3811,8 @@ footer .newsLetter .formDiv button {
     }
 
     .orderSection .orderHeader .newOrder,
-    .orderSection .tabDiv ul li a {
+    .orderSection .tabDiv ul li a,
+    .mainFixedService .earning .graphDiv .graphHeader .reading h4 {
         font-size: 16px;
     }
 
@@ -2484,12 +3821,29 @@ footer .newsLetter .formDiv button {
     }
 
     .blogDetailCard .card .cardContent .dateLikeDiv .date,
-    .orderSection .orderHeader p {
+    .orderSection .orderHeader p,
+    .unanswerdDiv .questionDiv .question p,
+    .mainFixedService .earning .graphDiv .graphHeader .reading p,
+    .blogDetailCard .card .cardContent .dateLikeDiv span {
         font-size: 14px;
     }
 
     .blogDetailCard .card .cardContent h4 br {
         display: none;
+    }
+
+    .answereBox .boxHeader button {
+        width: 50px;
+        height: 30px;
+        font-size: 12px;
+    }
+    .fixedServiceDiv .contentDiv{
+        padding: 0px 20px 40px;
+    }
+    .answereBox .boxHeader .profileAnswereDiv h4,
+    .fixedServiceDiv .contentDiv p,
+    .fixedServiceDiv .contentDiv ul li {
+        font-size: 16px;
     }
 
     .bolgSection .paginationDiv .paginationList ul {

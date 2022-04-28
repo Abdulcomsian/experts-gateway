@@ -1,5 +1,5 @@
 <html>
-<title>Login</title>
+<title>Your Orders</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <link rel="stylesheet" href="../../assets/css/slick.css">
     <link rel="stylesheet" href="../../assets/css/slick-theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header style="background-color: transparent;">
+    <header>
         <div class="userDiv">
             <div class="userProfile">
                 <img src="../../assets/img/userIcon.svg" alt="" class="img-fluid">
@@ -67,109 +67,80 @@
             </div>
         </nav>
     </header>
-    <main>
-        <div class="mainBanner registerBanner">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="bannerLeft registerAuthBox">
-                            <p>Login</p>
-                            <div class="formDiv">
-                                <form action="">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="inputDiv">
-                                                <input type="text" name="email" id="email" placeholder="Email">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="inputDiv">
-                                                <input type="password" name="password" id="password"
-                                                    placeholder="Password">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <a href=""
-                                                style="color: #EA297A;display: flex;align-items: center; height: 100%;">Forgot
-                                                Password?</a>
-                                        </div>
-                                        <div class="col-lg-6 text-right">
-                                            <button class="formBtn" style="margin: 0px;">Login</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="line">
-                                <img src="../../assets/img/line.png" alt="" class="img-fluid">
-                            </div>
-                            <div class="applyForMembership">
-                                <span>Don’t have an account?</span>
-                                <button>Sign Up</button>
-                            </div>
-                            <p class="applyMemberShip" style="font-size: 18px;text-align: right;margin-top: 55px;">Want to register as a Lawyer? <a href="" style="color: #EA297A;">Apply For Membership</a></p>
-                        </div>
-
+    <main style="background: #F8F9FA;">
+        <div class="titleBanner">
+            <h4>Your Orders</h4>
+        </div>
+        <div class="orderSection yourOrderSection">
+            <div id="current_order">
+                <div class="orderBox">
+                    <div class="orderHeader">
+                        <p>Order placed <br><span>16 December 2021</span></p>
+                        <p>Total <br><span>$28</span></p>
+                        <p>Order Number <br><span>100918282</span></p>
                     </div>
-                    <div class="col-lg-6" style="padding: 0px;">
-                        <div class="bannerRight registerAuthRightBox">
-                            <img src="../../assets/img/bannerImg.png" alt="" class="img-fluid">
+                    <div class="orderContent">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <span>Fixed-fee legal services</span>
+                                <h4>15-minute business advice session on setting up in the <br> UAE</h4>
+                                <span class="tag">Business</span>
+                                <hr>
+                                <div class="orderDescription">
+                                    <span>Order Description</span>
+                                    <p>Hfn pulvinar augue ac urna tristique viverra. Aliquam eu sce lerisque orci.
+                                        Integer maximus sapien ac erat euismod lacin ia. Maecenas dui leo, auctor eu
+                                        neqafue vel, aliqufet finibuas odio. Pellentesque efficitur volutpat ex a
+                                        blandit. Sed vestibu lum pharetra ex id feugiat.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="postedBy">
+                                    <p style="left: -75px;">Lawyer</p>
+                                    <div class="userDiv">
+                                        <img src="../../assets/img/client1.png" alt="" class="img-fluid">
+                                        <p>Aaron Bourke <br><span>King & Wood Mallesons</span></p>
+                                    </div>
+                                    <button style="background: transparent;color: #ed234f;" class="markedCompleted">Order Details</button>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="requestInformation">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="informationContent">
-                            <h2>Request Information</h2>
-                            <div class="formDiv">
-                                <form action="">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="inputDiv">
-                                                <input type="text" name="first_name" id="first_name"
-                                                    placeholder="First Name">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="inputDiv">
-                                                <input type="text" name="last_name" id="last_name"
-                                                    placeholder="Last Name">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="inputDiv">
-                                                <input type="text" name="email" id="email" placeholder="Email">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="inputDiv">
-                                                <input type="text" name="phone" placeholder="Phone">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="inputDiv">
-                                                <textarea name="message" id="message" placeholder="Message" cols="30"
-                                                    rows="10"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button>Submit Now</button>
-                                </form>
-                            </div>
-                        </div>
+                <p class="postOrderText">Past Orders</p>
+                <div class="orderBox">
+                    <div class="orderHeader">
+                        <p>Order placed <br><span>16 December 2021</span></p>
+                        <p>Total <br><span>$28</span></p>
+                        <p>Order Number <br><span>100918282</span></p>
+                        <p class="completed">completed</p>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <div class="imgText">
-                            <img src="../../assets/img/information.png" alt="" class="img-fluid">
-                            <div class="imgTextMiddle">
-                                <p>Legal Advice<br> Across the<br> Globe</p>
+                    <div class="orderContent">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <span>Fixed-fee legal services</span>
+                                <h4>15-minute business advice session on setting up in the <br> UAE</h4>
+                                <span class="tag">Business</span>
+                                <hr>
+                                <div class="orderDescription">
+                                    <span>Order Description</span>
+                                    <p>Hfn pulvinar augue ac urna tristique viverra. Aliquam eu sce lerisque orci.
+                                        Integer maximus sapien ac erat euismod lacin ia. Maecenas dui leo, auctor eu
+                                        neqafue vel, aliqufet finibuas odio. Pellentesque efficitur volutpat ex a
+                                        blandit. Sed vestibu lum pharetra ex id feugiat.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="postedBy">
+                                    <p style="left: -75px;">Lawyer</p>
+                                    <div class="userDiv">
+                                        <img src="../../assets/img/client1.png" alt="" class="img-fluid">
+                                        <p>Aaron Bourke <br><span>King & Wood Mallesons</span></p>
+                                    </div>
+                                    <button style="background: transparent;color: #ed234f;" class="markedCompleted">Order Details</button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -325,8 +296,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
-<script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script src="../../assets/js/slick.min.js"></script>
 <script src="../../assets/js/script.js"></script>
+
 
 </html>

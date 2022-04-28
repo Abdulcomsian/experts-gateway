@@ -1,5 +1,5 @@
 <html>
-<title>Login</title>
+<title>Fixed Service Detail</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <link rel="stylesheet" href="../../assets/css/slick.css">
     <link rel="stylesheet" href="../../assets/css/slick-theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header style="background-color: transparent;">
+    <header class="profileHeader">
         <div class="userDiv">
             <div class="userProfile">
                 <img src="../../assets/img/userIcon.svg" alt="" class="img-fluid">
@@ -30,147 +30,92 @@
             <a class="navbar-brand" href="#">
                 <img src="../../assets/img/logo.png" alt="" class="img-fluid">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                </span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Experts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Apply</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <img src="../../assets/img/searchIcon.png" alt="" class="img-fluid">
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </nav>
+        <div class="subHeader">
+            <nav class="navbar navbar-expand-md">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Earnings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Fixed Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Public Questions & Call Requests</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </header>
     <main>
-        <div class="mainBanner registerBanner">
-            <div class="container-fluid">
+        <div class="profileDiv fixedDiv">
+            <h5>Fixed Services</h5>
+            <div class="fixedServiceDiv">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="bannerLeft registerAuthBox">
-                            <p>Login</p>
-                            <div class="formDiv">
-                                <form action="">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="inputDiv">
-                                                <input type="text" name="email" id="email" placeholder="Email">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="inputDiv">
-                                                <input type="password" name="password" id="password"
-                                                    placeholder="Password">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <a href=""
-                                                style="color: #EA297A;display: flex;align-items: center; height: 100%;">Forgot
-                                                Password?</a>
-                                        </div>
-                                        <div class="col-lg-6 text-right">
-                                            <button class="formBtn" style="margin: 0px;">Login</button>
-                                        </div>
-                                    </div>
-                                </form>
+                    <div class="col-lg-12">
+                        <div class="banner">
+                            <img src="../../assets/img/fixedBanner.png" alt="" class="img-fluid">
+                            <div class="tagLine">
+                                <div class="textDiv">
+                                    <p>15-minute business advice session<br> on setting up in the UAE</p>
+                                    <span>Business</span>
+                                </div>
+                                <div class="priceText">
+                                    <h4>28 <span>USD</span></h4>
+                                </div>
                             </div>
+                        </div>
+                        <div class="operationDiv">
+                            <p>30 Fixed Services Sold</p>
+                            <div class="multiOption">
+                                <span>
+                                    Pause
+                                </span>
+                                <span>
+                                    Edit
+                                </span>
+                            </div>
+                        </div>
+                        <div class="contentDiv">
+                            <p style="margin-bottom: 40px;">A 15-minute phone call with a lawyer to get legal advice on how to set up a business in the UAE. The lawyer you hire will answer your questions about topics like starting a business, structuring, pros and cons of settlement in UAE free zones and the mainland.</p>
+                            <p>Time: 2 Business Days</p>
                             <div class="line">
                                 <img src="../../assets/img/line.png" alt="" class="img-fluid">
                             </div>
-                            <div class="applyForMembership">
-                                <span>Don’t have an account?</span>
-                                <button>Sign Up</button>
+                            <h4>SERVICE DESCRIPTION</h4>
+                            <p style="margin-bottom: 30px;">Get business legal advice on how to set up in the UAE from an experienced lawyer by phone. Within a 15-minute phone call, the attorney you hire can answer your questions and give you concrete advice and guidance so you can move forward with confidence. The topics you can discuss with the lawyer include everything about starting a business in the UAE, proper structuring of your business, the difference between settlement in various UAE free zones and on the mainland, and so on.</p>
+                            <p>This service is right for you if you think about starting a business in the UAE and do not know what to begin with.</p>
+                            <div class="line">
+                                <img src="../../assets/img/line.png" alt="" class="img-fluid">
                             </div>
-                            <p class="applyMemberShip" style="font-size: 18px;text-align: right;margin-top: 55px;">Want to register as a Lawyer? <a href="" style="color: #EA297A;">Apply For Membership</a></p>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-6" style="padding: 0px;">
-                        <div class="bannerRight registerAuthRightBox">
-                            <img src="../../assets/img/bannerImg.png" alt="" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="requestInformation">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="informationContent">
-                            <h2>Request Information</h2>
-                            <div class="formDiv">
-                                <form action="">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="inputDiv">
-                                                <input type="text" name="first_name" id="first_name"
-                                                    placeholder="First Name">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="inputDiv">
-                                                <input type="text" name="last_name" id="last_name"
-                                                    placeholder="Last Name">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="inputDiv">
-                                                <input type="text" name="email" id="email" placeholder="Email">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="inputDiv">
-                                                <input type="text" name="phone" placeholder="Phone">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="inputDiv">
-                                                <textarea name="message" id="message" placeholder="Message" cols="30"
-                                                    rows="10"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button>Submit Now</button>
-                                </form>
+                            <h4>SERVICE DESCRIPTION</h4>
+                            <ul>
+                                <li>15-minute phone call with an attorney. Answers and advice. The lawyer will suggest the best available options for you, based on their knowledge and experience helping other business clients</li>
+                                <li>Privacy. Everything you discuss with your lawyer is protected by attorney-client privilege.</li>
+                            </ul>
+                            <div class="line">
+                                <img src="../../assets/img/line.png" alt="" class="img-fluid">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 text-center">
-                        <div class="imgText">
-                            <img src="../../assets/img/information.png" alt="" class="img-fluid">
-                            <div class="imgTextMiddle">
-                                <p>Legal Advice<br> Across the<br> Globe</p>
-                            </div>
+                            <h4>WHAT’S NOT INCLUDED</h4>
+                            <ul>
+                                <li>Reviewing business documents.</li>
+                                <li>Long distance telephone calls. If you are based outside the UAE then probably you will need to call the lawyer yourself, or agree on some other way of voice communication. </li>
+                                <li>Any additional advice or work by the attorney after the 15-minute advice session.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -325,8 +270,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
-<script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script src="../../assets/js/slick.min.js"></script>
 <script src="../../assets/js/script.js"></script>
+
 
 </html>

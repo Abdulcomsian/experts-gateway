@@ -1122,7 +1122,8 @@ footer .newsLetter .formDiv button {
     box-shadow: 0px 18px 49px #01254814;
     border: none;
 }
-.relatedService .multiRelatedService .card .line{
+
+.relatedService .multiRelatedService .card .line {
     margin: 0px;
 }
 
@@ -1908,7 +1909,8 @@ footer .newsLetter .formDiv button {
     align-items: center;
     padding: 65px;
 }
-.fixedServiceDiv .multiOption{
+
+.fixedServiceDiv .multiOption {
     display: flex;
     align-items: center;
 }
@@ -1933,65 +1935,78 @@ footer .newsLetter .formDiv button {
     color: #000;
     cursor: pointer;
 }
-.fixedServiceDiv .contentDiv{
+
+.fixedServiceDiv .contentDiv {
     padding: 0px 65px 65px;
 }
-.fixedServiceDiv .contentDiv p{
+
+.fixedServiceDiv .contentDiv p {
     font-size: 18px;
     font-family: GelionRegular;
     color: #000;
     opacity: 67%;
 }
-.fixedServiceDiv .contentDiv h4{
+
+.fixedServiceDiv .contentDiv h4 {
     font-size: 18px;
     font-family: GelionMedium;
     margin-bottom: 25px;
 }
+
 .fixedServiceDiv .contentDiv ul li::before {
     content: "\2022";
     color: #ED2456;
     font-weight: bold;
-    display: inline-block; 
+    display: inline-block;
     width: 1em;
     margin-left: -1em;
-  }
-  .fixedServiceDiv .contentDiv ul{
+}
+
+.fixedServiceDiv .contentDiv ul {
     margin-left: 20px;
-  }
-.fixedServiceDiv .contentDiv ul li{
+}
+
+.fixedServiceDiv .contentDiv ul li {
     font-size: 18px;
     margin-bottom: 10px;
     font-family: GelionRegular;
 }
+
 .createFixedService,
-.mainFixedService .earning{
+.mainFixedService .earning {
     padding: 100px 150px;
     box-shadow: 0px 17px 49px #00000029;
     background: #fff;
     margin-top: 50px;
 }
-.mainFixedService{
+
+.mainFixedService {
     width: 100%;
     max-width: 80%;
     margin: auto;
 }
-.mainFixedService .relatedService .multiRelatedService{
+
+.mainFixedService .relatedService .multiRelatedService {
     max-width: 100%;
 }
-.createFixedService h4{
+
+.createFixedService h4 {
     font-size: 40px;
     font-family: MoskauMedium;
     color: #000;
 }
-.createFixedService .formDiv{
+
+.createFixedService .formDiv {
     margin-top: 46px;
 }
-.createFixedService .formDiv .inputDiv{
+
+.createFixedService .formDiv .inputDiv {
     position: relative;
     margin-bottom: 50px;
 }
+
 .createFixedService .formDiv .inputDiv input,
-.createFixedService .formDiv .inputDiv textarea{
+.createFixedService .formDiv .inputDiv textarea {
     border: 1px solid #0000000a;
     background-color: #fff;
     padding: 25px;
@@ -2004,7 +2019,8 @@ footer .newsLetter .formDiv button {
     opacity: 1;
     width: 100%;
 }
-.createFixedService .formDiv .inputDiv span{
+
+.createFixedService .formDiv .inputDiv span {
     position: absolute;
     right: 20px;
     top: 25px;
@@ -2013,7 +2029,8 @@ footer .newsLetter .formDiv button {
     opacity: 47%;
     font-family: MoskauMedium;
 }
-.createFixedService .formDiv .inputDiv select{
+
+.createFixedService .formDiv .inputDiv select {
     background-color: #fff;
     padding: 25px;
     border: none;
@@ -2024,12 +2041,14 @@ footer .newsLetter .formDiv button {
     box-shadow: 0px 6px 16px #03223108;
     opacity: 1;
 }
+
 .createFixedService .formDiv .uploadDiv {
     text-align: right;
 }
-.createFixedService .formDiv .uploadDiv input{
+
+.createFixedService .formDiv .uploadDiv input {
     max-width: 60%;
-    float: right !important; 
+    float: right !important;
     box-shadow: none !important;
     opacity: 0;
     position: absolute;
@@ -2038,7 +2057,8 @@ footer .newsLetter .formDiv button {
     cursor: pointer;
 
 }
-.createFixedService .formDiv .uploadDiv p{
+
+.createFixedService .formDiv .uploadDiv p {
     position: relative;
     border: 2px solid hsl(0deg 0% 0% / 15%);
     font-size: 26px;
@@ -2050,34 +2070,41 @@ footer .newsLetter .formDiv button {
     margin-right: 0px !important;
     margin: auto;
     text-align: center;
-    
+
 }
-.mainFixedService .relatedService .multiRelatedService .line{
+
+.mainFixedService .relatedService .multiRelatedService .line {
     margin: 20px 0px !important;
 }
+
 /*********** Earning - CSS *************/
-.mainFixedService .earning .opertionDiv .availableBalance{
+.mainFixedService .earning .opertionDiv .availableBalance {
     padding-left: 45px;
 }
-.mainFixedService .earning .opertionDiv{
+
+.mainFixedService .earning .opertionDiv {
     margin-left: 60%;
 }
+
 .mainFixedService .earning .opertionDiv h4,
-.mainFixedService .earning .readingItems .commonDiv h4{
+.mainFixedService .earning .readingItems .commonDiv h4 {
     font-size: 60px;
     font-family: MoskauMedium;
     color: #000000;
 }
-.mainFixedService .earning .opertionDiv p{
+
+.mainFixedService .earning .opertionDiv p {
     font-family: MoskauMedium;
     font-size: 18px;
     color: #519526;
 }
-.mainFixedService .earning .opertionDiv .multiBtn{
+
+.mainFixedService .earning .opertionDiv .multiBtn {
     margin-top: 15px;
     text-align: right;
 }
-.mainFixedService .earning .opertionDiv .multiBtn span{
+
+.mainFixedService .earning .opertionDiv .multiBtn span {
     border: 2px solid hsl(0deg 0% 0% / 15%);
     font-size: 22px;
     font-family: MoskauMedium;
@@ -2085,99 +2112,120 @@ footer .newsLetter .formDiv button {
     padding: 5px 25px;
     margin-left: 17px;
 }
-.mainFixedService .earning .readingItems{
+
+.mainFixedService .earning .readingItems {
     margin-top: 45px;
 }
-.mainFixedService .earning .readingItems .commonDiv{
+
+.mainFixedService .earning .readingItems .commonDiv {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid rgb(112 112 112 / 37%);
     padding: 35px;
 }
-.mainFixedService .earning .readingItems .commonDiv p{
+
+.mainFixedService .earning .readingItems .commonDiv p {
     font-size: 18px;
     color: #ED2456;
     font-family: MoskauMedium;
 }
-.mainFixedService .earning .graphDiv{
+
+.mainFixedService .earning .graphDiv {
     border: 1px solid rgb(112 112 112 / 35%);
     padding: 50px;
 }
-.mainFixedService .earning .graphDiv .graphHeader{
+
+.mainFixedService .earning .graphDiv .graphHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.mainFixedService .earning .graphDiv .graphHeader select{
+
+.mainFixedService .earning .graphDiv .graphHeader select {
     font-size: 22px;
     font-family: MoskauMedium;
     padding: 5px 15px;
 }
-.mainFixedService .earning .graphDiv .graphHeader .reading h4{
+
+.mainFixedService .earning .graphDiv .graphHeader .reading h4 {
     font-size: 22px;
     font-family: MoskauMedium;
     color: #022331;
 }
-.mainFixedService .earning .graphDiv .graphHeader .reading p{
+
+.mainFixedService .earning .graphDiv .graphHeader .reading p {
     color: #7C828A;
     font-size: 18px;
     font-family: MoskauMedium;
 }
+
 /****************** Blog - CSS ***************/
-.commonCard .blogDetailCard .card{
+.commonCard .blogDetailCard .card {
     max-width: 100%;
     position: relative;
     top: initial;
     left: initial;
 }
-.commonCard .blogDetailCard{
+
+.commonCard .blogDetailCard {
     margin-top: 50px;
     height: auto;
     margin-bottom: 100px;
 }
-.commonCard .blogDetailCard .card .cardContent .dateLikeDiv{
+
+.commonCard .blogDetailCard .card .cardContent .dateLikeDiv {
     justify-content: space-between;
 }
-.commonCard .blogDetailCard .card .cardContent .dateLikeDiv .dateLike{
+
+.commonCard .blogDetailCard .card .cardContent .dateLikeDiv .dateLike {
     display: flex;
     align-items: center;
 }
-.commonCard .blogDetailCard .card .cardContent .editDiv p{
+
+.commonCard .blogDetailCard .card .cardContent .editDiv p {
     border: 1px solid #032231;
     padding: 6px 48px;
     font-size: 22px;
     font-family: MoskauMedium;
     color: #000;
 }
-.blogDetailCard .card .cardContent .postedBy b{ 
+
+.blogDetailCard .card .cardContent .postedBy b {
     color: #000;
 }
+
 /************** Create Blog - CSS **************/
-.createBlog .formDiv .uploadDiv p{
-        margin-right: initial !important;
-        margin: initial;
-        width: 40%;
+.createBlog .formDiv .uploadDiv p {
+    margin-right: initial !important;
+    margin: initial;
+    width: 40%;
 }
-.createBlog .formDiv .uploadDiv input{
+
+.createBlog .formDiv .uploadDiv input {
     right: initial;
     left: 0px;
     width: 40%;
 }
-.mainFixedService .bolgSection{
+
+.mainFixedService .bolgSection {
     padding: 100px 0px;
 }
-.mainFixedService .bolgSection .multiBlog{
+
+.mainFixedService .bolgSection .multiBlog {
     max-width: 100%;
     margin-top: 0px !important;
 }
-.mainFixedService .bolgSection .multiBlog h4{
+
+.mainFixedService .bolgSection .multiBlog h4 {
     margin-bottom: 80px;
 }
+
 /************* Edit - Profile - CSS ************/
-.profileDiv .editBar{
+.profileDiv .editBar {
     display: flex;
     align-items: center;
 }
-.profileDiv .editBar span{
+
+.profileDiv .editBar span {
     margin-left: 25px;
     padding: 10px 30px;
     font-size: 26px;
@@ -2185,108 +2233,131 @@ footer .newsLetter .formDiv button {
     color: #022331;
     border: 2px solid hsl(0deg 0% 0% / 15%);
 }
-.profileDiv .editProfileBox{
+
+.profileDiv .editProfileBox {
     margin-top: 45px;
 }
-.profileDiv .editProfileBox .profileImg img{
+
+.profileDiv .editProfileBox .profileImg img {
     width: 100%;
 }
-.profileDiv .editProfileBox .editProfile{
+
+.profileDiv .editProfileBox .editProfile {
     position: relative;
     padding: 100px 50px;
-    box-shadow:0px 6px 16px #03223108;
+    box-shadow: 0px 6px 16px #03223108;
     background: #fff;
 }
-.profileDiv .editProfileBox .editProfile .userDetail{
+
+.profileDiv .editProfileBox .editProfile .userDetail {
     position: absolute;
     top: -30px;
     display: flex;
     align-items: center;
     left: 6%;
 }
-.profileDiv .editProfileBox .editProfile .userDetail h4{
+
+.profileDiv .editProfileBox .editProfile .userDetail h4 {
     font-size: 30px;
     font-family: MoskauMedium;
     color: #022331;
 }
-.profileDiv .editProfileBox .editProfile .userDetail p{
+
+.profileDiv .editProfileBox .editProfile .userDetail p {
     font-size: 14px;
     font-family: MoskauMedium;
     color: #022331;
 }
-.profileDiv .editProfileBox .editProfile .avatar{
+
+.profileDiv .editProfileBox .editProfile .avatar {
     position: relative;
     top: -50px;
 }
-.profileDiv .editProfileBox .editProfile .line{
+
+.profileDiv .editProfileBox .editProfile .line {
     margin: 40px 0px;
 }
-.profileDiv .editProfileBox .editProfile .listDiv ul{
+
+.profileDiv .editProfileBox .editProfile .listDiv ul {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     max-width: 60%;
 }
-.profileDiv .editProfileBox .editProfile .listDiv ul li{
+
+.profileDiv .editProfileBox .editProfile .listDiv ul li {
     width: 50%;
     display: flex;
     align-items: center;
     margin-bottom: 16px;
 }
-.profileDiv .editProfileBox .editProfile .listDiv ul li span{
+
+.profileDiv .editProfileBox .editProfile .listDiv ul li span {
     color: #848484;
     font-size: 16px;
     font-family: GelionRegular;
 }
-.profileDiv .editProfileBox .editProfile .listDiv ul li  .imgDiv {
+
+.profileDiv .editProfileBox .editProfile .listDiv ul li .imgDiv {
     width: 13%;
 }
-.profileDiv .editProfileBox .editProfile .editProfileContent h4{
+
+.profileDiv .editProfileBox .editProfile .editProfileContent h4 {
     font-family: GelionMedium;
     font-size: 18px;
     margin-bottom: 25px;
     text-transform: uppercase;
 }
-.profileDiv .editProfileBox .editProfile .editProfileContent p{
+
+.profileDiv .editProfileBox .editProfile .editProfileContent p {
     font-family: GelionRegular;
     font-size: 18px;
     margin-bottom: 25px;
 }
+
 /*************** Register - CSS ****************/
-.registerAuthBox .inputDiv input{
+.registerAuthBox .inputDiv input {
     box-shadow: 0px 6px 16px #03223108;
 }
+
 .registerAuthBox .inputDiv .iti--separate-dial-code .iti__selected-flag {
     background-color: transparent;
     opacity: 1;
     width: 100%;
     justify-content: center;
 }
-.registerAuthBox .inputDiv .iti--allow-dropdown .iti__flag-container, .iti--separate-dial-code .iti__flag-container{
+
+.registerAuthBox .inputDiv .iti--allow-dropdown .iti__flag-container,
+.iti--separate-dial-code .iti__flag-container {
     width: 100%;
 }
-.registerAuthBox .applyForMembership{
+
+.registerAuthBox .applyForMembership {
     text-align: right;
 }
-.registerAuthBox .applyForMembership button{
+
+.registerAuthBox .applyForMembership button {
     color: #000 !important;
     margin-left: 40px;
 }
 
-main .mainBanner .registerAuthRightBox{
+main .mainBanner .registerAuthRightBox {
     height: 100%;
 }
+
 /************* Your - Order - CSS ***********/
-.titleBanner{
+.titleBanner {
     background-color: #fff;
     margin-top: 350px;
     padding: 0px 100px 30px;
 }
-.titleBanner h4{
+
+.titleBanner h4 {
     font-size: 55px;
     font-family: MoskauMedium;
 }
-.yourOrderSection{
+
+.yourOrderSection {
     padding: 0px;
     width: 100%;
     max-width: 70%;
@@ -2294,14 +2365,16 @@ main .mainBanner .registerAuthRightBox{
     margin-top: 70px;
     padding-bottom: 200px;
 }
-.postOrderText{
+
+.postOrderText {
     font-size: 24px;
     font-family: GelionMedium;
     color: #000;
     opacity: 45%;
     margin-bottom: 40px;
 }
-.completed{
+
+.completed {
     font-size: 24px !important;
     font-family: GelionMedium !important;
     color: #50774D !important;
@@ -2309,20 +2382,24 @@ main .mainBanner .registerAuthRightBox{
     right: 0px;
     text-transform: uppercase;
 }
+
 /************** Expert - Detail - CSS *************/
-.experDetailHeader{
+.experDetailHeader {
     height: 600px;
 }
-.expertDetailProfile .editProfileBox{
+
+.expertDetailProfile .editProfileBox {
     position: relative;
     top: -180px;
     z-index: 9998;
 }
-.expertDetailProfile{
+
+.expertDetailProfile {
     padding: 450px 250px 200px;
 }
+
 .recentQuestionDiv,
-.recentBlog{
+.recentBlog {
     padding: 50px;
     box-shadow: 0px 6px 16px #03223108;
     background-color: #fff;
@@ -2330,77 +2407,292 @@ main .mainBanner .registerAuthRightBox{
     top: -100px;
     margin-bottom: 80px;
 }
+
 .recentQuestionDiv h4,
-.recentBlog h4{
+.recentBlog h4 {
     font-size: 18px;
 }
+
 .recentQuestionDiv img,
-.recentBlog img{
+.recentBlog img {
     margin-right: 15px;
 }
-.recentQuestionDiv .accordiansDiv .card-header button{
+
+.recentQuestionDiv .accordiansDiv .card-header button {
     font-size: 16px;
     color: #ED2456;
     font-family: GelionRegular;
 }
-.recentQuestionDiv .accordiansDiv .card-header{
+
+.recentQuestionDiv .accordiansDiv .card-header {
     padding-bottom: 30px;
 }
-.recentBlog .bolgSection{
+
+.recentBlog .bolgSection {
     padding: 0px;
     background-color: transparent;
     margin-top: 60px;
 }
-.recentBlog .bolgSection .blogCard{
+
+.recentBlog .bolgSection .blogCard {
     margin: 0px 10px;
     height: auto;
 }
 
-.recentBlog .blogCard .cardContent h4{
+.recentBlog .blogCard .cardContent h4 {
     font-size: 18px;
 }
-.recentBlog  .blogCard .cardContent p{
+
+.recentBlog .blogCard .cardContent p {
     font-size: 14px;
 }
-.recentBlog .blogCard .cardContent a{
+
+.recentBlog .blogCard .cardContent a {
     font-size: 16px;
 }
+
 .recentBlog .blogCard .cardContent a img,
-.freeServicesSlider .relatedService .multiRelatedService .card  .learnMore img{
+.freeServicesSlider .relatedService .multiRelatedService .card .learnMore img {
     width: 14px;
     display: initial;
 }
-.recentBlog .slick-prev{
+
+.recentBlog .slick-prev {
     left: initial !important;
     right: 100px !important;
     top: -65px;
 }
-.recentBlog .slick-next{
+
+.recentBlog .slick-next {
     right: 0px !important;
     top: -65px;
 }
+
 .recentBlog .bolgSection .blogCard .cardContent h4 {
     height: 60px;
 }
-.freeServicesSlider .relatedService{
+
+.freeServicesSlider .relatedService {
     padding: 0px;
 }
-.freeServicesSlider .relatedService .multiRelatedService{
+
+.freeServicesSlider .relatedService .multiRelatedService {
     max-width: 100%;
 }
-.freeServicesSlider .relatedService .multiRelatedService .card{
+
+.freeServicesSlider .relatedService .multiRelatedService .card {
     height: auto;
     background: #fff;
     margin: 0px 10px;
 }
-.freeServicesSlider .relatedService .multiRelatedService .card img{
+
+.freeServicesSlider .relatedService .multiRelatedService .card img {
     width: 100%;
 }
 
+/*************** Expert - Detail - CSS ************/
+.expertDetailProfile .hireDiv {
+    position: relative;
+    z-index: 999;
+    background: #FFFFFF;
+    top: -140px;
+    box-shadow: 0px 6px 16px #03223108;
+    opacity: 1;
+    padding: 80px 40px;
+}
 
+.expertDetailProfile .hireDiv ul li {
+    margin-bottom: 20px;
+    border: 1px solid #707070;
+    padding: 15px;
+}
 
+.expertDetailProfile .hireDiv ul li span {
+    font-size: 18px;
+    font-family: GelionRegular;
+    margin-left: 15px;
+}
 
+.expertDetailProfile .hireDiv .btnDiv button {
+    margin-top: 100px;
+    padding: 5px 63px;
+    border: none;
+    background: rgb(239, 29, 48);
+    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    color: #fff;
+    font-size: 26px;
+    font-family: MoskauMedium;
+}
 
+/****************** Payment - CSS ****************/
+.paymentHeader {
+    height: 600px;
+}
+
+.paymentDiv {
+    padding: 350px;
+    position: relative;
+    background-color: #f0f2f4;
+
+}
+
+.thankYouPayment {
+    z-index: 9999;
+    position: relative;
+    background: #fff;
+    box-shadow: 0px 6px 16px #03223108;
+    padding: 120px;
+}
+
+.thankYouPayment h2 {
+    font-size: 55px;
+    font-family: MoskauMedium;
+    margin-bottom: 70px;
+}
+
+.thankYouPayment h2 span {
+    color: #ED2149;
+}
+
+.thankYouPayment p {
+    font-family: GelionRegular;
+    font-size: 22px;
+    color: #000;
+    opacity: 67%;
+    margin-bottom: 40px;
+}
+
+.thankYouPayment button {
+    border: 2px solid #000000;
+    opacity: 1;
+    padding: 15px 40px;
+    font-family: MoskauMedium;
+    font-size: 26px;
+    background-color: transparent;
+}
+/**************** About - Us - CSS ****************/
+.mainBanner .aboutUsLeft h3,
+.expertBanner .expertBannerLeft h3,
+.fixedBanner .fixedBannerLeft h3{
+    font-size: 55px !important;
+    font-family: MoskauMedium;
+    margin-bottom: 85px !important;
+}
+.mainBanner .aboutUsLeft{
+    padding-top: 410px !important;
+}
+.mainBanner .aboutUsLeft h3 span{
+    color: #ED2149;
+}
+.mainBanner .aboutUsLeft p{
+    font-size: 50px !important;
+    margin-bottom: 0px !important;
+}
+.findExpert{
+    background-color: #E0E5E8;
+    padding: 250px 200px;
+}
+.findExpert p{
+    font-size: 24px;
+    font-family: GelionRegular;
+    margin-bottom: 40px;
+}
+.findExpert a{
+    padding: 20px;
+    font-size: 26px;
+    font-family: MoskauMedium;
+    margin-right: 20px;
+}
+.findExpert .applyMemberShip{
+    border: 1px solid #707070;
+    color: #000;
+}
+.findExpert .findExpertBtn{
+    background: rgb(239, 29, 48);
+    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    color: #fff;
+}
+.findExpert .aboutUs{
+    background-image: none;
+    padding: 0px;
+}
+.findExpert .aboutUs .multiBox{
+    padding-left: 150px;
+}
+.findExpert .aboutUs .multiBox .commonBox p{
+    margin-bottom: 0px;
+}
+.findExpert .aboutUs .multiBox .active{
+    background: rgb(239, 29, 48);
+    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+}
+/***************** Experts - CSS ****************/
+.expertBanner .expertBannerLeft p{
+    font-size: 24px !important;
+    font-family: GelionRegular !important;
+}
+main .expertBanner .searchBox{
+    bottom: 28%;
+}
+.multiBlog .expertCard {
+    margin-bottom: 80px;
+}
+.multiBlog .expertCard .cardContet{
+    box-shadow: 0px 18px 49px #01254814;
+    background: #fff;
+    padding: 20px 30px;
+}
+.multiBlog .expertCard img{
+    width: 100%;
+}
+.multiBlog .expertCard .cardContet .line{
+    margin: 20px 0px;
+}
+.multiBlog .expertCard .cardContet .rating{
+    margin-bottom: 30px;
+}
+.multiBlog .expertCard .cardContet .rating i{
+    color: #EFD232;
+}
+.multiBlog .expertCard .cardContet .rating span{
+    color: #848484;
+}
+.multiBlog .expertCard .cardContet .cardBody,
+.multiBlog .expertCard .cardContet .cardFooter{
+    text-align: center;
+}
+.multiBlog .expertCard .cardContet .cardBody h3{
+    font-size: 38px;
+    font-family: GelionRegular;
+}
+.multiBlog .expertCard .cardContet .cardBody p{
+    font-size: 18px;
+    font-family: GelionRegular;
+}
+.multiBlog .expertCard .cardContet .cardFooter p{
+    color: #75858D;
+    font-size: 20px;
+    font-family: GelionRegular;
+}
+.multiBlog .expertCard .cardContet .cardFooter p span{
+    color: #000;
+}
+/**************** Fixed - Free - CSS ***************/
+.fixedBanner .fixedBannerLeft h3 span{
+    color: #ED2149;
+}
+.fixedBanner .searchBox {
+    bottom: 20% !important;
+}
+.freeServiceSection .selectDiv{
+    width: 20%;
+}
+.freeRelatedService .multiRelatedService{
+    max-width: 80%;
+}
+.freeRelatedService  .multiRelatedService .card{
+    margin-bottom: 50px;
+}
 
 
 
@@ -2453,44 +2745,90 @@ main .mainBanner .registerAuthRightBox{
     main .mainBanner .bannerLeft p {
         font-size: 45px;
     }
-    .mainFixedService .earning{
+
+    .mainFixedService .earning {
         padding: 100px;
     }
 }
 
 @media screen and (max-width: 1600px) {
-    .yourOrderSection{
+    .findExpert .aboutUs .multiBox {
+        padding-left: 100px;
+    }
+    
+    
+    .mainBanner .aboutUsLeft h3{
+        font-size: 45px !important;
+        margin-bottom: 40px !important;
+    }
+    .findExpert p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    
+    .mainBanner .aboutUsLeft p{
+        font-size: 40px !important;
+    }
+    .paymentDiv{
+        padding: 350px 200px;
+    }
+    .paymentDiv .thankYouPayment{
+        padding: 120px 60px;
+    }
+    .paymentDiv .thankYouPayment h2{
+        font-size: 40px;
+    }
+    .paymentDiv .thankYouPayment button{
+        font-size: 20px;
+    }
+    .recentBlog .bolgSection .blogCard .cardContent h4 {
+        height: 80px;
+        font-size: 20px;
+    }
+
+    .yourOrderSection {
         padding: 0px !important;
         padding-bottom: 200px !important;
     }
-    .titleBanner{
+
+    .titleBanner {
         margin-top: 250px;
     }
-    .commonCard .blogDetailCard .card .cardContent .editDiv p{
+
+    .commonCard .blogDetailCard .card .cardContent .editDiv p {
         padding: 5px 30px;
         font-size: 16px;
     }
-    .mainFixedService .earning .opertionDiv .multiBtn{
+
+    .mainFixedService .earning .opertionDiv .multiBtn {
         text-align: left;
     }
-    .mainFixedService .earning .opertionDiv .multiBtn span{
+
+    .mainFixedService .earning .opertionDiv .multiBtn span {
         margin-left: 0px;
         margin-right: 20px;
     }
-    .mainFixedService .earning .opertionDiv{
+
+    .mainFixedService .earning .opertionDiv {
         margin-left: 45%;
     }
-    .mainFixedService .earning .opertionDiv .availableBalance{
+
+    .mainFixedService .earning .opertionDiv .availableBalance {
         padding-left: 0px;
     }
-    .mainFixedService .earning .opertionDiv h4, .mainFixedService .earning .readingItems .commonDiv h4{
+
+    .mainFixedService .earning .opertionDiv h4,
+    .mainFixedService .earning .readingItems .commonDiv h4 {
         font-size: 45px;
     }
+
     .fixedServiceDiv .operationDiv .multiOption span {
         width: 120px;
         padding: 3px;
         font-size: 18px;
     }
+
     .profileDiv {
         padding: 350px 100px 200px;
     }
@@ -2523,14 +2861,16 @@ main .mainBanner .registerAuthRightBox{
     }
 
     .bolgSection .selectDiv p,
-    .applyMemberShip {
+    .applyMemberShip,
+    .findExpert a {
         font-size: 14px !important;
     }
 
     .orderSection .orderHeader p {
         padding-right: 70px;
     }
-    .mainFixedService .earning .readingItems .commonDiv{
+
+    .mainFixedService .earning .readingItems .commonDiv {
         padding: 18px;
     }
 
@@ -2545,7 +2885,8 @@ main .mainBanner .registerAuthRightBox{
     .mainFixedService .earning .opertionDiv .multiBtn span,
     .mainFixedService .earning .readingItems .commonDiv p,
     .mainFixedService .earning .graphDiv .graphHeader select,
-    .profileDiv .editBar span {
+    .profileDiv .editBar span,
+    .expertDetailProfile .hireDiv ul li span {
         font-size: 16px;
     }
 
@@ -2561,8 +2902,13 @@ main .mainBanner .registerAuthRightBox{
     .bolgSection .paginationDiv .paginationList ul li a,
     .orderSection .tabDiv ul li a,
     .orderSection .orderHeader .newOrder,
-    .profileBox .profileFormDiv button {
+    .profileBox .profileFormDiv button,
+    .expertDetailProfile .hireDiv .btnDiv button {
         font-size: 20px;
+    }
+
+    .expertDetailProfile .hireDiv .btnDiv button {
+        margin-top: 50px;
     }
 
     .bolgSection .paginationDiv .paginationList ul li img {
@@ -2572,9 +2918,11 @@ main .mainBanner .registerAuthRightBox{
     .bolgSection .selectDiv {
         width: 20%;
     }
-    .completed{
+
+    .completed {
         font-size: 18px !important;
     }
+
     .blogBanner .bannerLeft {
         padding: 400px 70px 0px !important;
     }
@@ -2630,7 +2978,8 @@ main .mainBanner .registerAuthRightBox{
         font-size: 20px;
     }
 
-    .commonPara {
+    .commonPara,
+    .expertBanner .expertBannerLeft p {
         font-size: 20px !important;
     }
 
@@ -2752,7 +3101,8 @@ main .mainBanner .registerAuthRightBox{
     }
 
     header #collapsibleNavbar .nav-item .nav-link,
-    .createFixedService .formDiv .inputDiv input, .createFixedService .formDiv .inputDiv textarea {
+    .createFixedService .formDiv .inputDiv input,
+    .createFixedService .formDiv .inputDiv textarea {
         font-size: 16px;
     }
 
@@ -2807,20 +3157,39 @@ main .mainBanner .registerAuthRightBox{
 }
 
 @media screen and (max-width: 1400px) {
-    .registerAuthBox{
+    .expertBanner .expertBannerLeft p br{
+        display: none;
+    }
+    .mainBanner .aboutUsLeft{
+        padding-top: 280px !important;
+    }
+    .mainBanner .aboutUsLeft p {
+        font-size: 30px !important;
+    }
+    .paymentDiv .thankYouPayment {
+        padding: 60px 60px;
+    }
+    .expertBanner .expertBannerLeft h3{
+        font-size: 40px !important;
+    }
+    .registerAuthBox {
         padding-bottom: 50px !important;
     }
-    .registerAuthBox .applyForMembership{
+
+    .registerAuthBox .applyForMembership {
         display: flex;
         align-items: center;
         justify-content: flex-end;
     }
-    .line{
+
+    .line {
         margin: 40px 0px;
     }
+
     .profileBox .profileBoxHeader .profileAvatar {
         left: 45%;
     }
+
     .createFixedService {
         padding: 100px 100px;
     }
@@ -2940,20 +3309,37 @@ main .mainBanner .registerAuthRightBox{
     .requestInformation .informationContent {
         padding: 0px 0px 0px 50px;
     }
+
     .mainFixedService .earning .readingItems .commonDiv p,
-    .registerAuthBox .applyForMembership button{
+    .registerAuthBox .applyForMembership button {
         font-size: 14px !important;
     }
+
     .mainFixedService .earning {
         padding: 100px 60px;
     }
-    .profileDiv .editProfileBox .editProfile .listDiv ul{
+
+    .profileDiv .editProfileBox .editProfile .listDiv ul {
         max-width: 90%;
+    }
+    .findExpert{
+        padding: 200px 100px;
     }
 
 }
 
 @media screen and (max-width: 1200px) {
+    .multiBlog .expertCard .cardContet .cardBody h3{
+        font-size: 24px
+    }
+    .findExpert .aboutUs .multiBox {
+        padding-left: 0px;
+    }
+    
+    
+    .paymentDiv {
+        padding: 350px 100px;
+    }
     .profileDiv {
         padding: 350px 50px 200px;
     }
@@ -3040,7 +3426,8 @@ main .mainBanner .registerAuthRightBox{
     .aboutUs .aboutUsContent .notes,
     .aboutUs .aboutUsContent p,
     .aboutUs .aboutUsContent a,
-    .requestInformation .informationContent .formDiv button {
+    .requestInformation .informationContent .formDiv button,
+    .multiBlog .expertCard .cardContet .cardFooter p {
         font-size: 16px;
     }
 
@@ -3064,7 +3451,8 @@ main .mainBanner .registerAuthRightBox{
     header #collapsibleNavbar .nav-item .nav-link,
     .requestInformation .imgText .imgTextMiddle p,
     .requestInformation .informationContent .formDiv input,
-    .requestInformation .informationContent .formDiv textarea {
+    .requestInformation .informationContent .formDiv textarea,
+    .multiBlog .expertCard .cardContet .cardBody p {
         font-size: 14px;
     }
 
@@ -3083,47 +3471,78 @@ main .mainBanner .registerAuthRightBox{
 }
 
 @media screen and (max-width: 992px) {
+    .findExpert .aboutUs{
+        margin-top: 100px;
+    }
+    .findExpert .aboutUs .multiBox{
+        justify-content: center;
+    }
+    main .aboutBanner .bannerRight,
+    .expertBanner .bannerRight{
+        display: none;
+    }
+    .paymentHeader {
+        height: 350px;
+    }
+    .paymentDiv {
+        padding: 200px 100px;
+    }
     .completed {
         font-size: 14px !important;
         padding: 10px !important;
 
-    top: 80px;
+        top: 80px;
 
     }
-    .mainFixedService .earning .opertionDiv{
+
+    .mainFixedService .earning .opertionDiv {
         margin-left: 0px;
         text-align: center;
     }
-    .mainFixedService .earning .opertionDiv .multiBtn{
+
+    .mainFixedService .earning .opertionDiv .multiBtn,
+    .mainBanner .aboutUsLeft,
+    .expertBanner .expertBannerLeft {
         text-align: center;
     }
-    .mainFixedService .earning .readingItems .commonDiv{
+    .expertBanner .expertBannerLeft h3{
+        margin-bottom:40px !important
+    }
+
+    .mainFixedService .earning .readingItems .commonDiv {
         margin-bottom: 20px;
         text-align: center;
     }
+
     .createFixedService {
         padding: 50px;
     }
-    .mainFixedService{
+
+    .mainFixedService {
         max-width: 100%;
     }
-    .createFixedService .formDiv .inputDiv select{
+
+    .createFixedService .formDiv .inputDiv select {
         width: 100% !important;
     }
-    
+
     .fixedServiceDiv .operationDiv .multiOption span {
         width: 90px;
         font-size: 14px;
     }
-    .fixedDiv{
-        padding: 300px 50px 200px !important; 
+
+    .fixedDiv {
+        padding: 300px 50px 200px !important;
     }
-    .fixedServiceDiv{
+
+    .fixedServiceDiv {
         max-width: 100%;
     }
-    .fixedServiceDiv .banner .tagLine{
+
+    .fixedServiceDiv .banner .tagLine {
         padding: 15px 30px;
     }
+
     .profileDiv {
         padding: 300px 100px 200px;
     }
@@ -3239,20 +3658,24 @@ main .mainBanner .registerAuthRightBox{
     .commonBanner .container-fluid .row,
     .registerBanner .container-fluid,
     .registerBanner .container-fluid .row,
-    .registerBanner{
+    .registerBanner {
         height: auto !important;
     }
-    .registerAuthBox .applyForMembership{
+
+    .registerAuthBox .applyForMembership {
         justify-content: flex-end;
     }
-    .registerAuthBox .iti--allow-dropdown{
+
+    .registerAuthBox .iti--allow-dropdown {
         width: 100%;
         margin-bottom: 20px;
     }
-    .registerAuthBox .iti--allow-dropdown input{
+
+    .registerAuthBox .iti--allow-dropdown input {
         margin-bottom: 20px;
     }
-    .registerAuthBox{
+
+    .registerAuthBox {
         position: relative !important;
     }
 
@@ -3390,11 +3813,13 @@ main .mainBanner .registerAuthRightBox{
     .ourService {
         padding: 150px 0px;
     }
-    .fixedServiceDiv .operationDiv{
+
+    .fixedServiceDiv .operationDiv {
         padding: 40px;
     }
-    .fixedServiceDiv .contentDiv{
-       padding: 0px 40px 40px;
+
+    .fixedServiceDiv .contentDiv {
+        padding: 0px 40px 40px;
     }
 
     .ourService h2,
@@ -3406,6 +3831,7 @@ main .mainBanner .registerAuthRightBox{
     .fixedServiceDiv .banner .tagLine .priceText h4 {
         font-size: 40px;
     }
+
     footer {
         padding: 200px 0px 70px;
     }
@@ -3437,32 +3863,73 @@ main .mainBanner .registerAuthRightBox{
     .blogDetailBanner {
         height: 400px !important;
     }
+
     .fixedServiceDiv .banner .tagLine .textDiv p,
-    .fixedServiceDiv .operationDiv p{
+    .fixedServiceDiv .operationDiv p {
         font-size: 18px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .yourOrderSection{
+    .findExpert .multiBtn{
+        display: flex;
+        flex-direction: column;
+    }
+    .findExpert .multiBtn a{
+        margin: 20px 0px;
+        text-align: center;
+    }
+    .findExpert {
+        padding: 100px 50px;
+    }
+    .paymentDiv .thankYouPayment h2 {
+        font-size: 30px;
+    }
+    .thankYouPayment p br{
+        display: none;
+    }
+    .thankYouPayment p{
+        font-size: 18px;
+    }
+    .paymentDiv .thankYouPayment button {
+        font-size: 16px;
+    }
+    .paymentHeader {
+        z-index: 999;
+    }
+    .experDetailHeader {
+        height: 350px !important;
+        z-index: 0 !important;
+    }
+
+    .yourOrderSection {
         max-width: 90%;
     }
-    .titleBanner{
+
+    .titleBanner {
         margin-top: 150px !important;
         padding: 0px 20px 30px;
     }
+
     .createFixedService,
     .mainFixedService .earning .graphDiv {
         padding: 50px 20px;
     }
-    
+
     .createFixedService h4 {
         font-size: 22px;
     }
-    .ourService h2, .experts h2, .fixedService h2, .excellence h2, footer .newsLetter .newLetterContent h2, .commonHeading, .fixedServiceDiv .banner .tagLine .priceText h4{
+
+    .ourService h2,
+    .experts h2,
+    .fixedService h2,
+    .excellence h2,
+    footer .newsLetter .newLetterContent h2,
+    .commonHeading,
+    .fixedServiceDiv .banner .tagLine .priceText h4 {
         font-size: 30px;
     }
-    
+
 
     .unanswerdDiv,
     .answereDiv {
@@ -3677,79 +4144,140 @@ main .mainBanner .registerAuthRightBox{
 }
 
 @media screen and (max-width: 580px) {
+    .findExpert {
+        padding: 100px 20px;
+    }
+    .findExpert .aboutUs {
+        margin-top: 50px;
+    }
+    .paymentDiv {
+        padding: 200px 20px;
+    }
+    .paymentDiv .thankYouPayment {
+        padding: 60px 20px;
+    }
+    .relatedService .multiRelatedService .card .cardContent {
+        padding: 20px 10px;
+    }
+
+    .experDetailHeader {
+        height: 300px !important;
+        z-index: 0 !important;
+    }
+
+
     .registerAuthBox .applyForMembership span,
-    .registerAuthBox .applyForMembership button{
+    .registerAuthBox .applyForMembership button {
         font-size: 10px !important;
     }
+
     main .mainBanner .registerAuthBox {
         padding: 200px 0px 50px !important;
     }
+
     .profileDiv .editProfileBox .editProfile .listDiv ul {
         max-width: 100%;
     }
-    
+
+    .recentQuestionDiv,
+    .recentBlog {
+        padding: 50px 20px;
+    }
+
+    .recentQuestionDiv h4,
+    .recentBlog h4 {
+        font-size: 14px;
+    }
+
+    .recentBlog .slick-next,
+    .recentBlog .slick-prev {
+        top: -30px;
+    }
+
+    .recentBlog .slick-prev {
+        right: 60px !important;
+    }
+
+
+
     .profileDiv .editProfileBox .editProfile .listDiv ul li span {
         font-size: 10px;
-    }    
-    .profileDiv .editProfileBox .editProfile{
+    }
+
+    .profileDiv .editProfileBox .editProfile {
         padding: 100px 20px;
     }
+
     .profileDiv .editProfileBox .editProfile .avatar {
         position: relative;
         top: -40px;
     }
-    .profileDiv .editProfileBox .editProfile .avatar img{
+
+    .profileDiv .editProfileBox .editProfile .avatar img {
         width: 100px;
     }
-    .profileDiv .editProfileBox .editProfile .userDetail{
+
+    .profileDiv .editProfileBox .editProfile .userDetail {
         top: -10px;
     }
-    
-    .createBlog .formDiv .uploadDiv p{
+
+    .createBlog .formDiv .uploadDiv p {
         width: 60%;
     }
-    .blogDetailCard .card .cardContent .dateLikeDiv .date{
+
+    .blogDetailCard .card .cardContent .dateLikeDiv .date {
         margin-right: 12px;
     }
-    .commonCard .blogDetailCard .card .cardContent .dateLikeDiv{
+
+    .commonCard .blogDetailCard .card .cardContent .dateLikeDiv {
         display: block;
     }
-    .commonCard .blogDetailCard .card .cardContent .editDiv p{
+
+    .commonCard .blogDetailCard .card .cardContent .editDiv p {
         max-width: 60%;
         margin-top: 30px;
         width: 100%;
         text-align: center;
     }
-    .mainFixedService .earning .opertionDiv .multiBtn{
+
+    .mainFixedService .earning .opertionDiv .multiBtn {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .mainFixedService .earning .opertionDiv .multiBtn span{
+
+    .mainFixedService .earning .opertionDiv .multiBtn span {
         margin: 0px;
         margin-bottom: 20px;
     }
+
     .mainFixedService .earning {
         padding: 50px 30px;
     }
+
     .mainFixedService .earning .graphDiv {
         padding: 20px;
     }
-    .mainFixedService .relatedService{
+
+    .mainFixedService .relatedService {
         padding-bottom: 0px;
     }
+
     .fixedDiv {
         padding: 250px 20px 200px !important;
     }
+
     .fixedServiceDiv .operationDiv,
-    .fixedServiceDiv .banner .tagLine{
+    .fixedServiceDiv .banner .tagLine {
         display: block;
     }
-    .fixedServiceDiv .operationDiv .multiOption span{
+
+    .fixedServiceDiv .operationDiv .multiOption span {
         margin-left: 0px;
         margin-right: 20px;
         margin-top: 20px;
     }
+
     .answereBox .questioner,
     .callRequest .callContent .requestBox .contactDiv {
         margin-left: 0px;
@@ -3837,9 +4365,11 @@ main .mainBanner .registerAuthRightBox{
         height: 30px;
         font-size: 12px;
     }
-    .fixedServiceDiv .contentDiv{
+
+    .fixedServiceDiv .contentDiv {
         padding: 0px 20px 40px;
     }
+
     .answereBox .boxHeader .profileAnswereDiv h4,
     .fixedServiceDiv .contentDiv p,
     .fixedServiceDiv .contentDiv ul li {

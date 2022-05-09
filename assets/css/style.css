@@ -2570,132 +2570,321 @@ main .mainBanner .registerAuthRightBox {
     font-size: 26px;
     background-color: transparent;
 }
+
 /**************** About - Us - CSS ****************/
 .mainBanner .aboutUsLeft h3,
 .expertBanner .expertBannerLeft h3,
-.fixedBanner .fixedBannerLeft h3{
+.fixedBanner .fixedBannerLeft h3 {
     font-size: 55px !important;
     font-family: MoskauMedium;
     margin-bottom: 85px !important;
 }
-.mainBanner .aboutUsLeft{
+
+.mainBanner .aboutUsLeft {
     padding-top: 410px !important;
 }
-.mainBanner .aboutUsLeft h3 span{
+
+.mainBanner .aboutUsLeft h3 span {
     color: #ED2149;
 }
-.mainBanner .aboutUsLeft p{
+
+.mainBanner .aboutUsLeft p {
     font-size: 50px !important;
     margin-bottom: 0px !important;
 }
-.findExpert{
+
+.findExpert {
     background-color: #E0E5E8;
     padding: 250px 200px;
 }
-.findExpert p{
+
+.findExpert p {
     font-size: 24px;
     font-family: GelionRegular;
     margin-bottom: 40px;
 }
-.findExpert a{
+
+.findExpert a {
     padding: 20px;
     font-size: 26px;
     font-family: MoskauMedium;
     margin-right: 20px;
 }
-.findExpert .applyMemberShip{
+
+.findExpert .applyMemberShip {
     border: 1px solid #707070;
     color: #000;
 }
-.findExpert .findExpertBtn{
+
+.findExpert .findExpertBtn {
     background: rgb(239, 29, 48);
     background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
     color: #fff;
 }
-.findExpert .aboutUs{
+
+.findExpert .aboutUs {
     background-image: none;
     padding: 0px;
 }
-.findExpert .aboutUs .multiBox{
+
+.findExpert .aboutUs .multiBox {
     padding-left: 150px;
 }
-.findExpert .aboutUs .multiBox .commonBox p{
+
+.findExpert .aboutUs .multiBox .commonBox p {
     margin-bottom: 0px;
 }
-.findExpert .aboutUs .multiBox .active{
+
+.findExpert .aboutUs .multiBox .active {
     background: rgb(239, 29, 48);
     background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
 }
+
 /***************** Experts - CSS ****************/
-.expertBanner .expertBannerLeft p{
+.expertBanner .expertBannerLeft p {
     font-size: 24px !important;
     font-family: GelionRegular !important;
 }
-main .expertBanner .searchBox{
+
+main .expertBanner .searchBox {
     bottom: 28%;
 }
+
 .multiBlog .expertCard {
     margin-bottom: 80px;
 }
-.multiBlog .expertCard .cardContet{
+
+.multiBlog .expertCard .cardContet {
     box-shadow: 0px 18px 49px #01254814;
     background: #fff;
     padding: 20px 30px;
 }
-.multiBlog .expertCard img{
+
+.multiBlog .expertCard img {
     width: 100%;
 }
-.multiBlog .expertCard .cardContet .line{
+
+.multiBlog .expertCard .cardContet .line {
     margin: 20px 0px;
 }
-.multiBlog .expertCard .cardContet .rating{
+
+.multiBlog .expertCard .cardContet .rating {
     margin-bottom: 30px;
 }
-.multiBlog .expertCard .cardContet .rating i{
+
+.multiBlog .expertCard .cardContet .rating i {
     color: #EFD232;
 }
-.multiBlog .expertCard .cardContet .rating span{
+
+.multiBlog .expertCard .cardContet .rating span {
     color: #848484;
 }
+
 .multiBlog .expertCard .cardContet .cardBody,
-.multiBlog .expertCard .cardContet .cardFooter{
+.multiBlog .expertCard .cardContet .cardFooter {
     text-align: center;
 }
-.multiBlog .expertCard .cardContet .cardBody h3{
+
+.multiBlog .expertCard .cardContet .cardBody h3 {
     font-size: 38px;
     font-family: GelionRegular;
 }
-.multiBlog .expertCard .cardContet .cardBody p{
+
+.multiBlog .expertCard .cardContet .cardBody p {
     font-size: 18px;
     font-family: GelionRegular;
 }
-.multiBlog .expertCard .cardContet .cardFooter p{
+
+.multiBlog .expertCard .cardContet .cardFooter p {
     color: #75858D;
     font-size: 20px;
     font-family: GelionRegular;
 }
-.multiBlog .expertCard .cardContet .cardFooter p span{
+
+.multiBlog .expertCard .cardContet .cardFooter p span {
     color: #000;
 }
+
 /**************** Fixed - Free - CSS ***************/
-.fixedBanner .fixedBannerLeft h3 span{
+.fixedBanner .fixedBannerLeft h3 span {
     color: #ED2149;
 }
+
 .fixedBanner .searchBox {
     bottom: 20% !important;
 }
-.freeServiceSection .selectDiv{
+
+.freeServiceSection .selectDiv {
     width: 20%;
 }
-.freeRelatedService .multiRelatedService{
+
+.freeRelatedService .multiRelatedService {
     max-width: 80%;
 }
-.freeRelatedService  .multiRelatedService .card{
+
+.freeRelatedService .multiRelatedService .card {
     margin-bottom: 50px;
 }
 
+/*************** Fixed - Free - Detail - CSS **********/
+.fixedFreeDetail {
+    background-color: #f6f7f8;
+    padding: 450px 100px 200px;
+}
 
+.fixedFreeDetail .profileDiv {
+    padding: 0px;
+}
 
+.fixedFreeDetail .buyServiceDiv {
+    margin-top: 100px;
+    height: 90%;
+    box-shadow: 0px 18px 49px #01254814;
+}
+
+.fixedFreeDetail .buyServiceDiv .header {
+    background-color: #F7F7F7;
+    padding: 30px;
+}
+
+.fixedFreeDetail .buyServiceDiv .header p {
+    font-family: GelionMedium;
+    font-size: 18px;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv {
+    background: #fff;
+    height: 100%;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation {
+    margin-left: 10px;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation h4 {
+    font-size: 22px;
+    font-family: GelionRegular;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation p {
+    color: #032231;
+    font-family: GelionRegular;
+    font-size: 14px;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .priceDiv h4 {
+    color: #777777;
+    font-size: 35px;
+    font-family: GelionBold;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .priceDiv h4 span {
+    font-size: 12px;
+    font-family: GelionMedium;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv .line {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/********** Apply - CSS ***********/
+.applyHeader {
+    display: flex;
+    align-items: center;
+}
+
+.applyHeader .breadcrum {
+    width: 10%;
+}
+
+.applyHeader .logo {
+    width: 90%;
+    text-align: center;
+}
+.applyHeader .logo img{
+    position: relative;
+    left: -100px;
+}
+
+.applyHeader .breadcrum ul {
+    display: flex;
+}
+
+.applyHeader .breadcrum ul li {
+    font-size: 20px;
+    font-family: MoskauMedium;
+    margin-right: 5px;
+}
+
+.applyHeader .breadcrum ul li.active {
+    color: #ED2456;
+}
+
+.readyToStart {
+    padding: 350px 100px 100px;
+    text-align: center;
+    background-image: url(../img/backLayer.png);
+    background-position: bottom right;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.readyToStart .formDiv {
+    margin: 40px 0px;
+    text-align: left;
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+}
+
+.readyToStart .formDiv .inputDiv {
+    margin-bottom: 35px;
+}
+
+.readyToStart .formDiv .inputDiv input {
+    border: 2px solid #E5E8EA;
+    opacity: 1;
+    width: 100%;
+    padding: 23px;
+    margin-bottom: 18px;
+    font-family: MoskauMedium;
+    font-size: 18px;
+}
+
+.readyToStart .formDiv .inputDiv label {
+    font-size: 20px;
+    font-family: GelionBold;
+}
+
+.readyToStart .formDiv .btnDiv {
+    text-align: center;
+}
+
+.readyToStart .formDiv .btnDiv button {
+    float: initial;
+}
 
 
 
@@ -2752,36 +2941,57 @@ main .expertBanner .searchBox{
 }
 
 @media screen and (max-width: 1600px) {
+    .applyHeader .logo img {
+        left: -80px;
+    }
+    .readyToStart .formDiv .inputDiv {
+        margin-bottom: 20px;
+    }
+
+    .readyToStart .formDiv .inputDiv input {
+        padding: 18px;
+    }
+
+    .fixedFreeDetail .buyServiceDiv .contentDiv ul li {
+        padding: 20px;
+    }
+
     .findExpert .aboutUs .multiBox {
         padding-left: 100px;
     }
-    
-    
-    .mainBanner .aboutUsLeft h3{
+
+
+    .mainBanner .aboutUsLeft h3 {
         font-size: 45px !important;
         margin-bottom: 40px !important;
     }
+
     .findExpert p {
         font-size: 18px;
         margin-bottom: 20px;
     }
-    
-    
-    .mainBanner .aboutUsLeft p{
+
+
+    .mainBanner .aboutUsLeft p {
         font-size: 40px !important;
     }
-    .paymentDiv{
+
+    .paymentDiv {
         padding: 350px 200px;
     }
-    .paymentDiv .thankYouPayment{
+
+    .paymentDiv .thankYouPayment {
         padding: 120px 60px;
     }
-    .paymentDiv .thankYouPayment h2{
+
+    .paymentDiv .thankYouPayment h2 {
         font-size: 40px;
     }
-    .paymentDiv .thankYouPayment button{
+
+    .paymentDiv .thankYouPayment button {
         font-size: 20px;
     }
+
     .recentBlog .bolgSection .blogCard .cardContent h4 {
         height: 80px;
         font-size: 20px;
@@ -3010,7 +3220,9 @@ main .expertBanner .searchBox{
     .ourService .sliderDiv .serviceBox p,
     .aboutUs .multiBox .commonBox p,
     .blogDetailCard .card .cardContent p,
-    .relatedService .multiRelatedService .card .cardContent .tag {
+    .relatedService .multiRelatedService .card .cardContent .tag,
+
+    .fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation h4 {
         font-size: 18px;
     }
 
@@ -3145,7 +3357,8 @@ main .expertBanner .searchBox{
         font-size: 14px;
     }
 
-    .relatedService .multiRelatedService .card .cardContent .line {
+    .relatedService .multiRelatedService .card .cardContent .line,
+    .fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation p {
         font-size: 12px;
     }
 
@@ -3154,24 +3367,60 @@ main .expertBanner .searchBox{
     .createFixedService h4 {
         font-size: 30px;
     }
+
+    .fixedFreeDetail .buyServiceDiv .contentDiv ul li .priceDiv h4 {
+        font-size: 24px;
+    }
 }
 
 @media screen and (max-width: 1400px) {
-    .expertBanner .expertBannerLeft p br{
+    .readyToStart {
+        padding: 250px 100px 100px;
+    }
+    
+    
+    .applyHeader .logo img {
+        left: -50px;
+    }
+    
+    
+    .applyHeader .logo img {
+        width: 300px;
+    }
+
+    .readyToStart .formDiv .inputDiv label,
+    .readyToStart .formDiv .inputDiv input {
+        font-size: 14px;
+    }
+
+    .fixedFreeDetail .buyServiceDiv .contentDiv ul li {
+        padding: 10px;
+    }
+
+    .fixedFreeDetail {
+        padding: 250px 80px 100px;
+    }
+
+    .expertBanner .expertBannerLeft p br {
         display: none;
     }
-    .mainBanner .aboutUsLeft{
+
+    .mainBanner .aboutUsLeft {
         padding-top: 280px !important;
     }
+
     .mainBanner .aboutUsLeft p {
         font-size: 30px !important;
     }
+
     .paymentDiv .thankYouPayment {
         padding: 60px 60px;
     }
-    .expertBanner .expertBannerLeft h3{
+
+    .expertBanner .expertBannerLeft h3 {
         font-size: 40px !important;
     }
+
     .registerAuthBox {
         padding-bottom: 50px !important;
     }
@@ -3302,7 +3551,8 @@ main .expertBanner .searchBox{
         left: 6%;
     }
 
-    .requestInformation .imgText .imgTextMiddle p {
+    .requestInformation .imgText .imgTextMiddle p,
+    .applyHeader .breadcrum ul li {
         font-size: 16px;
     }
 
@@ -3322,24 +3572,31 @@ main .expertBanner .searchBox{
     .profileDiv .editProfileBox .editProfile .listDiv ul {
         max-width: 90%;
     }
-    .findExpert{
+
+    .findExpert {
         padding: 200px 100px;
     }
 
 }
 
 @media screen and (max-width: 1200px) {
-    .multiBlog .expertCard .cardContet .cardBody h3{
+    .fixedFreeDetail {
+        padding: 250px 30px 100px;
+    }
+
+    .multiBlog .expertCard .cardContet .cardBody h3 {
         font-size: 24px
     }
+
     .findExpert .aboutUs .multiBox {
         padding-left: 0px;
     }
-    
-    
+
+
     .paymentDiv {
         padding: 350px 100px;
     }
+
     .profileDiv {
         padding: 350px 50px 200px;
     }
@@ -3471,22 +3728,40 @@ main .expertBanner .searchBox{
 }
 
 @media screen and (max-width: 992px) {
-    .findExpert .aboutUs{
+
+    .applyHeader {
+        padding: 20px;
+    }
+
+    .readyToStart {
+        padding: 200px 100px 100px;
+    }
+
+    .fixedFreeDetail .fixedDiv {
+        padding: 0px !important;
+    }
+
+    .findExpert .aboutUs {
         margin-top: 100px;
     }
-    .findExpert .aboutUs .multiBox{
+
+    .findExpert .aboutUs .multiBox {
         justify-content: center;
     }
+
     main .aboutBanner .bannerRight,
-    .expertBanner .bannerRight{
+    .expertBanner .bannerRight {
         display: none;
     }
+
     .paymentHeader {
         height: 350px;
     }
+
     .paymentDiv {
         padding: 200px 100px;
     }
+
     .completed {
         font-size: 14px !important;
         padding: 10px !important;
@@ -3505,8 +3780,9 @@ main .expertBanner .searchBox{
     .expertBanner .expertBannerLeft {
         text-align: center;
     }
-    .expertBanner .expertBannerLeft h3{
-        margin-bottom:40px !important
+
+    .expertBanner .expertBannerLeft h3 {
+        margin-bottom: 40px !important
     }
 
     .mainFixedService .earning .readingItems .commonDiv {
@@ -3871,32 +4147,44 @@ main .expertBanner .searchBox{
 }
 
 @media screen and (max-width: 768px) {
-    .findExpert .multiBtn{
+    .readyToStart .formDiv {
+        max-width: 90%;
+    }
+
+    .findExpert .multiBtn {
         display: flex;
         flex-direction: column;
     }
-    .findExpert .multiBtn a{
+
+    .findExpert .multiBtn a {
         margin: 20px 0px;
         text-align: center;
     }
+
     .findExpert {
         padding: 100px 50px;
     }
+
     .paymentDiv .thankYouPayment h2 {
         font-size: 30px;
     }
-    .thankYouPayment p br{
+
+    .thankYouPayment p br {
         display: none;
     }
-    .thankYouPayment p{
+
+    .thankYouPayment p {
         font-size: 18px;
     }
+
     .paymentDiv .thankYouPayment button {
         font-size: 16px;
     }
+
     .paymentHeader {
         z-index: 999;
     }
+
     .experDetailHeader {
         height: 350px !important;
         z-index: 0 !important;
@@ -4144,18 +4432,52 @@ main .expertBanner .searchBox{
 }
 
 @media screen and (max-width: 580px) {
+    .applyHeader .breadcrum ul {
+        left: -30px;
+        top: 10px;
+        position: relative;
+    }
+    .applyHeader .logo img {
+        left: 0px;
+    }
+    .readyToStart {
+        padding: 150px 20px 100px;
+    }
+    
+    
+    .applyHeader .logo img {
+        width: 200px;
+    }
+
+    .applyHeader {
+
+        flex-direction: column-reverse;
+    }
+
+    .fixedFreeDetail .buyServiceDiv .contentDiv {
+        height: auto;
+    }
+
+    .fixedFreeDetail {
+        padding: 150px 30px 100px !important;
+    }
+
     .findExpert {
         padding: 100px 20px;
     }
+
     .findExpert .aboutUs {
         margin-top: 50px;
     }
+
     .paymentDiv {
         padding: 200px 20px;
     }
+
     .paymentDiv .thankYouPayment {
         padding: 60px 20px;
     }
+
     .relatedService .multiRelatedService .card .cardContent {
         padding: 20px 10px;
     }

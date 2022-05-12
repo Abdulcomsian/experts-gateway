@@ -1,0 +1,4849 @@
+@font-face {
+    font-family: MoskauRegular;
+    src: url("../fonts/MoskauGrotesk.ttf");
+}
+
+@font-face {
+    font-family: MoskauMedium;
+    src: url("../fonts/MoskauGrotesk-Medium.ttf");
+}
+
+@font-face {
+    font-family: MoskauBold;
+    src: url("../fonts/moskau-grotesk-bold.woff.ttf");
+}
+
+@font-face {
+    font-family: GelionLight;
+    src: url("../fonts/Gelion-Light.ttf");
+}
+
+@font-face {
+    font-family: GelionRegular;
+    src: url("../fonts/Gelion-Regular.ttf");
+}
+
+@font-face {
+    font-family: GelionMedium;
+    src: url("../fonts/Gelion-Medium.ttf");
+}
+
+@font-face {
+    font-family: GelionBold;
+    src: url("../fonts/Gelion-Bold.ttf");
+}
+
+.container-fluid {
+    max-width: 1920px;
+}
+
+.desktopHide {
+    display: none !important;
+}
+
+button,
+button:focus,
+select:focus,
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul {
+    list-style: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.commonHeading {
+    font-size: 70px;
+    font-family: MoskauMedium;
+    margin-bottom: 30px;
+}
+
+.commonPara {
+    font-size: 24px !important;
+    font-family: GelionRegular !important;
+
+}
+
+.learnMore {
+    color: #ED2456;
+    font-size: 20px;
+    font-family: MoskauMedium;
+}
+
+header {
+    padding: 40px 70px;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    z-index: 99;
+    background-color: #fff;
+}
+
+header .userDiv {
+    text-align: right;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+header .userDiv div.userProfile {
+    border: 2px solid #2F2F2F;
+    border-radius: 5px;
+    position: relative;
+    width: 77px;
+    float: right;
+    height: 32px;
+    position: relative;
+}
+
+header .userDiv div img {
+    position: absolute;
+    left: 10px;
+    top: 4px;
+}
+
+header .userDiv div .downIcon {
+    position: relative;
+    top: 2px;
+    right: 10px;
+}
+
+header #collapsibleNavbar {
+    justify-content: flex-end;
+}
+
+header #collapsibleNavbar .navbar-nav {
+    align-items: center;
+}
+
+header #collapsibleNavbar .nav-item {
+    padding-left: 50px;
+    font-family: MoskauMedium;
+}
+
+header #collapsibleNavbar .nav-item .nav-link {
+    color: #022331;
+    font-size: 20px;
+}
+
+header .navbar-toggler {
+    border: 2px solid #2F2F2F;
+}
+
+header .navbar-toggler .navbar-toggler-icon {
+    position: relative;
+    top: 4px;
+    color: #ed244d;
+}
+
+main .mainBanner {
+    position: relative;
+    width: 100%;
+}
+
+main .mainBanner .bannerLeft {
+    padding: 310px 70px 0px;
+}
+
+main .mainBanner .bannerLeft h3 {
+    color: #032231;
+    font-size: 30px;
+    font-family: MoskauMedium;
+    margin-bottom: 45px;
+}
+
+main .mainBanner .bannerLeft p {
+    font-size: 55px;
+    color: #032231;
+    font-family: MoskauMedium;
+    margin-bottom: 54px;
+}
+
+main .mainBanner .bannerLeft button {
+    border: 2px solid #03223133;
+    padding: 12px 40px;
+    font-size: 26px;
+    color: #ef1d31;
+    background-color: transparent;
+    font-family: MoskauMedium;
+}
+
+main .mainBanner .bannerRight {
+    height: 100vh;
+}
+
+main .mainBanner .bannerRight img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .mainBanner .clientBox {
+    width: 300px;
+    position: absolute;
+    top: 25%;
+    left: 47%;
+    background: #fff;
+    padding: 30px 35px 0px;
+    box-shadow: 0px 18px 49px #01254814;
+}
+
+main .mainBanner .clientBox .clientDetailBox img {
+    width: 67px;
+    height: 67px;
+    border-radius: 100%;
+}
+
+main .mainBanner .clientBox li {
+    margin-bottom: 35px;
+}
+
+main .mainBanner .searchBox {
+    width: 57%;
+    background: #fff;
+    box-shadow: 0px 18px 49px #01254814;
+    position: absolute;
+    bottom: 5%;
+    left: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+main .mainBanner .searchBox .countryDiv {
+    width: 30%;
+    padding: 50px 60px;
+    border-right: 1px solid #03223133;
+}
+
+main .mainBanner .searchBox div select {
+    width: 90%;
+    border: none;
+    font-size: 24px;
+    font-family: MoskauMedium;
+    color: #032231;
+}
+
+main .mainBanner .searchBox .expertiseDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding: 33px 60px;
+}
+
+main .mainBanner .searchBox .expertiseDiv .btnDiv {
+    width: 40%;
+    text-align: right;
+}
+
+main .mainBanner .searchBox .expertiseDiv .btnDiv button {
+    background: rgb(234, 42, 124);
+    background: linear-gradient(90deg, rgba(234, 42, 124, 1) 0%, rgba(239, 29, 48, 1) 100%);
+    border: none;
+    padding: 10px 30px;
+    font-size: 26px;
+    color: #fff;
+    font-family: MoskauMedium;
+    cursor: pointer;
+}
+
+main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+/************ Our - Services - CSS ***************/
+.ourService,
+.experts {
+    padding: 200px 0px;
+}
+
+.ourService h2,
+.experts h2,
+.fixedService h2 {
+    font-size: 70px;
+    font-family: MoskauMedium;
+    margin-bottom: 37px;
+}
+
+.ourService p,
+.experts p {
+    font-family: GelionRegular;
+    font-size: 24px;
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+    line-height: 39px;
+}
+
+.ourService .sliderDiv,
+.experts .sliderDiv {
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 56px;
+}
+
+.ourService .sliderDiv .serviceBox {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 17px #01254814;
+    opacity: 1;
+    padding: 30px;
+    width: 100%;
+    max-width: 25%;
+    margin: 10px;
+    height: 450px;
+    transition: all .5s;
+    cursor: pointer;
+    position: relative;
+}
+
+.ourService .sliderDiv .serviceBox:hover a,
+.ourService .sliderDiv .serviceBox:hover .border {
+    display: flex;
+}
+
+.ourService .sliderDiv .serviceBox:hover {
+    height: 500px;
+}
+
+.ourService .sliderDiv .serviceBox .border {
+    display: none;
+    height: 6px;
+    width: 100%;
+    background: rgb(239, 29, 48);
+    background: linear-gradient(310deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.ourService .sliderDiv .serviceBox p {
+    max-width: 100%;
+    font-size: 21px;
+    margin-top: 24px;
+    margin-bottom: 37px;
+    color: #49616D;
+}
+
+.ourService .sliderDiv .serviceBox h2 {
+    font-size: 33px;
+    font-family: MoskauMedium;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.ourService .sliderDiv .serviceBox .line {
+    background: #404040 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 0.2;
+    width: 26px;
+    height: 4px;
+    position: absolute;
+    bottom: 5px;
+}
+
+.ourService .sliderDiv .serviceBox a {
+    font-size: 20px;
+    font-family: MoskauMedium;
+    color: #ef1d31;
+    position: absolute;
+    bottom: 40px;
+    display: none;
+    transition: all .5s;
+    align-items: center;
+}
+
+.ourService .sliderDiv .serviceBox a img {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+}
+
+.ourService .sliderDiv .serviceBox .boxHeader {
+    height: 190px;
+    position: relative;
+}
+
+/******** About - Us - CSS ********/
+.aboutUs {
+    background-image: url(../img/aboutUs.png);
+    background-position: center;
+    background-size: cover;
+    padding: 150px 0px;
+}
+
+.aboutUs .multiBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 300px;
+    height: 100%;
+}
+
+.aboutUs .multiBox .commonBox {
+    background: rgb(34, 64, 79);
+    background: linear-gradient(310deg, rgba(34, 64, 79, 1) 0%, rgba(61, 90, 104, 1) 100%, rgba(88, 115, 129, 1) 100%);
+    width: 260px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 17px 49px #00000045;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.aboutUs .multiBox .commonBox h2 {
+    font-size: 70px;
+    color: #fff;
+    font-family: MoskauMedium;
+    margin-bottom: 20px;
+}
+
+.aboutUs .multiBox .commonBox p {
+    font-size: 22px;
+    color: #fff;
+    font-family: MoskauMedium;
+}
+
+.aboutUs .aboutUsContent {
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+    padding: 70px 0px;
+    color: #fff;
+}
+
+.aboutUs .aboutUsContent h5 {
+    font-size: 25px;
+    font-family: MoskauMedium;
+}
+
+.aboutUs .aboutUsContent h2 {
+    font-size: 70px;
+    font-family: MoskauMedium;
+    margin-bottom: 36px;
+}
+
+.aboutUs .aboutUsContent .notes {
+    font-size: 23px;
+    font-family: GelionRegular;
+    padding-left: 27px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.aboutUs .aboutUsContent .notes:before {
+    content: "";
+    width: 4px;
+    background: rgb(239, 29, 48);
+    background: linear-gradient(310deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    position: absolute;
+    position: absolute;
+    left: 0px;
+    height: 95px;
+    top: 10px;
+}
+
+.aboutUs .aboutUsContent p {
+    font-family: GelionLight;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.aboutUs .aboutUsContent a {
+    background: -webkit-linear-gradient(#EF1D30 0%, #ED2456 61%, #EA2A7C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    font-family: MoskauMedium;
+}
+
+/********* Expert - Slider - CSS *********/
+.experts .expertSlider .sliderbox {
+    width: 33.3%;
+    background: #fff;
+    margin: 0px 15px;
+    transition: all .5s;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+.experts .expertSlider .sliderbox:hover {
+    box-shadow: 0px 18px 49px #01254814;
+}
+
+.experts .expertSlider .sliderbox img {
+    width: 100%;
+}
+
+.experts .expertSlider .sliderbox .expertHeader {
+    margin: 15px 0px 0px;
+    text-align: center;
+}
+
+.experts .expertSlider .sliderbox .expertHeader h4 {
+    font-size: 38px;
+    font-family: GelionRegular;
+}
+
+.experts .expertSlider .sliderbox .expertHeader p {
+    font-size: 19px;
+    font-family: GelionRegular;
+}
+
+.experts .expertSlider .sliderbox .line {
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+    opacity: .3;
+}
+
+.experts .expertSlider .sliderbox .expertAbout p {
+    color: #75858D;
+    font-size: 21px;
+    font-family: GelionRegular;
+    text-align: center;
+    max-width: 100%;
+}
+
+.experts .expertSlider .sliderbox .expertAbout p span {
+    color: #032231;
+}
+
+/************* Excellence - CSS ***********/
+.excellence {
+    background-image: url(../img/excellence.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 200px 0px;
+}
+
+.excellence h2 {
+    font-size: 70px;
+    font-family: MoskauMedium;
+    color: #fff;
+    line-height: 80px;
+    margin-bottom: 30px;
+    margin-bottom: 60px;
+}
+
+.excellence a {
+    font-size: 26px;
+    font-family: MoskauMedium;
+    border: 2px solid #ffffff73;
+    opacity: 1;
+    color: #fff;
+    padding: 25px 30px;
+    margin: 0px 10px;
+}
+
+.expertBtn {
+    background: rgb(239, 29, 48);
+    background: linear-gradient(310deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    border: none !important;
+    padding: 28px 30px !important;
+
+}
+
+/********** Fixed - Price - CSS ************/
+.fixedService {
+    padding: 150px 0px;
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+}
+
+.fixedService .sliderDiv {
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 55px;
+}
+
+.fixedService .serviceBox {
+    box-shadow: 0px 0px 8px #01254814;
+    opacity: 1;
+    padding: 40px 15px;
+    width: 33.3%;
+    text-align: center;
+    height: auto;
+    margin: 10px 10px;
+    background-color: #fff;
+}
+
+.fixedService .serviceBox img {
+    margin: auto;
+    display: initial !important;
+}
+
+.fixedService .serviceBox h3 {
+    margin: 30px 0px;
+}
+
+.fixedService .serviceBox .priceDiv {
+    margin-bottom: 33px;
+}
+
+.fixedService .serviceBox .priceDiv p {
+    font-size: 20px;
+    font-family: GelionRegular;
+}
+
+.fixedService .serviceBox .priceDiv p span {
+    font-family: GelionBold;
+}
+
+.fixedService .serviceBox a {
+    background: -webkit-linear-gradient(#EF1D30 0%, #ED2456 61%, #EA2A7C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    font-family: MoskauMedium;
+}
+
+.fixedService .serviceBox a img {
+    margin-left: 10px;
+}
+
+/********** Leatest - News - CSS ************/
+.leatestNews {
+    padding: 170px 0px;
+    overflow: hidden;
+}
+
+.leatestNews .leatesNewContent h2 {
+    font-size: 70px;
+    font-family: MoskauMedium;
+    margin-bottom: 30px;
+}
+
+.leatestNews .leatesNewContent {
+    width: 100%;
+    max-width: 60%;
+    margin-right: 0px !important;
+    margin: auto;
+}
+
+.leatestNews .sliderDiv {
+    position: relative;
+    right: -130px;
+}
+
+.leatestNews .sliderDiv .slick-track {
+    height: 600px;
+}
+
+.leatestNews .leatesNewContent p {
+    font-size: 24px;
+    font-family: GelionRegular;
+}
+
+.leatestNews .newsCard {
+    width: 33%;
+    margin: 0px 25px;
+}
+
+.leatestNews .newsCard .cardContent,
+.blogCard .cardContent {
+    padding: 30px 15px;
+    box-shadow: 0px 18px 49px #01254814;
+}
+
+.leatestNews .newsCard .cardContent .date,
+.blogCard .cardContent .date {
+    border: 2px solid #0322313d;
+    opacity: 1;
+    width: 100%;
+    max-width: 160px;
+    padding: 3px;
+}
+
+.leatestNews .newsCard .cardContent .date p,
+.blogCard .cardContent .date p {
+    font-size: 16px;
+    font-family: MoskauMedium;
+    margin-bottom: 0px !important;
+}
+
+.leatestNews .newsCard .cardContent h4,
+.blogCard .cardContent h4 {
+    font-size: 30px;
+    font-family: MoskauMedium;
+    margin: 20px 0px;
+}
+
+.leatestNews .newsCard .cardContent p,
+.blogCard .cardContent p {
+    color: #49616D;
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-family: GelionRegular;
+}
+
+.leatestNews .newsCard .cardContent a,
+.blogCard .cardContent a {
+    color: #ED2456;
+    font-size: 20px;
+    font-family: MoskauMedium;
+}
+
+.leatestNews .newsCard .cardContent a img,
+.blogCard .cardContent a img {
+    width: auto;
+}
+
+.newsSlider .slick-prev {
+    left: -620px !important;
+}
+
+.newsSlider .slick-next {
+    right: 0px !important;
+    left: -520px;
+}
+
+.newsSlider .slick-slide img {
+    display: initial;
+    width: 100%;
+}
+
+.newsSlider .slick-active:nth-child(3n) {
+    opacity: .3;
+}
+
+/********* Request - Information - CSS **********/
+.requestInformation {
+    padding: 170px;
+    background: #F4F4F4 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.requestInformation .informationContent {
+    padding: 0px 0px 0px 120px;
+}
+
+.requestInformation .informationContent h2 {
+    font-size: 70px;
+    font-family: MoskauMedium;
+    margin-bottom: 30px;
+}
+
+.requestInformation .informationContent .formDiv input,
+.requestInformation .informationContent .formDiv textarea,
+.mainBanner .formDiv textarea,
+.mainBanner .formDiv input {
+    width: 100%;
+    padding: 23px;
+    border: 1px solid #0000000a;
+    margin-bottom: 18px;
+    font-family: MoskauMedium;
+    font-size: 19px;
+}
+
+.requestInformation .informationContent .formDiv button,
+.mainBanner .formDiv button {
+    background: rgb(239, 29, 48);
+    background: linear-gradient(310deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    font-size: 26px;
+    color: #fff !important;
+    padding: 20px 40px;
+    border: none !important;
+    font-family: MoskauMedium;
+}
+
+.requestInformation .imgText {
+    position: relative;
+}
+
+.requestInformation .imgText .imgTextMiddle {
+    position: absolute;
+    top: 44%;
+    left: 40%;
+}
+
+.requestInformation .imgText .imgTextMiddle p {
+    font-size: 26px;
+    font-family: MoskauMedium;
+    color: rgb(239, 29, 48);
+}
+
+/************* Footer - CSS **************/
+footer {
+    background: #032231 0% 0% no-repeat padding-box;
+    padding: 200px 200px 70px;
+    position: relative;
+}
+
+footer .socialList {
+    margin-top: 42px;
+}
+
+footer .socialList ul {
+    display: flex;
+}
+
+footer .socialList ul li {
+    background-image: url(../img/stroke.png);
+    background-size: cover;
+    width: 70px;
+    height: 80px;
+    margin-right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footerWiget h4 {
+    font-size: 24px;
+    color: #fff;
+    font-family: MoskauMedium;
+}
+
+footer .navigationWigets {
+    padding-left: 120px;
+}
+
+footer .navigationList {
+    margin-top: 20px;
+}
+
+footer .navigationList li a {
+    display: block;
+    color: #7C8996;
+    padding-bottom: 10px;
+}
+
+footer hr {
+    margin-top: 120px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    margin-bottom: 60px;
+}
+
+footer .copyRight ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .copyRight ul li {
+    margin: 0px 15px;
+}
+
+footer .copyRight ul li a {
+    font-family: GelionRegular;
+    font-size: 18px;
+    color: #7C8996;
+}
+
+footer .copyRight ul li a span {
+    color: #fff;
+    font-family: GelionBold;
+}
+
+footer .newsLetter {
+    background: #11394C 0% 0% no-repeat padding-box;
+    box-shadow: 0px -25px 65px #0c2f5205;
+    position: absolute;
+    top: -90px;
+    width: 100%;
+    left: 10%;
+    max-width: 80%;
+
+    padding: 40px;
+
+}
+
+footer .newsLetter .newLetterContent p {
+    font-size: 25px;
+    color: #fff;
+    font-family: MoskauMedium;
+}
+
+footer .newsLetter .newLetterContent h2 {
+    font-size: 70px;
+    font-family: MoskauMedium;
+    color: #fff;
+}
+
+footer .newsLetter .formDiv input {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #0000000a;
+    font-family: GelionRegular;
+    font-size: 19px;
+}
+
+footer .newsLetter .formDiv .inputBtn {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+footer .newsLetter .formDiv button {
+    position: absolute;
+    right: 30px;
+    background: transparent;
+    border: none;
+
+}
+
+/************** Contact - Us - CSS **********/
+.contactBanner .bannerLeft,
+.commonBanner .bannerLeft {
+    padding-bottom: 120px !important;
+}
+
+.contactBanner .bannerRight,
+.commonBanner .bannerRight {
+    height: auto !important;
+}
+
+.contactDetail {
+    background: #F4F4F4 0% 0% no-repeat padding-box;
+    padding: 180px 300px;
+}
+
+.contactDetail .contactBox {
+    background: #fff;
+    box-shadow: 0px 18px 49px #01254814;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+
+.contactDetail .contactBox img {
+    margin-right: 40px;
+}
+
+.contactDetail .contactBox p,
+.contactDetail .contactBox a {
+    font-size: 18px;
+    font-family: GelionRegular;
+    color: #11394C;
+}
+
+.contactDetail .contactBox a {
+    text-decoration: underline;
+}
+
+/************** Blog - CSS ******************/
+.blogBanner .bannerLeft h2 {
+    margin-bottom: 65px;
+}
+
+.blogBanner .bannerLeft {
+    padding: 500px 70px 280px !important;
+}
+
+.bolgSection {
+    padding: 100px 90px;
+    background: #f8f9f9;
+}
+
+.bolgSection .selectDiv {
+    width: 15%;
+    display: flex;
+    box-shadow: 0px 18px 49px #01254814;
+    background: #fff;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.bolgSection .selectDiv select {
+    padding: 20px 28px;
+    border: none;
+    font-size: 18px;
+    font-family: Gelionlight;
+    width: 80%;
+}
+
+.bolgSection .selectDiv p {
+    font-size: 18px;
+    font-family: MoskauMedium;
+    width: 30%;
+}
+
+.bolgSection .multiBlog .blogCard img {
+    width: 100%;
+}
+
+.bolgSection .multiBlog .blogCard .cardContent img {
+    width: auto;
+}
+
+.bolgSection .multiBlog {
+    margin-top: 150px !important;
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+}
+
+.bolgSection .blogCard .cardContent h4 {
+    height: 110px;
+}
+
+.bolgSection .blogCard {
+    margin-bottom: 80px;
+    border: 0.4000000059604645px solid #707070;
+    background-color: #fff;
+}
+
+.bolgSection .blogCard .cardContent {
+    box-shadow: none !important;
+}
+
+.bolgSection .paginationDiv .paginationList ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.bolgSection .paginationDiv .paginationList ul li {
+    padding-left: 48px;
+}
+
+.bolgSection .paginationDiv .paginationList ul li a {
+    font-family: Gelionlight;
+    font-size: 33px;
+    color: #032231;
+}
+
+.bolgSection .paginationDiv {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.blogDetailBanner {
+    background-color: #fff;
+    height: 600px;
+}
+
+.blogDetailCard {
+    background: #f8f9f9;
+    height: 950px;
+}
+
+.blogDetailCard .card {
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+    position: absolute;
+    top: -300px;
+    left: 15%;
+}
+
+.blogDetailCard .card .cardContent {
+    padding: 60px 100px;
+}
+
+.blogDetailCard .card .cardContent .dateLikeDiv {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.blogDetailCard .card .cardContent .dateLikeDiv .date {
+    border: 1px solid #e1e4e6;
+    padding: 4px 24px;
+    margin-right: 34px;
+    font-size: 24px;
+    font-family: MoskauMedium;
+}
+
+.blogDetailCard .card .cardContent .dateLikeDiv span {
+    font-size: 20px;
+    font-family: GelionRegular;
+}
+
+.blogDetailCard .card .cardContent .dateLikeDiv span i {
+    color: #95989A;
+    margin-right: 12px;
+}
+
+.blogDetailCard .card .cardContent .postedBy {
+    font-family: GelionRegular;
+    font-size: 20px;
+}
+
+.blogDetailCard .card .cardContent h4 {
+    margin-top: 90px;
+    font-size: 30px;
+    font-family: MoskauMedium;
+    margin-bottom: 50px;
+}
+
+.blogDetailCard .card .cardContent p {
+    color: #707070;
+    font-size: 20px;
+    font-family: GelionRegular;
+}
+
+.relatedService {
+    padding: 100px 0px;
+    background: #F8F9FA 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.relatedService .multiRelatedService {
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 64px;
+}
+
+.relatedService .multiRelatedService .card {
+    box-shadow: 0px 18px 49px #01254814;
+    border: none;
+}
+
+.relatedService .multiRelatedService .card .line {
+    margin: 0px;
+}
+
+.relatedService .multiRelatedService .card .cardContent {
+    padding: 25px;
+    text-align: center;
+}
+
+.relatedService .multiRelatedService .card .cardContent h4 {
+    font-size: 24px;
+    font-family: GelionMedium;
+    margin-bottom: 10px;
+    height: 60px;
+}
+
+.relatedService .multiRelatedService .card .cardContent .tag {
+    font-size: 20px;
+    font-family: GelionRegular;
+    color: #75858D;
+}
+
+.relatedService .multiRelatedService .card .cardContent .line {
+    color: #000;
+    opacity: 30%;
+    margin-bottom: 16px;
+}
+
+.relatedService .multiRelatedService .card .cardContent p {
+    font-size: 18px;
+    font-family: GelionRegular;
+    color: #000;
+    opacity: 67%;
+}
+
+.relatedService .multiRelatedService .card .cardFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.relatedService .multiRelatedService .card .cardFooter h4 {
+    font-size: 47px;
+    color: #626262;
+    font-family: GelionBold;
+    margin-bottom: 0px !important;
+}
+
+.relatedService .multiRelatedService .card .cardFooter h4 span {
+    font-size: 17px;
+    color: #626262;
+    font-family: GelionMedium;
+}
+
+/************** Sub - Header - CSS ************/
+.subHeader h4 {
+    margin-left: 20px;
+    font-size: 55px;
+    font-family: MoskauMedium;
+    margin-top: 40px;
+}
+
+.subHeader {
+    margin-top: 87px;
+}
+
+/************** Order - Section - CSS *********/
+
+.orderSection {
+    padding: 500px 0px 300px;
+    background: #f8f9f9;
+}
+
+.orderSection .tabDiv {
+    width: 100%;
+    max-width: 75%;
+    margin: auto;
+    margin-top: 43px;
+}
+
+.orderSection .tabDiv ul li {
+    padding-right: 70px;
+}
+
+.orderSection .tabDiv ul li.active a {
+    border-bottom: 4px solid #EF1D31;
+    color: #022331;
+    opacity: 1;
+}
+
+.orderSection .tabDiv ul li a {
+    font-size: 30px;
+    font-family: MoskauMedium;
+    display: block;
+    color: #022331;
+    opacity: 0.24;
+}
+
+.orderSection .tabContent {
+    width: 100%;
+    max-width: 75%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.orderSection .orderBox {
+    margin-bottom: 80px;
+}
+
+.orderSection .orderHeader {
+    display: flex;
+    padding: 15px 80px;
+    background: #e8f0ec;
+    align-items: center;
+}
+
+.orderSection .orderHeader .newOrder {
+    font-size: 22px;
+    color: #022331;
+    font-family: GelionMedium;
+    padding-right: 100px;
+}
+
+.orderSection .orderHeader p {
+    padding-right: 100px;
+    font-size: 18px;
+    color: #022331;
+    font-family: GelionMedium;
+}
+
+.orderSection .orderHeader p span {
+    font-family: GelionRegular;
+}
+
+.orderSection .orderContent {
+    padding: 30px 80px 150px;
+    background: #fff;
+    box-shadow: 0px 18px 49px #01254814;
+}
+
+.orderSection .orderContent span {
+    color: #ED2149;
+    font-size: 18px;
+    font-family: GelionMedium;
+}
+
+.orderSection .orderContent h4 {
+    font-size: 24px;
+    color: #032231;
+    font-family: GelionMedium;
+    margin: 5px 0px;
+}
+
+.orderSection .orderContent .tag {
+    font-size: 20px;
+    color: #75858D;
+    font-family: GelionRegular;
+}
+
+.orderSection .orderContent hr {
+    border: none;
+    border-top: 1px dotted;
+}
+
+.orderSection .orderContent .orderDescription {
+    margin-top: 35px;
+}
+
+.orderSection .orderContent .orderDescription p {
+    color: #000000;
+    opacity: 67%;
+    font-size: 18px;
+    font-family: GelionRegular;
+    margin-top: 20px;
+}
+
+.orderSection .orderContent .postedBy {
+    text-align: center;
+}
+
+.orderSection .orderContent .postedBy img {
+    width: 54px;
+    border-radius: 100%;
+    margin-right: 10px;
+    height: 54px;
+}
+
+.orderSection .orderContent .postedBy p {
+    position: relative;
+    left: -40px;
+    font-size: 15px;
+    font-family: GelionRegular;
+}
+
+.orderSection .orderContent .postedBy .userDiv {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.orderSection .orderContent .postedBy .userDiv p {
+    font-size: 22px;
+    font-family: GelionRegular;
+    color: #032231;
+    left: initial;
+    text-align: left;
+}
+
+.orderSection .orderContent .postedBy .userDiv p span {
+    font-size: 14px;
+    font-family: GelionRegular;
+    color: #032231;
+    opacity: 0.51;
+}
+
+.orderSection .orderContent .multiBtn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -100px;
+    width: 100%;
+    left: 0px;
+}
+
+.orderSection .orderContent .multiBtn button {
+    font-size: 22px;
+    font-family: MoskauMedium;
+    padding: 6px 49px;
+    margin-right: 20px;
+    background-color: transparent;
+}
+
+.orderSection .orderContent .multiBtn button.acceptBtn {
+    background: rgb(239, 29, 48);
+    background: linear-gradient(310deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    border: none;
+    color: #fff;
+    padding: 8px 49px;
+}
+
+.orderSection .orderContent .postedBy ul {
+    margin: 40px 0px;
+}
+
+.orderSection .orderContent .postedBy ul li {
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    margin-bottom: 12px;
+}
+
+.orderSection .orderContent .postedBy ul li a {
+    font-size: 15px;
+    font-family: GelionRegular;
+    color: #032231;
+    opacity: 0.8;
+    display: block;
+    width: 40%;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.orderSection .postedBy ul li span i {
+    color: #032231;
+    opacity: 0.8;
+}
+
+.orderSection .postedBy .chatText {
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.orderSection .postedBy .chatText img {
+    width: 22px;
+}
+
+.markedCompleted {
+    width: 100%;
+    max-width: 80%;
+    position: absolute;
+    bottom: -80px;
+    font-size: 22px;
+    left: 20%;
+    background: rgb(239, 29, 48);
+    background: linear-gradient(310deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    border: none;
+    color: #fff;
+    padding: 15px 49px;
+    cursor: pointer;
+}
+
+#current_order .orderHeader {
+    background: #F7F7F7 0% 0% no-repeat padding-box;
+    opacity: 1;
+    position: relative;
+}
+
+#completed .orderHeader {
+    background: #f0f0f0;
+}
+
+/*********** Profile - CSS ************/
+.profileHeader {
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+}
+
+.profileDiv {
+    background: #F6F7F8;
+    padding: 450px 100px 200px;
+}
+
+.profileDiv h5 {
+    color: #EE2143;
+    font-size: 30px;
+    font-family: MoskauMedium;
+}
+
+.profileBox {
+    box-shadow: 0px 17px 49px #00000029;
+    margin-top: 50px;
+    background: #FAFAFA;
+}
+
+.profileBox .profileBoxHeader {
+    padding: 100px 0px 140px;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+}
+
+.profileBox .profileBoxHeader .uploadCover p {
+    position: absolute;
+    top: 13%;
+    left: 9%;
+    font-size: 26px;
+    font-family: MoskauMedium;
+}
+
+.profileBox .profileBoxHeader .uploadCover input {
+    opacity: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 999999;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.profileBox .profileBoxHeader .uploadCover {
+    width: 100%;
+    max-width: 303px;
+    margin: auto;
+    border: 2px solid #d9d9d9;
+    position: relative;
+}
+
+.profileBox .profileBoxHeader .profileAvatar {
+    margin-top: 40px;
+    position: absolute;
+    left: 45%;
+    bottom: -25%;
+}
+
+.profileBox .profileFormDiv {
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+    padding: 180px 0px;
+}
+
+.profileBox .profileFormDiv .inputDiv {
+    margin-bottom: 16px;
+}
+
+.profileBox .profileFormDiv .inputDiv input,
+.profileBox .profileFormDiv .inputDiv select,
+.multiSelect .select2-container {
+    border: 1px solid #0000000a;
+    background-color: #fff;
+    padding: 25px;
+    border: none;
+    width: 100% !important;
+    font-size: 19px;
+    color: #5D6D75;
+    font-family: MoskauMedium;
+}
+
+.profileBox .profileFormDiv .inputDiv .iti--allow-dropdown {
+    width: 100%;
+}
+
+.profileBox .profileFormDiv .inputDiv .iti--separate-dial-code .iti__selected-flag {
+    background-color: transparent;
+    box-shadow: 0px 6px 16px #03223108;
+    opacity: 1;
+}
+
+#phone {
+    padding-left: 100px !important;
+}
+
+.line {
+    width: 100%;
+    margin: 80px 0px;
+    text-align: center;
+}
+
+.line img {
+    width: 100%;
+}
+
+.profileBox .aboutProfile {
+    padding: 35px;
+    border: 1px solid #0000000a;
+    background-color: #fff;
+}
+
+.profileBox .aboutProfile p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    letter-spacing: 0.27px;
+    color: #000000;
+    opacity: 0.67;
+    font-family: GelionRegular;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default .select2-selection--multiple {
+    border: none !important;
+}
+
+.profileBox .multiSelect {
+    position: relative;
+}
+
+.profileBox .multiSelect .imgDiv {
+    position: absolute;
+    right: 20px;
+    top: 28px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background: #F4F4F4 0% 0% no-repeat padding-box !important;
+    border: none !important;
+    font-size: 18px !important;
+    font-family: GelionRegular;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    border: none !important;
+}
+
+.profileBox .profileFormDiv h5 {
+    font-size: 18px;
+    font-family: GelionMedium;
+    color: #000;
+    margin-bottom: 36px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    padding-left: initial !important;
+    padding-right: 20px !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    left: initial !important;
+    right: 0px;
+}
+
+.profileBox .profileFormDiv button {
+    padding: 14px 63px;
+    border: none;
+    float: right;
+    margin-top: 50px;
+    background: rgb(239, 29, 48);
+    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    color: #fff;
+    font-size: 26px;
+    font-family: MoskauMedium;
+}
+
+/************ Phone & Contact - CSS *******/
+.unanswerdDiv,
+.answereDiv {
+    margin-top: 90px;
+    box-shadow: 0px 17px 49px #00000029;
+    background: #fff;
+    padding: 90px 80px 150px;
+}
+
+.unanswerdDiv h4,
+.answereDiv h4 {
+    font-size: 40px;
+    font-family: MoskauMedium;
+}
+
+.unanswerdDiv .questionDiv {
+    margin-top: 70px;
+}
+
+.unanswerdDiv .questionDiv span,
+.accordiansDiv span {
+    font-size: 18px;
+    font-family: GelionMedium;
+    color: #000;
+    opacity: 47%;
+}
+
+.unanswerdDiv .questionDiv p {
+    font-size: 30px;
+    font-family: MoskauMedium;
+    margin-top: 26px;
+}
+
+.unanswerdDiv .questionDiv .question p {
+    font-size: 20px;
+    font-family: GelionRegular;
+    color: #707070;
+}
+
+.unanswerdDiv span.commonSpan {
+    border: 1px solid #ededed;
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    padding: 5px;
+    margin-right: 15px;
+    position: relative;
+    top: 25px;
+    color: #676C71;
+    opacity: 1;
+}
+
+.postAnswere {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 16px #03223108;
+    border: 1px solid #0000000D;
+    opacity: 1;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.postAnswere textarea {
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    font-family: MoskauMedium;
+    opacity: 40%;
+    padding: 45px 25px;
+}
+
+.postAnswere button,
+.formBtn {
+    padding: 14px 63px;
+    border: none;
+    float: right;
+    margin-top: 50px;
+    background: rgb(239, 29, 48);
+    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    color: #fff;
+    font-size: 26px;
+    font-family: MoskauMedium;
+}
+
+.accordiansDiv .card-header button,
+.accordiansDiv .card-header button:hover,
+.accordiansDiv .card-header button:focus {
+    padding: 0px;
+    font-size: 30px;
+    font-family: MoskauMedium;
+    color: #032231;
+    display: initial;
+    white-space: inherit;
+    text-align: left;
+    text-decoration: none;
+}
+
+.accordiansDiv .card-header {
+    background-color: transparent;
+    border: none;
+    padding: 10px 0px;
+    margin-top: 25px;
+}
+
+.accordiansDiv .card {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.accordiansDiv .card .card-body {
+    padding: 20px 0px;
+}
+
+.answereDiv .accordiansDiv .card .card-body p {
+    color: #707070;
+    font-size: 20px;
+    font-family: GelionRegular;
+}
+
+.answereBox {
+    border: 2px solid #e8e8e8;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.answereBox .boxHeader .profileAnswereDiv {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.answereBox .boxHeader .profileAnswereDiv img {
+    width: 55px;
+    margin-right: 15px;
+}
+
+.answereBox .boxHeader .profileAnswereDiv h4 {
+    font-size: 26px;
+    font-family: MoskauMedium;
+}
+
+.answereBox .boxHeader .profileAnswereDiv p {
+    font-size: 10px;
+}
+
+.answereBox .boxHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.answereBox .boxHeader button {
+    width: 150px;
+    height: 45px;
+    font-size: 23px;
+    font-family: MoskauMedium;
+    border: 1px solid #c1c1c1;
+    background-color: transparent;
+}
+
+.answereBox .questioner {
+    margin-top: 45px;
+    margin-left: 70px;
+}
+
+.answereBox .questioner p {
+    margin-bottom: 20px;
+}
+
+.callRequest {
+    margin-top: 90px;
+    box-shadow: 0px 17px 49px #00000029;
+    background: #fff;
+    height: 96.7%;
+}
+
+.callRequest .callContent .requestBox .profileRequestDiv {
+    display: flex;
+    align-items: center;
+}
+
+.callRequest .header {
+    background: #F7F7F7 0% 0% no-repeat padding-box;
+    opacity: 1;
+    padding: 25px 35px;
+}
+
+.callRequest .header p {
+    font-size: 18px;
+    font-family: GelionMedium;
+}
+
+.callRequest .callContent {
+    padding: 35px 40px;
+}
+
+.callRequest .callContent .requestBox .profileRequestDiv img {
+    margin-right: 10px;
+}
+
+.callRequest .callContent .requestBox .profileRequestDiv h4 {
+    font-size: 22px;
+    font-family: GelionRegular;
+}
+
+.callRequest .callContent .requestBox .profileRequestDiv p {
+    font-size: 14px;
+    font-family: GelionRegular;
+    color: #000;
+    opacity: 50%;
+}
+
+.callRequest .callContent .requestBox .contactDiv {
+    margin-left: 60px;
+    margin-top: 25px;
+}
+
+.callRequest .callContent .requestBox .contactDiv p {
+    font-size: 14px;
+    font-family: GelionRegular;
+    color: #000;
+    opacity: 80%;
+    margin-bottom: 15px;
+}
+
+.callRequest .callContent .messageBox {
+    border: 2px solid hsl(0deg 0% 90%);
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+.callRequest .callContent .messageBox p {
+    font-size: 18px;
+    font-family: GelionRegular;
+    color: #000;
+    opacity: 80%;
+    margin-bottom: 15px;
+}
+
+.callRequest .callContent .requestBox {
+    border-bottom: 1px solid hsl(0deg 0% 18% / 23%);
+    padding: 45px 0px;
+}
+
+/********** Fixed - Service - CSS ************/
+.fixedServiceDiv {
+    width: 100%;
+    max-width: 90%;
+    margin: auto;
+    margin-top: 110px;
+    box-shadow: 0px 17px 49px #00000029;
+    background: #fff;
+}
+
+.fixedServiceDiv .banner {
+    position: relative;
+}
+
+.fixedServiceDiv .banner img {
+    width: 100%;
+}
+
+.fixedServiceDiv .banner .tagLine {
+    background-color: hsl(345deg 85% 54% / 40%);
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.fixedServiceDiv .banner .tagLine .textDiv p {
+    font-size: 26px;
+    color: #fff;
+    font-family: GelionMedium;
+}
+
+.fixedServiceDiv .banner .tagLine .textDiv span {
+    font-size: 21px;
+    color: #D3D3D3;
+    font-family: GelionRegular;
+    font-size: 20px;
+}
+
+.fixedServiceDiv .banner .tagLine .priceText h4 {
+    font-size: 60px;
+    font-family: GelionBold;
+    color: #fff;
+}
+
+.fixedServiceDiv .banner .tagLine .priceText h4 span {
+    font-family: GelionRegular;
+    font-size: 20px;
+}
+
+.fixedServiceDiv .operationDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 65px;
+}
+
+.fixedServiceDiv .multiOption {
+    display: flex;
+    align-items: center;
+}
+
+.fixedServiceDiv .operationDiv p {
+    font-size: 22px;
+    font-family: GelionMedium;
+    color: #606060;
+    opacity: 72%;
+}
+
+.fixedServiceDiv .operationDiv .multiOption span {
+    border: 1px solid #d8dde1;
+    display: block;
+    width: 145px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 9px;
+    margin-left: 20px;
+    font-size: 24px;
+    font-family: MoskauMedium;
+    color: #000;
+    cursor: pointer;
+}
+
+.fixedServiceDiv .contentDiv {
+    padding: 0px 65px 65px;
+}
+
+.fixedServiceDiv .contentDiv p {
+    font-size: 18px;
+    font-family: GelionRegular;
+    color: #000;
+    opacity: 67%;
+}
+
+.fixedServiceDiv .contentDiv h4 {
+    font-size: 18px;
+    font-family: GelionMedium;
+    margin-bottom: 25px;
+}
+
+.fixedServiceDiv .contentDiv ul li::before {
+    content: "\2022";
+    color: #ED2456;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.fixedServiceDiv .contentDiv ul {
+    margin-left: 20px;
+}
+
+.fixedServiceDiv .contentDiv ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: GelionRegular;
+}
+
+.createFixedService,
+.mainFixedService .earning {
+    padding: 100px 150px;
+    box-shadow: 0px 17px 49px #00000029;
+    background: #fff;
+    margin-top: 50px;
+}
+
+.mainFixedService {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+}
+
+.mainFixedService .relatedService .multiRelatedService {
+    max-width: 100%;
+}
+
+.createFixedService h4 {
+    font-size: 40px;
+    font-family: MoskauMedium;
+    color: #000;
+}
+
+.createFixedService .formDiv {
+    margin-top: 46px;
+}
+
+.createFixedService .formDiv .inputDiv {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.createFixedService .formDiv .inputDiv input,
+.createFixedService .formDiv .inputDiv textarea {
+    border: 1px solid #0000000a;
+    background-color: #fff;
+    padding: 25px;
+    border: none;
+    width: 100% !important;
+    font-size: 19px;
+    color: #5D6D75;
+    font-family: MoskauMedium;
+    box-shadow: 0px 6px 16px #03223108;
+    opacity: 1;
+    width: 100%;
+}
+
+.createFixedService .formDiv .inputDiv span {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    font-size: 18px;
+    color: #5D6D75;
+    opacity: 47%;
+    font-family: MoskauMedium;
+}
+
+.createFixedService .formDiv .inputDiv select {
+    background-color: #fff;
+    padding: 25px;
+    border: none;
+    width: 50% !important;
+    font-size: 19px;
+    color: #5D6D75;
+    font-family: MoskauMedium;
+    box-shadow: 0px 6px 16px #03223108;
+    opacity: 1;
+}
+
+.createFixedService .formDiv .uploadDiv {
+    text-align: right;
+}
+
+.createFixedService .formDiv .uploadDiv input {
+    max-width: 60%;
+    float: right !important;
+    box-shadow: none !important;
+    opacity: 0;
+    position: absolute;
+    right: 0px;
+    z-index: 999999;
+    cursor: pointer;
+
+}
+
+.createFixedService .formDiv .uploadDiv p {
+    position: relative;
+    border: 2px solid hsl(0deg 0% 0% / 15%);
+    font-size: 26px;
+    font-family: MoskauMedium;
+    color: #022331;
+    padding: 12px 0px;
+    width: 100%;
+    max-width: 60%;
+    margin-right: 0px !important;
+    margin: auto;
+    text-align: center;
+
+}
+
+.mainFixedService .relatedService .multiRelatedService .line {
+    margin: 20px 0px !important;
+}
+
+/*********** Earning - CSS *************/
+.mainFixedService .earning .opertionDiv .availableBalance {
+    padding-left: 45px;
+}
+
+.mainFixedService .earning .opertionDiv {
+    margin-left: 60%;
+}
+
+.mainFixedService .earning .opertionDiv h4,
+.mainFixedService .earning .readingItems .commonDiv h4 {
+    font-size: 60px;
+    font-family: MoskauMedium;
+    color: #000000;
+}
+
+.mainFixedService .earning .opertionDiv p {
+    font-family: MoskauMedium;
+    font-size: 18px;
+    color: #519526;
+}
+
+.mainFixedService .earning .opertionDiv .multiBtn {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.mainFixedService .earning .opertionDiv .multiBtn span {
+    border: 2px solid hsl(0deg 0% 0% / 15%);
+    font-size: 22px;
+    font-family: MoskauMedium;
+    color: #022331;
+    padding: 5px 25px;
+    margin-left: 17px;
+}
+
+.mainFixedService .earning .readingItems {
+    margin-top: 45px;
+}
+
+.mainFixedService .earning .readingItems .commonDiv {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid rgb(112 112 112 / 37%);
+    padding: 35px;
+}
+
+.mainFixedService .earning .readingItems .commonDiv p {
+    font-size: 18px;
+    color: #ED2456;
+    font-family: MoskauMedium;
+}
+
+.mainFixedService .earning .graphDiv {
+    border: 1px solid rgb(112 112 112 / 35%);
+    padding: 50px;
+}
+
+.mainFixedService .earning .graphDiv .graphHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainFixedService .earning .graphDiv .graphHeader select {
+    font-size: 22px;
+    font-family: MoskauMedium;
+    padding: 5px 15px;
+}
+
+.mainFixedService .earning .graphDiv .graphHeader .reading h4 {
+    font-size: 22px;
+    font-family: MoskauMedium;
+    color: #022331;
+}
+
+.mainFixedService .earning .graphDiv .graphHeader .reading p {
+    color: #7C828A;
+    font-size: 18px;
+    font-family: MoskauMedium;
+}
+
+/****************** Blog - CSS ***************/
+.commonCard .blogDetailCard .card {
+    max-width: 100%;
+    position: relative;
+    top: initial;
+    left: initial;
+}
+
+.commonCard .blogDetailCard {
+    margin-top: 50px;
+    height: auto;
+    margin-bottom: 100px;
+}
+
+.commonCard .blogDetailCard .card .cardContent .dateLikeDiv {
+    justify-content: space-between;
+}
+
+.commonCard .blogDetailCard .card .cardContent .dateLikeDiv .dateLike {
+    display: flex;
+    align-items: center;
+}
+
+.commonCard .blogDetailCard .card .cardContent .editDiv p {
+    border: 1px solid #032231;
+    padding: 6px 48px;
+    font-size: 22px;
+    font-family: MoskauMedium;
+    color: #000;
+}
+
+.blogDetailCard .card .cardContent .postedBy b {
+    color: #000;
+}
+
+/************** Create Blog - CSS **************/
+.createBlog .formDiv .uploadDiv p {
+    margin-right: initial !important;
+    margin: initial;
+    width: 40%;
+}
+
+.createBlog .formDiv .uploadDiv input {
+    right: initial;
+    left: 0px;
+    width: 40%;
+}
+
+.mainFixedService .bolgSection {
+    padding: 100px 0px;
+}
+
+.mainFixedService .bolgSection .multiBlog {
+    max-width: 100%;
+    margin-top: 0px !important;
+}
+
+.mainFixedService .bolgSection .multiBlog h4 {
+    margin-bottom: 80px;
+}
+
+/************* Edit - Profile - CSS ************/
+.profileDiv .editBar {
+    display: flex;
+    align-items: center;
+}
+
+.profileDiv .editBar span {
+    margin-left: 25px;
+    padding: 10px 30px;
+    font-size: 26px;
+    font-family: MoskauMedium;
+    color: #022331;
+    border: 2px solid hsl(0deg 0% 0% / 15%);
+}
+
+.profileDiv .editProfileBox {
+    margin-top: 45px;
+}
+
+.profileDiv .editProfileBox .profileImg img {
+    width: 100%;
+}
+
+.profileDiv .editProfileBox .editProfile {
+    position: relative;
+    padding: 100px 50px;
+    box-shadow: 0px 6px 16px #03223108;
+    background: #fff;
+}
+
+.profileDiv .editProfileBox .editProfile .userDetail {
+    position: absolute;
+    top: -30px;
+    display: flex;
+    align-items: center;
+    left: 6%;
+}
+
+.profileDiv .editProfileBox .editProfile .userDetail h4 {
+    font-size: 30px;
+    font-family: MoskauMedium;
+    color: #022331;
+}
+
+.profileDiv .editProfileBox .editProfile .userDetail p {
+    font-size: 14px;
+    font-family: MoskauMedium;
+    color: #022331;
+}
+
+.profileDiv .editProfileBox .editProfile .avatar {
+    position: relative;
+    top: -50px;
+}
+
+.profileDiv .editProfileBox .editProfile .line {
+    margin: 40px 0px;
+}
+
+.profileDiv .editProfileBox .editProfile .listDiv ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 60%;
+}
+
+.profileDiv .editProfileBox .editProfile .listDiv ul li {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.profileDiv .editProfileBox .editProfile .listDiv ul li span {
+    color: #848484;
+    font-size: 16px;
+    font-family: GelionRegular;
+}
+
+.profileDiv .editProfileBox .editProfile .listDiv ul li .imgDiv {
+    width: 13%;
+}
+
+.profileDiv .editProfileBox .editProfile .editProfileContent h4 {
+    font-family: GelionMedium;
+    font-size: 18px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.profileDiv .editProfileBox .editProfile .editProfileContent p {
+    font-family: GelionRegular;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/*************** Register - CSS ****************/
+.registerAuthBox .inputDiv input {
+    box-shadow: 0px 6px 16px #03223108;
+}
+
+.registerAuthBox .inputDiv .iti--separate-dial-code .iti__selected-flag {
+    background-color: transparent;
+    opacity: 1;
+    width: 100%;
+    justify-content: center;
+}
+
+.registerAuthBox .inputDiv .iti--allow-dropdown .iti__flag-container,
+.iti--separate-dial-code .iti__flag-container {
+    width: 100%;
+}
+
+.registerAuthBox .applyForMembership {
+    text-align: right;
+}
+
+.registerAuthBox .applyForMembership button {
+    color: #000 !important;
+    margin-left: 40px;
+}
+
+main .mainBanner .registerAuthRightBox {
+    height: 100%;
+}
+
+/************* Your - Order - CSS ***********/
+.titleBanner {
+    background-color: #fff;
+    margin-top: 350px;
+    padding: 0px 100px 30px;
+}
+
+.titleBanner h4 {
+    font-size: 55px;
+    font-family: MoskauMedium;
+}
+
+.yourOrderSection {
+    padding: 0px;
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 70px;
+    padding-bottom: 200px;
+}
+
+.postOrderText {
+    font-size: 24px;
+    font-family: GelionMedium;
+    color: #000;
+    opacity: 45%;
+    margin-bottom: 40px;
+}
+
+.completed {
+    font-size: 24px !important;
+    font-family: GelionMedium !important;
+    color: #50774D !important;
+    position: absolute;
+    right: 0px;
+    text-transform: uppercase;
+}
+
+/************** Expert - Detail - CSS *************/
+.experDetailHeader {
+    height: 600px;
+}
+
+.expertDetailProfile .editProfileBox {
+    position: relative;
+    top: -180px;
+    z-index: 9998;
+}
+
+.expertDetailProfile {
+    padding: 450px 250px 200px;
+}
+
+.recentQuestionDiv,
+.recentBlog {
+    padding: 50px;
+    box-shadow: 0px 6px 16px #03223108;
+    background-color: #fff;
+    position: relative;
+    top: -100px;
+    margin-bottom: 80px;
+}
+
+.recentQuestionDiv h4,
+.recentBlog h4 {
+    font-size: 18px;
+}
+
+.recentQuestionDiv img,
+.recentBlog img {
+    margin-right: 15px;
+}
+
+.recentQuestionDiv .accordiansDiv .card-header button {
+    font-size: 16px;
+    color: #ED2456;
+    font-family: GelionRegular;
+}
+
+.recentQuestionDiv .accordiansDiv .card-header {
+    padding-bottom: 30px;
+}
+
+.recentBlog .bolgSection {
+    padding: 0px;
+    background-color: transparent;
+    margin-top: 60px;
+}
+
+.recentBlog .bolgSection .blogCard {
+    margin: 0px 10px;
+    height: auto;
+}
+
+.recentBlog .blogCard .cardContent h4 {
+    font-size: 18px;
+}
+
+.recentBlog .blogCard .cardContent p {
+    font-size: 14px;
+}
+
+.recentBlog .blogCard .cardContent a {
+    font-size: 16px;
+}
+
+.recentBlog .blogCard .cardContent a img,
+.freeServicesSlider .relatedService .multiRelatedService .card .learnMore img {
+    width: 14px;
+    display: initial;
+}
+
+.recentBlog .slick-prev {
+    left: initial !important;
+    right: 100px !important;
+    top: -65px;
+}
+
+.recentBlog .slick-next {
+    right: 0px !important;
+    top: -65px;
+}
+
+.recentBlog .bolgSection .blogCard .cardContent h4 {
+    height: 60px;
+}
+
+.freeServicesSlider .relatedService {
+    padding: 0px;
+}
+
+.freeServicesSlider .relatedService .multiRelatedService {
+    max-width: 100%;
+}
+
+.freeServicesSlider .relatedService .multiRelatedService .card {
+    height: auto;
+    background: #fff;
+    margin: 0px 10px;
+}
+
+.freeServicesSlider .relatedService .multiRelatedService .card img {
+    width: 100%;
+}
+
+/*************** Expert - Detail - CSS ************/
+.expertDetailProfile .hireDiv {
+    position: relative;
+    z-index: 999;
+    background: #FFFFFF;
+    top: -140px;
+    box-shadow: 0px 6px 16px #03223108;
+    opacity: 1;
+    padding: 80px 40px;
+}
+
+.expertDetailProfile .hireDiv ul li {
+    margin-bottom: 20px;
+    border: 1px solid #707070;
+    padding: 15px;
+}
+
+.expertDetailProfile .hireDiv ul li span {
+    font-size: 18px;
+    font-family: GelionRegular;
+    margin-left: 15px;
+}
+
+.expertDetailProfile .hireDiv .btnDiv button {
+    margin-top: 100px;
+    padding: 5px 63px;
+    border: none;
+    background: rgb(239, 29, 48);
+    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    color: #fff;
+    font-size: 26px;
+    font-family: MoskauMedium;
+}
+
+/****************** Payment - CSS ****************/
+.paymentHeader {
+    height: 600px;
+}
+
+.paymentDiv {
+    padding: 350px;
+    position: relative;
+    background-color: #f0f2f4;
+
+}
+
+.thankYouPayment {
+    z-index: 9999;
+    position: relative;
+    background: #fff;
+    box-shadow: 0px 6px 16px #03223108;
+    padding: 120px;
+}
+
+.thankYouPayment h2 {
+    font-size: 55px;
+    font-family: MoskauMedium;
+    margin-bottom: 70px;
+}
+
+.thankYouPayment h2 span {
+    color: #ED2149;
+}
+
+.thankYouPayment p {
+    font-family: GelionRegular;
+    font-size: 22px;
+    color: #000;
+    opacity: 67%;
+    margin-bottom: 40px;
+}
+
+.thankYouPayment button {
+    border: 2px solid #000000;
+    opacity: 1;
+    padding: 15px 40px;
+    font-family: MoskauMedium;
+    font-size: 26px;
+    background-color: transparent;
+}
+
+/**************** About - Us - CSS ****************/
+.mainBanner .aboutUsLeft h3,
+.expertBanner .expertBannerLeft h3,
+.fixedBanner .fixedBannerLeft h3 {
+    font-size: 55px !important;
+    font-family: MoskauMedium;
+    margin-bottom: 85px !important;
+}
+
+.mainBanner .aboutUsLeft {
+    padding-top: 410px !important;
+}
+
+.mainBanner .aboutUsLeft h3 span {
+    color: #ED2149;
+}
+
+.mainBanner .aboutUsLeft p {
+    font-size: 50px !important;
+    margin-bottom: 0px !important;
+}
+
+.findExpert {
+    background-color: #E0E5E8;
+    padding: 250px 200px;
+}
+
+.findExpert p {
+    font-size: 24px;
+    font-family: GelionRegular;
+    margin-bottom: 40px;
+}
+
+.findExpert a {
+    padding: 20px;
+    font-size: 26px;
+    font-family: MoskauMedium;
+    margin-right: 20px;
+}
+
+.findExpert .applyMemberShip {
+    border: 1px solid #707070;
+    color: #000;
+}
+
+.findExpert .findExpertBtn {
+    background: rgb(239, 29, 48);
+    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    color: #fff;
+}
+
+.findExpert .aboutUs {
+    background-image: none;
+    padding: 0px;
+}
+
+.findExpert .aboutUs .multiBox {
+    padding-left: 150px;
+}
+
+.findExpert .aboutUs .multiBox .commonBox p {
+    margin-bottom: 0px;
+}
+
+.findExpert .aboutUs .multiBox .active {
+    background: rgb(239, 29, 48);
+    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+}
+
+/***************** Experts - CSS ****************/
+.expertBanner .expertBannerLeft p {
+    font-size: 24px !important;
+    font-family: GelionRegular !important;
+}
+
+main .expertBanner .searchBox {
+    bottom: 28%;
+}
+
+.multiBlog .expertCard {
+    margin-bottom: 80px;
+}
+
+.multiBlog .expertCard .cardContet {
+    box-shadow: 0px 18px 49px #01254814;
+    background: #fff;
+    padding: 20px 30px;
+}
+
+.multiBlog .expertCard img {
+    width: 100%;
+}
+
+.multiBlog .expertCard .cardContet .line {
+    margin: 20px 0px;
+}
+
+.multiBlog .expertCard .cardContet .rating {
+    margin-bottom: 30px;
+}
+
+.multiBlog .expertCard .cardContet .rating i {
+    color: #EFD232;
+}
+
+.multiBlog .expertCard .cardContet .rating span {
+    color: #848484;
+}
+
+.multiBlog .expertCard .cardContet .cardBody,
+.multiBlog .expertCard .cardContet .cardFooter {
+    text-align: center;
+}
+
+.multiBlog .expertCard .cardContet .cardBody h3 {
+    font-size: 38px;
+    font-family: GelionRegular;
+}
+
+.multiBlog .expertCard .cardContet .cardBody p {
+    font-size: 18px;
+    font-family: GelionRegular;
+}
+
+.multiBlog .expertCard .cardContet .cardFooter p {
+    color: #75858D;
+    font-size: 20px;
+    font-family: GelionRegular;
+}
+
+.multiBlog .expertCard .cardContet .cardFooter p span {
+    color: #000;
+}
+
+/**************** Fixed - Free - CSS ***************/
+.fixedBanner .fixedBannerLeft h3 span {
+    color: #ED2149;
+}
+
+.fixedBanner .searchBox {
+    bottom: 20% !important;
+}
+
+.freeServiceSection .selectDiv {
+    width: 20%;
+}
+
+.freeRelatedService .multiRelatedService {
+    max-width: 80%;
+}
+
+.freeRelatedService .multiRelatedService .card {
+    margin-bottom: 50px;
+}
+
+/*************** Fixed - Free - Detail - CSS **********/
+.fixedFreeDetail {
+    background-color: #f6f7f8;
+    padding: 450px 100px 200px;
+}
+
+.fixedFreeDetail .profileDiv {
+    padding: 0px;
+}
+
+.fixedFreeDetail .buyServiceDiv {
+    margin-top: 100px;
+    height: 90%;
+    box-shadow: 0px 18px 49px #01254814;
+}
+
+.fixedFreeDetail .buyServiceDiv .header {
+    background-color: #F7F7F7;
+    padding: 30px;
+}
+
+.fixedFreeDetail .buyServiceDiv .header p {
+    font-family: GelionMedium;
+    font-size: 18px;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv {
+    background: #fff;
+    height: 100%;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation {
+    margin-left: 10px;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation h4 {
+    font-size: 22px;
+    font-family: GelionRegular;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation p {
+    color: #032231;
+    font-family: GelionRegular;
+    font-size: 14px;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .priceDiv h4 {
+    color: #777777;
+    font-size: 35px;
+    font-family: GelionBold;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv ul li .priceDiv h4 span {
+    font-size: 12px;
+    font-family: GelionMedium;
+}
+
+.fixedFreeDetail .buyServiceDiv .contentDiv .line {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/********** Apply - CSS ***********/
+.applyHeader {
+    display: flex;
+    align-items: center;
+}
+
+.applyHeader .breadcrum {
+    width: 10%;
+}
+
+.applyHeader .logo {
+    width: 90%;
+    text-align: center;
+}
+.applyHeader .logo img{
+    position: relative;
+    left: -100px;
+}
+
+.applyHeader .breadcrum ul {
+    display: flex;
+}
+
+.applyHeader .breadcrum ul li {
+    font-size: 20px;
+    font-family: MoskauMedium;
+    margin-right: 5px;
+}
+
+.applyHeader .breadcrum ul li.active {
+    color: #ED2456;
+}
+
+.readyToStart {
+    padding: 350px 100px 100px;
+    text-align: center;
+    background-image: url(../img/backLayer.png);
+    background-position: bottom right;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.readyToStart .formDiv {
+    margin: 40px 0px;
+    text-align: left;
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+}
+
+.readyToStart .formDiv .inputDiv {
+    margin-bottom: 35px;
+}
+
+.readyToStart .formDiv .inputDiv input {
+    border: 2px solid #E5E8EA;
+    opacity: 1;
+    width: 100%;
+    padding: 23px;
+    margin-bottom: 18px;
+    font-family: MoskauMedium;
+    font-size: 18px;
+}
+
+.readyToStart .formDiv .inputDiv label {
+    font-size: 20px;
+    font-family: GelionBold;
+}
+
+.readyToStart .formDiv .btnDiv {
+    text-align: center;
+}
+
+.readyToStart .formDiv .btnDiv button {
+    float: initial;
+}
+
+
+
+
+
+
+
+
+.slick-prev:before,
+.slick-next:before {
+    content: "" !important;
+    opacity: 1 !important;
+}
+
+.experts .expertSlider .slick-slide {
+    height: auto !important;
+}
+
+.experts .expertSlider .slick-track {
+    height: 70% !important;
+}
+
+.slick-prev {
+    background-image: url(../img/leftIcon.png) !important;
+    width: 70px !important;
+    height: 70px !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    left: -150px !important;
+}
+
+.slick-next {
+    background-image: url(../img/rightIcon.png) !important;
+    width: 70px !important;
+    height: 70px !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    right: -150px !important;
+}
+
+
+@media screen and (max-width: 1800px) {
+    main .mainBanner .searchBox {
+        width: 70%;
+    }
+
+    main .mainBanner .bannerLeft p {
+        font-size: 45px;
+    }
+
+    .mainFixedService .earning {
+        padding: 100px;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .applyHeader .logo img {
+        left: -80px;
+    }
+    .readyToStart .formDiv .inputDiv {
+        margin-bottom: 20px;
+    }
+
+    .readyToStart .formDiv .inputDiv input {
+        padding: 18px;
+    }
+
+    .fixedFreeDetail .buyServiceDiv .contentDiv ul li {
+        padding: 20px;
+    }
+
+    .findExpert .aboutUs .multiBox {
+        padding-left: 100px;
+    }
+
+
+    .mainBanner .aboutUsLeft h3 {
+        font-size: 45px !important;
+        margin-bottom: 40px !important;
+    }
+
+    .findExpert p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+
+    .mainBanner .aboutUsLeft p {
+        font-size: 40px !important;
+    }
+
+    .paymentDiv {
+        padding: 350px 200px;
+    }
+
+    .paymentDiv .thankYouPayment {
+        padding: 120px 60px;
+    }
+
+    .paymentDiv .thankYouPayment h2 {
+        font-size: 40px;
+    }
+
+    .paymentDiv .thankYouPayment button {
+        font-size: 20px;
+    }
+
+    .recentBlog .bolgSection .blogCard .cardContent h4 {
+        height: 80px;
+        font-size: 20px;
+    }
+
+    .yourOrderSection {
+        padding: 0px !important;
+        padding-bottom: 200px !important;
+    }
+
+    .titleBanner {
+        margin-top: 250px;
+    }
+
+    .commonCard .blogDetailCard .card .cardContent .editDiv p {
+        padding: 5px 30px;
+        font-size: 16px;
+    }
+
+    .mainFixedService .earning .opertionDiv .multiBtn {
+        text-align: left;
+    }
+
+    .mainFixedService .earning .opertionDiv .multiBtn span {
+        margin-left: 0px;
+        margin-right: 20px;
+    }
+
+    .mainFixedService .earning .opertionDiv {
+        margin-left: 45%;
+    }
+
+    .mainFixedService .earning .opertionDiv .availableBalance {
+        padding-left: 0px;
+    }
+
+    .mainFixedService .earning .opertionDiv h4,
+    .mainFixedService .earning .readingItems .commonDiv h4 {
+        font-size: 45px;
+    }
+
+    .fixedServiceDiv .operationDiv .multiOption span {
+        width: 120px;
+        padding: 3px;
+        font-size: 18px;
+    }
+
+    .profileDiv {
+        padding: 350px 100px 200px;
+    }
+
+    .profileBox .profileBoxHeader .uploadCover p {
+        top: 16%;
+        left: 16%;
+        font-size: 22px;
+    }
+
+    .orderSection .tabDiv ul li {
+        padding-right: 50px;
+    }
+
+    .subHeader {
+        margin-top: 50px;
+    }
+
+    .subHeader h4,
+    .titleBanner h4 {
+        font-size: 35px;
+    }
+
+    .orderSection {
+        padding: 400px 0px 300px;
+    }
+
+    .relatedService .multiRelatedService {
+        max-width: 80%;
+    }
+
+    .bolgSection .selectDiv p,
+    .applyMemberShip,
+    .findExpert a {
+        font-size: 14px !important;
+    }
+
+    .orderSection .orderHeader p {
+        padding-right: 70px;
+    }
+
+    .mainFixedService .earning .readingItems .commonDiv {
+        padding: 18px;
+    }
+
+    .bolgSection .selectDiv select,
+    .orderSection .orderHeader p,
+    .markedCompleted,
+    .profileBox .profileFormDiv .inputDiv input,
+    .profileBox .profileFormDiv .inputDiv select,
+    .multiSelect .select2-container,
+    .createFixedService .formDiv .uploadDiv p,
+    .mainFixedService .earning .opertionDiv p,
+    .mainFixedService .earning .opertionDiv .multiBtn span,
+    .mainFixedService .earning .readingItems .commonDiv p,
+    .mainFixedService .earning .graphDiv .graphHeader select,
+    .profileDiv .editBar span,
+    .expertDetailProfile .hireDiv ul li span {
+        font-size: 16px;
+    }
+
+    .orderSection .orderContent .postedBy ul li {
+        margin-left: 0px;
+    }
+
+    .markedCompleted {
+        max-width: 75%;
+        padding: 15px 0px;
+    }
+
+    .bolgSection .paginationDiv .paginationList ul li a,
+    .orderSection .tabDiv ul li a,
+    .orderSection .orderHeader .newOrder,
+    .profileBox .profileFormDiv button,
+    .expertDetailProfile .hireDiv .btnDiv button {
+        font-size: 20px;
+    }
+
+    .expertDetailProfile .hireDiv .btnDiv button {
+        margin-top: 50px;
+    }
+
+    .bolgSection .paginationDiv .paginationList ul li img {
+        width: 40px;
+    }
+
+    .bolgSection .selectDiv {
+        width: 20%;
+    }
+
+    .completed {
+        font-size: 18px !important;
+    }
+
+    .blogBanner .bannerLeft {
+        padding: 400px 70px 0px !important;
+    }
+
+    .requestInformation .informationContent {
+        padding: 0px 0px 0px 80px;
+    }
+
+    .leatestNews .newsCard {
+        margin: 0px 15px;
+    }
+
+    .excellence {
+        padding: 150px 0px;
+    }
+
+    .experts .expertSlider .sliderbox .expertHeader h4 {
+        font-size: 28px;
+    }
+
+    .experts .expertSlider .sliderbox .expertHeader p,
+    .experts .expertSlider .sliderbox .expertAbout p {
+        font-size: 16px;
+    }
+
+    .aboutUs .multiBox {
+        padding-left: 250px;
+    }
+
+    .ourService h2,
+    .aboutUs .multiBox .commonBox h2,
+    .aboutUs .aboutUsContent h2,
+    .experts h2,
+    .excellence h2,
+    .fixedService h2,
+    .leatestNews .leatesNewContent h2,
+    .requestInformation .informationContent h2,
+    footer .newsLetter .newLetterContent h2,
+    .commonHeading {
+        font-size: 50px;
+    }
+
+    .ourService p,
+    .experts p,
+    .excellence a,
+    .leatestNews .leatesNewContent p,
+    .requestInformation .informationContent .formDiv button,
+    .requestInformation .imgText .imgTextMiddle p,
+    footer .newsLetter .newLetterContent p,
+    .relatedService .multiRelatedService .card .cardContent h4,
+    .postAnswere button,
+    .formBtn {
+        font-size: 20px;
+    }
+
+    .commonPara,
+    .expertBanner .expertBannerLeft p {
+        font-size: 20px !important;
+    }
+
+    .newsSlider .slick-next {
+        left: -420px;
+    }
+
+    .newsSlider .slick-prev {
+        left: -530px !important;
+    }
+
+    .answereBox .boxHeader button {
+        width: 120px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .ourService .sliderDiv .serviceBox h2,
+    .leatestNews .newsCard .cardContent h4,
+    .bolgSection .blogCard .cardContent h4,
+    .blogDetailCard .card .cardContent h4,
+    .unanswerdDiv .questionDiv p,
+    .accordiansDiv .card-header button,
+    .profileDiv .editProfileBox .editProfile .userDetail h4 {
+        font-size: 24px;
+    }
+
+    .ourService .sliderDiv .serviceBox p,
+    .aboutUs .multiBox .commonBox p,
+    .blogDetailCard .card .cardContent p,
+    .relatedService .multiRelatedService .card .cardContent .tag,
+
+    .fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation h4 {
+        font-size: 18px;
+    }
+
+    .blogDetailCard {
+        height: 800px;
+    }
+
+    .relatedService .multiRelatedService .card .cardFooter h4 {
+        font-size: 35px;
+    }
+
+    .ourService .sliderDiv .serviceBox a,
+    .leatestNews .newsCard .cardContent p,
+    .leatestNews .newsCard .cardContent a,
+    .mainBanner .formDiv input,
+    .mainBanner .formDiv textarea,
+    .blogCard .cardContent p,
+    .blogCard .cardContent a,
+    .blogDetailCard .card .cardContent .dateLikeDiv span,
+    .blogDetailCard .card .cardContent .postedBy,
+    .relatedService .multiRelatedService .card .cardContent p,
+    .learnMore {
+        font-size: 16px;
+    }
+
+    .ourService .sliderDiv .serviceBox a img {
+        width: 12px;
+        height: 12px;
+    }
+
+    main .mainBanner .searchBox {
+        width: 60%;
+        bottom: 5%;
+    }
+
+    main .mainBanner .clientBox {
+        width: 250px;
+    }
+
+    main .mainBanner .clientBox .clientDetailBox img {
+        width: 40px;
+        height: 40px;
+    }
+
+    main .mainBanner .bannerLeft h3 {
+        font-size: 20px;
+    }
+
+    main .mainBanner .bannerLeft p {
+        font-size: 35px;
+    }
+
+    main .mainBanner .bannerLeft button {
+        padding: 7px 20px;
+        font-size: 18px;
+    }
+
+    main .mainBanner .searchBox div select,
+    .blogDetailCard .card .cardContent .dateLikeDiv .date,
+    .orderSection .orderContent .multiBtn button {
+        font-size: 18px;
+    }
+
+    main .mainBanner .searchBox .expertiseDiv .btnDiv button {
+        font-size: 14px;
+        position: relative;
+        right: -40px;
+    }
+
+    main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
+        width: 14px;
+    }
+
+    main .mainBanner .searchBox .countryDiv {
+        padding: 28px;
+    }
+
+    main .mainBanner .searchBox .expertiseDiv {
+        padding: 0px 60px;
+    }
+
+    header #collapsibleNavbar .nav-item {
+        padding-left: 20px;
+    }
+
+    header .navbar-brand {
+        width: 250px;
+    }
+
+    header #collapsibleNavbar .nav-item .nav-link,
+    .createFixedService .formDiv .inputDiv input,
+    .createFixedService .formDiv .inputDiv textarea {
+        font-size: 16px;
+    }
+
+    header #collapsibleNavbar .nav-item .nav-link img {
+        width: 18px;
+    }
+
+    header .userDiv div.userProfile {
+        width: 60px;
+    }
+
+    header .userDiv div img {
+        width: 14px;
+    }
+
+    header .userDiv div.userProfile {
+        height: 27px;
+    }
+
+    header .userDiv div .downIcon {
+        top: 0px;
+        right: 8px;
+    }
+
+    main .mainBanner .bannerLeft {
+        padding: 310px 90px 0px;
+    }
+
+    footer .socialList ul li {
+        width: 55px;
+        height: 65px;
+    }
+
+    .contactDetail {
+        padding: 150px 200px;
+    }
+
+    .contactDetail .contactBox p,
+    .contactDetail .contactBox a {
+        font-size: 14px;
+    }
+
+    .relatedService .multiRelatedService .card .cardContent .line,
+    .fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation p {
+        font-size: 12px;
+    }
+
+    .unanswerdDiv h4,
+    .answereDiv h4,
+    .createFixedService h4 {
+        font-size: 30px;
+    }
+
+    .fixedFreeDetail .buyServiceDiv .contentDiv ul li .priceDiv h4 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .readyToStart {
+        padding: 250px 100px 100px;
+    }
+    
+    
+    .applyHeader .logo img {
+        left: -50px;
+    }
+    
+    
+    .applyHeader .logo img {
+        width: 300px;
+    }
+
+    .readyToStart .formDiv .inputDiv label,
+    .readyToStart .formDiv .inputDiv input {
+        font-size: 14px;
+    }
+
+    .fixedFreeDetail .buyServiceDiv .contentDiv ul li {
+        padding: 10px;
+    }
+
+    .fixedFreeDetail {
+        padding: 250px 80px 100px;
+    }
+
+    .expertBanner .expertBannerLeft p br {
+        display: none;
+    }
+
+    .mainBanner .aboutUsLeft {
+        padding-top: 280px !important;
+    }
+
+    .mainBanner .aboutUsLeft p {
+        font-size: 30px !important;
+    }
+
+    .paymentDiv .thankYouPayment {
+        padding: 60px 60px;
+    }
+
+    .expertBanner .expertBannerLeft h3 {
+        font-size: 40px !important;
+    }
+
+    .registerAuthBox {
+        padding-bottom: 50px !important;
+    }
+
+    .registerAuthBox .applyForMembership {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .line {
+        margin: 40px 0px;
+    }
+
+    .profileBox .profileBoxHeader .profileAvatar {
+        left: 45%;
+    }
+
+    .createFixedService {
+        padding: 100px 100px;
+    }
+
+    .orderSection .tabContent,
+    .orderSection .tabDiv,
+    .mainFixedService {
+        max-width: 90%;
+    }
+
+    .bolgSection .selectDiv {
+        width: 23%;
+    }
+
+    .blogBanner .bannerLeft {
+        padding: 280px 70px 0px !important;
+    }
+
+    .blogBanner .bannerLeft p br {
+        display: none;
+    }
+
+    .contactDetail .contactBox {
+        padding: 50px 15px;
+    }
+
+    .contactDetail {
+        padding: 150px;
+    }
+
+    .contactDetail .contactBox img {
+        margin-right: 20px;
+    }
+
+    footer .navigationWigets {
+        padding-left: 60px;
+    }
+
+    .leatestNews .sliderDiv {
+        right: -80px;
+    }
+
+    .newsSlider .slick-next {
+        left: -320px;
+    }
+
+    .newsSlider .slick-prev {
+        left: -430px !important;
+    }
+
+    .leatestNews .sliderDiv .slick-track {
+        height: 550px;
+    }
+
+    .leatestNews {
+        padding: 120px 0px;
+        overflow: hidden;
+    }
+
+    .expertBtn {
+        padding: 20px 30px !important;
+    }
+
+    .excellence a {
+        padding: 18px 30px;
+    }
+
+    .experts {
+        padding: 150px 0px;
+    }
+
+    .aboutUs .multiBox {
+        padding-left: 200px;
+    }
+
+    .aboutUs .aboutUsContent .notes {
+        font-size: 20px;
+    }
+
+    .aboutUs .aboutUsContent .notes:before {
+        height: 75px;
+    }
+
+    .aboutUs .aboutUsContent a {
+        font-size: 18px;
+    }
+
+    .aboutUs .multiBox .commonBox {
+        width: 200px;
+        height: 150px;
+    }
+
+    .ourService .sliderDiv {
+        max-width: 80%;
+    }
+
+    .slick-prev {
+        left: -100px !important;
+    }
+
+    .slick-next {
+        right: -100px !important;
+    }
+
+    main .mainBanner .bannerLeft {
+        padding: 250px 80px 0px;
+    }
+
+    main .mainBanner .searchBox {
+        left: 6%;
+    }
+
+    .requestInformation .imgText .imgTextMiddle p,
+    .applyHeader .breadcrum ul li {
+        font-size: 16px;
+    }
+
+    .requestInformation .informationContent {
+        padding: 0px 0px 0px 50px;
+    }
+
+    .mainFixedService .earning .readingItems .commonDiv p,
+    .registerAuthBox .applyForMembership button {
+        font-size: 14px !important;
+    }
+
+    .mainFixedService .earning {
+        padding: 100px 60px;
+    }
+
+    .profileDiv .editProfileBox .editProfile .listDiv ul {
+        max-width: 90%;
+    }
+
+    .findExpert {
+        padding: 200px 100px;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    .fixedFreeDetail {
+        padding: 250px 30px 100px;
+    }
+
+    .multiBlog .expertCard .cardContet .cardBody h3 {
+        font-size: 24px
+    }
+
+    .findExpert .aboutUs .multiBox {
+        padding-left: 0px;
+    }
+
+
+    .paymentDiv {
+        padding: 350px 100px;
+    }
+
+    .profileDiv {
+        padding: 350px 50px 200px;
+    }
+
+    .profileBox .profileBoxHeader .profileAvatar {
+        left: 42%;
+    }
+
+    .orderSection .orderContent .multiBtn button {
+        font-size: 14px;
+    }
+
+    .blogDetailCard .card .cardContent {
+        padding: 60px;
+    }
+
+    .blogDetailCard {
+        height: 750px;
+    }
+
+    .bolgSection .multiBlog {
+        max-width: 100%;
+    }
+
+    .bolgSection .blogCard .cardContent h4 {
+        font-size: 20px;
+    }
+
+    .bolgSection .blogCard .cardContent h4 {
+        height: 80px;
+    }
+
+    .bolgSection .selectDiv {
+        width: 26%;
+    }
+
+    .contactDetail {
+        padding: 150px 40px;
+    }
+
+    footer {
+        padding: 200px 100px 70px;
+    }
+
+    footer .socialList ul li {
+        width: 40px;
+        height: 45px;
+    }
+
+    footer .socialList ul li img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .requestInformation .informationContent {
+        padding: 0px;
+    }
+
+    .newsSlider .slick-next {
+        left: -250px;
+    }
+
+    .newsSlider .slick-prev {
+        left: -370px !important;
+    }
+
+    .leatestNews .leatesNewContent h2,
+    .requestInformation .informationContent h2 {
+        font-size: 40px;
+    }
+
+    .aboutUs {
+        padding: 100px 0px;
+    }
+
+    .aboutUs .aboutUsContent h2 {
+        font-size: 30px;
+    }
+
+    .aboutUs .aboutUsContent h5 {
+        font-size: 18px;
+    }
+
+    .aboutUs .aboutUsContent .notes,
+    .aboutUs .aboutUsContent p,
+    .aboutUs .aboutUsContent a,
+    .requestInformation .informationContent .formDiv button,
+    .multiBlog .expertCard .cardContet .cardFooter p {
+        font-size: 16px;
+    }
+
+    .aboutUs .aboutUsContent .notes:before {
+        height: 65px;
+        top: 5px;
+    }
+
+    .aboutUs .multiBox {
+        padding-left: 100px;
+    }
+
+    main .mainBanner .searchBox {
+        left: 4%;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    header #collapsibleNavbar .nav-item .nav-link,
+    .requestInformation .imgText .imgTextMiddle p,
+    .requestInformation .informationContent .formDiv input,
+    .requestInformation .informationContent .formDiv textarea,
+    .multiBlog .expertCard .cardContet .cardBody p {
+        font-size: 14px;
+    }
+
+    main .mainBanner .bannerLeft {
+        padding: 250px 30px 0px;
+    }
+
+
+    main .mainBanner .searchBox {
+        width: 80%;
+    }
+
+    .orderSection .orderContent .postedBy ul li a {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .applyHeader {
+        padding: 20px;
+    }
+
+    .readyToStart {
+        padding: 200px 100px 100px;
+    }
+
+    .fixedFreeDetail .fixedDiv {
+        padding: 0px !important;
+    }
+
+    .findExpert .aboutUs {
+        margin-top: 100px;
+    }
+
+    .findExpert .aboutUs .multiBox {
+        justify-content: center;
+    }
+
+    main .aboutBanner .bannerRight,
+    .expertBanner .bannerRight {
+        display: none;
+    }
+
+    .paymentHeader {
+        height: 350px;
+    }
+
+    .paymentDiv {
+        padding: 200px 100px;
+    }
+
+    .completed {
+        font-size: 14px !important;
+        padding: 10px !important;
+
+        top: 80px;
+
+    }
+
+    .mainFixedService .earning .opertionDiv {
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    .mainFixedService .earning .opertionDiv .multiBtn,
+    .mainBanner .aboutUsLeft,
+    .expertBanner .expertBannerLeft {
+        text-align: center;
+    }
+
+    .expertBanner .expertBannerLeft h3 {
+        margin-bottom: 40px !important
+    }
+
+    .mainFixedService .earning .readingItems .commonDiv {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .createFixedService {
+        padding: 50px;
+    }
+
+    .mainFixedService {
+        max-width: 100%;
+    }
+
+    .createFixedService .formDiv .inputDiv select {
+        width: 100% !important;
+    }
+
+    .fixedServiceDiv .operationDiv .multiOption span {
+        width: 90px;
+        font-size: 14px;
+    }
+
+    .fixedDiv {
+        padding: 300px 50px 200px !important;
+    }
+
+    .fixedServiceDiv {
+        max-width: 100%;
+    }
+
+    .fixedServiceDiv .banner .tagLine {
+        padding: 15px 30px;
+    }
+
+    .profileDiv {
+        padding: 300px 100px 200px;
+    }
+
+    .profileBox .profileBoxHeader .profileAvatar {
+        left: 40%;
+    }
+
+    .profileBox .profileBoxHeader .uploadCover p {
+        top: 19%;
+        left: 10%;
+        font-size: 20px;
+    }
+
+    .profileBox .profileBoxHeader .uploadCover {
+        width: 100%;
+        max-width: 230px;
+    }
+
+    .markedCompleted {
+        max-width: 35%;
+        left: 0px;
+        padding: 10px 0px;
+    }
+
+    .orderSection .orderContent .postedBy {
+        text-align: left;
+        margin-top: 50px;
+    }
+
+    .orderSection .orderContent .postedBy p {
+        left: 0px !important;
+    }
+
+    .orderSection .orderContent .postedBy ul li {
+        justify-content: flex-start;
+    }
+
+    .orderSection .orderHeader {
+        padding: 15px 40px;
+    }
+
+    .orderSection .orderContent {
+        padding: 30px 40px 150px;
+    }
+
+    .orderSection {
+        padding: 300px 0px 300px;
+    }
+
+    .orderSection .orderContent .postedBy .userDiv {
+        justify-content: flex-start;
+    }
+
+    .relatedService .multiRelatedService .card {
+        margin-bottom: 50px;
+    }
+
+    .blogDetailCard .card {
+        top: -200px;
+    }
+
+    .bolgSection .paginationDiv {
+        margin-top: 0px;
+        max-width: 100%;
+
+    }
+
+    .bolgSection .paginationDiv .paginationList ul {
+        justify-content: center;
+    }
+
+    .bolgSection .selectDiv {
+        width: 35%;
+    }
+
+    .blogBanner .bannerLeft {
+        text-align: center;
+    }
+
+    .contactDetail .contactBox {
+        margin-bottom: 30px;
+    }
+
+    .contactBanner .bannerRight,
+    .commonBanner .bannerRight,
+    main .mainBanner .registerAuthRightBox {
+        display: none;
+    }
+
+    .contactBanner .bannerLeft,
+    .commonBanner .bannerLeft {
+        position: relative !important;
+        top: initial;
+        left: initial !important;
+        padding: 230px 0px 0px !important;
+    }
+
+    .commonBanner .bannerLeft {
+        padding-bottom: 120px !important;
+    }
+
+    .contactBanner .bannerLeft .row,
+    .commonBanner .bannerLeft .row {
+        height: initial !important;
+    }
+
+    .contactBanner,
+    .contactBanner .container-fluid,
+    .contactBanner .container-fluid .row,
+    .commonBanner,
+    .commonBanner .container-fluid,
+    .commonBanner .container-fluid .row,
+    .registerBanner .container-fluid,
+    .registerBanner .container-fluid .row,
+    .registerBanner {
+        height: auto !important;
+    }
+
+    .registerAuthBox .applyForMembership {
+        justify-content: flex-end;
+    }
+
+    .registerAuthBox .iti--allow-dropdown {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .registerAuthBox .iti--allow-dropdown input {
+        margin-bottom: 20px;
+    }
+
+    .registerAuthBox {
+        position: relative !important;
+    }
+
+    footer .navigationWigets {
+        padding-left: 0px;
+    }
+
+    footer .socialList ul {
+        justify-content: center;
+    }
+
+    footer .newsLetter .newLetterContent,
+    footer .footerWiget {
+        text-align: center;
+    }
+
+    footer .footerWiget {
+        margin: 20px 0px;
+    }
+
+    .requestInformation .imgText .imgTextMiddle p {
+        font-size: 24px;
+    }
+
+    .requestInformation .informationContent {
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .requestInformation {
+        padding: 120px 20px;
+    }
+
+    .newsSlider .slick-next {
+        left: initial !important;
+        right: -50px !important;
+    }
+
+    .newsSlider .slick-prev {
+        left: -50px !important;
+    }
+
+    .leatestNews .sliderDiv {
+        right: initial;
+        position: initial;
+        width: 100%;
+        max-width: 70%;
+        margin: auto;
+    }
+
+    .leatestNews .leatesNewContent {
+        margin-right: auto !important;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .fixedService {
+        padding: 100px 0px;
+    }
+
+    .aboutUs .aboutUsContent .notes:before {
+        height: 40px;
+    }
+
+    .aboutUs .row {
+        flex-direction: column-reverse;
+    }
+
+    main .mainBanner .searchBox {
+        position: relative;
+        width: 100%;
+        left: 0%;
+        bottom: 0%;
+        margin-top: 100px;
+    }
+
+    .mobileHide {
+        display: none !important;
+    }
+
+    main .mainBanner .searchBox.desktopHide {
+        display: flex !important;
+    }
+
+    main .mainBanner {
+        height: 100vh;
+        width: 100%;
+    }
+
+    main .mainBanner .container-fluid {
+        width: 100%;
+        height: 100%;
+    }
+
+    main .mainBanner .container-fluid .row {
+        height: 100%;
+    }
+
+    main .mainBanner .container-fluid .bannerRight img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    main .mainBanner .row,
+    main .mainBanner .bannerRight img {
+        height: auto;
+    }
+
+    main .mainBanner .clientBox {
+        display: none;
+    }
+
+    main .mainBanner .bannerLeft {
+        padding: 230px 40px 0px;
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        left: 0px;
+    }
+
+    header #collapsibleNavbar .nav-item {
+        padding-left: 5px;
+    }
+
+    header .navbar {
+        padding: 0px;
+    }
+
+    header #collapsibleNavbar .nav-item .nav-link,
+    .fixedServiceDiv .banner .tagLine .textDiv span,
+    .fixedServiceDiv .banner .tagLine .priceText h4 span {
+        font-size: 12px;
+    }
+
+    .ourService {
+        padding: 150px 0px;
+    }
+
+    .fixedServiceDiv .operationDiv {
+        padding: 40px;
+    }
+
+    .fixedServiceDiv .contentDiv {
+        padding: 0px 40px 40px;
+    }
+
+    .ourService h2,
+    .experts h2,
+    .fixedService h2,
+    .excellence h2,
+    footer .newsLetter .newLetterContent h2,
+    .commonHeading,
+    .fixedServiceDiv .banner .tagLine .priceText h4 {
+        font-size: 40px;
+    }
+
+    footer {
+        padding: 200px 0px 70px;
+    }
+
+    footer .copyRight ul li a {
+        font-size: 12px;
+    }
+
+    .ourService p,
+    .experts p {
+        max-width: 90%;
+        font-size: 16px;
+    }
+
+    .slick-prev,
+    .slick-next {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .slick-prev {
+        left: -50px !important;
+    }
+
+    .slick-next {
+        right: -50px !important;
+    }
+
+    .blogDetailBanner {
+        height: 400px !important;
+    }
+
+    .fixedServiceDiv .banner .tagLine .textDiv p,
+    .fixedServiceDiv .operationDiv p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .readyToStart .formDiv {
+        max-width: 90%;
+    }
+
+    .findExpert .multiBtn {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .findExpert .multiBtn a {
+        margin: 20px 0px;
+        text-align: center;
+    }
+
+    .findExpert {
+        padding: 100px 50px;
+    }
+
+    .paymentDiv .thankYouPayment h2 {
+        font-size: 30px;
+    }
+
+    .thankYouPayment p br {
+        display: none;
+    }
+
+    .thankYouPayment p {
+        font-size: 18px;
+    }
+
+    .paymentDiv .thankYouPayment button {
+        font-size: 16px;
+    }
+
+    .paymentHeader {
+        z-index: 999;
+    }
+
+    .experDetailHeader {
+        height: 350px !important;
+        z-index: 0 !important;
+    }
+
+    .yourOrderSection {
+        max-width: 90%;
+    }
+
+    .titleBanner {
+        margin-top: 150px !important;
+        padding: 0px 20px 30px;
+    }
+
+    .createFixedService,
+    .mainFixedService .earning .graphDiv {
+        padding: 50px 20px;
+    }
+
+    .createFixedService h4 {
+        font-size: 22px;
+    }
+
+    .ourService h2,
+    .experts h2,
+    .fixedService h2,
+    .excellence h2,
+    footer .newsLetter .newLetterContent h2,
+    .commonHeading,
+    .fixedServiceDiv .banner .tagLine .priceText h4 {
+        font-size: 30px;
+    }
+
+
+    .unanswerdDiv,
+    .answereDiv {
+        padding: 50px 40px 150px;
+    }
+
+    .profileDiv {
+        padding: 300px 50px 200px;
+    }
+
+    .line {
+        margin: 40px 0px;
+    }
+
+    .profileBox .profileBoxHeader .profileAvatar {
+        left: 38%;
+    }
+
+    .orderSection .orderContent .postedBy {
+        text-align: left;
+        margin-top: 50px;
+    }
+
+    .orderSection .orderContent .postedBy p {
+        left: 0px;
+    }
+
+    .orderSection .orderContent h4 br {
+        display: none;
+    }
+
+    .orderSection {
+        padding: 300px 0px 100px;
+    }
+
+    .orderSection .orderHeader .newOrder,
+    .orderSection .orderHeader p {
+        padding-right: 0px;
+    }
+
+    .orderSection .orderHeader {
+        justify-content: space-between;
+    }
+
+    .blogDetailCard .card {
+        max-width: 90%;
+        left: 5%;
+    }
+
+    .blogDetailCard .card .cardContent h4 {
+        margin-top: 50px;
+    }
+
+    .blogDetailCard .card .cardContent {
+        padding: 60px 30px;
+    }
+
+    .bolgSection {
+        padding: 100px 40px;
+    }
+
+    .bolgSection .selectDiv {
+        width: 70%;
+    }
+
+    main .contactBanner .bannerLeft,
+    main .commonBanner .bannerLeft {
+        padding: 150px 0px 0px !important;
+    }
+
+    main .commonBanner .bannerLeft {
+        padding-bottom: 120px !important;
+    }
+
+    .contactDetail .contactBox {
+        display: block;
+        text-align: center;
+        padding: 20px 15px;
+    }
+
+    .contactDetail .contactBox img {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+
+    .excellence h2 {
+        line-height: 50px;
+    }
+
+    .fixedService .sliderDiv,
+    .leatestNews .sliderDiv {
+        max-width: 80%;
+    }
+
+    footer .newsLetter {
+        padding: 20px 0px;
+    }
+
+    footer .copyRight ul {
+        display: block;
+        text-align: center;
+    }
+
+    .requestInformation .imgText .imgTextMiddle p {
+        font-size: 15px;
+    }
+
+    .aboutUs .aboutUsContent .notes:before {
+        height: 65px;
+    }
+
+    .aboutUs .aboutUsContent {
+        padding: 0px;
+        padding-bottom: 70px;
+    }
+
+    main .mainBanner .bannerLeft {
+        padding: 230px 40px 0px;
+    }
+
+    header .navbar-brand {
+        padding: 0px 10px;
+    }
+
+    header #collapsibleNavbar .nav-item .nav-link {
+        color: #fff;
+        padding: 15px;
+    }
+
+    main .mainBanner .searchBox .expertiseDiv .btnDiv {
+        width: 100%;
+    }
+
+    header {
+        z-index: 99999999999999;
+        padding: 20px 0px;
+    }
+
+    header .userDiv {
+        display: none;
+    }
+
+    header .navbar-toggler {
+        padding: 3px 10px;
+        margin-right: 10px;
+    }
+
+    header #collapsibleNavbar {
+        background: rgb(234, 42, 124);
+        background: linear-gradient(90deg, rgba(234, 42, 124, 1) 0%, rgba(239, 29, 48, 1) 100%);
+    }
+
+    header #collapsibleNavbar .navbar-nav {
+        align-items: initial;
+    }
+
+    .experts {
+        padding: 100px 0px;
+    }
+
+    .experts .expertSlider .sliderbox .expertHeader h4,
+    .unanswerdDiv h4,
+    .answereDiv h4 {
+        font-size: 24px;
+    }
+
+    .leatestNews .leatesNewContent {
+        max-width: 90%;
+    }
+
+    .leatestNews .newsCard .cardContent h4,
+    .unanswerdDiv .questionDiv p,
+    .accordiansDiv .card-header button,
+    .postAnswere button,
+    .postAnswere textarea,
+    .formBtn {
+        font-size: 18px;
+    }
+
+    .leatestNews .newsCard .cardContent .date {
+        max-width: 120px;
+    }
+
+    .bolgSection .selectDiv p,
+    .unanswerdDiv .questionDiv span,
+    .accordiansDiv span,
+    .answereDiv .accordiansDiv .card .card-body p {
+        font-size: 14px;
+    }
+
+    .leatestNews .newsCard .cardContent .date p {
+        font-size: 12px;
+    }
+
+    .relatedService .multiRelatedService {
+        max-width: 90%;
+    }
+
+    .subHeader nav {
+        justify-content: flex-end;
+        margin-right: 40px;
+    }
+
+    .answereBox .boxHeader .profileAnswereDiv h4 {
+        font-size: 20px;
+    }
+
+    .unanswerdDiv,
+    .answereDiv {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .applyHeader .breadcrum ul {
+        left: -30px;
+        top: 10px;
+        position: relative;
+    }
+    .applyHeader .logo img {
+        left: 0px;
+    }
+    .readyToStart {
+        padding: 150px 20px 100px;
+    }
+    
+    
+    .applyHeader .logo img {
+        width: 200px;
+    }
+
+    .applyHeader {
+
+        flex-direction: column-reverse;
+    }
+
+    .fixedFreeDetail .buyServiceDiv .contentDiv {
+        height: auto;
+    }
+
+    .fixedFreeDetail {
+        padding: 150px 30px 100px !important;
+    }
+
+    .findExpert {
+        padding: 100px 20px;
+    }
+
+    .findExpert .aboutUs {
+        margin-top: 50px;
+    }
+
+    .paymentDiv {
+        padding: 200px 20px;
+    }
+
+    .paymentDiv .thankYouPayment {
+        padding: 60px 20px;
+    }
+
+    .relatedService .multiRelatedService .card .cardContent {
+        padding: 20px 10px;
+    }
+
+    .experDetailHeader {
+        height: 300px !important;
+        z-index: 0 !important;
+    }
+
+
+    .registerAuthBox .applyForMembership span,
+    .registerAuthBox .applyForMembership button {
+        font-size: 10px !important;
+    }
+
+    main .mainBanner .registerAuthBox {
+        padding: 200px 0px 50px !important;
+    }
+
+    .profileDiv .editProfileBox .editProfile .listDiv ul {
+        max-width: 100%;
+    }
+
+    .recentQuestionDiv,
+    .recentBlog {
+        padding: 50px 20px;
+    }
+
+    .recentQuestionDiv h4,
+    .recentBlog h4 {
+        font-size: 14px;
+    }
+
+    .recentBlog .slick-next,
+    .recentBlog .slick-prev {
+        top: -30px;
+    }
+
+    .recentBlog .slick-prev {
+        right: 60px !important;
+    }
+
+
+
+    .profileDiv .editProfileBox .editProfile .listDiv ul li span {
+        font-size: 10px;
+    }
+
+    .profileDiv .editProfileBox .editProfile {
+        padding: 100px 20px;
+    }
+
+    .profileDiv .editProfileBox .editProfile .avatar {
+        position: relative;
+        top: -40px;
+    }
+
+    .profileDiv .editProfileBox .editProfile .avatar img {
+        width: 100px;
+    }
+
+    .profileDiv .editProfileBox .editProfile .userDetail {
+        top: -10px;
+    }
+
+    .createBlog .formDiv .uploadDiv p {
+        width: 60%;
+    }
+
+    .blogDetailCard .card .cardContent .dateLikeDiv .date {
+        margin-right: 12px;
+    }
+
+    .commonCard .blogDetailCard .card .cardContent .dateLikeDiv {
+        display: block;
+    }
+
+    .commonCard .blogDetailCard .card .cardContent .editDiv p {
+        max-width: 60%;
+        margin-top: 30px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mainFixedService .earning .opertionDiv .multiBtn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .mainFixedService .earning .opertionDiv .multiBtn span {
+        margin: 0px;
+        margin-bottom: 20px;
+    }
+
+    .mainFixedService .earning {
+        padding: 50px 30px;
+    }
+
+    .mainFixedService .earning .graphDiv {
+        padding: 20px;
+    }
+
+    .mainFixedService .relatedService {
+        padding-bottom: 0px;
+    }
+
+    .fixedDiv {
+        padding: 250px 20px 200px !important;
+    }
+
+    .fixedServiceDiv .operationDiv,
+    .fixedServiceDiv .banner .tagLine {
+        display: block;
+    }
+
+    .fixedServiceDiv .operationDiv .multiOption span {
+        margin-left: 0px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+
+    .answereBox .questioner,
+    .callRequest .callContent .requestBox .contactDiv {
+        margin-left: 0px;
+    }
+
+    .profileDiv {
+        padding: 250px 20px 200px;
+    }
+
+    .profileBox .profileFormDiv {
+        max-width: 90%;
+    }
+
+    .profileBox .profileBoxHeader .profileAvatar {
+        left: 27%;
+    }
+
+
+
+    .profileDiv h5 {
+        font-size: 24px;
+    }
+
+
+    .markedCompleted {
+        max-width: 50%;
+        font-size: 14px;
+    }
+
+    .orderSection .orderContent .multiBtn {
+        left: 10px;
+        justify-content: flex-start;
+    }
+
+    .orderSection {
+        padding: 250px 0px 100px;
+    }
+
+    .subHeader h4 {
+        font-size: 30px;
+    }
+
+
+    .orderSection .orderHeader {
+        padding: 15px;
+    }
+
+    .orderSection .orderContent {
+        padding: 30px 20px 150px;
+    }
+
+    .orderSection .tabContent,
+    .orderSection .tabDiv {
+        max-width: 100%;
+    }
+
+    .orderSection .tabDiv ul li {
+        padding-right: 20px;
+    }
+
+    .orderSection .orderHeader .newOrder,
+    .orderSection .tabDiv ul li a,
+    .mainFixedService .earning .graphDiv .graphHeader .reading h4 {
+        font-size: 16px;
+    }
+
+    .blogDetailCard {
+        height: 950px;
+    }
+
+    .blogDetailCard .card .cardContent .dateLikeDiv .date,
+    .orderSection .orderHeader p,
+    .unanswerdDiv .questionDiv .question p,
+    .mainFixedService .earning .graphDiv .graphHeader .reading p,
+    .blogDetailCard .card .cardContent .dateLikeDiv span {
+        font-size: 14px;
+    }
+
+    .blogDetailCard .card .cardContent h4 br {
+        display: none;
+    }
+
+    .answereBox .boxHeader button {
+        width: 50px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .fixedServiceDiv .contentDiv {
+        padding: 0px 20px 40px;
+    }
+
+    .answereBox .boxHeader .profileAnswereDiv h4,
+    .fixedServiceDiv .contentDiv p,
+    .fixedServiceDiv .contentDiv ul li {
+        font-size: 16px;
+    }
+
+    .bolgSection .paginationDiv .paginationList ul {
+        justify-content: space-between;
+    }
+
+    .bolgSection .paginationDiv .paginationList ul li {
+        padding-left: 0px;
+    }
+
+    .bolgSection .paginationDiv .paginationList ul li img {
+        width: 40px;
+    }
+
+    .bolgSection .paginationDiv .paginationList ul li a {
+        font-size: 18px;
+    }
+
+    .bolgSection .selectDiv {
+        width: 100%;
+    }
+
+    .commonHeading {
+        text-align: center;
+    }
+
+    .requestInformation {
+        padding: 120px 0px;
+    }
+
+    .requestInformation .imgText .imgTextMiddle p {
+        font-size: 11px;
+    }
+
+    .experts .expertSlider .slick-track {
+        height: 58% !important;
+    }
+
+    .aboutUs .multiBox .commonBox {
+        width: 150px;
+        height: 100px;
+    }
+
+    .aboutUs .aboutUsContent {
+        max-width: 85%;
+    }
+
+    .aboutUs .multiBox {
+        padding-left: 0px;
+        justify-content: center;
+    }
+
+    .slick-prev {
+        left: -40px !important;
+    }
+
+    .slick-next {
+        right: -40px !important;
+    }
+
+    .ourService p {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .ourService h2,
+    .aboutUs .multiBox .commonBox h2 {
+        font-size: 30px;
+    }
+
+    .excellence a {
+        padding: 18px 10px !important;
+        font-size: 16px !important;
+    }
+
+    .excellence h2 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .excellence h2 br {
+        display: none;
+    }
+
+
+    .aboutUs .multiBox .commonBox p {
+        font-size: 14px;
+    }
+
+    header .navbar-brand {
+        width: 200px;
+    }
+
+    .ourService {
+        padding: 100px 0px;
+    }
+
+    main .mainBanner .bannerLeft p br {
+        display: none;
+    }
+
+    main .mainBanner .bannerLeft {
+        padding: 200px 40px 0px;
+    }
+
+    main .mainBanner .bannerLeft p {
+        font-size: 25px;
+    }
+
+    main .mainBanner .searchBox.desktopHide,
+    main .mainBanner .searchBox .expertiseDiv {
+        display: block !important;
+    }
+
+    main .mainBanner .searchBox .countryDiv,
+    main .mainBanner .searchBox .expertiseDiv {
+        width: 100%;
+    }
+
+    main .mainBanner .searchBox .expertiseDiv {
+        padding: 20px 30px;
+    }
+
+    main .mainBanner .searchBox .expertiseDiv .btnDiv {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    main .mainBanner .searchBox .expertiseDiv .btnDiv button {
+        width: 100%;
+        right: 0px;
+    }
+
+    main .mainBanner .searchBox {
+        margin-top: 50px;
+    }
+
+    .experts .sliderDiv {
+        max-width: 80%;
+    }
+
+    .card .cardContent h4 {
+        font-size: 20px;
+    }
+
+    .blogDetailCard .card .cardContent .dateLikeDiv .date {
+        padding: 3px;
+    }
+
+}

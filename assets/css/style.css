@@ -32,6 +32,10 @@
     font-family: GelionBold;
     src: url("../fonts/Gelion-Bold.ttf");
 }
+@font-face {
+    font-family: GelionSemiBold;
+    src: url("../fonts/Gelion-SemiBold.ttf");
+}
 
 .container-fluid {
     max-width: 1920px;
@@ -148,6 +152,8 @@ header #collapsibleNavbar .nav-item {
 header #collapsibleNavbar .nav-item .nav-link {
     color: #022331;
     font-size: 20px;
+    font-family: MoskauRegular;
+    font-weight: 700;
 }
 
 header .navbar-toggler {
@@ -184,7 +190,7 @@ main .mainBanner .bannerLeft p {
 }
 
 main .mainBanner .bannerLeft button {
-    border: 2px solid #03223133;
+    border: 2px solid #0322311a;
     padding: 12px 40px;
     font-size: 26px;
     color: #ef1d31;
@@ -366,6 +372,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     height: 4px;
     position: absolute;
     bottom: 5px;
+    margin: 0px;
 }
 
 .ourService .sliderDiv .serviceBox a {
@@ -2594,7 +2601,7 @@ main .mainBanner .registerAuthRightBox {
 }
 
 .findExpert {
-    background-color: #E0E5E8;
+    background-color: #f9fafa;
     padding: 250px 200px;
 }
 
@@ -2602,6 +2609,12 @@ main .mainBanner .registerAuthRightBox {
     font-size: 24px;
     font-family: GelionRegular;
     margin-bottom: 40px;
+}
+.findExpert .multiBtn{
+    margin-top: 150px;
+}
+.findExpert p:nth-child(2){
+    font-family: GelionLight;
 }
 
 .findExpert a {
@@ -2628,7 +2641,7 @@ main .mainBanner .registerAuthRightBox {
 }
 
 .findExpert .aboutUs .multiBox {
-    padding-left: 150px;
+    padding-left: 0px;
 }
 
 .findExpert .aboutUs .multiBox .commonBox p {
@@ -2657,9 +2670,40 @@ main .expertBanner .searchBox {
 .multiBlog .expertCard .cardContet {
     box-shadow: 0px 18px 49px #01254814;
     background: #fff;
-    padding: 20px 30px;
 }
-
+.multiBlog .expertCard .cardContet:hover .contactDiv{
+    opacity: 1;
+}
+.multiBlog .expertCard .cardContet .cardBody,
+.multiBlog .expertCard .cardContet .cardFooter{
+    transition: top .3s linear;
+    position: relative;
+    top: 0px;
+}
+.multiBlog .expertCard .cardContet:hover .cardBody,
+.multiBlog .expertCard .cardContet:hover .cardFooter{
+    top: -10px;
+}
+.multiBlog .expertCard .cardContet .contactDiv{
+    padding: 20px;
+    opacity: 0;
+    transition: all .5s;
+}
+.multiBlog .expertCard .cardContet .contactDiv ul{
+    display: flex;
+    justify-content: space-between;
+}
+.multiBlog .expertCard .cardContet .contactDiv ul li button{
+    font-size: 11px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+.multiBlog .expertCard .cardContet .contactDiv ul li button img{
+    width: 17px;
+    margin-right: 7px;
+}
 .multiBlog .expertCard img {
     width: 100%;
 }
@@ -2670,6 +2714,7 @@ main .expertBanner .searchBox {
 
 .multiBlog .expertCard .cardContet .rating {
     margin-bottom: 30px;
+    padding: 10px 30px;
 }
 
 .multiBlog .expertCard .cardContet .rating i {
@@ -2688,11 +2733,13 @@ main .expertBanner .searchBox {
 .multiBlog .expertCard .cardContet .cardBody h3 {
     font-size: 38px;
     font-family: GelionRegular;
+    color: #000;
 }
 
 .multiBlog .expertCard .cardContet .cardBody p {
     font-size: 18px;
     font-family: GelionRegular;
+    color: #000;
 }
 
 .multiBlog .expertCard .cardContet .cardFooter p {
@@ -2869,7 +2916,7 @@ main .expertBanner .searchBox {
     width: 100%;
     padding: 23px;
     margin-bottom: 18px;
-    font-family: MoskauMedium;
+    font-family: MoskauRegular;
     font-size: 18px;
 }
 
@@ -2885,8 +2932,63 @@ main .expertBanner .searchBox {
 .readyToStart .formDiv .btnDiv button {
     float: initial;
 }
-
-
+/******* Buy - Service - CSS ***********/
+.serviceBuy .staper{
+    margin: 250px 0px;
+}
+.serviceBuy .staper .listDiv{
+    width: 100%;
+    max-width: 25%;
+    margin: auto;
+}
+.serviceBuy .staper .listDiv ul{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.serviceBuy .staper .listDiv ul::before{
+    content: "";
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 1px;
+    background: #0101014f;
+    top: 29px;
+    z-index: -1;
+}
+.serviceBuy .staper .listDiv li{
+    display: block;
+    width: 60px;
+    border: 1px solid #0101014f;
+    text-align: center;
+    padding: 12.5px;
+    border-radius: 100%;
+    background-color: #fff;
+    transition: all .5s linear;
+}
+.serviceBuy .staper .listDiv li a{
+    font-size: 22px;
+    color: #032231;
+    font-family: GelionSemiBold;
+}
+.serviceBuy .staper .listDiv li img{
+    display: none;
+}
+.serviceBuy .staper .listDiv li.active{
+    border-color: #EF1E32;
+}
+.serviceBuy .staper .listDiv li.active a{
+    color: #EF1E32;
+}
+.serviceBuy .staper .listDiv li.complete{
+    background-color: #EF1E32;
+}
+.serviceBuy .staper .listDiv li.complete img{
+    display: block;
+}
+.serviceBuy .staper .listDiv li.complete a{
+    display: none;
+}
 
 
 
@@ -2938,27 +3040,76 @@ main .expertBanner .searchBox {
     .mainFixedService .earning {
         padding: 100px;
     }
+    .applyHeader{
+        padding: 80px;
+    }
 }
 
 @media screen and (max-width: 1600px) {
+    .postAnswere button, .formBtn{
+        margin-top: 20px;
+    }
+    .readyToStart .formDiv .inputDiv label{
+        font-size: 18px;
+    }
+    .readyToStart .formDiv{
+        max-width: 60%;
+    }
+    .multiBlog .expertCard .cardContet .contactDiv ul li button{
+        font-size: 8px;
+    }
+    .multiBlog .expertCard .cardContet .contactDiv ul li button img{
+        width: 14px;
+    }
+    .expertMain .searchBox{
+        bottom: 25% !important;
+    }
+    .expertMain .searchBox .countryDiv{
+        padding: 57px 28px !important;
+    }
+    .findExpert .multiBtn {
+        margin-top: 120px;
+    }
+    .mainBanner .aboutUsLeft{
+        padding-top: 310px !important;
+    }
+    .aboutUs .multiBox .commonBox{
+        width: 200px;
+        height: 150px;
+    }
+    .ourService .sliderDiv .serviceBox .line{
+        bottom: -10px;
+    }
+    .ourService .sliderDiv .serviceBox{
+        height: auto;
+        padding: 20px;
+    }
+    .ourService .sliderDiv .serviceBox .boxHeader{
+        height: 150px;
+    }
+    header{
+        padding: 20px 50px;
+    }
     .applyHeader .logo img {
         left: -80px;
+        width: 250px;
     }
     .readyToStart .formDiv .inputDiv {
         margin-bottom: 20px;
     }
 
     .readyToStart .formDiv .inputDiv input {
-        padding: 18px;
+        padding: 12px 18px;
+        font-size: 14px;
     }
 
     .fixedFreeDetail .buyServiceDiv .contentDiv ul li {
         padding: 20px;
     }
 
-    .findExpert .aboutUs .multiBox {
+    /* .findExpert .aboutUs .multiBox {
         padding-left: 100px;
-    }
+    } */
 
 
     .mainBanner .aboutUsLeft h3 {
@@ -3071,9 +3222,13 @@ main .expertBanner .searchBox {
     }
 
     .bolgSection .selectDiv p,
-    .applyMemberShip,
-    .findExpert a {
+    .applyMemberShip{
         font-size: 14px !important;
+    }
+    .findExpert a,
+    .excellence a{
+        font-size: 20px !important;
+        padding: 20px 40px !important;
     }
 
     .orderSection .orderHeader p {
@@ -3254,7 +3409,7 @@ main .expertBanner .searchBox {
     }
 
     main .mainBanner .searchBox {
-        width: 60%;
+        width: 55%;
         bottom: 5%;
     }
 
@@ -3268,16 +3423,16 @@ main .expertBanner .searchBox {
     }
 
     main .mainBanner .bannerLeft h3 {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     main .mainBanner .bannerLeft p {
-        font-size: 35px;
+        font-size: 40px;
     }
 
     main .mainBanner .bannerLeft button {
-        padding: 7px 20px;
-        font-size: 18px;
+        padding: 10px 30px;
+        font-size: 20px;
     }
 
     main .mainBanner .searchBox div select,
@@ -3297,7 +3452,7 @@ main .expertBanner .searchBox {
     }
 
     main .mainBanner .searchBox .countryDiv {
-        padding: 28px;
+        padding: 35px 28px;
     }
 
     main .mainBanner .searchBox .expertiseDiv {
@@ -3305,11 +3460,11 @@ main .expertBanner .searchBox {
     }
 
     header #collapsibleNavbar .nav-item {
-        padding-left: 20px;
+        padding-left: 40px;
     }
 
     header .navbar-brand {
-        width: 250px;
+        width: 300px;
     }
 
     header #collapsibleNavbar .nav-item .nav-link,
@@ -3340,7 +3495,7 @@ main .expertBanner .searchBox {
     }
 
     main .mainBanner .bannerLeft {
-        padding: 310px 90px 0px;
+        padding: 250px 50px 0px;
     }
 
     footer .socialList ul li {
@@ -3371,9 +3526,71 @@ main .expertBanner .searchBox {
     .fixedFreeDetail .buyServiceDiv .contentDiv ul li .priceDiv h4 {
         font-size: 24px;
     }
+    .multiBlog .expertCard .cardContet .cardBody h3{
+        font-size: 30px;
+    }
 }
-
+@media screen and (max-width: 1440px) {
+    .ourService .sliderDiv .serviceBox h2, .leatestNews .newsCard .cardContent h4, .bolgSection .blogCard .cardContent h4, .blogDetailCard .card .cardContent h4, .unanswerdDiv .questionDiv p, .accordiansDiv .card-header button, .profileDiv .editProfileBox .editProfile .userDetail h4{
+        font-size: 22px;
+    }
+    .ourService .sliderDiv .serviceBox a, .leatestNews .newsCard .cardContent p, .leatestNews .newsCard .cardContent a, .mainBanner .formDiv input, .mainBanner .formDiv textarea, .blogCard .cardContent p, .blogCard .cardContent a, .blogDetailCard .card .cardContent .dateLikeDiv span, .blogDetailCard .card .cardContent .postedBy, .relatedService .multiRelatedService .card .cardContent p, .learnMore{
+        font-size: 14px;
+    }
+    .multiBlog .expertCard .cardContet .cardBody h3 {
+        font-size: 25px;
+    }
+    .multiBlog .expertCard .cardContet .cardBody p{
+        font-size: 16px;
+    }
+    .multiBlog .expertCard .cardContet .cardFooter p {
+        font-size: 18px;
+    }
+    .newsSlider .slick-next {
+        left: -350px;
+    }    
+    .newsSlider .slick-prev {
+        left: -470px !important;
+    }
+    .leatestNews .sliderDiv{
+        right: -80px;
+    }
+    .leatestNews .leatesNewContent {
+        max-width: 65%;
+    }
+    .ourService h2, .aboutUs .multiBox .commonBox h2, .aboutUs .aboutUsContent h2, .experts h2, .excellence h2, .fixedService h2, .leatestNews .leatesNewContent h2, .requestInformation .informationContent h2, footer .newsLetter .newLetterContent h2, .commonHeading{
+        font-size: 40px;
+    }
+    .requestInformation .informationContent .formDiv input, .requestInformation .informationContent .formDiv textarea, .mainBanner .formDiv textarea, .mainBanner .formDiv input{
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+    .expertMain .searchBox .countryDiv {
+        padding: 40px 28px !important;
+    }
+    .expertMain .searchBox {
+        bottom: 15% !important;
+    }
+    .requestInformation .informationContent .formDiv button, .mainBanner .formDiv button{
+        padding: 10px 30px;
+    }
+}
 @media screen and (max-width: 1400px) {
+    .ourService h2, .aboutUs .multiBox .commonBox h2, .aboutUs .aboutUsContent h2, .experts h2, .excellence h2, .fixedService h2, .leatestNews .leatesNewContent h2, .requestInformation .informationContent h2, footer .newsLetter .newLetterContent h2, .commonHeading{
+        font-size: 40px;
+    }
+    main .mainBanner .searchBox{
+        width: 65%;
+    }
+    main .mainBanner .searchBox .expertiseDiv {
+        padding: 0px 64px 0px 39px;
+    }
+    main .mainBanner .bannerLeft p {
+        font-size: 35px;
+    }
+    header #collapsibleNavbar .nav-item {
+        padding-left: 20px;
+    }
     .readyToStart {
         padding: 250px 100px 100px;
     }
@@ -3544,7 +3761,7 @@ main .expertBanner .searchBox {
     }
 
     main .mainBanner .bannerLeft {
-        padding: 250px 80px 0px;
+        padding: 250px 55px 0px;
     }
 
     main .mainBanner .searchBox {
@@ -3580,6 +3797,16 @@ main .expertBanner .searchBox {
 }
 
 @media screen and (max-width: 1200px) {
+    .multiBlog .expertCard .cardContet .contactDiv ul li button{
+        font-size: 6px;
+    }
+    .multiBlog .expertCard .cardContet .contactDiv ul li button img{
+        width: 10px;
+    }
+    .findExpert a, .excellence a {
+        font-size: 16px !important;
+        padding: 15px 30px !important;
+    }
     .fixedFreeDetail {
         padding: 250px 30px 100px;
     }
@@ -3726,8 +3953,27 @@ main .expertBanner .searchBox {
         font-size: 12px;
     }
 }
-
+@media screen and (max-width: 1060px) {
+    main .mainBanner .bannerLeft p {
+        font-size: 27px;
+    }
+    main .mainBanner .bannerLeft {
+        padding: 200px 30px 0px;
+    }
+    main .mainBanner .bannerLeft button {
+        padding: 10px 30px;
+        font-size: 16px;
+    }    
+}
 @media screen and (max-width: 992px) {
+    .multiBlog .expertCard .cardContet .contactDiv{
+        width: 100%;
+        max-width: 50%;
+        margin: auto;
+    }
+    header .navbar-brand {
+        width: 200px;
+    }
 
     .applyHeader {
         padding: 20px;
@@ -4147,6 +4393,11 @@ main .expertBanner .searchBox {
 }
 
 @media screen and (max-width: 768px) {
+    .multiBlog .expertCard .cardContet .contactDiv{
+        width: 100%;
+        max-width: 70%;
+        margin: auto;
+    }
     .readyToStart .formDiv {
         max-width: 90%;
     }
@@ -4432,6 +4683,24 @@ main .expertBanner .searchBox {
 }
 
 @media screen and (max-width: 580px) {
+    .multiBlog .expertCard .cardContet .contactDiv{
+        width: 100%;
+        max-width: 90%;
+        margin: auto;
+    }
+    .findExpert .multiBtn{
+        margin-top: 20px;
+    }
+    .excellence a{
+        display: block;
+        margin-bottom: 30px !important;
+        width: 100%;
+        max-width: 80%;
+        margin: auto;
+    }
+    .expertMain .searchBox .countryDiv{
+        padding: 35px 28px !important;
+    }
     .applyHeader .breadcrum ul {
         left: -30px;
         top: 10px;

@@ -1,3 +1,15 @@
+$(".nextBtn").click(function(){
+  console.log("hello")
+  var current= $('.serviceBuy .staper .listDiv li.active');
+  current.addClass("complete")
+  var next = $('.serviceBuy .staper .listDiv li.active').removeClass('active').next('li');
+
+    // Did we reach the last element? Of so: select first sibling
+    if (!next.length) next = next.prevObject.siblings(':first');
+
+    // Add .active class to the li next in line.
+    next.addClass('active');
+})
 $(".serviceSlider").slick({
   dots: false,
   infinite: false,
@@ -218,4 +230,5 @@ window.intlTelInput(input, {
 });
 $(document).ready(function () {
   $(".js-example-basic-multiple").select2();
+ 
 });

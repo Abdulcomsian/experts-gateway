@@ -13,7 +13,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/slick.css">
     <link rel="stylesheet" href="../../assets/css/slick-theme.css">
-    <link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 
@@ -25,6 +24,30 @@
                 <span class="downIcon">
                     <i class="fa fa-sort-desc" aria-hidden="true"></i>
                 </span>
+                <div class="dropDownMenu">
+                    <ul>
+                        <li>
+                            <img src="../../assets/img/loginIcon.png" alt="" class="img-fluid">
+                            <span>
+                                <a href="../auth/login.html">User Login</a>
+                            </span>
+                        </li>
+                        <div class="line"></div>
+                        <li>
+                            <img src="../../assets/img/loginIcon.png" alt="" class="img-fluid">
+                            <span>
+                                <a href="../auth/layerLogin.html">Lawyer Login</a>
+                            </span>
+                        </li>
+                        <div class="line"></div>
+                        <li>
+                            <img src="../../assets/img/myOrder.png" alt="" class="img-fluid">
+                            <span>
+                                <a href="../order/index.html">My Orders</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <nav class="navbar navbar-expand-md">
@@ -66,10 +89,11 @@
                             <div class="pillsDiv">
                                 <ul class="nav nav-pills">
                                     <li class="active"><a data-toggle="pill" href="#home">Upload Photos</a></li>
-                                    <li><a data-toggle="pill" href="#menu1">Location, Language</a></li>
-                                    <li><a data-toggle="pill" href="#menu2">Profile</a></li>
-                                    <li><a data-toggle="pill" href="#menu3">Education</a></li>
-                                    <li><a data-toggle="pill" href="#menu3">Membership & Associations</a></li>
+                                    <li><a data-toggle="pill" href="#location">Location, Language</a></li>
+                                    <li><a data-toggle="pill" href="#profile">Profile</a></li>
+                                    <li><a data-toggle="pill" href="#education">Education</a></li>
+                                    <li><a data-toggle="pill" href="#memberShip">Membership & Associations</a></li>
+                                    <li><a data-toggle="pill" href="#pricing">Membership Pricing</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -77,12 +101,6 @@
                             <div class="contentDiv">
                                 <div class="tab-content">
                                     <div id="home" class="tab-pane fade show in active">
-                                        <!-- <div class="uploadPhoto">
-                                            <div class="coverPhoto">
-                                                <input type="file" name="" id="">
-                                                <p>Upload Cover Image</p>
-                                            </div>
-                                        </div> -->
                                         <div class="profileBox">
                                             <div class="profileBoxHeader">
                                                 <div class="uploadCover">
@@ -98,12 +116,14 @@
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="inputDiv">
-                                                                <input type="text" placeholder="First Name" name="first_name" id="first_name">
+                                                                <input type="text" placeholder="First Name"
+                                                                    name="first_name" id="first_name">
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="inputDiv">
-                                                                <input type="text" placeholder="Last Name" name="last_name" id="last_name">
+                                                                <input type="text" placeholder="Last Name"
+                                                                    name="last_name" id="last_name">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -111,19 +131,198 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="menu1" class="tab-pane fade">
-                                      <h3>Menu 1</h3>
-                                      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <div id="location" class="tab-pane fade">
+                                        <div class="formDiv commonTabDiv">
+                                            <form action="">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="inputDiv">
+                                                            <label for="">Location</label>
+                                                            <input type="text" placeholder="Location" name="location"
+                                                                id="location">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="multiSelect">
+                                                            <label for="">Select Language</label>
+                                                            <select class="js-example-basic-multiple" name="states[]"
+                                                                multiple="multiple">
+                                                                <option value="AL">English</option>
+                                                                <option value="WY">Franch</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="multiSelect">
+                                                            <label for="">Select Legal consultant</label>
+                                                            <select class="js-example-basic-multiple" name="states[]"
+                                                                multiple="multiple">
+                                                                <option value="AL">English</option>
+                                                                <option value="WY">Franch</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="multiSelect">
+                                                            <label for="">Select Corporate Law</label>
+                                                            <select class="js-example-basic-multiple" name="states[]"
+                                                                multiple="multiple">
+                                                                <option value="AL">English</option>
+                                                                <option value="WY">Franch</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div id="menu2" class="tab-pane fade">
-                                      <h3>Menu 2</h3>
-                                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <div id="profile" class="tab-pane fade">
+                                        <div class="formDiv commonTabDiv">
+                                            <form action="">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="inputDiv">
+                                                            <label for="">Profile Description</label>
+                                                            <textarea name="" id="" cols="20" rows="10"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div id="menu3" class="tab-pane fade">
-                                      <h3>Menu 3</h3>
-                                      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                    <div id="education" class="tab-pane fade">
+                                        <div class="formDiv commonTabDiv">
+                                            <form action="">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="inputDiv">
+                                                            <label for="">Education</label>
+                                                            <input type="text" name="education" id="education"
+                                                                placeholder="Enter Education">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                  </div>
+                                    <div id="memberShip" class="tab-pane fade">
+                                        <div class="formDiv commonTabDiv">
+                                            <form action="">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="multiSelect">
+                                                            <label for="">Select Membership & Association Law</label>
+                                                            <select class="js-example-basic-multiple" name="states[]"
+                                                                multiple="multiple">
+                                                                <option value="AL">English</option>
+                                                                <option value="WY">Franch</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div id="pricing" class="tab-pane fade">
+                                        <div class="formDiv commonTabDiv">
+                                            <form action="">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div class="pricingDiv">
+                                                            <div class="priceDivHeader">
+                                                                <h4>Basic</h4>
+                                                                <p>$0 <span>/ mon</span></p>
+                                                            </div>
+                                                            <div class="pricingBody">
+                                                                <p>Get the Essentials to Launch a simple site.</p>
+                                                                <div class="listDiv">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="">Custom Domain</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="">0 CMS Items</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="">50 GB Bandwidth</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pricingFooter">
+                                                                <button>Buy Now</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="pricingDiv">
+                                                            <div class="priceDivHeader">
+                                                                <h4>Medium</h4>
+                                                                <p>$10 <span>/ mon</span></p>
+                                                            </div>
+                                                            <div class="pricingBody">
+                                                                <p>Get the Essentials to Launch a simple site.</p>
+                                                                <div class="listDiv">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="">Custom Domain</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="">0 CMS Items</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="">50 GB Bandwidth</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pricingFooter">
+                                                                <button>Buy Now</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="pricingDiv">
+                                                            <div class="priceDivHeader">
+                                                                <h4>Standard</h4>
+                                                                <p>$20 <span>/ mon</span></p>
+                                                            </div>
+                                                            <div class="pricingBody">
+                                                                <p>Get the Essentials to Launch a simple site.</p>
+                                                                <div class="listDiv">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="">Custom Domain</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="">0 CMS Items</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="">50 GB Bandwidth</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pricingFooter">
+                                                                <button>Buy Now</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="btnDiv">
+                                        <button class="tabNextBtn">Next</button>
+                                    </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -283,6 +482,10 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="../../assets/js/slick.min.js"></script>
 <script src="../../assets/js/script.js"></script>
-
+<script>
+    $(document).ready(function () {
+        $('.js-example-basic-multiple').select2();
+    });
+</script>
 
 </html>

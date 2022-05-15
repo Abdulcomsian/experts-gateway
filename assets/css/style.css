@@ -3173,7 +3173,9 @@ main .expertBanner .searchBox {
     cursor: pointer;
 }
 .whoRecive .formDiv label,
-.expiryDate label{
+.expiryDate label,
+.applyDiv .tab-pane .inputDiv label,
+.applyDiv .tab-pane .multiSelect label{
     margin-bottom: 30px;
     font-family: MoskauMedium;
     color: #5D6D75;
@@ -3280,9 +3282,81 @@ main .expertBanner .searchBox {
 .contentDiv .profileBox{
     box-shadow: none;
 }
-
-
-
+.applyDiv .tab-pane .commonTabDiv{
+    background: #FAFAFA;
+    padding: 30px;
+}
+.applyDiv .tab-pane .inputDiv{
+    margin-bottom: 30px;
+}
+.applyDiv .tab-pane .inputDiv input,
+.applyDiv .tab-pane .inputDiv textarea{
+    background-color: #fff;
+    padding: 25px;
+    border: none;
+    width: 100% !important;
+    font-size: 19px;
+    color: #5D6D75;
+    font-family: MoskauMedium;
+}
+.applyDiv .contentDiv .btnDiv{
+    text-align: right;
+}
+.applyDiv .contentDiv button{
+    background: rgb(239,29,48);
+    background: linear-gradient(270deg, rgba(239,29,48,1) 0%, rgba(237,36,86,1) 70%, rgba(234,42,124,1) 100%);
+    padding: 15px 80px;
+    font-size: 26px;
+    color: #fff;
+    border: none;
+    font-family: MoskauMedium;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.pricingDiv{
+    background: #fff;
+    padding: 30px;
+}
+.pricingDiv .priceDivHeader{
+    text-align: center;
+}
+.pricingDiv .priceDivHeader h4{
+    font-size: 30px;
+    font-family: GelionMedium;
+}
+.pricingDiv .priceDivHeader p{
+    font-size: 70px;
+    font-family: GelionMedium;
+}
+.pricingDiv .priceDivHeader p span{
+    font-size: 25px;
+}
+.pricingDiv .pricingBody p{
+    font-size: 20px;
+    text-align: center;
+    font-family: GelionRegular;
+    padding: 40px 0px;
+    border-bottom: 1px solid #00000029;
+}
+.pricingDiv .pricingBody .listDiv ul{
+    padding: 10px 0px;
+}
+.pricingDiv .pricingBody .listDiv ul li{
+    padding: 10px 0px 25px;
+    border-bottom: 1px solid #0000003b;
+}
+.pricingDiv .pricingBody .listDiv ul li:last-child{
+    border: none;
+}
+.pricingDiv .pricingBody .listDiv ul li a{
+    font-family: GelionRegular;
+    font-size: 20px;
+    color: #000;
+    
+}
+.pricingDiv .pricingFooter{
+    text-align: center;
+}
 
 
 
@@ -3337,10 +3411,32 @@ main .expertBanner .searchBox {
 }
 
 @media screen and (max-width: 1600px) {
+    .pricingDiv .priceDivHeader h4{
+        font-size: 25px;
+    }
+    .pricingDiv .priceDivHeader p{
+        font-size: 50px;
+    }
+    .applyDiv .pillsDiv ul li{
+        padding: 15px 20px;
+    }
+    .applyDiv .pillsDiv ul li a{
+        font-size: 18px;
+    }
+    .pricingDiv .pricingFooter button{
+        padding: 10px 50px;
+        font-size: 22px;
+    }
+    .tab-content .profileBox .profileFormDiv{
+        max-width: 80%;
+    }
     .buyNowService{
         padding: 0px 40px;
     }
-    .paymentDetail .formDiv .inputDiv select,.paymentDetail .formDiv .inputDiv input,.whoRecive .formDiv .inputDiv input, .whoRecive .formDiv .inputDiv select, .whoRecive .formDiv .inputDiv textarea{
+    .applyDiv .contentDiv button{
+        font-size: 20px;
+    }
+    .pricingDiv .pricingBody .listDiv ul li a,.pricingDiv .pricingBody p,.whoRecive .formDiv label, .expiryDate label, .applyDiv .tab-pane .inputDiv label, .applyDiv .tab-pane .multiSelect label,.applyDiv .tab-pane .inputDiv input, .applyDiv .tab-pane .inputDiv textarea,.paymentDetail .formDiv .inputDiv select,.paymentDetail .formDiv .inputDiv input,.whoRecive .formDiv .inputDiv input, .whoRecive .formDiv .inputDiv select, .whoRecive .formDiv .inputDiv textarea{
         font-size: 16px;
     }
     .serviceBuy .staper .listDiv{
@@ -3879,6 +3975,15 @@ main .expertBanner .searchBox {
     }
 }
 @media screen and (max-width: 1400px) {
+    .applyDiv .pillsDiv ul li a {
+        font-size: 14px;
+    }
+    .profileDiv {
+        padding: 250px 60px 200px;
+    }
+    .pricingDiv{
+        padding: 30px 15px;
+    }
     .nextBtn{
         font-size: 20px !important;
     }
@@ -4115,6 +4220,19 @@ main .expertBanner .searchBox {
 }
 
 @media screen and (max-width: 1200px) {
+    .pricingDiv .priceDivHeader h4{
+        font-size: 15px;
+    }
+    .pricingDiv .priceDivHeader p {
+        font-size: 30px;
+    }
+    .pricingDiv .priceDivHeader p span {
+        font-size: 15px;
+    }
+    .pricingDiv .pricingFooter button{
+        padding: 10px 40px;
+        font-size: 16px;
+    }
     main .mainBanner .bannerLeft p{
         font-size: 28px;
     }
@@ -4174,7 +4292,7 @@ main .expertBanner .searchBox {
     }
 
     .profileDiv {
-        padding: 350px 50px 200px;
+        padding: 250px 50px 200px;
     }
 
     .profileBox .profileBoxHeader .profileAvatar {
@@ -4315,6 +4433,12 @@ main .expertBanner .searchBox {
     }    
 }
 @media screen and (max-width: 992px) {
+    .pricingDiv .priceDivHeader p {
+        font-size: 70px;
+    }
+    .contentDiv{
+        margin-top: 40px;
+    }
     .buyNowService .commonService{
         padding: 30px;
     }
@@ -5293,7 +5417,7 @@ main .expertBanner .searchBox {
     }
 
     .profileDiv {
-        padding: 250px 20px 200px;
+        padding: 150px 20px 200px;
     }
 
     .profileBox .profileFormDiv {
@@ -5301,9 +5425,11 @@ main .expertBanner .searchBox {
     }
 
     .profileBox .profileBoxHeader .profileAvatar {
-        left: 27%;
+        left: 20% !important;
     }
-
+    .applyDiv .tab-pane .commonTabDiv {
+        padding: 30px 10px;
+    }
 
 
     .profileDiv h5 {

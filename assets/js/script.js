@@ -1,4 +1,20 @@
 let count=2;
+$(".nav-pills li").click(function(){
+  $('.nav-pills li').removeClass("active");
+  $(this).addClass("active")
+})
+$(".tabNextBtn").click(function(){
+  var currentActive = $('.nav-pills li.active'); // get current active
+  var currentTabContent = $(".tab-content .tab-pane.show.active.in");
+  currentTabContent.removeClass("show")
+  currentTabContent.removeClass("active")
+  currentTabContent.removeClass("in")
+  currentActive.removeClass('active'); // remove class active
+  currentTabContent.next('.tab-content .tab-pane').addClass('active')
+  currentTabContent.next('.tab-content .tab-pane').addClass('show')
+  currentTabContent.next('.tab-content .tab-pane').addClass('in')
+  currentActive.next('.nav-pills li').addClass('active'); // otherwise add active to next li
+})
 $(".userProfile").click(function(){
   if($(".dropDownMenu").css("opacity")==0){
     $(".dropDownMenu").css("opacity","1")

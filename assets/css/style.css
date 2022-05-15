@@ -530,6 +530,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     font-size: 18px;
     color: #000;
     opacity: .3;
+    margin: 0px;
 }
 
 .experts .expertSlider .sliderbox .expertAbout p {
@@ -1441,7 +1442,7 @@ footer .newsLetter .formDiv button {
 
 .profileDiv {
     background: #F6F7F8;
-    padding: 450px 100px 200px;
+    padding: 350px 100px 200px;
 }
 
 .profileDiv h5 {
@@ -2860,6 +2861,7 @@ main .expertBanner .searchBox {
 .applyHeader {
     display: flex;
     align-items: center;
+    background-color: transparent;
 }
 
 .applyHeader .breadcrum {
@@ -2885,12 +2887,13 @@ main .expertBanner .searchBox {
     margin-right: 5px;
 }
 
+.applyHeader .breadcrum ul li.active a,
 .applyHeader .breadcrum ul li.active {
     color: #ED2456;
 }
 
 .readyToStart {
-    padding: 350px 100px 100px;
+    padding: 300px 100px 100px;
     text-align: center;
     background-image: url(../img/backLayer.png);
     background-position: bottom right;
@@ -2934,7 +2937,71 @@ main .expertBanner .searchBox {
 }
 /******* Buy - Service - CSS ***********/
 .serviceBuy .staper{
-    margin: 250px 0px;
+    margin: 250px 0px 400px;
+}
+.serviceBuy .secondStep,
+.serviceBuy .thirdStep,
+.paymentBtn{
+    display: none;
+}
+.whoRecive .formDiv,
+.paymentDetail .formDiv{
+    margin-top: 100px;
+}
+.whoRecive .formDiv .inputDiv,
+.paymentDetail .formDiv .inputDiv{
+    width: 100%;
+    margin-bottom: 44px;
+}
+.whoRecive .formDiv .inputDiv input,
+.whoRecive .formDiv .inputDiv select,
+.whoRecive .formDiv .inputDiv textarea,
+.paymentDetail .formDiv .inputDiv input,
+.paymentDetail .formDiv .inputDiv select,
+.paymentDetail .formDiv .inputDiv textarea{
+    box-shadow: 0px 6px 16px #01254814;
+    width: 100%;
+    padding: 25px;
+    border: none;
+    background: #fff;
+    position: relative;
+    font-size: 20px;
+    font-family: MoskauMedium;
+    color: #5D6D75;
+}
+.whoRecive .formDiv .inputBtnDiv button,
+.paymentBtn{
+    position: absolute;
+    right: 30px;
+    top: 22px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    font-family: MoskauMedium;
+    color: #ED2456;
+    cursor: pointer;
+}
+.paymentBtn{
+    position: relative !important;
+    background: rgb(239,29,48);
+    background: linear-gradient(270deg, rgba(239,29,48,1) 0%, rgba(237,36,86,1) 70%, rgba(234,42,124,1) 100%);
+    font-size: 26px;
+    color: #fff;
+    border: none;
+    font-family: MoskauMedium;
+    cursor: pointer;
+    width: 100%;
+    max-width: 15%;
+    margin: auto;
+    padding: 20px;
+    right: 0px;
+    top: 0px;
+    letter-spacing: 1px;
+}
+.paymentBtn:hover{
+    color: #fff;
 }
 .serviceBuy .staper .listDiv{
     width: 100%;
@@ -2965,6 +3032,7 @@ main .expertBanner .searchBox {
     border-radius: 100%;
     background-color: #fff;
     transition: all .5s linear;
+    height: 60px;
 }
 .serviceBuy .staper .listDiv li a{
     font-size: 22px;
@@ -2973,6 +3041,10 @@ main .expertBanner .searchBox {
 }
 .serviceBuy .staper .listDiv li img{
     display: none;
+    position: relative;
+    top: 6px;
+    left: 2px;
+    width: 30px;
 }
 .serviceBuy .staper .listDiv li.active{
     border-color: #EF1E32;
@@ -2983,11 +3055,230 @@ main .expertBanner .searchBox {
 .serviceBuy .staper .listDiv li.complete{
     background-color: #EF1E32;
 }
-.serviceBuy .staper .listDiv li.complete img{
+.serviceBuy .staper .listDiv li.complete img.imgWhiteTick{
     display: block;
 }
-.serviceBuy .staper .listDiv li.complete a{
+.serviceBuy .staper .listDiv li.complete a,
+.serviceBuy .staper .listDiv li.afterComplete a{
     display: none;
+}
+.serviceBuy .staper .listDiv li.afterComplete{
+    border-color: #EF1E32;
+}
+.serviceBuy .staper .listDiv li.afterComplete .imgRedTick{
+    display: block;
+}
+.buyNowService{
+   background-color: rgb(224 229 232 / 24%);
+}
+.buyNowService .commonService{
+    padding: 70px 90px 60px;
+    box-shadow: 0px 18px 49px #01254814;
+    background: #fff;
+    width: 100%;
+    max-width: 85%;
+    margin: auto;
+    
+    margin-bottom: 50px;
+}
+.serviceContent{
+    position: relative;
+    top: -200;
+}
+.buyNowService .commonService h4{
+    font-size: 22px;
+    font-family: GelionMedium;
+    color: rgb(0 0 0 / 34%);
+    text-transform: uppercase;
+}
+.buyNowService .orderSummary p{
+    font-size: 24px;
+    font-family: GelionMedium;
+    margin: 33px 0px 20px;
+}
+.buyNowService .orderSummary span{
+    font-size: 20px;
+    font-family: GelionRegular;
+    color: #75858D;
+}
+.buyNowService .orderSummary .summaryDetail{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.buyNowService .orderSummary .summaryDetail p{
+    font-size: 18px;
+    font-family: GelionRegular;
+    color: rgb(0 0 0 / 67%);
+    width: 100%;
+    max-width: 70%;
+}
+.buyNowService .orderSummary .summaryDetail .payable h2{
+    font-size: 47px;
+    font-family: GelionBold;
+    color: #626262;
+    text-transform: uppercase;
+}
+.buyNowService .orderSummary .summaryDetail .payable h2 span{
+    color: #7B7B7B;
+    font-size: 18px;
+    font-family: GelionMedium;
+}
+.buyNowService .commonService .line{
+    background-color: hwb(0deg 44% 56% / 24%);
+    width: 100%;
+    height: 1px;
+    margin: 40px 0px;
+}
+.termOfService.commonService p{
+    font-size: 18px;
+    font-family: GelionRegular;
+    color: rgb(0 0 0 / 67%);
+    width: 100%;
+    max-width: 70%;
+    margin: 25px 0px;
+}
+.termOfService .contentDiv{
+    height: 900px;
+    overflow: scroll;
+}
+.termOfService label{
+    font-size: 16px;
+    font-family: GelionLight;
+    margin-left: 15px;
+}
+.termOfService .serviceBox h4{
+    color: #000;
+    font-size: 18px;
+    font-family: GelionMedium;
+    text-transform: uppercase;
+}
+.serviceContent .termOfService .serviceBox p{
+    font-size: 18px;
+    font-family: GelionRegular;
+}
+.serviceContent .formBtnDiv{
+    text-align: center;
+    margin-top: 120px;
+}
+.serviceContent .formBtnDiv button{
+    background: rgb(239,29,48);
+    background: linear-gradient(270deg, rgba(239,29,48,1) 0%, rgba(237,36,86,1) 70%, rgba(234,42,124,1) 100%);
+    padding: 20px 110px;
+    font-size: 26px;
+    color: #fff;
+    border: none;
+    font-family: MoskauMedium;
+    cursor: pointer;
+}
+.whoRecive .formDiv label,
+.expiryDate label{
+    margin-bottom: 30px;
+    font-family: MoskauMedium;
+    color: #5D6D75;
+    font-size: 18px;
+}
+.paymentDetail .formDiv .inputCardDiv img{
+    position: absolute;
+    right: 40px;
+    top: 25px;
+}
+.billingAddress h4{
+    font-size: 18px !important;
+    color: #000 !important;
+    margin-bottom: 30px;
+}
+
+.dropDownMenu{
+    width: 170px;
+    position: absolute;
+    right: 0px;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px #01254814;
+    z-index: 99;
+    border-radius: 4px;
+    top: 35px;
+    opacity: 0;
+    transition: all .5s linear;
+}
+.dropDownMenu .line{
+    margin: 0px;
+    width: 100%;
+    height: 1px;
+    background: rgb(112 112 112 / 9%);
+}
+.dropDownMenu ul li{
+    padding: 12px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.dropDownMenu ul li img{
+    position: initial;
+    right: initial;
+    top: initial;
+    height: 100%;
+    width: 16px;
+}
+.dropDownMenu ul li span{
+    display: block;
+    margin-left: 10px;
+}
+.dropDownMenu ul li span a{
+    font-size: 18px;
+    font-family: MoskauMedium;
+    color: #000;
+}
+/************** Apply - Page - CSS ***********/
+.applyDiv .pillsDiv{
+    background: #fff;
+    box-shadow: 0px 6px 16px #03223108;
+}
+.applyDiv .pillsDiv ul{
+    display: block;
+}
+.applyDiv .pillsDiv ul li{
+    padding: 20px; 
+    cursor: pointer;
+}
+.applyDiv .pillsDiv ul li a{
+    font-size: 22px;
+    font-family: MoskauRegular;
+    color: #022331; 
+}
+.applyDiv .pillsDiv ul li:hover{
+    background: rgb(234, 42, 124);
+    background: linear-gradient(90deg, rgba(234, 42, 124, 1) 0%, rgba(239, 29, 48, 1) 100%);
+}
+.applyDiv .pillsDiv ul li.active{
+    background: rgb(234, 42, 124);
+    background: linear-gradient(90deg, rgba(234, 42, 124, 1) 0%, rgba(239, 29, 48, 1) 100%);
+}
+.applyDiv .pillsDiv ul li.active a,
+.applyDiv .pillsDiv ul li:hover a{
+    color: #fff;
+}
+.contentDiv{
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 6px 16px #03223108;
+}
+.coverPhoto{
+    text-align: center;
+    width: 100%;
+    max-width: 30%;
+    margin: auto;
+}
+.contentDiv .profileBox .profileFormDiv{
+    padding-bottom: 50px;
+}
+.contentDiv .profileBox .profileBoxHeader .profileAvatar{
+    left: 43%;
+}
+.contentDiv .profileBox{
+    box-shadow: none;
 }
 
 
@@ -3046,6 +3337,18 @@ main .expertBanner .searchBox {
 }
 
 @media screen and (max-width: 1600px) {
+    .buyNowService{
+        padding: 0px 40px;
+    }
+    .paymentDetail .formDiv .inputDiv select,.paymentDetail .formDiv .inputDiv input,.whoRecive .formDiv .inputDiv input, .whoRecive .formDiv .inputDiv select, .whoRecive .formDiv .inputDiv textarea{
+        font-size: 16px;
+    }
+    .serviceBuy .staper .listDiv{
+        max-width: 35%;
+    }
+    .buyNowService .commonService{
+        max-width: 90%;
+    }
     .postAnswere button, .formBtn{
         margin-top: 20px;
     }
@@ -3191,7 +3494,7 @@ main .expertBanner .searchBox {
     }
 
     .profileDiv {
-        padding: 350px 100px 200px;
+        padding: 250px 100px 200px;
     }
 
     .profileBox .profileBoxHeader .uploadCover p {
@@ -3576,6 +3879,17 @@ main .expertBanner .searchBox {
     }
 }
 @media screen and (max-width: 1400px) {
+    .nextBtn{
+        font-size: 20px !important;
+    }
+    .serviceContent .formBtnDiv button{
+        padding: 15px 90px;
+        font-size: 20px;
+    }
+    .buyNowService .commonService{
+        max-width: 100%;
+        padding: 40px 60px;
+    }
     .ourService h2, .aboutUs .multiBox .commonBox h2, .aboutUs .aboutUsContent h2, .experts h2, .excellence h2, .fixedService h2, .leatestNews .leatesNewContent h2, .requestInformation .informationContent h2, footer .newsLetter .newLetterContent h2, .commonHeading{
         font-size: 40px;
     }
@@ -3765,7 +4079,11 @@ main .expertBanner .searchBox {
     }
 
     main .mainBanner .searchBox {
-        left: 6%;
+        left: 5%;
+        bottom: 1%;
+    }
+    main .mainBanner .bannerLeft p{
+        margin-bottom: 30px;
     }
 
     .requestInformation .imgText .imgTextMiddle p,
@@ -3797,6 +4115,37 @@ main .expertBanner .searchBox {
 }
 
 @media screen and (max-width: 1200px) {
+    main .mainBanner .bannerLeft p{
+        font-size: 28px;
+    }
+    main .mainBanner .bannerLeft button{
+        font-size: 16px;
+    }
+    header .navbar-brand {
+        width: 200px;
+    }    
+    .serviceContent{
+        top: -150px;
+    }
+    .serviceBuy .staper{
+        margin: 250px 0px;
+    }
+    .buyNowService .commonService h4{
+        font-size: 18px;
+    }
+    .buyNowService .orderSummary p{
+        font-size: 20px;
+        margin: 20px 0px;
+    }
+    .buyNowService .orderSummary span,
+    .buyNowService .orderSummary .summaryDetail p,
+    .buyNowService .orderSummary .summaryDetail p,
+    .serviceContent .termOfService .serviceBox p{
+        font-size: 16px;
+    }
+    .buyNowService .orderSummary .summaryDetail{
+        margin-top: 20px;
+    }
     .multiBlog .expertCard .cardContet .contactDiv ul li button{
         font-size: 6px;
     }
@@ -3966,6 +4315,25 @@ main .expertBanner .searchBox {
     }    
 }
 @media screen and (max-width: 992px) {
+    .buyNowService .commonService{
+        padding: 30px;
+    }
+    .buyNowService .commonService h4,
+    .termOfService.commonService p{
+        font-size: 16px;
+    }
+    .buyNowService .orderSummary p{
+        font-size: 18px;
+    }
+    .buyNowService .orderSummary span, .buyNowService .orderSummary .summaryDetail p, .buyNowService .orderSummary .summaryDetail p, .serviceContent .termOfService .serviceBox p,.buyNowService .orderSummary .summaryDetail .payable h2 span{
+        font-size: 14px;
+    }
+    .buyNowService .orderSummary .summaryDetail .payable h2{
+        font-size: 30px;
+    }
+    .serviceBuy .staper .listDiv {
+        max-width: 60%;
+    }
     .multiBlog .expertCard .cardContet .contactDiv{
         width: 100%;
         max-width: 50%;
@@ -4390,9 +4758,29 @@ main .expertBanner .searchBox {
     .fixedServiceDiv .operationDiv p {
         font-size: 18px;
     }
+    .paymentBtn{
+        max-width: 25%;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .paymentBtn{
+        max-width: 35%;
+    }
+    .whoRecive .formDiv .inputBtnDiv button{
+        font-size: 12px;
+        letter-spacing: 2px;
+        top: 28px;
+    }
+    .termOfService.commonService p{
+        max-width: 100%;
+    }
+    .serviceContent {
+        top: -200px;
+    }       
+    .serviceBuy .staper {
+        margin: 150px 0px 350px;
+    }
     .multiBlog .expertCard .cardContet .contactDiv{
         width: 100%;
         max-width: 70%;
@@ -4683,6 +5071,36 @@ main .expertBanner .searchBox {
 }
 
 @media screen and (max-width: 580px) {
+    .paymentBtn{
+        max-width: 60%;
+        padding: 15px 30px;
+    }
+    .serviceBuy .staper .listDiv li img{
+        width: 20px;
+    }
+    .buyNowService {
+        padding: 0px 20px;
+    }
+    .serviceContent {
+        top: -150px;
+    }
+    .serviceBuy .staper .listDiv li{
+        width: 40px;
+        height: 40px;
+        padding: 6px;
+    }
+    .serviceBuy .staper .listDiv ul::before{
+        top: 20px;
+    }
+    .serviceBuy .staper .listDiv li a{
+        font-size: 16px;
+    }
+    .serviceContent .formBtnDiv {
+        margin-top: 50px;
+    }
+    .serviceBuy .staper{
+        margin: 150px 0px 250px;
+    }
     .multiBlog .expertCard .cardContet .contactDiv{
         width: 100%;
         max-width: 90%;
@@ -5116,3 +5534,8 @@ main .expertBanner .searchBox {
     }
 
 }
+/* @media screen and (max-width: 414px) {
+    .buyNowService {
+        height: 1750px;
+    }
+} */

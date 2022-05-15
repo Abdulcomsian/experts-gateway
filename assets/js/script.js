@@ -1,15 +1,49 @@
+let count=2;
+$(".userProfile").click(function(){
+  if($(".dropDownMenu").css("opacity")==0){
+    $(".dropDownMenu").css("opacity","1")
+  } else{
+    $(".dropDownMenu").css("opacity","0")
+  }
+})
 $(".nextBtn").click(function(){
-  console.log("hello")
+  count=count+1;
+  console.log(count)
+  if(count==3){
+    $(".firstStep").css("display","none")
+    $(".secondStep").css("display","block")
+  }
+  else if(count==4){
+    $(".secondStep").css("display","none")
+    $(".thirdStep").css("display","block")
+    $(".paymentBtn").css("display","block")
+    $("button.nextBtn").css("display","none")
+  }
+  window.scrollTo({top: 0, behavior: 'smooth'});
   var current= $('.serviceBuy .staper .listDiv li.active');
   current.addClass("complete")
+  setInterval(() => {
+    current.removeClass("complete")
+    current.addClass("afterComplete")
+  }, 2000);
   var next = $('.serviceBuy .staper .listDiv li.active').removeClass('active').next('li');
-
-    // Did we reach the last element? Of so: select first sibling
-    if (!next.length) next = next.prevObject.siblings(':first');
-
-    // Add .active class to the li next in line.
-    next.addClass('active');
+  if (!next.length) next = next.prevObject.siblings(':first');
+  next.addClass('active');
 })
+$('.creditCardText').keyup(function() {
+  var foo = $(this).val().split("-").join(""); // remove hyphens
+  
+  if($(this).val()<=16){
+    if (foo.length > 0) {
+      foo = foo.match(new RegExp('.{1,4}', 'g')).join("-");
+      
+    }
+    $(this).val(foo);
+  } else{
+    
+  }
+  
+});
 $(".serviceSlider").slick({
   dots: false,
   infinite: false,

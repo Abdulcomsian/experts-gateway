@@ -3241,9 +3241,10 @@ main .expertBanner .searchBox {
 .applyDiv .pillsDiv ul{
     display: block;
 }
-.applyDiv .pillsDiv ul li{
+.applyDiv .pillsDiv ul li a{
     padding: 20px; 
     cursor: pointer;
+    display: block;
 }
 .applyDiv .pillsDiv ul li a{
     font-size: 22px;
@@ -3254,12 +3255,15 @@ main .expertBanner .searchBox {
     background: rgb(234, 42, 124);
     background: linear-gradient(90deg, rgba(234, 42, 124, 1) 0%, rgba(239, 29, 48, 1) 100%);
 }
-.applyDiv .pillsDiv ul li.active{
+.applyDiv .pillsDiv ul li a.active{
     background: rgb(234, 42, 124);
     background: linear-gradient(90deg, rgba(234, 42, 124, 1) 0%, rgba(239, 29, 48, 1) 100%);
+    color: #fff;
 }
-.applyDiv .pillsDiv ul li.active a,
-.applyDiv .pillsDiv ul li:hover a{
+.applyDiv .pillsDiv ul li a{
+    color: #000;
+}
+.applyDiv .pillsDiv ul li a:hover{
     color: #fff;
 }
 .contentDiv{
@@ -3417,7 +3421,7 @@ main .expertBanner .searchBox {
     .pricingDiv .priceDivHeader p{
         font-size: 50px;
     }
-    .applyDiv .pillsDiv ul li{
+    .applyDiv .pillsDiv ul li a{
         padding: 15px 20px;
     }
     .applyDiv .pillsDiv ul li a{

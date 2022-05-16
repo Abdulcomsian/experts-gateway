@@ -67,6 +67,7 @@ $(".serviceSlider").slick({
   slidesToShow: 4,
   slidesToScroll: 1,
   arrows: true,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1200,
@@ -103,6 +104,7 @@ $(".expertSlider").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1200,
@@ -139,6 +141,7 @@ $(".priceService").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1200,
@@ -175,6 +178,7 @@ $(".newsSlider").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1200,
@@ -211,6 +215,7 @@ $(".recentBlogSlider").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1200,
@@ -244,6 +249,7 @@ $(".fixedServiceSliderDiv").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1200,

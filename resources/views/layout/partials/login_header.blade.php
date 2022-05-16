@@ -4,9 +4,15 @@
     <div class="userDiv">
         <div class="userProfile">
             <img src="../../assets/img/userIcon.svg" alt="" class="img-fluid">
-            <span class="downIcon">
-                <i class="fa fa-sort-desc" aria-hidden="true"></i>
-            </span>
+            
+                <button type="button" class="btn dropdown-toggle" style="line-height: 0.2px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ route('login') }}">User Login</a>
+                    <a class="dropdown-item" href="{{ route('lawyer-login') }}">Lawyer Login</a>
+                    <a class="dropdown-item" href="">My orders</a>
+                </div>
         </div>
     </div>
     <nav class="navbar navbar-expand-md">

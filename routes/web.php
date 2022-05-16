@@ -17,7 +17,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes();  
+
+Route::get('/lawyer-login', function () {
+    return view('auth/lawyer_login');
+})->name('lawyer-login');
+
+
+Route::get('/lawyer-register', function () {
+    if (Auth::check())
+    {
+       return redirect()->to('/lawyer/dashboard');
+    }
+    else
+    {
+      return view('auth/lawyer_register');  
+    }
+    
+})->name('lawyer-register');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

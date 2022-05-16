@@ -1,0 +1,251 @@
+.picture.online-status[title=online] {
+    float: left;
+    height: 45px;
+    width: 50px;
+    text-align: center;
+    border: 4px solid #5bbc2e;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 36px;
+}
+
+.picture.online-status[title=offline] {
+    float: left;
+    height: 120px;
+    width: 132px;
+    text-align: center;
+    border: 4px solid #bbb;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 36px;
+    margin-top:10px;
+}
+
+.picture.online-status_1[title=lock] {
+    float: right;
+    height: 45px;
+    width: 50px;
+    text-align: center;
+    border: 4px solid #bbb;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+.chat{
+	float: right;
+    height: 45px;
+    width: 50px;
+    text-align: center;
+    border: 4px solid #bbb;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 36px;
+}
+
+/*.item .online-status{
+    float: right;
+    height: 45px;
+    width: 50px;
+    text-align: center;
+    border: 4px solid #bbb;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 96px;
+    line-height: 36px;
+}*/
+
+@media (max-width: 600px) {
+.item.clearfix.user.reply .picture[title=online] {
+    float: right;
+    height: 45px;
+    width: 50px;
+    text-align: center;
+    border: 4px solid #5bbc2e;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 36px;
+}
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+.item.clearfix.user.reply .picture[title=online] {
+    float: right;
+    height: 45px;
+    width: 50px;
+    text-align: center;
+    border: 4px solid #5bbc2e;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 36px;
+}
+}
+
+@media (min-width: 1025px) {
+
+.item.clearfix.user.reply .picture[title=online] {
+    float: right;
+    height: 45px;
+    width: 50px;
+    text-align: center;
+    border: 4px solid #5bbc2e;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 36px;
+}
+
+}
+
+@media (max-width: 600px) {
+.user_picture[title=online] {
+    float: right;
+    height: 45px;
+    width: 50px;
+    text-align: center;
+    border: 4px solid #5bbc2e;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 36px;
+}
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+.user_picture[title=online] {
+    float: right;
+    height: 45px;
+    width: 50px;
+    text-align: center;
+    border: 4px solid #5bbc2e;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 36px;
+}
+}
+@media (min-width: 1025px) {
+.user_picture[title=online] {
+    float: right;
+    height: 45px;
+    width: 50px;
+    text-align: center;
+    border: 4px solid #5bbc2e;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 36px;
+}
+}
+
+.lawyer_picture[title=offline] {
+    float: left;
+    height: 45px;
+    width: 50px;
+    text-align: center;
+    border: 4px solid #bbb;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 36px;
+}
+
+.messages-wrap .message .text {
+	float: right;
+	background: #ddd;
+	color: #333;
+	min-width: 200px;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.item.clearfix.user.reply .messages-wrap .message .editable {
+    float: right;
+    background: #ddd;
+    color: #333;
+    min-width: 200px;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.item.clearfix.lawyer.reply .messages-wrap .message .editable {
+    float: left;
+    min-width: 200px;
+    padding: 15px;
+    background: #5bbc2e;
+    border-radius: 6px;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    margin-left: 15px;
+}
+
+.item.clearfix.user.reply .messages-wrap .message .text .date {
+    right: 10px;
+    position: absolute;
+    bottom: -18px;
+    color: #aaa;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+}
+
+.item.clearfix.lawyer.reply .messages-wrap .message .text .date {
+    left: 10px;
+    right: 10px;
+    position: absolute;
+    bottom: -18px;
+    color: #aaa;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+}
+
+.close_section {
+    background: #eee;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.details h4 {
+    margin: 17px 0px 0px 142px;
+}
+
+.details .intro {
+    margin: 3px 0px 0px 132px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+.row .section {
+    background: #c9d6c3;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+._chat {
+    background-color: #5bbc2e;
+}
+

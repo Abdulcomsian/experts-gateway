@@ -1,10 +1,7 @@
-@extends('layout.loginlayout')
-
-@section('content')	
-
-<p>Admin Dashboard</p>	
-	
+@extends('layout.admin_panel.master')
+@section('title')
+Dashboard
 @endsection
-
-@section('js')
+@section('content')
+    
 @endsection

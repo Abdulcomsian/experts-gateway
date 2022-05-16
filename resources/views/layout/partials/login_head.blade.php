@@ -12,9 +12,10 @@ integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6J
 <link rel="stylesheet" href="../../assets/css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap"
 rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/css/intlTelInput.css" />
+<link rel="stylesheet" href="{{asset('assets/layouts/layout3/css/intlTelInput.css') }}" />
 <link rel="stylesheet" href="../../assets/css/slick.css">
 <link rel="stylesheet" href="../../assets/css/slick-theme.css">
 
 @toastr_css
+@stack('styles')
   

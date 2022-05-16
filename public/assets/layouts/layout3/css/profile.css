@@ -1,0 +1,23 @@
+.landing-question {
+    height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('image-1.jpg');
+}
+ul.skill-list li a{
+    float:left;
+    width: auto;
+    background-color: white;
+    color: #494949;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+ul.skill-list li a:hover{
+    background-color: #5bbc2e;
+    color: white;
+}

@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
 
             $adminRole = DB::table('roles')->where('name','Admin')->first();
 
-            $lawyerRole = DB::table('roles')->where('name','Brand Employee')->first();
+            $lawyerRole = DB::table('roles')->where('name','Lawyer')->first();
             $userRole = DB::table('roles')->where('name','User')->first();
 
             $admin = User::create([
@@ -37,14 +37,10 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('password1')
             ]);
 
-            $lawyerRole = User::create([
-                'f_name' => 'Lawyer First Name',
-                'l_name' => 'Lawyer Last Name',
+            $lawyer = User::create([
+                'name' => 'Lawyer full Name',
                 'email' => 'lawyer@gmail.com',
-                'phone' => '03005456559',
-                'DOB' => '2022-05-01',
                 'status' => '1',
-                'country' => 'Pakistan',
                 'password' => Hash::make('password1')
             ]);
 
@@ -60,7 +56,7 @@ class UserSeeder extends Seeder
 
             
             $admin->assignRole($adminRole->name);
-            $lawyerRole->assignRole($lawyerRole->name);
+            $lawyer->assignRole($lawyerRole->name);
             $user->assignRole($userRole->name);
         }
     }

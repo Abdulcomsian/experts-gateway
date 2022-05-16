@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="col-lg-6 text-right">
                                         
-                                        <button type="submit" class="formBtn" style="margin: 0px;">
+                                        <button type="submit" class="formBtn" style="cursor: pointer;margin: 0px;">
                                             {{ __('Login') }}
                                         </button>
                                     </div>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="applyForMembership">
                             <span>Don’t have an account?</span>
-                            <button>Sign Up</button>
+                            <a href="{{ route('register') }}"><button style="cursor: pointer;">Sign Up</button></a>
                         </div>
                         <p class="applyMemberShip" style="font-size: 18px;text-align: right;margin-top: 55px;">Want to register as a Lawyer? <a href="" style="color: #EA297A;">Apply For Membership</a></p>
                     </div>

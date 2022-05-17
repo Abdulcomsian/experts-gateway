@@ -117,6 +117,68 @@
                                         neqafue vel, aliqufet finibuas odio. Pellentesque efficitur volutpat ex a
                                         blandit. Sed vestibu lum pharetra ex id feugiat.</p>
                                 </div>
+                                <div class="orderDetaill mobileHide">
+                                    <ul>
+                                        <li>
+                                            <div class="checkedIcon">
+                                                <img src="../../assets/img/checkedIcon.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="numberIcon" style="display: none;">
+                                                <p>1</p>
+                                            </div>
+                                            <div class="orderInfo">
+                                                <p>Order Placed</p>
+                                                <span>5 mins ago</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkedIcon">
+                                                <img src="../../assets/img/checkedIcon.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="numberIcon" style="display: none;">
+                                                <p>2</p>
+                                            </div>
+                                            <div class="orderInfo">
+                                                <p>John Submits the details</p>
+                                                <span>5 mins ago</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkedIcon" style="display: none;">
+                                                <img src="../../assets/img/checkedIcon.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="numberIcon">
+                                                <p>1</p>
+                                            </div>
+                                            <div class="orderInfo">
+                                                <p>Aaron Bourke Completes the work</p>
+                                                <span>Arron will have a live session with you and provide any input on your requirements</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkedIcon" style="display: none;">
+                                                <img src="../../assets/img/checkedIcon.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="numberIcon">
+                                                <p>4</p>
+                                            </div>
+                                            <div class="orderInfo">
+                                                <p>John Approves the work</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkedIcon" style="display: none;">
+                                                <img src="../../assets/img/checkedIcon.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="numberIcon">
+                                                <p>5</p>
+                                            </div>
+                                            <div class="orderInfo">
+                                                <p>Service Delivered</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="postedBy">
@@ -127,7 +189,68 @@
                                     </div>
                                     <button style="background: transparent;color: #ed234f;" class="markedCompleted">Order Details</button>
                                 </div>
-
+                                <div class="orderDetaill desktopHide">
+                                    <ul>
+                                        <li>
+                                            <div class="checkedIcon">
+                                                <img src="../../assets/img/checkedIcon.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="numberIcon" style="display: none;">
+                                                <p>1</p>
+                                            </div>
+                                            <div class="orderInfo">
+                                                <p>Order Placed</p>
+                                                <span>5 mins ago</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkedIcon">
+                                                <img src="../../assets/img/checkedIcon.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="numberIcon" style="display: none;">
+                                                <p>2</p>
+                                            </div>
+                                            <div class="orderInfo">
+                                                <p>John Submits the details</p>
+                                                <span>5 mins ago</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkedIcon" style="display: none;">
+                                                <img src="../../assets/img/checkedIcon.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="numberIcon">
+                                                <p>1</p>
+                                            </div>
+                                            <div class="orderInfo">
+                                                <p>Aaron Bourke Completes the work</p>
+                                                <span>Arron will have a live session with you and provide any input on your requirements</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkedIcon" style="display: none;">
+                                                <img src="../../assets/img/checkedIcon.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="numberIcon">
+                                                <p>4</p>
+                                            </div>
+                                            <div class="orderInfo">
+                                                <p>John Approves the work</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkedIcon" style="display: none;">
+                                                <img src="../../assets/img/checkedIcon.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="numberIcon">
+                                                <p>5</p>
+                                            </div>
+                                            <div class="orderInfo">
+                                                <p>Service Delivered</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -322,6 +445,15 @@
 </script>
 <script src="../../assets/js/slick.min.js"></script>
 <script src="../../assets/js/script.js"></script>
-
-
+<script>
+    $(".markedCompleted").click(function(){
+        if($(".orderSection .orderContent .orderDetaill").css("display")=="none"){
+            $(".orderSection .orderContent .orderDetaill").css("display","block")
+            $(this).text("Show Less")
+        } else{
+            $(".orderSection .orderContent .orderDetaill").css("display","none")
+            $(this).text("Order Details")
+        }
+    })
+</script>
 </html>

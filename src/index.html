@@ -42,7 +42,7 @@
                         <li>
                             <img src="../assets/img/myOrder.png" alt="" class="img-fluid">
                             <span>
-                                <a href="./order/index.html">My Orders</a>
+                                <a href="./order/yourOrders.html">My Orders</a>
                             </span>
                         </li>
                     </ul>
@@ -282,25 +282,25 @@
                         <div class="multiBox">
                             <div class="">
                                 <div class="commonBox">
-                                    <h2>10K+</h2>
+                                    <h2><span id="number1">10</span>K+</h2>
                                     <p>Active Members</p>
                                 </div>
                                 <div class="commonBox">
-                                    <h2>10</h2>
+                                    <h2 id="number2">10</h2>
                                     <p>Years of excellence</p>
                                 </div>
                                 <div class="commonBox">
-                                    <h2>150</h2>
+                                    <h2 id="number3">150</h2>
                                     <p>Key countries</p>
                                 </div>
                             </div>
                             <div style="margin-left: 30px;">
                                 <div class="commonBox">
-                                    <h2>10%</h2>
+                                    <h2><span id="number4">10</span>%</h2>
                                     <p>Trust rating</p>
                                 </div>
                                 <div class="commonBox">
-                                    <h2>200</h2>
+                                    <h2 id="number5">200</h2>
                                     <p>Areas of expertise</p>
                                 </div>
                             </div>
@@ -784,5 +784,63 @@
 </script>
 <script src="../assets/js/slick.min.js"></script>
 <script src="../assets/js/script.js"></script>
+<script src="../assets/js/jQuery.js"></script>
+<script>
+    $(document).on('scroll', function() {
+        if ($(this).scrollTop() > $('.aboutUs').position().top) {
+            counterCall();
+        }
+    })
+</script>
+<script>
+     $.fn.jQuerySimpleCounter = function (options) {
+        var settings = $.extend({
+            start: 0,
+            end: 100,
+            easing: 'swing',
+            duration: 400,
+            complete: ''
+        }, options);
 
+        var thisElement = $(this);
+
+        $({
+            count: settings.start
+        }).animate({
+            count: settings.end
+        }, {
+            duration: settings.duration,
+            easing: settings.easing,
+            step: function () {
+                var mathCount = Math.ceil(this.count);
+                thisElement.text(mathCount);
+            },
+            complete: settings.complete
+        });
+    };
+
+
+    function counterCall() {
+        $('#number1').jQuerySimpleCounter({
+        end: 10,
+        duration: 1500
+    });
+    $('#number2').jQuerySimpleCounter({
+        end: 10,
+        duration: 2000
+    });
+    $('#number3').jQuerySimpleCounter({
+        end: 10,
+        duration: 3000
+    });
+    $('#number4').jQuerySimpleCounter({
+        end: 10,
+        duration: 3000
+    });
+    $('#number5').jQuerySimpleCounter({
+        end: 200,
+        duration: 2000
+    });
+    }
+</script>
 </html>

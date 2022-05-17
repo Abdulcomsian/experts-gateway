@@ -14,7 +14,7 @@
                                 <div class="inputBtn">
                                     <input type="text" name="email" id="email" placeholder="Enter Your Email Address">
                                     <button>
-                                        <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid">
+                                        <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid">
                                     </button>
                                 </div>
                             </form>
@@ -28,28 +28,28 @@
                 <div class="col-lg-4">
                     <div class="footerWiget">
                         <div class="logo">
-                            <img src="../assets/img/logoFooter.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/logoFooter.png') }}" alt="" class="img-fluid">
                         </div>
                         <div class="socialList">
                             <ul>
                                 <li>
                                     <a href="">
-                                        <img src="../assets/img/facebook.png" alt="" class="img-fluid">
+                                        <img src="{{ asset('assets/img/facebook.png') }}" alt="" class="img-fluid">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="">
-                                        <img src="../assets/img/instagram.png" alt="" class="img-fluid">
+                                        <img src="{{ asset('assets/img/instagram.png') }}" alt="" class="img-fluid">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="">
-                                        <img src="../assets/img/twitter.png" alt="" class="img-fluid">
+                                        <img src="{{ asset('assets/img/twitter.png') }}" alt="" class="img-fluid">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="">
-                                        <img src="../assets/img/linkdien.png" alt="" class="img-fluid">
+                                        <img src="{{ asset('assets/img/linkdien.png') }}" alt="" class="img-fluid">
                                     </a>
                                 </li>
                             </ul>

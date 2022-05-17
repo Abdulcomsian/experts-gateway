@@ -13,52 +13,70 @@
 	<header class="profileHeader">
         <div class="userDiv">
             <div class="userProfile">
-                <img src="../../assets/img/userIcon.svg" alt="" class="img-fluid">
-            
-                <button type="button" class="btn dropdown-toggle" style="line-height: 0.2px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    
-                </button>
-                <div class="dropdown-menu">
-                    {{ Auth::user()->name }}
-                	<div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ route('login') }}">Orders</a>
-                    <a class="dropdown-item" href="">Logout</a>
+                <img src="{{ asset('assets/img/userIcon.svg') }}" alt="" class="img-fluid">
+                <span class="downIcon">
+                    <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                </span>
+                <div class="dropDownMenu">
+                    <ul>
+                    	<li>
+                        	<span>{{ Auth::user()->name }}</span>
+                        </li>
+                        <div class="line"></div>
+                        <li>
+                            <img src="{{ asset('assets/img/myOrder.png') }}" alt="" class="img-fluid">
+                            <span>
+                                <a href="./order/index.html">My Orders</a>
+                            </span>
+                        </li>
+                        <li>
+                            <img src="{{ asset('assets/img/loginIcon.png') }}" alt="" class="img-fluid">
+                            <span>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">Logout</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
         <nav class="navbar navbar-expand-md">
             <a class="navbar-brand" href="#">
-                <img src="../assets/img/logo.png" alt="" class="img-fluid">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="" class="img-fluid">
             </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./editProfile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('create.blog') }}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./earning.html">Earnings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./fixedService/fixedService.html">Fixed Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./publicQuestion.html">Public Questions & Call Requests</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-        <div class="subHeader">
+        <!-- <div class="subHeader">
             <nav class="navbar navbar-expand-md">
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-                    </span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Earnings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Fixed Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Public Questions & Call Requests</a>
-                        </li>
-                    </ul>
-                </div>
+               
             </nav>
-        </div>
+        </div> -->
     </header>
 <div class="main-wrapper">

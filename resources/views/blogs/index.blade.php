@@ -37,7 +37,7 @@ Dashboard
                                 @foreach($blogs as $blog)
                                 <td>{{$blog->title}}</td>
                                 <td>{{$blog->short_description}}</td>
-                                <td><img src="{{asset($blog->image)}}" width="100px" height="100px"></td>
+                                <td><img src="{{asset('blogs/'.$blog->image)}}" width="100px" height="100px"></td>
                                 <td>{{$blog->user->name}}</td>
                                 <td>
                                 	@if($blog->status == 0)

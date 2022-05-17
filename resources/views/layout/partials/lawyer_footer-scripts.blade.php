@@ -9,9 +9,11 @@
 </script>
 <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script src="../assets/js/slick.min.js"></script>
-<script src="../assets/js/script.js"></script>
+<script src="{{ asset('assets/js/slick.min.js') }}"></script>
+<script src="{{ asset('assets/js/script.js') }}"></script>
 		
 
 		@toastr_js
 		@toastr_render	
+
+		@yield('js')

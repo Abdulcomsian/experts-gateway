@@ -15,4 +15,9 @@ class Blog extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function expertise()
+    {
+        return $this->belongsTo(Expertise::class);
+    }
 }

@@ -55,10 +55,9 @@
                             <img src="../../assets/img/line.png" alt="" class="img-fluid">
                         </div>
                         <div class="applyForMembership">
-                            <span>Want to register as a Lawyer??</span>
+                            <span>Want to register as a Lawyer?</span>
                             <a href="{{ route('lawyer-register') }}"><button style="cursor: pointer;">Apply</button></a>
                         </div>
-                        <p class="applyMemberShip" style="font-size: 18px;text-align: right;margin-top: 55px;">Want to register as a Lawyer? <a href="" style="color: #EA297A;">Apply For Membership</a></p>
                     </div>
 
                 </div>

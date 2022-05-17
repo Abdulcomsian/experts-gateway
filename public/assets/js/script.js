@@ -1,3 +1,65 @@
+let count=2;
+$(".nav-pills li").click(function(){
+  $('.nav-pills li').removeClass("active");
+  $(this).addClass("active")
+})
+$(".tabNextBtn").click(function(){
+  var currentActive = $('.nav-pills li.active'); // get current active
+  var currentTabContent = $(".tab-content .tab-pane.show.active.in");
+  currentTabContent.removeClass("show")
+  currentTabContent.removeClass("active")
+  currentTabContent.removeClass("in")
+  currentActive.removeClass('active'); // remove class active
+  currentTabContent.next('.tab-content .tab-pane').addClass('active')
+  currentTabContent.next('.tab-content .tab-pane').addClass('show')
+  currentTabContent.next('.tab-content .tab-pane').addClass('in')
+  currentActive.next('.nav-pills li').addClass('active'); // otherwise add active to next li
+})
+$(".userProfile").click(function(){
+  if($(".dropDownMenu").css("opacity")==0){
+    $(".dropDownMenu").css("opacity","1")
+  } else{
+    $(".dropDownMenu").css("opacity","0")
+  }
+})
+$(".nextBtn").click(function(){
+  count=count+1;
+  console.log(count)
+  if(count==3){
+    $(".firstStep").css("display","none")
+    $(".secondStep").css("display","block")
+  }
+  else if(count==4){
+    $(".secondStep").css("display","none")
+    $(".thirdStep").css("display","block")
+    $(".paymentBtn").css("display","block")
+    $("button.nextBtn").css("display","none")
+  }
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  var current= $('.serviceBuy .staper .listDiv li.active');
+  current.addClass("complete")
+  setInterval(() => {
+    current.removeClass("complete")
+    current.addClass("afterComplete")
+  }, 2000);
+  var next = $('.serviceBuy .staper .listDiv li.active').removeClass('active').next('li');
+  if (!next.length) next = next.prevObject.siblings(':first');
+  next.addClass('active');
+})
+$('.creditCardText').keyup(function() {
+  var foo = $(this).val().split("-").join(""); // remove hyphens
+  
+  if($(this).val()<=16){
+    if (foo.length > 0) {
+      foo = foo.match(new RegExp('.{1,4}', 'g')).join("-");
+      
+    }
+    $(this).val(foo);
+  } else{
+    
+  }
+  
+});
 $(".serviceSlider").slick({
   dots: false,
   infinite: false,
@@ -5,6 +67,7 @@ $(".serviceSlider").slick({
   slidesToShow: 4,
   slidesToScroll: 1,
   arrows: true,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1200,
@@ -41,6 +104,7 @@ $(".expertSlider").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1200,
@@ -77,6 +141,7 @@ $(".priceService").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1200,
@@ -113,6 +178,7 @@ $(".newsSlider").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1200,
@@ -149,6 +215,7 @@ $(".recentBlogSlider").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1200,
@@ -182,6 +249,7 @@ $(".fixedServiceSliderDiv").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1200,
@@ -218,4 +286,5 @@ window.intlTelInput(input, {
 });
 $(document).ready(function () {
   $(".js-example-basic-multiple").select2();
+ 
 });

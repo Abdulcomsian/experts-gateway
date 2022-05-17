@@ -23,6 +23,9 @@ Route::get('/lawyer-login', function () {
     return view('auth/lawyer_login');
 })->name('lawyer-login');
 
+Route::get('/all-blogs', [App\Http\Controllers\blogController::class, 'blogs'])->name('all-blogs');
+Route::get('/all-blog/{id}', [App\Http\Controllers\blogController::class, 'client_blog'])->name('all-blog');
+
 
 Route::get('/lawyer-register', function () {
     if (Auth::check())
@@ -54,6 +57,8 @@ Route::prefix('user')->middleware(['auth','can:user'])->group(function(){
 Route::prefix('lawyer')->middleware(['auth','can:lawyer'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\Lawyer\dashboardController::class, 'index'])->name('lawyer.dashboard');
     Route::get('/profile', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile'])->name('lawyer.profile');
-    Route::get('/blogs', [App\Http\Controllers\blogController::class, 'index'])->name('lawyer.blogs');
+    Route::get('/blog/{id}', [App\Http\Controllers\blogController::class, 'blog'])->name('lawyer.blog');
+    Route::get('/create', [App\Http\Controllers\blogController::class, 'create'])->name('create.blog');
+    Route::post('/store', [App\Http\Controllers\blogController::class, 'store'])->name('blog.store');
 });
 

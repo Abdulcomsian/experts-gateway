@@ -119,7 +119,7 @@ class RegisterController extends Controller
 
         elseif(Auth::user()->hasRole('Lawyer'))
         {
-            $this->redirectTo = route('lawyer.dashboard');
+            $this->redirectTo = route('lawyer.profile');
 
             return $this->redirectTo;
         }

@@ -41,6 +41,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 /*****************ADMIN ROUTES*******************/
 Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\Admin\dashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/blogs', [App\Http\Controllers\blogController::class, 'index'])->name('admin.blogs');
 });
 
 /*****************User ROUTES*******************/
@@ -52,5 +53,7 @@ Route::prefix('user')->middleware(['auth','can:user'])->group(function(){
 /*****************Lawyer ROUTES*******************/
 Route::prefix('lawyer')->middleware(['auth','can:lawyer'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\Lawyer\dashboardController::class, 'index'])->name('lawyer.dashboard');
+    Route::get('/profile', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile'])->name('lawyer.profile');
+    Route::get('/blogs', [App\Http\Controllers\blogController::class, 'index'])->name('lawyer.blogs');
 });
 

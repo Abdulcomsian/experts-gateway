@@ -62,7 +62,7 @@ class LoginController extends Controller
         elseif(Auth::user()->hasRole('Lawyer'))
         {
             $user = User::where('id',Auth::id())->first();
-            $this->redirectTo = route('lawyer.dashboard');
+            $this->redirectTo = route('lawyer.profile');
 
             return $this->redirectTo;
         }

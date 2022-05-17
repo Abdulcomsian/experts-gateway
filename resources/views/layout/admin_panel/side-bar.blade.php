@@ -71,7 +71,11 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link active" href="#">
+                    @if(Route::is('admin.blogs') )
+                    <a class="menu-link active" href="/admin/blogs">
+                    @else
+                    <a class="menu-link" href="/admin/blogs">
+                    @endif
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
 											<span class="svg-icon svg-icon-2">

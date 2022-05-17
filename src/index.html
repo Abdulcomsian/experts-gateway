@@ -61,7 +61,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.html">Home</a>
+                        <a class="nav-link active" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./aboutUs.html">About Us</a>
@@ -106,6 +106,10 @@
                                 <div class="countryDiv">
                                     <select name="" id="">
                                         <option value="Country">Country</option>
+                                        <option value="Country">USA</option>
+                                        <option value="Country">Canada</option>
+                                        <option value="Country">Australia</option>
+                                        <option value="Country">Japan</option>
                                     </select>
                                 </div>
                                 <div class="expertiseDiv">
@@ -158,6 +162,10 @@
                 <div class="countryDiv">
                     <select name="" id="">
                         <option value="Country">Country</option>
+                                        <option value="Country">USA</option>
+                                        <option value="Country">Canada</option>
+                                        <option value="Country">Australia</option>
+                                        <option value="Country">Japan</option>
                     </select>
                 </div>
                 <div class="expertiseDiv">
@@ -786,61 +794,54 @@
 <script src="../assets/js/script.js"></script>
 <script src="../assets/js/jQuery.js"></script>
 <script>
-    $(document).on('scroll', function() {
-        if ($(this).scrollTop() > $('.aboutUs').position().top) {
-            counterCall();
-        }
-    })
-</script>
-<script>
-     $.fn.jQuerySimpleCounter = function (options) {
-        var settings = $.extend({
-            start: 0,
-            end: 100,
-            easing: 'swing',
-            duration: 400,
-            complete: ''
-        }, options);
-
-        var thisElement = $(this);
-
-        $({
-            count: settings.start
-        }).animate({
-            count: settings.end
-        }, {
-            duration: settings.duration,
-            easing: settings.easing,
-            step: function () {
-                var mathCount = Math.ceil(this.count);
-                thisElement.text(mathCount);
-            },
-            complete: settings.complete
-        });
-    };
+  /******************* Counter JQuery */
 
 
-    function counterCall() {
-        $('#number1').jQuerySimpleCounter({
-        end: 10,
-        duration: 1500
-    });
-    $('#number2').jQuerySimpleCounter({
-        end: 10,
-        duration: 2000
-    });
-    $('#number3').jQuerySimpleCounter({
-        end: 10,
-        duration: 3000
-    });
-    $('#number4').jQuerySimpleCounter({
-        end: 10,
-        duration: 3000
-    });
-    $('#number5').jQuerySimpleCounter({
-        end: 200,
-        duration: 2000
-    });
-    }
+$.fn.jQuerySimpleCounter = function (options) {
+  var settings = $.extend({
+      start: 0,
+      end: 100,
+      easing: 'swing',
+      duration: 400,
+      complete: ''
+  }, options);
+
+  var thisElement = $(this);
+
+  $({
+      count: settings.start
+  }).animate({
+      count: settings.end
+  }, {
+      duration: settings.duration,
+      easing: settings.easing,
+      step: function () {
+          var mathCount = Math.ceil(this.count);
+          thisElement.text(mathCount);
+      },
+      complete: settings.complete
+  });
+};
+
+  $('#number1').jQuerySimpleCounter({
+  end: 10,
+  duration: 1500
+});
+$('#number2').jQuerySimpleCounter({
+  end: 10,
+  duration: 2000
+});
+$('#number3').jQuerySimpleCounter({
+  end: 10,
+  duration: 3000
+});
+$('#number4').jQuerySimpleCounter({
+  end: 10,
+  duration: 3000
+});
+$('#number5').jQuerySimpleCounter({
+  end: 200,
+  duration: 2000
+});
 </script>
 </html>

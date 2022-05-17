@@ -158,6 +158,9 @@ header #collapsibleNavbar .nav-item .nav-link {
     font-family: MoskauRegular;
     font-weight: 700;
 }
+header #collapsibleNavbar .nav-item .nav-link.active{
+    color: #ed244d;
+}
 
 header .navbar-toggler {
     border: 2px solid #2F2F2F;

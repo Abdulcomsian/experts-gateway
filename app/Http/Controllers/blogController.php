@@ -75,8 +75,8 @@ class blogController extends Controller
     {
         $user_id = Auth::id();
         $blog = Blog::where('id',$id)->first();
-
-        return view('lawyer.blog', compact('blog'));
+        $lawyer = User::where('id',$user_id)->first();
+        return view('lawyer.blog', compact('blog','lawyer'));
     }
 
     public function blogs()

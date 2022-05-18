@@ -19,6 +19,14 @@ class dashboardController extends Controller
     {
         $user_id = Auth::id();
         $lawyer = User::where('id',$user_id)->first();
-        return view('lawyer.profile',compact('lawyer'));
+        if($lawyer->status == 1)
+        {
+           return view('lawyer.build_profile',compact('lawyer')); 
+        }
+        else
+        {
+            return view('lawyer.profile',compact('lawyer'));
+        }
+        
     }
 }

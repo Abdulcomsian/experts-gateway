@@ -56,7 +56,7 @@ Dashboard
                                 </td>
                                 <td class="text-end">
 
-                                    <a href="#" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a>
+                                    <a href="{{route('blog.show',$blog->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a>
 
                                     <a href="{{route('blog.edit',$blog->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
                                     <form method="POST" action="{{ route('blog.destroy', $blog->id) }}"  id="form_{{$blog->id}}" >

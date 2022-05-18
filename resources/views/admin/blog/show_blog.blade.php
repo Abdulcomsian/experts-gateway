@@ -23,9 +23,6 @@ Dashboard
                             <!--begin::Card body-->
                             <div class="card-body p-12">
                                 <!--begin::Form-->
-                                <form action="{{ route('update-blog',$blog->id) }}" method="post" enctype="multipart/form-data">
-                                @method('PUT')
-                                @csrf
                                     <!--begin::Wrapper-->
                                     <div class="d-flex flex-column align-items-start flex-xxl-row">
 
@@ -48,8 +45,7 @@ Dashboard
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Title</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" class="form-control form-control-solid" name="title" value="{{$blog->title}}" placeholder="Title" />
-                                                    <div style="color:red;">{{$errors->first('title')}}</div> <br>
+                                                    <input type="readonly" class="form-control form-control-solid" value="{{$blog->title}}" />
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -59,9 +55,7 @@ Dashboard
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Image</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="file" class="form-control form-control-solid" name="image" id="image" accept="image/*">
-                                                    <p>Upload Blog Image</p>
-                                                    <div style="color:red;">{{$errors->first('image')}}</div> <br>
+                                                    <img src="{{asset('blogs/'.$blog->image)}}" width="150px" height="150px">
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -71,23 +65,17 @@ Dashboard
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Category</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <select name="expertise_id" class="form-control form-control-solid" id="expertise_id">
-                                                        @foreach($expertises as $expertise)                                                        <option value="{{$expertise->id}}" {{ $blog->expertise_id == $expertise->id ? 'selected' : '' }} >{{$expertise->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <div style="color:red;">{{$errors->first('expertise_id')}}</div> <br>
+                                                    <input type="readonly" class="form-control form-control-solid" value="{{$blog->expertise->name}}">
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
                                             <!--end::Col-->
                                             <!--begin::Col-->
                                             <div class="col-lg-12">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Address</label>
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Short Description</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <textarea name="short_description" id="short_description" class="form-control form-control-solid" cols="20" rows="5" style="border:1px solid #d9d9d9;" 
-                                                    placeholder="Short Description" >{{$blog->short_description}}</textarea>
-                                                    <div style="color:red;">{{$errors->first('short_description')}}</div> <br>
+                                                    <input type="readonly" class="form-control form-control-solid" value="{{$blog->short_description}}">
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -96,16 +84,11 @@ Dashboard
                                             <div class="col-lg-12">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Description</label>
                                                 <!--begin::Input group-->
-                                                <div class="mb-5">
-                                                    <textarea class="ckeditor form-control" name="description">{!! $blog->description !!}</textarea>
-                                                    <div style="color:red;">{{$errors->first('description')}}</div> <br>
+                                                <div class="mb-5" style="color:#5e6278";>
+                                                    <p>{!! $blog->description !!}</p>
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
-
-                                            <button type="submit" class="btn btn-primary updateBtn">
-                                                Update Blog
-                                            </button>
                                             <!--end::Col-->
                                             </div>
                                             <!--end::Col-->
@@ -113,8 +96,6 @@ Dashboard
                                         <!--end::Row-->
                                     </div>
                                     <!--end::Wrapper-->
-                                </form>
-                                <!--end::Form-->
                             </div>
                             <!--end::Card body-->
                         </div>

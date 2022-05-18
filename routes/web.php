@@ -48,6 +48,7 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 
     Route::post('/update_blog_status/{id}', [App\Http\Controllers\blogController::class, 'update_blog_status'])->name('update-blog-status');   
 
+    Route::get('/show/{id}', [App\Http\Controllers\blogController::class, 'show'])->name('blog.show');
     Route::get('/edit_blog/{id}', [App\Http\Controllers\blogController::class, 'edit'])->name('blog.edit');
 
     Route::put('/update-blog/{id}', [App\Http\Controllers\blogController::class, 'update'])->name('update-blog');

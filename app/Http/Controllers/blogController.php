@@ -7,6 +7,7 @@ use Auth;
 use App\Models\Blog;
 use App\Models\User;
 use App\Models\Expertise;
+use Illuminate\Support\Facades\Redirect;
 
 class blogController extends Controller
 {
@@ -15,6 +16,17 @@ class blogController extends Controller
         $user_id = Auth::id();
         $blogs = Blog::get();
         return view('admin.blog.index',compact('blogs'));
+    }
+
+    public function show($id)
+    {
+        try {
+            $blog = Blog::where('id',$id)->first();
+            return view('admin.blog.show_blog', compact('blog'));
+        } catch (\Exception $exception) {
+            toastError('Something went wrong, try again!');
+            return Redirect::back();
+        }
     }
 
     public function create(Request $request)
@@ -56,7 +68,7 @@ class blogController extends Controller
         }
         $blog->save();
         toastSuccess('Successfully Added');
-        return redirect('lawyer/profile');
+        return redirect('lawyer/create');
     }
 
     public function blog($id)
@@ -69,7 +81,7 @@ class blogController extends Controller
 
     public function blogs()
     {
-        $blogs = Blog::get();
+        $blogs = Blog::where('status',1)->get();
 
         return view('user.blogs', compact('blogs'));
     }
@@ -146,21 +158,16 @@ class blogController extends Controller
 
     public function destroy(Request $request , $id)
     {
-        try {
-                $filePath = Blog::FindorFail($id);
-                // Blog::FindorFail($id)->delete();
+        
+        $filePath = Blog::FindorFail($id);
+        // Blog::FindorFail($id)->delete();
 
-                $filePath = app_path().'/images/news/'. $filePath->image;
-                dd($filePath);
-                
-                @unlink($filePath->image);
+        $filePath = public_path("blogs").'/' . $filePath->image;
+        @unlink($filePath);
                
-            toastr()->success('Successfully Deleted');
-            return back();
-        } catch (\Exception $exception) {
-            toastError($exception->getMessage());
-            return Redirect::back();
-        }
+        toastr()->success('Successfully Deleted');
+        return back();
+        
         
     }
 }

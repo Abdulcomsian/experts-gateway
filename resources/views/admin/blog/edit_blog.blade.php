@@ -82,7 +82,7 @@ Dashboard
                                             <!--end::Col-->
                                             <!--begin::Col-->
                                             <div class="col-lg-12">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Address</label>
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Short Description</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     <textarea name="short_description" id="short_description" class="form-control form-control-solid" cols="20" rows="5" style="border:1px solid #d9d9d9;" 

@@ -23,6 +23,7 @@
         "webpack": "^5.72.1"
     },
     "dependencies": {
+        "font-awesome": "^4.7.0",
         "node-sass": "^7.0.1"
     }
 }

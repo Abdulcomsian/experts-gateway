@@ -25,7 +25,7 @@
                                     <option value="Expertise">Expertise</option>
                                 </select>
                                 <div class="btnDiv">
-                                    <button><img src="../assets/img/searchBtnIcon.svg" alt="" class="img-fluid">
+                                    <button><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid">
                                         <a style="color: #fff;" href="./fixed-free.html">Search</a>
                                     </button>
                                 </div>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-lg-6" style="padding: 0px;">
                     <div class="bannerRight">
-                        <img src="../assets/img/bannerImg.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/bannerImg.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -46,22 +46,22 @@
             <ul>
                 <li>
                     <div class="clientDetailBox">
-                        <img src="../assets/img/client1.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
                     </div>
                 </li>
                 <li>
                     <div class="clientDetailBox">
-                        <img src="../assets/img/client2.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/client2.png') }}" alt="" class="img-fluid">
                     </div>
                 </li>
                 <li>
                     <div class="clientDetailBox">
-                        <img src="../assets/img/client3.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/client3.png') }}" alt="" class="img-fluid">
                     </div>
                 </li>
                 <li>
                     <div class="clientDetailBox">
-                        <img src="../assets/img/client1.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
                     </div>
                 </li>
             </ul>
@@ -77,7 +77,7 @@
                     <option value="Expertise">Expertise</option>
                 </select>
                 <div class="btnDiv">
-                    <button><img src="../assets/img/searchBtnIcon.svg" alt="" class="img-fluid">  <a style="color: #fff;" href="./fixed-free.html">Search</a></button>
+                    <button><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid">  <a style="color: #fff;" href="./fixed-free.html">Search</a></button>
                 </div>
             </div>
 
@@ -97,90 +97,90 @@
                 <div class="serviceSlider">
                     <div class="serviceBox">
                         <div class="boxHeader">
-                            <img src="../assets/img/finance.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/finance.png') }}" alt="" class="img-fluid">
                             <h2>Banking & Finance Law</h2>
                             <div class="line"></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
                         <div class="boxHeader">
-                            <img src="../assets/img/civil.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/civil.png') }}" alt="" class="img-fluid">
                             <h2>Civil Litigation</h2>
                             <div class="line"></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
                         <div class="boxHeader">
-                            <img src="../assets/img/commercial.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/commercial.png') }}" alt="" class="img-fluid">
                             <h2>Commercial Litigation</h2>
                             <div class="line"></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
                         <div class="boxHeader">
-                            <img src="../assets/img/arbitration.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/arbitration.png') }}" alt="" class="img-fluid">
                             <h2>Arbitration</h2>
                             <div class="line"></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
                         <div class="boxHeader">
-                            <img src="../assets/img/finance.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/finance.png') }}" alt="" class="img-fluid">
                             <h2>Banking & Finance Law</h2>
                             <div class="line"></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
                         <div class="boxHeader">
-                            <img src="../assets/img/civil.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/civil.png') }}" alt="" class="img-fluid">
                             <h2>Civil Litigation</h2>
                             <div class="line"></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
                         <div class="boxHeader">
-                            <img src="../assets/img/commercial.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/commercial.png') }}" alt="" class="img-fluid">
                             <h2>Commercial Litigation</h2>
                             <div class="line"></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
                         <div class="boxHeader">
-                            <img src="../assets/img/arbitration.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/arbitration.png') }}" alt="" class="img-fluid">
                             <h2>Arbitration</h2>
                             <div class="line"></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                 </div>
@@ -228,7 +228,7 @@
                             maximus sapien ac erat euismod lacin ia. Maecenas dui leo, auctor eu neqafue vel,
                             aliqufet finibuas odio. Pellentesque efficitur volutpat ex a blandit. Sed vestibu lum
                             pharetra ex id feugiat.</p>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -247,7 +247,7 @@
             <div class="sliderDiv">
                 <div class="expertSlider">
                     <div class="sliderBox">
-                        <img src="../assets/img/client3.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/client3.png') }}" alt="" class="img-fluid">
                         <div class="expertHeader">
                             <h4>John Deo</h4>
                             <p>King & Wood Mallesons</p>
@@ -260,7 +260,7 @@
                         </div>
                     </div>
                     <div class="sliderBox">
-                        <img src="../assets/img/client2.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/client2.png') }}" alt="" class="img-fluid">
                         <div class="expertHeader">
                             <h4>Aaron Bourke</h4>
                             <p>King & Wood Mallesons</p>
@@ -273,7 +273,7 @@
                         </div>
                     </div>
                     <div class="sliderBox">
-                        <img src="../assets/img/client1.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
                         <div class="expertHeader">
                             <h4>Mark Deo</h4>
                             <p>King & Wood Mallesons</p>
@@ -286,7 +286,7 @@
                         </div>
                     </div>
                     <div class="sliderBox">
-                        <img src="../assets/img/client3.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/client3.png') }}" alt="" class="img-fluid">
                         <div class="expertHeader">
                             <h4>John Deo</h4>
                             <p>King & Wood Mallesons</p>
@@ -299,7 +299,7 @@
                         </div>
                     </div>
                     <div class="sliderBox">
-                        <img src="../assets/img/client2.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/client2.png') }}" alt="" class="img-fluid">
                         <div class="expertHeader">
                             <h4>Aaron Bourke</h4>
                             <p>King & Wood Mallesons</p>
@@ -312,7 +312,7 @@
                         </div>
                     </div>
                     <div class="sliderBox">
-                        <img src="../assets/img/client1.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
                         <div class="expertHeader">
                             <h4>Mark Deo</h4>
                             <p>King & Wood Mallesons</p>
@@ -349,52 +349,52 @@
             <div class="sliderDiv">
                 <div class="priceService">
                     <div class="serviceBox">
-                        <img src="../assets/img/accounting.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/accounting.png') }}" alt="" class="img-fluid">
                         <h3>Accounting Services</h3>
                         <div class="priceDiv">
                             <p>Fixed Price: <span>$500</span>/mo</p>
                         </div>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="serviceBox">
-                        <img src="../assets/img/law.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/law.png') }}" alt="" class="img-fluid">
                         <h3>Administrative Law</h3>
                         <div class="priceDiv">
                             <p>Fixed Price: <span>$500</span>/mo</p>
                         </div>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="serviceBox">
-                        <img src="../assets/img/banking.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/banking.png') }}" alt="" class="img-fluid">
                         <h3>Banking and Finance</h3>
                         <div class="priceDiv">
                             <p>Fixed Price: <span>$500</span>/mo</p>
                         </div>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="serviceBox">
-                        <img src="../assets/img/accounting.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/accounting.png') }}" alt="" class="img-fluid">
                         <h3>Accounting Services</h3>
                         <div class="priceDiv">
                             <p>Fixed Price: <span>$500</span>/mo</p>
                         </div>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="serviceBox">
-                        <img src="../assets/img/law.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/law.png') }}" alt="" class="img-fluid">
                         <h3>Administrative Law</h3>
                         <div class="priceDiv">
                             <p>Fixed Price: <span>$500</span>/mo</p>
                         </div>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="serviceBox">
-                        <img src="../assets/img/banking.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/banking.png') }}" alt="" class="img-fluid">
                         <h3>Banking and Finance</h3>
                         <div class="priceDiv">
                             <p>Fixed Price: <span>$500</span>/mo</p>
                         </div>
-                        <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                     </div>
                 </div>
             </div>
@@ -414,69 +414,69 @@
                     <div class="sliderDiv">
                         <div class="newsSlider">
                             <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
+                                <img src="{{ asset('assets/img/news1.png') }}" alt="" class="img-fluid">
                                 <div class="cardContent">
                                     <div class="date">
                                         <p>20 November, 2021</p>
                                     </div>
                                     <h4>Pellentesque dictum Nam diam lorem</h4>
                                     <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
+                                    <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                                 </div>
                             </div>
                             <div class="newsCard">
-                                <img src="../assets/img/news2.png" alt="" class="img-fluid">
+                                <img src="{{ asset('assets/img/news2.png') }}" alt="" class="img-fluid">
                                 <div class="cardContent">
                                     <div class="date">
                                         <p>20 November, 2021</p>
                                     </div>
                                     <h4>Pellentesque dictum Nam diam lorem</h4>
                                     <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
+                                    <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                                 </div>
                             </div>
                             <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
+                                <img src="{{ asset('assets/img/news1.png') }}" alt="" class="img-fluid">
                                 <div class="cardContent">
                                     <div class="date">
                                         <p>20 November, 2021</p>
                                     </div>
                                     <h4>Pellentesque dictum Nam diam lorem</h4>
                                     <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
+                                    <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                                 </div>
                             </div>
                             <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
+                                <img src="{{ asset('assets/img/news1.png') }}" alt="" class="img-fluid">
                                 <div class="cardContent">
                                     <div class="date">
                                         <p>20 November, 2021</p>
                                     </div>
                                     <h4>Pellentesque dictum Nam diam lorem</h4>
                                     <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
+                                    <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                                 </div>
                             </div>
                             <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
+                                <img src="{{ asset('assets/img/news1.png') }}" alt="" class="img-fluid">
                                 <div class="cardContent">
                                     <div class="date">
                                         <p>20 November, 2021</p>
                                     </div>
                                     <h4>Pellentesque dictum Nam diam lorem</h4>
                                     <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
+                                    <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                                 </div>
                             </div>
                             <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
+                                <img src="{{ asset('assets/img/news1.png') }}" alt="" class="img-fluid">
                                 <div class="cardContent">
                                     <div class="date">
                                         <p>20 November, 2021</p>
                                     </div>
                                     <h4>Pellentesque dictum Nam diam lorem</h4>
                                     <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="./aboutUs.html">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
+                                    <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                                 </div>
                             </div>
 
@@ -536,7 +536,7 @@
                 </div>
                 <div class="col-lg-6 text-center">
                     <div class="imgText">
-                        <img src="../assets/img/information.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/information.png" alt="" class="img-fluid">
                         <div class="imgTextMiddle">
                             <p>Legal Advice<br> Across the<br> Globe</p>
                         </div>

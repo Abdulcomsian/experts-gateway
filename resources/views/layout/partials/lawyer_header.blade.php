@@ -54,23 +54,7 @@
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
-                    @if($lawyer->status == '1')
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('lawyer.profile') }}">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('create.blog') }}">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./earning.html">Earnings</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./fixedService/fixedService.html">Fixed Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./publicQuestion.html">Public Questions & Call Requests</a>
-                    </li>
-                    @else
+                    @if($lawyer->status == '2')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('lawyer.profile') }}">Profile</a>
                     </li>

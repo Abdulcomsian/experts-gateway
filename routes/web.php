@@ -69,5 +69,7 @@ Route::prefix('lawyer')->middleware(['auth','can:lawyer'])->group(function(){
     Route::get('/blog/{id}', [App\Http\Controllers\blogController::class, 'blog'])->name('lawyer.blog');
     Route::get('/create', [App\Http\Controllers\blogController::class, 'create'])->name('create.blog');
     Route::post('/store', [App\Http\Controllers\blogController::class, 'store'])->name('blog.store');
+
+    Route::post('/profile-store', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_store'])->name('profile.store');
 });
 

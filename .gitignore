@@ -3,7 +3,8 @@
 /public/storage
 /storage/*.key
 /vendor
-/public/blogs
+/public/blogs 
+/public/lawyer_profile 
 .env
 .env.backup
 .phpunit.result.cache

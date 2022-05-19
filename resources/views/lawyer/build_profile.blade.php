@@ -3,6 +3,7 @@
 Profile building
 @endsection
 @push('styles')
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">s
 @endpush
 @section('content')
 <main>
@@ -24,57 +25,65 @@ Profile building
                     </div>
                     <div class="col-lg-9">
                         <div class="contentDiv">
+                            <form action="{{ route('profile.store') }}" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="tab-content">
                                 <div id="home" class="tab-pane fade show in active">
                                     <div class="profileBox">
                                         <div class="profileBoxHeader">
                                             <div class="uploadCover">
-                                                <input type="file" name="" id="">
+                                                <input type="file" required class="form-control form-control-solid" name="image" id="image" accept="image/*">
                                                 <p>Upload Cover Image</p>
+                                                <div style="color:red;">{{$errors->first('image')}}</div> <br>
                                             </div>
                                             <div class="profileAvatar">
                                                 <img src="../../assets/img/avatar.png" alt="" class="img-fluid">
                                             </div>
                                         </div>
                                         <div class="profileFormDiv">
-                                            <form action="">
+                                            
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv">
-                                                            <input type="text" placeholder="First Name"
-                                                                name="first_name" id="first_name">
+                                                            <input id="f_name" required type="text" name="f_name" value="{{ old('f_name') }}" autofocus placeholder="First Name">
+
+                                                            <div style="color:red;">{{$errors->first('f_name')}}</div> <br>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv">
-                                                            <input type="text" placeholder="Last Name"
-                                                                name="last_name" id="last_name">
+                                                            <input id="l_name" required type="text" name="l_name" value="{{ old('l_name') }}" placeholder="Last Name">
+
+                                                            <div style="color:red;">{{$errors->first('l_name')}}</div> <br>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </form>
+                                            
                                         </div>
                                     </div>
                                 </div>
                                 <div id="location" class="tab-pane fade">
                                     <div class="formDiv commonTabDiv">
-                                        <form action="">
+
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="inputDiv">
                                                         <label for="">Location</label>
-                                                        <input type="text" placeholder="Location" name="location"
-                                                            id="location">
+                                                        <input id="address" required type="text" name="address" value="{{ old('address') }}" placeholder="Location">
+
+                                                        <div style="color:red;">{{$errors->first('address')}}</div> <br>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="multiSelect">
                                                         <label for="">Select Language</label>
-                                                        <select class="js-example-basic-multiple" name="states[]"
-                                                            multiple="multiple">
-                                                            <option value="AL">English</option>
-                                                            <option value="WY">Franch</option>
-                                                        </select>
+                                                        <select required class="js-example-basic-multiple" name="language_id[]" multiple="multiple">
+                                                        <option> Select Language</option>
+                                                        @foreach($languages as $language)
+                                                        <option value="{{$language->id}}">{{$language->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
 
                                                     </div>
                                                 </div>
@@ -82,19 +91,21 @@ Profile building
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="multiSelect">
-                                                        <label for="">Select Legal consultant</label>
-                                                        <select class="js-example-basic-multiple" name="states[]"
-                                                            multiple="multiple">
-                                                            <option value="AL">English</option>
-                                                            <option value="WY">Franch</option>
+                                                        <label for="">Select Legal Expertises</label>
+                                                        <select required class="js-example-basic-multiple" name="expertise_id[]" multiple="multiple">
+                                                            <option> Select Expertises</option>
+                                                            @foreach($expertises as $expertise)
+                                                            <option value="{{$expertise->id}}">{{$expertise->name}}</option>
+                                                            @endforeach
                                                         </select>
+                                                        <div style="color:red;">{{$errors->first('expertise_id')}}</div> <br>
 
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="multiSelect">
                                                         <label for="">Select Corporate Law</label>
-                                                        <select class="js-example-basic-multiple" name="states[]"
+                                                        <select required class="js-example-basic-multiple" name="states[]"
                                                             multiple="multiple">
                                                             <option value="AL">English</option>
                                                             <option value="WY">Franch</option>
@@ -103,61 +114,66 @@ Profile building
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                        
                                     </div>
                                 </div>
                                 <div id="profile" class="tab-pane fade">
                                     <div class="formDiv commonTabDiv">
-                                        <form action="">
+                                        
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="inputDiv">
                                                         <label for="">Profile Description</label>
-                                                        <textarea name="" id="" cols="20" rows="10"></textarea>
+                                                        <textarea required class="ckeditor form-control" name="profile_detail"></textarea>
+                                                        <div style="color:red;">{{$errors->first('description')}}</div> <br>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                        
                                     </div>
                                 </div>
                                 <div id="education" class="tab-pane fade">
                                     <div class="formDiv commonTabDiv">
-                                        <form action="">
+                                        
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="inputDiv">
                                                         <label for="">Education</label>
-                                                        <input type="text" name="education" id="education"
-                                                            placeholder="Enter Education">
+                                                        <input id="qualification" required type="text" name="qualification" value="{{ old('qualification') }}" placeholder="Enter Education">
+
+                                                        <div style="color:red;">{{$errors->first('qualification')}}</div> <br>
 
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                        
                                     </div>
                                 </div>
                                 <div id="memberShip" class="tab-pane fade">
                                     <div class="formDiv commonTabDiv">
-                                        <form action="">
+                                        
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="multiSelect">
                                                         <label for="">Select Membership & Association Law</label>
-                                                        <select class="js-example-basic-multiple" name="states[]"
+                                                        <select required class="js-example-basic-multiple" name="states[]"
                                                             multiple="multiple">
                                                             <option value="AL">English</option>
                                                             <option value="WY">Franch</option>
                                                         </select>
 
                                                     </div>
+                                                    <div class="pricingFooter">
+                                                        <button type="submit">Buy Now</button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                        
                                     </div>
                                 </div>
                                 <div id="pricing" class="tab-pane fade">
                                     <div class="formDiv commonTabDiv">
-                                        <form action="">
+                                        
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <div class="pricingDiv">
@@ -241,13 +257,13 @@ Profile building
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
                                     </div>
                                 </div>
                                 <!-- <div class="btnDiv">
                                     <button class="tabNextBtn">Next</button>
                                 </div> -->
                             </div>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -257,7 +273,12 @@ Profile building
 </main>
 @endsection
 @section('script')
-<script>
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
+
     $(document).ready(function () {
         $('.js-example-basic-multiple').select2();
     });

@@ -17,11 +17,12 @@ class CreateLawyerProfilesTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->longText('address');
-            $table->string('qualification');
-            $table->longText('image');
-            $table->longText('profile_detail');
-            $table->string('membership');
+            $table->longText('address')->nullable();
+            $table->string('qualification')->nullable();
+            $table->integer('complete')->nullable();
+            $table->longText('image')->nullable();
+            $table->longText('profile_detail')->nullable();
+            $table->string('membership')->nullable();
             $table->timestamps();
         });
     }

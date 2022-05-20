@@ -70,6 +70,13 @@ Route::prefix('lawyer')->middleware(['auth','can:lawyer'])->group(function(){
     Route::get('/create', [App\Http\Controllers\blogController::class, 'create'])->name('create.blog');
     Route::post('/store', [App\Http\Controllers\blogController::class, 'store'])->name('blog.store');
 
-    Route::post('/profile-store', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_store'])->name('profile.store');
+    Route::post('/profile-store-1', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_store_1'])->name('profile.store_1');
+    Route::post('/profile-update_1/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_update_1'])->name('profile.update_1');
+
+    Route::post('/profile-store-2', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_store_2'])->name('profile.store_2');
+    Route::post('/profile-update-2/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_update_2'])->name('profile.update_2');
+
+    Route::post('/profile-store-3', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_store_3'])->name('profile.store_3');
+    Route::post('/profile-update-3/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_update_3'])->name('profile.update_3');
 });
 

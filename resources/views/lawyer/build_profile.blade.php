@@ -25,23 +25,85 @@ Profile building
                     </div>
                     <div class="col-lg-9">
                         <div class="contentDiv">
-                            <form action="{{ route('profile.store') }}" method="post" enctype="multipart/form-data">
-                            @csrf
+                            
                             <div class="tab-content">
                                 <div id="home" class="tab-pane fade show in active">
                                     <div class="profileBox">
-                                        <div class="profileBoxHeader">
-                                            <div class="uploadCover">
-                                                <input type="file" required class="form-control form-control-solid" name="image" id="image" accept="image/*">
-                                                <p>Upload Cover Image</p>
-                                                <div style="color:red;">{{$errors->first('image')}}</div> <br>
+                                        @if($lawyer_profile)
+                                        @if($lawyer_profile->image != null)
+                                        <form action="{{ route('profile.update_1',$lawyer_profile->id) }}" method="post" enctype="multipart/form-data">
+                                        @else
+                                        <form action="{{ route('profile.store_1') }}" method="post" enctype="multipart/form-data">
+                                        @endif
+                                        @endif
+                                        @csrf
+                                            <div class="progress">
+                                                @if($lawyer_profile == null)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                                <input type="hidden" name="complete" value="1">
+                                                @elseif($lawyer_profile->complete == 1)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                                                <input type="hidden" name="complete" value="2">
+                                                @elseif($lawyer_profile->complete == 2)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                                                <input type="hidden" name="complete" value="3">
+                                                @elseif($lawyer_profile->complete == 3)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                                                <input type="hidden" name="complete" value="4">
+                                                @elseif($lawyer_profile->complete == 4)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                                                <input type="hidden" name="complete" value="5">
+                                                @elseif($lawyer_profile->complete == 5)
+                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                                                <input type="hidden" name="complete" value="2">
+                                                @endif
                                             </div>
-                                            <div class="profileAvatar">
-                                                <img src="../../assets/img/avatar.png" alt="" class="img-fluid">
+                                            @if($lawyer_profile)
+                                            @if($lawyer_profile->image != null)
+                                            <div class="profileBoxHeader">
+                                                <div class="uploadCover">
+                                                    <input type="file" class="form-control form-control-solid" name="image" id="image" accept="image/*">
+                                                    <p>Upload Cover Image</p>
+                                                    <div style="color:red;">{{$errors->first('image')}}</div> <br>
+                                                </div>
+                                                <div class="profileAvatar">
+                                                    <img style="max-width: 180px !important; max-height: 180px !important; border-radius: 64px;" src="{{asset('lawyer_profile/' .$lawyer_profile->image)}}" alt="" class="img-fluid">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="profileFormDiv">
-                                            
+                                            <div class="profileFormDiv">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="inputDiv">
+                                                            <input id="f_name" type="text" name="f_name" value="{{ $lawyer_profile->user->f_name }}" autofocus placeholder="First Name">
+
+                                                            <div style="color:red;">{{$errors->first('f_name')}}</div> <br>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="inputDiv">
+                                                            <input id="l_name" type="text" name="l_name" value="{{ $lawyer_profile->user->l_name }}" placeholder="Last Name">
+
+                                                            <div style="color:red;">{{$errors->first('l_name')}}</div> <br>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pricingFooter col-lg-8 text-center" >
+                                                        <button type="submit">Update</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            @else
+                                            <div class="profileBoxHeader">
+                                                <div class="uploadCover">
+                                                    <input type="file" required class="form-control form-control-solid" name="image" id="image" accept="image/*">
+                                                    <p>Upload Cover Image</p>
+                                                    <div style="color:red;">{{$errors->first('image')}}</div> <br>
+                                                </div>
+                                                <div class="profileAvatar">
+                                                    <img src="../../assets/img/avatar.png" alt="" class="img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class="profileFormDiv">
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv">
@@ -57,14 +119,48 @@ Profile building
                                                             <div style="color:red;">{{$errors->first('l_name')}}</div> <br>
                                                         </div>
                                                     </div>
+                                                    <div class="pricingFooter col-lg-8 text-center" >
+                                                        <button type="submit">Submit</button>
+                                                    </div>
                                                 </div>
-                                            
-                                        </div>
+                                            </div>
+                                            @endif
+                                        </form>
                                     </div>
                                 </div>
                                 <div id="location" class="tab-pane fade">
-                                    <div class="formDiv commonTabDiv">
-
+                                    @if($lawyer_profile)
+                                    @if($lawyer_profile->address != null)
+                                    <form action="{{ route('profile.update_2',$lawyer_profile->id) }}" method="post" enctype="multipart/form-data">
+                                    @else
+                                    <form action="{{ route('profile.store_2') }}" method="post" enctype="multipart/form-data">
+                                    @endif
+                                    @endif
+                                    @csrf
+                                        <div class="formDiv commonTabDiv">
+                                            <div class="progress">
+                                                @if($lawyer_profile == null)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                                <input type="hidden" name="complete" value="1">
+                                                @elseif($lawyer_profile->complete == 1)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                                                <input type="hidden" name="complete" value="2">
+                                                @elseif($lawyer_profile->complete == 2)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                                                <input type="hidden" name="complete" value="3">
+                                                @elseif($lawyer_profile->complete == 3)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                                                <input type="hidden" name="complete" value="4">
+                                                @elseif($lawyer_profile->complete == 4)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                                                <input type="hidden" name="complete" value="5">
+                                                @elseif($lawyer_profile->complete == 5)
+                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                                                <input type="hidden" name="complete" value="2">
+                                                @endif
+                                            </div>
+                                            @if($lawyer_profile)
+                                            @if($lawyer_profile->address != null)
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="inputDiv">
@@ -114,23 +210,126 @@ Profile building
                                                     </div>
                                                 </div>
                                             </div>
-                                        
-                                    </div>
-                                </div>
-                                <div id="profile" class="tab-pane fade">
-                                    <div class="formDiv commonTabDiv">
-                                        
+                                            @endif
+                                            @else
                                             <div class="row">
-                                                <div class="col-lg-12">
+                                                <div class="col-lg-6">
                                                     <div class="inputDiv">
-                                                        <label for="">Profile Description</label>
-                                                        <textarea required class="ckeditor form-control" name="profile_detail"></textarea>
-                                                        <div style="color:red;">{{$errors->first('description')}}</div> <br>
+                                                        <label for="">Location</label>
+                                                        <input id="address" required type="text" name="address" value="{{ old('address') }}" placeholder="Location">
+
+                                                        <div style="color:red;">{{$errors->first('address')}}</div> <br>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="multiSelect">
+                                                        <label for="">Select Language</label>
+                                                        <select required class="js-example-basic-multiple" name="language_id[]" multiple="multiple">
+                                                        <option> Select Language</option>
+                                                        @foreach($languages as $language)
+                                                        <option value="{{$language->id}}">{{$language->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
+
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="multiSelect">
+                                                        <label for="">Select Legal Expertises</label>
+                                                        <select required class="js-example-basic-multiple" name="expertise_id[]" multiple="multiple">
+                                                            <option> Select Expertises</option>
+                                                            @foreach($expertises as $expertise)
+                                                            <option value="{{$expertise->id}}">{{$expertise->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        <div style="color:red;">{{$errors->first('expertise_id')}}</div> <br>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="multiSelect">
+                                                        <label for="">Select Corporate Law</label>
+                                                        <select required class="js-example-basic-multiple" name="states[]"
+                                                            multiple="multiple">
+                                                            <option value="AL">English</option>
+                                                            <option value="WY">Franch</option>
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="profile" class="tab-pane fade">
+                                    @if($lawyer_profile)
+                                    @if($lawyer_profile->address != null)
+                                    <form action="{{ route('profile.update_3',$lawyer_profile->id) }}" method="post" enctype="multipart/form-data">
+                                    @else
+                                    <form action="{{ route('profile.store_3') }}" method="post" enctype="multipart/form-data">
+                                    @endif
+                                    @endif
+                                        @csrf
+                                        <div class="formDiv commonTabDiv">
+                                            <div class="progress">
+                                                @if($lawyer_profile == null)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                                <input type="hidden" name="complete" value="1">
+                                                @elseif($lawyer_profile->complete == 1)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                                                <input type="hidden" name="complete" value="2">
+                                                @elseif($lawyer_profile->complete == 2)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                                                <input type="hidden" name="complete" value="3">
+                                                @elseif($lawyer_profile->complete == 3)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                                                <input type="hidden" name="complete" value="4">
+                                                @elseif($lawyer_profile->complete == 4)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                                                <input type="hidden" name="complete" value="5">
+                                                @elseif($lawyer_profile->complete == 5)
+                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                                                <input type="hidden" name="complete" value="2">
+                                                @endif
+                                            </div>
+
+                                            @if($lawyer_profile)
+                                            @if($lawyer_profile->profile_detail != null)
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="inputDiv">
+                                                            <label for="">Profile Description</label>
+                                                            <textarea required class="ckeditor form-control" name="profile_detail">{{$lawyer_profile->profile_detail}}</textarea>
+                                                            <div style="color:red;">{{$errors->first('description')}}</div> <br>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pricingFooter col-lg-8 text-center" >
+                                                        <button type="submit">Update</button>
+                                                    </div>
+                                                </div>
+                                            @else
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="inputDiv">
+                                                            <label for="">Profile Description</label>
+                                                            <textarea required class="ckeditor form-control" name="profile_detail"></textarea>
+                                                            <div style="color:red;">{{$errors->first('description')}}</div> <br>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pricingFooter col-lg-8 text-center" >
+                                                        <button type="submit">Submit</button>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                            @endif
+                                            
+                                        </div>
                                         
-                                    </div>
+                                    </form>
                                 </div>
                                 <div id="education" class="tab-pane fade">
                                     <div class="formDiv commonTabDiv">
@@ -162,9 +361,6 @@ Profile building
                                                             <option value="WY">Franch</option>
                                                         </select>
 
-                                                    </div>
-                                                    <div class="pricingFooter">
-                                                        <button type="submit">Buy Now</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -263,7 +459,6 @@ Profile building
                                     <button class="tabNextBtn">Next</button>
                                 </div> -->
                             </div>
-                        </form>
                         </div>
                     </div>
                 </div>

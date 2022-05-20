@@ -78,5 +78,8 @@ Route::prefix('lawyer')->middleware(['auth','can:lawyer'])->group(function(){
 
     Route::post('/profile-store-3', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_store_3'])->name('profile.store_3');
     Route::post('/profile-update-3/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_update_3'])->name('profile.update_3');
+
+    Route::post('/profile-store-4', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_store_4'])->name('profile.store_4');
+    Route::post('/profile-update-4/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_update_4'])->name('profile.update_4');
 });
 

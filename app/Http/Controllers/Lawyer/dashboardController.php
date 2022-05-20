@@ -174,4 +174,48 @@ class dashboardController extends Controller
         toastSuccess('Successfully Added');
         return redirect('lawyer/profile');
     }
+
+    public function profile_store_4(Request $request)
+    {
+        // dd($request->all());
+        $user_id = Auth::id();
+        $this->validate($request,[  
+            'qualification'=>'required',  
+
+        ]);
+        $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
+        if($lawyer_profile != null)
+        {
+            $lawyer_profile= LawyerProfile::find($lawyer_profile->id);
+            $lawyer_profile->qualification = $request->qualification;
+            $lawyer_profile->complete = $request->complete;
+            $lawyer_profile->save();
+        }
+        else{
+            $lawyer_profile= new LawyerProfile;
+            $lawyer_profile->qualification = $request->qualification;
+            $lawyer_profile->complete = $request->complete;
+            $lawyer_profile->save();
+        }
+        
+        toastSuccess('Successfully Added');
+        return redirect('lawyer/profile');
+    }
+
+    public function profile_update_4(Request $request,$id)
+    {
+        $user_id = Auth::id();
+        $this->validate($request,[  
+            'qualification'=>'required',  
+
+        ]);
+        
+        $lawyer_profile= LawyerProfile::find($id);
+        $lawyer_profile->qualification = $request->qualification;
+        $lawyer_profile->save();
+        
+        
+        toastSuccess('Successfully Added');
+        return redirect('lawyer/profile');
+    }
 }

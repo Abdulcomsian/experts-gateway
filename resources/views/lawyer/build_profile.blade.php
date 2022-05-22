@@ -216,7 +216,7 @@ Profile building
                                                     <div class="multiSelect">
                                                         <label for="">Select Language</label>
                                                         <select class="js-example-basic-multiple" name="language_id[]" multiple="multiple">
-                                                        <option> Select Language</option>
+                                                        <option disabled> Select Language</option>
                                                         @foreach($languages as $language)
                                                         <option value="{{$language->id}}">{{$language->name}}</option>
                                                         @endforeach
@@ -231,7 +231,7 @@ Profile building
                                                     <div class="multiSelect">
                                                         <label for="">Select Legal Expertises</label>
                                                         <select class="js-example-basic-multiple" name="expertise_id[]" multiple="multiple">
-                                                            <option> Select Expertises</option>
+                                                            <option disabled> Select Expertises</option>
                                                             @foreach($expertises as $expertise)
                                                             <option value="{{$expertise->id}}">{{$expertise->name}}</option>
                                                             @endforeach
@@ -269,7 +269,7 @@ Profile building
                                                     <div class="multiSelect">
                                                         <label for="">Select Language</label>
                                                         <select required class="js-example-basic-multiple" name="language_id[]" multiple="multiple">
-                                                        <option> Select Language</option>
+                                                        <option disabled> Select Language</option>
                                                         @foreach($languages as $language)
                                                         <option value="{{$language->id}}">{{$language->name}}</option>
                                                         @endforeach
@@ -284,7 +284,7 @@ Profile building
                                                     <div class="multiSelect">
                                                         <label for="">Select Legal Expertises</label>
                                                         <select required class="js-example-basic-multiple" name="expertise_id[]" multiple="multiple">
-                                                            <option> Select Expertises</option>
+                                                            <option disabled> Select Expertises</option>
                                                             @foreach($expertises as $expertise)
                                                             <option value="{{$expertise->id}}">{{$expertise->name}}</option>
                                                             @endforeach
@@ -329,7 +329,7 @@ Profile building
                                                     <div class="multiSelect">
                                                         <label for="">Select Language</label>
                                                         <select required class="js-example-basic-multiple" name="language_id[]" multiple="multiple">
-                                                        <option> Select Language</option>
+                                                        <option disabled> Select Language</option>
                                                         @foreach($languages as $language)
                                                         <option value="{{$language->id}}">{{$language->name}}</option>
                                                         @endforeach
@@ -344,7 +344,7 @@ Profile building
                                                     <div class="multiSelect">
                                                         <label for="">Select Legal Expertises</label>
                                                         <select required class="js-example-basic-multiple" name="expertise_id[]" multiple="multiple">
-                                                            <option> Select Expertises</option>
+                                                            <option disabled> Select Expertises</option>
                                                             @foreach($expertises as $expertise)
                                                             <option value="{{$expertise->id}}">{{$expertise->name}}</option>
                                                             @endforeach

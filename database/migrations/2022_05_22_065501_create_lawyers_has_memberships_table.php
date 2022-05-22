@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLawyersHasLanguagesTable extends Migration
+class CreateLawyersHasMembershipsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateLawyersHasLanguagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('lawyers_has_languages', function (Blueprint $table) {
+        Schema::create('lawyers_has_memberships', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('language_id');
+            $table->unsignedBigInteger('membership_id');
             $table->unsignedBigInteger('lawyer_profile_id')->nullable();
-            $table->foreign('language_id')->references('id')->on('languages');
+            $table->foreign('membership_id')->references('id')->on('memberships');
             $table->foreign('lawyer_profile_id')->references('id')->on('lawyer_profiles');
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateLawyersHasLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lawyers_has_languages');
+        Schema::dropIfExists('lawyers_has_memberships');
     }
 }

@@ -54,7 +54,7 @@
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
-                    @if($lawyer->status == '2')
+                    @if($lawyer->status == '1')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('lawyer.profile') }}">Profile</a>
                     </li>

@@ -218,10 +218,17 @@ Profile building
                                                         <select class="js-example-basic-multiple" name="language_id[]" multiple="multiple">
                                                         <option disabled> Select Language</option>
                                                         @foreach($languages as $language)
-                                                        @foreach($lawyer_language as $l_language)
+                                                            @foreach($lawyer_language as $l_language)
+                                                            @php 
+                                                            $selected="";
+                                                            if($l_language->language_id == $language->id ){
+                                                                $selected="selected";
+                                                                break;
+                                                            }
+                                                            @endphp
+                                                            @endforeach
                                                         <option value="{{$language->id}}"
-                                                            {{ $l_language->language_id == $language->id ? 'selected' : '' }} >{{$language->name}}</option>
-                                                        @endforeach
+                                                            {{$selected}} >{{$language->name}}</option>
                                                         @endforeach
                                                     </select>
                                                     <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
@@ -237,8 +244,15 @@ Profile building
                                                             <option disabled> Select Expertises</option>
                                                             @foreach($expertises as $expertise)
                                                             @foreach($lawyer_expertises as $l_expertise)
-                                                            <option value="{{$expertise->id}}" {{ $l_expertise->expertise_id == $expertise->id ? 'selected' : '' }}>{{$expertise->name}}</option>
+                                                            @php 
+                                                            $selected="";
+                                                            if($l_expertise->expertise_id == $expertise->id ){
+                                                                $selected="selected";
+                                                                break;
+                                                            }
+                                                            @endphp
                                                             @endforeach
+                                                            <option value="{{$expertise->id}}" {{$selected}}>{{$expertise->name}}</option>
                                                             @endforeach
                                                         </select>
                                                         <div style="color:red;">{{$errors->first('expertise_id')}}</div> <br>
@@ -555,7 +569,7 @@ Profile building
                                 </div>
                                 <div id="memberShip" class="tab-pane fade">
                                     @if($lawyer_profile)
-                                    @if($lawyer_memberships == null)
+                                    @if(count($lawyer_memberships)>0)
                                     <form action="{{ route('profile.update_5',$lawyer_profile->id) }}" method="post" enctype="multipart/form-data">
                                     @else
                                     <form action="{{ route('profile.store_5') }}" method="post" enctype="multipart/form-data">
@@ -587,7 +601,7 @@ Profile building
                                             @endif
                                         </div>
                                         @if($lawyer_profile)
-                                        @if($lawyer_memberships == null)
+                                        @if(count($lawyer_memberships)>0)
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="multiSelect">
@@ -596,8 +610,15 @@ Profile building
                                                         <option disabled> Select Membership</option>
                                                         @foreach($memberships as $membership)
                                                         @foreach($lawyer_memberships as $lawyer_membership)
-                                                        <option value="{{$membership->id}}" {{ $lawyer_membership->membership_id == $membership->id ? 'selected' : '' }} >{{$membership->name}}</option>
+                                                        @php 
+                                                        $selected="";
+                                                        if($lawyer_membership->membership_id == $membership->id ){
+                                                            $selected="selected";
+                                                            break;
+                                                        }
+                                                        @endphp
                                                         @endforeach
+                                                        <option value="{{$membership->id}}" {{ $selected }} >{{$membership->name}}</option>
                                                         @endforeach
                                                     </select>
                                                     <div style="color:red;">{{$errors->first('membership_id')}}</div> <br>

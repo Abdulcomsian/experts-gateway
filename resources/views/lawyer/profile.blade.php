@@ -36,19 +36,30 @@ Dashboard
                                             <div class="imgDiv">
                                                 <img src="../assets/img/locationIcon.png" alt="" class="img-fluid">
                                             </div>
-                                            <span>134 lane, Business Tower</span>
+                                            <span>{{$lawyer_profile->address}}</span>
                                         </li>
                                         <li>
                                             <div class="imgDiv">
                                                 <img src="../assets/img/languageIcon.png" alt="" class="img-fluid">
                                             </div>
-                                            <span>Arabic, English</span>
+                                            <span>
+                                                @foreach($lawyer_language as $language)
+                                                    {{$language->language->name}}
+                                                    @if(!($loop->last))
+                                                    ,
+                                                    @endif
+                                                @endforeach</span>
                                         </li>
                                         <li>
                                             <div class="imgDiv">
                                                 <img src="../assets/img/consultantIcon.png" alt="" class="img-fluid">
                                             </div>
-                                            <span>Legal consultant</span>
+                                            <span>@foreach($lawyer_expertises as $expertise)
+                                                    {{$expertise->expertise->name}}
+                                                    @if(!($loop->last))
+                                                    ,
+                                                    @endif
+                                                @endforeach</span>
                                         </li>
                                         <li>
                                             <div class="imgDiv">
@@ -63,16 +74,13 @@ Dashboard
                                 </div>
                                 <div class="editProfileContent">
                                     <h4>profile</h4>
-                                    <p>Aaron Bourke is a Dubai-based lawyer who has gained exceptional knowledge and proficiency in Employment law, Real Estate, Succession, Commercial & Corporate laws. </p>
-                                    <p>He has gained expertise in legal drafting, vetting and reviewing commercial contracts, especially agreements for construction and installation companies wills drafting in all three jurisdictions in UAE, with specific attention to probate procedures. He has effectively held a number of negotiation and settlement meetings for both individuals and corporate clients.</p>
-                                    <p>After obtaining a master’s degree in Corporate law and taxation she joined as an Assistant Professor in one of the premium law schools in India and dealt successfully with various aspects of taxation. </p>
-                                    <p>Currently, he is associated with King & Wood Mallesons</p>
+                                    {!! $lawyer_profile->profile_detail !!}
                                     <div class="line">
                                         <img src="../assets/img/line.png" alt="" class="img-fluid">
                                     </div>
                                     <h4>Education</h4>
                                     <ul>
-                                        <li>- LL.M.</li>
+                                        <li>- {{$lawyer_profile->qualification}}</li>
                                     </ul>
                                     <div class="line">
                                         <img src="../assets/img/line.png" alt="" class="img-fluid">
@@ -80,7 +88,12 @@ Dashboard
                                     <h4>Associations & Memberships
                                     </h4>
                                     <ul>
-                                        <li>- ICSI</li>
+                                        @foreach($lawyer_memberships as $membership)
+                                            <li>-{{$membership->membership->name}}</li>
+                                            @if(!($loop->last))
+                                            ,
+                                            @endif
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

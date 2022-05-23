@@ -10,4 +10,9 @@ class LawyersHasMembership extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function Membership()
+    {
+        return $this->belongsTo(Membership::class);
+    }
 }

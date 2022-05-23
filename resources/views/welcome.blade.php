@@ -536,7 +536,7 @@
                 </div>
                 <div class="col-lg-6 text-center">
                     <div class="imgText">
-                        <img src="{{ asset('assets/img/information.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/information.png')}}" alt="" class="img-fluid">
                         <div class="imgTextMiddle">
                             <p>Legal Advice<br> Across the<br> Globe</p>
                         </div>

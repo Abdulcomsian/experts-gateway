@@ -11,9 +11,9 @@ class Expertise extends Model
 
     protected $guarded = [];
 
-    public function LawyerProfiles()
+    public function lawyerexpertises()
     {
-        return $this->belongsToMany(User::class, 'lawyers_has_expertises', 'expertise_id', 'lawyer_profile_id');
+        return $this->hasMany(LawyersHasExpertise::class);
     }
 
     public function blog()

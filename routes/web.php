@@ -53,6 +53,13 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 
     Route::put('/update-blog/{id}', [App\Http\Controllers\blogController::class, 'update'])->name('update-blog');
     Route::delete('/delete_blog/{id}', [App\Http\Controllers\blogController::class, 'destroy'])->name('blog.destroy');
+    Route::get('/lawyer_applications', [App\Http\Controllers\Admin\dashboardController::class, 'lawyer_applications'])->name('admin.lawyer-applications');
+    Route::post('/update_lawyer_status/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_lawyer_status'])->name('update-lawyer-status');   
+
+    Route::get('/LawyerProfileShow/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'lawyer_profile_show'])->name('LawyerProfile.show');
+    Route::get('/edit_lawyer_profile/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'edit_lawyer_profile'])->name('LawyerProfile.edit');
+
+    Route::put('/update-lawyer-profile/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_lawyer_profile'])->name('update-lawyer-profile');
 
 });
 
@@ -83,6 +90,6 @@ Route::prefix('lawyer')->middleware(['auth','can:lawyer'])->group(function(){
     Route::post('/profile-update-4/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_update_4'])->name('profile.update_4');
 
     Route::post('/profile-store-5', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_store_5'])->name('profile.store_5');
-    Route::post('/profile-update-5/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_update_5'])->name('profile.update_5');
+    Route::post('/profile_update_5/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_update_5'])->name('profile.update_5');
 });
 

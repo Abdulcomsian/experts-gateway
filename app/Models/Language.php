@@ -11,8 +11,8 @@ class Language extends Model
 
     protected $guarded = [];
 
-    public function LawyerProfiles()
+    public function lawyerlanguages()
     {
-        return $this->belongsToMany(User::class, 'lawyers_has_languages', 'language_id', 'lawyer_profile_id');
+        return $this->hasMany(LawyersHasLanguage::class);
     }
 }

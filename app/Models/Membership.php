@@ -11,9 +11,9 @@ class Membership extends Model
 
     protected $guarded = [];
 
-    public function LawyerProfiles()
+    public function lawyermemberships()
     {
-        return $this->belongsToMany(User::class, 'lawyers_has_memberships', 'membership_id', 'lawyer_profile_id');
+        return $this->hasMany(LawyersHasMembership::class);
     }
 
 }

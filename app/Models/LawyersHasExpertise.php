@@ -10,4 +10,9 @@ class LawyersHasExpertise extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function expertise()
+    {
+        return $this->belongsTo(Expertise::class);
+    }
 }

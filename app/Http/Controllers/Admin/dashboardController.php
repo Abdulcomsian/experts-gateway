@@ -26,7 +26,7 @@ class dashboardController extends Controller
     public function lawyer_applications()
     {
         $user_id = Auth::id();
-        $lawyer_profiles = LawyerProfile::where('complete','5')->get();
+        $lawyer_profiles = LawyerProfile::where('complete','6')->get();
         return view('admin.lawyer.lawyer_applications',compact('lawyer_profiles'));
     }
 

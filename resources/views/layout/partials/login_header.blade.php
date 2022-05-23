@@ -9,6 +9,28 @@
                 </span>
                 <div class="dropDownMenu">
                     <ul>
+                        @if(Auth::user()->name)
+                        <li>
+                            <span>{{ Auth::user()->name }}</span>
+                        </li>
+                        <div class="line"></div>
+                        <li>
+                            <img src="{{ asset('assets/img/myOrder.png') }}" alt="" class="img-fluid">
+                            <span>
+                                <a href="./order/index.html">My Orders</a>
+                            </span>
+                        </li>
+                        <li>
+                            <img src="{{ asset('assets/img/loginIcon.png') }}" alt="" class="img-fluid">
+                            <span>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">Logout</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </span>
+                        </li>
+                        @else
                         <li>
                             <img src="{{asset('assets/img/loginIcon.png')}}" alt="" class="img-fluid">
                             <span>
@@ -29,12 +51,13 @@
                                 <a href="#">My Orders</a>
                             </span>
                         </li>
+                        @endif
                     </ul>
                 </div>
             </div>
         </div>
         <nav class="navbar navbar-expand-md">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{url('/')}}">
                 <img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

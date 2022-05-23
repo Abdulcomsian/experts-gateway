@@ -44,7 +44,7 @@
             </div>
         </div>
         <nav class="navbar navbar-expand-md">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{url('/')}}">
                 <img src="{{ asset('assets/img/logo.png') }}" alt="" class="img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

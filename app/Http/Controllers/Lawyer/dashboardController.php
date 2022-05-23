@@ -400,4 +400,15 @@ class dashboardController extends Controller
         toastSuccess('Successfully Updated');
         return redirect('lawyer/profile');
     }
+
+    public function submit_approval(Request $request)
+    {
+        $user_id = Auth::id();
+        $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
+        $lawyer_profile->complete = $request->complete;
+        $lawyer_profile->save();
+
+        toastSuccess('Successfully Updated');
+        return redirect('lawyer/profile');
+    }
 }

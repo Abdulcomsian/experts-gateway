@@ -20,7 +20,7 @@ Dashboard
                             <div class="editProfile">
                                 <div class="userDetail">
                                     <div class="avatar">
-                                        <img src="../assets/img/avatar.png" alt="" class="img-fluid">
+                                        <img src="{{asset('lawyer_profile/'.$lawyer_profile->image)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
                                     </div>
                                     <div class="userProfile">
                                         <h4>{{$lawyer->name}}</h4>
@@ -90,9 +90,7 @@ Dashboard
                                     <ul>
                                         @foreach($lawyer_memberships as $membership)
                                             <li>-{{$membership->membership->name}}</li>
-                                            @if(!($loop->last))
-                                            ,
-                                            @endif
+                                            
                                         @endforeach
                                     </ul>
                                 </div>

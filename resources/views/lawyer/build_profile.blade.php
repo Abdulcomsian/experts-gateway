@@ -8,9 +8,25 @@ Profile building
 @section('content')
 <main>
     <div class="profileDiv">
+
         <div class="applyDiv">
+
             <div class="container-fluid">
+                
                 <div class="row">
+                    <div class="col-lg-12">
+                        @if(isset($lawyer_profile))
+                        @if($lawyer_profile->complete == 5)
+                        <div class="pricingFooter  text-center" style="float:right;">
+                        <form action="{{ route('profile.submit-for-approval') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                            <input type="hidden" name="complete" value="6">
+                            <button type="submit" style="background-color:#ed2354; border-color:#ed2354;color: #fff;box-shadow: none !important; padding: 9px;">Submit For Approval</button>
+                        </form>
+                        </div>
+                        @endif
+                        @endif
+                    </div>
                     <div class="col-lg-3">
                         <div class="pillsDiv">
                             <ul class="nav nav-pills">
@@ -56,8 +72,10 @@ Profile building
                                                 <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
                                                 <input type="hidden" name="complete" value="5">
                                                 @elseif($lawyer_profile->complete == 5)
-                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                                                <input type="hidden" name="complete" value="2">
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                                                <input type="hidden" name="complete" value="5">
+                                                @elseif($lawyer_profile->complete == 6)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
                                                 @endif
                                             </div>
                                             @if($lawyer_profile)
@@ -120,15 +138,15 @@ Profile building
                                                             <div style="color:red;">{{$errors->first('l_name')}}</div> <br>
                                                         </div>
                                                     </div>
-                                                    @if($lawyer_profile->complete == 4)
+                                                    <!-- @if($lawyer_profile->complete == 4)
                                                     <div class="pricingFooter col-lg-8 text-center" >
                                                         <button type="submit">Submit For Approval</button>
                                                     </div>
-                                                    @else
+                                                    @else -->
                                                     <div class="pricingFooter col-lg-8 text-center" >
-                                                        <button type="submit">Submit</button>
+                                                        <button type="submit">Save</button>
                                                     </div>
-                                                    @endif
+                                                    <!-- @endif -->
                                                 </div>
                                             </div>
                                             @endif
@@ -160,7 +178,7 @@ Profile building
                                                         </div>
                                                     </div>
                                                     <div class="pricingFooter col-lg-8 text-center" >
-                                                        <button type="submit">Submit</button>
+                                                        <button type="submit">Save</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -197,10 +215,12 @@ Profile building
                                                 <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
                                                 <input type="hidden" name="complete" value="5">
                                                 @elseif($lawyer_profile->complete == 5)
-                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                                                <input type="hidden" name="complete" value="2">
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                                                <input type="hidden" name="complete" value="5">
+                                                @elseif($lawyer_profile->complete == 6)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
                                                 @endif
-                                            </div>
+                                            </div><br>
                                             @if($lawyer_profile)
                                             @if($lawyer_profile->address != null)
                                             <div class="row">
@@ -323,15 +343,15 @@ Profile building
 
                                                     </div>
                                                 </div>
-                                                @if($lawyer_profile->complete == 4)
+                                                <!-- @if($lawyer_profile->complete == 4)
                                                 <div class="pricingFooter col-lg-8 text-center" >
                                                     <button type="submit">Submit For Approval</button>
                                                 </div>
-                                                @else
+                                                @else -->
                                                 <div class="pricingFooter col-lg-8 text-center" >
-                                                    <button type="submit">Submit</button>
+                                                    <button type="submit">Save</button>
                                                 </div>
-                                                @endif
+                                                <!-- @endif -->
                                             </div>
                                             @endif
                                             @else
@@ -384,7 +404,7 @@ Profile building
                                                     </div>
                                                 </div>
                                                 <div class="pricingFooter col-lg-8 text-center" >
-                                                    <button type="submit">Submit</button>
+                                                    <button type="submit">Save</button>
                                                 </div>
                                             </div>
                                             @endif
@@ -420,11 +440,13 @@ Profile building
                                                 <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
                                                 <input type="hidden" name="complete" value="5">
                                                 @elseif($lawyer_profile->complete == 5)
-                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                                                <input type="hidden" name="complete" value="2">
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                                                <input type="hidden" name="complete" value="5">
+                                                @elseif($lawyer_profile->complete == 6)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
                                                 @endif
                                             </div>
-
+                                            <br>
                                             @if($lawyer_profile)
                                             @if($lawyer_profile->profile_detail != null)
                                             <div class="row">
@@ -448,15 +470,15 @@ Profile building
                                                         <div style="color:red;">{{$errors->first('description')}}</div> <br>
                                                     </div>
                                                 </div>
-                                                @if($lawyer_profile->complete == 4)
+                                                <!-- @if($lawyer_profile->complete == 4)
                                                 <div class="pricingFooter col-lg-8 text-center" >
                                                     <button type="submit">Submit For Approval</button>
                                                 </div>
-                                                @else
+                                                @else -->
                                                 <div class="pricingFooter col-lg-8 text-center" >
-                                                    <button type="submit">Submit</button>
+                                                    <button type="submit">Save</button>
                                                 </div>
-                                                @endif
+                                                <!-- @endif -->
                                             </div>
                                             @endif
                                             @else
@@ -469,7 +491,7 @@ Profile building
                                                     </div>
                                                 </div>
                                                 <div class="pricingFooter col-lg-8 text-center" >
-                                                    <button type="submit">Submit</button>
+                                                    <button type="submit">Save</button>
                                                 </div>
                                             </div>
                                             @endif
@@ -505,10 +527,12 @@ Profile building
                                                 <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
                                                 <input type="hidden" name="complete" value="5">
                                                 @elseif($lawyer_profile->complete == 5)
-                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                                                <input type="hidden" name="complete" value="2">
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                                                <input type="hidden" name="complete" value="5">
+                                                @elseif($lawyer_profile->complete == 6)
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
                                                 @endif
-                                            </div>
+                                            </div><br>
                                         @if($lawyer_profile)
                                         @if($lawyer_profile->qualification != null)
                                         <div class="row">
@@ -536,15 +560,15 @@ Profile building
 
                                                 </div>
                                             </div>
-                                            @if($lawyer_profile->complete == 4)
+                                            <!-- @if($lawyer_profile->complete == 4)
                                             <div class="pricingFooter col-lg-8 text-center" >
                                                 <button type="submit">Submit For Approval</button>
                                             </div>
-                                            @else
+                                            @else -->
                                             <div class="pricingFooter col-lg-8 text-center" >
-                                                <button type="submit">Submit</button>
+                                                <button type="submit">Save</button>
                                             </div>
-                                            @endif
+                                            <!-- @endif -->
                                         </div>
                                         @endif
                                         @else
@@ -559,7 +583,7 @@ Profile building
                                                 </div>
                                             </div>
                                             <div class="pricingFooter col-lg-8 text-center" >
-                                                <button type="submit">Submit</button>
+                                                <button type="submit">Save</button>
                                             </div>
                                         </div>
                                         @endif
@@ -596,10 +620,12 @@ Profile building
                                             <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
                                             <input type="hidden" name="complete" value="5">
                                             @elseif($lawyer_profile->complete == 5)
-                                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                                            <input type="hidden" name="complete" value="2">
+                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                                            <input type="hidden" name="complete" value="5">
+                                            @elseif($lawyer_profile->complete == 6)
+                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
                                             @endif
-                                        </div>
+                                        </div><br>
                                         @if($lawyer_profile)
                                         @if(count($lawyer_memberships)>0)
                                         <div class="row">
@@ -644,15 +670,9 @@ Profile building
 
                                                 </div>
                                             </div>
-                                            @if($lawyer_profile->complete == 4)
                                             <div class="pricingFooter col-lg-8 text-center" >
-                                                <button type="submit">Submit For Approval</button>
+                                                <button type="submit">Save</button>
                                             </div>
-                                            @else
-                                            <div class="pricingFooter col-lg-8 text-center" >
-                                                <button type="submit">Submit</button>
-                                            </div>
-                                            @endif
                                         </div>
                                         @endif
                                         @else
@@ -671,7 +691,7 @@ Profile building
                                                 </div>
                                             </div>
                                             <div class="pricingFooter col-lg-8 text-center" >
-                                                <button type="submit">Submit</button>
+                                                <button type="submit">Save</button>
                                             </div>
                                         </div>
                                         @endif

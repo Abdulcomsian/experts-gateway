@@ -31,13 +31,38 @@ class dashboardController extends Controller
         $expertises = Expertise::get();
         $memberships = Membership::get();
         $lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
-        if($lawyer->status == 0)
+        if($lawyer_profile)
         {
-           return view('lawyer.build_profile',compact('lawyer','languages','expertises','memberships','lawyer_profile')); 
+            $lawyer_language = LawyersHasLanguage::where('lawyer_profile_id',$lawyer_profile->id)->get();
+            $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
+            $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
+
+            if($lawyer->status == 0)
+            {
+                if($lawyer_memberships)
+                {
+               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','lawyer_memberships','lawyer_profile')); 
+                }
+                else
+                {
+               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','lawyer_profile')); 
+                }
+            }
+            elseif($lawyer->status == 2)
+            {
+                return view('lawyer.profile',compact('lawyer'));
+            }
+
         }
-        elseif($lawyer->status == 2)
-        {
-            return view('lawyer.profile',compact('lawyer'));
+        else{
+            if($lawyer->status == 0)
+            {
+               return view('lawyer.build_profile',compact('lawyer','languages','expertises','memberships','lawyer_profile')); 
+            }
+            elseif($lawyer->status == 2)
+            {
+                return view('lawyer.profile',compact('lawyer'));
+            }
         }
         
     }
@@ -299,7 +324,7 @@ class dashboardController extends Controller
 
     public function profile_store_5(Request $request)
     {
-        // dd($request->all());
+         // dd($request->all());
         $user_id = Auth::id();
         $this->validate($request,[  
             'membership_id'=>'required',  

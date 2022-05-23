@@ -76,7 +76,7 @@ Profile building
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv">
-                                                            <input id="f_name" type="text" name="f_name" value="{{ $lawyer_profile->user->f_name }}" autofocus placeholder="First Name">
+                                                            <input id="f_name" type="text" name="f_name" value="{{ $lawyer_profile->user->f_name }}" placeholder="First Name">
 
                                                             <div style="color:red;">{{$errors->first('f_name')}}</div> <br>
                                                         </div>
@@ -108,7 +108,7 @@ Profile building
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv">
-                                                            <input id="f_name" required type="text" name="f_name" value="{{ old('f_name') }}" autofocus placeholder="First Name">
+                                                            <input id="f_name" required type="text" name="f_name" value="{{ old('f_name') }}" placeholder="First Name">
 
                                                             <div style="color:red;">{{$errors->first('f_name')}}</div> <br>
                                                         </div>
@@ -147,7 +147,7 @@ Profile building
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv">
-                                                            <input id="f_name" required type="text" name="f_name" value="{{ old('f_name') }}" autofocus placeholder="First Name">
+                                                            <input id="f_name" required type="text" name="f_name" value="{{ old('f_name') }}" placeholder="First Name">
 
                                                             <div style="color:red;">{{$errors->first('f_name')}}</div> <br>
                                                         </div>
@@ -218,7 +218,10 @@ Profile building
                                                         <select class="js-example-basic-multiple" name="language_id[]" multiple="multiple">
                                                         <option disabled> Select Language</option>
                                                         @foreach($languages as $language)
-                                                        <option value="{{$language->id}}">{{$language->name}}</option>
+                                                        @foreach($lawyer_language as $l_language)
+                                                        <option value="{{$language->id}}"
+                                                            {{ $l_language->language_id == $language->id ? 'selected' : '' }} >{{$language->name}}</option>
+                                                        @endforeach
                                                         @endforeach
                                                     </select>
                                                     <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
@@ -233,7 +236,9 @@ Profile building
                                                         <select class="js-example-basic-multiple" name="expertise_id[]" multiple="multiple">
                                                             <option disabled> Select Expertises</option>
                                                             @foreach($expertises as $expertise)
-                                                            <option value="{{$expertise->id}}">{{$expertise->name}}</option>
+                                                            @foreach($lawyer_expertises as $l_expertise)
+                                                            <option value="{{$expertise->id}}" {{ $l_expertise->expertise_id == $expertise->id ? 'selected' : '' }}>{{$expertise->name}}</option>
+                                                            @endforeach
                                                             @endforeach
                                                         </select>
                                                         <div style="color:red;">{{$errors->first('expertise_id')}}</div> <br>
@@ -590,7 +595,9 @@ Profile building
                                                     <select required class="js-example-basic-multiple" name="membership_id[]" multiple="multiple">
                                                         <option disabled> Select Membership</option>
                                                         @foreach($memberships as $membership)
-                                                        <option value="{{$membership->id}}" >{{$membership->name}}</option>
+                                                        @foreach($lawyer_memberships as $lawyer_membership)
+                                                        <option value="{{$membership->id}}" {{ $lawyer_membership->membership_id == $membership->id ? 'selected' : '' }} >{{$membership->name}}</option>
+                                                        @endforeach
                                                         @endforeach
                                                     </select>
                                                     <div style="color:red;">{{$errors->first('membership_id')}}</div> <br>

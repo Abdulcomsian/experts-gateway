@@ -57,7 +57,7 @@
                         <a class="nav-link" href="./fixed-free.html">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./apply/index.html">Apply</a>
+                        <a class="nav-link" href="{{ route('lawyer-register')}}">Apply</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('all-blogs') }}">Blog</a>

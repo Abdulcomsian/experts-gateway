@@ -1,4 +1,4 @@
-@extends('layout.loginlayout')
+@extends('layout.registerlayout')
 @push('styles')
 
 @endpush

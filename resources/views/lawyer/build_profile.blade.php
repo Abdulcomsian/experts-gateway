@@ -40,25 +40,16 @@ Profile building
                                         @endif
                                         @csrf
                                             <div class="progress">
-                                                @if($lawyer_profile == null)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                                                <input type="hidden" name="complete" value="1">
-                                                @elseif($lawyer_profile->complete == 1)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
-                                                <input type="hidden" name="complete" value="2">
-                                                @elseif($lawyer_profile->complete == 2)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
-                                                <input type="hidden" name="complete" value="3">
-                                                @elseif($lawyer_profile->complete == 3)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
-                                                <input type="hidden" name="complete" value="4">
-                                                @elseif($lawyer_profile->complete == 4)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                                                <input type="hidden" name="complete" value="5">
-                                                @elseif($lawyer_profile->complete == 5)
-                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                                                <input type="hidden" name="complete" value="2">
-                                                @endif
+                                                @php
+                                                $percent_profile=0;
+                                                if(isset($lawyer_profile->complete) && $lawyer_profile->complete != null)
+                                                {
+                                                    $count_complete = $lawyer_profile->complete;
+                                                    $percent_profile = (($lawyer_profile->complete)/5)*100;
+                                                }
+                                                @endphp
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: {{$percent_profile}}%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">{{$percent_profile}}%</div>
+                                                <input type="hidden" name="complete" value=" {{$count_complete + 1}}">
                                             </div>
                                             @if($lawyer_profile)
                                             @if($lawyer_profile->image != null)
@@ -181,25 +172,16 @@ Profile building
                                     @csrf
                                         <div class="formDiv commonTabDiv">
                                             <div class="progress">
-                                                @if($lawyer_profile == null)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                                                <input type="hidden" name="complete" value="1">
-                                                @elseif($lawyer_profile->complete == 1)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
-                                                <input type="hidden" name="complete" value="2">
-                                                @elseif($lawyer_profile->complete == 2)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
-                                                <input type="hidden" name="complete" value="3">
-                                                @elseif($lawyer_profile->complete == 3)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
-                                                <input type="hidden" name="complete" value="4">
-                                                @elseif($lawyer_profile->complete == 4)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                                                <input type="hidden" name="complete" value="5">
-                                                @elseif($lawyer_profile->complete == 5)
-                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                                                <input type="hidden" name="complete" value="2">
-                                                @endif
+                                                @php
+                                                $percent_profile=0;
+                                                if(isset($lawyer_profile->complete) && $lawyer_profile->complete != null)
+                                                {
+                                                    $count_complete = $lawyer_profile->complete;
+                                                    $percent_profile = (($lawyer_profile->complete)/5)*100;
+                                                }
+                                                @endphp
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: {{$percent_profile}}%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">{{$percent_profile}}%</div>
+                                                <input type="hidden" name="complete" value=" {{$count_complete + 1}}">
                                             </div>
                                             @if($lawyer_profile)
                                             @if($lawyer_profile->address != null)
@@ -390,25 +372,16 @@ Profile building
                                         @csrf
                                         <div class="formDiv commonTabDiv">
                                             <div class="progress">
-                                                @if($lawyer_profile == null)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                                                <input type="hidden" name="complete" value="1">
-                                                @elseif($lawyer_profile->complete == 1)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
-                                                <input type="hidden" name="complete" value="2">
-                                                @elseif($lawyer_profile->complete == 2)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
-                                                <input type="hidden" name="complete" value="3">
-                                                @elseif($lawyer_profile->complete == 3)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
-                                                <input type="hidden" name="complete" value="4">
-                                                @elseif($lawyer_profile->complete == 4)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                                                <input type="hidden" name="complete" value="5">
-                                                @elseif($lawyer_profile->complete == 5)
-                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                                                <input type="hidden" name="complete" value="2">
-                                                @endif
+                                                @php
+                                                $percent_profile=0;
+                                                if(isset($lawyer_profile->complete) && $lawyer_profile->complete != null)
+                                                {
+                                                    $count_complete = $lawyer_profile->complete;
+                                                    $percent_profile = (($lawyer_profile->complete)/5)*100;
+                                                }
+                                                @endphp
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: {{$percent_profile}}%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">{{$percent_profile}}%</div>
+                                                <input type="hidden" name="complete" value=" {{$count_complete + 1}}">
                                             </div>
 
                                             @if($lawyer_profile)
@@ -475,25 +448,16 @@ Profile building
                                         @csrf
                                         <div class="formDiv commonTabDiv">
                                             <div class="progress">
-                                                @if($lawyer_profile == null)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                                                <input type="hidden" name="complete" value="1">
-                                                @elseif($lawyer_profile->complete == 1)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
-                                                <input type="hidden" name="complete" value="2">
-                                                @elseif($lawyer_profile->complete == 2)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
-                                                <input type="hidden" name="complete" value="3">
-                                                @elseif($lawyer_profile->complete == 3)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
-                                                <input type="hidden" name="complete" value="4">
-                                                @elseif($lawyer_profile->complete == 4)
-                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                                                <input type="hidden" name="complete" value="5">
-                                                @elseif($lawyer_profile->complete == 5)
-                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                                                <input type="hidden" name="complete" value="2">
-                                                @endif
+                                                @php
+                                                $percent_profile=0;
+                                                if(isset($lawyer_profile->complete) && $lawyer_profile->complete != null)
+                                                {
+                                                    $count_complete = $lawyer_profile->complete;
+                                                    $percent_profile = (($lawyer_profile->complete)/5)*100;
+                                                }
+                                                @endphp
+                                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: {{$percent_profile}}%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">{{$percent_profile}}%</div>
+                                                <input type="hidden" name="complete" value=" {{$count_complete + 1}}">
                                             </div>
                                         @if($lawyer_profile)
                                         @if($lawyer_profile->qualification != null)
@@ -555,7 +519,7 @@ Profile building
                                 </div>
                                 <div id="memberShip" class="tab-pane fade">
                                     @if($lawyer_profile)
-                                    @if($lawyer_profile->qualification != null)
+                                    @if($lawyer_memberships == null)
                                     <form action="{{ route('profile.update_5',$lawyer_profile->id) }}" method="post" enctype="multipart/form-data">
                                     @else
                                     <form action="{{ route('profile.store_5') }}" method="post" enctype="multipart/form-data">
@@ -566,28 +530,19 @@ Profile building
                                     @csrf
                                     <div class="formDiv commonTabDiv">
                                         <div class="progress">
-                                            @if($lawyer_profile == null)
-                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                                            <input type="hidden" name="complete" value="1">
-                                            @elseif($lawyer_profile->complete == 1)
-                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
-                                            <input type="hidden" name="complete" value="2">
-                                            @elseif($lawyer_profile->complete == 2)
-                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
-                                            <input type="hidden" name="complete" value="3">
-                                            @elseif($lawyer_profile->complete == 3)
-                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
-                                            <input type="hidden" name="complete" value="4">
-                                            @elseif($lawyer_profile->complete == 4)
-                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                                            <input type="hidden" name="complete" value="5">
-                                            @elseif($lawyer_profile->complete == 5)
-                                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                                            <input type="hidden" name="complete" value="2">
-                                            @endif
+                                            @php
+                                            $percent_profile=0;
+                                            if(isset($lawyer_profile->complete) && $lawyer_profile->complete != null)
+                                            {
+                                                $count_complete = $lawyer_profile->complete;
+                                                $percent_profile = (($lawyer_profile->complete)/5)*100;
+                                            }
+                                            @endphp
+                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: {{$percent_profile}}%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">{{$percent_profile}}%</div>
+                                            <input type="hidden" name="complete" value=" {{$count_complete + 1}}">
                                         </div>
                                         @if($lawyer_profile)
-                                        @if($lawyer_profile->qualification != null)
+                                        @if($lawyer_memberships == null)
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="multiSelect">

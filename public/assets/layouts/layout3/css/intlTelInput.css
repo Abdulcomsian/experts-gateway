@@ -21,13 +21,13 @@
     right: 0;
     padding: 1px; }
   .iti__selected-flag {
-    margin-left: -62px !important;
+    margin-left: -10px !important;
     z-index: 1;
     position: relative;
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 165px 0 8px; }
+    padding: 0 16px 0 8px; }
   .iti__arrow {
     margin-left: 6px;
     width: 0;

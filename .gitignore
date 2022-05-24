@@ -5,6 +5,7 @@
 /vendor
 /public/blogs 
 /public/lawyer_profile 
+/public/lawyer_cover_image 
 .env
 .env.backup
 .phpunit.result.cache

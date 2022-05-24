@@ -14,7 +14,7 @@ Dashboard
                         </div>
                         <div class="editProfileBox">
                             <div class="profileImg">
-                                <img src="../assets/img/editProfile.png" alt="" class="img-fluid">
+                                <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" style="width: 790px !important; height: 230px !important;" alt="" class="img-fluid">
 
                             </div>
                             <div class="editProfile">
@@ -24,7 +24,7 @@ Dashboard
                                     </div>
                                     <div class="userProfile">
                                         <h4>{{$lawyer->name}}</h4>
-                                        <p>King & Wood Mallesons</p>
+                                        <p>{{$lawyer_profile->title}}</p>
                                     </div>
                                 </div>
                                 <div class="line">
@@ -80,7 +80,9 @@ Dashboard
                                     </div>
                                     <h4>Education</h4>
                                     <ul>
-                                        <li>- {{$lawyer_profile->qualification}}</li>
+                                        @foreach($lawyer_educations as $education)
+                                            <li>-{{$education->education->name}}</li>
+                                        @endforeach
                                     </ul>
                                     <div class="line">
                                         <img src="../assets/img/line.png" alt="" class="img-fluid">

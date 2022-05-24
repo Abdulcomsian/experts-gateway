@@ -8,11 +8,13 @@ use Auth;
 use DB;
 use App\Models\User;
 use App\Models\Expertise;
+use App\Models\Education;
 use App\Models\Language;
 use App\Models\LawyerProfile;
 use App\Models\LawyersHasExpertise;
 use App\Models\LawyersHasLanguage;
 use App\Models\LawyersHasMembership;
+use App\Models\LawyersHasEducation;
 use App\Models\Membership;
 
 class dashboardController extends Controller
@@ -30,33 +32,43 @@ class dashboardController extends Controller
         $languages = Language::get();
         $expertises = Expertise::get();
         $memberships = Membership::get();
+        $educations = Education::get();
         $lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
         if($lawyer_profile)
         {
             $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',1)->get();
             $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
             $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
+            $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
             if($lawyer->status == 0)
             {
-                if($lawyer_memberships)
+                if($lawyer_educations && $lawyer_memberships)
                 {
-               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','lawyer_memberships','lawyer_profile')); 
+               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_memberships','lawyer_educations','lawyer_profile')); 
+                }
+                elseif($lawyer_memberships)
+                {
+               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_memberships','lawyer_profile')); 
+                }
+                elseif($lawyer_educations)
+                {
+               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_educations','lawyer_profile')); 
                 }
                 else
                 {
-               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','lawyer_profile')); 
+               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_profile')); 
                 }
             }
             elseif($lawyer->status == 1)
             {
-                return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_expertises','lawyer_memberships'));
+                return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_expertises','lawyer_memberships','lawyer_educations'));
             }
 
         }
         else{
             if($lawyer->status == 0)
             {
-               return view('lawyer.build_profile',compact('lawyer','languages','expertises','memberships','lawyer_profile')); 
+               return view('lawyer.build_profile',compact('lawyer','languages','expertises','memberships','educations','lawyer_profile')); 
             }
             elseif($lawyer->status == 2)
             {
@@ -72,7 +84,9 @@ class dashboardController extends Controller
         $this->validate($request,[  
             'f_name'=>'required|string|max:255', 
             'l_name'=>'required|string|max:255', 
+            'title'=>'required|string', 
             'image'=>'required',   
+            'b_image'=>'required',   
 
         ]);
         $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
@@ -81,6 +95,7 @@ class dashboardController extends Controller
             $lawyer_profile= LawyerProfile::find($lawyer_profile->id);
             $lawyer_profile->user_id = $user_id;
             $lawyer_profile->complete = $request->complete;
+            $lawyer_profile->title = $request->title;
             if($request->hasfile('image'))
             {
                 $image = $request->file('image');
@@ -89,6 +104,15 @@ class dashboardController extends Controller
                 $image_name =time().'.'. $extensions;
                 $image->move('lawyer_profile/',$image_name);
                 $lawyer_profile->image=$image_name;
+            }
+            if($request->hasfile('b_image'))
+            {
+                $c_image = $request->file('b_image');
+                $c_extensions =$c_image->extension();
+
+                $image_c_name =time().'.'. $c_extensions;
+                $c_image->move('lawyer_cover_image/',$image_c_name);
+                $lawyer_profile->b_image=$image_c_name;
             }
             $lawyer_profile->save();
 
@@ -101,6 +125,7 @@ class dashboardController extends Controller
             $lawyer_profile= new LawyerProfile;
             $lawyer_profile->user_id = $user_id;
             $lawyer_profile->complete = $request->complete;
+            $lawyer_profile->title = $request->title;
             if($request->hasfile('image'))
             {
                 $image = $request->file('image');
@@ -109,6 +134,15 @@ class dashboardController extends Controller
                 $image_name =time().'.'. $extensions;
                 $image->move('lawyer_profile/',$image_name);
                 $lawyer_profile->image=$image_name;
+            }
+            if($request->hasfile('b_image'))
+            {
+                $c_image = $request->file('b_image');
+                $c_extensions =$c_image->extension();
+
+                $image_c_name =time().'.'. $c_extensions;
+                $c_image->move('lawyer_cover_image/',$image_c_name);
+                $lawyer_profile->b_image=$image_c_name;
             }
             $lawyer_profile->save();
 
@@ -124,11 +158,12 @@ class dashboardController extends Controller
 
     public function profile_update_1(Request $request,$id)
     {
-        // dd($request->all());
+         // dd($request->all());
         $user_id = Auth::id();
         $this->validate($request,[  
             'f_name'=>'required|string|max:255', 
             'l_name'=>'required|string|max:255', 
+            'title'=>'required|string', 
 
         ]);
         $lawyer_profile= LawyerProfile::find($id);
@@ -140,8 +175,20 @@ class dashboardController extends Controller
             $image_name =time().'.'. $extensions;
             $image->move('lawyer_profile/',$image_name);
             $lawyer_profile->image=$image_name;
-            $lawyer_profile->save();
+            
         }
+
+        if($request->hasfile('b_image'))
+        {
+            $c_image = $request->file('b_image');
+            $c_extensions =$c_image->extension();
+
+            $image_c_name =time().'.'. $c_extensions;
+            $c_image->move('lawyer_cover_image/',$image_c_name);
+            $lawyer_profile->b_image=$image_c_name;
+        }
+        $lawyer_profile->title = $request->title;
+        $lawyer_profile->save();
         
         $user= User::where('id',$user_id)->first();
         $user->f_name = $request->f_name;
@@ -295,26 +342,42 @@ class dashboardController extends Controller
 
     public function profile_store_4(Request $request)
     {
-        // dd($request->all());
+         // dd($request->all());
         $user_id = Auth::id();
         $this->validate($request,[  
-            'qualification'=>'required',  
+            'education_id'=>'required',  
 
         ]);
         $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
         if($lawyer_profile != null)
         {
             $lawyer_profile= LawyerProfile::find($lawyer_profile->id);
-            $lawyer_profile->qualification = $request->qualification;
             $lawyer_profile->complete = $request->complete;
             $lawyer_profile->save();
+
+            foreach($request->education_id as $education)
+            {
+                $lawyer_education = new LawyersHasEducation;
+                $lawyer_education->education_id = $education;
+                $lawyer_education->lawyer_profile_id = $lawyer_profile->id;
+                $lawyer_education->save();
+            }
+
         }
         else{
             $lawyer_profile= new LawyerProfile;
-            $lawyer_profile->qualification = $request->qualification;
             $lawyer_profile->user_id = $user_id;
             $lawyer_profile->complete = $request->complete;
             $lawyer_profile->save();
+
+            foreach($request->education_id as $education)
+            {
+                $lawyer_education = new LawyersHasEducation;
+                $lawyer_education->education_id = $education;
+                $lawyer_education->lawyer_profile_id = $lawyer_profile->id;
+                $lawyer_education->save();
+            }
+
         }
         
         toastSuccess('Successfully Added');
@@ -325,13 +388,18 @@ class dashboardController extends Controller
     {
         $user_id = Auth::id();
         $this->validate($request,[  
-            'qualification'=>'required',  
+            'education_id'=>'required',  
 
         ]);
         
-        $lawyer_profile= LawyerProfile::find($id);
-        $lawyer_profile->qualification = $request->qualification;
-        $lawyer_profile->save();
+        LawyersHasEducation::where('lawyer_profile_id',$id)->delete();
+        foreach($request->education_id as $education)
+        {
+            $lawyer_education = new LawyersHasEducation;
+            $lawyer_education->education_id = $education;
+            $lawyer_education->lawyer_profile_id = $id;
+            $lawyer_education->save();
+        }
         
         
         toastSuccess('Successfully Added');

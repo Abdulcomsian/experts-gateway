@@ -81,18 +81,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $splitName = explode(' ', $data['name'], 2); 
-        if($splitName['1']){
             if($data['type'] == 'lawyer'){
-                $user = User::create([
-                    'f_name' => $splitName['0'],
-                    'l_name' => $splitName['1'],
-                    'email' => $data['email'],
-                    'status' => 0,
-                    'password' => Hash::make($data['password']),
-                ]);
+                $splitName = explode(' ', $data['name'], 2); 
+                
+                    $user = User::create([
+                        'f_name' => $splitName['0'],
+                        'l_name' => $splitName['1'],
+                        'email' => $data['email'],
+                        'status' => 0,
+                        'password' => Hash::make($data['password']),
+                    ]);
 
-                $user->assignRole('Lawyer');
+                    $user->assignRole('Lawyer'); 
+                
+               
             }
             else{
                 $user = User::create([
@@ -107,7 +109,6 @@ class RegisterController extends Controller
 
                 $user->assignRole('User');
             }
-        }
 
         return $user;
     }

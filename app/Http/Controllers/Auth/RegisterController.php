@@ -81,28 +81,32 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if($data['type'] == 'lawyer'){
-            $user = User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'status' => 0,
-                'password' => Hash::make($data['password']),
-            ]);
+        $splitName = explode(' ', $data['name'], 2); 
+        if($splitName['1']){
+            if($data['type'] == 'lawyer'){
+                $user = User::create([
+                    'f_name' => $splitName['0'],
+                    'l_name' => $splitName['1'],
+                    'email' => $data['email'],
+                    'status' => 0,
+                    'password' => Hash::make($data['password']),
+                ]);
 
-            $user->assignRole('Lawyer');
-        }
-        else{
-            $user = User::create([
-                'f_name' => $data['f_name'],
-                'l_name' => $data['l_name'],
-                'email' => $data['email'],
-                'country' => $data['country'],
-                'phone' => $data['phone_input'],
-                'status' => 1,
-                'password' => Hash::make($data['password']),
-            ]);
+                $user->assignRole('Lawyer');
+            }
+            else{
+                $user = User::create([
+                    'f_name' => $data['f_name'],
+                    'l_name' => $data['l_name'],
+                    'email' => $data['email'],
+                    'country' => $data['country'],
+                    'phone' => $data['phone_input'],
+                    'status' => 1,
+                    'password' => Hash::make($data['password']),
+                ]);
 
-            $user->assignRole('User');
+                $user->assignRole('User');
+            }
         }
 
         return $user;
@@ -112,7 +116,7 @@ class RegisterController extends Controller
     {
         if(Auth::user()->hasRole('User'))
         {
-            $this->redirectTo = route('user.dashboard');
+            $this->redirectTo = route('landing-page');
 
             return $this->redirectTo;
         }

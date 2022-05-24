@@ -54,7 +54,7 @@ class LoginController extends Controller
         elseif(Auth::user()->hasRole('User'))
         {
             $user = User::where('id',Auth::id())->first();
-            $this->redirectTo = route('user.dashboard');
+            $this->redirectTo = route('landing-page');
 
             return $this->redirectTo;
         }

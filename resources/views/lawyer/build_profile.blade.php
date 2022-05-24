@@ -169,14 +169,14 @@ Profile building
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv">
-                                                            <input id="f_name" required type="text" name="f_name" value="{{ old('f_name') }}" placeholder="First Name">
+                                                            <input id="f_name" required type="text" name="f_name" value="{{ $lawyer_profile->user->f_name }}" placeholder="First Name">
 
                                                             <div style="color:red;">{{$errors->first('f_name')}}</div> <br>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv">
-                                                            <input id="l_name" required type="text" name="l_name" value="{{ old('l_name') }}" placeholder="Last Name">
+                                                            <input id="l_name" required type="text" name="l_name" value="{{ $lawyer_profile->user->l_name }}" placeholder="Last Name">
 
                                                             <div style="color:red;">{{$errors->first('l_name')}}</div> <br>
                                                         </div>
@@ -229,14 +229,14 @@ Profile building
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv">
-                                                            <input id="f_name" required type="text" name="f_name" value="{{ old('f_name') }}" placeholder="First Name">
+                                                            <input id="f_name" required type="text" name="f_name" value="{{ $lawyer->f_name }}" placeholder="First Name">
 
                                                             <div style="color:red;">{{$errors->first('f_name')}}</div> <br>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv">
-                                                            <input id="l_name" required type="text" name="l_name" value="{{ old('l_name') }}" placeholder="Last Name">
+                                                            <input id="l_name" required type="text" name="l_name" value="{{ $lawyer->l_name }}" placeholder="Last Name">
 
                                                             <div style="color:red;">{{$errors->first('l_name')}}</div> <br>
                                                         </div>

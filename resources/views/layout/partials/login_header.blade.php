@@ -9,17 +9,17 @@
                 </span>
                 <div class="dropDownMenu">
                     <ul>
-                        @if(Auth::user()->name)
+                        @if(Auth::user()->f_name)
                         <li>
-                            <span>{{ Auth::user()->name }}</span>
+                            <span>{{ Auth::user()->f_name }}</span>
                         </li>
                         <div class="line"></div>
-                        <li>
+                        <!-- <li>
                             <img src="{{ asset('assets/img/myOrder.png') }}" alt="" class="img-fluid">
                             <span>
                                 <a href="./order/index.html">My Orders</a>
                             </span>
-                        </li>
+                        </li> -->
                         <li>
                             <img src="{{ asset('assets/img/loginIcon.png') }}" alt="" class="img-fluid">
                             <span>

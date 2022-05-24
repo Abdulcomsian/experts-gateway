@@ -23,7 +23,7 @@ Dashboard
                                         <img src="{{asset('lawyer_profile/'.$lawyer_profile->image)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
                                     </div>
                                     <div class="userProfile">
-                                        <h4>{{$lawyer->name}}</h4>
+                                        <h4>{{$lawyer->f_name}} {{$lawyer->l_name}}</h4>
                                         <p>{{$lawyer_profile->title}}</p>
                                     </div>
                                 </div>

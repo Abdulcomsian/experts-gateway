@@ -77,8 +77,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="">
-                                    Apply
+                                <a href="{{ route('lawyer-register') }}">
+                                    Apply as Lawyer
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('register') }}">
+                                    Apply as Client
                                 </a>
                             </li>
                             <li>

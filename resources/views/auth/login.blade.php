@@ -52,7 +52,7 @@
                             </form>
                         </div>
                         <div class="line">
-                            <img src="../../assets/img/line.png" alt="" class="img-fluid">
+                            <img src="{{asset('assets/img/line.png') }}" alt="" class="img-fluid">
                         </div>
                         <div class="applyForMembership">
                             <span>Don’t have an account?</span>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-lg-6" style="padding: 0px;">
                     <div class="bannerRight registerAuthRightBox">
-                        <img src="../../assets/img/bannerImg.png" alt="" class="img-fluid">
+                        <img src="{{asset('assets/img/bannerImg.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                 </div>
                 <div class="col-lg-6 text-center">
                     <div class="imgText">
-                        <img src="../../assets/img/information.png" alt="" class="img-fluid">
+                        <img src="{{asset('assets/img/information.png') }}" alt="" class="img-fluid">
                         <div class="imgTextMiddle">
                             <p>Legal Advice<br> Across the<br> Globe</p>
                         </div>

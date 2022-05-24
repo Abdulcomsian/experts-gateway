@@ -45,12 +45,12 @@
                             </span>
                         </li>
                         <div class="line"></div>
-                        <li>
+                        <!-- <li>
                             <img src="{{asset('assets/img/myOrder.png')}}" alt="" class="img-fluid">
                             <span>
                                 <a href="#">My Orders</a>
                             </span>
-                        </li>
+                        </li> -->
                         @endif
                     </ul>
                 </div>
@@ -77,10 +77,15 @@
                         <a class="nav-link" href="./experts.html">Experts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./fixed-free.html">Services</a>
+                        <a class="nav-link" href="#">Services</a>
+                        
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('lawyer-register')}}">Apply</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Apply</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{{route('lawyer-register') }}">Apply as Lawyer </a>
+                          <a class="dropdown-item" href="{{route('register') }}">Apply as Client</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('all-blogs') }}">Blog</a>

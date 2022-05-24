@@ -38,7 +38,7 @@ class dashboardController extends Controller
         {
             $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',1)->get();
             $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
-            $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
+            $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->first();
             $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
             if($lawyer->status == 0)
             {
@@ -421,13 +421,11 @@ class dashboardController extends Controller
             $lawyer_profile->complete = $request->complete;
             $lawyer_profile->save();
 
-            foreach($request->membership_id as $membership)
-            {
-                $lawyer_membership = new LawyersHasMembership;
-                $lawyer_membership->membership_id = $membership;
-                $lawyer_membership->lawyer_profile_id = $lawyer_profile->id;
-                $lawyer_membership->save();
-            }
+           
+            $lawyer_membership = new LawyersHasMembership;
+            $lawyer_membership->membership_id = $request->membership_id;
+            $lawyer_membership->lawyer_profile_id = $lawyer_profile->id;
+            $lawyer_membership->save();
         }
         else{
             $lawyer_profile= new LawyerProfile;
@@ -435,13 +433,10 @@ class dashboardController extends Controller
             $lawyer_profile->complete = $request->complete;
             $lawyer_profile->save();
 
-            foreach($request->membership_id as $membership)
-            {
-                $lawyer_membership = new LawyersHasMembership;
-                $lawyer_membership->membership_id = $membership;
-                $lawyer_membership->lawyer_profile_id = $lawyer_profile->id;
-                $lawyer_membership->save();
-            }
+            $lawyer_membership = new LawyersHasMembership;
+            $lawyer_membership->membership_id = $request->membership_id;
+            $lawyer_membership->lawyer_profile_id = $lawyer_profile->id;
+            $lawyer_membership->save();
         }
         
         toastSuccess('Successfully Added');
@@ -457,13 +452,11 @@ class dashboardController extends Controller
 
         ]);
         LawyersHasMembership::where('lawyer_profile_id',$id)->delete();
-        foreach($request->membership_id as $membership)
-        {
-            $lawyer_membership = new LawyersHasMembership;
-            $lawyer_membership->membership_id = $membership;
-            $lawyer_membership->lawyer_profile_id = $id;
-            $lawyer_membership->save();
-        }
+        
+        $lawyer_membership = new LawyersHasMembership;
+        $lawyer_membership->membership_id = $request->membership_id;
+        $lawyer_membership->lawyer_profile_id = $id;
+        $lawyer_membership->save();
         
         toastSuccess('Successfully Updated');
         return redirect('lawyer/profile');

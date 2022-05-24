@@ -48,9 +48,9 @@
                 id="#kt_aside_menu" data-kt-menu="true">
                 <div class="menu-item">
                     @if(Route::is('admin.dashboard') )
-                    <a class="menu-link active" href="/admin/dashboard">
+                    <a class="menu-link active" href="{{ url('/admin/dashboard') }}">
                     @else
-                    <a class="menu-link" href="/admin/dashboard">
+                    <a class="menu-link" href="{{ url('/admin/dashboard') }}">
                     @endif
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/PenAndRuller.svg-->
@@ -72,9 +72,9 @@
                 </div>
                 <div class="menu-item">
                     @if(Route::is('admin.blogs') )
-                    <a class="menu-link active" href="/admin/blogs">
+                    <a class="menu-link active" href="{{ url('/admin/blogs') }}">
                     @else
-                    <a class="menu-link" href="/admin/blogs">
+                    <a class="menu-link" href="{{ url('/admin/blogs') }}">
                     @endif
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
@@ -91,9 +91,9 @@
                     </a>
 
                     @if(Route::is('admin.lawyer-applications') )
-                    <a class="menu-link active" href="/admin/lawyer_applications">
+                    <a class="menu-link active" href="{{ url('/admin/lawyer_applications') }}">
                     @else
-                    <a class="menu-link" href="/admin/lawyer_applications">
+                    <a class="menu-link" href="{{ url('/admin/lawyer_applications') }}">
                     @endif
                                         <span class="menu-icon">
                                             <!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->

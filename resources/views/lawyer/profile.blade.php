@@ -90,10 +90,8 @@ Dashboard
                                     <h4>Associations & Memberships
                                     </h4>
                                     <ul>
-                                        @foreach($lawyer_memberships as $membership)
-                                            <li>-{{$membership->membership->name}}</li>
+                                            <li>-{{$lawyer_memberships->membership->name}}</li>
                                             
-                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

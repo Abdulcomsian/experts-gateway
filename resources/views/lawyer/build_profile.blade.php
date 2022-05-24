@@ -71,7 +71,7 @@ Profile building
                                         <form action="{{ route('profile.store_1') }}" method="post" enctype="multipart/form-data">
                                         @endif
                                         @csrf
-                                            <div class="progress">
+                                            <div class="progress" style="background-color: transparent;">
                                                 @if($lawyer_profile == null)
                                                 <input type="hidden" name="complete" value="1">
                                                 @elseif($lawyer_profile->complete == 1)
@@ -269,7 +269,7 @@ Profile building
                                     @endif
                                     @csrf
                                         <div class="formDiv commonTabDiv">
-                                            <div class="progress">
+                                            <div class="progress" style="background-color: transparent;">
                                                 @if($lawyer_profile == null)
                                                 <input type="hidden" name="complete" value="1">
                                                 @elseif($lawyer_profile->complete == 1)
@@ -481,7 +481,7 @@ Profile building
                                     @endif
                                         @csrf
                                         <div class="formDiv commonTabDiv">
-                                            <div class="progress">
+                                            <div class="progress" style="background-color: transparent;">
                                                 @if($lawyer_profile == null)
                                                 <input type="hidden" name="complete" value="1">
                                                 @elseif($lawyer_profile->complete == 1)
@@ -560,7 +560,7 @@ Profile building
                                     @endif
                                         @csrf
                                         <div class="formDiv commonTabDiv">
-                                            <div class="progress">
+                                            <div class="progress" style="background-color: transparent;">
                                                 @if($lawyer_profile == null)
                                                 <input type="hidden" name="complete" value="1">
                                                 @elseif($lawyer_profile->complete == 1)
@@ -619,15 +619,9 @@ Profile building
 
                                                 </div>
                                             </div>
-                                            <!-- @if($lawyer_profile->complete == 4)
-                                            <div class="pricingFooter col-lg-8 text-center" >
-                                                <button type="submit">Submit For Approval</button>
-                                            </div>
-                                            @else -->
                                             <div class="pricingFooter col-lg-8 text-center" >
                                                 <button type="submit">Save</button>
                                             </div>
-                                            <!-- @endif -->
                                         </div>
                                         @endif
                                         @else
@@ -656,7 +650,7 @@ Profile building
                                 </div>
                                 <div id="memberShip" class="tab-pane fade">
                                     @if($lawyer_profile)
-                                    @if(count($lawyer_memberships)>0)
+                                    @if($lawyer_memberships)
                                     <form action="{{ route('profile.update_5',$lawyer_profile->id) }}" method="post" enctype="multipart/form-data">
                                     @else
                                     <form action="{{ route('profile.store_5') }}" method="post" enctype="multipart/form-data">
@@ -666,7 +660,7 @@ Profile building
                                     @endif
                                     @csrf
                                     <div class="formDiv commonTabDiv">
-                                        <div class="progress">
+                                        <div class="progress" style="background-color: transparent;">
                                             @if($lawyer_profile == null)
                                             <input type="hidden" name="complete" value="1">
                                             @elseif($lawyer_profile->complete == 1)
@@ -682,24 +676,16 @@ Profile building
                                             @endif
                                         </div><br>
                                         @if($lawyer_profile)
-                                        @if(count($lawyer_memberships)>0)
+                                        @if($lawyer_memberships)
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="multiSelect">
                                                     <label for="">Select Membership & Association Law</label>
-                                                    <select required class="js-example-basic-multiple" name="membership_id[]" multiple="multiple">
+                                                    <select required class="form-control form-control-solid" name="membership_id">
                                                         <option disabled> Select Membership</option>
                                                         @foreach($memberships as $membership)
-                                                        @foreach($lawyer_memberships as $lawyer_membership)
-                                                        @php 
-                                                        $selected="";
-                                                        if($lawyer_membership->membership_id == $membership->id ){
-                                                            $selected="selected";
-                                                            break;
-                                                        }
-                                                        @endphp
-                                                        @endforeach
-                                                        <option value="{{$membership->id}}" {{ $selected }} >{{$membership->name}}</option>
+                                                        
+                                                        <option value="{{$membership->id}}" {{ $lawyer_memberships->membership_id == $membership->id ? 'selected' : '' }}>{{$membership->name}}</option>
                                                         @endforeach
                                                     </select>
                                                     <div style="color:red;">{{$errors->first('membership_id')}}</div> <br>
@@ -715,7 +701,7 @@ Profile building
                                             <div class="col-lg-12">
                                                 <div class="multiSelect">
                                                     <label for="">Select Membership & Association Law</label>
-                                                    <select required class="js-example-basic-multiple" name="membership_id[]" multiple="multiple">
+                                                    <select required class="form-control form-control-solid" name="membership_id" >
                                                         <option disabled> Select Membership</option>
                                                         @foreach($memberships as $membership)
                                                         <option value="{{$membership->id}}">{{$membership->name}}</option>
@@ -735,7 +721,7 @@ Profile building
                                             <div class="col-lg-12">
                                                 <div class="multiSelect">
                                                     <label for="">Select Membership & Association Law</label>
-                                                    <select required class="js-example-basic-multiple" name="membership_id[]" multiple="multiple">
+                                                    <select required class="form-control form-control-solid" name="membership_id">
                                                         <option disabled> Select Membership</option>
                                                         @foreach($memberships as $membership)
                                                         <option value="{{$membership->id}}">{{$membership->name}}</option>

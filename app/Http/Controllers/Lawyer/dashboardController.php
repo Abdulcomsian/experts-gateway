@@ -42,21 +42,25 @@ class dashboardController extends Controller
             $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
             if($lawyer->status == 0)
             {
+
                 if($lawyer_educations && $lawyer_memberships)
                 {
-               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_memberships','lawyer_educations','lawyer_profile')); 
+                    return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_memberships','lawyer_educations','lawyer_profile')); 
                 }
+                
                 elseif($lawyer_memberships)
                 {
                return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_memberships','lawyer_profile')); 
                 }
-                elseif($lawyer_educations)
+                elseif(count($lawyer_educations)>0)
                 {
-               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_educations','lawyer_profile')); 
+                    $lawyer_memberships = null;
+                    return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_educations','lawyer_memberships','lawyer_profile')); 
                 }
                 else
                 {
-               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_profile')); 
+                    $lawyer_memberships = null;
+               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','lawyer_educations','lawyer_memberships','expertises','memberships','educations','lawyer_profile')); 
                 }
             }
             elseif($lawyer->status == 1)
@@ -68,7 +72,8 @@ class dashboardController extends Controller
         else{
             if($lawyer->status == 0)
             {
-               return view('lawyer.build_profile',compact('lawyer','languages','expertises','memberships','educations','lawyer_profile')); 
+                $lawyer_memberships = null;
+               return view('lawyer.build_profile',compact('lawyer','languages','expertises','memberships','educations','lawyer_profile','lawyer_memberships')); 
             }
             elseif($lawyer->status == 2)
             {

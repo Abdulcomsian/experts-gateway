@@ -676,7 +676,7 @@ Profile building
                                             @endif
                                         </div><br>
                                         @if($lawyer_profile)
-                                        @if($lawyer_memberships)
+                                        @if($lawyer_memberships != null)
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="multiSelect">

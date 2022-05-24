@@ -334,7 +334,7 @@
                 <div class="col-lg-12 text-center">
                     <h2>Advisory Excellence Profiles<br> The Best Advisers Around The Globe</h2>
                     <a href="./experts.html" class="expertBtn">Find An Expert</a>
-                    <a href="">Apply For Membership</a>
+                    <a href="{{ route('lawyer-register') }}">Apply For Membership</a>
                 </div>
             </div>
         </div>

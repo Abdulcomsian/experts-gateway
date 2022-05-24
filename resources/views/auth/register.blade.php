@@ -75,7 +75,7 @@
                         </div>
                         <div class="applyForMembership">
                             <span>Want to register as a Lawyer?</span>
-                            <button style="cursor: pointer;">Apply For Membership</button>
+                            <a href="{{ route('lawyer-register') }}"><button style="cursor: pointer;">Apply For Membership</button></a>
                         </div>
                     </div>
 

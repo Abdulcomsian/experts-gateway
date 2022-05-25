@@ -3,7 +3,7 @@
 Profile building
 @endsection
 @push('styles')
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">s
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 @endpush
 @section('content')
 <main>
@@ -550,7 +550,7 @@ Profile building
                                 </div>
                                 <div id="education" class="tab-pane fade">
                                     @if($lawyer_profile)
-                                    @if(count($lawyer_educations)>0)
+                                    @if($lawyer_profile->education != null)
                                     <form action="{{ route('profile.update_4',$lawyer_profile->id) }}" method="post" enctype="multipart/form-data">
                                     @else
                                     <form action="{{ route('profile.store_4') }}" method="post" enctype="multipart/form-data">
@@ -576,27 +576,19 @@ Profile building
                                                 @endif
                                             </div><br>
                                         @if($lawyer_profile)
-                                        @if(count($lawyer_educations)>0)
+                                        @if($lawyer_profile->education != null)
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="multiSelect">
                                                     <label for="">Education</label>
-                                                    <select required class="js-example-basic-multiple" name="education_id[]" multiple="multiple">
-                                                        <option disabled> Select Membership</option>
-                                                        @foreach($educations as $education)
-                                                        @foreach($lawyer_educations as $lawyer_education)
-                                                        @php 
-                                                        $selected="";
-                                                        if($lawyer_education->education_id == $education->id ){
-                                                            $selected="selected";
-                                                            break;
-                                                        }
-                                                        @endphp
-                                                        @endforeach
-                                                        <option value="{{$education->id}}" {{ $selected }} >{{$education->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <div style="color:red;">{{$errors->first('education_id')}}</div> <br>
+                                                    <table class="table" id="dynamic_field">  
+                                                        <tr>  
+                                                            <td style="width:80%"><input type="text" name="education[]" value="{{$lawyer_profile->education}}" placeholder="Enter Education" class="form-control education_list" />
+                                                            </td>  
+                                                            <td style="width:20%;"><button style="padding: 7px !important; margin-top:2px;" type="button" name="add_edu" id="add_edu" class="btn btn-success">Add More</button></td>  
+                                                            <div style="color:red;">{{$errors->first('education')}}</div> <br>
+                                                        </tr>  
+                                                    </table>  
 
                                                 </div>
                                             </div>
@@ -609,13 +601,14 @@ Profile building
                                             <div class="col-lg-12">
                                                 <div class="multiSelect">
                                                     <label for="">Education</label>
-                                                    <select required class="js-example-basic-multiple" name="education_id[]" multiple="multiple">
-                                                        <option disabled> Select Education</option>
-                                                        @foreach($educations as $education)
-                                                        <option value="{{$education->id}}">{{$education->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <div style="color:red;">{{$errors->first('education_id')}}</div> <br>
+                                                    <table class="table" id="dynamic_field">  
+                                                        <tr>  
+                                                            <td style="width:80%"><input type="text" name="education[]" placeholder="Enter Education" class="form-control education_list" />
+                                                            </td>  
+                                                            <td style="width:20%;"><button style="padding: 7px !important; margin-top:2px;" type="button" name="add_edu" id="add_edu" class="btn btn-success">Add More</button></td>  
+                                                            <div style="color:red;">{{$errors->first('education')}}</div> <br>
+                                                        </tr>  
+                                                    </table>  
 
                                                 </div>
                                             </div>
@@ -629,13 +622,14 @@ Profile building
                                             <div class="col-lg-12">
                                                 <div class="multiSelect">
                                                     <label for="">Education</label>
-                                                    <select required class="js-example-basic-multiple" name="education_id[]" multiple="multiple">
-                                                        <option disabled> Select Education</option>
-                                                        @foreach($educations as $education)
-                                                        <option value="{{$education->id}}">{{$education->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <div style="color:red;">{{$errors->first('education_id')}}</div> <br>
+                                                    <table class="table" id="dynamic_field">  
+                                                        <tr>  
+                                                            <td style="width:80%"><input type="text" name="education[]" placeholder="Enter Education" class="form-control education_list" />
+                                                            </td>  
+                                                            <td style="width:20%;"><button style="padding: 7px !important; margin-top:2px;" type="button" name="add_edu" id="add_edu" class="btn btn-success">Add More</button></td>  
+                                                            <div style="color:red;">{{$errors->first('education')}}</div> <br>
+                                                        </tr>  
+                                                    </table>  
 
                                                 </div>
                                             </div>
@@ -650,7 +644,7 @@ Profile building
                                 </div>
                                 <div id="memberShip" class="tab-pane fade">
                                     @if($lawyer_profile)
-                                    @if($lawyer_memberships)
+                                    @if($lawyer_profile->membership != null)
                                     <form action="{{ route('profile.update_5',$lawyer_profile->id) }}" method="post" enctype="multipart/form-data">
                                     @else
                                     <form action="{{ route('profile.store_5') }}" method="post" enctype="multipart/form-data">
@@ -676,19 +670,21 @@ Profile building
                                             @endif
                                         </div><br>
                                         @if($lawyer_profile)
-                                        @if($lawyer_memberships != null)
+                                        @if($lawyer_profile->membership != null)
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="multiSelect">
                                                     <label for="">Select Membership & Association Law</label>
-                                                    <select required class="form-control form-control-solid" name="membership_id">
-                                                        <option disabled> Select Membership</option>
-                                                        @foreach($memberships as $membership)
-                                                        
-                                                        <option value="{{$membership->id}}" {{ $lawyer_memberships->membership_id == $membership->id ? 'selected' : '' }}>{{$membership->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <div style="color:red;">{{$errors->first('membership_id')}}</div> <br>
+
+                                                    <table class="table" id="dynamic_field_membership">  
+                                                        <tr>  
+                                                            <td style="width:80%"><input type="text" name="membership[]" placeholder="Enter Membership & Association Law" value="{{$lawyer_profile->membership}}" class="form-control membership_list" />
+                                                            </td>  
+                                                            <td style="width:20%;"><button style="padding: 7px !important; margin-top:2px;" type="button" name="add" id="add" class="btn btn-success">Add More</button></td>  
+                                                            <div style="color:red;">{{$errors->first('membership')}}</div> <br>
+                                                        </tr>  
+                                                    </table> 
+                                                    
 
                                                 </div>
                                             </div>
@@ -701,13 +697,16 @@ Profile building
                                             <div class="col-lg-12">
                                                 <div class="multiSelect">
                                                     <label for="">Select Membership & Association Law</label>
-                                                    <select required class="form-control form-control-solid" name="membership_id" >
-                                                        <option disabled> Select Membership</option>
-                                                        @foreach($memberships as $membership)
-                                                        <option value="{{$membership->id}}">{{$membership->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <div style="color:red;">{{$errors->first('membership_id')}}</div> <br>
+
+                                                    <table class="table" id="dynamic_field_membership">  
+                                                        <tr>  
+                                                            <td style="width:80%"><input type="text" name="membership[]" placeholder="Enter Membership & Association Law" class="form-control membership_list" />
+                                                            </td>  
+                                                            <td style="width:20%;"><button style="padding: 7px !important; margin-top:2px;" type="button" name="add" id="add" class="btn btn-success">Add More</button></td>  
+                                                            <div style="color:red;">{{$errors->first('membership')}}</div> <br>
+                                                        </tr>  
+                                                    </table>  
+                                                    
 
                                                 </div>
                                             </div>
@@ -721,13 +720,15 @@ Profile building
                                             <div class="col-lg-12">
                                                 <div class="multiSelect">
                                                     <label for="">Select Membership & Association Law</label>
-                                                    <select required class="form-control form-control-solid" name="membership_id">
-                                                        <option disabled> Select Membership</option>
-                                                        @foreach($memberships as $membership)
-                                                        <option value="{{$membership->id}}">{{$membership->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <div style="color:red;">{{$errors->first('membership_id')}}</div> <br>
+
+                                                    <table class="table" id="dynamic_field_membership">  
+                                                        <tr>  
+                                                            <td style="width:80%"><input type="text" name="membership[]" placeholder="Enter Membership & Association Law" class="form-control membership_list" />
+                                                            </td>  
+                                                            <td style="width:20%;"><button style="padding: 7px !important; margin-top:2px;" type="button" name="add" id="add" class="btn btn-success">Add More</button></td>  
+                                                            <div style="color:red;">{{$errors->first('membership')}}</div> <br>
+                                                        </tr>  
+                                                    </table>   
 
                                                 </div>
                                             </div>
@@ -841,6 +842,7 @@ Profile building
 @endsection
 @section('script')
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function () {
         $('.ckeditor').ckeditor();
@@ -848,6 +850,39 @@ Profile building
 
     $(document).ready(function () {
         $('.js-example-basic-multiple').select2();
+    });
+
+    $(document).ready(function(){      
+      var i=1;  
+
+      $('#add').click(function(){  
+           i++;  
+           $('#dynamic_field_membership').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="membership[]" placeholder="Enter Membership & Association Law" class="form-control membership_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
+      });  
+
+
+      $(document).on('click', '.btn_remove', function(){  
+           var button_id = $(this).attr("id");   
+           $('#row'+button_id+'').remove();  
+      });  
+
+    });
+
+    $(document).ready(function(){      
+      var j=1;  
+
+
+      $('#add_edu').click(function(){  
+           j++;  
+           $('#dynamic_field').append('<tr id="row'+j+'" class="dynamic-added"><td><input type="text" name="education[]" placeholder="Enter Education" class="form-control education_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+j+'" class="btn btn-danger btn_remove_edu">X</button></td></tr>');  
+      });  
+
+
+      $(document).on('click', '.btn_remove_edu', function(){  
+           var button_id = $(this).attr("id");   
+           $('#row'+button_id+'').remove();  
+      });  
+
     });
 </script>
 @endsection

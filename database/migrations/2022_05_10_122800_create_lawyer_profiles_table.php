@@ -22,6 +22,8 @@ class CreateLawyerProfilesTable extends Migration
             $table->integer('complete')->nullable();
             $table->longText('b_image')->nullable();
             $table->longText('image')->nullable();
+            $table->longText('membership')->nullable();
+            $table->longText('education')->nullable();
             $table->longText('profile_detail')->nullable();
             $table->timestamps();
         });

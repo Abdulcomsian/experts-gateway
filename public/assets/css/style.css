@@ -28,6 +28,14 @@
     src: url("../fonts/Gelion-Medium.ttf");
 }
 
+.btn-success:hover {
+    color: #fff;
+    background-color: #ee1e37;
+    border-color: #ee1e37;
+
+}
+
+
 @font-face {
     font-family: GelionBold;
     src: url("../fonts/Gelion-Bold.ttf");

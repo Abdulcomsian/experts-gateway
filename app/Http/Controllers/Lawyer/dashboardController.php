@@ -8,14 +8,11 @@ use Auth;
 use DB;
 use App\Models\User;
 use App\Models\Expertise;
-use App\Models\Education;
 use App\Models\Language;
 use App\Models\LawyerProfile;
 use App\Models\LawyersHasExpertise;
 use App\Models\LawyersHasLanguage;
-use App\Models\LawyersHasMembership;
-use App\Models\LawyersHasEducation;
-use App\Models\Membership;
+use Validator;
 
 class dashboardController extends Controller
 {
@@ -31,49 +28,25 @@ class dashboardController extends Controller
         $lawyer = User::where('id',$user_id)->first();
         $languages = Language::get();
         $expertises = Expertise::get();
-        $memberships = Membership::get();
-        $educations = Education::get();
         $lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
         if($lawyer_profile)
         {
             $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',1)->get();
             $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
-            $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->first();
-            $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
             if($lawyer->status == 0)
             {
-
-                if($lawyer_educations && $lawyer_memberships)
-                {
-                    return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_memberships','lawyer_educations','lawyer_profile')); 
-                }
-                
-                elseif($lawyer_memberships)
-                {
-               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_memberships','lawyer_profile')); 
-                }
-                elseif(count($lawyer_educations)>0)
-                {
-                    $lawyer_memberships = null;
-                    return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','memberships','educations','lawyer_educations','lawyer_memberships','lawyer_profile')); 
-                }
-                else
-                {
-                    $lawyer_memberships = null;
-               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','lawyer_educations','lawyer_memberships','expertises','memberships','educations','lawyer_profile')); 
-                }
+               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','lawyer_profile')); 
             }
             elseif($lawyer->status == 1)
             {
-                return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_expertises','lawyer_memberships','lawyer_educations'));
+                return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_expertises'));
             }
 
         }
         else{
             if($lawyer->status == 0)
             {
-                $lawyer_memberships = null;
-               return view('lawyer.build_profile',compact('lawyer','languages','expertises','memberships','educations','lawyer_profile','lawyer_memberships')); 
+               return view('lawyer.build_profile',compact('lawyer','languages','expertises','lawyer_profile')); 
             }
             elseif($lawyer->status == 2)
             {
@@ -347,44 +320,26 @@ class dashboardController extends Controller
 
     public function profile_store_4(Request $request)
     {
-         // dd($request->all());
         $user_id = Auth::id();
         $this->validate($request,[  
-            'education_id'=>'required',  
+            'education'=>'required',  
 
         ]);
         $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
         if($lawyer_profile != null)
         {
             $lawyer_profile= LawyerProfile::find($lawyer_profile->id);
+            $lawyer_profile->education = implode($request->education, ' , ');
             $lawyer_profile->complete = $request->complete;
             $lawyer_profile->save();
-
-            foreach($request->education_id as $education)
-            {
-                $lawyer_education = new LawyersHasEducation;
-                $lawyer_education->education_id = $education;
-                $lawyer_education->lawyer_profile_id = $lawyer_profile->id;
-                $lawyer_education->save();
-            }
-
         }
         else{
             $lawyer_profile= new LawyerProfile;
             $lawyer_profile->user_id = $user_id;
+            $lawyer_profile->education = implode($request->education, ' , ');
             $lawyer_profile->complete = $request->complete;
             $lawyer_profile->save();
-
-            foreach($request->education_id as $education)
-            {
-                $lawyer_education = new LawyersHasEducation;
-                $lawyer_education->education_id = $education;
-                $lawyer_education->lawyer_profile_id = $lawyer_profile->id;
-                $lawyer_education->save();
-            }
-
         }
-        
         toastSuccess('Successfully Added');
         return redirect('lawyer/profile');
     }
@@ -392,58 +347,43 @@ class dashboardController extends Controller
     public function profile_update_4(Request $request,$id)
     {
         $user_id = Auth::id();
+
         $this->validate($request,[  
-            'education_id'=>'required',  
+            'education'=>'required',  
 
         ]);
+
+        $lawyer_profile= LawyerProfile::find($id);
+        $lawyer_profile->education = implode($request->education, ' , ');
+        $lawyer_profile->save();
         
-        LawyersHasEducation::where('lawyer_profile_id',$id)->delete();
-        foreach($request->education_id as $education)
-        {
-            $lawyer_education = new LawyersHasEducation;
-            $lawyer_education->education_id = $education;
-            $lawyer_education->lawyer_profile_id = $id;
-            $lawyer_education->save();
-        }
-        
-        
-        toastSuccess('Successfully Added');
+        toastSuccess('Successfully Updated');
         return redirect('lawyer/profile');
     }
 
     public function profile_store_5(Request $request)
     {
-         // dd($request->all());
+        // dd($request->all());
         $user_id = Auth::id();
         $this->validate($request,[  
-            'membership_id'=>'required',  
+            'membership'=>'required',  
 
         ]);
         $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
         if($lawyer_profile != null)
         {
             $lawyer_profile= LawyerProfile::find($lawyer_profile->id);
+            $lawyer_profile->membership = implode($request->membership, ' , ');
             $lawyer_profile->complete = $request->complete;
             $lawyer_profile->save();
-
-           
-            $lawyer_membership = new LawyersHasMembership;
-            $lawyer_membership->membership_id = $request->membership_id;
-            $lawyer_membership->lawyer_profile_id = $lawyer_profile->id;
-            $lawyer_membership->save();
         }
         else{
             $lawyer_profile= new LawyerProfile;
             $lawyer_profile->user_id = $user_id;
+            $lawyer_profile->membership = implode($request->membership, ' , ');
             $lawyer_profile->complete = $request->complete;
             $lawyer_profile->save();
-
-            $lawyer_membership = new LawyersHasMembership;
-            $lawyer_membership->membership_id = $request->membership_id;
-            $lawyer_membership->lawyer_profile_id = $lawyer_profile->id;
-            $lawyer_membership->save();
         }
-        
         toastSuccess('Successfully Added');
         return redirect('lawyer/profile');
     }
@@ -453,15 +393,13 @@ class dashboardController extends Controller
         $user_id = Auth::id();
 
         $this->validate($request,[  
-            'membership_id'=>'required',  
+            'membership'=>'required',  
 
         ]);
-        LawyersHasMembership::where('lawyer_profile_id',$id)->delete();
-        
-        $lawyer_membership = new LawyersHasMembership;
-        $lawyer_membership->membership_id = $request->membership_id;
-        $lawyer_membership->lawyer_profile_id = $id;
-        $lawyer_membership->save();
+
+        $lawyer_profile= LawyerProfile::find($id);
+        $lawyer_profile->membership = implode($request->membership, ' , ');
+        $lawyer_profile->save();
         
         toastSuccess('Successfully Updated');
         return redirect('lawyer/profile');

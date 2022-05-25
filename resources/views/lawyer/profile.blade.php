@@ -90,7 +90,7 @@ Dashboard
                                     <h4>Associations & Memberships
                                     </h4>
                                     <ul>
-                                            <li>-{{$lawyer_memberships->membership->name}}</li>
+                                            <li>-</li>
                                             
                                     </ul>
                                 </div>

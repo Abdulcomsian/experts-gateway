@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('landing-page');
 
-Auth::routes();  
+Auth::routes(['verify' => true]);  
 
 Route::get('/lawyer-login', function () {
     return view('auth/lawyer_login');
@@ -72,7 +72,7 @@ Route::prefix('user')->middleware(['auth','can:user'])->group(function(){
 /*****************Lawyer ROUTES*******************/
 Route::prefix('lawyer')->middleware(['auth','can:lawyer'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\Lawyer\dashboardController::class, 'index'])->name('lawyer.dashboard');
-    Route::get('/profile', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile'])->name('lawyer.profile');
+    Route::get('/profile', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile'])->middleware('verified')->name('lawyer.profile');
     Route::get('/blog/{id}', [App\Http\Controllers\blogController::class, 'blog'])->name('lawyer.blog');
     Route::get('/create', [App\Http\Controllers\blogController::class, 'create'])->name('create.blog');
     Route::post('/store', [App\Http\Controllers\blogController::class, 'store'])->name('blog.store');

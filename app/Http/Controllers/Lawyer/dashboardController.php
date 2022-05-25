@@ -13,6 +13,7 @@ use App\Models\LawyerProfile;
 use App\Models\LawyersHasExpertise;
 use App\Models\LawyersHasLanguage;
 use Validator;
+use App\Mail\ApprovalMail;
 
 class dashboardController extends Controller
 {
@@ -409,8 +410,17 @@ class dashboardController extends Controller
     {
         $user_id = Auth::id();
         $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
+        $user= User::where('id',$user_id)->first();
         $lawyer_profile->complete = $request->complete;
         $lawyer_profile->save();
+        $details = [
+        'f_name' => $user->f_name,
+        'email' => $user->email
+        ];
+
+        // dd($details);
+   
+    \Mail::to('admin@gmail.com')->send(new \App\Mail\ApprovalMail($details));
 
         toastSuccess('Successfully Updated');
         return redirect('lawyer/profile');

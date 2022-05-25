@@ -47,6 +47,17 @@ class dashboardController extends Controller
         $user= User::find($id);
         $user->status = $request->status;
         $user->save();
+        if($user->status == 1)
+        {
+            $details = [
+            'f_name' => $user->f_name,
+            'email' => $user->email
+            ];
+
+            // dd($details);
+   
+            \Mail::to($user->email)->send(new \App\Mail\LawyerApprovedMail($details));
+        }
         toastSuccess('Successfully Update Status');
         return redirect('admin/lawyer_applications');
         

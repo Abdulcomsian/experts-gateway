@@ -329,14 +329,14 @@ class dashboardController extends Controller
         if($lawyer_profile != null)
         {
             $lawyer_profile= LawyerProfile::find($lawyer_profile->id);
-            $lawyer_profile->education = implode($request->education, ' , ');
+            $lawyer_profile->education = implode($request->education, ',');
             $lawyer_profile->complete = $request->complete;
             $lawyer_profile->save();
         }
         else{
             $lawyer_profile= new LawyerProfile;
             $lawyer_profile->user_id = $user_id;
-            $lawyer_profile->education = implode($request->education, ' , ');
+            $lawyer_profile->education = implode($request->education, ',');
             $lawyer_profile->complete = $request->complete;
             $lawyer_profile->save();
         }
@@ -354,7 +354,7 @@ class dashboardController extends Controller
         ]);
 
         $lawyer_profile= LawyerProfile::find($id);
-        $lawyer_profile->education = implode($request->education, ' , ');
+        $lawyer_profile->education = implode($request->education, ',');
         $lawyer_profile->save();
         
         toastSuccess('Successfully Updated');
@@ -373,14 +373,14 @@ class dashboardController extends Controller
         if($lawyer_profile != null)
         {
             $lawyer_profile= LawyerProfile::find($lawyer_profile->id);
-            $lawyer_profile->membership = implode($request->membership, ' , ');
+            $lawyer_profile->membership = implode($request->membership, ',');
             $lawyer_profile->complete = $request->complete;
             $lawyer_profile->save();
         }
         else{
             $lawyer_profile= new LawyerProfile;
             $lawyer_profile->user_id = $user_id;
-            $lawyer_profile->membership = implode($request->membership, ' , ');
+            $lawyer_profile->membership = implode($request->membership, ',');
             $lawyer_profile->complete = $request->complete;
             $lawyer_profile->save();
         }
@@ -398,7 +398,7 @@ class dashboardController extends Controller
         ]);
 
         $lawyer_profile= LawyerProfile::find($id);
-        $lawyer_profile->membership = implode($request->membership, ' , ');
+        $lawyer_profile->membership = implode($request->membership, ',');
         $lawyer_profile->save();
         
         toastSuccess('Successfully Updated');

@@ -80,8 +80,8 @@ Dashboard
                                     </div>
                                     <h4>Education</h4>
                                     <ul>
-                                        @foreach($lawyer_educations as $education)
-                                            <li>-{{$education->education->name}}</li>
+                                        @foreach(explode(',', $lawyer_profile->education) as $education) 
+                                        <li>-{{$education}}</li>
                                         @endforeach
                                     </ul>
                                     <div class="line">
@@ -90,8 +90,9 @@ Dashboard
                                     <h4>Associations & Memberships
                                     </h4>
                                     <ul>
-                                            <li>-</li>
-                                            
+                                        @foreach(explode(',', $lawyer_profile->membership) as $membership) 
+                                        <li>-{{$membership}}</li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

@@ -15,6 +15,7 @@ use App\Models\LawyersHasLanguage;
 use App\Models\LawyersHasMembership;
 use App\Models\Membership;
 use App\Mail\LawyerApprovedMAil;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Mail;
 
 class dashboardController extends Controller
@@ -35,8 +36,8 @@ class dashboardController extends Controller
     public function lawyer_profile_show($id)
     {
         try {
-            $blog = Blog::where('id',$id)->first();
-            return view('admin.blog.show_blog', compact('blog'));
+            $lawyer_profile = LawyerProfile::where('id',$id)->first();
+            return view('admin.lawyer_profile.show', compact('lawyer_profile'));
         } catch (\Exception $exception) {
             toastError('Something went wrong, try again!');
             return Redirect::back();
@@ -73,46 +74,85 @@ class dashboardController extends Controller
     public function edit_lawyer_profile($id)
     {
         try {
-            $blog = Blog::where('id',$id)->first();
+            $lawyer_profile = LawyerProfile::where('id',$id)->first();
+            $user = user::where('id',$lawyer_profile->user_id)->first();
+            $languages = Language::get();
             $expertises = Expertise::get();
-            return view('admin.blog.edit_blog', compact('blog','expertises'));
+            $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',1)->get();
+            $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
+            return view('admin.lawyer.edit', compact('lawyer_profile','user','lawyer_expertises','lawyer_language','languages','expertises'));
         } catch (\Exception $exception) {
             toastError($exception->getMessage());
             return Redirect::back();
         }
     }
 
-    public function update_lawyer_profile(Request $request,$blog)
+    public function update_lawyer_profile(Request $request,$id)
     {
         $user_id = Auth::id();
         $this->validate($request,[ 
+            'f_name'=>'required', 
+            'l_name'=>'required', 
             'title'=>'required', 
-            'short_description'=>'required', 
+            'profile_detail'=>'required', 
+            'address'=>'required', 
             'expertise_id'=>'required', 
-            'description'=>'required', 
+            'language_id'=>'required', 
+            'education'=>'required', 
+            'membership'=>'required', 
 
         ]);
-        try {
-        $blog= Blog::find($blog);
-        $blog->title = $request->title;
-        $blog->expertise_id = $request->expertise_id;
-        $blog->description = $request->description;
-        $blog->short_description = $request->short_description;
+        $lawyer= LawyerProfile::where('id',$id)->first();
+        $lawyer_profile= LawyerProfile::find($id);
+        $lawyer_profile->title = $request->title;
+        $lawyer_profile->profile_detail = $request->profile_detail;
+        $lawyer_profile->address = $request->address;
+        $lawyer_profile->education = implode($request->education, ',');
+        $lawyer_profile->membership = implode($request->membership, ',');
         if($request->hasfile('image'))
         {
             $image = $request->file('image');
             $extensions =$image->extension();
 
             $image_name =time().'.'. $extensions;
-            $image->move('blogs/',$image_name);
-            $blog->image=$image_name;
+            $image->move('lawyer_profile/',$image_name);
+            $lawyer_profile->image=$image_name;
         }
-        $blog->save();
+        if($request->hasfile('b_image'))
+        {
+            $c_image = $request->file('b_image');
+            $c_extensions =$c_image->extension();
+
+            $image_c_name =time().'.'. $c_extensions;
+            $c_image->move('lawyer_cover_image/',$image_c_name);
+            $lawyer_profile->b_image=$image_c_name;
+        }
+        $lawyer_profile->save();
+
+        $user= User::where('id',$lawyer->user_id)->first();
+        $user->f_name = $request->f_name;
+        $user->l_name = $request->l_name;
+        $user->save();
+        LawyersHasLanguage::where('lawyer_profile_id',$id)->delete();
+        LawyersHasExpertise::where('lawyer_profile_id',$id)->delete();
+        
+        foreach($request->language_id as $language)
+        {
+            dd($id);
+            $lawyer_language = new LawyersHasLanguage;
+            $lawyer_language->language_id = $language;
+            $lawyer_language->lawyer_profile_id = $lawyer->id;
+            $lawyer_language->save();
+        }
+        foreach($request->expertise_id as $expertise)
+        {
+            $lawyer_expertise = new LawyersHasExpertise;
+            $lawyer_expertise->expertise_id = $expertise;
+            $lawyer_expertise->lawyer_profile_id = $lawyer->id;
+            $lawyer_expertise->save();
+        }
+
         toastSuccess('Successfully Updated');
-        return redirect('admin/blogs');
-        } catch (\Exception $exception) {
-            toastError($exception->getMessage());
-            return Redirect::back();
-        }
+        return Redirect::back();
     }
 }

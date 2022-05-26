@@ -388,7 +388,7 @@ class dashboardController extends Controller
             $lawyer_profile->save();
         }
         toastSuccess('Successfully Added');
-        return redirect('lawyer/profile');
+        return Redirect::back();
     }
 
     public function profile_update_5(Request $request,$id)

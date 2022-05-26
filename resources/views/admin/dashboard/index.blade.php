@@ -1,6 +1,6 @@
 @extends('layout.admin_panel.master')
 @section('title')
-Dashboard
+Admin Dashboard
 @endsection
 @section('content')
     

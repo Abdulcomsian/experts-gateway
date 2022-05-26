@@ -44,8 +44,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 /*****************ADMIN ROUTES*******************/
 Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\Admin\dashboardController::class, 'index'])->name('admin.dashboard');
+    //Blogs
     Route::get('/blogs', [App\Http\Controllers\blogController::class, 'index'])->name('admin.blogs');
-
     Route::post('/update_blog_status/{id}', [App\Http\Controllers\blogController::class, 'update_blog_status'])->name('update-blog-status');   
 
     Route::get('/show/{id}', [App\Http\Controllers\blogController::class, 'show'])->name('blog.show');
@@ -53,6 +53,10 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 
     Route::put('/update-blog/{id}', [App\Http\Controllers\blogController::class, 'update'])->name('update-blog');
     Route::delete('/delete_blog/{id}', [App\Http\Controllers\blogController::class, 'destroy'])->name('blog.destroy');
+    //endblog
+
+    //language
+    Route::resource('language', App\Http\Controllers\Admin\languageController::class);
     Route::get('/lawyer_applications', [App\Http\Controllers\Admin\dashboardController::class, 'lawyer_applications'])->name('admin.lawyer-applications');
     Route::post('/update_lawyer_status/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_lawyer_status'])->name('update-lawyer-status');   
 

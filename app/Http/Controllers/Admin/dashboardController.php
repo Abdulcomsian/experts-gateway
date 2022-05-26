@@ -15,6 +15,7 @@ use App\Models\LawyersHasLanguage;
 use App\Models\LawyersHasMembership;
 use App\Models\Membership;
 use App\Mail\LawyerApprovedMail;
+use Illuminate\Support\Facades\Mail;
 
 class dashboardController extends Controller
 {
@@ -57,7 +58,7 @@ class dashboardController extends Controller
 
             // dd($details);
    
-            \Mail::to($user->email)->send(new \App\Mail\LawyerApprovedMail($details));
+            Mail::to($user->email)->send(new LawyerApprovedMail($details));
         }
         toastSuccess('Successfully Update Status');
         return redirect('admin/lawyer_applications');

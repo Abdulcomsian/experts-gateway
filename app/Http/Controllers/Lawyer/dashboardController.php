@@ -14,6 +14,7 @@ use App\Models\LawyersHasExpertise;
 use App\Models\LawyersHasLanguage;
 use Validator;
 use App\Mail\ApprovalMail;
+use Illuminate\Support\Facades\Redirect;
 
 class dashboardController extends Controller
 {

@@ -57,6 +57,10 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 
     //language
     Route::resource('language', App\Http\Controllers\Admin\languageController::class);
+
+    //expertise
+    Route::resource('expertise', App\Http\Controllers\Admin\expertiseController::class);
+
     Route::get('/lawyer_applications', [App\Http\Controllers\Admin\dashboardController::class, 'lawyer_applications'])->name('admin.lawyer-applications');
     Route::post('/update_lawyer_status/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_lawyer_status'])->name('update-lawyer-status');   
 

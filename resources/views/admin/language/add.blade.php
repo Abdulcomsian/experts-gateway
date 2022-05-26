@@ -23,15 +23,14 @@ Dashboard
                             <!--begin::Card body-->
                             <div class="card-body p-12">
                                 <!--begin::Form-->
-                                <form action="{{ route('update-blog',$blog->id) }}" method="post" enctype="multipart/form-data">
-                                @method('PUT')
+                                <form action="{{ route('language.store') }}" method="post" >
                                 @csrf
                                     <!--begin::Wrapper-->
                                     <div class="d-flex flex-column align-items-start flex-xxl-row">
 
                                         <!--begin::Input group-->
                                         <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Enter invoice number">
-                                            <span class="fs-2x fw-bolder text-gray-800">Edit Blog</span>
+                                            <span class="fs-2x fw-bolder text-gray-800">Add Language</span>
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -45,66 +44,29 @@ Dashboard
                                         <div class="row gx-10 mb-5">
                                             <!--begin::Col-->
                                             <div class="col-lg-6">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Title</label>
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Language Name</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" class="form-control form-control-solid" name="title" value="{{$blog->title}}" placeholder="Title" />
-                                                    <div style="color:red;">{{$errors->first('title')}}</div> <br>
+                                                    <input type="text" class="form-control form-control-solid" name="name" value="{{old('name')}}" placeholder="Enter Name" />
+                                                    <div style="color:red;">{{$errors->first('name')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
                                             <!--end::Col-->
                                             <!--begin::Col-->
                                             <div class="col-lg-6">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Image</label>
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Language Slug</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="file" class="form-control form-control-solid" name="image" id="image" accept="image/*">
-                                                    <p>Upload Blog Image</p>
-                                                    <div style="color:red;">{{$errors->first('image')}}</div> <br>
+                                                    <input type="text" class="form-control form-control-solid" value="{{old('language_slug')}}" placeholder="Enter Expertise Slug" name="language_slug">
+                                                    <div style="color:red;">{{$errors->first('language_slug')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
                                             <!--end::Col-->
-                                            <!--begin::Col-->
-                                            <div class="col-lg-12">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Category</label>
-                                                <!--begin::Input group-->
-                                                <div class="mb-5">
-                                                    <select name="expertise_id" class="form-control form-control-solid" id="expertise_id">
-                                                        @foreach($expertises as $expertise)                                                        <option value="{{$expertise->id}}" {{ $blog->expertise_id == $expertise->id ? 'selected' : '' }} >{{$expertise->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <div style="color:red;">{{$errors->first('expertise_id')}}</div> <br>
-                                                </div>
-                                                <!--end::Input group-->
-                                            </div>
-                                            <!--end::Col-->
-                                            <!--begin::Col-->
-                                            <div class="col-lg-12">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Short Description</label>
-                                                <!--begin::Input group-->
-                                                <div class="mb-5">
-                                                    <textarea name="short_description" id="short_description" class="form-control form-control-solid" cols="20" rows="5" style="border:1px solid #d9d9d9;" 
-                                                    placeholder="Short Description" >{{$blog->short_description}}</textarea>
-                                                    <div style="color:red;">{{$errors->first('short_description')}}</div> <br>
-                                                </div>
-                                                <!--end::Input group-->
-                                            </div>
-                                            <!--end::Col-->
-                                            <!--begin::Col-->
-                                            <div class="col-lg-12">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Description</label>
-                                                <!--begin::Input group-->
-                                                <div class="mb-5">
-                                                    <textarea class="ckeditor form-control" name="description">{!! $blog->description !!}</textarea>
-                                                    <div style="color:red;">{{$errors->first('description')}}</div> <br>
-                                                </div>
-                                                <!--end::Input group-->
-                                            </div>
 
                                             <button type="submit" class="btn btn-primary updateBtn">
-                                                Update Blog
+                                                Save
                                             </button>
                                             <!--end::Col-->
                                             </div>

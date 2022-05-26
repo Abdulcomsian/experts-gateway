@@ -4,21 +4,21 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Language;
+use App\Models\Expertise;
 use Auth;
 use Illuminate\Support\Facades\Redirect;
 
-class languageController extends Controller
+class expertiseController extends Controller
 {
     public function index()
     {
-        $languages = Language::get();
-        return view('admin.language.index', compact('languages'));
+        $expertises = Expertise::get();
+        return view('admin.expertise.index', compact('expertises'));
     }      
 
     public function create()
     {
-        return view('admin.language.add');
+        return view('admin.expertise.add');
     }
 
     public function show($id)
@@ -29,8 +29,8 @@ class languageController extends Controller
     public function edit($id)
     {
         try {
-            $language = Language::where('id',$id)->first();
-            return view('admin.language.edit', compact('language'));
+            $expertise = Expertise::where('id',$id)->first();
+            return view('admin.expertise.edit', compact('expertise'));
         } catch (\Exception $exception) {
             toastError($exception->getMessage());
             return Redirect::back();
@@ -42,15 +42,15 @@ class languageController extends Controller
         // dd($request->file('image'));
         $this->validate($request,[ 
             'name'=>'required', 
-            'language_slug'=>'required|unique:languages,name,'.$request->id,
+            'expertise_slug'=>'required|unique:expertises,name,'.$request->id,
         ]);
         try {
-        $language= new Language;
-        $language->name = $request->name;
-        $language->language_slug = $request->language_slug;
-        $language->save();
+        $expertise= new Expertise;
+        $expertise->name = $request->name;
+        $expertise->expertise_slug = $request->expertise_slug;
+        $expertise->save();
             toastSuccess('Successfully Added');
-            return redirect('admin/language');
+            return redirect('admin/expertise');
         } catch (\Exception $exception) {
             // dd($exception->getMessage());
             toastError($exception->getMessage());
@@ -64,19 +64,19 @@ class languageController extends Controller
         $this->validate($request,[ 
             'name'=>'required', 
         ]);
-        $language= Language::find($id);
-        $language->name = $request->name;
-        $language->language_slug = $request->language_slug;
-        $language->save();
+        $expertise= Expertise::find($id);
+        $expertise->name = $request->name;
+        $expertise->expertise_slug = $request->expertise_slug;
+        $expertise->save();
         toastSuccess('Successfully Update');
-        return redirect('admin/language');
+        return redirect('admin/expertise');
         
     }
 
     public function destroy($id)
     {
         try {
-            Language::FindorFail($id)->delete();
+            Expertise::FindorFail($id)->delete();
             return back();
         } catch (\Exception $exception) {
             // dd($exception->getMessage());

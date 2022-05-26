@@ -23,7 +23,7 @@ Dashboard
                             <!--begin::Card body-->
                             <div class="card-body p-12">
                                 <!--begin::Form-->
-                                <form action="{{ route('language.update',$language->id) }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('expertise.update',$expertise->id) }}" method="post" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
                                     <!--begin::Wrapper-->
@@ -31,7 +31,7 @@ Dashboard
 
                                         <!--begin::Input group-->
                                         <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Enter invoice number">
-                                            <span class="fs-2x fw-bolder text-gray-800">Edit Language</span>
+                                            <span class="fs-2x fw-bolder text-gray-800">Edit Expertise</span>
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -45,10 +45,10 @@ Dashboard
                                         <div class="row gx-10 mb-5">
                                             <!--begin::Col-->
                                             <div class="col-lg-6">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Language Name</label>
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Expertise Name</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" class="form-control form-control-solid" name="name" value="{{$language->name}}" placeholder="Enter Name" />
+                                                    <input type="text" class="form-control form-control-solid" name="name" value="{{$expertise->name}}" placeholder="Enter Name" />
                                                     <div style="color:red;">{{$errors->first('name')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->
@@ -56,18 +56,18 @@ Dashboard
                                             <!--end::Col-->
                                             <!--begin::Col-->
                                             <div class="col-lg-6">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Language Slug</label>
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Expertise Slug</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" class="form-control form-control-solid" value="{{$language->language_slug}}" name="language_slug">
-                                                    <div style="color:red;">{{$errors->first('language_slug')}}</div> <br>
+                                                    <input type="text" class="form-control form-control-solid" value="{{$expertise->expertise_slug}}" name="expertise_slug">
+                                                    <div style="color:red;">{{$errors->first('expertise_slug')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
                                             <!--end::Col-->
 
                                             <button type="submit" class="btn btn-primary updateBtn">
-                                                Update Language
+                                                Update Expertise
                                             </button>
                                             <!--end::Col-->
                                             </div>

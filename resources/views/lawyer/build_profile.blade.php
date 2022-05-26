@@ -520,15 +520,10 @@ Profile building
                                                         <div style="color:red;">{{$errors->first('description')}}</div> <br>
                                                     </div>
                                                 </div>
-                                                <!-- @if($lawyer_profile->complete == 4)
-                                                <div class="pricingFooter col-lg-8 text-center" >
-                                                    <button type="submit">Submit For Approval</button>
-                                                </div>
-                                                @else -->
+                                                
                                                 <div class="pricingFooter col-lg-8 text-center" >
                                                     <button type="submit">Save</button>
                                                 </div>
-                                                <!-- @endif -->
                                             </div>
                                             @endif
                                             @else

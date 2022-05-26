@@ -14,6 +14,7 @@ use App\Models\LawyersHasExpertise;
 use App\Models\LawyersHasLanguage;
 use App\Models\LawyersHasMembership;
 use App\Models\Membership;
+use App\Mail\LawyerApprovedMail;
 
 class dashboardController extends Controller
 {

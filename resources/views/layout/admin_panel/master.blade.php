@@ -32,6 +32,7 @@ License: For each use you must have a valid license purchased only from above li
 
     {{-- Page Specific Styles        --}}
     @yield('css')
+    @stack('styles')
 
 </head>
 <!--end::Head-->

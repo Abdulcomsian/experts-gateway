@@ -61,6 +61,7 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     //expertise
     Route::resource('expertise', App\Http\Controllers\Admin\expertiseController::class);
 
+    //lawyer_applications
     Route::get('/lawyer_applications', [App\Http\Controllers\Admin\dashboardController::class, 'lawyer_applications'])->name('admin.lawyer-applications');
     Route::post('/update_lawyer_status/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_lawyer_status'])->name('update-lawyer-status');   
 
@@ -68,6 +69,12 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     Route::get('/edit_lawyer_profile/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'edit_lawyer_profile'])->name('LawyerProfile.edit');
 
     Route::put('/update-lawyer-profile/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_lawyer_profile'])->name('update-lawyer-profile');
+
+    //users
+    Route::get('/users', [App\Http\Controllers\Admin\dashboardController::class, 'users'])->name('admin.users');
+    Route::get('/edit_user/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'edit_user'])->name('user.edit');
+
+    Route::put('/update-user/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_user'])->name('update-user');
 
 });
 

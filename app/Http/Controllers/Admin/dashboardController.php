@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+use Spatie\Permission\Models\Role;
 use App\Models\User;
 use App\Models\Expertise;
 use App\Models\Language;
@@ -31,6 +32,13 @@ class dashboardController extends Controller
         $user_id = Auth::id();
         $lawyer_profiles = LawyerProfile::where('complete','6')->get();
         return view('admin.lawyer.lawyer_applications',compact('lawyer_profiles'));
+    }
+
+    public function users()
+    {
+        $user_id = Auth::id();
+        $users = Role::where('name', 'User')->first()->users()->get();
+        return view('admin.user.index',compact('users'));
     }
 
     public function lawyer_profile_show($id)
@@ -151,5 +159,62 @@ class dashboardController extends Controller
 
         toastSuccess('Successfully Updated');
         return Redirect::back();
+    }
+
+    public function edit_user($id)
+    {
+        $user = user::where('id',$id)->first();
+        return view('admin.user.edit', compact('user'));
+        
+    }
+
+    public function update_user(Request $request,$id)
+    {
+        $user_id = Auth::id();
+        if($request->phone_input != null)
+        {
+           $this->validate($request,[ 
+            'f_name'=>'required', 
+            'l_name'=>'required', 
+            'email'=>'required', 
+            'phone'=>'required', 
+            'phone_input'=>'required', 
+            'country'=>'required', 
+
+        ]); 
+        }
+        else
+        {
+            $this->validate($request,[ 
+                'f_name'=>'required', 
+                'l_name'=>'required', 
+                'email'=>'required', 
+
+            ]);
+        }
+        if($request->phone_input != null)
+        {
+            $user= User::find($id);
+            $user->f_name = $request->f_name;
+            $user->l_name = $request->l_name;
+            $user->email = $request->email;
+            $user->phone = $request->phone_input;
+            $user->country = $request->country;
+            
+            $user->save();
+        }
+        else
+        {
+            $user= User::find($id);
+            $user->f_name = $request->f_name;
+            $user->l_name = $request->l_name;
+            $user->email = $request->email;
+            
+            $user->save();
+        }
+
+
+        toastSuccess('Successfully Updated');
+        return redirect('admin/users');
     }
 }

@@ -10,7 +10,7 @@ Dashboard
                     <div class="col-lg-8">
                         <div class="editBar">
                             <h5>My Profile</h5>
-                            <span>Edit Profile</span>
+                            <a href="{{ route('lawyer.edit-profile',$lawyer_profile->id) }}"><button style="cursor: pointer; margin-left:25px;padding:10px 30px; font-family:MoskauMedium;border:2px solid hsl(0deg 0% 0% / 15%); font-size:16px;">Edit Profile </button></a>
                         </div>
                         <div class="editProfileBox">
                             <div class="profileImg">

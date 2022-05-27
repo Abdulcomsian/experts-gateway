@@ -504,7 +504,7 @@ Profile building
                                                     <div class="inputDiv">
                                                         <label for="">Profile Description</label>
                                                         <textarea required class="ckeditor form-control" name="profile_detail">{{$lawyer_profile->profile_detail}}</textarea>
-                                                        <div style="color:red;">{{$errors->first('description')}}</div> <br>
+                                                        <div style="color:red;">{{$errors->first('profile_detail')}}</div> <br>
                                                     </div>
                                                 </div>
                                                 <div class="pricingFooter col-lg-8 text-center" >
@@ -517,7 +517,7 @@ Profile building
                                                     <div class="inputDiv">
                                                         <label for="">Profile Description</label>
                                                         <textarea required class="ckeditor form-control" name="profile_detail"></textarea>
-                                                        <div style="color:red;">{{$errors->first('description')}}</div> <br>
+                                                        <div style="color:red;">{{$errors->first('profile_detail')}}</div> <br>
                                                     </div>
                                                 </div>
                                                 
@@ -532,7 +532,7 @@ Profile building
                                                     <div class="inputDiv">
                                                         <label for="">Profile Description</label>
                                                         <textarea required class="ckeditor form-control" name="profile_detail"></textarea>
-                                                        <div style="color:red;">{{$errors->first('description')}}</div> <br>
+                                                        <div style="color:red;">{{$errors->first('profile_detail')}}</div> <br>
                                                     </div>
                                                 </div>
                                                 <div class="pricingFooter col-lg-8 text-center" >

@@ -107,5 +107,9 @@ Route::prefix('lawyer')->middleware(['auth','can:lawyer','verified'])->group(fun
     Route::post('/profile-store-5', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_store_5'])->name('profile.store_5');  
     Route::post('/submit_approval', [App\Http\Controllers\Lawyer\dashboardController::class, 'submit_approval'])->name('profile.submit-for-approval');  
     Route::post('/profile_update_5/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_update_5'])->name('profile.update_5');
+
+    //edit lawyer profile
+    Route::get('/edit-profile/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'edit_profile'])->name('lawyer.edit-profile');
+    Route::put('/update_lawyer_profile/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'update_lawyer_profile'])->name('lawyer.update-lawyer-profile');
 });
 

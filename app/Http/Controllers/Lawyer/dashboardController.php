@@ -427,4 +427,83 @@ class dashboardController extends Controller
         toastSuccess('Successfully Updated');
         return redirect('lawyer/profile');
     }
+
+    public function edit_profile($id)
+    {
+        $user_id = Auth::id();
+        $lawyer_profile= LawyerProfile::find($id);
+        $languages = Language::get();
+        $expertises = Expertise::get();
+        $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',1)->get();
+        $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
+        return view('lawyer.profile.edit_profile',compact('lawyer_profile','languages','expertises','lawyer_expertises','lawyer_language'));
+    }
+
+    public function update_lawyer_profile(Request $request,$id)
+    {
+        $user_id = Auth::id();
+        $this->validate($request,[ 
+            'f_name'=>'required', 
+            'l_name'=>'required', 
+            'title'=>'required', 
+            'profile_detail'=>'required', 
+            'address'=>'required', 
+            'expertise_id'=>'required', 
+            'language_id'=>'required', 
+            'education'=>'required', 
+            'membership'=>'required', 
+
+        ]);
+        $lawyer= LawyerProfile::where('id',$id)->first();
+        $lawyer_profile= LawyerProfile::find($id);
+        $lawyer_profile->title = $request->title;
+        $lawyer_profile->profile_detail = $request->profile_detail;
+        $lawyer_profile->address = $request->address;
+        $lawyer_profile->education = implode($request->education, ',');
+        $lawyer_profile->membership = implode($request->membership, ',');
+        if($request->hasfile('image'))
+        {
+            $image = $request->file('image');
+            $extensions =$image->extension();
+
+            $image_name =time().'.'. $extensions;
+            $image->move('lawyer_profile/',$image_name);
+            $lawyer_profile->image=$image_name;
+        }
+        if($request->hasfile('b_image'))
+        {
+            $c_image = $request->file('b_image');
+            $c_extensions =$c_image->extension();
+
+            $image_c_name =time().'.'. $c_extensions;
+            $c_image->move('lawyer_cover_image/',$image_c_name);
+            $lawyer_profile->b_image=$image_c_name;
+        }
+        $lawyer_profile->save();
+
+        $user= User::where('id',$lawyer->user_id)->first();
+        $user->f_name = $request->f_name;
+        $user->l_name = $request->l_name;
+        $user->save();
+        LawyersHasLanguage::where('lawyer_profile_id',$id)->delete();
+        LawyersHasExpertise::where('lawyer_profile_id',$id)->delete();
+        
+        foreach($request->language_id as $language)
+        {
+            $lawyer_language = new LawyersHasLanguage;
+            $lawyer_language->language_id = $language;
+            $lawyer_language->lawyer_profile_id = $lawyer->id;
+            $lawyer_language->save();
+        }
+        foreach($request->expertise_id as $expertise)
+        {
+            $lawyer_expertise = new LawyersHasExpertise;
+            $lawyer_expertise->expertise_id = $expertise;
+            $lawyer_expertise->lawyer_profile_id = $lawyer->id;
+            $lawyer_expertise->save();
+        }
+
+        toastSuccess('Successfully Updated');
+        return redirect('lawyer/profile');
+    }
 }

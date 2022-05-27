@@ -709,6 +709,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     width: 100%;
     max-width: 160px;
     padding: 3px;
+    margin-left: 5px;
 }
 
 .leatestNews .newsCard .cardContent .date p,
@@ -1031,7 +1032,12 @@ footer .newsLetter .formDiv button {
 }
 
 .bolgSection .blogCard .cardContent h4 {
-    height: 110px;
+    height: 50px;
+}
+
+.mainFixedService .bolgSection .multiBlog .short_description 
+{
+    height: 50px !important;
 }
 
 .bolgSection .blogCard {
@@ -2322,7 +2328,7 @@ footer .newsLetter .formDiv button {
 }
 
 .mainFixedService .bolgSection .multiBlog h4 {
-    margin-bottom: 80px;
+    margin-bottom: 10px;
 }
 
 /************* Edit - Profile - CSS ************/

@@ -12,7 +12,7 @@ Dashboard
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card">
-                                    <img src="{{asset('blogs/'.$blog->image)}}" alt="" class="img-fluid">
+                                    <img src="{{asset('blogs/'.$blog->image)}}" style="height:375px !important;" alt="" class="img-fluid">
                                     <div class="cardContent">
                                         <div class="dateLikeDiv">
                                             <div class="dateLike">

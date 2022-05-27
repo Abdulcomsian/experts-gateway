@@ -68,7 +68,7 @@ Blog
                         @foreach($blogs as $blog)
                         <div class="col-lg-4">
                             <div class="blogCard">
-                                <img src="{{asset('blogs/'.$blog->image)}}" alt="" class="img-fluid">
+                                <img src="{{asset('blogs/'.$blog->image)}}" style="height:213px; width: 347px;" alt="" class="img-fluid">
                                 <div class="row cardContent">
                                     <div class="date col-lg-5">
                                         <p>{{ date('d M,Y', strtotime($blog->created_at)) }}</p>
@@ -77,16 +77,16 @@ Blog
                                     
                                     @if($blog->status == 1)
                                     <div class="date btn btn-success col-lg-5">
-                                        <p style="color:white;">Active</p>
+                                        <p style="color:white;">Approved</p>
                                     </div>
                                     @else
                                     <div class="date btn btn-danger col-lg-5">
-                                        <p style="color:white;">InActive</p>
+                                        <p style="color:white;">Pending</p>
                                     </div>
                                     @endif
 
                                     <h4>{{$blog->title}}</h4>
-                                    <p>{{$blog->short_description}}</p>
+                                    <p class="short_description">{{$blog->short_description}}</p>
                                     <a href="{{ route('lawyer.blog',$blog->id) }}">Read More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                                 </div>
                             </div>

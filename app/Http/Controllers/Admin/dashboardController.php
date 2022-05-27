@@ -138,7 +138,6 @@ class dashboardController extends Controller
         
         foreach($request->language_id as $language)
         {
-            dd($id);
             $lawyer_language = new LawyersHasLanguage;
             $lawyer_language->language_id = $language;
             $lawyer_language->lawyer_profile_id = $lawyer->id;

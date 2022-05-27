@@ -77,6 +77,7 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 
     //users
     Route::get('/users', [App\Http\Controllers\Admin\dashboardController::class, 'users'])->name('admin.users');
+    Route::get('/user-show/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'show_user'])->name('user.show');
     Route::get('/edit_user/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'edit_user'])->name('user.edit');
 
     Route::put('/update-user/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_user'])->name('update-user');

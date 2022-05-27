@@ -217,4 +217,12 @@ class dashboardController extends Controller
         toastSuccess('Successfully Updated');
         return redirect('admin/users');
     }
+
+    public function show_user($id)
+    {
+        // dd($id);
+        $user = User::find($id);
+        return view('admin.user.show', compact('user'));
+        
+    }
 }

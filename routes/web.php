@@ -23,6 +23,8 @@ Route::get('/lawyer-login', function () {
     return view('auth/lawyer_login');
 })->name('lawyer-login');
 
+Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about_us'])->name('about-us');
+
 Route::get('/all-blogs', [App\Http\Controllers\blogController::class, 'blogs'])->name('all-blogs');
 Route::get('/all-blog/{id}', [App\Http\Controllers\blogController::class, 'client_blog'])->name('all-blog');
 
@@ -60,6 +62,9 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 
     //expertise
     Route::resource('expertise', App\Http\Controllers\Admin\expertiseController::class);
+
+    //about us
+    Route::resource('about_us', App\Http\Controllers\Admin\aboutUsController::class);
 
     //lawyer_applications
     Route::get('/lawyer_applications', [App\Http\Controllers\Admin\dashboardController::class, 'lawyer_applications'])->name('admin.lawyer-applications');

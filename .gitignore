@@ -5,6 +5,7 @@
 /vendor
 /public/blogs 
 /public/lawyer_profile 
+/public/about_us 
 /public/lawyer_cover_image 
 .env
 .env.backup

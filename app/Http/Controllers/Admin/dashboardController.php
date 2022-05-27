@@ -35,13 +35,15 @@ class dashboardController extends Controller
 
     public function lawyer_profile_show($id)
     {
-        try {
-            $lawyer_profile = LawyerProfile::where('id',$id)->first();
-            return view('admin.lawyer_profile.show', compact('lawyer_profile'));
-        } catch (\Exception $exception) {
-            toastError('Something went wrong, try again!');
-            return Redirect::back();
-        }
+        // dd($id);
+        $lawyer_profile = LawyerProfile::where('user_id',$id)->first();
+        $user = user::where('id',$lawyer_profile->user_id)->first();
+        $languages = Language::get();
+        $expertises = Expertise::get();
+        $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
+        $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
+        return view('admin.lawyer.show', compact('lawyer_profile','languages','expertises','lawyer_language','lawyer_expertises'));
+        
     }
 
     public function update_lawyer_status(Request $request,$id)
@@ -73,18 +75,14 @@ class dashboardController extends Controller
 
     public function edit_lawyer_profile($id)
     {
-        try {
-            $lawyer_profile = LawyerProfile::where('id',$id)->first();
-            $user = user::where('id',$lawyer_profile->user_id)->first();
-            $languages = Language::get();
-            $expertises = Expertise::get();
-            $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',1)->get();
-            $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
-            return view('admin.lawyer.edit', compact('lawyer_profile','user','lawyer_expertises','lawyer_language','languages','expertises'));
-        } catch (\Exception $exception) {
-            toastError($exception->getMessage());
-            return Redirect::back();
-        }
+        $lawyer_profile = LawyerProfile::where('user_id',$id)->first();
+        $user = user::where('id',$lawyer_profile->user_id)->first();
+        $languages = Language::get();
+        $expertises = Expertise::get();
+        $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
+        $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
+        return view('admin.lawyer.edit', compact('lawyer_profile','user','lawyer_expertises','lawyer_language','languages','expertises'));
+        
     }
 
     public function update_lawyer_profile(Request $request,$id)

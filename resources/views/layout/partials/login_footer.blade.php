@@ -8,12 +8,23 @@
                         <h2>Our Newsletter</h2>
                     </div>
                 </div>
+                @if (session('alert'))
+                    <div class="alert alert-success">
+                        {{ session('alert') }}
+                    </div>
+                @endif
+                @if (session('failure'))
+                    <div class="alert alert-danger">
+                        {{ session('failure') }}
+                    </div>
+                @endif
                 <div class="col-lg-6">
                     <div class="formDiv">
-                        <form action="">
+                        <form method="post" action="{{url('newsletter')}}">
+                            @csrf
                             <div class="inputBtn">
-                                <input type="text" name="email" id="email" placeholder="Enter Your Email Address">
-                                <button>
+                                <input type="text" name="subscriber_email" id="email" placeholder="Enter Your Email Address">
+                                <button type="submit">
                                     <img src="{{asset('assets/img/sliderArrow.png')}}" alt="" class="img-fluid">
                                 </button>
                             </div>

@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('landing-page');
 
+Route::post('newsletter',[App\Http\Controllers\NewsLetterController::class, 'store']);
+
 Auth::routes(['verify' => true]);  
 
 Route::get('/lawyer-login', function () {
@@ -66,6 +68,9 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     //about us
     Route::resource('about_us', App\Http\Controllers\Admin\aboutUsController::class);
 
+    //contact us
+    Route::resource('contact_us', App\Http\Controllers\Admin\ContactUsController::class);
+
     //lawyer_applications
     Route::get('/lawyer_applications', [App\Http\Controllers\Admin\dashboardController::class, 'lawyer_applications'])->name('admin.lawyer-applications');
     Route::post('/update_lawyer_status/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_lawyer_status'])->name('update-lawyer-status');   
@@ -81,6 +86,9 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     Route::get('/edit_user/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'edit_user'])->name('user.edit');
 
     Route::put('/update-user/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_user'])->name('update-user');
+
+    //subscriber
+    Route::get('/subscriber', [App\Http\Controllers\NewsLetterController::class, 'index'])->name('admin.subscriber');
 
 });
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\ContactUs;
+use App\Models\FixedService;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,8 @@ use App\Models\ContactUs;
 
 Route::get('/', function () {
     $contact_us = ContactUs::first();
-    return view('welcome' , compact('contact_us'));
+    $fixed_services = FixedService::get();
+    return view('welcome' , compact('contact_us','fixed_services'));
 })->name('landing-page');
 
 Route::get('/contact-us', function () {
@@ -37,6 +39,7 @@ Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about_us']
 
 Route::get('/all-blogs', [App\Http\Controllers\blogController::class, 'blogs'])->name('all-blogs');
 Route::get('/all-blog/{id}', [App\Http\Controllers\blogController::class, 'client_blog'])->name('all-blog');
+Route::get('/fixed-service-detail/{id}', [App\Http\Controllers\Lawyer\FixedServiceController::class, 'service_detail'])->name('fixed_service_detail');
 
 
 Route::get('/lawyer-register', function () {
@@ -99,6 +102,14 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     //subscriber
     Route::get('/subscriber', [App\Http\Controllers\NewsLetterController::class, 'index'])->name('admin.subscriber');
 
+    //fixed price service
+
+    Route::get('/fixed-service', [App\Http\Controllers\Admin\FixedServiceController::class, 'index'])->name('admin.fixed-service');
+    Route::get('/fixed-service-detail/{id}', [App\Http\Controllers\Admin\FixedServiceController::class, 'service_detail'])->name('fixed_service.show');
+    Route::post('/update_service_status/{id}', [App\Http\Controllers\Admin\FixedServiceController::class, 'update_service_status'])->name('update-service-status'); 
+    Route::get('/edit-fixed-service/{id}', [App\Http\Controllers\Admin\FixedServiceController::class, 'edit'])->name('admin.edit-fixed-service');
+    Route::put('/update_fixed_service/{id}', [App\Http\Controllers\Admin\FixedServiceController::class, 'update'])->name('admin.update-fixed-service');
+
 });
 
 /*****************User ROUTES*******************/
@@ -134,5 +145,10 @@ Route::prefix('lawyer')->middleware(['auth','can:lawyer','verified'])->group(fun
     //edit lawyer profile
     Route::get('/edit-profile/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'edit_profile'])->name('lawyer.edit-profile');
     Route::put('/update_lawyer_profile/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'update_lawyer_profile'])->name('lawyer.update-lawyer-profile');
+
+    //fixed-service
+    Route::get('/fixed-service', [App\Http\Controllers\Lawyer\FixedServiceController::class, 'index'])->name('lawyer.fixed-service');
+    Route::post('/fixed-service', [App\Http\Controllers\Lawyer\FixedServiceController::class, 'store'])->name('lawyer.post-fixed-service');
+    Route::get('/fixed-service-detail/{id}', [App\Http\Controllers\Lawyer\FixedServiceController::class, 'fixed_service_detail'])->name('fixed_service.detail');
 });
 

@@ -16,6 +16,11 @@ class Expertise extends Model
         return $this->hasMany(LawyersHasExpertise::class);
     }
 
+    public function fixed_service()
+    {
+        return $this->hasMany(FixedService::class);
+    }
+
     public function blog()
     {
         return $this->hasMany(Blog::class);

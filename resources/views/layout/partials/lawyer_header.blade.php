@@ -65,7 +65,7 @@
                         <a class="nav-link" href="./earning.html">Earnings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./fixedService/fixedService.html">Fixed Services</a>
+                        <a class="nav-link" href="{{ route('lawyer.fixed-service') }}">Fixed Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./publicQuestion.html">Public Questions & Call Requests</a>

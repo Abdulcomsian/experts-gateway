@@ -33,23 +33,23 @@
                         <div class="socialList">
                             <ul>
                                 <li>
-                                    <a href="">
-                                        <img src="{{ asset('assets/img/facebook.png') }}" alt="" class="img-fluid">
+                                    <a href="{{ $contact_us->facebook_link ?? '#'}}">
+                                        <img src="{{asset('assets/img/facebook.png')}}" alt="" class="img-fluid">
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
-                                        <img src="{{ asset('assets/img/instagram.png') }}" alt="" class="img-fluid">
+                                    <a href="{{ $contact_us->instagram_link ?? '#'}}">
+                                        <img src="{{asset('assets/img/instagram.png')}}" alt="" class="img-fluid">
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
-                                        <img src="{{ asset('assets/img/twitter.png') }}" alt="" class="img-fluid">
+                                    <a href="{{ $contact_us->twitter_link ?? '#'}}">
+                                        <img src="{{asset('assets/img/twitter.png')}}" alt="" class="img-fluid">
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
-                                        <img src="{{ asset('assets/img/linkdien.png') }}" alt="" class="img-fluid">
+                                    <a href="{{ $contact_us->linkedin_link ?? '#'}}">
+                                        <img src="{{asset('assets/img/linkdien.png')}}" alt="" class="img-fluid">
                                     </a>
                                 </li>
                             </ul>
@@ -94,29 +94,29 @@
                     <div class="footerWiget navigationWigets">
                         <h4>Contact Us</h4>
                         <div class="navigationList">
-                            <ul>
-                                <li>
-                                    <a href="">
-                                        Lynton House, 7-12 Tavistock Square, London WC1H9LT
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        +44 (0) 207183 3073
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        +44 (0) 203137 6198
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" style="color: rgb(239, 29, 48);">
-                                        info@advisoryexellencegmail.com
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    {{$contact_us->address ?? ''}}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    {{$contact_us->phone ?? ''}}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    {{$contact_us->phone_1 ?? ''}}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" style="color: rgb(239, 29, 48);">
+                                    {{$contact_us->email ?? ''}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     </div>
                 </div>
             </div>

@@ -75,7 +75,7 @@ Contact Us Detail
 
                                             <!--begin::Col-->
                                             <div class="col-lg-6">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Phone Number</label>
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Office Number</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     {{$contact_us->phone_1 ?? ''}}

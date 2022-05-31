@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 use App\Models\User;
+use App\Models\ContactUs;
 
 class LoginController extends Controller
 {
@@ -38,6 +39,13 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    // Custom Login form
+    public function showLoginForm()
+    {
+        $contact_us = ContactUs::first();
+        return view('auth.login',compact('contact_us'));
     }
 
     public function redirectTo()

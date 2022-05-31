@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\Blog;
+use App\Models\ContactUs;
 use App\Models\User;
 use App\Models\Expertise;
 use Illuminate\Support\Facades\Redirect;
@@ -75,6 +76,7 @@ class blogController extends Controller
     {
         $user_id = Auth::id();
         $blog = Blog::where('id',$id)->first();
+        
         $lawyer = User::where('id',$user_id)->first();
         return view('lawyer.blog', compact('blog','lawyer'));
     }
@@ -82,15 +84,15 @@ class blogController extends Controller
     public function blogs()
     {
         $blogs = Blog::where('status',1)->get();
-
-        return view('user.blogs', compact('blogs'));
+        $contact_us = ContactUs::first();
+        return view('user.blogs', compact('blogs','contact_us'));
     }
 
     public function client_blog($id)
     {
         $blog = Blog::where('id',$id)->first();
-
-        return view('user.client_blog', compact('blog'));
+        $contact_us = ContactUs::first();
+        return view('user.client_blog', compact('blog','contact_us'));
     }
 
     public function update_blog_status(Request $request,$id)

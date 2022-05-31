@@ -124,7 +124,7 @@
             <div class="copyRight">
                 <ul>
                     <li>
-                        <a href="">© 2021 <span>Experts Gateway</span>. All Rights Reserved.</a>
+                        <a href="">© 2022 <span>Experts Gateway</span>. All Rights Reserved.</a>
                     </li>
                     <li>
                         <a href="">Privacy Policy</a>

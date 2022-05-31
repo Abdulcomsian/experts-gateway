@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\AboutUs;
+use App\Models\ContactUs;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
@@ -31,6 +31,7 @@ class HomeController extends Controller
     public function about_us()
     {
         $about_us = AboutUs::first();
-        return view('frontend.about_us',compact('about_us'));
+        $contact_us = ContactUs::first();
+        return view('frontend.about_us',compact('about_us','contact_us'));
     }
 }

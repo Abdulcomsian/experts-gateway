@@ -44,22 +44,22 @@
                     <div class="socialList">
                         <ul>
                             <li>
-                                <a href="">
+                                <a href="{{ $contact_us->facebook_link ?? '#'}}">
                                     <img src="{{asset('assets/img/facebook.png')}}" alt="" class="img-fluid">
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{ $contact_us->instagram_link ?? '#'}}">
                                     <img src="{{asset('assets/img/instagram.png')}}" alt="" class="img-fluid">
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{ $contact_us->twitter_link ?? '#'}}">
                                     <img src="{{asset('assets/img/twitter.png')}}" alt="" class="img-fluid">
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{ $contact_us->linkedin_link ?? '#'}}">
                                     <img src="{{asset('assets/img/linkdien.png')}}" alt="" class="img-fluid">
                                 </a>
                             </li>
@@ -113,22 +113,22 @@
                         <ul>
                             <li>
                                 <a href="">
-                                    Lynton House, 7-12 Tavistock Square, London WC1H9LT
+                                    {{$contact_us->address ?? ''}}
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    +44 (0) 207183 3073
+                                    {{$contact_us->phone ?? ''}}
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    +44 (0) 203137 6198
+                                    {{$contact_us->phone_1 ?? ''}}
                                 </a>
                             </li>
                             <li>
                                 <a href="" style="color: rgb(239, 29, 48);">
-                                    info@advisoryexellencegmail.com
+                                    {{$contact_us->email ?? ''}}
                                 </a>
                             </li>
                         </ul>
@@ -140,7 +140,7 @@
         <div class="copyRight">
             <ul>
                 <li>
-                    <a href="">© 2021 <span>Experts Gateway</span>. All Rights Reserved.</a>
+                    <a href="">© 2022 <span>Experts Gateway</span>. All Rights Reserved.</a>
                 </li>
                 <li>
                     <a href="">Privacy Policy</a>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\ContactUs;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $contact_us = ContactUs::first();
+    return view('welcome' , compact('contact_us'));
 })->name('landing-page');
+
+Route::get('/contact-us', function () {
+    $contact_us = ContactUs::first();
+    return view('frontend.contact_us' , compact('contact_us'));
+})->name('contact-us');
 
 Route::post('newsletter',[App\Http\Controllers\NewsLetterController::class, 'store']);
 
 Auth::routes(['verify' => true]);  
 
 Route::get('/lawyer-login', function () {
-    return view('auth/lawyer_login');
+    $contact_us = ContactUs::first();
+    return view('auth/lawyer_login',compact('contact_us'));
 })->name('lawyer-login');
 
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about_us'])->name('about-us');
@@ -32,13 +40,14 @@ Route::get('/all-blog/{id}', [App\Http\Controllers\blogController::class, 'clien
 
 
 Route::get('/lawyer-register', function () {
+    $contact_us = ContactUs::first();
     if (Auth::check())
     {
-       return redirect()->to('/lawyer/dashboard');
+       return redirect()->to('/lawyer/dashboard',compact('contact_us'));
     }
     else
     {
-      return view('auth/lawyer_register');  
+      return view('auth/lawyer_register',compact('contact_us'));  
     }
     
 })->name('lawyer-register');

@@ -1,5 +1,7 @@
 @extends('layout.loginlayout')
-
+@section('title')
+Expert Gateway
+@endsection
 @section('content') 
 
 <main>

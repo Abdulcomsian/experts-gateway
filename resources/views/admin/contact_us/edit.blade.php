@@ -80,10 +80,10 @@ Update Contact Us Detail
 
                                             <!--begin::Col-->
                                             <div class="col-lg-6">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Phone Number (optional)</label>
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Office Number (optional)</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="number" class="form-control form-control-solid" value="{{$contact_us->phone_1}}" placeholder="Enter Phone Number" name="phone_1">
+                                                    <input type="number" class="form-control form-control-solid" value="{{$contact_us->phone_1}}" placeholder="Enter Office Number" name="phone_1">
                                                     <div style="color:red;">{{$errors->first('phone_1')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->

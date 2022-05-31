@@ -51,7 +51,10 @@ Contact Us
                             <!--begin::Table row-->
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th class="min-w-125px">Address</th>
-                                <th class="min-w-125px">Phone Numbers</th>
+                                <th class="min-w-125px">Phone Number</th>
+                                @if($contact_us->phone_1 != null)
+                                <th class="min-w-125px">Office Number</th>
+                                @endif
                                 <th class="min-w-125px">Email</th>
                                 <!-- <th class="min-w-125px">Facebook Link</th>
                                 <th class="min-w-125px">Instagram Link</th>
@@ -68,7 +71,10 @@ Contact Us
                             @if($contact_us != null)
                             <tr>
                                 <td>{{$contact_us->address}}</td>
-                                <td>{{$contact_us->phone}} <br> {{$contact_us->phone_1 ?? ''}}</td>
+                                <td>{{$contact_us->phone}}</td>
+                                @if($contact_us->phone_1 != null)
+                                <td>{{$contact_us->phone_1 ?? ''}}</td>
+                                @endif
                                 <td>{{$contact_us->email}}</td>
                                 <!-- <td>{{$contact_us->facebook_link}}</td>
                                 <td>{{$contact_us->instagram_link}}</td>

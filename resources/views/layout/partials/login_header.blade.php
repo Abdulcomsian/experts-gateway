@@ -77,7 +77,7 @@
                         <a class="nav-link" href="{{ url('/experts') }}">Experts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                        <a class="nav-link" href="{{ route('services') }}">Services</a>
                         
                     </li>
                     <li class="nav-item dropdown">

@@ -36,6 +36,12 @@ class FrontendController extends Controller
     {
         $contact_us = ContactUs::first();
         return view('frontend.contact_us' , compact('contact_us'));
+    } 
+
+    public function services()
+    {
+        $services = FixedService::where('status',1)->get();
+        return view('frontend.services' , compact('services'));
     }  
 
     public function expert_detail($id)

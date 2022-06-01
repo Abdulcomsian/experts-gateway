@@ -20,6 +20,8 @@ Route::get('/experts',[App\Http\Controllers\FrontendController::class, 'experts'
 Route::get('/experts/{id}',[App\Http\Controllers\FrontendController::class, 'expert_detail'])->name('expert-detail');
 //contact-us
 Route::get('/contact-us',[App\Http\Controllers\FrontendController::class, 'contact_us'])->name('contact-us');
+//contact-us
+Route::get('/services',[App\Http\Controllers\FrontendController::class, 'services'])->name('services');
 
 Route::post('newsletter',[App\Http\Controllers\NewsLetterController::class, 'store']);
 

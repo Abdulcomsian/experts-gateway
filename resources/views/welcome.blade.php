@@ -246,88 +246,42 @@ Expert Gateway
                         tristique viverra. Aliquam eu scelerisque orci.</p>
                 </div>
             </div>
+            @if(count($lawyers) > 0)
             <div class="sliderDiv">
                 <div class="expertSlider">
+                    @foreach($lawyers as $lawyer)
+                    @php 
+                        $lawyer_profiles = App\Models\LawyerProfile::where('user_id',$lawyer->id)->get();
+                    @endphp
+                    @foreach($lawyer_profiles as $lawyer_profile)
                     <div class="sliderBox">
-                        <img src="{{ asset('assets/img/client3.png') }}" alt="" class="img-fluid">
+                        <img src="{{asset('lawyer_profile/'.$lawyer_profile->image)}}" width="352px" height="378px">
                         <div class="expertHeader">
-                            <h4>John Deo</h4>
-                            <p>King & Wood Mallesons</p>
+                            <h4>{{$lawyer_profile->user->f_name}} {{$lawyer_profile->user->l_name}}</h4>
+                            <p>{{$lawyer_profile->title}}</p>
                         </div>
                         <div class="line">
                             .................................................................................</div>
                         <div class="expertAbout">
                             <p>County: <span>Australia</span></p>
-                            <p>Expertise: <span>Civil Litigation</span></p>
+                            <p>Expertise: <span>
+                                @php
+                                    $lawyer_expertises = App\Models\LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
+                                @endphp
+                                @foreach($lawyer_expertises as $expertise)
+                                    {{$expertise->expertise->name}}
+                                    @if(!($loop->last))
+                                    ,
+                                    @endif
+                                @endforeach
+                            </span></p>
                         </div>
                     </div>
-                    <div class="sliderBox">
-                        <img src="{{ asset('assets/img/client2.png') }}" alt="" class="img-fluid">
-                        <div class="expertHeader">
-                            <h4>Aaron Bourke</h4>
-                            <p>King & Wood Mallesons</p>
-                        </div>
-                        <div class="line">
-                            .................................................................................</div>
-                        <div class="expertAbout">
-                            <p>County: <span>Australia</span></p>
-                            <p>Expertise: <span>Banking & Finance Law</span></p>
-                        </div>
-                    </div>
-                    <div class="sliderBox">
-                        <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                        <div class="expertHeader">
-                            <h4>Mark Deo</h4>
-                            <p>King & Wood Mallesons</p>
-                        </div>
-                        <div class="line">
-                            .................................................................................</div>
-                        <div class="expertAbout">
-                            <p>County: <span>Australia</span></p>
-                            <p>Expertise: <span>Commercial Litigation</span></p>
-                        </div>
-                    </div>
-                    <div class="sliderBox">
-                        <img src="{{ asset('assets/img/client3.png') }}" alt="" class="img-fluid">
-                        <div class="expertHeader">
-                            <h4>John Deo</h4>
-                            <p>King & Wood Mallesons</p>
-                        </div>
-                        <div class="line">
-                            .................................................................................</div>
-                        <div class="expertAbout">
-                            <p>County: <span>Australia</span></p>
-                            <p>Expertise: <span>Civil Litigation</span></p>
-                        </div>
-                    </div>
-                    <div class="sliderBox">
-                        <img src="{{ asset('assets/img/client2.png') }}" alt="" class="img-fluid">
-                        <div class="expertHeader">
-                            <h4>Aaron Bourke</h4>
-                            <p>King & Wood Mallesons</p>
-                        </div>
-                        <div class="line">
-                            .................................................................................</div>
-                        <div class="expertAbout">
-                            <p>County: <span>Australia</span></p>
-                            <p>Expertise: <span>Banking & Finance Law</span></p>
-                        </div>
-                    </div>
-                    <div class="sliderBox">
-                        <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                        <div class="expertHeader">
-                            <h4>Mark Deo</h4>
-                            <p>King & Wood Mallesons</p>
-                        </div>
-                        <div class="line">
-                            .................................................................................</div>
-                        <div class="expertAbout">
-                            <p>County: <span>Australia</span></p>
-                            <p>Expertise: <span>Commercial Litigation</span></p>
-                        </div>
-                    </div>
+                    @endforeach
+                    @endforeach
                 </div>
             </div>
+            @endif
         </div>
     </div>
     <div class="excellence">

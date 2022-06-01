@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\ContactUs;
 use App\Models\News;
+use App\Models\User;
+use App\Models\LawyerProfile;
 use App\Models\FixedService;
+use Spatie\Permission\Models\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +23,9 @@ Route::get('/', function () {
     $contact_us = ContactUs::first();
     $news = News::latest()->take(10)->get();
     $fixed_services = FixedService::where('status',1)->get();
-    return view('welcome' , compact('contact_us','fixed_services','news'));
+    $lawyers = User::whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
+    
+    return view('welcome' , compact('contact_us','fixed_services','news','lawyers'));
 })->name('landing-page');
 
 Route::get('/contact-us', function () {

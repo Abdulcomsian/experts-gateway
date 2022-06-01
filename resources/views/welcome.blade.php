@@ -369,6 +369,7 @@ Expert Gateway
         </div>
     </div>
     @endif
+    @if(count($news) > 0)
     <div class="leatestNews">
         <div class="container-fluid">
             <div class="row">
@@ -382,73 +383,19 @@ Expert Gateway
                 <div class="col-lg-7">
                     <div class="sliderDiv">
                         <div class="newsSlider">
+                            @foreach($news as $new)
                             <div class="newsCard">
-                                <img src="{{ asset('assets/img/news1.png') }}" alt="" class="img-fluid">
+                                <img src="{{asset('news/'.$new->image)}}" width="223px" height="162px" alt="" class="img-fluid">
                                 <div class="cardContent">
                                     <div class="date">
-                                        <p>20 November, 2021</p>
+                                        <p>{{ date('Y/m/d', strtotime($new->created_at)) }}</p>
                                     </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
+                                    <h4>{{$new->title}}</h4>
+                                    {!! $new->description !!}
+                                    <!-- <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a> -->
                                 </div>
                             </div>
-                            <div class="newsCard">
-                                <img src="{{ asset('assets/img/news2.png') }}" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="newsCard">
-                                <img src="{{ asset('assets/img/news1.png') }}" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="newsCard">
-                                <img src="{{ asset('assets/img/news1.png') }}" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="newsCard">
-                                <img src="{{ asset('assets/img/news1.png') }}" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="newsCard">
-                                <img src="{{ asset('assets/img/news1.png') }}" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
-                                </div>
-                            </div>
-
+                            @endforeach
 
                         </div>
                     </div>
@@ -456,6 +403,7 @@ Expert Gateway
             </div>
         </div>
     </div>
+    @endif
     <div class="requestInformation">
         <div class="container-fluid">
             <div class="row">

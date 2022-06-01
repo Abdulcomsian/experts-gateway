@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\ContactUs;
+use App\Models\News;
 use App\Models\FixedService;
 
 /*
@@ -17,8 +18,9 @@ use App\Models\FixedService;
 
 Route::get('/', function () {
     $contact_us = ContactUs::first();
+    $news = News::latest()->take(10)->get();
     $fixed_services = FixedService::where('status',1)->get();
-    return view('welcome' , compact('contact_us','fixed_services'));
+    return view('welcome' , compact('contact_us','fixed_services','news'));
 })->name('landing-page');
 
 Route::get('/contact-us', function () {
@@ -82,6 +84,9 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 
     //contact us
     Route::resource('contact_us', App\Http\Controllers\Admin\ContactUsController::class);
+
+    //news
+    Route::resource('news', App\Http\Controllers\Admin\NewsController::class);
 
     //lawyer_applications
     Route::get('/lawyer_applications', [App\Http\Controllers\Admin\dashboardController::class, 'lawyer_applications'])->name('admin.lawyer-applications');

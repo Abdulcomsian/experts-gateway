@@ -7,6 +7,7 @@
 /public/lawyer_profile 
 /public/about_us 
 /public/fixed_service 
+/public/news 
 /public/lawyer_cover_image 
 .env
 .env.backup

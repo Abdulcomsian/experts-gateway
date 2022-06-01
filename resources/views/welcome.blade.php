@@ -341,6 +341,7 @@ Expert Gateway
             </div>
         </div>
     </div>
+    @if(count($fixed_services) > 0)
     <div class="fixedService">
         <div class="container-fluid">
             <div class="row">
@@ -367,6 +368,7 @@ Expert Gateway
             </div>
         </div>
     </div>
+    @endif
     <div class="leatestNews">
         <div class="container-fluid">
             <div class="row">

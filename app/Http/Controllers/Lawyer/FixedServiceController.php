@@ -23,13 +23,6 @@ class FixedServiceController extends Controller
         return view('lawyer.fixed_service.index', compact('fixed_services','expertises','lawyer','contact_us'));
     }      
 
-    
-
-    public function edit($id)
-    {
-        
-    }
-
     public function store(Request $request)
     {
         // dd($request->all());
@@ -72,10 +65,51 @@ class FixedServiceController extends Controller
         return redirect('lawyer/fixed-service');
     }
 
+    public function edit($id)
+    {
+        $fixed_service = FixedService::find($id);
+        $expertises = Expertise::get();
+        return view('lawyer.fixed_service.edit', compact('fixed_service','expertises'));
+    }
+
     public function update(Request $request,$id)
     {
-        
-        
+          // dd($request->all(),$id);
+        $user_id = Auth::id();
+        $this->validate($request,[  
+            'title'=>'required', 
+            'price'=>'required', 
+            'short_des'=>'required', 
+            'description'=>'required', 
+            'time_limit'=>'required',   
+            'expertise_id'=>'required',   
+            'included'=>'required',   
+            'not_included'=>'required',   
+
+        ]);
+
+        $fixed_service= FixedService::find($id);
+        $fixed_service->title = $request->title;
+        $fixed_service->price = $request->price;
+        $fixed_service->short_des = $request->short_des;
+        $fixed_service->description = $request->description;
+        $fixed_service->time_limit = $request->time_limit;
+        $fixed_service->included = $request->included;
+        $fixed_service->expertise_id = $request->expertise_id;
+        $fixed_service->not_included = $request->not_included;
+        if($request->hasfile('image'))
+        {
+            $image = $request->file('image');
+            $extensions =$image->extension();
+
+            $image_name =time().'.'. $extensions;
+            $image->move('fixed_service/',$image_name);
+            $fixed_service->image=$image_name;
+        }
+        $fixed_service->save();
+
+        toastSuccess('Successfully Added');
+        return redirect('lawyer/fixed-service');
     }
 
     public function fixed_service_detail($id)

@@ -35,7 +35,7 @@ Fix Price Service
                             <div class="col-lg-12">
                                 <label>Short Description</label>
                                 <div class="inputDiv">
-                                    <input type="text" name="short_des" id="short_des" placeholder="Short Description" value="{{ old('title') }}">
+                                    <input type="text" name="short_des" id="short_des" placeholder="Short Description" value="{{ old('short_des') }}">
                                     <div style="color:red;">{{$errors->first('short_des')}}</div> <br>
                                 </div>
                             </div>

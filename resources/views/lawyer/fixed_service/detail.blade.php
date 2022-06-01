@@ -34,9 +34,9 @@ Fix Price Service
                                 Active
                                 @endif
                             </span>
-                            <span>
-                                Edit
-                            </span>
+                            <a href="{{ route('lawyer.edit-fixed-service',$fixed_service->id) }}"><button style="cursor: pointer;border-color: transparent;">
+                                <span>Edit</span>
+                            </button></a>
                         </div>
                     </div>
                     <div class="contentDiv"><br>

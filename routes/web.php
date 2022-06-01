@@ -17,7 +17,7 @@ use App\Models\FixedService;
 
 Route::get('/', function () {
     $contact_us = ContactUs::first();
-    $fixed_services = FixedService::get();
+    $fixed_services = FixedService::where('status',1)->get();
     return view('welcome' , compact('contact_us','fixed_services'));
 })->name('landing-page');
 
@@ -150,5 +150,8 @@ Route::prefix('lawyer')->middleware(['auth','can:lawyer','verified'])->group(fun
     Route::get('/fixed-service', [App\Http\Controllers\Lawyer\FixedServiceController::class, 'index'])->name('lawyer.fixed-service');
     Route::post('/fixed-service', [App\Http\Controllers\Lawyer\FixedServiceController::class, 'store'])->name('lawyer.post-fixed-service');
     Route::get('/fixed-service-detail/{id}', [App\Http\Controllers\Lawyer\FixedServiceController::class, 'fixed_service_detail'])->name('fixed_service.detail');
+
+    Route::get('/edit-fixed-service/{id}', [App\Http\Controllers\Lawyer\FixedServiceController::class, 'edit'])->name('lawyer.edit-fixed-service');
+    Route::put('/update_fixed_service/{id}', [App\Http\Controllers\Lawyer\FixedServiceController::class, 'update'])->name('lawyer.update-fixed-service');
 });
 

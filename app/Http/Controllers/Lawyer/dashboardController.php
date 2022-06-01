@@ -34,7 +34,7 @@ class dashboardController extends Controller
         $lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
         if($lawyer_profile)
         {
-            $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',1)->get();
+            $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
             $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
             if($lawyer->status == 0)
             {

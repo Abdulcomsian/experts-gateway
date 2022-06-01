@@ -2,11 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\ContactUs;
-use App\Models\News;
-use App\Models\User;
-use App\Models\LawyerProfile;
-use App\Models\FixedService;
-use Spatie\Permission\Models\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,19 +14,12 @@ use Spatie\Permission\Models\Role;
 |
 */
 
-Route::get('/', function () {
-    $contact_us = ContactUs::first();
-    $news = News::latest()->take(10)->get();
-    $fixed_services = FixedService::where('status',1)->get();
-    $lawyers = User::whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
-    
-    return view('welcome' , compact('contact_us','fixed_services','news','lawyers'));
-})->name('landing-page');
-
-Route::get('/contact-us', function () {
-    $contact_us = ContactUs::first();
-    return view('frontend.contact_us' , compact('contact_us'));
-})->name('contact-us');
+Route::get('/',[App\Http\Controllers\FrontendController::class, 'landing_page'])->name('landing-page');
+//experts
+Route::get('/experts',[App\Http\Controllers\FrontendController::class, 'experts'])->name('experts');
+Route::get('/experts/{id}',[App\Http\Controllers\FrontendController::class, 'expert_detail'])->name('expert-detail');
+//contact-us
+Route::get('/contact-us',[App\Http\Controllers\FrontendController::class, 'contact_us'])->name('contact-us');
 
 Route::post('newsletter',[App\Http\Controllers\NewsLetterController::class, 'store']);
 

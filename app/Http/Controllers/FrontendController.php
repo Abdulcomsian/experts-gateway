@@ -8,10 +8,12 @@ use App\Models\News;
 use App\Models\User;
 use App\Models\Blog;
 use App\Models\LawyerProfile;
+use App\Models\Expertise;
 use App\Models\FixedService;
 use App\Models\LawyersHasLanguage;
 use App\Models\LawyersHasExpertise;
 use Spatie\Permission\Models\Role;
+use DB;
 
 class FrontendController extends Controller
 {
@@ -27,9 +29,10 @@ class FrontendController extends Controller
     public function experts()
     {
         $contact_us = ContactUs::first();
+        $expertises = Expertise::get();
         $news = News::latest()->take(10)->get();
         $lawyers = User::whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
-        return view('frontend.experts' , compact('contact_us','news','lawyers'));
+        return view('frontend.experts' , compact('contact_us','news','lawyers','expertises'));
     }
 
     public function contact_us()
@@ -41,8 +44,49 @@ class FrontendController extends Controller
     public function services()
     {
         $services = FixedService::where('status',1)->get();
-        return view('frontend.services' , compact('services'));
+        $expertises = Expertise::get();
+        return view('frontend.services' , compact('services','expertises'));
     }  
+
+    public function search(Request $request)
+    {
+        $data = '';
+        $search = $request->get('search');
+        if($search != '')
+        {
+            $data = DB::table('fixed_services')
+            ->where('expertise_id','like','%' .$search. '%')
+            ->get();
+        }
+        else
+        // if you want to show all the data
+        {
+            $data = DB::table('categories')
+            ->orderBy('title','asc')
+            ->get();
+        }
+        return json_encode($data);
+    }
+
+    public function search_expert(Request $request)
+    {
+        $data = '';
+        $search_expert = $request->get('search_expert');
+        if($search != '')
+        {
+            $data = DB::table('fixed_services')
+            ->where('expertise_id','like','%' .$search. '%')
+            ->get();
+        }
+        else
+        // if you want to show all the data
+        {
+            $data = DB::table('categories')
+            ->orderBy('title','asc')
+            ->get();
+        }
+        return json_encode($data);
+    }
 
     public function expert_detail($id)
     {

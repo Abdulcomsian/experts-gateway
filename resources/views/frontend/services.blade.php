@@ -46,11 +46,14 @@ Experts
                 </select>
             </div>
             <div class="expertiseDiv">
-                <select name="" id="">
-                    <option value="Expertise">Expertise</option>
+                <select name="search" id="search" class="form-controller" >
+                    <option disabled selected>Select Expertise</option>
+                    @foreach($expertises as $expertise)
+                    <option value="{{$expertise->id}}">{{$expertise->name}}</option>
+                    @endforeach
                 </select>
                 <div class="btnDiv">
-                    <button><img src="../assets/img/searchBtnIcon.svg" alt="" class="img-fluid"> Search</button>
+                    <button onclick="fetchData()"><img src="../assets/img/searchBtnIcon.svg" alt="" class="img-fluid"> Search</button>
                 </div>
             </div>
 
@@ -75,11 +78,11 @@ Experts
           <div class="relatedService freeRelatedService">
         <div class="container-fluid">
             <div class="multiRelatedService">
-                <div class="row">
+                <div class="row" id="result">
                     @if(count($services) > 0)
                     @foreach($services as $service)
-                    <div class="col-lg-4">
-                        <div class="card">
+                    <div class="col-lg-4" id="card">
+                        <div class="card" >
                             <img src="{{asset('fixed_service/'.$service->image)}}" width="322px" height="210px" alt="" class="img-fluid">
                             <div class="cardContent">
                                 <h4>{{$service->time_limit}} {{$service->title}}</h4>
@@ -195,4 +198,62 @@ Experts
 @endsection
 
 @section('js')
+<script type="text/javascript">
+    function fetchData()
+    {
+        //Search Value
+        const val = document.getElementById('search').value;
+
+        //Search Url
+        const url = "{{ route('search') }}" + "?search=" + val;
+
+        console.log(url);
+        fetch(url)
+        .then((resp) => resp.json()) //Transform the data into json
+        .then(function(data){
+            document.getElementById('card').style="display:none";
+            let expertises = data;
+            console.log(expertises);
+            expertises.map(function(expertise){
+                
+                document.getElementById('result').innerHTML = `
+
+                     <div class="col-lg-4" id="card">
+                        <div class="card" >
+                            <img src="fixed_service/${expertise.image}" width="322px" height="210px" alt="" class="img-fluid">
+                            <div class="cardContent">
+                                <h4>${expertise.time_limit} ${expertise.title}</h4>
+                                <p class="tag">${expertise.short_des}</p>
+                                <p class="line">.................................................................................</p>
+                                
+                                <div class="cardFooter">
+                                    <h4>${expertise.price}<span>USD</span></h4>
+                                    <a href="fixed-service-detail/${expertise.id}" class="learnMore">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                `;
+
+                 
+                });         
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+    }
+
+    function createNode(element)
+    {
+        return document.createElement(element);
+    }
+
+    function append(parent,el)
+    {
+        return parent.appendChild(el);
+    }
+</script>
 @endsection

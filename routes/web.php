@@ -20,8 +20,12 @@ Route::get('/experts',[App\Http\Controllers\FrontendController::class, 'experts'
 Route::get('/experts/{id}',[App\Http\Controllers\FrontendController::class, 'expert_detail'])->name('expert-detail');
 //contact-us
 Route::get('/contact-us',[App\Http\Controllers\FrontendController::class, 'contact_us'])->name('contact-us');
-//contact-us
+//fixed-price-service
 Route::get('/services',[App\Http\Controllers\FrontendController::class, 'services'])->name('services');
+
+Route::get('/search',[App\Http\Controllers\FrontendController::class, 'search'])->name('search');
+Route::get('/search_expert',[App\Http\Controllers\FrontendController::class, 'search_expert'])->name('search_expert');
+
 
 Route::post('newsletter',[App\Http\Controllers\NewsLetterController::class, 'store']);
 

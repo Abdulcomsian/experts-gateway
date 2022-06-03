@@ -46,7 +46,7 @@ Experts
                 </select>
             </div>
             <div class="expertiseDiv">
-                <select>
+                <select name="search_expert" id="search_expert">
                     <option disabled selected>Select Expertise</option>
                     @foreach($expertises as $expertise)
                     <option value="{{$expertise->id}}">{{$expertise->name}}</option>
@@ -75,14 +75,14 @@ Experts
             </div>
         </div>
         <div class="multiBlog">
-            <div class="row">
+            <div class="row"  id="result">
                 @if(count($lawyers) > 0)
                 @foreach($lawyers as $lawyer)
                 @php 
                     $lawyer_profiles = App\Models\LawyerProfile::where('user_id',$lawyer->id)->get();
                 @endphp
                 @foreach($lawyer_profiles as $lawyer_profile)
-                <div class="col-lg-4">
+                <div class="col-lg-4" id="card">
                     <a href="{{ route('expert-detail',$lawyer_profile->id) }}">
                         <div class="expertCard">
                             <img src="{{asset('lawyer_profile/'.$lawyer_profile->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
@@ -325,44 +325,77 @@ Experts
     function fetchData()
     {
         //Search Value
-        const val = document.getElementById('search').value;
+        const val = document.getElementById('search_expert').value;
 
         //Search Url
         const url = "{{ route('search_expert') }}" + "?search_expert=" + val;
 
-        console.log(url);
         fetch(url)
         .then((resp) => resp.json()) //Transform the data into json
         .then(function(data){
             document.getElementById('card').style="display:none";
-            let expertises = data;
-            console.log(expertises);
-            expertises.map(function(expertise){
-                
-                document.getElementById('result').innerHTML = `
+            let experts = data;
 
-                     <div class="col-lg-4" id="card">
-                        <div class="card" >
-                            <img src="fixed_service/${expertise.image}" width="322px" height="210px" alt="" class="img-fluid">
-                            <div class="cardContent">
-                                <h4>${expertise.time_limit} ${expertise.title}</h4>
-                                <p class="tag">${expertise.short_des}</p>
-                                <p class="line">.................................................................................</p>
-                                
-                                <div class="cardFooter">
-                                    <h4>${expertise.price}<span>USD</span></h4>
-                                    <a href="fixed-service-detail/${expertise.id}" class="learnMore">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+            document.getElementById('result').innerHTML = ``;
+            experts.map(function(expert){
+                
+                document.getElementById('result').innerHTML += `
+                    <div class="col-lg-4" id="card">
+                        <a href="expert-detail/${expert.id}">
+                            <div class="expertCard">
+                                <img src="lawyer_profile/${expert.image}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
+                                <div class="cardContet">
+                                    <div class="rating">
+                                        <p>
+                                            <i class="fa fa-star"></i>
+                                            <span>4.1</span>
+                                        </p>
+                                    </div>
+                                    <div class="cardBody">
+                                        <h3>${expert.f_name} ${expert.l_name}</h3>
+                                    <p>${expert.title}</p>
+                                    </div>
+                                    <div class="line">
+                                        <img src="../assets/img/line.png" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="cardFooter">
+                                        <p>County: <span>U.A.E</span></p>
+                                        <p>Expertise: 
+                                            <span>
+                                                @php
+                                                    $lawyer_expertises = App\Models\LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
+                                                @endphp
+                                                @foreach($lawyer_expertises as $expertise)
+                                                    {{$expertise->expertise->name}}
+                                                    @if(!($loop->last))
+                                                    ,
+                                                    @endif
+                                                @endforeach
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="contactDiv">
+                                        <ul>
+                                            <li>
+                                                <button><img src="../assets/img/recentQuestionIcon.png" alt=""> ASK A QUESTION</button>
+                                            </li>
+                                            <li>
+                                                <button><img src="../assets/img/chatIcon.svg" alt=""> CHAT</button>
+                                            </li>
+                                            <li>
+                                                <button><img src="../assets/img/request.png" alt=""> REQUEST CALLBACK</button>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
-
-
-
                 `;
 
                  
-                });         
+                }); 
+                    
         })
         .catch(function(error){
             console.log(error);

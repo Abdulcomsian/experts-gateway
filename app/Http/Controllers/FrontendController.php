@@ -72,19 +72,41 @@ class FrontendController extends Controller
     {
         $data = '';
         $search_expert = $request->get('search_expert');
-        if($search != '')
-        {
-            $data = DB::table('fixed_services')
-            ->where('expertise_id','like','%' .$search. '%')
+        // if($search_expert != '')
+        // {
+        //     $expertises = DB::table('lawyers_has_expertises')
+        //     // ->where('expertise_id','like','%' .$search_expert. '%')
+        //     ->where('expertise_id', $search_expert)
+        //     ->get();
+        //     foreach($expertises as $expertise)
+        //     {
+        //        $data = DB::table('lawyer_profiles')->where('id',$expertise->lawyer_profile_id)->get(); 
+        //     }
+        // }
+        // else
+        // // if you want to show all the data
+        // {
+        //     $data = DB::table('categories')
+        //     ->orderBy('title','asc')
+        //     ->get();
+        // }
+
+        // $data = DB::table('lawyers_has_expertises')
+        //     ->leftJoin('lawyer_profiles', 'lawyer_profiles.id', '=', 'lawyers_has_expertises.lawyer_profile_id')
+        //     ->select('lawyer_profiles.*')
+        //     ->where('lawyers_has_expertises.expertise_id',$search_expert)
+        //     ->get();
+        //     dd($data);
+
+         $data = DB::table('lawyers_has_expertises')
+            ->leftJoin('lawyer_profiles', 'lawyer_profiles.id', '=', 'lawyers_has_expertises.lawyer_profile_id')
+            ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
+            ->leftJoin('expertises', 'lawyers_has_expertises.expertise_id', '=', 'expertises.id')
+            ->select('lawyer_profiles.*','users.f_name as f_name','users.l_name as l_name','expertises.name as expertises_name')
+            ->where('lawyers_has_expertises.expertise_id',$search_expert)
+            // ->where('users.id','lawyer_profiles.user_id')
             ->get();
-        }
-        else
-        // if you want to show all the data
-        {
-            $data = DB::table('categories')
-            ->orderBy('title','asc')
-            ->get();
-        }
+            dd($data);
         return json_encode($data);
     }
 

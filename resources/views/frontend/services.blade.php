@@ -214,9 +214,11 @@ Experts
             document.getElementById('card').style="display:none";
             let expertises = data;
             console.log(expertises);
+
+            document.getElementById('result').innerHTML = ``;
             expertises.map(function(expertise){
                 
-                document.getElementById('result').innerHTML = `
+                document.getElementById('result').innerHTML += `
 
                      <div class="col-lg-4" id="card">
                         <div class="card" >

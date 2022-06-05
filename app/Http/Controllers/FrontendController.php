@@ -106,7 +106,6 @@ class FrontendController extends Controller
             ->where('lawyers_has_expertises.expertise_id',$search_expert)
             // ->where('users.id','lawyer_profiles.user_id')
             ->get();
-            dd($data);
         return json_encode($data);
     }
 

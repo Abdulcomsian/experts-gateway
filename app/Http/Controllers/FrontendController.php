@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\AboutUs;
 use App\Models\ContactUs;
 use App\Models\News;
 use App\Models\User;
@@ -22,8 +23,17 @@ class FrontendController extends Controller
         $contact_us = ContactUs::first();
         $news = News::latest()->take(10)->get();
         $fixed_services = FixedService::where('status',1)->get();
-        $lawyers = User::whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
+        $lawyers = User::with('lawyer_profile')->whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
         return view('welcome' , compact('contact_us','fixed_services','news','lawyers'));
+    }
+
+    public function about_us()
+    {
+        $about_us = AboutUs::first();
+        $contact_us = ContactUs::first();
+        $news = News::latest()->take(10)->get();
+        $fixed_services = FixedService::where('status',1)->get();
+        return view('frontend.about_us',compact('about_us','contact_us','news','fixed_services'));
     }
 
     public function experts()
@@ -31,7 +41,7 @@ class FrontendController extends Controller
         $contact_us = ContactUs::first();
         $expertises = Expertise::get();
         $news = News::latest()->take(10)->get();
-        $lawyers = User::whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
+        $lawyers = User::with('lawyer_profile')->whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
         return view('frontend.experts' , compact('contact_us','news','lawyers','expertises'));
     }
 

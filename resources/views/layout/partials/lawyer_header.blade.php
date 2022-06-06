@@ -26,7 +26,7 @@
                         <li>
                             <img src="{{ asset('assets/img/myOrder.png') }}" alt="" class="img-fluid">
                             <span>
-                                <a href="{{ route('lawyer.profile') }}">My Profile</a>
+                                <a href="{{ route('lawyer.orders') }}">My Orders</a>
                             </span>
                         </li>
                         <li>

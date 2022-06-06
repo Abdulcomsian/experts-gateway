@@ -36,7 +36,7 @@ Route::get('/lawyer-login', function () {
     return view('auth/lawyer_login',compact('contact_us'));
 })->name('lawyer-login');
 
-Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about_us'])->name('about-us');
+Route::get('/about-us', [App\Http\Controllers\FrontendController::class, 'about_us'])->name('about-us');
 
 Route::get('/all-blogs', [App\Http\Controllers\blogController::class, 'blogs'])->name('all-blogs');
 Route::get('/all-blog/{id}', [App\Http\Controllers\blogController::class, 'client_blog'])->name('all-blog');
@@ -157,5 +157,7 @@ Route::prefix('lawyer')->middleware(['auth','can:lawyer','verified'])->group(fun
 
     Route::get('/edit-fixed-service/{id}', [App\Http\Controllers\Lawyer\FixedServiceController::class, 'edit'])->name('lawyer.edit-fixed-service');
     Route::put('/update_fixed_service/{id}', [App\Http\Controllers\Lawyer\FixedServiceController::class, 'update'])->name('lawyer.update-fixed-service');
+
+    Route::get('/orders', [App\Http\Controllers\Lawyer\dashboardController::class, 'orders'])->name('lawyer.orders');
 });
 

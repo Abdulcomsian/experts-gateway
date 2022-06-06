@@ -13,7 +13,6 @@
 <script src="{{ asset('assets/js/script.js') }}"></script>
 		
 
-		@toastr_js
-		@toastr_render	
-
-		@yield('script')
+@toastr_js
+@toastr_render	
+@yield('script')

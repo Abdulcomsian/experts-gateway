@@ -14,7 +14,7 @@ Expert Gateway
                         <p>Advisory Exellence Is The<br> Definitive Guide To Leading<br> Experts Throughout The
                             World</p>
                         <button>
-                            <a style="color: #ef1d31 !important;" href="./aboutUs.html">Learn More</a>
+                            <a style="color: #ef1d31 !important;" href="{{ url('/about-us') }}">Learn More</a>
                         </button>
                         <div class="searchBox desktopHide">
                             <div class="countryDiv">
@@ -230,7 +230,7 @@ Expert Gateway
                             maximus sapien ac erat euismod lacin ia. Maecenas dui leo, auctor eu neqafue vel,
                             aliqufet finibuas odio. Pellentesque efficitur volutpat ex a blandit. Sed vestibu lum
                             pharetra ex id feugiat.</p>
-                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
+                        <a href="{{ url('/about-us') }}">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -249,16 +249,12 @@ Expert Gateway
             @if(count($lawyers) > 0)
             <div class="sliderDiv">
                 <div class="expertSlider">
-                    @foreach($lawyers as $lawyer)
-                    @php 
-                        $lawyer_profiles = App\Models\LawyerProfile::where('user_id',$lawyer->id)->get();
-                    @endphp
-                    @foreach($lawyer_profiles as $lawyer_profile)
+                    @foreach($lawyers as $key=>$lawyer)
                     <div class="sliderBox">
-                        <img src="{{asset('lawyer_profile/'.$lawyer_profile->image)}}" width="352px" height="378px">
+                        <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" width="352px" height="378px">
                         <div class="expertHeader">
-                            <h4>{{$lawyer_profile->user->f_name}} {{$lawyer_profile->user->l_name}}</h4>
-                            <p>{{$lawyer_profile->title}}</p>
+                            <h4>{{$lawyer->f_name}} {{$lawyer->l_name}}</h4>
+                            <p>{{$lawyer['lawyer_profile'][0]->title}}</p>
                         </div>
                         <div class="line">
                             .................................................................................</div>
@@ -266,7 +262,7 @@ Expert Gateway
                             <p>County: <span>Australia</span></p>
                             <p>Expertise: <span>
                                 @php
-                                    $lawyer_expertises = App\Models\LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
+                                    $lawyer_expertises = App\Models\LawyersHasExpertise::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
                                 @endphp
                                 @foreach($lawyer_expertises as $expertise)
                                     {{$expertise->expertise->name}}
@@ -278,7 +274,6 @@ Expert Gateway
                         </div>
                     </div>
                     @endforeach
-                    @endforeach
                 </div>
             </div>
             @endif
@@ -289,7 +284,7 @@ Expert Gateway
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Advisory Excellence Profiles<br> The Best Advisers Around The Globe</h2>
-                    <a href="./experts.html" class="expertBtn">Find An Expert</a>
+                    <a href="{{ url('/experts') }}" class="expertBtn">Find An Expert</a>
                     <a href="{{ route('lawyer-register') }}">Apply For Membership</a>
                 </div>
             </div>

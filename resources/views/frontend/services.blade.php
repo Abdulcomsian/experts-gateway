@@ -211,7 +211,7 @@ Fixed Price Service
         fetch(url)
         .then((resp) => resp.json()) //Transform the data into json
         .then(function(data){
-            if(document.getElementById('card') != null)
+            if(document.getElementById('card'))
             {
                document.getElementById('card').style="display:none"; 
             }

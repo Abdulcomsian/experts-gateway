@@ -28,10 +28,5 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function about_us()
-    {
-        $about_us = AboutUs::first();
-        $contact_us = ContactUs::first();
-        return view('frontend.about_us',compact('about_us','contact_us'));
-    }
+    
 }

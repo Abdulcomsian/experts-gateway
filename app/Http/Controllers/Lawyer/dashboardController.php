@@ -506,4 +506,12 @@ class dashboardController extends Controller
         toastSuccess('Successfully Updated');
         return redirect('lawyer/profile');
     }
+
+    public function orders()
+    {
+        $user_id = Auth::id();
+        $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
+        $lawyer = User::where('id',$user_id)->first();
+        return view('lawyer.order.index',compact('lawyer_profile','lawyer'));
+    }
 }

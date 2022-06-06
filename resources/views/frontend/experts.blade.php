@@ -78,14 +78,10 @@ Experts
             <div class="row"  id="result">
                 @if(count($lawyers) > 0)
                 @foreach($lawyers as $lawyer)
-                @php 
-                    $lawyer_profiles = App\Models\LawyerProfile::where('user_id',$lawyer->id)->get();
-                @endphp
-                @foreach($lawyer_profiles as $lawyer_profile)
                 <div class="col-lg-4" id="card">
-                    <a href="{{ route('expert-detail',$lawyer_profile->id) }}">
+                    <a href="{{ route('expert-detail',$lawyer['lawyer_profile'][0]->id) }}">
                         <div class="expertCard">
-                            <img src="{{asset('lawyer_profile/'.$lawyer_profile->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
+                            <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
                             <div class="cardContet">
                                 <div class="rating">
                                     <p>
@@ -94,8 +90,8 @@ Experts
                                     </p>
                                 </div>
                                 <div class="cardBody">
-                                    <h3>{{$lawyer_profile->user->f_name}} {{$lawyer_profile->user->l_name}}</h3>
-                                <p>{{$lawyer_profile->title}}</p>
+                                    <h3>{{$lawyer->f_name}} {{$lawyer->l_name}}</h3>
+                                <p>{{$lawyer['lawyer_profile'][0]->title}}</p>
                                 </div>
                                 <div class="line">
                                     <img src="../assets/img/line.png" alt="" class="img-fluid">
@@ -105,7 +101,7 @@ Experts
                                     <p>Expertise: 
                                         <span>
                                             @php
-                                                $lawyer_expertises = App\Models\LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
+                                                $lawyer_expertises = App\Models\LawyersHasExpertise::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
                                             @endphp
                                             @foreach($lawyer_expertises as $expertise)
                                                 {{$expertise->expertise->name}}
@@ -133,7 +129,6 @@ Experts
                         </div>
                     </a>
                 </div>
-                @endforeach
                 @endforeach
                 @endif
             </div>
@@ -172,6 +167,7 @@ Experts
             </div>
         </div>
     </div>
+    @if(count($news) > 0)
     <div class="leatestNews">
         <div class="container-fluid">
             <div class="row">
@@ -185,73 +181,19 @@ Experts
                 <div class="col-lg-7">
                     <div class="sliderDiv">
                         <div class="newsSlider">
+                            @foreach($news as $new)
                             <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
+                                <img src="{{asset('news/'.$new->image)}}" width="223px" height="162px" alt="" class="img-fluid">
                                 <div class="cardContent">
                                     <div class="date">
-                                        <p>20 November, 2021</p>
+                                        <p>{{ date('Y/m/d', strtotime($new->created_at)) }}</p>
                                     </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
+                                    <h4>{{$new->title}}</h4>
+                                    {!! $new->description !!}
+                                    <!-- <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a> -->
                                 </div>
                             </div>
-                            <div class="newsCard">
-                                <img src="../assets/img/news2.png" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
-                                </div>
-                            </div>
-
+                            @endforeach
 
                         </div>
                     </div>
@@ -259,6 +201,7 @@ Experts
             </div>
         </div>
     </div>
+    @endif
     <div class="requestInformation">
         <div class="container-fluid">
             <div class="row">
@@ -333,7 +276,7 @@ Experts
         fetch(url)
         .then((resp) => resp.json()) //Transform the data into json
         .then(function(data){
-            if(document.getElementById('card') != null)
+            if(document.getElementById('card'))
             {
                 document.getElementById('card').style="display:none";
             }
@@ -366,7 +309,7 @@ Experts
                                         <p>Expertise: 
                                             <span>
                                                 @php
-                                                    $lawyer_expertises = App\Models\LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
+                                                    $lawyer_expertises = App\Models\LawyersHasExpertise::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
                                                 @endphp
                                                 @foreach($lawyer_expertises as $expertise)
                                                     {{$expertise->expertise->name}}

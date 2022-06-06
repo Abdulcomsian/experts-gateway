@@ -33,8 +33,8 @@ About Us
                 <div class="col-lg-8">
                     {!! $about_us->description ?? '' !!}
                     <div class="multiBtn">
-                        <a href="./experts.html" class="findExpertBtn">Find An Expert</a>
-                        <a href="" class="applyMemberShip">Apply Fot Membership</a>
+                        <a href="{{ url('/experts') }}" class="findExpertBtn">Find An Expert</a>
+                        <a href="{{ route('lawyer-register') }}" class="applyMemberShip">Apply Fot Membership</a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -178,11 +178,12 @@ About Us
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2>Advisory Excellence Profiles<br> The Best Advisers Around The Globe</h2>
-                <a href="./experts.html" class="expertBtn">Find An Expert</a>
-                <a href="">Apply For Membership</a>
+                <a href="{{ url('/experts') }}" class="expertBtn">Find An Expert</a>
+                <a href="{{ route('lawyer-register') }}">Apply For Membership</a>
             </div>
         </div>
     </div>
+    @if(count($fixed_services) > 0)
     <div class="fixedService">
         <div class="container-fluid">
             <div class="row">
@@ -192,58 +193,25 @@ About Us
             </div>
             <div class="sliderDiv">
                 <div class="priceService">
+                    @if($fixed_services)
+                    @foreach($fixed_services as $fixed_service)
                     <div class="serviceBox">
-                        <img src="../assets/img/accounting.png" alt="" class="img-fluid">
-                        <h3>Accounting Services</h3>
+                        <img src="{{asset('fixed_service/'.$fixed_service->image)}}" width="auto" height="auto" alt="" class="img-fluid">
+                        <h4>{{$fixed_service->title}}</h4>
+                        <p>{{$fixed_service->expertise->name}}</p><br>
                         <div class="priceDiv">
-                            <p>Fixed Price: <span>$500</span>/mo</p>
+                            <p>Fixed Price: <span>${{$fixed_service->price}}</span> &nbsp; &nbsp; &nbsp;/{{$fixed_service->time_limit}}</p>
                         </div>
-                        <a href="">Lear More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                        <a href="{{ route('fixed_service_detail', $fixed_service->id) }}">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                     </div>
-                    <div class="serviceBox">
-                        <img src="../assets/img/law.png" alt="" class="img-fluid">
-                        <h3>Administrative Law</h3>
-                        <div class="priceDiv">
-                            <p>Fixed Price: <span>$500</span>/mo</p>
-                        </div>
-                        <a href="">Lear More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="serviceBox">
-                        <img src="../assets/img/banking.png" alt="" class="img-fluid">
-                        <h3>Banking and Finance</h3>
-                        <div class="priceDiv">
-                            <p>Fixed Price: <span>$500</span>/mo</p>
-                        </div>
-                        <a href="">Lear More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="serviceBox">
-                        <img src="../assets/img/accounting.png" alt="" class="img-fluid">
-                        <h3>Accounting Services</h3>
-                        <div class="priceDiv">
-                            <p>Fixed Price: <span>$500</span>/mo</p>
-                        </div>
-                        <a href="">Lear More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="serviceBox">
-                        <img src="../assets/img/law.png" alt="" class="img-fluid">
-                        <h3>Administrative Law</h3>
-                        <div class="priceDiv">
-                            <p>Fixed Price: <span>$500</span>/mo</p>
-                        </div>
-                        <a href="">Lear More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="serviceBox">
-                        <img src="../assets/img/banking.png" alt="" class="img-fluid">
-                        <h3>Banking and Finance</h3>
-                        <div class="priceDiv">
-                            <p>Fixed Price: <span>$500</span>/mo</p>
-                        </div>
-                        <a href="">Lear More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
-                    </div>
+                    @endforeach
+                    @endif
                 </div>
             </div>
         </div>
     </div>
+    @endif
+    @if(count($news) > 0)
     <div class="leatestNews">
         <div class="container-fluid">
             <div class="row">
@@ -257,73 +225,19 @@ About Us
                 <div class="col-lg-7">
                     <div class="sliderDiv">
                         <div class="newsSlider">
+                            @foreach($news as $new)
                             <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
+                                <img src="{{asset('news/'.$new->image)}}" width="223px" height="162px" alt="" class="img-fluid">
                                 <div class="cardContent">
                                     <div class="date">
-                                        <p>20 November, 2021</p>
+                                        <p>{{ date('Y/m/d', strtotime($new->created_at)) }}</p>
                                     </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
+                                    <h4>{{$new->title}}</h4>
+                                    {!! $new->description !!}
+                                    <!-- <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a> -->
                                 </div>
                             </div>
-                            <div class="newsCard">
-                                <img src="../assets/img/news2.png" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="newsCard">
-                                <img src="../assets/img/news1.png" alt="" class="img-fluid">
-                                <div class="cardContent">
-                                    <div class="date">
-                                        <p>20 November, 2021</p>
-                                    </div>
-                                    <h4>Pellentesque dictum Nam diam lorem</h4>
-                                    <p>Vivamfus scelerisqfue quaam id maurais elementuam rhoncus.</p>
-                                    <a href="">Learn More <img src="../assets/img/sliderArrow.png" alt=""></a>
-                                </div>
-                            </div>
-
+                            @endforeach
 
                         </div>
                     </div>
@@ -331,6 +245,7 @@ About Us
             </div>
         </div>
     </div>
+    @endif
     <div class="requestInformation">
         <div class="container-fluid">
             <div class="row">

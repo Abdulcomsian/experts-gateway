@@ -55,7 +55,7 @@ class FrontendController extends Controller
         if($search != '')
         {
             $data = DB::table('fixed_services')
-            ->where('expertise_id','like','%' .$search. '%')
+            ->where('expertise_id',$search)
             ->get();
         }
         else

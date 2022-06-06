@@ -1,6 +1,6 @@
 @extends('layout.loginlayout')
 @section('title')
-Experts
+Fixed Price Service
 @endsection
 @section('content') 
 <main>
@@ -211,7 +211,11 @@ Experts
         fetch(url)
         .then((resp) => resp.json()) //Transform the data into json
         .then(function(data){
-            document.getElementById('card').style="display:none";
+            if(document.getElementById('card') != null)
+            {
+               document.getElementById('card').style="display:none"; 
+            }
+            
             let expertises = data;
             console.log(expertises);
 

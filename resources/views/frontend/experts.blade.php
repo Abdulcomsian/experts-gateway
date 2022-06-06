@@ -333,7 +333,10 @@ Experts
         fetch(url)
         .then((resp) => resp.json()) //Transform the data into json
         .then(function(data){
-            document.getElementById('card').style="display:none";
+            if(document.getElementById('card') != null)
+            {
+                document.getElementById('card').style="display:none";
+            }
             let experts = data;
 
             document.getElementById('result').innerHTML = ``;

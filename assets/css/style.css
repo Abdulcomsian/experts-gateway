@@ -3592,7 +3592,7 @@ main .expertBanner .searchBox {
 .on-boarding-main .on-boarding-left-bar{
     height: 100vh;
     background: #fff;
-    padding: 80px 0px 0px 55px;
+    padding: 120px 0px 0px 55px;
 }
 .on-boarding-main .on-boarding-left-bar h3{
     font-family: MoskauMedium;
@@ -3641,6 +3641,7 @@ main .expertBanner .searchBox {
 }
 .on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li.active + .imageTab{
     display: block;
+    margin-bottom: 20px;
 }
 .on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li.active a{
     color: #EE2144;
@@ -3648,6 +3649,8 @@ main .expertBanner .searchBox {
 }
 .on-boarding-main .pills-div-main{
     background: #f8f9f9;
+    padding-top: 80px;
+    height: 100%;
 }
 .on-boarding-main .pills-div-main .uploadBanner{
     background-color: #F0F7FA;
@@ -3966,6 +3969,12 @@ form button{
 }
 
 @media screen and (max-width: 1600px) {
+    .on-boarding-main .pills-div-main{
+        padding: 0px;
+    }
+    .on-boarding-main .on-boarding-left-bar{
+        padding: 80px 0px 0px 55px;
+    }
     .orderSection .orderContent .orderDetaill ul li .orderInfo p {
         font-size: 18px;
     }

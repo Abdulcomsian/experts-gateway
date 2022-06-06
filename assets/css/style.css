@@ -3584,6 +3584,312 @@ main .expertBanner .searchBox {
 .aboutUs .multiBox .commonBox h2 {
     display: flex;
 }
+/************* On Boarding - CSS **************/
+.on-boarding-main{
+    padding: 150px 0px 0px !important;
+    background-color: #fff;
+}
+.on-boarding-main .on-boarding-left-bar{
+    height: 100vh;
+    background: #fff;
+    padding: 80px 0px 0px 55px;
+}
+.on-boarding-main .on-boarding-left-bar h3{
+    font-family: MoskauMedium;
+    font-size: 30px;
+    color: #032231;
+}
+.on-boarding-main .on-boarding-left-bar .progress-div{
+    margin: 20px 0px;
+}
+.on-boarding-main .on-boarding-left-bar .progress-div p{
+    font-size: 23px;
+    color: #032231;
+    font-family: MoskauMedium;
+    opacity: .54;
+}
+.on-boarding-main .on-boarding-left-bar .progress-div .percentage-text{
+    font-size: 38px !important;
+}
+.on-boarding-main .on-boarding-left-bar .progress-div .progress{
+    background-color: #dee1e4;
+    border-radius: 6px;
+    height: 6px;
+}
+.on-boarding-main .on-boarding-left-bar .progress-div .progress .progress-bar{
+    background-color: #EE2144;
+}
+.on-boarding-main .on-boarding-left-bar  .tab-pills-div{
+    padding: 60px 0px;
+}
+.on-boarding-main .on-boarding-left-bar  .tab-pills-div ul{
+    display: block;
+}
+.on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li a{
+    background: #fafbfb;
+    padding: 15px;
+    font-size: 18px;
+    font-family: MoskauMedium;
+    display: block;
+    margin-bottom: 33px;
+    color: #032231;
+    border-left: 3px solid #D5D5D5;
+}
+.imageTab{
+    display: none;
+    transition: all .5s linear;
+}
+.on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li.active + .imageTab{
+    display: block;
+}
+.on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li.active a{
+    color: #EE2144;
+    border-color: #EE2144;
+}
+.on-boarding-main .pills-div-main{
+    background: #f8f9f9;
+}
+.on-boarding-main .pills-div-main .uploadBanner{
+    background-color: #F0F7FA;
+    height: 220px;
+    position: relative;
+}
+.on-boarding-main .pills-div-main .uploadBanner img{
+    position: absolute;
+    left: 80px;
+    top: 12px;
+    mix-blend-mode: luminosity;
+}
+.on-boarding-main .pills-div-main .uploadBanner  .uploadImgBanner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.on-boarding-main .pills-div-main .uploadBanner  .uploadImgBanner input{
+    position: relative;
+    top: -43px;
+    opacity: 0;
+    cursor: pointer;
+}
+.on-boarding-main .pills-div-main .uploadBanner  .uploadImgBanner p{
+    border: 2px solid rgb(1 1 1 / 15%);
+    padding: 12px 30px;
+    font-size: 20px;
+    font-family: MoskauMedium;
+    cursor: pointer;
+}
+.on-boarding-main .pills-div-main .tab-content .tab-pane{
+    padding: 32px 100px;
+}
+.on-boarding-main .pills-div-main .profile-div{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 17px 49px #03223112;
+    border: undefined solid #010101;
+    opacity: 1;
+}
+.on-boarding-main .pills-div-main .profile-div .uploadPhoto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: -70px;
+}
+.on-boarding-main .pills-div-main .profile-div .uploadPhoto input{
+    position: relative;
+    top: -83px;
+    cursor: pointer;
+    z-index: 99999999;
+    opacity: 0;
+}
+.on-boarding-main .pills-div-main  .profile-div .uploadPhoto p{
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #032231;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-family: MoskauMedium;
+    border-radius: 100%;
+}
+.on-boarding-main .pills-div-main .profile-div .tabContent {
+    position: relative;
+}
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv{
+    padding: 0px 90px 20px;
+}
+.on-boarding-main .pills-div-main .profile-div .tabContent .lawyerForm{
+    padding: 40px 90px 20px;
+}
+.inputDiv{
+    margin-bottom: 32px;
+}
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv label{
+    font-size: 18px;
+    font-family: GelionBold;
+}
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv label i{
+    color: #89969B;
+}
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv input, 
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv textarea,
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv select{
+    border: 2px solid #E5E8EA;
+    padding: 15px 18px;
+    color: #607681;
+    font-size: 16px;
+    font-family: GelionRegular;
+    width: 100%;
+}
+form button{
+    background: transparent linear-gradient(311deg, #EF1D30 0%, var(--unnamed-color-ed2456) 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(311deg, #EF1D30 0%, #ED2456 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
+    border: none;
+    padding: 15px 62px;
+    font-size: 18px;
+    color: #fff;
+    opacity: 1;
+    font-family: MoskauMedium;
+}
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton select{
+    width: 80%;
+}
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton button{
+    background: #fff;
+    color: #000;
+    border: 1px solid;
+    font-size: 13px;
+    width: 20%;
+    padding: 0px;
+    height: 52px;
+    margin-left: 10px;
+}
+.on-boarding-main .pills-div-main .sendApproval{
+    padding: 30px 90px;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.on-boarding-main .pills-div-main .sendApproval p{
+    color: #626262;
+    font-size: 22px;
+    font-family: GelionRegular;
+    text-align: center;
+}
+#membership{
+    padding: 30px 60px !important;
+}
+.multipleMemberShip .commonBox{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 18px 49px #01254814;
+    opacity: 1;
+    padding: 40px 25px;
+}
+.multipleMemberShip .commonBox .header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.multipleMemberShip .commonBox .header p{
+    margin-left: 18px;
+    font-size: 24px;
+    font-family: MoskauMedium;
+}
+.multipleMemberShip .commonBox .priceDiv{
+    margin: 22px 0px;
+}
+.multipleMemberShip .commonBox .priceDiv span{
+    font-size: 12px;
+    color: #49616D;
+    opacity: 0.84;
+    font-family: GelionSemiBold;
+}
+.multipleMemberShip .commonBox .priceDiv .actualPrice{
+    color: #032231;
+    font-size: 24px;
+    font-family: MoskauMedium;
+}
+.multipleMemberShip .commonBox .priceDiv .yearPrice span{
+    font-size: 16px;
+    font-family: MoskauMedium;
+}
+.multipleMemberShip .commonBox .packageDetail p,
+.multipleMemberShip .commonBox .list_div p,
+.multipleMemberShip .commonBox .list_div ul li{
+    color: #49616D;
+    font-size: 12px;
+    font-family: GelionRegular;
+}
+.multipleMemberShip .commonBox .packageDetail .line{
+    margin: 12px 0px;
+    width: 34px;
+    height: 4px;
+    background: #404040 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 0.2;
+}
+.multipleMemberShip .commonBox .list_div ul p{
+    font-family: GelionSemiBold;
+    text-transform: uppercase;
+}
+.multipleMemberShip .commonBox .list_div ul{
+    margin-bottom: 34px;
+    margin-top: 12px;
+    list-style: disc;
+}
+.multipleMemberShip .commonBox .savePrice{
+    background: #ebeeef;
+}
+.multipleMemberShip .commonBox .savePrice li p{
+    font-size: 12px;
+    color: #022331;
+    font-family: GelionMedium;
+}
+.multipleMemberShip .commonBox .savePrice li span{
+    color: #8b9aa1;
+    font-size: 10px;
+}
+.multipleMemberShip .commonBox .savePrice li span span{
+    opacity: 1;
+    color: #EE2144;
+}
+.multipleMemberShip .commonBox .savePrice ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+}
+.multipleMemberShip .commonBox .savePrice ul li.active{
+    background: #fff;
+    padding: 10px;
+    border: 1px solid;
+}
+.multipleMemberShip .commonBox button{
+    width: 100%;
+    background: transparent linear-gradient(311deg, #EF1D30 0%, var(--unnamed-color-ed2456) 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(311deg, #EF1D30 0%, #ED2456 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
+    border: none;
+    padding: 15px 62px;
+    font-size: 18px;
+    color: #fff;
+    opacity: 1;
+    font-family: MoskauMedium;
+    margin-top: 15px;
+}
+
+
+
 
 
 
@@ -4812,6 +5118,18 @@ main .expertBanner .searchBox {
 }
 
 @media screen and (max-width: 1200px) {
+    #membership {
+        padding: 20px !important;
+    }
+    .multipleMemberShip .commonBox button{
+        padding: 10px 20px;
+    }
+    .on-boarding-main .on-boarding-left-bar {
+        padding: 80px 20px 0px;
+    }
+    .on-boarding-main .on-boarding-left-bar .progress-div .percentage-text {
+        font-size: 28px !important;
+    }
     .orderSection .orderContent .orderDetaill ul li .orderInfo span {
         font-size: 14px;
     }
@@ -4832,12 +5150,18 @@ main .expertBanner .searchBox {
         padding: 10px 40px;
         font-size: 16px;
     }
-
+    .on-boarding-main .pills-div-main .tab-content .tab-pane{
+        padding: 32px 50px;
+    }
+    .on-boarding-main .on-boarding-left-bar h3 br{
+        display: none;
+    }
     main .mainBanner .bannerLeft p {
         font-size: 28px;
     }
 
-    main .mainBanner .bannerLeft button {
+    main .mainBanner .bannerLeft button,
+    .on-boarding-main .pills-div-main .uploadBanner .uploadImgBanner p {
         font-size: 16px;
     }
 
@@ -5109,6 +5433,10 @@ main .expertBanner .searchBox {
 }
 
 @media screen and (max-width: 992px) {
+    
+    .on-boarding-main .on-boarding-left-bar{
+        height: auto;
+    }
     .pricingDiv .priceDivHeader p {
         font-size: 70px;
     }
@@ -5578,6 +5906,10 @@ main .expertBanner .searchBox {
 }
 
 @media screen and (max-width: 768px) {
+    .on-boarding-main .pills-div-main .tab-content .tab-pane,
+    .on-boarding-main .pills-div-main .profile-div .tabContent .formDiv{
+        padding: 20px;
+    }
     .contactDetail .contactBox {
         height: auto;
     }
@@ -5895,6 +6227,9 @@ main .expertBanner .searchBox {
 }
 
 @media screen and (max-width: 580px) {
+    .on-boarding-main{
+        padding: 60px 0px 0px !important;
+    }
     .recommendedLawyer .buyNow {
         display: block;
     }

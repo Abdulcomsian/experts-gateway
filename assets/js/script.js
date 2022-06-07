@@ -1,11 +1,42 @@
 let count=2;
+$(".submitButton").click(function(e){
+  e.preventDefault();
+  $(".lawyerForm").css("display","none");
+    $(".sendApproval").css("display","flex");
+    setTimeout(() => {
+      $(".progress-bar").css("width","80%");
+    $(".percentage-text").text("80%");
+    var currentItem= $(".on-boarding-main .on-boarding-left-bar .tab-pills-div li.active");
+    console.log(currentItem);
+    currentItem.removeClass("active");
+    currentItem.next("div").next("li").addClass("active")
+    $(".on-boarding-main .pills-div-main .tab-content .tab-pane.in.active.show").next("div").addClass("in")
+    $(".on-boarding-main .pills-div-main .tab-content .tab-pane.in.active.show").removeClass("active")
+    $(".on-boarding-main .pills-div-main .tab-content .tab-pane.in.show").removeClass("show")
+    $(".on-boarding-main .pills-div-main .tab-content .tab-pane.in").removeClass("in")
+    $("#membership").addClass("show")
+    $("#membership").addClass("active")
+    $("#membership").addClass("in")
+    $(".on-boarding-main .on-boarding-left-bar h3").text("Almost Done!");
+    }, 2000);
 
-
-
-
-
-
-
+})
+$(".saveButton").click(function(e){
+  e.preventDefault();
+  $(".progress-bar").css("width","60%");
+  $(".percentage-text").text("60%");
+  var currentItem= $(".on-boarding-main .on-boarding-left-bar .tab-pills-div li.active");
+  console.log(currentItem);
+  currentItem.removeClass("active");
+  currentItem.next("div").next("li").addClass("active")
+  $(".on-boarding-main .pills-div-main .tab-content .tab-pane.in.active.show").next("div").addClass("in")
+  $(".on-boarding-main .pills-div-main .tab-content .tab-pane.in.active.show").removeClass("active")
+  $(".on-boarding-main .pills-div-main .tab-content .tab-pane.in.show").removeClass("show")
+  $(".on-boarding-main .pills-div-main .tab-content .tab-pane.in").removeClass("in")
+  $("#lawyer").addClass("show")
+  $("#lawyer").addClass("active")
+  $("#lawyer").addClass("in")
+})
 $(".nav-pills li").click(function(){
   $('.nav-pills li').removeClass("active");
   $(this).addClass("active")

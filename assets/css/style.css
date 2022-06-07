@@ -3758,6 +3758,7 @@ form button{
     color: #fff;
     opacity: 1;
     font-family: MoskauMedium;
+    cursor: pointer;
 }
 .on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton select{
     width: 80%;
@@ -3783,6 +3784,7 @@ form button{
     display: none;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .on-boarding-main .pills-div-main .sendApproval p{
     color: #626262;

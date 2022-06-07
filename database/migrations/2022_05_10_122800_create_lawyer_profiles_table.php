@@ -26,8 +26,8 @@ class CreateLawyerProfilesTable extends Migration
             $table->string('partise_area')->nullable();
             $table->string('secondary_partise_area')->nullable();
             $table->string('third_partise_area')->nullable();
-            $table->longText('membership')->nullable();
-            $table->longText('education')->nullable();
+            $table->longText('membership_id')->nullable();
+            $table->longText('education_id')->nullable();
             $table->longText('description')->nullable();
             $table->timestamps();
         });

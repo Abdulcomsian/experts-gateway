@@ -11,6 +11,6 @@ rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
 <link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/css/intlTelInput.css" />
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-    @toastr_css
+<script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+@toastr_css
 @stack('styles')

@@ -11,6 +11,5 @@
     @include('layout.partials.lawyer_footer')
     
     @include('layout.partials.lawyer_footer-scripts')
-    @yield('script')
   </body>
 </html>

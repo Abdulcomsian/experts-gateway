@@ -61,22 +61,50 @@ class dashboardController extends Controller
 
     public function profile_store_1(Request $request)
     {
-        $user_id = Auth::id();
-        $this->validate($request,[  
-            'f_name'=>'required|string|max:255', 
-            'l_name'=>'required|string|max:255', 
-            'title'=>'required|string', 
-            'image'=>'required',   
-            'b_image'=>'required',   
+        $messages = [
+            'f_name.required' => 'Please Enter First Name',
+            'l_name.required' => 'Please Enter Last Name',
+            'image.required' => 'Please provide a profile picture',
+            'b_image.required' => 'Please provide your background image',
+            'description.required' => 'Enter Description here',
+        ];
 
-        ]);
-        $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
-        if($lawyer_profile != null)
-        {
-            $lawyer_profile= LawyerProfile::find($lawyer_profile->id);
+        $validatorRules = [
+            'f_name' => 'required',
+            'l_name' => 'required',
+            'image' => 'required',
+            'b_image' => 'required',
+            'linkedin_url' => 'required',
+            'description' => 'required|max:10000',
+        ];
+
+        $validator = Validator::make($request->all(), $validatorRules, $messages);
+
+        ### On fail returns responses ###
+        if ($validator->fails()) {
+            if ($validator->fails()) {
+                return $this->errorResponse($validator->messages(), 422);
+            }
+        } else {
+            $user_id = Auth::id();
+            $chk_lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
+            if($chk_lawyer_profile)
+            {
+                $lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
+            }
+            else{
+                $lawyer_profile = new LawyerProfile;
+            }
             $lawyer_profile->user_id = $user_id;
-            $lawyer_profile->complete = $request->complete;
-            $lawyer_profile->title = $request->title;
+            if($chk_lawyer_profile)
+            {
+                $lawyer_profile->complete = 2;
+            }
+            else{
+                $lawyer_profile->complete = 1;
+            }
+            $lawyer_profile->linkedin_url = $request->linkedin_url;
+            $lawyer_profile->description = $request->description;
             if($request->hasfile('image'))
             {
                 $image = $request->file('image');
@@ -101,40 +129,12 @@ class dashboardController extends Controller
             $user->f_name = $request->f_name;
             $user->l_name = $request->l_name;
             $user->save();
+            return response()->json(['success'=>'Profile Created Successfully','complete'=>$request->complete]);
         }
-        else{
-            $lawyer_profile= new LawyerProfile;
-            $lawyer_profile->user_id = $user_id;
-            $lawyer_profile->complete = $request->complete;
-            $lawyer_profile->title = $request->title;
-            if($request->hasfile('image'))
-            {
-                $image = $request->file('image');
-                $extensions =$image->extension();
-
-                $image_name =time().'.'. $extensions;
-                $image->move('lawyer_profile/',$image_name);
-                $lawyer_profile->image=$image_name;
-            }
-            if($request->hasfile('b_image'))
-            {
-                $c_image = $request->file('b_image');
-                $c_extensions =$c_image->extension();
-
-                $image_c_name =time().'.'. $c_extensions;
-                $c_image->move('lawyer_cover_image/',$image_c_name);
-                $lawyer_profile->b_image=$image_c_name;
-            }
-            $lawyer_profile->save();
-
-            $user= User::where('id',$user_id)->first();
-            $user->f_name = $request->f_name;
-            $user->l_name = $request->l_name;
-            $user->save();
-        }
-        toastSuccess('Successfully Added');
-        return redirect('lawyer/profile');
+        
+            
     }
+
 
 
     public function profile_update_1(Request $request,$id)
@@ -181,42 +181,49 @@ class dashboardController extends Controller
 
     public function profile_store_2(Request $request)
     {
-        $user_id = Auth::id();
-        $this->validate($request,[  
-            'address'=>'required', 
-            'language_id'=>'required', 
-            'expertise_id'=>'required',   
+        $messages = [
+            'partise_area.required' => 'Please provide your partise area',
+            'address.required' => 'Please provide your address',
+            'language_id.required' => 'Please provide Language',
+            'membership_id.required' => 'Please provide membership',
+            'education_id.required' => 'Enter Education here',
+        ];
 
-        ]);
-        $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
-        if($lawyer_profile != null)
-        {
-            $lawyer_profile= LawyerProfile::find($lawyer_profile->id);
-            $lawyer_profile->address = $request->address;
-            $lawyer_profile->complete = $request->complete;
-            $lawyer_profile->save();
+        $validatorRules = [
+            'partise_area' => 'required',
+            'address' => 'required',
+            'language_id' => 'required',
+            'membership_id' => 'required',
+            'education_id' => 'required',
+        ];
 
-            foreach($request->language_id as $language)
-            {
-                $lawyer_language= new LawyersHasLanguage;
-                $lawyer_language->language_id = $language;
-                $lawyer_language->lawyer_profile_id = $lawyer_profile->id;
-                $lawyer_language->save();
+        $validator = Validator::make($request->all(), $validatorRules, $messages);
+
+        ### On fail returns responses ###
+        if ($validator->fails()) {
+            if ($validator->fails()) {
+                return $this->errorResponse($validator->messages(), 422);
             }
-
-            foreach($request->expertise_id as $expertise)
+        } else {
+            $user_id = Auth::id();
+            $chk_lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
+            if($chk_lawyer_profile)
             {
-                $lawyer_expertise = new LawyersHasExpertise;
-                $lawyer_expertise->expertise_id = $expertise;
-                $lawyer_expertise->lawyer_profile_id = $lawyer_profile->id;
-                $lawyer_expertise->save();
+                $lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
             }
-        }
-        else{
-            $lawyer_profile= new LawyerProfile;
+            else{
+                $lawyer_profile = new LawyerProfile;
+            }
             $lawyer_profile->user_id = $user_id;
             $lawyer_profile->address = $request->address;
-            $lawyer_profile->complete = $request->complete;
+            $lawyer_profile->partise_area = $request->partise_area;
+            if($chk_lawyer_profile)
+            {
+                $lawyer_profile->complete = 2;
+            }
+            else{
+                $lawyer_profile->complete = 1;
+            }
             $lawyer_profile->save();
 
             foreach($request->language_id as $language)
@@ -227,19 +234,13 @@ class dashboardController extends Controller
                 $lawyer_language->save();
             }
 
-            foreach($request->expertise_id as $expertise)
-            {
-                $lawyer_expertise = new LawyersHasExpertise;
-                $lawyer_expertise->expertise_id = $expertise;
-                $lawyer_expertise->lawyer_profile_id = $lawyer_profile->id;
-                $lawyer_expertise->save();
-            }
-            
+            return response()->json(['success'=>'Profile Created Successfully','complete'=>$request->complete]);
+
             
         }
-        toastSuccess('Successfully Added');
-        return redirect('lawyer/profile');
     }
+
+
 
     public function profile_update_2(Request $request,$id)
     {
@@ -276,49 +277,16 @@ class dashboardController extends Controller
         return redirect('lawyer/profile');
     }
 
-    public function profile_store_3(Request $request)
+    
+    protected function errorResponse($message = null, $code, $redirectURL = null)
     {
-        // dd($request->all());
-        $user_id = Auth::id();
-        $this->validate($request,[  
-            'profile_detail'=>'required',  
+        return response()->json([
+            'status' => 'Error',
+            'message' => $message,
+            'data' => null,
+            'redirectURL' => $redirectURL,
+        ], $code);
 
-        ]);
-        $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
-        if($lawyer_profile != null)
-        {
-            $lawyer_profile= LawyerProfile::find($lawyer_profile->id);
-            $lawyer_profile->profile_detail = $request->profile_detail;
-            $lawyer_profile->complete = $request->complete;
-            $lawyer_profile->save();
-        }
-        else{
-            $lawyer_profile= new LawyerProfile;
-            $lawyer_profile->profile_detail = $request->profile_detail;
-            $lawyer_profile->complete = $request->complete;
-            $lawyer_profile->user_id = $user_id;
-            $lawyer_profile->save();
-        }
-        
-        toastSuccess('Successfully Added');
-        return redirect('lawyer/profile');
-    }
-
-    public function profile_update_3(Request $request,$id)
-    {
-        $user_id = Auth::id();
-        $this->validate($request,[  
-            'profile_detail'=>'required',  
-
-        ]);
-        
-        $lawyer_profile= LawyerProfile::find($id);
-        $lawyer_profile->profile_detail = $request->profile_detail;
-        $lawyer_profile->save();
-        
-        
-        toastSuccess('Successfully Added');
-        return redirect('lawyer/profile');
     }
 
     public function profile_store_4(Request $request)
@@ -344,67 +312,6 @@ class dashboardController extends Controller
             $lawyer_profile->save();
         }
         toastSuccess('Successfully Added');
-        return redirect('lawyer/profile');
-    }
-
-    public function profile_update_4(Request $request,$id)
-    {
-        $user_id = Auth::id();
-
-        $this->validate($request,[  
-            'education'=>'required',  
-
-        ]);
-
-        $lawyer_profile= LawyerProfile::find($id);
-        $lawyer_profile->education = implode($request->education, ',');
-        $lawyer_profile->save();
-        
-        toastSuccess('Successfully Updated');
-        return redirect('lawyer/profile');
-    }
-
-    public function profile_store_5(Request $request)
-    {
-        // dd($request->all());
-        $user_id = Auth::id();
-        $this->validate($request,[  
-            'membership'=>'required',  
-
-        ]);
-        $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
-        if($lawyer_profile != null)
-        {
-            $lawyer_profile= LawyerProfile::find($lawyer_profile->id);
-            $lawyer_profile->membership = implode($request->membership, ',');
-            $lawyer_profile->complete = $request->complete;
-            $lawyer_profile->save();
-        }
-        else{
-            $lawyer_profile= new LawyerProfile;
-            $lawyer_profile->user_id = $user_id;
-            $lawyer_profile->membership = implode($request->membership, ',');
-            $lawyer_profile->complete = $request->complete;
-            $lawyer_profile->save();
-        }
-        toastSuccess('Successfully Added');
-        return Redirect::back();
-    }
-
-    public function profile_update_5(Request $request,$id)
-    {
-        $user_id = Auth::id();
-
-        $this->validate($request,[  
-            'membership'=>'required',  
-
-        ]);
-
-        $lawyer_profile= LawyerProfile::find($id);
-        $lawyer_profile->membership = implode($request->membership, ',');
-        $lawyer_profile->save();
-        
-        toastSuccess('Successfully Updated');
         return redirect('lawyer/profile');
     }
 

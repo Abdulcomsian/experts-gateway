@@ -23,8 +23,8 @@ class FrontendController extends Controller
         $contact_us = ContactUs::first();
         $news = News::latest()->take(10)->get();
         $fixed_services = FixedService::where('status',1)->get();
-        $lawyers = User::with('lawyer_profile')->whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
-        return view('welcome' , compact('contact_us','fixed_services','news','lawyers'));
+        // $lawyers = User::with('lawyer_profile')->whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
+        return view('welcome' , compact('contact_us','fixed_services','news'));
     }
 
     public function about_us()

@@ -246,7 +246,7 @@ Expert Gateway
                         tristique viverra. Aliquam eu scelerisque orci.</p>
                 </div>
             </div>
-            @if(count($lawyers) > 0)
+            {{-- @if(count($lawyers) > 0)
             <div class="sliderDiv">
                 <div class="expertSlider">
                     @foreach($lawyers as $key=>$lawyer)
@@ -276,7 +276,7 @@ Expert Gateway
                     @endforeach
                 </div>
             </div>
-            @endif
+            @endif --}}
         </div>
     </div>
     <div class="excellence">

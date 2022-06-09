@@ -14,6 +14,29 @@ Profile building
                     <div class="on-boarding-left-bar">
                         <div class="content-div">
                             <h3>Ready to Start<br> Your Journey?</h3>
+                            @if($lawyer_profile)
+                            @if($lawyer_profile->complete == 2)
+                            <div class="progress-div">
+                                <p><span class="percentage-text">100%</span> Complete</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                                        <span class="sr-only">70% Complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                            @elseif($lawyer_profile->complete == 1)
+                            <div class="progress-div">
+                                <p><span class="percentage-text">50%</span> Complete</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                        <span class="sr-only">70% Complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                            @else
                             <div class="progress-div">
                                 <p><span class="percentage-text">0%</span> Complete</p>
                                 <div class="progress">
@@ -23,13 +46,14 @@ Profile building
                                     </div>
                                 </div>
                             </div>
+                            @endif
                             <div class="tab-pills-div">
                                 <ul class="nav nav-pills">
                                     <li class="active"><a data-toggle="pill" href="#profile">Profile</a></li>
                                     <div class="imageTab">
                                         <img src="../../assets/img/profileTab.svg" alt="" class="img-fluid">
                                     </div>
-                                    <li><a data-toggle="pill" href="#lawyer">Lawyer Information</a></li>
+                                    <li><a data-toggle="pill" id="lawyer_info" href="#lawyer">Lawyer Information</a></li>
                                     <div class="imageTab">
                                         <img src="../../assets/img/lawyerIcon.svg" alt="" class="img-fluid">
                                     </div>
@@ -51,16 +75,26 @@ Profile building
                                                 <img src="../../assets/img/uploadIcon.png" alt="" class="img-fluid">
                                                 <div class="uploadImgBanner first_form">
                                                     <p>Upload Cover Image</p>
-                                                    <input type="file" name="b_image" id="b_image" accept="image/*">
-                                                    <span class="text-danger b_image_valid"></span>
+                                                    <input type="file" name="b_image" value="{{$lawyer_profile->b_image }}" id="b_image" accept="image/*">
+                                                    <span class="text-danger b_image_valid"></span><br>
+                                                    @if($lawyer_profile->b_image != '')
+                                                    <div class="profileAvatar">
+                                                        <img style="width: 140px !important; left:321px; top:72px ;height: 70px !important; " src="{{asset('lawyer_cover_image/' .$lawyer_profile->b_image)}}" alt="" class="img-fluid">
+                                                    </div>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="tabContent">
                                                 <div class="uplodProfilePhoto">
                                                     <div class="uploadPhoto first_form">
                                                         <p>Upload <br>Profile Image</p>
-                                                        <input type="file" name="image" id="image" accept="image/*">
+                                                        <input type="file" name="image" value="{{$lawyer_profile->image }}" id="image" accept="image/*">
                                                         <span class="text-danger image_valid"></span>
+                                                        @if($lawyer_profile->image != '')
+                                                        <div class="profileAvatar">
+                                                            <img style="width: 140px !important; height: 140px !important; border-radius: 84px;" src="{{asset('lawyer_profile/' .$lawyer_profile->image)}}" alt="" class="img-fluid">
+                                                        </div>
+                                                        @endif
                                                     </div>
                                                 </div>
                                                 <div class="formDiv">
@@ -68,28 +102,28 @@ Profile building
                                                         <div class="col-lg-6">
                                                             <div class="inputDiv first_form">
                                                                 <label for="">First Name</label>
-                                                                <input type="text" name="f_name" id="f_name" value="" placeholder="Enter Your First Name">
+                                                                <input type="text" name="f_name" id="f_name" value="{{$lawyer->f_name }}" placeholder="Enter Your First Name">
                                                                 <span class="text-danger f_name_valid"></span>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="inputDiv first_form">
                                                                 <label for="">Last Name</label>
-                                                                <input type="text" name="l_name" id="l_name" value="" placeholder="Enter Your Last Name">
+                                                                <input type="text" name="l_name" id="l_name" value="{{$lawyer->l_name}}" placeholder="Enter Your Last Name">
                                                                 <span class="text-danger l_name_valid"></span>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-12">
                                                             <div class="inputDiv first_form">
                                                                 <label for="">LinkedIn url</label>
-                                                                <input type="url" name="linkedin_url" id="linkedin_url" value="" placeholder="Enter Your LinkedIn url">
+                                                                <input type="url" name="linkedin_url" id="linkedin_url" value="{{$lawyer_profile->linkedin_url ?? ''}}" placeholder="Enter Your LinkedIn url">
                                                                 <span class="text-danger linkedin_url_valid"></span>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-12">
                                                             <div class="inputDiv first_form">
                                                                 <label for="">Profile Description</label>
-                                                                <textarea name="description" id="description" class="ckeditor" placeholder="Enter Your Profile Description"></textarea>
+                                                                <textarea name="description" id="description" class="ckeditor" placeholder="Enter Your Profile Description">{{$lawyer_profile->description ?? ''}}</textarea>
                                                                 <span class="text-danger description_valid"></span>
                                                             </div>
                                                         </div>
@@ -115,7 +149,7 @@ Profile building
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv second_form">
                                                             <label for="">Location</label>
-                                                            <input type="text" name="address" id="address" value="" placeholder="Enter Your Location">
+                                                            <input type="text" name="address" id="address" value="{{$lawyer_profile->address ?? ''}}" placeholder="Enter Your Location">
                                                             <span class="text-danger address_valid"></span>
                                                         </div>
                                                     </div>
@@ -124,9 +158,25 @@ Profile building
                                                             <label for="">Select Language</label>
                                                             <select class="js-example-basic-multiple" name="language_id[]" id="language_id" multiple="multiple">
                                                                 <option disabled> Select Language</option>
+                                                                @if($lawyer_language)
+                                                                @foreach($languages as $language)
+                                                                @foreach($lawyer_language as $l_language)
+                                                                @php 
+                                                                $selected="";
+                                                                if($l_language->language_id == $language->id ){
+                                                                    $selected="selected";
+                                                                    break;
+                                                                }
+                                                                @endphp
+                                                                @endforeach
+                                                                <option value="{{$language->id}}"
+                                                                {{$selected}} >{{$language->name}}</option>
+                                                                @endforeach
+                                                                @else
                                                                 @foreach($languages as $language)
                                                                 <option value="{{$language->id}}">{{$language->name}}</option>
                                                                 @endforeach
+                                                                @endif
                                                             </select>
                                                             <span class="text-danger language_id_valid"></span>
                                                         </div>
@@ -414,6 +464,13 @@ Profile building
                     $('.progress-bar').css('width', '100%');
                     $('.percentage-text').text('100%');
                 }
+                $('#lawyer_info').trigger('click');
+                // scrool to top
+                $('html, body').animate({
+                    scrollTop: $("#lawyer_info").offset().top
+                }, 100);
+                
+                
             },
             error: function (data) {
                 // convert json to object

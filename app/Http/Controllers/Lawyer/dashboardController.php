@@ -32,13 +32,15 @@ class dashboardController extends Controller
         $languages = Language::get();
         $expertises = Expertise::get();
         $lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
+        $lawyer_language =null;
+        $lawyer_expertises =null;
         if($lawyer_profile)
         {
             $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
             $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
             if($lawyer->status == 0)
             {
-               return view('lawyer.build_profile',compact('lawyer','lawyer_language','lawyer_expertises','languages','expertises','lawyer_profile')); 
+               return view('lawyer.build_profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_expertises','languages','expertises','lawyer_profile')); 
             }
             elseif($lawyer->status == 1)
             {
@@ -49,7 +51,7 @@ class dashboardController extends Controller
         else{
             if($lawyer->status == 0)
             {
-               return view('lawyer.build_profile',compact('lawyer','languages','expertises','lawyer_profile')); 
+               return view('lawyer.build_profile',compact('lawyer','languages','expertises','lawyer_profile','lawyer_expertises','lawyer_language')); 
             }
             elseif($lawyer->status == 2)
             {
@@ -98,7 +100,16 @@ class dashboardController extends Controller
             $lawyer_profile->user_id = $user_id;
             if($chk_lawyer_profile)
             {
-                $lawyer_profile->complete = 2;
+                if($chk_lawyer_profile->image && $chk_lawyer_profile->address)
+                {
+                    $lawyer_profile->complete = 2;
+                }
+                elseif($request->image && $chk_lawyer_profile->address){
+                    $lawyer_profile->complete = 2;
+                }
+                elseif($chk_lawyer_profile->image && $chk_lawyer_profile->address == null){
+                    $lawyer_profile->complete = 1;
+                }
             }
             else{
                 $lawyer_profile->complete = 1;
@@ -129,7 +140,7 @@ class dashboardController extends Controller
             $user->f_name = $request->f_name;
             $user->l_name = $request->l_name;
             $user->save();
-            return response()->json(['success'=>'Profile Created Successfully','complete'=>$request->complete]);
+            return response()->json(['success'=>'Profile Created Successfully','complete'=>$lawyer_profile->complete]);
         }
         
             
@@ -217,9 +228,26 @@ class dashboardController extends Controller
             $lawyer_profile->user_id = $user_id;
             $lawyer_profile->address = $request->address;
             $lawyer_profile->partise_area = $request->partise_area;
+            if($request->secondary_partise_area)
+            {
+                $lawyer_profile->secondary_partise_area = $request->secondary_partise_area;
+            }
+            if($request->third_partise_area)
+            {
+                $lawyer_profile->third_partise_area = $request->third_partise_area;
+            }
             if($chk_lawyer_profile)
             {
-                $lawyer_profile->complete = 2;
+                if($chk_lawyer_profile->image && $chk_lawyer_profile->address)
+                {
+                    $lawyer_profile->complete = 2;
+                }
+                elseif($chk_lawyer_profile->image && $request->address){
+                    $lawyer_profile->complete = 2;
+                }
+                elseif($chk_lawyer_profile->image == null && $chk_lawyer_profile->address){
+                    $lawyer_profile->complete = 1;
+                }
             }
             else{
                 $lawyer_profile->complete = 1;
@@ -234,7 +262,7 @@ class dashboardController extends Controller
                 $lawyer_language->save();
             }
 
-            return response()->json(['success'=>'Profile Created Successfully','complete'=>$request->complete]);
+            return response()->json(['success'=>'Profile Created Successfully','complete'=>$lawyer_profile->complete]);
 
             
         }

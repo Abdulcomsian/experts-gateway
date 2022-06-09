@@ -75,9 +75,9 @@ Profile building
                                                 <img src="../../assets/img/uploadIcon.png" alt="" class="img-fluid">
                                                 <div class="uploadImgBanner first_form">
                                                     <p>Upload Cover Image</p>
-                                                    <input type="file" name="b_image" value="{{$lawyer_profile->b_image }}" id="b_image" accept="image/*">
+                                                    <input type="file" name="b_image" value="{{$lawyer_profile->b_image ??'' }}" id="b_image" accept="image/*">
                                                     <span class="text-danger b_image_valid"></span><br>
-                                                    @if($lawyer_profile->b_image != '')
+                                                    @if($lawyer_profile)
                                                     <div class="profileAvatar">
                                                         <img style="width: 140px !important; left:321px; top:72px ;height: 70px !important; " src="{{asset('lawyer_cover_image/' .$lawyer_profile->b_image)}}" alt="" class="img-fluid">
                                                     </div>
@@ -88,9 +88,9 @@ Profile building
                                                 <div class="uplodProfilePhoto">
                                                     <div class="uploadPhoto first_form">
                                                         <p>Upload <br>Profile Image</p>
-                                                        <input type="file" name="image" value="{{$lawyer_profile->image }}" id="image" accept="image/*">
+                                                        <input type="file" name="image" value="{{$lawyer_profile->image ?? '' }}" id="image" accept="image/*">
                                                         <span class="text-danger image_valid"></span>
-                                                        @if($lawyer_profile->image != '')
+                                                        @if($lawyer_profile)
                                                         <div class="profileAvatar">
                                                             <img style="width: 140px !important; height: 140px !important; border-radius: 84px;" src="{{asset('lawyer_profile/' .$lawyer_profile->image)}}" alt="" class="img-fluid">
                                                         </div>

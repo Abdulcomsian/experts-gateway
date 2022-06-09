@@ -1,6 +1,6 @@
 @extends('layout.admin_panel.master')
 @section('title')
-Edit Lawyer Profile
+Show Lawyer Profile
 @endsection
 @push('styles')
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -45,7 +45,7 @@ Edit Lawyer Profile
                                         <!--begin::Row-->
                                         <div class="row gx-10 mb-5">
                                             <!--begin::Col-->
-                                            <div class="col-lg-4">
+                                            <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">First Name</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
@@ -55,7 +55,7 @@ Edit Lawyer Profile
                                             </div>
                                             <!--end::Col-->
                                             <!--begin::Col-->
-                                            <div class="col-lg-4">
+                                            <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Last Name</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
@@ -65,14 +65,14 @@ Edit Lawyer Profile
                                             </div>
                                             <!--end::Col-->
                                             <!--begin::Col-->
-                                            <div class="col-lg-4">
+                                            {{-- <div class="col-lg-4">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Lawyer Title</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     <p>{{$lawyer_profile->title}}</p>
                                                 </div><br><br>
                                                 <!--end::Input group-->
-                                            </div>
+                                            </div> --}}
                                             <!--end::Col-->
                                             <!--begin::Col-->
                                             <div class="col-lg-12">
@@ -89,30 +89,12 @@ Edit Lawyer Profile
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Profile Detail</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <p>{!! $lawyer_profile->profile_detail !!}</p>
+                                                    <p>{!! $lawyer_profile->description !!}</p>
                                                 </div><br><br>
                                                 <!--end::Input group-->
                                             </div>
                                             <!--end::Col-->
-                                            <!--begin::Col-->
-                                            <div class="col-lg-6">
-                                                <div class="multiSelect">
-                                                    <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Expertise</label>
-                                                    <!--begin::Input group-->
-                                                    <div class="mb-5">
-                                                        <p>
-                                                            @foreach($lawyer_expertises as $expertise)
-                                                                {{$expertise->expertise->name}}
-                                                                @if(!($loop->last))
-                                                                ,
-                                                                @endif
-                                                            @endforeach
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <!--end::Input group-->
-                                            </div>
-                                            <!--end::Col-->
+                                            
                                             <!--begin::Col-->
                                             <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Language</label>
@@ -127,6 +109,21 @@ Edit Lawyer Profile
                                                         @endforeach
                                                     </p>
                                                 </div><br><br>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <!--end::Col-->
+
+                                            <!--begin::Col-->
+                                            <div class="col-lg-6">
+                                                {{-- <div class="multiSelect">
+                                                    <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Area of Expertises</label>
+                                                    <!--begin::Input group-->
+                                                    <div class="mb-5">
+                                                        <p>
+                                                            {{$lawyer_profile->partise_area}}
+                                                        </p>
+                                                    </div>
+                                                </div> --}}
                                                 <!--end::Input group-->
                                             </div>
                                             <!--end::Col-->
@@ -162,7 +159,14 @@ Edit Lawyer Profile
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Education</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <p>{{$lawyer_profile->education}}</p> 
+                                                    <p>
+                                                        @foreach($lawyer_educations as $lawyer_education)
+                                                            {{$lawyer_education->education->education_name}}
+                                                            @if(!($loop->last))
+                                                            ,
+                                                            @endif
+                                                        @endforeach
+                                                    </p> 
                                                         
                                                 </div>
                                                 <!--end::Input group-->
@@ -174,7 +178,14 @@ Edit Lawyer Profile
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Membership</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <p>{{$lawyer_profile->membership}}</p>
+                                                    <p>
+                                                        @foreach($lawyer_memberships as $lawyer_membership)
+                                                            {{$lawyer_membership->membership->membership_name}}
+                                                            @if(!($loop->last))
+                                                            ,
+                                                            @endif
+                                                        @endforeach
+                                                    </p>
                                                 </div>
                                                 <!--end::Input group-->
                                             </div><br>

@@ -11,10 +11,12 @@ use App\Models\User;
 use App\Models\Expertise;
 use App\Models\Language;
 use App\Models\LawyerProfile;
+use App\Models\LawyersHasEducation;
+use App\Models\Education;
+use App\Models\Membership;
+use App\Models\LawyersHasMembership;
 use App\Models\LawyersHasExpertise;
 use App\Models\LawyersHasLanguage;
-use App\Models\LawyersHasMembership;
-use App\Models\Membership;
 use App\Mail\LawyerApprovedMAil;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Mail;
@@ -30,7 +32,7 @@ class dashboardController extends Controller
     public function lawyer_applications()
     {
         $user_id = Auth::id();
-        $lawyer_profiles = LawyerProfile::where('complete','6')->get();
+        $lawyer_profiles = LawyerProfile::where('complete','2')->get();
         return view('admin.lawyer.lawyer_applications',compact('lawyer_profiles'));
     }
 
@@ -47,10 +49,12 @@ class dashboardController extends Controller
         $lawyer_profile = LawyerProfile::where('user_id',$id)->first();
         $user = user::where('id',$lawyer_profile->user_id)->first();
         $languages = Language::get();
-        $expertises = Expertise::get();
+        $educations = Education::get();
+        $memberships = Membership::get();
+        $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
+        $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
         $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
-        $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
-        return view('admin.lawyer.show', compact('lawyer_profile','languages','expertises','lawyer_language','lawyer_expertises'));
+        return view('admin.lawyer.show', compact('lawyer_profile','languages','lawyer_language','lawyer_educations','lawyer_memberships'));
         
     }
 
@@ -86,10 +90,12 @@ class dashboardController extends Controller
         $lawyer_profile = LawyerProfile::where('user_id',$id)->first();
         $user = user::where('id',$lawyer_profile->user_id)->first();
         $languages = Language::get();
-        $expertises = Expertise::get();
+        $educations = Education::get();
+        $memberships = Membership::get();
+        $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
+        $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
         $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
-        $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
-        return view('admin.lawyer.edit', compact('lawyer_profile','user','lawyer_expertises','lawyer_language','languages','expertises'));
+        return view('admin.lawyer.edit', compact('lawyer_profile','user','lawyer_language','languages','educations','memberships','lawyer_educations','lawyer_memberships'));
         
     }
 
@@ -99,22 +105,21 @@ class dashboardController extends Controller
         $this->validate($request,[ 
             'f_name'=>'required', 
             'l_name'=>'required', 
-            'title'=>'required', 
-            'profile_detail'=>'required', 
+            // 'title'=>'required', 
+            'description'=>'required', 
             'address'=>'required', 
-            'expertise_id'=>'required', 
+            'education_id'=>'required', 
             'language_id'=>'required', 
-            'education'=>'required', 
-            'membership'=>'required', 
+            'membership_id'=>'required', 
 
         ]);
         $lawyer= LawyerProfile::where('id',$id)->first();
         $lawyer_profile= LawyerProfile::find($id);
-        $lawyer_profile->title = $request->title;
-        $lawyer_profile->profile_detail = $request->profile_detail;
+        // $lawyer_profile->title = $request->title;
+        $lawyer_profile->description = $request->description;
         $lawyer_profile->address = $request->address;
-        $lawyer_profile->education = implode($request->education, ',');
-        $lawyer_profile->membership = implode($request->membership, ',');
+        // $lawyer_profile->education = implode($request->education, ',');
+        // $lawyer_profile->membership = implode($request->membership, ',');
         if($request->hasfile('image'))
         {
             $image = $request->file('image');
@@ -140,7 +145,8 @@ class dashboardController extends Controller
         $user->l_name = $request->l_name;
         $user->save();
         LawyersHasLanguage::where('lawyer_profile_id',$id)->delete();
-        LawyersHasExpertise::where('lawyer_profile_id',$id)->delete();
+        LawyersHasEducation::where('lawyer_profile_id',$id)->delete();
+        LawyersHasMembership::where('lawyer_profile_id',$id)->delete();
         
         foreach($request->language_id as $language)
         {
@@ -149,12 +155,21 @@ class dashboardController extends Controller
             $lawyer_language->lawyer_profile_id = $lawyer->id;
             $lawyer_language->save();
         }
-        foreach($request->expertise_id as $expertise)
+
+        foreach($request->education_id as $education)
         {
-            $lawyer_expertise = new LawyersHasExpertise;
-            $lawyer_expertise->expertise_id = $expertise;
-            $lawyer_expertise->lawyer_profile_id = $lawyer->id;
-            $lawyer_expertise->save();
+            $lawyer_education = new LawyersHasEducation;
+            $lawyer_education->education_id = $education;
+            $lawyer_education->lawyer_profile_id = $lawyer->id;
+            $lawyer_education->save();
+        }
+
+        foreach($request->membership_id as $membership)
+        {
+            $lawyer_membership = new LawyersHasMembership;
+            $lawyer_membership->membership_id = $membership;
+            $lawyer_membership->lawyer_profile_id = $lawyer->id;
+            $lawyer_membership->save();
         }
 
         toastSuccess('Successfully Updated');

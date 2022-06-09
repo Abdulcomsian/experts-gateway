@@ -261,9 +261,9 @@ class dashboardController extends Controller
             }
             $lawyer_profile->save();
 
-            LawyersHasLanguage::where('lawyer_profile_id',$user_id)->delete();
-            LawyersHasEducation::where('lawyer_profile_id',$user_id)->delete();
-            LawyersHasMembership::where('lawyer_profile_id',$user_id)->delete();
+            LawyersHasLanguage::where('lawyer_profile_id',$chk_lawyer_profile->id)->delete();
+            LawyersHasEducation::where('lawyer_profile_id',$chk_lawyer_profile->id)->delete();
+            LawyersHasMembership::where('lawyer_profile_id',$chk_lawyer_profile->id)->delete();
 
             foreach($request->language_id as $language)
             {

@@ -67,7 +67,7 @@ Edit Lawyer Profile
                                             </div><br>
                                             <!--end::Col-->
                                             <!--begin::Col-->
-                                            <div class="col-lg-6">
+                                            {{-- <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Lawyer Title</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
@@ -75,7 +75,7 @@ Edit Lawyer Profile
                                                     <div style="color:red;">{{$errors->first('title')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->
-                                            </div>
+                                            </div> --}}
                                             <!--end::Col-->
                                             <!--begin::Col-->
                                             <div class="col-lg-6">
@@ -93,8 +93,8 @@ Edit Lawyer Profile
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Profile Detail</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <textarea required class="ckeditor form-control" name="profile_detail">{{$lawyer_profile->profile_detail }}</textarea>
-                                                    <div style="color:red;">{{$errors->first('profile_detail')}}</div> <br>
+                                                    <textarea required class="ckeditor form-control" name="description">{{$lawyer_profile->description }}</textarea>
+                                                    <div style="color:red;">{{$errors->first('description')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->
                                             </div><br>
@@ -105,19 +105,19 @@ Edit Lawyer Profile
                                                     <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Expertise</label>
                                                     <!--begin::Input group-->
                                                     <div class="mb-5">
-                                                        <select class="select2-multiple form-control" multiple="multiple" id="select2Multiple" name="expertise_id[]" >
-                                                            <option disabled> Select Expertises</option>
-                                                            @foreach($expertises as $expertise)
-                                                            @foreach($lawyer_expertises as $l_expertise)
+                                                        <select class="select2-multiple form-control" multiple="multiple" id="select2Multiple" name="education_id[]" >
+                                                            <option disabled> Select Education</option>
+                                                            @foreach($educations as $education)
+                                                            @foreach($lawyer_educations as $l_education)
                                                             @php 
                                                             $selected="";
-                                                            if($l_expertise->expertise_id == $expertise->id ){
+                                                            if($l_education->education_id == $education->id ){
                                                                 $selected="selected";
                                                                 break;
                                                             }
                                                             @endphp
                                                             @endforeach
-                                                            <option value="{{$expertise->id}}" {{$selected}}>{{$expertise->name}}</option>
+                                                            <option value="{{$education->id}}" {{$selected}}>{{$education->education_name}}</option>
                                                             @endforeach
                                                         </select>
                                                         <div style="color:red;">{{$errors->first('expertise_id')}}</div> <br>
@@ -184,7 +184,7 @@ Edit Lawyer Profile
                                             <!--end::Col-->
 
                                             <!--begin::Col-->
-                                            <div class="col-lg-12">
+                                            {{-- <div class="col-lg-12">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Education</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
@@ -199,7 +199,7 @@ Edit Lawyer Profile
                                                     </table>
                                                 </div>
                                                 <!--end::Input group-->
-                                            </div><br>
+                                            </div><br> --}}
                                             <!--end::Col-->
 
                                             <!--begin::Col-->
@@ -207,24 +207,31 @@ Edit Lawyer Profile
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Membership</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <div class="multiSelect">
-                                                    <table class="table" id="dynamic_field_membership">  
-                                                        <tr>  
-                                                            <td style="width:80%"><input type="text" name="membership[]" value="{{$lawyer_profile->membership}}" placeholder="Enter Membership & Association Law" class="form-control membership_list" />
-                                                            </td>  
-                                                            <td style="width:20%;"><button style="padding: 7px !important; margin-top:2px;" type="button" name="add" id="add" class="btn btn-success">Add More</button></td>  
-                                                            <div style="color:red;">{{$errors->first('membership')}}</div> <br>
-                                                        </tr>  
-                                                    </table>
-                                                </div>
+                                                    <select class="select2-multiple_ form-control" multiple="multiple" id="select2MultipleE1" name="membership_id[]">
+                                                        <option disabled> Select Language</option>
+                                                        @foreach($memberships as $membership)
+                                                            @foreach($lawyer_memberships as $l_membership)
+                                                            @php 
+                                                            $selected="";
+                                                            if($l_membership->membership_id == $membership->id ){
+                                                                $selected="selected";
+                                                                break;
+                                                            }
+                                                            @endphp
+                                                            @endforeach
+                                                        <option value="{{$membership->id}}"
+                                                            {{$selected}} >{{$membership->membership_name}}</option>
+                                                        @endforeach
+                                                    </select>
                                                 <!--end::Input group-->
-                                            </div><br>
+                                                </div><br>
+                                            </div>
                                             <!--end::Col-->
 
                                             
                                             <div class="col-lg-4 offset-md-4">
                                                 <button type="submit" class="btn btn-primary ">
-                                                    Update Expertise
+                                                    Update Lawyer Profile
                                                 </button>
                                             </div>
                                             <!--end::Col-->
@@ -268,6 +275,11 @@ Edit Lawyer Profile
     $(document).ready(function() {
         // Select2 Multiple
         $('#select2MultipleE').select2({
+            placeholder: "Select",
+            allowClear: true
+        });
+
+        $('#select2MultipleE1').select2({
             placeholder: "Select",
             allowClear: true
         });

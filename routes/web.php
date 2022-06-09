@@ -29,7 +29,7 @@ Route::get('/search_expert',[App\Http\Controllers\FrontendController::class, 'se
 
 Route::post('newsletter',[App\Http\Controllers\NewsLetterController::class, 'store']);
 
-Auth::routes(['verify' => true]);  
+Auth::routes();  
 
 Route::get('/lawyer-login', function () {
     $contact_us = ContactUs::first();
@@ -123,7 +123,7 @@ Route::prefix('user')->middleware(['auth','can:user'])->group(function(){
 
 
 /*****************Lawyer ROUTES*******************/
-Route::prefix('lawyer')->middleware(['auth','can:lawyer','verified'])->group(function(){
+Route::prefix('lawyer')->middleware(['auth','can:lawyer'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\Lawyer\dashboardController::class, 'index'])->name('lawyer.dashboard');
     Route::get('/profile', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile'])->name('lawyer.profile');
     Route::get('/blog/{id}', [App\Http\Controllers\blogController::class, 'blog'])->name('lawyer.blog');

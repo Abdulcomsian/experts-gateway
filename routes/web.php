@@ -29,7 +29,8 @@ Route::get('/search_expert',[App\Http\Controllers\FrontendController::class, 'se
 
 Route::post('newsletter',[App\Http\Controllers\NewsLetterController::class, 'store']);
 
-Auth::routes(['verify' => true]);  
+Auth::routes();  
+// Auth::routes(['verify' => true]);  
 
 Route::get('/lawyer-login', function () {
     $contact_us = ContactUs::first();

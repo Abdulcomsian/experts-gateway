@@ -494,6 +494,7 @@ Profile building
                 }else if(data.complete == 2){
                     $('.sendApproval').css('display', 'flex');
                     $('#profile').css('display', 'none');
+                    $('.lawyerForm').css('display', 'none');
                     $('.progress-bar').css('width', '100%');
                     $('.percentage-text').text('100%');
                 }

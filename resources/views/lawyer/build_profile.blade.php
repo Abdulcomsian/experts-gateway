@@ -51,11 +51,11 @@ Profile building
                                 <ul class="nav nav-pills">
                                     <li class="active"><a data-toggle="pill" href="#profile">Profile</a></li>
                                     <div class="imageTab">
-                                        <img src="../../assets/img/profileTab.svg" alt="" class="img-fluid">
+                                        <img src="{{asset('assets/img/profileTab.svg')}}" alt="" class="img-fluid">
                                     </div>
                                     <li><a data-toggle="pill" id="lawyer_info" href="#lawyer">Lawyer Information</a></li>
                                     <div class="imageTab">
-                                        <img src="../../assets/img/lawyerIcon.svg" alt="" class="img-fluid">
+                                        <img src="{{asset('assets/img/lawyerIcon.svg') }}" alt="" class="img-fluid">
                                     </div>
                                     <li><a data-toggle="pill" href="#membership">Membership</a></li>
                                 </ul>
@@ -72,7 +72,7 @@ Profile building
                                         <form id="profile-form">
                                             @csrf
                                             <div class="uploadBanner">
-                                                <img src="../../assets/img/uploadIcon.png" alt="" class="img-fluid">
+                                                <img src="{{asset('assets/img/uploadIcon.png') }}" alt="" class="img-fluid">
                                                 <div class="uploadImgBanner first_form">
                                                     <p>Upload Cover Image</p>
                                                     <input type="file" name="b_image" value="{{$lawyer_profile->b_image ??'' }}" id="b_image" accept="image/*">
@@ -220,10 +220,25 @@ Profile building
                                                             <label for="">Education</label>
                                                             <div class="inputButton second_form">
                                                                 <select class="js-example-basic-multiple" name="education_id[]" id="education_id" multiple="multiple">
-                                                                    <option disabled> Select Education</option>
-                                                                    <option value="1"> L.L.M</option>
-                                                                    <option value="2"> L.L.B (3 year)</option>
-                                                                    <option value="3"> L.L.B (5 year)</option>
+                                                                    @if($lawyer_educations)
+                                                                    @foreach($educations as $education)
+                                                                    @foreach($lawyer_educations as $l_education)
+                                                                    @php 
+                                                                    $selected="";
+                                                                    if($l_education->education_id == $education->id ){
+                                                                        $selected="selected";
+                                                                        break;
+                                                                    }
+                                                                    @endphp
+                                                                    @endforeach
+                                                                    <option value="{{$education->id}}"
+                                                                    {{$selected}} >{{$education->education_name}}</option>
+                                                                    @endforeach
+                                                                    @else
+                                                                    @foreach($educations as $education)
+                                                                    <option value="{{$education->id}}">{{$education->education_name}}</option>
+                                                                    @endforeach
+                                                                    @endif
                                                                 </select>
                                                                 <span class="text-danger education_id_valid"></span>
                                                             </div>
@@ -235,9 +250,25 @@ Profile building
                                                             <div class="inputButton second_form">
                                                                 <select class="js-example-basic-multiple" name="membership_id[]" id="membership_id" multiple="multiple">
                                                                     <option disabled> Select Membership & Association</option>
-                                                                    <option value="1"> lawyer association</option>
-                                                                    <option value="2"> Labour</option>
-                                                                    <option value="3"> dfdff</option>
+                                                                    @if($lawyer_memberships)
+                                                                    @foreach($memberships as $membership)
+                                                                    @foreach($lawyer_memberships as $l_membership)
+                                                                    @php 
+                                                                    $selected="";
+                                                                    if($l_membership->membership_id == $membership->id ){
+                                                                        $selected="selected";
+                                                                        break;
+                                                                    }
+                                                                    @endphp
+                                                                    @endforeach
+                                                                    <option value="{{$membership->id}}"
+                                                                    {{$selected}} >{{$membership->membership_name}}</option>
+                                                                    @endforeach
+                                                                    @else
+                                                                    @foreach($memberships as $membership)
+                                                                    <option value="{{$membership->id}}">{{$membership->membership_name}}</option>
+                                                                    @endforeach
+                                                                    @endif
                                                                 </select>
                                                                 {{-- <Button>ADD MORE</Button> --}}
                                                                 <span class="text-danger membership_id_valid"></span>
@@ -253,7 +284,7 @@ Profile building
                                             </form>
                                         </div>
                                         <div class="sendApproval">
-                                            <img src="../../assets/img/approval.png" alt="" class="img-fluid">
+                                            <img src="{{asset('assets/img/approval.png') }}" alt="" class="img-fluid">
                                             <p>We need to validate everything here. Please give us some time to respond.</p>
                                         </div>
                                     </div>
@@ -265,7 +296,7 @@ Profile building
                                         <div class="col-lg-4">
                                             <div class="commonBox">
                                                 <div class="header">
-                                                    <img src="../../assets/img/starter.svg" alt="" class="img-fluid">
+                                                    <img src="{{asset('assets/img/starter.svg') }}" alt="" class="img-fluid">
                                                     <p>Starter</p>
                                                 </div>
                                                 <div class="priceDiv">
@@ -318,7 +349,7 @@ Profile building
                                         <div class="col-lg-4">
                                             <div class="commonBox">
                                                 <div class="header">
-                                                    <img src="../../assets/img/starter.svg" alt="" class="img-fluid">
+                                                    <img src="{{asset('assets/img/starter.svg') }}" alt="" class="img-fluid">
                                                     <p>Starter</p>
                                                 </div>
                                                 <div class="priceDiv">
@@ -371,7 +402,7 @@ Profile building
                                         <div class="col-lg-4">
                                             <div class="commonBox">
                                                 <div class="header">
-                                                    <img src="../../assets/img/starter.svg" alt="" class="img-fluid">
+                                                    <img src="{{asset('assets/img/starter.svg') }}" alt="" class="img-fluid">
                                                     <p>Starter</p>
                                                 </div>
                                                 <div class="priceDiv">
@@ -461,6 +492,8 @@ Profile building
                     $('.progress-bar').css('width', '50%');
                     $('.percentage-text').text('50%');
                 }else if(data.complete == 2){
+                    $('.sendApproval').css('display', 'flex');
+                    $('#profile').css('display', 'none');
                     $('.progress-bar').css('width', '100%');
                     $('.percentage-text').text('100%');
                 }
@@ -537,9 +570,12 @@ Profile building
                 $("#education_id").val('').trigger('change');
                 $("#membership_id").val('').trigger('change');
                 if(data.complete == 1){
+                    
                     $('.progress-bar').css('width', '50%');
                     $('.percentage-text').text('50%');
                 }else if(data.complete == 2){
+                    $('.sendApproval').css('display', 'flex');
+                    $('.lawyerForm').css('display', 'none');
                     $('.progress-bar').css('width', '100%');
                     $('.percentage-text').text('100%');
                 }

@@ -9,6 +9,7 @@ class LawyersHasEducation extends Model
 {
     use HasFactory;
 
+    protected $table = 'lawyers_has_educations';
     protected $guarded = [];
 
     public function education()

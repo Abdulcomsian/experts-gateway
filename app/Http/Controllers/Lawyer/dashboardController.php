@@ -10,7 +10,10 @@ use App\Models\User;
 use App\Models\Expertise;
 use App\Models\Language;
 use App\Models\LawyerProfile;
-use App\Models\LawyersHasExpertise;
+use App\Models\LawyersHasEducation;
+use App\Models\Education;
+use App\Models\Membership;
+use App\Models\LawyersHasMembership;
 use App\Models\LawyersHasLanguage;
 use Validator;
 use App\Mail\ApprovalMail;
@@ -30,28 +33,32 @@ class dashboardController extends Controller
         $user_id = Auth::id();
         $lawyer = User::where('id',$user_id)->first();
         $languages = Language::get();
-        $expertises = Expertise::get();
+        $educations = Education::get();
+        $memberships = Membership::get();
         $lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
         $lawyer_language =null;
         $lawyer_expertises =null;
+        $lawyer_educations =null;
+        $lawyer_memberships =null;
         if($lawyer_profile)
         {
             $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
-            $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
+            $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
+            $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
             if($lawyer->status == 0)
             {
-               return view('lawyer.build_profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_expertises','languages','expertises','lawyer_profile')); 
+               return view('lawyer.build_profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','languages','educations','memberships','lawyer_profile')); 
             }
             elseif($lawyer->status == 1)
             {
-                return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_expertises'));
+                return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships'));
             }
 
         }
         else{
             if($lawyer->status == 0)
             {
-               return view('lawyer.build_profile',compact('lawyer','languages','expertises','lawyer_profile','lawyer_expertises','lawyer_language')); 
+               return view('lawyer.build_profile',compact('lawyer','languages','educations','memberships','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships')); 
             }
             elseif($lawyer->status == 2)
             {
@@ -254,12 +261,32 @@ class dashboardController extends Controller
             }
             $lawyer_profile->save();
 
+            LawyersHasLanguage::where('lawyer_profile_id',$user_id)->delete();
+            LawyersHasEducation::where('lawyer_profile_id',$user_id)->delete();
+            LawyersHasMembership::where('lawyer_profile_id',$user_id)->delete();
+
             foreach($request->language_id as $language)
             {
                 $lawyer_language= new LawyersHasLanguage;
                 $lawyer_language->language_id = $language;
                 $lawyer_language->lawyer_profile_id = $lawyer_profile->id;
                 $lawyer_language->save();
+            }
+
+            foreach($request->education_id as $education)
+            {
+                $lawyer_education= new LawyersHasEducation;
+                $lawyer_education->education_id = $education;
+                $lawyer_education->lawyer_profile_id = $lawyer_profile->id;
+                $lawyer_education->save();
+            }
+
+            foreach($request->membership_id as $membership)
+            {
+                $lawyer_membership= new LawyersHasMembership;
+                $lawyer_membership->membership_id = $membership;
+                $lawyer_membership->lawyer_profile_id = $lawyer_profile->id;
+                $lawyer_membership->save();
             }
 
             return response()->json(['success'=>'Profile Created Successfully','complete'=>$lawyer_profile->complete]);

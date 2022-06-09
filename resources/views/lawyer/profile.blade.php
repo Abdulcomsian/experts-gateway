@@ -24,7 +24,7 @@ Dashboard
                                     </div>
                                     <div class="userProfile">
                                         <h4>{{$lawyer->f_name}} {{$lawyer->l_name}}</h4>
-                                        <p>{{$lawyer_profile->title}}</p>
+                                        {{-- <p>{{$lawyer_profile->title}}</p> --}}
                                     </div>
                                 </div>
                                 <div class="line">
@@ -54,8 +54,8 @@ Dashboard
                                             <div class="imgDiv">
                                                 <img src="../assets/img/consultantIcon.png" alt="" class="img-fluid">
                                             </div>
-                                            <span>@foreach($lawyer_expertises as $expertise)
-                                                    {{$expertise->expertise->name}}
+                                            <span>@foreach($lawyer_educations as $education)
+                                                    {{$education->education->education_name}}
                                                     @if(!($loop->last))
                                                     ,
                                                     @endif
@@ -74,14 +74,14 @@ Dashboard
                                 </div>
                                 <div class="editProfileContent">
                                     <h4>profile</h4>
-                                    {!! $lawyer_profile->profile_detail !!}
+                                    {!! $lawyer_profile->description !!}
                                     <div class="line">
                                         <img src="../assets/img/line.png" alt="" class="img-fluid">
                                     </div>
                                     <h4>Education</h4>
                                     <ul>
-                                        @foreach(explode(',', $lawyer_profile->education) as $education) 
-                                        <li>-{{$education}}</li>
+                                        @foreach($lawyer_educations as $education)
+                                            <li>-{{$education->education->education_name}}</li>
                                         @endforeach
                                     </ul>
                                     <div class="line">
@@ -90,8 +90,8 @@ Dashboard
                                     <h4>Associations & Memberships
                                     </h4>
                                     <ul>
-                                        @foreach(explode(',', $lawyer_profile->membership) as $membership) 
-                                        <li>-{{$membership}}</li>
+                                        @foreach($lawyer_memberships as $membership)
+                                            <li>-{{$membership->membership->membership_name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>

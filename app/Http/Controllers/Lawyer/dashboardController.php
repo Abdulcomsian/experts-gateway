@@ -37,7 +37,6 @@ class dashboardController extends Controller
         $memberships = Membership::get();
         $lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
         $lawyer_language =null;
-        $lawyer_expertises =null;
         $lawyer_educations =null;
         $lawyer_memberships =null;
         if($lawyer_profile)

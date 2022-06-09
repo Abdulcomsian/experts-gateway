@@ -294,43 +294,6 @@ class dashboardController extends Controller
         }
     }
 
-
-
-    public function profile_update_2(Request $request,$id)
-    {
-        $user_id = Auth::id();
-        $this->validate($request,[  
-            'address'=>'required',  
-            'language_id'=>'required',  
-            'expertise_id'=>'required',  
-
-        ]);
-        LawyersHasLanguage::where('lawyer_profile_id',$id)->delete();
-        LawyersHasExpertise::where('lawyer_profile_id',$id)->delete();
-        foreach($request->language_id as $language)
-        {
-            $lawyer_language = new LawyersHasLanguage;
-            $lawyer_language->language_id = $language;
-            $lawyer_language->lawyer_profile_id = $id;
-            $lawyer_language->save();
-        }
-        foreach($request->expertise_id as $expertise)
-        {
-            $lawyer_expertise = new LawyersHasExpertise;
-            $lawyer_expertise->expertise_id = $expertise;
-            $lawyer_expertise->lawyer_profile_id = $id;
-            $lawyer_expertise->save();
-        }
-        
-        $lawyer_profile= LawyerProfile::find($id);
-        $lawyer_profile->address = $request->address;
-        $lawyer_profile->save();
-        
-        
-        toastSuccess('Successfully Added');
-        return redirect('lawyer/profile');
-    }
-
     
     protected function errorResponse($message = null, $code, $redirectURL = null)
     {
@@ -341,32 +304,6 @@ class dashboardController extends Controller
             'redirectURL' => $redirectURL,
         ], $code);
 
-    }
-
-    public function profile_store_4(Request $request)
-    {
-        $user_id = Auth::id();
-        $this->validate($request,[  
-            'education'=>'required',  
-
-        ]);
-        $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
-        if($lawyer_profile != null)
-        {
-            $lawyer_profile= LawyerProfile::find($lawyer_profile->id);
-            $lawyer_profile->education = implode($request->education, ',');
-            $lawyer_profile->complete = $request->complete;
-            $lawyer_profile->save();
-        }
-        else{
-            $lawyer_profile= new LawyerProfile;
-            $lawyer_profile->user_id = $user_id;
-            $lawyer_profile->education = implode($request->education, ',');
-            $lawyer_profile->complete = $request->complete;
-            $lawyer_profile->save();
-        }
-        toastSuccess('Successfully Added');
-        return redirect('lawyer/profile');
     }
 
     public function submit_approval(Request $request)
@@ -394,10 +331,12 @@ class dashboardController extends Controller
         $user_id = Auth::id();
         $lawyer_profile= LawyerProfile::find($id);
         $languages = Language::get();
-        $expertises = Expertise::get();
-        $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',1)->get();
-        $lawyer_expertises = LawyersHasExpertise::where('lawyer_profile_id',$lawyer_profile->id)->get();
-        return view('lawyer.profile.edit_profile',compact('lawyer_profile','languages','expertises','lawyer_expertises','lawyer_language'));
+        $educations = Education::get();
+        $memberships = Membership::get();
+        $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
+        $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
+        $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
+        return view('lawyer.profile.edit_profile',compact('lawyer_profile','languages','educations','memberships','lawyer_language','lawyer_educations','lawyer_memberships'));
     }
 
     public function update_lawyer_profile(Request $request,$id)
@@ -406,22 +345,20 @@ class dashboardController extends Controller
         $this->validate($request,[ 
             'f_name'=>'required', 
             'l_name'=>'required', 
-            'title'=>'required', 
-            'profile_detail'=>'required', 
+            // 'title'=>'required', 
+            'description'=>'required', 
             'address'=>'required', 
-            'expertise_id'=>'required', 
+            // 'expertise_id'=>'required', 
             'language_id'=>'required', 
-            'education'=>'required', 
-            'membership'=>'required', 
+            'education_id'=>'required', 
+            'membership_id'=>'required', 
 
         ]);
         $lawyer= LawyerProfile::where('id',$id)->first();
         $lawyer_profile= LawyerProfile::find($id);
-        $lawyer_profile->title = $request->title;
-        $lawyer_profile->profile_detail = $request->profile_detail;
+        // $lawyer_profile->title = $request->title;
+        $lawyer_profile->description = $request->description;
         $lawyer_profile->address = $request->address;
-        $lawyer_profile->education = implode($request->education, ',');
-        $lawyer_profile->membership = implode($request->membership, ',');
         if($request->hasfile('image'))
         {
             $image = $request->file('image');
@@ -447,7 +384,8 @@ class dashboardController extends Controller
         $user->l_name = $request->l_name;
         $user->save();
         LawyersHasLanguage::where('lawyer_profile_id',$id)->delete();
-        LawyersHasExpertise::where('lawyer_profile_id',$id)->delete();
+        LawyersHasEducation::where('lawyer_profile_id',$id)->delete();
+        LawyersHasMembership::where('lawyer_profile_id',$id)->delete();
         
         foreach($request->language_id as $language)
         {
@@ -456,13 +394,23 @@ class dashboardController extends Controller
             $lawyer_language->lawyer_profile_id = $lawyer->id;
             $lawyer_language->save();
         }
-        foreach($request->expertise_id as $expertise)
+
+        foreach($request->education_id as $education)
         {
-            $lawyer_expertise = new LawyersHasExpertise;
-            $lawyer_expertise->expertise_id = $expertise;
-            $lawyer_expertise->lawyer_profile_id = $lawyer->id;
-            $lawyer_expertise->save();
+            $lawyer_education = new LawyersHasEducation;
+            $lawyer_education->education_id = $education;
+            $lawyer_education->lawyer_profile_id = $lawyer->id;
+            $lawyer_education->save();
         }
+
+        foreach($request->membership_id as $membership)
+        {
+            $lawyer_membership = new LawyersHasMembership;
+            $lawyer_membership->membership_id = $membership;
+            $lawyer_membership->lawyer_profile_id = $lawyer->id;
+            $lawyer_membership->save();
+        }
+        
 
         toastSuccess('Successfully Updated');
         return redirect('lawyer/profile');

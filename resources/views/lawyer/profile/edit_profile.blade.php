@@ -63,13 +63,13 @@ Edit Profile
                                     <div style="color:red;">{{$errors->first('email')}}</div> <br>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            {{-- <div class="col-lg-6">
                                 <label>Lawyer Title</label>
                                 <div class="inputDiv">
                                     <input name="title" type="text" placeholder="Lawyer Title" value="{{$lawyer_profile->title}}" />
                                     <div style="color:red;">{{$errors->first('title')}}</div> <br>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="line">
                             <img src="{{asset('assets/img/line.png') }}" alt="" class="img-fluid">
@@ -100,27 +100,27 @@ Edit Profile
                             <img src="{{asset('assets/img/line.png') }}" alt="" class="img-fluid">
                         </div>
                         <div class="row">
-                            <div class="col-lg-6">
-                                <label style="margin-bottom: 3.5rem;">Expertise</label>
+                            {{-- <div class="col-lg-6">
+                                <label style="margin-bottom: 3.5rem;">Education</label>
                                 <div class="inputDiv">
-                                    <select class="js-example-basic-multiple" name="expertise_id[]" multiple="multiple">
+                                    <select class="js-example-basic-multiple" name="education_id[]" multiple="multiple">
                                         <option disabled> Select Expertises</option>
-                                        @foreach($expertises as $expertise)
-                                        @foreach($lawyer_expertises as $l_expertise)
+                                        @foreach($educations as $eduction)
+                                        @foreach($lawyer_educations as $l_eduction)
                                         @php 
                                         $selected="";
-                                        if($l_expertise->expertise_id == $expertise->id ){
+                                        if($l_eduction->education_id == $eduction->id ){
                                             $selected="selected";
                                             break;
                                         }
                                         @endphp
                                         @endforeach
-                                        <option value="{{$expertise->id}}" {{$selected}}>{{$expertise->name}}</option>
+                                        <option value="{{$eduction->id}}" {{$selected}}>{{$eduction->eduction_name}}</option>
                                         @endforeach
                                     </select>
-                                    <div style="color:red;">{{$errors->first('expertise_id')}}</div> <br>
+                                    <div style="color:red;">{{$errors->first('education_id')}}</div> <br>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-lg-6">
                                 <label style="margin-bottom: 3.5rem;">Langugae</label>
                                 <div class="inputDiv">
@@ -151,8 +151,8 @@ Edit Profile
                             <div class="col-lg-12">
                                 <label>Profile</label>
                                 <div class="aboutProfile">
-                                    <textarea required class="ckeditor form-control" name="profile_detail">{{$lawyer_profile->profile_detail}}</textarea>
-                                    <div style="color:red;">{{$errors->first('profile_detail')}}</div> <br>
+                                    <textarea required class=" form-control" name="description">{!! $lawyer_profile->description !!}</textarea>
+                                    <div style="color:red;">{{$errors->first('description')}}</div> <br>
                                 </div>
                             </div>
                         </div>
@@ -161,16 +161,25 @@ Edit Profile
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <label>Education</label>
-                                <div class="multiSelect">
-                                    <table class="table" id="dynamic_field">  
-                                        <tr>  
-                                            <td style="width:80%"><input type="text" name="education[]" value="{{$lawyer_profile->education}}" placeholder="Enter Education" class="form-control education_list" />
-                                            </td>  
-                                            <td style="width:20%;"><button style="padding: 7px !important; margin-top:2px;" type="button" name="add_edu" id="add_edu" class="btn btn-success">Add More</button></td>  
-                                            <div style="color:red;">{{$errors->first('education')}}</div> <br>
-                                        </tr>  
-                                    </table> 
+                                <label style="margin-bottom: 3.5rem;">Eductions</label>
+                                <div class="inputDiv">
+                                    <select class="js-example-basic-multiple" name="language_id[]" multiple="multiple">
+                                        <option disabled> Select Eductions</option>
+                                        @foreach($educations as $education)
+                                            @foreach($lawyer_educations as $l_education)
+                                            @php 
+                                            $selected="";
+                                            if($l_education->education_id == $education->id ){
+                                                $selected="selected";
+                                                break;
+                                            }
+                                            @endphp
+                                            @endforeach
+                                        <option value="{{$education->id}}"
+                                            {{$selected}} >{{$education->education_name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
                                 </div>
                             </div>
                         </div>
@@ -180,15 +189,24 @@ Edit Profile
                         <div class="row">
                             <div class="col-lg-12">
                                 <h5>Associations & Memberships</h5>
-                                <div class="multiSelect">
-                                    <table class="table" id="dynamic_field_membership">  
-                                        <tr>  
-                                            <td style="width:80%"><input type="text" name="membership[]" placeholder="Enter Membership & Association Law" value="{{$lawyer_profile->membership}}" class="form-control membership_list" />
-                                            </td>  
-                                            <td style="width:20%;"><button style="padding: 7px !important; margin-top:2px;" type="button" name="add" id="add" class="btn btn-success">Add More</button></td>  
-                                            <div style="color:red;">{{$errors->first('membership')}}</div> <br>
-                                        </tr>  
-                                    </table>
+                                <div class="inputDiv">
+                                    <select class="js-example-basic-multiple" name="membership_id[]" multiple="multiple">
+                                        <option disabled> Select Eductions</option>
+                                        @foreach($memberships as $membership)
+                                            @foreach($lawyer_memberships as $l_membership)
+                                            @php 
+                                            $selected="";
+                                            if($l_membership->membership_id == $membership->id ){
+                                                $selected="selected";
+                                                break;
+                                            }
+                                            @endphp
+                                            @endforeach
+                                        <option value="{{$membership->id}}"
+                                            {{$selected}} >{{$membership->membership_name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <div style="color:red;">{{$errors->first('membership_id')}}</div> <br>
                                 </div>
                             </div>
                         </div>

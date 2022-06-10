@@ -3592,11 +3592,11 @@ main .expertBanner .searchBox {
 .on-boarding-main .on-boarding-left-bar{
     height: 100vh;
     background: #fff;
-    padding: 120px 0px 0px 55px;
+    padding: 120px 50px 0px 80px;
 }
 .on-boarding-main .on-boarding-left-bar h3{
     font-family: MoskauMedium;
-    font-size: 30px;
+    font-size: 40px;
     color: #032231;
 }
 .on-boarding-main .on-boarding-left-bar .progress-div{
@@ -3628,7 +3628,7 @@ main .expertBanner .searchBox {
 .on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li a{
     background: #fafbfb;
     padding: 15px;
-    font-size: 18px;
+    font-size: 21px;
     font-family: MoskauMedium;
     display: block;
     margin-bottom: 33px;
@@ -3641,11 +3641,13 @@ main .expertBanner .searchBox {
 }
 .on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li.active + .imageTab{
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    margin-top: 20px;
 }
 .on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li.active a{
     color: #EE2144;
     border-color: #EE2144;
+    font-size: 25px;
 }
 .on-boarding-main .pills-div-main{
     background: #f8f9f9;
@@ -3753,6 +3755,18 @@ main .expertBanner .searchBox {
 .on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .multiSelect .select2
 {
     margin-bottom: 15px;
+}
+.main-wrapper.active .pre_loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, .6);
+    z-index: 999999;
 }
 form button[type="submit"]{
     background: transparent linear-gradient(311deg, #EF1D30 0%, var(--unnamed-color-ed2456) 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
@@ -3979,6 +3993,15 @@ form button[type="submit"]{
 }
 
 @media screen and (max-width: 1600px) {
+    .on-boarding-main .on-boarding-left-bar .tab-pills-div ul li.active a{
+        font-size: 20px;
+    }
+    .on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li a{
+        font-size: 18px;
+    }
+    .on-boarding-main .on-boarding-left-bar h3{
+        font-size: 30px;
+    } 
     .on-boarding-main .pills-div-main{
         padding: 0px;
     }

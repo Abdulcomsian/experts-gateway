@@ -81,4 +81,9 @@
             </nav>
         </div> -->
     </header>
-<div class="main-wrapper">
+<div class="main-wrapper position-relative">
+    <div class="pre_loader">
+        <div class="spinner-border text-danger" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+    </div>

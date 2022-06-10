@@ -75,7 +75,8 @@ Profile building
                                                 <img src="{{asset('assets/img/uploadIcon.png') }}" alt="" class="img-fluid">
                                                 <div class="uploadImgBanner first_form">
                                                     <p>Upload Cover Image</p>
-                                                    <input type="file" name="b_image" value="{{$lawyer_profile->b_image ??'' }}" id="b_image" accept="image/*">
+                                                    <input type="file" id="b_image" name="b_image" value="{{$lawyer_profile->b_image ??'' }}" id="b_image" accept="image/*">
+                                                    <span class="text-primary" id="b_imageName"></span>
                                                     <span class="text-danger b_image_valid"></span><br>
                                                     @if($lawyer_profile)
                                                     <div class="profileAvatar">
@@ -89,6 +90,7 @@ Profile building
                                                     <div class="uploadPhoto first_form">
                                                         <p>Upload <br>Profile Image</p>
                                                         <input type="file" name="image" value="{{$lawyer_profile->image ?? '' }}" id="image" accept="image/*">
+                                                        <span class="text-primary" id="imageName"></span>
                                                         <span class="text-danger image_valid"></span>
                                                         @if($lawyer_profile)
                                                         <div class="profileAvatar">
@@ -111,6 +113,27 @@ Profile building
                                                                 <label for="">Last Name</label>
                                                                 <input type="text" name="l_name" id="l_name" value="{{$lawyer->l_name}}" placeholder="Enter Your Last Name">
                                                                 <span class="text-danger l_name_valid"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="inputDiv first_form">
+                                                                <label for="">Gender</label>
+                                                                <select name="gender" id="gender">
+                                                                    <option selected disabled value=""> Select Gender</option>
+                                                                    <option value="Male"> Male</option>
+                                                                    <option value="Female"> Female</option>
+                                                                </select>
+                                                                <span class="text-danger gender_valid"></span>
+                                                            </div>
+                                                        </div>
+                                                        @php
+                                                        $dob = Carbon\Carbon::parse($lawyer_profile->dob ?? '')->format('Y-m-d')
+                                                        @endphp
+                                                        <div class="col-lg-6">
+                                                            <div class="inputDiv first_form">
+                                                                <label for="">Date of Birth</label>
+                                                                <input type="date" name="dob" id="dob" value="{{ $dob }}" placeholder="Enter Date of Birth">
+                                                                <span class="text-danger dob_valid"></span>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-12">
@@ -159,6 +182,7 @@ Profile building
                                                             <select class="js-example-basic-multiple" name="language_id[]" id="language_id" multiple="multiple">
                                                                 <option disabled> Select Language</option>
                                                                 @if($lawyer_language)
+                                                                {{$selected="";}}
                                                                 @foreach($languages as $language)
                                                                 @foreach($lawyer_language as $l_language)
                                                                 @php 
@@ -221,6 +245,7 @@ Profile building
                                                             <div class="inputButton second_form">
                                                                 <select class="js-example-basic-multiple" name="education_id[]" id="education_id" multiple="multiple">
                                                                     @if($lawyer_educations)
+                                                                    {{$selected="";}}
                                                                     @foreach($educations as $education)
                                                                     @foreach($lawyer_educations as $l_education)
                                                                     @php 
@@ -251,6 +276,7 @@ Profile building
                                                                 <select class="js-example-basic-multiple" name="membership_id[]" id="membership_id" multiple="multiple">
                                                                     <option disabled> Select Membership & Association</option>
                                                                     @if($lawyer_memberships)
+                                                                    {{$selected="";}}
                                                                     @foreach($memberships as $membership)
                                                                     @foreach($lawyer_memberships as $l_membership)
                                                                     @php 
@@ -470,13 +496,20 @@ Profile building
         console.error( error );
     });
 
+    // $('#b_image').input(alert('hello'));
+    $('#b_image').on('propertychange input', function (e) { $('#b_imageName').text(this.value.split('\\')[2]
+) });
+
+$('#image').on('propertychange input', function (e) { $('#imageName').text(this.value.split('\\')[2]
+) });
+
     $(document).ready(function () {
         $('.js-example-basic-multiple').select2();
     });
 
     $('#profile-form').submit(function(e){
         e.preventDefault();
-
+       $('.main-wrapper').addClass('active')
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data', 
@@ -485,8 +518,9 @@ Profile building
             processData: false,
             contentType: false,
             success: function (data) {
-                $('.first_form input').val('');
-                $('.first_form textarea').val(''); 
+                $('.main-wrapper').removeClass('active');
+                $('.first_form input:not(#linkedin_url)').val('');
+                $('.first_form textarea').val('');   
                 $(".ck-editor__editable_inline").val('').trigger('change');
                 if(data.complete == 1){
                     $('.progress-bar').css('width', '50%');
@@ -507,6 +541,7 @@ Profile building
                 
             },
             error: function (data) {
+                $('.main-wrapper').removeClass('active');
                 // convert json to object
                 var errors = JSON.parse(data.responseText);
                 // var error_message = JSON.parse(errors.message);
@@ -523,6 +558,18 @@ Profile building
                 }
                 else{
                     $('.l_name_valid').text('');
+                }
+                if($('#gender').val() == ''){
+                    $('.gender_valid').text(errors.message.gender);
+                }
+                else{
+                    $('.gender_valid').text('');
+                }
+                if($('#dob').val() == ''){
+                    $('.dob_valid').text(errors.message.dob);
+                }
+                else{
+                    $('.dob_valid').text('');
                 }
                 if($('#b_image').val() == ''){ 
 
@@ -556,6 +603,7 @@ Profile building
 
     $('#profile-form-1').submit(function(e){
         e.preventDefault();
+        $('.main-wrapper').addClass('active');
         $.ajax({
             type: "POST",
             url: "{{ route('profile.store_2') }}",
@@ -564,6 +612,7 @@ Profile building
             contentType: false,
             cache: false,
             success: function (data) {
+                $('.main-wrapper').removeClass('active');
                 $('.second_form input').val('');
                 $('.second_form textarea').val('');
                 $('.second_form select').val('');
@@ -582,6 +631,7 @@ Profile building
                 }
             },
             error: function (data) {
+                $('.main-wrapper').removeClass('active');
                 console.log('Error:', data);
                 // convert json to object
                 var errors = JSON.parse(data.responseText);

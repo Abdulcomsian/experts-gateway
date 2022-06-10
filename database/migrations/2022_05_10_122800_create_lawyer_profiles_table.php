@@ -18,6 +18,8 @@ class CreateLawyerProfilesTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             // $table->string('title')->nullable();
+            $table->date('dob')->nullable();
+            $table->string('gender')->nullable();
             $table->string('linkedin_url')->nullable();
             $table->longText('address')->nullable();
             $table->integer('complete')->nullable();

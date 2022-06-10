@@ -72,6 +72,8 @@ class dashboardController extends Controller
         $messages = [
             'f_name.required' => 'Please Enter First Name',
             'l_name.required' => 'Please Enter Last Name',
+            'gender.required' => 'Please Enter Gender',
+            'dob.required' => 'Please Enter Date of Birth',
             'image.required' => 'Please provide a profile picture',
             'b_image.required' => 'Please provide your background image',
             'description.required' => 'Enter Description here',
@@ -80,6 +82,8 @@ class dashboardController extends Controller
         $validatorRules = [
             'f_name' => 'required',
             'l_name' => 'required',
+            'gender' => 'required',
+            'dob' => 'required',
             'image' => 'required',
             'b_image' => 'required',
             'linkedin_url' => 'required',
@@ -122,6 +126,8 @@ class dashboardController extends Controller
             }
             $lawyer_profile->linkedin_url = $request->linkedin_url;
             $lawyer_profile->description = $request->description;
+            $lawyer_profile->gender = $request->gender;
+            $lawyer_profile->dob = $request->dob;
             if($request->hasfile('image'))
             {
                 $image = $request->file('image');

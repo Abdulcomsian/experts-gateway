@@ -45,9 +45,10 @@ Route::get('/fixed-service-detail/{id}', [App\Http\Controllers\Lawyer\FixedServi
 
 Route::get('/lawyer-register', function () {
     $contact_us = ContactUs::first();
+
     if (Auth::check())
     {
-       return redirect()->to('/lawyer/dashboard',compact('contact_us'));
+        return redirect()->route('lawyer.dashboard');
     }
     else
     {

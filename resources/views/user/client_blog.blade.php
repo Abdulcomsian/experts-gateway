@@ -16,7 +16,7 @@ blog
                                     <p class="date">{{ date('d M,Y', strtotime($blog->created_at)) }}</p> <span><i class="fa fa-heart-o"></i> 1,556
                                         Likes</span>
                                 </div>
-                                <p class="postedBy">Posted by <b>{{$blog->user->name}}</b></p>
+                                <p class="postedBy">Posted by <b>{{$blog->user->f_name}} {{$blog->user->l_name}}</b></p>
                                 <h4>{{$blog->title}}</h4><br>
                                 {!! $blog->description !!}<br>
                             </div>

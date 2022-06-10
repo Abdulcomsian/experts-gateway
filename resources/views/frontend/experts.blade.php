@@ -47,9 +47,9 @@ Experts
             </div>
             <div class="expertiseDiv">
                 <select name="search_expert" id="search_expert">
-                    <option disabled selected>Select Expertise</option>
-                    @foreach($expertises as $expertise)
-                    <option value="{{$expertise->id}}">{{$expertise->name}}</option>
+                    <option disabled selected>Select Education</option>
+                    @foreach($educations as $education)
+                    <option value="{{$education->id}}">{{$education->education_name}}</option>
                     @endforeach
                 </select>
                 <div class="btnDiv">
@@ -97,14 +97,14 @@ Experts
                                     <img src="../assets/img/line.png" alt="" class="img-fluid">
                                 </div>
                                 <div class="cardFooter">
-                                    <p>County: <span>U.A.E</span></p>
-                                    <p>Expertise: 
+                                    <p>Address: <span>{{$lawyer['lawyer_profile'][0]->address}}</span></p>
+                                    <p>Education: 
                                         <span>
                                             @php
-                                                $lawyer_expertises = App\Models\LawyersHasExpertise::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
+                                                $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
                                             @endphp
-                                            @foreach($lawyer_expertises as $expertise)
-                                                {{$expertise->expertise->name}}
+                                            @foreach($lawyer_educations as $education)
+                                                {{$education->education->education_name}}
                                                 @if(!($loop->last))
                                                 ,
                                                 @endif
@@ -305,14 +305,14 @@ Experts
                                         <img src="../assets/img/line.png" alt="" class="img-fluid">
                                     </div>
                                     <div class="cardFooter">
-                                        <p>County: <span>U.A.E</span></p>
-                                        <p>Expertise: 
+                                        <p>Address: <span>${expert.address}</span></p>
+                                        <p>Education: 
                                             <span>
                                                 @php
-                                                    $lawyer_expertises = App\Models\LawyersHasExpertise::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
+                                                    $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
                                                 @endphp
-                                                @foreach($lawyer_expertises as $expertise)
-                                                    {{$expertise->expertise->name}}
+                                                @foreach($lawyer_educations as $education)
+                                                    {{$education->education->education_name}}
                                                     @if(!($loop->last))
                                                     ,
                                                     @endif

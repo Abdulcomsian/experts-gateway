@@ -38,7 +38,7 @@ Blogs
                                 <td>{{$blog->title}}</td>
                                 <td>{{$blog->short_description}}</td>
                                 <td><img src="{{asset('blogs/'.$blog->image)}}" width="100px" height="100px"></td>
-                                <td>{{$blog->user->name}}</td>
+                                <td>{{$blog->user->f_name}} {{$blog->user->l_name}}</td>
                                 <td>
                                     @if($blog->status == 1) 
                                     <form action="{{ route('update-blog-status', $blog->id) }}" method="POST">

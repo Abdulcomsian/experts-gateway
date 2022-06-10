@@ -51,8 +51,8 @@ Blog
                                 </div>
                             </div>
                             <div class="col-lg-12">
-                                <div class="form-group">
-                            <textarea class="ckeditor form-control" name="description"></textarea>
+                                <div class="aboutProfile">
+                            <textarea class="form-control" id="editor" name="description"></textarea>
                             <div style="color:red;">{{$errors->first('description')}}</div> <br>
                         </div>
                             </div>
@@ -100,11 +100,15 @@ Blog
 </main>
 @endsection
 
-@section('js')
-<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+@section('script')
+<script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.ckeditor').ckeditor();
+        ClassicEditor.create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
     });
 </script>
 @endsection

@@ -246,37 +246,39 @@ Expert Gateway
                         tristique viverra. Aliquam eu scelerisque orci.</p>
                 </div>
             </div>
-            {{-- @if(count($lawyers) > 0)
+            @if(count($lawyers) > 0)
             <div class="sliderDiv">
                 <div class="expertSlider">
                     @foreach($lawyers as $key=>$lawyer)
-                    <div class="sliderBox">
-                        <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" width="352px" height="378px">
-                        <div class="expertHeader">
-                            <h4>{{$lawyer->f_name}} {{$lawyer->l_name}}</h4>
-                            <p>{{$lawyer['lawyer_profile'][0]->title}}</p>
+                    <a style="color: black" href="{{ route('expert-detail',$lawyer['lawyer_profile'][0]->id)}}">
+                        <div class="sliderBox">
+                            <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" width="352px" height="378px">
+                            <div class="expertHeader">
+                                <h4>{{$lawyer->f_name}} {{$lawyer->l_name}}</h4>
+                                {{-- <p>{{$lawyer['lawyer_profile'][0]->title}}</p> --}}
+                            </div>
+                            <div class="line">
+                                .................................................................................</div>
+                            <div class="expertAbout">
+                                <p><strong>Address:</strong> <span>{{$lawyer['lawyer_profile'][0]->address}}</span></p>
+                                <p><strong>Education:</strong> <span>
+                                    @php
+                                        $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
+                                    @endphp
+                                    @foreach($lawyer_educations as $education)
+                                        {{$education->education->education_name}}
+                                        @if(!($loop->last))
+                                        ,
+                                        @endif
+                                    @endforeach
+                                </span></p>
+                            </div>
                         </div>
-                        <div class="line">
-                            .................................................................................</div>
-                        <div class="expertAbout">
-                            <p>County: <span>Australia</span></p>
-                            <p>Expertise: <span>
-                                @php
-                                    $lawyer_expertises = App\Models\LawyersHasExpertise::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
-                                @endphp
-                                @foreach($lawyer_expertises as $expertise)
-                                    {{$expertise->expertise->name}}
-                                    @if(!($loop->last))
-                                    ,
-                                    @endif
-                                @endforeach
-                            </span></p>
-                        </div>
-                    </div>
+                    </a>
                     @endforeach
                 </div>
             </div>
-            @endif --}}
+            @endif
         </div>
     </div>
     <div class="excellence">

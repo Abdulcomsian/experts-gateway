@@ -1690,7 +1690,7 @@ footer .newsLetter .formDiv button {
     right: 0px;
 }
 
-.profileBox .profileFormDiv button {
+.profileBox .profileFormDiv button[type="submit"]  {
     padding: 14px 63px;
     border: none;
     float: right;
@@ -3754,7 +3754,7 @@ main .expertBanner .searchBox {
 {
     margin-bottom: 15px;
 }
-form button{
+form button[type="submit"]{
     background: transparent linear-gradient(311deg, #EF1D30 0%, var(--unnamed-color-ed2456) 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
     background: transparent linear-gradient(311deg, #EF1D30 0%, #ED2456 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
     border: none;

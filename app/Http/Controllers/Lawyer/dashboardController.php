@@ -341,6 +341,7 @@ class dashboardController extends Controller
 
     public function update_lawyer_profile(Request $request,$id)
     {
+        // dd($request->all(),$id);
         $user_id = Auth::id();
         $this->validate($request,[ 
             'f_name'=>'required', 

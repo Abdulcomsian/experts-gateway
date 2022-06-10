@@ -19,7 +19,6 @@ Edit Profile
                             <div class="uploadCover">
                                 <input type="file" name="b_image" id="b_image" accept="image/*">
                                 <p>Upload Cover Image</p>
-                                <div style="color:red;">{{$errors->first('b_image')}}</div> <br>
                             </div>
                             <div class="profileAvatar" style="bottom:-30px !important;">
                                 <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
@@ -31,7 +30,6 @@ Edit Profile
                             <div class="uploadCover">
                                 <input type="file" name="image" id="image" accept="image/*">
                                 <p>Upload Profile Image</p>
-                                <div style="color:red;">{{$errors->first('image')}}</div> <br>
                             </div>
                             <div class="profileAvatar" style="bottom:-30px !important;">
                                 <img src="{{asset('lawyer_profile/'.$lawyer_profile->image)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
@@ -60,7 +58,6 @@ Edit Profile
                                 <label>Email</label>
                                 <div class="inputDiv">
                                     <input type="email" readonly placeholder="Email Address" name="email" value="{{$lawyer_profile->user->email}}">
-                                    <div style="color:red;">{{$errors->first('email')}}</div> <br>
                                 </div>
                             </div>
                             {{-- <div class="col-lg-6">
@@ -151,7 +148,7 @@ Edit Profile
                             <div class="col-lg-12">
                                 <label>Profile</label>
                                 <div class="aboutProfile">
-                                    <textarea required class=" form-control" name="description">{!! $lawyer_profile->description !!}</textarea>
+                                    <textarea required class="form-control" id="editor" name="description">{!! $lawyer_profile->description !!}</textarea>
                                     <div style="color:red;">{{$errors->first('description')}}</div> <br>
                                 </div>
                             </div>
@@ -163,7 +160,7 @@ Edit Profile
                             <div class="col-lg-12">
                                 <label style="margin-bottom: 3.5rem;">Eductions</label>
                                 <div class="inputDiv">
-                                    <select class="js-example-basic-multiple" name="language_id[]" multiple="multiple">
+                                    <select class="js-example-basic-multiple" name="education_id[]" multiple="multiple">
                                         <option disabled> Select Eductions</option>
                                         @foreach($educations as $education)
                                             @foreach($lawyer_educations as $l_education)
@@ -179,7 +176,7 @@ Edit Profile
                                             {{$selected}} >{{$education->education_name}}</option>
                                         @endforeach
                                     </select>
-                                    <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
+                                    <div style="color:red;">{{$errors->first('education_id')}}</div> <br>
                                 </div>
                             </div>
                         </div>
@@ -218,11 +215,14 @@ Edit Profile
     </main>
 @endsection
 @section('script')
-<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.ckeditor').ckeditor();
+        ClassicEditor.create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
     });
 
     $(document).ready(function () {

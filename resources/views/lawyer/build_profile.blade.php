@@ -242,7 +242,7 @@ Profile building
                                                     <div class="col-lg-12">
                                                         <div class="multiSelect">
                                                             <label for="">Education</label>
-                                                            <div class="inputButton second_form">
+                                                            <div class="inputButton second_form flex-column align-items-start" >
                                                                 <select class="js-example-basic-multiple" name="education_id[]" id="education_id" multiple="multiple">
                                                                     @if($lawyer_educations)
                                                                     {{$selected="";}}
@@ -265,14 +265,14 @@ Profile building
                                                                     @endforeach
                                                                     @endif
                                                                 </select>
-                                                                <span class="text-danger education_id_valid"></span>
+                                                                <span class="text-danger education_id_valid d-block"></span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
                                                         <div class="multiSelect">
                                                             <label for="">Membership & Association</label>
-                                                            <div class="inputButton second_form">
+                                                            <div class="inputButton second_form flex-column align-items-start">
                                                                 <select class="js-example-basic-multiple" name="membership_id[]" id="membership_id" multiple="multiple">
                                                                     <option disabled> Select Membership & Association</option>
                                                                     @if($lawyer_memberships)
@@ -297,7 +297,7 @@ Profile building
                                                                     @endif
                                                                 </select>
                                                                 {{-- <Button>ADD MORE</Button> --}}
-                                                                <span class="text-danger membership_id_valid"></span>
+                                                                <span class="text-danger membership_id_valid d-block"></span>
                                                             </div>
                                                         </div>
                                                     </div>

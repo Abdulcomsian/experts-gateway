@@ -71,17 +71,19 @@ Profile building
                                     <div class="formDiv">
                                         <form id="profile-form">
                                             @csrf
+                                         
                                             <div class="uploadBanner">
-                                                <img src="{{asset('assets/img/uploadIcon.png') }}" alt="" class="img-fluid">
+                                                <div class="upload_banner_img">
+                                                    <img src="{{asset('lawyer_cover_image/' .$lawyer_profile->b_image)}}" alt="" class="img-fluid">
+                                                </div>
+                                                <img src="{{asset('lawyer_cover_image/' .$lawyer_profile->b_image)}}" alt="" class="img-fluid">
                                                 <div class="uploadImgBanner first_form">
                                                     <p>Upload Cover Image</p>
-                                                    <input type="file" id="b_image" name="b_image" value="{{$lawyer_profile->b_image ??'' }}" id="b_image" accept="image/*">
+                                                    <input type="file" id="b_image" name="b_image" value="{{$lawyer_profile->b_image ??'' }}" id="b_image" accept="image/*" class="upload_banner_img">
                                                     <span class="text-primary" id="b_imageName"></span>
                                                     <span class="text-danger b_image_valid"></span><br>
                                                     @if($lawyer_profile)
-                                                    <div class="profileAvatar">
-                                                        <img style="width: 140px !important; left:321px; top:72px ;height: 70px !important; " src="{{asset('lawyer_cover_image/' .$lawyer_profile->b_image)}}" alt="" class="img-fluid">
-                                                    </div>
+                                                 
                                                     @endif
                                                 </div>
                                             </div>
@@ -89,7 +91,7 @@ Profile building
                                                 <div class="uplodProfilePhoto">
                                                     <div class="uploadPhoto first_form">
                                                         <p>Upload <br>Profile Image</p>
-                                                        <input type="file" name="image" value="{{$lawyer_profile->image ?? '' }}" id="image" accept="image/*">
+                                                        <input type="file" name="image" value="{{$lawyer_profile->image ?? '' }}" id="image" accept="image/*" class="upload_user_img">
                                                         <span class="text-primary" id="imageName"></span>
                                                         <span class="text-danger image_valid"></span>
                                                         @if($lawyer_profile)
@@ -491,6 +493,19 @@ Profile building
 @endsection
 @section('script')
 <script type="text/javascript">
+function loadBannerImg(){
+    console.log("here")
+    $('.upload_banner').attr('src', URL.createObjectURL(event.target.files[0]));
+    $(".upload_banner").css("opacity","1");
+    $(".on-boarding-main .pills-div-main .uploadBanner .uploadImgBanner input").css("width","100%");
+    $(".on-boarding-main .pills-div-main .uploadBanner .uploadImgBanner input").css("height","100%");
+  }
+  function loadProfileImg(){
+    console.log("here")
+    $('.user_profile_img').attr('src', URL.createObjectURL(event.target.files[0]));
+    $(".user_profile_img").css("opacity","1");
+  }
+
     ClassicEditor.create( document.querySelector( '#description' ) )
     .catch( error => {
         console.error( error );

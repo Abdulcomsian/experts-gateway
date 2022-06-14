@@ -3660,17 +3660,18 @@ main .expertBanner .searchBox {
     position: relative;
 }
 .on-boarding-main .pills-div-main .uploadBanner img{
-    position: absolute;
-    left: 80px;
-    top: 12px;
+    width: 100%;
+    height: 100%;
     mix-blend-mode: luminosity;
+    position: absolute;
+    top: 0px
 }
 .on-boarding-main .pills-div-main .uploadBanner  .uploadImgBanner{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 64%;
+    height: 100%;
 }
 .on-boarding-main .pills-div-main .uploadBanner  .uploadImgBanner input{
     position: relative;
@@ -4595,6 +4596,8 @@ form button[type="submit"]{
         width: 55px;
         height: 65px;
     }
+
+   
 
     .contactDetail {
         padding: 150px 200px;
@@ -6767,3 +6770,17 @@ form button[type="submit"]{
         height: 1750px;
     }
 } */
+.on-boarding-main .pills-div-main .upload_banner_img{
+    position: absolute;
+    left: 0px !important;
+    top: 0px !important;
+    width: 100%;
+    height: 100%;
+}
+.profileAvatar{
+    position: absolute;
+    top: 0px;
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+}

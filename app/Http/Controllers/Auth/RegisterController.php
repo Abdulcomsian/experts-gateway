@@ -93,7 +93,7 @@ class RegisterController extends Controller
                 
                     $user = User::create([
                         'f_name' => $splitName['0'],
-                        'l_name' => $splitName['1'],
+                        'l_name' => $splitName['1'] ?? '',
                         'email' => $data['email'],
                         'status' => 0,
                         'password' => Hash::make($data['password']),

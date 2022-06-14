@@ -1,4 +1,16 @@
 let count=2;
+function loadBannerImg(){
+  console.log("here")
+  $('.upload_banner').attr('src', URL.createObjectURL(event.target.files[0]));
+  $(".upload_banner").css("opacity","1");
+  $(".on-boarding-main .pills-div-main .uploadBanner .uploadImgBanner input").css("width","100%");
+  $(".on-boarding-main .pills-div-main .uploadBanner .uploadImgBanner input").css("height","100%");
+}
+function loadProfileImg(){
+  console.log("here")
+  $('.user_profile_img').attr('src', URL.createObjectURL(event.target.files[0]));
+  $(".user_profile_img").css("opacity","1");
+}
 $(".submitButton").click(function(e){
   e.preventDefault();
   $(".lawyerForm").css("display","none");

@@ -100,16 +100,20 @@
                                     <div class="profile-div">
                                         <div class="uploadBanner">
                                             <img src="../../assets/img/uploadIcon.png" alt="" class="img-fluid">
+                                            <img src="../../assets/img/uploadIcon.png" alt="" class="img-fluid upload_banner">
                                             <div class="uploadImgBanner">
                                                 <p>Upload Cover Image</p>
-                                                <input type="file" name="upload_banner" id="upload_banner">
+                                                <input type="file" name="upload_banner" id="upload_banner" onchange="loadBannerImg()">
+                                               
                                             </div>
                                         </div>
                                         <div class="tabContent">
                                            <div class="uplodProfilePhoto">
+                                           
                                             <div class="uploadPhoto">
+                                                <img src="../../assets/img/blog 3.png" alt="" class="img-fluid user_profile_img">
                                                 <p>Upload <br>Profile Image</p>
-                                                <input type="file" name="upload_profile" id="upload_profile">
+                                                <input type="file" name="upload_profile" id="upload_profile" onchange="loadProfileImg()">
                                             </div>
                                            </div>
                                             <div class="formDiv">

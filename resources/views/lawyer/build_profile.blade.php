@@ -217,7 +217,7 @@ Profile building
                                                                 <option value="">Select Country</option>
                                                                 
                                                                 @foreach ($countries as $country)
-                                                                @if($lawyer_profile->country > 0)
+                                                                @if($lawyer_profile)
                                                                 @if($country->id == $lawyer_profile->country)
                                                                 <option value="{{$country->id}}" selected>
                                                                 {{$country->name}}
@@ -238,12 +238,16 @@ Profile building
                                                             <select name="state" class="" id="state-dropdown">
                                                                 
                                                                 @foreach ($states as $state)
+                                                                @if($lawyer_profile)
                                                                 @if($state->id == $lawyer_profile->state)
                                                                 <option value="{{$state->id}}" selected>
                                                                 {{$state->name}}
                                                                 </option>
                                                                 @else
                                                                     <option value="{{$state->id}}">{{$state->name}}</option>
+                                                                @endif
+                                                                @else
+                                                                <option value="{{$state->id}}">{{$state->name}}</option>
                                                                 @endif
                                                                 @endforeach
 
@@ -254,8 +258,10 @@ Profile building
                                                         <div class="inputDiv second_form">
                                                             <label for="">City <i class="fa fa-info-circle" aria-hidden="true"></i></label>
                                                             <select name="city" class="" id="city-dropdown">
+                                                                @if($lawyer_profile)
                                                                 @if($lawyer_profile->city != null)
                                                                     <option value="{{$city->id}}">{{$city->name}}</option>
+                                                                @endif
                                                                 @endif
                                                             </select>
                                                         </div>

@@ -217,12 +217,16 @@ Profile building
                                                                 <option value="">Select Country</option>
                                                                 
                                                                 @foreach ($countries as $country)
+                                                                @if($lawyer_profile->country > 0)
                                                                 @if($country->id == $lawyer_profile->country)
                                                                 <option value="{{$country->id}}" selected>
                                                                 {{$country->name}}
                                                                 </option>
                                                                 @else
                                                                     <option value="{{$country->id}}">{{$country->name}}</option>
+                                                                @endif
+                                                                @else
+                                                                <option value="{{$country->id}}">{{$country->name}}</option>
                                                                 @endif
                                                                 @endforeach
                                                             </select>

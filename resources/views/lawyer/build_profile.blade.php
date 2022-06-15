@@ -74,17 +74,19 @@ Profile building
                                          
                                             <div class="uploadBanner">
                                                 <div class="upload_banner_img">
-                                                    <img src="{{asset('lawyer_cover_image/' .$lawyer_profile->b_image)}}" alt="" class="img-fluid">
+                                                    @if($lawyer_profile)
+                                                    <img src="{{asset('lawyer_cover_image/' .$lawyer_profile->b_image ?? '')}}" alt="" class="img-fluid">
+                                                    @endif
                                                 </div>
-                                                <img src="{{asset('lawyer_cover_image/' .$lawyer_profile->b_image)}}" alt="" class="img-fluid">
+                                                <!-- @if($lawyer_profile)
+                                                <img src="{{asset('lawyer_cover_image/' .$lawyer_profile->b_image ?? '')}}" alt="" class="img-fluid">
+                                                @endif -->
                                                 <div class="uploadImgBanner first_form">
                                                     <p>Upload Cover Image</p>
                                                     <input type="file" id="b_image" name="b_image" value="{{$lawyer_profile->b_image ??'' }}" id="b_image" accept="image/*" class="upload_banner_img">
                                                     <span class="text-primary" id="b_imageName"></span>
                                                     <span class="text-danger b_image_valid"></span><br>
-                                                    @if($lawyer_profile)
-                                                 
-                                                    @endif
+                                                    
                                                 </div>
                                             </div>
                                             <div class="tabContent">

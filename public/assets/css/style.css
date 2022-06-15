@@ -6773,7 +6773,7 @@ form button[type="submit"]{
 .on-boarding-main .pills-div-main .upload_banner_img{
     position: absolute;
     left: 0px !important;
-    top: 0px !important;
+    top: -81px !important;
     width: 100%;
     height: 100%;
 }

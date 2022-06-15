@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="btnDiv">
-                    <button class="formBtn">Sign Up Now</button>
+                    <button class="formBtn" style="cursor: pointer;">Sign Up Now</button>
                 </div>
             </form>
         </div>

@@ -44,9 +44,10 @@ class dashboardController extends Controller
         $lawyer_educations =null;
         $lawyer_memberships =null;
         $countries = Country::get();
-        $city = City::where('id',$lawyer_profile->city)->first();
+        $city = null;
         if($lawyer_profile)
         {
+            $city = City::where('id',$lawyer_profile->city)->first();
             $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
             $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
             $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();

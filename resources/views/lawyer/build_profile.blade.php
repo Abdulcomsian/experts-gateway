@@ -209,6 +209,54 @@ Profile building
                                                             <span class="text-danger language_id_valid"></span>
                                                         </div>
                                                     </div>
+
+                                                    <div class="col-lg-6">
+                                                        <div class="inputDiv second_form">
+                                                            <label for="">Country <i class="fa fa-info-circle" aria-hidden="true"></i></label>
+                                                            <select name="country" id="country-dropdown">
+                                                                <option value="">Select Country</option>
+                                                                
+                                                                @foreach ($countries as $country)
+                                                                @if($country->id == $lawyer_profile->country)
+                                                                <option value="{{$country->id}}" selected>
+                                                                {{$country->name}}
+                                                                </option>
+                                                                @else
+                                                                    <option value="{{$country->id}}">{{$country->name}}</option>
+                                                                @endif
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="inputDiv second_form">
+                                                            <label for="">State <i class="fa fa-info-circle" aria-hidden="true"></i></label>
+                                                            <select name="state" class="" id="state-dropdown">
+                                                                
+                                                                @foreach ($states as $state)
+                                                                @if($state->id == $lawyer_profile->state)
+                                                                <option value="{{$state->id}}" selected>
+                                                                {{$state->name}}
+                                                                </option>
+                                                                @else
+                                                                    <option value="{{$state->id}}">{{$state->name}}</option>
+                                                                @endif
+                                                                @endforeach
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="inputDiv second_form">
+                                                            <label for="">City <i class="fa fa-info-circle" aria-hidden="true"></i></label>
+                                                            <select name="city" class="" id="city-dropdown">
+                                                                @if($lawyer_profile->city != null)
+                                                                    <option value="{{$city->id}}">{{$city->name}}</option>
+                                                                @endif
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv second_form">
                                                             <label for="">Primary Practice Area <i class="fa fa-info-circle" aria-hidden="true"></i></label>
@@ -495,6 +543,49 @@ Profile building
 @endsection
 @section('script')
 <script type="text/javascript">
+
+$(document).ready(function() {
+$('#country-dropdown').on('change', function() {
+var country_id = this.value;
+$("#state-dropdown").html('');
+$.ajax({
+url:"{{url('get-states-by-country')}}",
+type: "POST",
+data: {
+country_id: country_id,
+_token: '{{csrf_token()}}' 
+},
+dataType : 'json',
+success: function(result){
+$('#state-dropdown').html('<option value="">Select State</option>'); 
+$.each(result.states,function(key,value){
+$("#state-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
+});
+$('#city-dropdown').html('<option value="">Select State First</option>'); 
+}
+});
+});    
+$('#state-dropdown').on('change', function() {
+var state_id = this.value;
+$("#city-dropdown").html('');
+$.ajax({
+url:"{{url('get-cities-by-state')}}",
+type: "POST",
+data: {
+state_id: state_id,
+_token: '{{csrf_token()}}' 
+},
+dataType : 'json',
+success: function(result){
+$('#city-dropdown').html('<option value="">Select City</option>'); 
+$.each(result.cities,function(key,value){
+$("#city-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
+});
+}
+});
+});
+});
+
 function loadBannerImg(){
     console.log("here")
     $('.upload_banner').attr('src', URL.createObjectURL(event.target.files[0]));

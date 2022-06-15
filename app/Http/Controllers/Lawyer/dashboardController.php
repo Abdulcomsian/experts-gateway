@@ -13,6 +13,9 @@ use App\Models\LawyerProfile;
 use App\Models\LawyersHasEducation;
 use App\Models\Education;
 use App\Models\Membership;
+use App\Models\Country;  
+use App\Models\State;  
+use App\Models\City;  
 use App\Models\LawyersHasMembership;
 use App\Models\LawyersHasLanguage;
 use Validator;
@@ -35,10 +38,13 @@ class dashboardController extends Controller
         $languages = Language::get();
         $educations = Education::get();
         $memberships = Membership::get();
+        $states = State::get();
         $lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
         $lawyer_language =null;
         $lawyer_educations =null;
         $lawyer_memberships =null;
+        $countries = Country::get();
+        $city = City::where('id',$lawyer_profile->city)->first();
         if($lawyer_profile)
         {
             $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
@@ -46,7 +52,7 @@ class dashboardController extends Controller
             $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
             if($lawyer->status == 0)
             {
-               return view('lawyer.build_profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','languages','educations','memberships','lawyer_profile')); 
+               return view('lawyer.build_profile',compact('countries','lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','languages','educations','memberships','lawyer_profile','city','states','countries')); 
             }
             elseif($lawyer->status == 1)
             {
@@ -57,7 +63,7 @@ class dashboardController extends Controller
         else{
             if($lawyer->status == 0)
             {
-               return view('lawyer.build_profile',compact('lawyer','languages','educations','memberships','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships')); 
+               return view('lawyer.build_profile',compact('lawyer','countries','languages','educations','memberships','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','states','countries')); 
             }
             elseif($lawyer->status == 2)
             {
@@ -159,50 +165,6 @@ class dashboardController extends Controller
             
     }
 
-
-
-    public function profile_update_1(Request $request,$id)
-    {
-         // dd($request->all());
-        $user_id = Auth::id();
-        $this->validate($request,[  
-            'f_name'=>'required|string|max:255', 
-            'l_name'=>'required|string|max:255', 
-            'title'=>'required|string', 
-
-        ]);
-        $lawyer_profile= LawyerProfile::find($id);
-        if($request->hasfile('image'))
-        {
-            $image = $request->file('image');
-            $extensions =$image->extension();
-
-            $image_name =time().'.'. $extensions;
-            $image->move('lawyer_profile/',$image_name);
-            $lawyer_profile->image=$image_name;
-            
-        }
-
-        if($request->hasfile('b_image'))
-        {
-            $c_image = $request->file('b_image');
-            $c_extensions =$c_image->extension();
-
-            $image_c_name =time().'.'. $c_extensions;
-            $c_image->move('lawyer_cover_image/',$image_c_name);
-            $lawyer_profile->b_image=$image_c_name;
-        }
-        $lawyer_profile->title = $request->title;
-        $lawyer_profile->save();
-        
-        $user= User::where('id',$user_id)->first();
-        $user->f_name = $request->f_name;
-        $user->l_name = $request->l_name;
-        $user->save();
-        toastSuccess('Successfully Added');
-        return redirect('lawyer/profile');
-    }
-
     public function profile_store_2(Request $request)
     {
         $messages = [
@@ -241,6 +203,9 @@ class dashboardController extends Controller
             $lawyer_profile->user_id = $user_id;
             $lawyer_profile->address = $request->address;
             $lawyer_profile->partise_area = $request->partise_area;
+            $lawyer_profile->country = $request->country;
+            $lawyer_profile->state = $request->state;
+            $lawyer_profile->city = $request->city;
             if($request->secondary_partise_area)
             {
                 $lawyer_profile->secondary_partise_area = $request->secondary_partise_area;

@@ -20,6 +20,7 @@ use App\Models\LawyersHasLanguage;
 use App\Mail\LawyerApprovedMAil;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Mail;
+use App\Models\{Country,State,City};
 
 class dashboardController extends Controller
 {
@@ -51,10 +52,13 @@ class dashboardController extends Controller
         $languages = Language::get();
         $educations = Education::get();
         $memberships = Membership::get();
+        $country = Country::where('id',$lawyer_profile->country)->first();
+        $state = State::where('id',$lawyer_profile->state)->first();
+        $city = City::where('id',$lawyer_profile->city)->first();
         $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
         $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
         $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
-        return view('admin.lawyer.show', compact('lawyer_profile','languages','lawyer_language','lawyer_educations','lawyer_memberships'));
+        return view('admin.lawyer.show', compact('lawyer_profile','languages','lawyer_language','lawyer_educations','lawyer_memberships','country','state','city'));
         
     }
 

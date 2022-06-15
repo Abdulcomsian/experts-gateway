@@ -3,6 +3,11 @@
     src: url("../fonts/MoskauGrotesk.ttf");
 }
 
+.ck .ck-sticky-panel__content
+{
+    display: none !important;
+}
+
 @font-face {
     font-family: MoskauMedium;
     src: url("../fonts/MoskauGrotesk-Medium.ttf");

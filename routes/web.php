@@ -26,6 +26,9 @@ Route::get('/services',[App\Http\Controllers\FrontendController::class, 'service
 Route::get('/search',[App\Http\Controllers\FrontendController::class, 'search'])->name('search');
 Route::get('/search_expert',[App\Http\Controllers\FrontendController::class, 'search_expert'])->name('search_expert');
 
+Route::get('country-state-city',[App\Http\Controllers\CountryStateCityController::class, 'index']);
+Route::post('get-states-by-country',[App\Http\Controllers\CountryStateCityController::class, 'getState']);
+Route::post('get-cities-by-state',[App\Http\Controllers\CountryStateCityController::class, 'getCity']);
 
 Route::post('newsletter',[App\Http\Controllers\NewsLetterController::class, 'store']);
 

@@ -115,6 +115,45 @@ Show Lawyer Profile
 
                                             <!--begin::Col-->
                                             <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Country</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <p>
+                                                        {{$country->name}}
+                                                    </p>
+                                                </div><br><br>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <!--end::Col-->
+
+                                            <!--begin::Col-->
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">State</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <p>
+                                                        {{$state->name}}
+                                                    </p>
+                                                </div><br><br>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <!--end::Col-->
+
+                                            <!--begin::Col-->
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">City</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <p>
+                                                        {{$city->name}}
+                                                    </p>
+                                                </div><br><br>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <!--end::Col-->
+
+                                            <!--begin::Col-->
+                                            <div class="col-lg-6">
                                                 {{-- <div class="multiSelect">
                                                     <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Area of Expertises</label>
                                                     <!--begin::Input group-->

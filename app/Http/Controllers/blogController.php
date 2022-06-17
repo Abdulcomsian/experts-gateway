@@ -83,7 +83,7 @@ class blogController extends Controller
 
     public function blogs()
     {
-        $blogs = Blog::where('status',1)->get();
+        $blogs = Blog::where('status',1)->orderBy('id','desc')->get();
         $contact_us = ContactUs::first();
         return view('user.blogs', compact('blogs','contact_us'));
     }

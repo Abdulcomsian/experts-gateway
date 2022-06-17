@@ -4,10 +4,6 @@
     <title>Expert Gateway</title>
 </head>
 <body>
-    <p>{{ $details['title'] }}</p>
-    <p>{{ $details['body'] }}</p>
-   
-    <p>Thank you</p>
 
     <div style="background: #f8f8f8; padding: 0px 0px; font-family:arial; line-height:28px; height:100%;  width: 100%; color: #514d6a;padding-top: 30px;word-break: break-word;"
      width="100%">

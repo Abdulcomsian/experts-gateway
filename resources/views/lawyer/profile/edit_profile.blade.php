@@ -60,6 +60,65 @@ Edit Profile
                                     <input type="email" readonly placeholder="Email Address" name="email" value="{{$lawyer_profile->user->email}}">
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+                                <label>Country</label>
+                                <div class="inputDiv">
+                                    <select name="country" id="country-dropdown">
+                                        <option value="">Select Country</option>
+                                        
+                                        @foreach ($countries as $country)
+                                        @if($lawyer_profile)
+                                        @if($country->id == $lawyer_profile->country)
+                                        <option value="{{$country->id}}" selected>
+                                        {{$country->name}}
+                                        </option>
+                                        @else
+                                            <option value="{{$country->id}}">{{$country->name}}</option>
+                                        @endif
+                                        @else
+                                        <option value="{{$country->id}}">{{$country->name}}</option>
+                                        @endif
+                                        @endforeach
+                                    </select>
+                                    <div style="color:red;">{{$errors->first('country')}}</div> <br>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>State</label>
+                                <div class="inputDiv">
+                                    <select name="state" class="" id="state-dropdown">
+                                                                
+                                        @foreach ($states as $state)
+                                        @if($lawyer_profile)
+                                        @if($state->id == $lawyer_profile->state)
+                                        <option value="{{$state->id}}" selected>
+                                        {{$state->name}}
+                                        </option>
+                                        @else
+                                            <option value="{{$state->id}}">{{$state->name}}</option>
+                                        @endif
+                                        @else
+                                        <option value="{{$state->id}}">{{$state->name}}</option>
+                                        @endif
+                                        @endforeach
+
+                                    </select>
+                                    <div style="color:red;">{{$errors->first('state')}}</div> <br>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>City</label>
+                                <div class="inputDiv">
+                                    <select name="city" id="city-dropdown">
+                                        @if($lawyer_profile)
+                                        @if($lawyer_profile->city != null)
+                                            <option value="{{$city->id}}">{{$city->name}}</option>
+                                        @endif
+                                        @endif
+                                    </select>
+                                    <div style="color:red;">{{$errors->first('city')}}</div> <br>
+                                </div>
+                            </div>
                             {{-- <div class="col-lg-6">
                                 <label>Lawyer Title</label>
                                 <div class="inputDiv">
@@ -218,6 +277,49 @@ Edit Profile
 <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 
 <script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#country-dropdown').on('change', function() {
+        var country_id = this.value;
+        $("#state-dropdown").html('');
+        $.ajax({
+        url:"{{url('get-states-by-country')}}",
+        type: "POST",
+        data: {
+        country_id: country_id,
+        _token: '{{csrf_token()}}' 
+        },
+        dataType : 'json',
+        success: function(result){
+        $('#state-dropdown').html('<option value="">Select State</option>'); 
+        $.each(result.states,function(key,value){
+        $("#state-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
+        });
+        $('#city-dropdown').html('<option value="">Select State First</option>'); 
+        }
+        });
+        });    
+        $('#state-dropdown').on('change', function() {
+        var state_id = this.value;
+        $("#city-dropdown").html('');
+        $.ajax({
+        url:"{{url('get-cities-by-state')}}",
+        type: "POST",
+        data: {
+        state_id: state_id,
+        _token: '{{csrf_token()}}' 
+        },
+        dataType : 'json',
+        success: function(result){
+        $('#city-dropdown').html('<option value="">Select City</option>'); 
+        $.each(result.cities,function(key,value){
+        $("#city-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
+        });
+        }
+        });
+        });
+    });
+
     $(document).ready(function () {
         ClassicEditor.create( document.querySelector( '#editor' ) )
             .catch( error => {

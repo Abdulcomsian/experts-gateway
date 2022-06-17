@@ -30,4 +30,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'linkedin' => [
+        'client_id' => '779b2vdzjqncb7',
+        'client_secret' => 'CGCTHyzFVmcJvWJZ',
+        'redirect' => 'http://learnl52.hd/auth/linkedin/callback'
+    ],
+
 ];

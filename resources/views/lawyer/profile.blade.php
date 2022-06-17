@@ -36,7 +36,7 @@ Dashboard
                                             <div class="imgDiv">
                                                 <img src="../assets/img/locationIcon.png" alt="" class="img-fluid">
                                             </div>
-                                            <span>{{$lawyer_profile->address}}</span>
+                                            <span>{{$lawyer_profile->address}} , {{$country->name}} , {{$state->name}} , {{$city->name}}</span>
                                         </li>
                                         <li>
                                             <div class="imgDiv">

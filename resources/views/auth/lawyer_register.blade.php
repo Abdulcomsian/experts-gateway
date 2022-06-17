@@ -45,6 +45,7 @@
                 <div class="btnDiv">
                     <button class="formBtn" style="cursor: pointer;">Sign Up Now</button>
                 </div>
+                
             </form>
         </div>
     </div>

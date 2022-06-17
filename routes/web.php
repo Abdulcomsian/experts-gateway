@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\ContactUs;
+use App\Http\Controllers\LinkedinController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::get('/search_expert',[App\Http\Controllers\FrontendController::class, 'se
 Route::get('country-state-city',[App\Http\Controllers\CountryStateCityController::class, 'index']);
 Route::post('get-states-by-country',[App\Http\Controllers\CountryStateCityController::class, 'getState']);
 Route::post('get-cities-by-state',[App\Http\Controllers\CountryStateCityController::class, 'getCity']);
+
+//linkedin-login
 
 Route::post('newsletter',[App\Http\Controllers\NewsLetterController::class, 'store']);
 

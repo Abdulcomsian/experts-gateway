@@ -30,6 +30,7 @@ class LawyerApprovedMAil extends Mailable
      */
     public function build()
     {
+        // dd($details);   
         return $this->subject('Approved Email')
                     ->view('emails.lawyer_approved_mail');
     }

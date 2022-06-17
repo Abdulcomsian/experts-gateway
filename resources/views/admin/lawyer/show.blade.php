@@ -24,9 +24,7 @@ Show Lawyer Profile
                             <!--begin::Card body-->
                             <div class="card-body p-12">
                                 <!--begin::Form-->
-                                <form action="{{ route('update-lawyer-profile',$lawyer_profile->id) }}" method="post" enctype="multipart/form-data">
-                                @method('PUT')
-                                @csrf
+                                
                                     <!--begin::Wrapper-->
                                     <div class="d-flex flex-column align-items-start flex-xxl-row">
 
@@ -153,7 +151,7 @@ Show Lawyer Profile
                                             <!--end::Col-->
 
                                             <!--begin::Col-->
-                                            <div class="col-lg-6">
+                                            {{-- <div class="col-lg-6"> --}}
                                                 {{-- <div class="multiSelect">
                                                     <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Area of Expertises</label>
                                                     <!--begin::Input group-->
@@ -164,7 +162,7 @@ Show Lawyer Profile
                                                     </div>
                                                 </div> --}}
                                                 <!--end::Input group-->
-                                            </div>
+                                            {{-- </div> --}}
                                             <!--end::Col-->
 
                                             <!--begin::Col-->
@@ -230,13 +228,49 @@ Show Lawyer Profile
                                             </div><br>
                                             <!--end::Col-->
 
+                                            <!--begin::Col-->
+                                            
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-12">
+                                                <form action="{{ route('update-lawyer-status', $lawyer_profile->user->id) }}" method="POST">
+                                                    @csrf()  
+                                                    <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Lawyer Status</label>
+                                                    <input type="hidden" name="status" value="{{$lawyer_profile->user->status}}"> 
+                                                    <select name="status" id="status" required class="form-control">
+                                                        <option value="">Select Status</option>
+                                                        <option value="1">Approved</option>
+                                                        <option value="0">Reject</option>
+                                                    </select><br>
+                                                    <input type="text" name="mail_message" placeholder="Reason" class="form-control reason" style="display: none;"><br>
+                                                    <button type="submit" class="btn btn-primary">Update</button>
+                                                </form>
+                                                
+                                                
+
+                                                {{-- @if($lawyer_profile->user->status == 1) 
+                                                <form action="{{ route('update-lawyer-status', $lawyer_profile->user->id) }}" method="POST">
+                                                    @csrf()                         
+                                                    <button type="submit" class="btn btn-success" name="status" value="0">Approved</button>
+                                                </form>                    
+                                                @elseif($lawyer_profile->user->status == 0)
+                                                    <form action="{{ route('update-lawyer-status', $lawyer_profile->user->id) }}" method="POST">
+                                                        @csrf() 
+                                                        <label class="form-label fs-6 fw-bolder text-gray-900 mb-3"><strong> Reason</strong></label>       
+                                                        <input type="text" name="mail_message" required class="form-control" placeholder="Enter Reason of Rejection">   
+                                                        <br>                  
+                                                        <button type="submit" class="btn btn-danger" name="status" value="1">Pending</button>
+                                                    </form>
+                                                @endif --}}
+                                            </div>
+                                            <!--end::Col-->
+
                                             </div>
                                             <!--end::Col-->
                                         </div>
                                         <!--end::Row-->
                                     </div>
                                     <!--end::Wrapper-->
-                                </form>
                                 <!--end::Form-->
                             </div>
                             <!--end::Card body-->
@@ -258,6 +292,15 @@ Show Lawyer Profile
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
+
+    $('#status').change(function(){
+        if($(this).val() == 0){
+            $('.reason').show();
+        }else{
+            $('.reason').hide();
+        }
+       
+    }); 
     $(document).ready(function() {
         // Select2 Multiple
         $('.select2-multiple').select2({

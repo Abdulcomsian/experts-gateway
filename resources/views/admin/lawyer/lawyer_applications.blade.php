@@ -44,15 +44,9 @@ Lawyer Applications
 
                                 <td>
                                     @if($lawyer_profile->user->status == 1) 
-                                    <form action="{{ route('update-lawyer-status', $lawyer_profile->user->id) }}" method="POST">
-                                        @csrf()                         
-                                        <button type="submit" class="btn btn-success" name="status" value="0">Approved</button>
-                                    </form>                    
+                                        Approved                   
                                     @elseif($lawyer_profile->user->status == 0)
-                                        <form action="{{ route('update-lawyer-status', $lawyer_profile->user->id) }}" method="POST">
-                                            @csrf()                             
-                                            <button type="submit" class="btn btn-danger" name="status" value="1">Pending</button>
-                                        </form>
+                                        Pending
                                     @endif
 
 

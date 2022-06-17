@@ -64,29 +64,42 @@ class dashboardController extends Controller
 
     public function update_lawyer_status(Request $request,$id)
     {
-        try {
+        //  dd($request->all());
+        // try {
         $user= User::find($id);
         $user->status = $request->status;
         $user->save();
-        if($user->status == 1)
+        
+        if($user->status == '0')
         {
             $details = [
             'f_name' => $user->f_name,
-            'email' => $user->email
+            'email' => $user->email,
+            'title' => 'Your application Has been Rejected',
+            'body'  => $request->mail_message,
             ];
-
-            // dd($details);
-   
+            // dd("first");
+            Mail::to($user->email)->send(new LawyerApprovedMAil($details));
+        }
+        elseif($user->status == '1')
+        {
+            $details = [
+            'f_name' => $user->f_name,
+            'email' => $user->email,
+            'title' => 'Your application Has been Approved',
+            'body'  => 'Your application has been approved by the admin. You can now login to your account.',
+            ];
+            // dd("second");
             Mail::to($user->email)->send(new LawyerApprovedMAil($details));
         }
         toastSuccess('Successfully Update Status');
         return redirect('admin/lawyer_applications');
         
-        } catch (\Exception $exception) {
-            // dd($exception->getMessage());
-            toastError('Something went wrong, try again');
-            return Redirect::back();
-        }
+        // } catch (\Exception $exception) {
+        //     // dd($exception->getMessage());
+        //     toastError('Something went wrong, try again');
+        //     return Redirect::back();
+        // }
     }
 
     public function edit_lawyer_profile($id)
@@ -96,10 +109,13 @@ class dashboardController extends Controller
         $languages = Language::get();
         $educations = Education::get();
         $memberships = Membership::get();
+        $countries = Country::get();
+        $city = City::where('id',$lawyer_profile->city)->first();
+        $states = State::get();
         $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
         $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
         $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
-        return view('admin.lawyer.edit', compact('lawyer_profile','user','lawyer_language','languages','educations','memberships','lawyer_educations','lawyer_memberships'));
+        return view('admin.lawyer.edit', compact('lawyer_profile','user','lawyer_language','languages','educations','memberships','lawyer_educations','lawyer_memberships','countries','city','states'));
         
     }
 
@@ -115,6 +131,9 @@ class dashboardController extends Controller
             'education_id'=>'required', 
             'language_id'=>'required', 
             'membership_id'=>'required', 
+            'country'=>'required', 
+            'state'=>'required', 
+            'city'=>'required', 
 
         ]);
         $lawyer= LawyerProfile::where('id',$id)->first();
@@ -122,6 +141,9 @@ class dashboardController extends Controller
         // $lawyer_profile->title = $request->title;
         $lawyer_profile->description = $request->description;
         $lawyer_profile->address = $request->address;
+        $lawyer_profile->country = $request->country;
+        $lawyer_profile->state = $request->state;
+        $lawyer_profile->city = $request->city;
         // $lawyer_profile->education = implode($request->education, ',');
         // $lawyer_profile->membership = implode($request->membership, ',');
         if($request->hasfile('image'))

@@ -65,8 +65,9 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-12 text-right">
-                                        <button class="formBtn" style="cursor: pointer;;margin: 0px;margin-top: 20px;">Register</button>
+                                        <button class="formBtn" style="cursor: pointer;margin: 0px;margin-top: 20px;">Register</button>
                                     </div>
+                                    
                                 </div>
                             </form>
                         </div>

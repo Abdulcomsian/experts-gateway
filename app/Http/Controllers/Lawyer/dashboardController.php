@@ -57,7 +57,10 @@ class dashboardController extends Controller
             }
             elseif($lawyer->status == 1)
             {
-                return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships'));
+                $country = Country::where('id',$lawyer_profile->country)->first();
+                $state = State::where('id',$lawyer_profile->state)->first();
+                $city = City::where('id',$lawyer_profile->city)->first();
+                return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','state','country'));
             }
 
         }
@@ -309,7 +312,10 @@ class dashboardController extends Controller
         $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
         $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
         $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
-        return view('lawyer.profile.edit_profile',compact('lawyer_profile','languages','educations','memberships','lawyer_language','lawyer_educations','lawyer_memberships'));
+        $countries = Country::get();
+        $city = City::where('id',$lawyer_profile->city)->first();
+        $states = State::get();
+        return view('lawyer.profile.edit_profile',compact('lawyer_profile','languages','educations','memberships','lawyer_language','lawyer_educations','lawyer_memberships','countries','city','states'));
     }
 
     public function update_lawyer_profile(Request $request,$id)
@@ -326,6 +332,9 @@ class dashboardController extends Controller
             'language_id'=>'required', 
             'education_id'=>'required', 
             'membership_id'=>'required', 
+            'country'=>'required', 
+            'state'=>'required', 
+            'city'=>'required', 
 
         ]);
         $lawyer= LawyerProfile::where('id',$id)->first();
@@ -333,6 +342,9 @@ class dashboardController extends Controller
         // $lawyer_profile->title = $request->title;
         $lawyer_profile->description = $request->description;
         $lawyer_profile->address = $request->address;
+        $lawyer_profile->country = $request->country;
+        $lawyer_profile->state = $request->state;
+        $lawyer_profile->city = $request->city;
         if($request->hasfile('image'))
         {
             $image = $request->file('image');

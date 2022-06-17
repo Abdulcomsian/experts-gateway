@@ -67,6 +67,77 @@ Edit Lawyer Profile
                                             </div><br>
                                             <!--end::Col-->
                                             <!--begin::Col-->
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Country</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <select name="country" class="form-control" id="country-dropdown">
+                                                        <option value="">Select Country</option>
+                                                        
+                                                        @foreach ($countries as $country)
+                                                        @if($lawyer_profile)
+                                                        @if($country->id == $lawyer_profile->country)
+                                                        <option value="{{$country->id}}" selected>
+                                                        {{$country->name}}
+                                                        </option>
+                                                        @else
+                                                            <option value="{{$country->id}}">{{$country->name}}</option>
+                                                        @endif
+                                                        @else
+                                                        <option value="{{$country->id}}">{{$country->name}}</option>
+                                                        @endif
+                                                        @endforeach
+                                                    </select>
+                                                    <div style="color:red;">{{$errors->first('country')}}</div> <br>
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">State</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <select class="form-control" name="state" class="" id="state-dropdown">
+                                                                
+                                                        @foreach ($states as $state)
+                                                        @if($lawyer_profile)
+                                                        @if($state->id == $lawyer_profile->state)
+                                                        <option value="{{$state->id}}" selected>
+                                                        {{$state->name}}
+                                                        </option>
+                                                        @else
+                                                            <option value="{{$state->id}}">{{$state->name}}</option>
+                                                        @endif
+                                                        @else
+                                                        <option value="{{$state->id}}">{{$state->name}}</option>
+                                                        @endif
+                                                        @endforeach
+
+                                                    </select>
+                                                    <div style="color:red;">{{$errors->first('state')}}</div> <br>
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div><br>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">City</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <select name="city" class="form-control" id="city-dropdown">
+                                                        @if($lawyer_profile)
+                                                        @if($lawyer_profile->city != null)
+                                                            <option value="{{$city->id}}">{{$city->name}}</option>
+                                                        @endif
+                                                        @endif
+                                                    </select>
+                                                    <div style="color:red;">{{$errors->first('city')}}</div> <br>
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div><br>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
                                             {{-- <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Lawyer Title</label>
                                                 <!--begin::Input group-->
@@ -263,6 +334,49 @@ Edit Lawyer Profile
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
+    $(document).ready(function() {
+        $('#country-dropdown').on('change', function() {
+        var country_id = this.value;
+        $("#state-dropdown").html('');
+        $.ajax({
+        url:"{{url('get-states-by-country')}}",
+        type: "POST",
+        data: {
+        country_id: country_id,
+        _token: '{{csrf_token()}}' 
+        },
+        dataType : 'json',
+        success: function(result){
+        $('#state-dropdown').html('<option value="">Select State</option>'); 
+        $.each(result.states,function(key,value){
+        $("#state-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
+        });
+        $('#city-dropdown').html('<option value="">Select State First</option>'); 
+        }
+        });
+        });    
+        $('#state-dropdown').on('change', function() {
+        var state_id = this.value;
+        $("#city-dropdown").html('');
+        $.ajax({
+        url:"{{url('get-cities-by-state')}}",
+        type: "POST",
+        data: {
+        state_id: state_id,
+        _token: '{{csrf_token()}}' 
+        },
+        dataType : 'json',
+        success: function(result){
+        $('#city-dropdown').html('<option value="">Select City</option>'); 
+        $.each(result.cities,function(key,value){
+        $("#city-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
+        });
+        }
+        });
+        });
+        });
+
+
     $(document).ready(function() {
         // Select2 Multiple
         $('.select2-multiple').select2({

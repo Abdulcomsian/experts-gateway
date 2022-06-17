@@ -13,7 +13,7 @@
                 <tr>
                     <td style="vertical-align: top; padding-bottom:30px;background-color:#ffffff;padding-top:25px;padding-left:40px;">
                         <a href="" target="_blank"><img alt="ExpertGateway"
-                                                        src="../assets/img/logo.png"
+                                                        src="{{ asset('assets/img/logo.png') }}"
                                                         style="border:none;max-width:150px;"/></a></td>
                 </tr>
                 </tbody>

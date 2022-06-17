@@ -43,13 +43,16 @@ blog
                     @foreach($blogs as $blog)
                     <div class="col-lg-4">
                         <div class="blogCard">
+                            <a href="{{ route('all-blog',$blog->id) }}">
                             <img src="{{asset('blogs/'.$blog->image)}}" alt="" class="img-fluid">
-                            <div class="cardContent">
+                            <div class="cardContent" style="color: #212529 !important">
                                 <div class="date">
                                     <p>{{ date('d M,Y', strtotime($blog->created_at)) }}</p>
                                 </div>
+                                <div style="color: #212529">
                                 <h4>{{$blog->title}}</h4>
-                                {{ $blog->short_description }}<br>
+                                {{ $blog->short_description }}
+                                </div><br>
                                 <a href="{{ route('all-blog',$blog->id) }}">Read More <img src="../../assets/img/sliderArrow.png" alt=""></a>
                             </div>
                         </div>

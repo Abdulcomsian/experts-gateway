@@ -1087,7 +1087,7 @@ footer .newsLetter .formDiv button {
 }
 
 .blogDetailCard .card .cardContent {
-    padding: 60px 100px;
+    padding: 25px 50px;
 }
 
 .blogDetailCard .card .cardContent .dateLikeDiv {
@@ -1120,10 +1120,10 @@ footer .newsLetter .formDiv button {
 }
 
 .blogDetailCard .card .cardContent h4 {
-    margin-top: 90px;
-    font-size: 30px;
+    margin-top: 35px;
+    font-size: 30px !important;
     font-family: MoskauMedium;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 
 .blogDetailCard .card .cardContent p {

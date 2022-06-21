@@ -79,7 +79,7 @@ class dashboardController extends Controller
 
     public function profile_store_1(Request $request)
     {
-        
+    //    dd($request->all()); 
         $messages = [
             'f_name.required' => 'Please Enter First Name',
             'l_name.required' => 'Please Enter Last Name',

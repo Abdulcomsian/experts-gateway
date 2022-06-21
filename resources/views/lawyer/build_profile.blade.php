@@ -677,7 +677,7 @@ $('#image').on('propertychange input', function (e) { $('#imageName').text(this.
                 else{
                     $('.l_name_valid').text('');
                 }
-                if($('#gender').val() == ''){
+                if(!$('#gender').val()){
                     $('.gender_valid').text(errors.message.gender);
                 }
                 else{

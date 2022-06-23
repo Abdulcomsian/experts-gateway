@@ -174,10 +174,10 @@ Dashboard
                                     </li>
                                     <li>
                                         <p>LOCATION <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>You have increased your chance of being found by users in U.A.E Dubai</span>
+                                        <span>You have increased your chance of being found by users in {{$country->name}} {{$city->name}}</span>
                                     </li>
                                     <li>
-                                        <p>LANGAGUE <i class="fa fa-check" aria-hidden="true"></i></p>
+                                        <p>LANGUAGE <i class="fa fa-check" aria-hidden="true"></i></p>
                                         <span>You have increased your chance of being found by users who speak 
                                             @foreach($lawyer_language as $language)
                                                 {{$language->language->name}}

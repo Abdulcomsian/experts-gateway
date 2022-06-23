@@ -10,4 +10,9 @@ class PartiseArea extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function lawyer_profile()
+    {
+        return $this->hasMany(LawyerProfile::class);
+    }
 }

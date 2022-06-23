@@ -3,8 +3,7 @@
     src: url("../fonts/MoskauGrotesk.ttf");
 }
 
-.ck .ck-sticky-panel__content
-{
+.ck .ck-sticky-panel__content {
     display: none !important;
 }
 
@@ -163,7 +162,8 @@ header #collapsibleNavbar .nav-item .nav-link {
     font-family: MoskauRegular;
     font-weight: 700;
 }
-header #collapsibleNavbar .nav-item .nav-link.active{
+
+header #collapsibleNavbar .nav-item .nav-link.active {
     color: #ed244d;
 }
 
@@ -759,9 +759,9 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     width: 100%;
 }
 
-.newsSlider .slick-active + .slick-active ~ .slick-slide {
+.newsSlider .slick-active+.slick-active~.slick-slide {
     opacity: 0.5;
- }
+}
 
 /********* Request - Information - CSS **********/
 .requestInformation {
@@ -1087,7 +1087,7 @@ footer .newsLetter .formDiv button {
 }
 
 .blogDetailCard .card .cardContent {
-    padding: 25px 50px;
+    padding: 60px 100px;
 }
 
 .blogDetailCard .card .cardContent .dateLikeDiv {
@@ -1120,10 +1120,10 @@ footer .newsLetter .formDiv button {
 }
 
 .blogDetailCard .card .cardContent h4 {
-    margin-top: 35px;
-    font-size: 30px !important;
+    margin-top: 90px;
+    font-size: 30px;
     font-family: MoskauMedium;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
 }
 
 .blogDetailCard .card .cardContent p {
@@ -1695,7 +1695,7 @@ footer .newsLetter .formDiv button {
     right: 0px;
 }
 
-.profileBox .profileFormDiv button[type="submit"]  {
+.profileBox .profileFormDiv button[type="submit"] {
     padding: 14px 63px;
     border: none;
     float: right;
@@ -2379,14 +2379,14 @@ footer .newsLetter .formDiv button {
 }
 
 .profileDiv .editProfileBox .editProfile .line {
-    margin: 40px 0px;
+    margin: 15px 0px;
 }
 
 .profileDiv .editProfileBox .editProfile .listDiv ul {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 60%;
+    max-width: 100% !important;
 }
 
 .profileDiv .editProfileBox .editProfile .listDiv ul li {
@@ -2403,7 +2403,8 @@ footer .newsLetter .formDiv button {
 }
 
 .profileDiv .editProfileBox .editProfile .listDiv ul li .imgDiv {
-    width: 13%;
+    /* width: 8%; */
+    width: 30px;
 }
 
 .profileDiv .editProfileBox .editProfile .editProfileContent h4 {
@@ -2417,6 +2418,234 @@ footer .newsLetter .formDiv button {
     font-family: GelionRegular;
     font-size: 18px;
     margin-bottom: 25px;
+    opacity: 67%;
+}
+
+.op_67 {
+    opacity: 67%;
+}
+
+.profileDiv .subscribe_plane {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 17px 49px #03223112;
+    margin-top: 90px;
+    padding: 40px;
+    margin-bottom: 20px;
+}
+
+.profileDiv .subscribe_plane h4,
+.profileDiv .subscribe_plane .price_div .package_name_image .name_div p,
+.profileDiv .profile_score h4 {
+    font-size: 20px;
+    font-family: MoskauMedium;
+}
+
+.profileDiv .subscribe_plane .price_div {
+    margin-top: 26px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+    border-color: rgb(102 122 132 / 13%);
+}
+
+.profileDiv .subscribe_plane .price_div .package_name_image {
+    display: flex;
+}
+
+.profileDiv .subscribe_plane .price_div .package_name_image img {
+    width: 45px;
+}
+
+.profileDiv .subscribe_plane .price_div .package_name_image .name_div {
+    margin-left: 12px;
+}
+
+.profileDiv .subscribe_plane .price_div .package_name_image .name_div span {
+    font-size: 12px;
+    font-family: GelionMedium;
+}
+
+.profileDiv .subscribe_plane .price_div .price_package {
+    font-size: 22px;
+    font-family: MoskauMedium;
+}
+
+.profileDiv .subscribe_plane .recommended_plane {
+    margin-top: 40px;
+}
+
+.profileDiv .subscribe_plane .recommended_plane .recommended_text {
+    font-size: 14px;
+    font-family: MoskauMedium;
+    color: #ED2456;
+}
+
+.profileDiv .subscribe_plane .recommended_plane .pay_buy {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profileDiv .subscribe_plane .recommended_plane .pay_buy .image_package {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.profileDiv .subscribe_plane .recommended_plane .pay_buy .image_package img {
+    width: 35px;
+}
+
+.profileDiv .subscribe_plane .recommended_plane .pay_buy .image_package p {
+    font-size: 14px;
+    font-family: MoskauMedium;
+    margin-left: 8px;
+}
+
+.profileDiv .subscribe_plane .recommended_plane .select_package {
+    width: 75%;
+}
+
+.profileDiv .subscribe_plane .recommended_plane .select_package ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    background: #ebeeef;
+}
+
+.profileDiv .subscribe_plane .recommended_plane .select_package ul li p {
+    font-size: 12px;
+    color: #022331;
+    font-family: GelionMedium;
+}
+
+.profileDiv .subscribe_plane .recommended_plane .select_package ul li span {
+    color: #8b9aa1;
+    font-size: 10px;
+    font-family: GelionMedium;
+}
+
+.profileDiv .subscribe_plane .recommended_plane .select_package ul li.active {
+    background: #fff;
+    padding: 10px;
+    border: 1px solid;
+}
+
+.profileDiv .subscribe_plane .recommended_plane .select_package ul li span span {
+    color: #EE2144;
+    font-family: GelionMedium;
+}
+
+.profileDiv .subscribe_plane .recommended_plane .select_package button {
+    background: rgb(239, 29, 48);
+    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    width: 100%;
+    color: #fff;
+    padding: 10px 0px;
+    border: none;
+    font-size: 16px;
+    font-family: MoskauMedium;
+    text-transform: uppercase;
+    margin-top: 14px;
+}
+
+.profileDiv .profile_score {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 17px 49px #03223112;
+    padding: 40px;
+}
+
+.profileDiv .profile_score .percentage_text span {
+    font-size: 32px !important;
+}
+
+.profileDiv .profile_score .percentage_text {
+    color: #032231;
+    font-size: 18px;
+    font-family: MoskauMedium;
+    opacity: 0.54;
+}
+
+.profileDiv .profile_score .progress {
+    height: 5px;
+}
+
+.profileDiv .profile_score .progress .progress-bar {
+    background-color: #EE2144;
+    ;
+}
+
+.profileDiv .profile_score .profile_list {
+    margin-top: 25px;
+}
+
+.profileDiv .profile_score .profile_list li {
+    margin-bottom: 22px;
+}
+
+.profileDiv .profile_score .profile_list li p {
+    font-size: 14px;
+    font-family: GelionRegular;
+}
+
+.profileDiv .profile_score .profile_list li span {
+    font-size: 12px;
+    font-family: GelionRegular;
+    opacity: 81%;
+    display: block;
+    line-height: 13px;
+}
+
+.btn_red_grad {
+    background: transparent linear-gradient(302deg, #EF1D30 0%, #ED2456 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
+    width: 214px;
+    max-width: 100%;
+    color: #fff;
+    padding: 10px 0px;
+    border: none;
+    font-size: 16px;
+    font-family: MoskauMedium;
+    text-transform: uppercase;
+    margin-top: 14px;
+    border-radius: 0;
+}
+
+.profile_agre .sec_title {
+    font-size: 17px;
+    letter-spacing: 0px;
+    color: #0A0A0A;
+    text-transform: uppercase;
+    opacity: 0.9;
+    font-family: GelionRegular;
+}
+
+.profile_agre {
+    margin-top: 16px;
+    padding: 17px 40px;
+    background-color: #fff;
+}
+
+.profile_agre .sec_para {
+    color: #032231;
+    font-size: 16px;
+    opacity: 0.81;
+    font-family: GelionRegular;
+}
+
+.profileDiv .profile_score .profile_list li p i {
+    color: #21B876;
+}
+
+.profileDiv .profile_score .profile_list button {
+    font-size: 20px;
+    font-family: MoskauMedium;
+    width: 100%;
+    padding: 15px 0px;
+    background-color: transparent;
+    border: 2px solid;
+    margin-top: 30px;
 }
 
 /*************** Register - CSS ****************/
@@ -3589,48 +3818,59 @@ main .expertBanner .searchBox {
 .aboutUs .multiBox .commonBox h2 {
     display: flex;
 }
+
 /************* On Boarding - CSS **************/
-.on-boarding-main{
+.on-boarding-main {
     padding: 150px 0px 0px !important;
     background-color: #fff;
 }
-.on-boarding-main .on-boarding-left-bar{
+
+.on-boarding-main .on-boarding-left-bar {
     height: 100vh;
     background: #fff;
     padding: 120px 50px 0px 80px;
 }
-.on-boarding-main .on-boarding-left-bar h3{
+
+.on-boarding-main .on-boarding-left-bar h3 {
     font-family: MoskauMedium;
     font-size: 40px;
     color: #032231;
 }
-.on-boarding-main .on-boarding-left-bar .progress-div{
+
+.on-boarding-main .on-boarding-left-bar .progress-div {
     margin: 20px 0px;
 }
-.on-boarding-main .on-boarding-left-bar .progress-div p{
+
+.on-boarding-main .on-boarding-left-bar .progress-div p {
     font-size: 23px;
     color: #032231;
     font-family: MoskauMedium;
     opacity: .54;
 }
-.on-boarding-main .on-boarding-left-bar .progress-div .percentage-text{
+
+.on-boarding-main .on-boarding-left-bar .progress-div .percentage-text {
     font-size: 38px !important;
 }
-.on-boarding-main .on-boarding-left-bar .progress-div .progress{
+
+.on-boarding-main .on-boarding-left-bar .progress-div .progress {
     background-color: #dee1e4;
     border-radius: 6px;
     height: 6px;
 }
-.on-boarding-main .on-boarding-left-bar .progress-div .progress .progress-bar{
+
+.on-boarding-main .on-boarding-left-bar .progress-div .progress .progress-bar {
     background-color: #EE2144;
 }
-.on-boarding-main .on-boarding-left-bar  .tab-pills-div{
+
+.on-boarding-main .on-boarding-left-bar .tab-pills-div {
     padding: 60px 0px;
 }
-.on-boarding-main .on-boarding-left-bar  .tab-pills-div ul{
+
+.on-boarding-main .on-boarding-left-bar .tab-pills-div ul {
     display: block;
 }
-.on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li a{
+
+.on-boarding-main .on-boarding-left-bar .tab-pills-div ul li a {
     background: #fafbfb;
     padding: 15px;
     font-size: 21px;
@@ -3640,67 +3880,96 @@ main .expertBanner .searchBox {
     color: #032231;
     border-left: 3px solid #D5D5D5;
 }
-.imageTab{
+
+.imageTab {
     display: none;
     transition: all .5s linear;
 }
-.on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li.active + .imageTab{
+
+.on-boarding-main .on-boarding-left-bar .tab-pills-div ul li.active+.imageTab {
     display: block;
     margin-bottom: 50px;
     margin-top: 20px;
 }
-.on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li.active a{
+
+.on-boarding-main .on-boarding-left-bar .tab-pills-div ul li.active a {
     color: #EE2144;
     border-color: #EE2144;
     font-size: 25px;
 }
-.on-boarding-main .pills-div-main{
+
+.on-boarding-main .pills-div-main {
     background: #f8f9f9;
     padding-top: 80px;
     height: 100%;
 }
-.on-boarding-main .pills-div-main .uploadBanner{
+
+.on-boarding-main .pills-div-main .uploadBanner {
     background-color: #F0F7FA;
     height: 220px;
     position: relative;
 }
-.on-boarding-main .pills-div-main .uploadBanner img{
+
+.on-boarding-main .pills-div-main .upload_banner {
+    position: absolute;
+    left: 0px !important;
+    top: 0px !important;
     width: 100%;
     height: 100%;
-    /* mix-blend-mode: luminosity; */
-    position: absolute;
-    top: 0px
+    opacity: 0;
 }
-.on-boarding-main .pills-div-main .uploadBanner  .uploadImgBanner{
+
+.user_profile_img {
+    position: absolute;
+    top: 0px;
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    opacity: 0;
+}
+
+.on-boarding-main .pills-div-main .uploadBanner img {
+    position: absolute;
+    left: 80px;
+    top: 12px;
+    mix-blend-mode: luminosity;
+}
+
+.on-boarding-main .pills-div-main .uploadBanner .uploadImgBanner {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
-.on-boarding-main .pills-div-main .uploadBanner  .uploadImgBanner input{
+
+.on-boarding-main .pills-div-main .uploadBanner .uploadImgBanner input {
     position: relative;
     top: -59px;
     opacity: 0;
     cursor: pointer;
 }
-.on-boarding-main .pills-div-main .uploadBanner  .uploadImgBanner p{
+
+.on-boarding-main .pills-div-main .uploadBanner .uploadImgBanner p {
     border: 2px solid rgb(1 1 1 / 15%);
     padding: 12px 30px;
     font-size: 20px;
     font-family: MoskauMedium;
     cursor: pointer;
 }
-.on-boarding-main .pills-div-main .tab-content .tab-pane{
+
+.on-boarding-main .pills-div-main .tab-content .tab-pane {
     padding: 32px 100px;
 }
-.on-boarding-main .pills-div-main .profile-div{
+
+.on-boarding-main .pills-div-main .profile-div {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 17px 49px #03223112;
     border: undefined solid #010101;
     opacity: 1;
 }
-.on-boarding-main .pills-div-main .profile-div .uploadPhoto{
+
+.on-boarding-main .pills-div-main .profile-div .uploadPhoto {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3708,14 +3977,16 @@ main .expertBanner .searchBox {
     position: relative;
     top: -70px;
 }
-.on-boarding-main .pills-div-main .profile-div .uploadPhoto input{
+
+.on-boarding-main .pills-div-main .profile-div .uploadPhoto input {
     position: relative;
     top: -83px;
     cursor: pointer;
     z-index: 99999999;
     opacity: 0;
 }
-.on-boarding-main .pills-div-main  .profile-div .uploadPhoto p{
+
+.on-boarding-main .pills-div-main .profile-div .uploadPhoto p {
     width: 140px;
     height: 140px;
     display: flex;
@@ -3728,29 +3999,36 @@ main .expertBanner .searchBox {
     font-family: MoskauMedium;
     border-radius: 100%;
 }
+
 .on-boarding-main .pills-div-main .profile-div .tabContent {
     position: relative;
 }
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv{
+
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv {
     padding: 0px 90px 20px;
 }
-.on-boarding-main .pills-div-main .profile-div .tabContent .lawyerForm{
+
+.on-boarding-main .pills-div-main .profile-div .tabContent .lawyerForm {
     padding: 40px 90px 20px;
 }
-.inputDiv{
+
+.inputDiv {
     margin-bottom: 32px;
 }
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv label{
+
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv label {
     font-size: 18px;
     font-family: GelionBold;
 }
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv label i{
+
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv label i {
     color: #89969B;
 }
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv input, 
+
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv input,
 .on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv textarea,
 .on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .multiSelect .select2,
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv select{
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv select {
     border: 2px solid #E5E8EA;
     padding: 15px 18px;
     color: #607681;
@@ -3758,11 +4036,12 @@ main .expertBanner .searchBox {
     font-family: GelionRegular;
     width: 100%;
 }
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .multiSelect .select2
-{
+
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .multiSelect .select2 {
     margin-bottom: 15px;
 }
-.main-wrapper.active .pre_loader{
+
+.main-wrapper.active .pre_loader {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3771,10 +4050,11 @@ main .expertBanner .searchBox {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color:rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, .6);
     z-index: 999999;
 }
-form button[type="submit"]{
+
+form button[type="submit"] {
     background: transparent linear-gradient(311deg, #EF1D30 0%, var(--unnamed-color-ed2456) 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
     background: transparent linear-gradient(311deg, #EF1D30 0%, #ED2456 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
     border: none;
@@ -3785,15 +4065,18 @@ form button[type="submit"]{
     font-family: MoskauMedium;
     cursor: pointer;
 }
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton select{
+
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton select {
     width: 80%;
 }
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton{
+
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton button{
+
+.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton button {
     background: #fff;
     color: #000;
     border: 1px solid;
@@ -3803,10 +4086,12 @@ form button[type="submit"]{
     height: 42px;
     margin-left: 10px;
 }
+
 .ck-editor__editable_inline {
     min-height: 143px;
 }
-.on-boarding-main .pills-div-main .sendApproval{
+
+.on-boarding-main .pills-div-main .sendApproval {
     padding: 30px 90px;
     height: 100%;
     display: none;
@@ -3814,57 +4099,68 @@ form button[type="submit"]{
     align-items: center;
     flex-direction: column;
 }
-.on-boarding-main .pills-div-main .sendApproval p{
+
+.on-boarding-main .pills-div-main .sendApproval p {
     color: #626262;
     font-size: 22px;
     font-family: GelionRegular;
     text-align: center;
 }
-#membership{
+
+#membership {
     padding: 30px 60px !important;
 }
-.multipleMemberShip .commonBox{
+
+.multipleMemberShip .commonBox {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 18px 49px #01254814;
     opacity: 1;
     padding: 40px 25px;
 }
-.multipleMemberShip .commonBox .header{
+
+.multipleMemberShip .commonBox .header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-.multipleMemberShip .commonBox .header p{
+
+.multipleMemberShip .commonBox .header p {
     margin-left: 18px;
     font-size: 24px;
     font-family: MoskauMedium;
 }
-.multipleMemberShip .commonBox .priceDiv{
+
+.multipleMemberShip .commonBox .priceDiv {
     margin: 22px 0px;
 }
-.multipleMemberShip .commonBox .priceDiv span{
+
+.multipleMemberShip .commonBox .priceDiv span {
     font-size: 12px;
     color: #49616D;
     opacity: 0.84;
     font-family: GelionSemiBold;
 }
-.multipleMemberShip .commonBox .priceDiv .actualPrice{
+
+.multipleMemberShip .commonBox .priceDiv .actualPrice {
     color: #032231;
     font-size: 24px;
     font-family: MoskauMedium;
 }
-.multipleMemberShip .commonBox .priceDiv .yearPrice span{
+
+.multipleMemberShip .commonBox .priceDiv .yearPrice span {
     font-size: 16px;
     font-family: MoskauMedium;
 }
+
 .multipleMemberShip .commonBox .packageDetail p,
 .multipleMemberShip .commonBox .list_div p,
-.multipleMemberShip .commonBox .list_div ul li{
+.multipleMemberShip .commonBox .list_div ul li {
     color: #49616D;
     font-size: 12px;
     font-family: GelionRegular;
 }
-.multipleMemberShip .commonBox .packageDetail .line{
+
+.multipleMemberShip .commonBox .packageDetail .line {
     margin: 12px 0px;
     width: 34px;
     height: 4px;
@@ -3872,43 +4168,52 @@ form button[type="submit"]{
     border-radius: 2px;
     opacity: 0.2;
 }
-.multipleMemberShip .commonBox .list_div ul p{
+
+.multipleMemberShip .commonBox .list_div ul p {
     font-family: GelionSemiBold;
     text-transform: uppercase;
 }
-.multipleMemberShip .commonBox .list_div ul{
+
+.multipleMemberShip .commonBox .list_div ul {
     margin-bottom: 34px;
     margin-top: 12px;
     list-style: disc;
 }
-.multipleMemberShip .commonBox .savePrice{
+
+.multipleMemberShip .commonBox .savePrice {
     background: #ebeeef;
 }
-.multipleMemberShip .commonBox .savePrice li p{
+
+.multipleMemberShip .commonBox .savePrice li p {
     font-size: 12px;
     color: #022331;
     font-family: GelionMedium;
 }
-.multipleMemberShip .commonBox .savePrice li span{
+
+.multipleMemberShip .commonBox .savePrice li span {
     color: #8b9aa1;
     font-size: 10px;
 }
-.multipleMemberShip .commonBox .savePrice li span span{
+
+.multipleMemberShip .commonBox .savePrice li span span {
     opacity: 1;
     color: #EE2144;
 }
-.multipleMemberShip .commonBox .savePrice ul{
+
+.multipleMemberShip .commonBox .savePrice ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 10px;
 }
-.multipleMemberShip .commonBox .savePrice ul li.active{
+
+.multipleMemberShip .commonBox .savePrice ul li.active {
     background: #fff;
     padding: 10px;
     border: 1px solid;
 }
-.multipleMemberShip .commonBox button{
+
+.multipleMemberShip .commonBox button {
     width: 100%;
     background: transparent linear-gradient(311deg, #EF1D30 0%, var(--unnamed-color-ed2456) 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
     background: transparent linear-gradient(311deg, #EF1D30 0%, #ED2456 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
@@ -3920,6 +4225,256 @@ form button[type="submit"]{
     font-family: MoskauMedium;
     margin-top: 15px;
 }
+
+/***************** In - Sight - CSS ************/
+.insight_Section {
+    max-width: 100% !important;
+}
+
+.insight_Section .pills_div {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+}
+
+.insight_Section .pills_div ul li a {
+    display: block;
+    margin-right: 60px;
+    font-size: 24px;
+    color: #022331;
+    font-family: MoskauMedium;
+    opacity: 0.24;
+}
+
+.insight_Section .pills_div ul li.active a {
+    opacity: 1;
+    border-bottom: 3px solid #ef1e34;
+}
+
+.insight_Section .tab_div {
+    margin-top: 120px;
+}
+
+.insight_Section .tab_div .overview_content {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+}
+
+.insight_Section .tab_div .tab-pane h3 {
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.insight_Section .tab_div .tab-pane .img_div {
+    margin-bottom: 40px;
+}
+
+.insight_Section .tab_div .tab-pane .img_div .text_div {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 17px 49px #00000029;
+    padding: 15px 25px;
+    min-height: 105px;
+}
+
+.insight_Section .tab_div .tab-pane .img_div .text_div span {
+    font-size: 14px;
+    font-family: GelionBold;
+    color: #032231;
+    opacity: 0.45;
+}
+
+.insight_Section .tab_div .tab-pane .img_div .text_div p {
+    font-size: 18px;
+    font-family: MoskauMedium;
+}
+
+.popular_topics {
+    background-color: #fff;
+    padding: 120px 0px;
+}
+
+.popular_topics h3 {
+    font-size: 50px;
+    font-family: MoskauMedium;
+}
+
+.popular_topics .multi_topics {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 85px;
+    margin-bottom: 150px;
+}
+
+.popular_topics .multi_topics .topics_box {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 18px 49px #01254814;
+    opacity: 1;
+    padding: 30px;
+}
+
+.popular_topics .multi_topics .topics_box h3 {
+    font-size: 22px;
+    margin: 30px 0px;
+    min-height: 52px;
+}
+
+.popular_topics .multi_topics .topics_box a {
+    font-size: 24px;
+    color: #ED2456;
+}
+
+.tab_div .multiple_course {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    padding-bottom: 200px;
+}
+
+.tab_div .multiple_course .course_box {
+    margin-bottom: 80px;
+}
+
+.tab_div .multiple_course .course_box .course_content {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 17px 49px #00000029;
+    border: 0.4000000059604645px solid rgb(112 112 112 / 30%);
+    padding: 12px 20px;
+}
+
+.tab_div .multiple_course .course_box .course_content h3 {
+    font-size: 18px;
+    margin-top: 15px;
+    font-family: MoskauMedium;
+}
+
+.insight_article_section .cardContent .course_content h3 {
+    font-size: 24;
+    margin-top: 15px;
+    font-family: MoskauMedium;
+    margin-bottom: 30px;
+}
+
+.insight_article_section .cardContent .course_content .list_div p {
+    font-size: 16px;
+    font-family: GelionMedium;
+    color: #000000;
+}
+
+.insight_article_section .cardContent .course_content .list_div ul {
+    margin-top: 26px;
+}
+
+.insight_article_section .cardContent .course_content .list_div ul li {
+    font-size: 16px;
+    font-family: GelionRegular;
+    color: rgb(0 0 0 / 67%);
+}
+
+.insight_article_section .cardContent .course_content .list_div ul li i {
+    margin-right: 8px;
+    color: #21B876;
+}
+
+.tab_div .multiple_course .course_box .course_content .course_rating,
+.insight_article_section .cardContent .course_content .course_rating {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab_div .multiple_course .course_box .course_content .course_rating .freeBadge,
+.insight_article_section .cardContent .course_content .course_rating .freeBadge {
+    background: #ED2456 0% 0% no-repeat padding-box;
+    font-size: 14px;
+    font-family: GelionBold;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    color: #fff;
+}
+
+.tab_div .multiple_course .course_box .course_content .course_rating p,
+.insight_article_section .cardContent .course_content .course_rating p {
+    color: rgb(3 34 49 / 45%);
+    font-family: GelionBold;
+}
+
+.tab_div .multiple_course .course_box .course_content .course_rating p i,
+.insight_article_section .cardContent .course_content .course_rating p i {
+    color: #EFD232;
+}
+
+.tab_div .multiple_course .course_box .course_content .course_description,
+.insight_article_section .cardContent .course_content .course_description {
+    font-family: GelionRegular;
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #49616D;
+}
+
+.tab_div .multiple_course .course_box .course_content .week_text,
+.insight_article_section .cardContent .course_content .week_text {
+    font-family: GelionRegular;
+    font-size: 18px;
+    color: #49616D;
+}
+
+.insight_article_section .cardContent .course_list {
+    margin: 80px 0px;
+    padding: 50px 0px;
+    border-top: 1px solid #0000002b;
+    border-bottom: 1px solid #0000002b;
+    display: flex;
+    justify-content: space-between;
+}
+
+.insight_article_section .cardContent .course_list .course_list_content {
+    width: 18%;
+    display: flex;
+    align-items: center;
+}
+
+.insight_article_section .cardContent .course_list .course_list_content p {
+    font-size: 12px !important;
+    margin-left: 12px;
+    font-family: GelionMedium;
+    opacity: 0.87;
+    color: #000 !important;
+}
+
+.insight_article_section .cardContent .course_content button {
+    background: transparent linear-gradient(311deg, #EF1D30 0%, var(--unnamed-color-ed2456) 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(311deg, #EF1D30 0%, #ED2456 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
+    border: none;
+    padding: 15px 62px;
+    font-size: 18px;
+    color: #fff;
+    opacity: 1;
+    font-family: MoskauMedium;
+    margin-top: 15px;
+}
+
+/************ Insight - Article - Detail - CSS **********/
+.insight_article_section {
+    padding-top: 300px;
+    height: auto !important;
+    padding-bottom: 200px;
+}
+
+.insight_article_section .card {
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+.insight_article_section .card .cardContent h4 {
+    margin: 0px;
+    margin-bottom: 60px;
+}
+
+
+
+
 
 
 
@@ -3999,28 +4554,35 @@ form button[type="submit"]{
 }
 
 @media screen and (max-width: 1600px) {
-    .on-boarding-main .on-boarding-left-bar .tab-pills-div ul li.active a{
+    .on-boarding-main .on-boarding-left-bar .tab-pills-div ul li.active a {
         font-size: 20px;
     }
-    .on-boarding-main .on-boarding-left-bar  .tab-pills-div ul li a{
+
+    .on-boarding-main .on-boarding-left-bar h3 {
+        font-size: 30px;
+    }
+
+    .on-boarding-main .on-boarding-left-bar .tab-pills-div ul li a {
         font-size: 18px;
     }
-    .on-boarding-main .on-boarding-left-bar h3{
-        font-size: 30px;
-    } 
-    .on-boarding-main .pills-div-main{
+
+    .on-boarding-main .pills-div-main {
         padding: 0px;
     }
-    .on-boarding-main .on-boarding-left-bar{
+
+    .on-boarding-main .on-boarding-left-bar {
         padding: 80px 0px 0px 55px;
     }
+
     .orderSection .orderContent .orderDetaill ul li .orderInfo p {
         font-size: 18px;
     }
-    .orderSection .orderContent .postedBy ul li a{
+
+    .orderSection .orderContent .postedBy ul li a {
         font-size: 12px;
     }
-    .orderSection .orderContent .multiBtn{
+
+    .orderSection .orderContent .multiBtn {
         bottom: -50px;
     }
 
@@ -4289,7 +4851,7 @@ form button[type="submit"]{
     }
 
     .profileDiv {
-        padding: 250px 100px 200px;
+        padding: 180px 100px 200px;
     }
 
     .profileBox .profileBoxHeader .uploadCover p {
@@ -4602,7 +5164,7 @@ form button[type="submit"]{
         height: 65px;
     }
 
-   
+
 
     .contactDetail {
         padding: 150px 200px;
@@ -4631,17 +5193,35 @@ form button[type="submit"]{
     .multiBlog .expertCard .cardContet .cardBody h3 {
         font-size: 30px;
     }
+
+    .insight_Section {
+        padding-bottom: 0px !important;
+    }
 }
 
 @media screen and (max-width: 1440px) {
-    .mainFixedService .earning .opertionDiv{
+    .expertDetailProfile .editProfileBox {
+        top: -44px;
+    }
+
+    .experDetailHeader {
+        height: 500px;
+    }
+
+    .expertDetailProfile .hireDiv {
+        top: 0px;
+    }
+
+    .mainFixedService .earning .opertionDiv {
         margin-left: 60%;
         position: relative;
-    left: 18px;
+        left: 18px;
     }
-    .mainFixedService .earning .opertionDiv .multiBtn span{
+
+    .mainFixedService .earning .opertionDiv .multiBtn span {
         margin-right: 0px;
     }
+
     .commonHeading {
         font-size: 50px;
     }
@@ -4700,7 +5280,8 @@ form button[type="submit"]{
     .aboutUs .multiBox .commonBox p,
     .blogDetailCard .card .cardContent p,
     .relatedService .multiRelatedService .card .cardContent .tag,
-    .fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation h4 {
+    .fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation h4,
+    .recentBlog .bolgSection .blogCard .cardContent h4 {
         font-size: 16px !important;
     }
 
@@ -4890,7 +5471,7 @@ form button[type="submit"]{
     }
 
     .profileDiv {
-        padding: 250px 60px 200px;
+        padding: 180px 60px 200px;
     }
 
     .pricingDiv {
@@ -5168,18 +5749,44 @@ form button[type="submit"]{
 }
 
 @media screen and (max-width: 1200px) {
+    .insight_Section .pills_div ul li a {
+        font-size: 20px;
+        margin-right: 30px;
+    }
+
+    .titleBanner {
+        padding: 0px 40px 30px;
+    }
+
+    .insight_Section .tab_div .tab-pane h3 {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    .profileDiv .subscribe_plane .recommended_plane .pay_buy {
+        display: block;
+    }
+
+    .profileDiv .subscribe_plane .recommended_plane .select_package {
+        width: 100%;
+    }
+
     #membership {
         padding: 20px !important;
     }
-    .multipleMemberShip .commonBox button{
+
+    .multipleMemberShip .commonBox button {
         padding: 10px 20px;
     }
+
     .on-boarding-main .on-boarding-left-bar {
         padding: 80px 20px 0px;
     }
+
     .on-boarding-main .on-boarding-left-bar .progress-div .percentage-text {
         font-size: 28px !important;
     }
+
     .orderSection .orderContent .orderDetaill ul li .orderInfo span {
         font-size: 14px;
     }
@@ -5200,19 +5807,28 @@ form button[type="submit"]{
         padding: 10px 40px;
         font-size: 16px;
     }
-    .on-boarding-main .pills-div-main .tab-content .tab-pane{
+
+    .on-boarding-main .pills-div-main .tab-content .tab-pane {
         padding: 32px 50px;
     }
-    .on-boarding-main .on-boarding-left-bar h3 br{
+
+    .on-boarding-main .on-boarding-left-bar h3 br {
         display: none;
     }
+
     main .mainBanner .bannerLeft p {
         font-size: 28px;
     }
 
     main .mainBanner .bannerLeft button,
-    .on-boarding-main .pills-div-main .uploadBanner .uploadImgBanner p {
+    .on-boarding-main .pills-div-main .uploadBanner .uploadImgBanner p,
+    .insight_Section .tab_div .tab-pane .img_div .text_div p,
+    .popular_topics .multi_topics .topics_box h3 {
         font-size: 16px;
+    }
+
+    .insight_Section {
+        padding-bottom: 100px !important;
     }
 
     header .navbar-brand {
@@ -5227,8 +5843,13 @@ form button[type="submit"]{
         margin: 250px 0px;
     }
 
-    .buyNowService .commonService h4 {
+    .buyNowService .commonService h4,
+    .popular_topics .multi_topics .topics_box a {
         font-size: 18px;
+    }
+
+    .popular_topics .multi_topics .topics_box h3 {
+        margin: 15px 0px;
     }
 
     .buyNowService .orderSummary p {
@@ -5345,7 +5966,8 @@ form button[type="submit"]{
     }
 
     .leatestNews .leatesNewContent h2,
-    .requestInformation .informationContent h2 {
+    .requestInformation .informationContent h2,
+    .popular_topics h3 {
         font-size: 40px;
     }
 
@@ -5483,10 +6105,44 @@ form button[type="submit"]{
 }
 
 @media screen and (max-width: 992px) {
-    
-    .on-boarding-main .on-boarding-left-bar{
+    .insight_article_section .cardContent .course_list {
+        display: block;
+    }
+
+    .insight_article_section .cardContent .course_list .course_list_content {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .tab_div .multiple_course {
+        padding-bottom: 100px;
+    }
+
+    .insight_Section {
+        padding-bottom: 0px !important;
+    }
+
+    .popular_topics {
+        padding: 70px 0px 0px;
+    }
+
+    .insight_Section .tab_div .tab-pane .img_div img,
+    .tab_div .multiple_course .course_box img {
+        width: 100%;
+    }
+
+    .popular_topics .multi_topics .topics_box {
+        margin-bottom: 30px;
+    }
+
+    .profileDiv .subscribe_plane {
+        margin-top: 30px;
+    }
+
+    .on-boarding-main .on-boarding-left-bar {
         height: auto;
     }
+
     .pricingDiv .priceDivHeader p {
         font-size: 70px;
     }
@@ -5625,7 +6281,7 @@ form button[type="submit"]{
     }
 
     .profileDiv {
-        padding: 300px 100px 200px;
+        padding: 120px 100px 200px;
     }
 
     .profileBox .profileBoxHeader .profileAvatar {
@@ -5953,13 +6609,32 @@ form button[type="submit"]{
     .paymentBtn {
         max-width: 25%;
     }
+
+    .insight_article_section .card {
+        top: -100px !important;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .insight_article_section {
+        padding-top: 150px;
+    }
+
+    .insight_article_section .card {
+        left: 0px !important;
+        top: 0px !important;
+
+    }
+
+    .insight_article_section .card .cardContent h4 {
+        margin-top: 10px !important;
+    }
+
     .on-boarding-main .pills-div-main .tab-content .tab-pane,
-    .on-boarding-main .pills-div-main .profile-div .tabContent .formDiv{
+    .on-boarding-main .pills-div-main .profile-div .tabContent .formDiv {
         padding: 20px;
     }
+
     .contactDetail .contactBox {
         height: auto;
     }
@@ -6070,7 +6745,7 @@ form button[type="submit"]{
     }
 
     .profileDiv {
-        padding: 300px 50px 200px;
+        padding: 100px 50px 200px;
     }
 
     .line {
@@ -6277,9 +6952,42 @@ form button[type="submit"]{
 }
 
 @media screen and (max-width: 580px) {
-    .on-boarding-main{
+    footer .newsLetter .formDiv button {
+        right: 20px;
+    }
+
+    .profileDiv .editProfileBox .editProfile .listDiv ul {
+        flex-direction: column;
+    }
+
+    .profileDiv .editProfileBox .editProfile .listDiv ul li {
+        width: 100% !important;
+        margin-bottom: 8px !important;
+    }
+
+    .profileDiv .editProfileBox .editProfile .line {
+        margin: 0px 0px;
+    }
+
+    .profileDiv .editProfileBox .editProfile .editProfileContent h4 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .insight_Section .tab_div {
+        margin: 0px;
+    }
+
+    .insight_Section .pills_div ul li a {
+        font-size: 12px;
+        margin-right: 12px;
+        margin-bottom: 20px;
+    }
+
+    .on-boarding-main {
         padding: 60px 0px 0px !important;
     }
+
     .recommendedLawyer .buyNow {
         display: block;
     }
@@ -6525,7 +7233,15 @@ form button[type="submit"]{
     }
 
     .profileDiv {
-        padding: 150px 20px 200px;
+        padding: 100px 20px 200px;
+    }
+
+    .approve {
+        letter-spacing: 0px;
+        color: #032231;
+        opacity: 0.72;
+        font-size: 17px;
+        font-family: MoskauMedium;
     }
 
     .profileBox .profileFormDiv {
@@ -6775,14 +7491,15 @@ form button[type="submit"]{
         height: 1750px;
     }
 } */
-.on-boarding-main .pills-div-main .upload_banner_img{
+.on-boarding-main .pills-div-main .upload_banner_img {
     position: absolute;
     left: 0px !important;
     top: -81px !important;
     width: 100%;
     height: 100%;
 }
-.profileAvatar{
+
+.profileAvatar {
     position: absolute;
     top: 0px;
     width: 140px;

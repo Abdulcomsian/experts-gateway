@@ -174,7 +174,7 @@ Dashboard
                                     </li>
                                     <li>
                                         <p>LOCATION <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>You have increased your chance of being found by users in {{$country->name}} {{$city->name}}</span>
+                                        <span>You have increased your chance of being found by users in {{$city->name}} {{$country->name}}</span>
                                     </li>
                                     <li>
                                         <p>LANGUAGE <i class="fa fa-check" aria-hidden="true"></i></p>

@@ -14,7 +14,7 @@ Dashboard
                         </div>
                         <div class="editProfileBox">
                             <div class="profileImg">
-                                <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" style="width: 790px !important; height: 230px !important;" alt="" class="img-fluid">
+                                <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" style="height: 300px !important;" alt="" class="img-fluid">
 
                             </div>
                             <div class="editProfile">
@@ -216,13 +216,13 @@ Dashboard
                                     </li>
                                     @if($lawyer_profile->secondary_partise_area != null)
                                     <li>
-                                        <p style="color: #ED2456;">SECONDARY PRACTICE AREA</p>
+                                        <p style="color: #ED2456;">SECONDARY PRACTICE AREA <i class="fa fa-check" aria-hidden="true"></i></p>
                                         <span>"{{ $lawyer_profile->partise_area_1->name }}" is  secondary practice area that will increase you changes of getting hired by 3x</span>
                                     </li>
                                     @endif
                                     @if($lawyer_profile->third_partise_area != null)
                                     <li>
-                                        <p style="color: #ED2456;">THIRD PRACTICE AREA</p>
+                                        <p style="color: #ED2456;">THIRD PRACTICE AREA <i class="fa fa-check" aria-hidden="true"></i></p>
                                         <span>"{{ $lawyer_profile->partise_area_2->name }}" is secondary practice area will increase you changes of getting hired by 4x</span>
                                     </li>
                                     @endif

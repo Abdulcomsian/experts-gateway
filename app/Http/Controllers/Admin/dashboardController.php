@@ -33,7 +33,7 @@ class dashboardController extends Controller
     public function lawyer_applications()
     {
         $user_id = Auth::id();
-        $lawyer_profiles = LawyerProfile::where('complete','2')->get();
+        $lawyer_profiles = LawyerProfile::where('complete','2')->orderBy('id','DESC')->get();
         return view('admin.lawyer.lawyer_applications',compact('lawyer_profiles'));
     }
 

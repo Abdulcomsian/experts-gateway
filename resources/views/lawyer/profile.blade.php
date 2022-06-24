@@ -14,7 +14,7 @@ Dashboard
                         </div>
                         <div class="editProfileBox">
                             <div class="profileImg">
-                                <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" style="width: 790px !important; height: 230px !important;" alt="" class="img-fluid">
+                                <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" style="height: 300px !important;" alt="" class="img-fluid">
 
                             </div>
                             <div class="editProfile">

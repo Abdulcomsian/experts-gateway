@@ -7520,6 +7520,10 @@ form button[type="submit"] {
         padding: 3px;
     }
 
+    .profileDiv .editProfileBox .profileImg img {
+        height: auto !important;
+    }
+
 }
 
 /* @media screen and (max-width: 414px) {

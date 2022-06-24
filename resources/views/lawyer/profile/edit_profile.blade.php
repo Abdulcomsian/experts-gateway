@@ -14,30 +14,30 @@ Edit Profile
                 @method('PUT')
                 @csrf
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="profileBoxHeader" style="padding: 100px 41px 144px 140px;">
-                            <div class="uploadCover">
-                                <input type="file" name="b_image" id="b_image" accept="image/*">
-                                <p>Upload Cover Image</p>
-                            </div>
-                            <div class="profileAvatar" style="bottom:-30px !important;">
-                                <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
+                    <div class="col-lg-12">
+                        <div class="profileBoxHeader p-0">
+                            <div class="uploadCover uploadCoverBg" style="background-image: url({{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}})">
+                                <input type="file" name="b_image" id="b_image" class="invisible h-100" accept="image/*">
+                                <p class="invisible">Upload Cover Image</p>
+                                <!-- <div class="profileAvatar">
+                                    <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" alt="" class="img-fluid cover">
+                                </div> -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="profileBoxHeader" style="padding: 100px 41px 144px 140px;">
-                            <div class="uploadCover">
-                                <input type="file" name="image" id="image" accept="image/*">
-                                <p>Upload Profile Image</p>
+                    <div class="col-lg-12">
+                        <div class="profileBoxHeader p-0">
+                            <div class="uploadCover uploadProfileP" style="background-image: url({{asset('lawyer_profile/'.$lawyer_profile->image)}})">
+                                <input type="file" name="image" id="image" class="w-100 h-100" accept="image/*">
+                                <p class="invisible">Upload Profile Image</p>
                             </div>
-                            <div class="profileAvatar" style="bottom:-30px !important;">
-                                <img src="{{asset('lawyer_profile/'.$lawyer_profile->image)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
-                            </div>
+                            <!-- <div class="profileAvatar">
+                                <img src="" alt="" width="200px" class="img-fluid">
+                            </div> -->
                         </div>
                     </div>
                 </div>
-                <div class="profileFormDiv">
+                <div class="profileFormDiv pt-0">
                     
                         <div class="row">
                             <div class="col-lg-6">
@@ -362,6 +362,16 @@ Edit Profile
            $('#row'+button_id+'').remove();  
       });  
 
+      let x = 0;
+      $('.uploadCoverBg').click(function(){
+        x++;
+        if(x == 1){
+            console.log('clicked')
+            $('.uploadCoverBg input').click()
+            x = 0;
+        }
+      })
     });
 </script>
 @endsection
+

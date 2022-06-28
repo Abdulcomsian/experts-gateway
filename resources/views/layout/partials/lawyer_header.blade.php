@@ -62,13 +62,21 @@
                         <a class="nav-link" href="{{ route('create.blog') }}">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./earning.html">Earnings</a>
+                        <a class="nav-link" href="{{ route('lawyer.earning') }}">Earnings</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('lawyer.fixed-service') }}">Fixed Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./publicQuestion.html">Public Questions & Call Requests</a>
+                        <a class="nav-link" href="{{ route('lawyer.public_question') }}">Public Questions & Call Requests</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('lawyer.insights') }}">Insights</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Community</a>
                     </li>
                     @endif
                 </ul>

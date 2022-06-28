@@ -21,6 +21,7 @@ use App\Models\LawyersHasLanguage;
 use Validator;
 use App\Mail\ApprovalMail;
 use App\Mail\LawyerApprovedMAil;
+use App\Models\Blog;
 use Illuminate\Support\Facades\Redirect;
 
 class dashboardController extends Controller
@@ -408,5 +409,32 @@ class dashboardController extends Controller
         $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
         $lawyer = User::where('id',$user_id)->first();
         return view('lawyer.order.index',compact('lawyer_profile','lawyer'));
+    }
+
+    public function earning()
+    {
+        $user_id = Auth::id();
+        $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
+        $lawyer = User::where('id',$user_id)->first();
+        return view('lawyer.earning',compact('lawyer_profile','lawyer'));   
+    }
+
+    public function public_question()
+    {
+        $user_id = Auth::id();
+        $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
+        $lawyer = User::where('id',$user_id)->first();
+        return view('lawyer.public_question',compact('lawyer_profile','lawyer'));   
+    }
+
+    public function insights()
+    {
+        $user_id = Auth::id();
+        $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
+        $lawyer = User::where('id',$user_id)->orderBy('id','DESC')->first();
+        $latest_blog = Blog::where('user_id',$lawyer->id)->first();
+        $blogs = Blog::where('user_id',$lawyer->id)->Where('id', '!=', $latest_blog->id)->get();
+        
+        return view('lawyer.insights',compact('lawyer_profile','lawyer','blogs','latest_blog'));   
     }
 }

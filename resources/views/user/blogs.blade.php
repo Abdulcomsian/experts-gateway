@@ -53,7 +53,7 @@ blog
                                 <h4>{{$blog->title}}</h4>
                                 {{ $blog->short_description }}
                                 </div><br>
-                                <a href="{{ route('all-blog',$blog->id) }}">Read More <img src="../../assets/img/sliderArrow.png" alt=""></a>
+                                <a href="{{ route('all-blog',$blog->id) }}">Read More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ blog
                             <div class="paginationList">
                                 <ul>
                                     <li>
-                                        <img src="../../assets/img/leftIcon.png" alt="">
+                                        <img src="{{ asset('assets/img/leftIcon.png') }}" alt="">
                                     </li>
                                     <li>
                                         <a href="">1</a>
@@ -88,7 +88,7 @@ blog
                                         <a href="">5</a>
                                     </li>
                                     <li>
-                                        <img src="../../assets/img/rightIcon.png" alt="">
+                                        <img src="{{ asset('assets/img/rightIcon.png') }}" alt="">
                                     </li>
                                 </ul>
                             </div>
@@ -146,7 +146,7 @@ blog
                     </div>
                     <div class="col-lg-6 text-center">
                         <div class="imgText">
-                            <img src="../../assets/img/information.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/information.png') }}" alt="" class="img-fluid">
                             <div class="imgTextMiddle">
                                 <p>Legal Advice<br> Across the<br> Globe</p>
                             </div>

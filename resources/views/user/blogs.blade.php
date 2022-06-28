@@ -16,7 +16,7 @@ blog
                     </div>
                     <div class="col-lg-6" style="padding: 0px;">
                         <div class="bannerRight">
-                            <img src="../../assets/img/blogBanner.png" alt="" class="img-fluid">
+                            <img src="{{asset('assets/img/blogBanner.png') }}" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ blog
                     @endif
                 </div>
             </div>
-            <div class="paginationDiv">
+            <div class="paginationDiv" style="display:none">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">

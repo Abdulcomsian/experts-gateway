@@ -433,8 +433,14 @@ class dashboardController extends Controller
         $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
         $lawyer = User::where('id',$user_id)->orderBy('id','DESC')->first();
         $latest_blog = Blog::where('user_id',$lawyer->id)->first();
-        $blogs = Blog::where('user_id',$lawyer->id)->Where('id', '!=', $latest_blog->id)->get();
-        
+        if($latest_blog)
+        {
+            $blogs = Blog::where('user_id',$lawyer->id)->Where('id', '!=', $latest_blog->id)->get();
+        }
+        else
+        {
+            $blogs = 0;
+        }
         return view('lawyer.insights',compact('lawyer_profile','lawyer','blogs','latest_blog'));   
     }
 }

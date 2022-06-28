@@ -26,6 +26,7 @@ Insights
                     <div class="multi_featured">
                         <div class="row">
                             <div class="col-lg-8">
+                                @if($latest_blog)
                                 <div class="img_div">
                                     <img src="{{asset('blogs/'.$latest_blog->image)}}" style="height: 278px; width:859px;"   alt="" class="img-fluid">
                                     <div class="text_div">
@@ -33,7 +34,9 @@ Insights
                                         <p>{{$latest_blog->title}}</p>
                                     </div>
                                 </div>
+                                @endif
                             </div>
+                            @if($blogs)
                             @foreach($blogs as $blog)
                             <div class="col-lg-4">
                                 <div class="img_div">
@@ -45,6 +48,7 @@ Insights
                                 </div>
                             </div>
                             @endforeach
+                            @endif
                         </div>
                     </div>
                     </div>

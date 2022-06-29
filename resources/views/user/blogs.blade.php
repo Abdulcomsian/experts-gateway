@@ -44,17 +44,20 @@ blog
                     <div class="col-lg-4">
                         <div class="blogCard">
                             <a href="{{ route('all-blog',$blog->id) }}">
-                            <img src="{{asset('blogs/'.$blog->image)}}" alt="" class="img-fluid">
-                            <div class="cardContent" style="color: #212529 !important">
-                                <div class="date">
-                                    <p>{{ date('d M,Y', strtotime($blog->created_at)) }}</p>
+                                <img src="{{asset('blogs/'.$blog->image)}}" alt="" class="img-fluid">
+                            </a>
+                                <div class="cardContent" style="color: #212529 !important">
+                                    <a class="position-relative" href="{{ route('all-blog',$blog->id) }}">
+                                    <div class="date">
+                                        <p>{{ date('d M,Y', strtotime($blog->created_at)) }}</p>
+                                    </div>
+                                    <div style="color: #212529">
+                                    <h4>{{$blog->title}}</h4>
+                                    {{ $blog->short_description }}
+                                    </div>
+                                    </a><br>
+                                    <a href="{{ route('all-blog',$blog->id) }}">Read More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                                 </div>
-                                <div style="color: #212529">
-                                <h4>{{$blog->title}}</h4>
-                                {{ $blog->short_description }}
-                                </div><br>
-                                <a href="{{ route('all-blog',$blog->id) }}">Read More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
-                            </div>
                         </div>
                     </div>
                     @endforeach

@@ -63,25 +63,25 @@
                     <div class="navigationList">
                         <ul>
                             <li>
-                                <a href="">
+                                <a href="{{ route('landing-page') }}">
                                     Home
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{ route('about-us') }}">
                                     About Us
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{ route('experts') }}">
                                     Experts
                                 </a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="">
                                     Apply
                                 </a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="">
                                     News

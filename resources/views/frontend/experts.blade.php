@@ -23,7 +23,7 @@ Experts
                                     <option value="Expertise">Expertise</option>
                                 </select>
                                 <div class="btnDiv">
-                                    <button><img src="../assets/img/searchBtnIcon.svg" alt="" class="img-fluid">
+                                    <button><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid">
                                         Search</button>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@ Experts
                 </div>
                 <div class="col-lg-6" style="padding: 0px;">
                     <div class="bannerRight">
-                        <img src="../assets/img/expertBanner.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/expertBanner.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@ Experts
                     @endforeach
                 </select>
                 <div class="btnDiv">
-                    <button onclick="fetchData()"><img src="../assets/img/searchBtnIcon.svg" alt="" class="img-fluid"> Search</button>
+                    <button onclick="fetchData()"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid"> Search</button>
                 </div>
             </div>
 
@@ -94,7 +94,7 @@ Experts
                                 <p>{{$lawyer['lawyer_profile'][0]->title}}</p>
                                 </div>
                                 <div class="line">
-                                    <img src="../assets/img/line.png" alt="" class="img-fluid">
+                                    <img src="{{ asset('assets/img/line.png') }}" alt="" class="img-fluid">
                                 </div>
                                 <div class="cardFooter">
                                     <p>Address: <span>{{$lawyer['lawyer_profile'][0]->address}}</span></p>
@@ -115,13 +115,13 @@ Experts
                                 <div class="contactDiv">
                                     <ul>
                                         <li>
-                                            <button><img src="../assets/img/recentQuestionIcon.png" alt=""> ASK A QUESTION</button>
+                                            <button><img src="{{ asset('assets/img/recentQuestionIcon.png') }}" alt=""> ASK A QUESTION</button>
                                         </li>
                                         <li>
-                                            <button><img src="../assets/img/chatIcon.svg" alt=""> CHAT</button>
+                                            <button><img src="{{ asset('assets/img/chatIcon.svg') }}" alt=""> CHAT</button>
                                         </li>
                                         <li>
-                                            <button><img src="../assets/img/request.png" alt=""> REQUEST CALLBACK</button>
+                                            <button><img src="{{ asset('assets/img/request.png') }}" alt=""> REQUEST CALLBACK</button>
                                         </li>
                                     </ul>
                                 </div>
@@ -133,14 +133,14 @@ Experts
                 @endif
             </div>
         </div>
-        <div class="paginationDiv">
+        <div class="paginationDiv" style="display: none">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="paginationList">
                             <ul>
                                 <li>
-                                    <img src="../assets/img/leftIcon.png" alt="">
+                                    <img src="{{ asset('assets/img/leftIcon.png') }}" alt="">
                                 </li>
                                 <li>
                                     <a href="">1</a>
@@ -158,7 +158,7 @@ Experts
                                     <a href="">5</a>
                                 </li>
                                 <li>
-                                    <img src="../assets/img/rightIcon.png" alt="">
+                                    <img src="{{ asset('assets/img/rightIcon.png') }}" alt="">
                                 </li>
                             </ul>
                         </div>
@@ -251,7 +251,7 @@ Experts
                 </div>
                 <div class="col-lg-6 text-center">
                     <div class="imgText">
-                        <img src="../assets/img/information.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/information.png') }}" alt="" class="img-fluid">
                         <div class="imgTextMiddle">
                             <p>Legal Advice<br> Across the<br> Globe</p>
                         </div>
@@ -302,7 +302,7 @@ Experts
                                     <p>${expert.title}</p>
                                     </div>
                                     <div class="line">
-                                        <img src="../assets/img/line.png" alt="" class="img-fluid">
+                                        <img src="{{ asset('assets/img/line.png') }}" alt="" class="img-fluid">
                                     </div>
                                     <div class="cardFooter">
                                         <p>Address: <span>${expert.address}</span></p>
@@ -323,13 +323,13 @@ Experts
                                     <div class="contactDiv">
                                         <ul>
                                             <li>
-                                                <button><img src="../assets/img/recentQuestionIcon.png" alt=""> ASK A QUESTION</button>
+                                                <button><img src="{{ asset('assets/img/recentQuestionIcon.png') }}" alt=""> ASK A QUESTION</button>
                                             </li>
                                             <li>
-                                                <button><img src="../assets/img/chatIcon.svg" alt=""> CHAT</button>
+                                                <button><img src="{{ asset('assets/img/chatIcon.svg') }}" alt=""> CHAT</button>
                                             </li>
                                             <li>
-                                                <button><img src="../assets/img/request.png" alt=""> REQUEST CALLBACK</button>
+                                                <button><img src="{{ asset('assets/img/request.png') }}" alt=""> REQUEST CALLBACK</button>
                                             </li>
                                         </ul>
                                     </div>

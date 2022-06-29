@@ -54,7 +54,7 @@ Contact Us
                     </div>
                     <div class="col-lg-6" style="padding: 0px;">
                         <div class="bannerRight">
-                            <img src="../assets/img/contactBanner.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/contactBanner.png') }}" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ Contact Us
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="contactBox">
-                            <img src="../assets/img/location.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/location.png') }}" alt="" class="img-fluid">
                             <div class="contactContent">
                                 <p>{{$contact_us->address ?? ''}}</p>
                             </div>
@@ -73,7 +73,7 @@ Contact Us
                     </div>
                     <div class="col-lg-4">
                         <div class="contactBox">
-                            <img src="../assets/img/phone.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/phone.png') }}" alt="" class="img-fluid">
                             <div class="contactContent">
                                 <p>{{$contact_us->phone ?? ''}} <br>{{$contact_us->phone_1 ?? ''}}</p>
                             </div>
@@ -81,7 +81,7 @@ Contact Us
                     </div>
                     <div class="col-lg-4">
                         <div class="contactBox">
-                            <img src="../assets/img/mail.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/mail.png') }}" alt="" class="img-fluid">
                             <div class="contactContent">
                                 <a href="">{{$contact_us->email ?? ''}}</a>
                             </div>

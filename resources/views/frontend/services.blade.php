@@ -23,7 +23,7 @@ Fixed Price Service
                                     <option value="Expertise">Expertise</option>
                                 </select>
                                 <div class="btnDiv">
-                                    <button><img src="../assets/img/searchBtnIcon.svg" alt="" class="img-fluid">
+                                    <button><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid">
                                         Search</button>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@ Fixed Price Service
                 </div>
                 <div class="col-lg-6" style="padding: 0px;">
                     <div class="bannerRight">
-                        <img src="../assets/img/fixedFreeBanner.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/fixedFreeBanner.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@ Fixed Price Service
                     @endforeach
                 </select>
                 <div class="btnDiv">
-                    <button onclick="fetchData()"><img src="../assets/img/searchBtnIcon.svg" alt="" class="img-fluid"> Search</button>
+                    <button onclick="fetchData()"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid"> Search</button>
                 </div>
             </div>
 
@@ -91,7 +91,7 @@ Fixed Price Service
                                 {{$service->short_des}}
                                 <div class="cardFooter">
                                     <h4>{{$service->price}} <span>USD</span></h4>
-                                    <a href="{{ route('fixed_service_detail', $service->id) }}" class="learnMore">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                                    <a href="{{ route('fixed_service_detail', $service->id) }}" class="learnMore">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                                 </div>
                             </div>
                         </div>
@@ -102,14 +102,14 @@ Fixed Price Service
             </div>
         </div>
     </div>
-        <div class="paginationDiv">
+        <div class="paginationDiv" style="display: none">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="paginationList">
                             <ul>
                                 <li>
-                                    <img src="../assets/img/leftIcon.png" alt="">
+                                    <img src="{{ asset('assets/img/leftIcon.png') }}" alt="">
                                 </li>
                                 <li>
                                     <a href="">1</a>
@@ -127,7 +127,7 @@ Fixed Price Service
                                     <a href="">5</a>
                                 </li>
                                 <li>
-                                    <img src="../assets/img/rightIcon.png" alt="">
+                                    <img src="{{ asset('assets/img/rightIcon.png') }}" alt="">
                                 </li>
                             </ul>
                         </div>
@@ -185,7 +185,7 @@ Fixed Price Service
                 </div>
                 <div class="col-lg-6 text-center">
                     <div class="imgText">
-                        <img src="../assets/img/information.png" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/information.png') }}" alt="" class="img-fluid">
                         <div class="imgTextMiddle">
                             <p>Legal Advice<br> Across the<br> Globe</p>
                         </div>
@@ -234,7 +234,7 @@ Fixed Price Service
                                 
                                 <div class="cardFooter">
                                     <h4>${expertise.price}<span>USD</span></h4>
-                                    <a href="fixed-service-detail/${expertise.id}" class="learnMore">Learn More <img src="../assets/img/sliderArrow.png" alt="" class="img-fluid"></a>
+                                    <a href="fixed-service-detail/${expertise.id}" class="learnMore">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                                 </div>
                             </div>
                         </div>

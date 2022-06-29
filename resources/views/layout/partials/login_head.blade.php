@@ -3,9 +3,9 @@
 <title>@yield('title')</title>
 
 <!-- Favicons -->
-<link type="image/x-icon" href="{{asset('assets/img/favicon.png') }}" rel="icon">
-<link rel="stylesheet" href="{{asset('assets/css/style1.css') }}">
-<link rel="stylesheet" href="{{asset('assets/dashboard/css/style.css')}}" />
+<link type="image/x-icon" href="{{asset('assets/img/logo.png') }}" rel="icon">
+<link rel="stylesheet" href="{{asset('assets/css/styles.css') }}">
+<link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />

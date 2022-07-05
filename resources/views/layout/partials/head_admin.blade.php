@@ -2,7 +2,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
         <title>@yield('title')</title>
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/media/logos/favicon.ico')}}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.png')}}">
 		
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{asset('assets_admin/css/bootstrap.min.css')}}">

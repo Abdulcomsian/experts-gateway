@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>@yield('title')</title>
 <!-- Favicons -->
-<link type="image/x-icon" href="{{asset('assets/media/logos/favicon.ico') }}" rel="icon">
+<link type="image/x-icon" href="{{asset('assets/img/favicon.png') }}" rel="icon">
 <link rel="stylesheet" href="{{ asset('assets/dashboard/css/style.css') }}" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />

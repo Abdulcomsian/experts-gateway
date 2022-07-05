@@ -3,7 +3,7 @@
 <title>@yield('title')</title>
 
 <!-- Favicons -->
-<link type="image/x-icon" href="{{asset('assets/media/logos/favicon.ico') }}" rel="icon">
+<link type="image/x-icon" href="{{asset('assets/img/favicon.png') }}" rel="icon">
 <link rel="stylesheet" href="{{asset('assets/css/styles.css') }}">
 <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"

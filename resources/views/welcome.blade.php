@@ -236,7 +236,7 @@ Expert Gateway
                         <h5>About Us</h5>
                         <h2Experts Gateway</h2>
                         <p class="notes">You never know when or where you might need legal advice. But finding a top lawyer when you’re away from home is difficult, time-consuming and potentially risky.</p>
-                        <p>HExperts Gateway is here to help. We partner with some of the best lawyers from around the world, carefully vetted to ensure they provide top quality advice and representation. Whatever kind of assistance you need, wherever you are, we’ll connect with a top local law expert. </p>
+                        <p>Experts Gateway is here to help. We partner with some of the best lawyers from around the world, carefully vetted to ensure they provide top quality advice and representation. Whatever kind of assistance you need, wherever you are, we’ll connect with a top local law expert. </p>
                         <a href="{{ url('/about-us') }}">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                     </div>
                 </div>

@@ -8,7 +8,7 @@
                         <h2>Who is the newsletter for? Lawyers?</h2>
                     </div>
                 </div>
-                
+
                 @if (session('alert'))
                     <div class="alert alert-success">
                         {{ session('alert') }}
@@ -60,7 +60,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ $contact_us->linkedin_link ?? '#'}}">
+                                <!-- https://www.linkedin.com/company/expertsgateway/  -->
+                                <a href="{{ $contact_us->linkedin_link ?? 'https://www.linkedin.com/company/expertsgateway/'}}">
                                     <img src="{{asset('assets/img/linkdien.png')}}" alt="" class="img-fluid">
                                 </a>
                             </li>

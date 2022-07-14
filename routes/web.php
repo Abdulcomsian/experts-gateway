@@ -132,6 +132,9 @@ Route::prefix('user')->middleware(['auth','can:user'])->group(function(){
 /*****************Lawyer ROUTES*******************/
 Route::prefix('lawyer')->middleware(['auth','can:lawyer'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\Lawyer\dashboardController::class, 'index'])->name('lawyer.dashboard');
+    Route::get('/earning', [App\Http\Controllers\Lawyer\dashboardController::class, 'earning'])->name('lawyer.earning');
+    Route::get('/public_question', [App\Http\Controllers\Lawyer\dashboardController::class, 'public_question'])->name('lawyer.public_question');
+    Route::get('/insights', [App\Http\Controllers\Lawyer\dashboardController::class, 'insights'])->name('lawyer.insights');
     Route::get('/profile', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile'])->name('lawyer.profile');
     Route::get('/blog/{id}', [App\Http\Controllers\blogController::class, 'blog'])->name('lawyer.blog');
     Route::get('/create', [App\Http\Controllers\blogController::class, 'create'])->name('create.blog');

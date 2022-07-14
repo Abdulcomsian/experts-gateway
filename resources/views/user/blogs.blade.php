@@ -16,7 +16,7 @@ blog
                     </div>
                     <div class="col-lg-6" style="padding: 0px;">
                         <div class="bannerRight">
-                            <img src="../../assets/img/blogBanner.png" alt="" class="img-fluid">
+                            <img src="{{asset('assets/img/blogBanner.png') }}" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -44,17 +44,20 @@ blog
                     <div class="col-lg-4">
                         <div class="blogCard">
                             <a href="{{ route('all-blog',$blog->id) }}">
-                            <img src="{{asset('blogs/'.$blog->image)}}" alt="" class="img-fluid">
-                            <div class="cardContent" style="color: #212529 !important">
-                                <div class="date">
-                                    <p>{{ date('d M,Y', strtotime($blog->created_at)) }}</p>
+                                <img src="{{asset('blogs/'.$blog->image)}}" alt="" class="img-fluid">
+                            </a>
+                                <div class="cardContent" style="color: #212529 !important">
+                                    <a class="position-relative" href="{{ route('all-blog',$blog->id) }}">
+                                    <div class="date">
+                                        <p>{{ date('d M,Y', strtotime($blog->created_at)) }}</p>
+                                    </div>
+                                    <div style="color: #212529">
+                                    <h4>{{$blog->title}}</h4>
+                                    {{ $blog->short_description }}
+                                    </div>
+                                    </a><br>
+                                    <a href="{{ route('all-blog',$blog->id) }}">Read More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                                 </div>
-                                <div style="color: #212529">
-                                <h4>{{$blog->title}}</h4>
-                                {{ $blog->short_description }}
-                                </div><br>
-                                <a href="{{ route('all-blog',$blog->id) }}">Read More <img src="../../assets/img/sliderArrow.png" alt=""></a>
-                            </div>
                         </div>
                     </div>
                     @endforeach
@@ -63,14 +66,14 @@ blog
                     @endif
                 </div>
             </div>
-            <div class="paginationDiv">
+            <div class="paginationDiv" style="display:none">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="paginationList">
                                 <ul>
                                     <li>
-                                        <img src="../../assets/img/leftIcon.png" alt="">
+                                        <img src="{{ asset('assets/img/leftIcon.png') }}" alt="">
                                     </li>
                                     <li>
                                         <a href="">1</a>
@@ -88,7 +91,7 @@ blog
                                         <a href="">5</a>
                                     </li>
                                     <li>
-                                        <img src="../../assets/img/rightIcon.png" alt="">
+                                        <img src="{{ asset('assets/img/rightIcon.png') }}" alt="">
                                     </li>
                                 </ul>
                             </div>
@@ -146,7 +149,7 @@ blog
                     </div>
                     <div class="col-lg-6 text-center">
                         <div class="imgText">
-                            <img src="../../assets/img/information.png" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/img/information.png') }}" alt="" class="img-fluid">
                             <div class="imgTextMiddle">
                                 <p>Legal Advice<br> Across the<br> Globe</p>
                             </div>

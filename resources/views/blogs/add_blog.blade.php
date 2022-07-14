@@ -45,6 +45,7 @@ Blog
                             </div>
                             <div class="col-lg-12">
                                 <div class="inputDiv">
+                                    <label>Short Description</label>
                                     <textarea name="short_description" id="short_description" cols="20" rows="5" style="border:1px solid #d9d9d9;" 
                                         placeholder="Short Description"></textarea>
                                         <div style="color:red;">{{$errors->first('short_description')}}</div> <br>
@@ -52,6 +53,7 @@ Blog
                             </div>
                             <div class="col-lg-12">
                                 <div class="aboutProfile">
+                                    <label>Description</label>
                             <textarea class="form-control" id="editor" name="description"></textarea>
                             <div style="color:red;">{{$errors->first('description')}}</div> <br>
                         </div>
@@ -69,25 +71,27 @@ Blog
                         <div class="col-lg-4">
                             <div class="blogCard">
                                 <img src="{{asset('blogs/'.$blog->image)}}" style="height:213px; width: 347px;" alt="" class="img-fluid">
-                                <div class="row cardContent">
-                                    <div class="date col-lg-5">
-                                        <p>{{ date('d M,Y', strtotime($blog->created_at)) }}</p>
-                                    </div>
-                                    <div class=" col-lg-1"></div>
-                                    
-                                    @if($blog->status == 1)
-                                    <div class="date btn btn-success col-lg-5">
-                                        <p style="color:white;">Approved</p>
-                                    </div>
-                                    @else
-                                    <div class="date btn btn-danger col-lg-5">
-                                        <p style="color:white;">Pending</p>
-                                    </div>
-                                    @endif
+                                <div class="container">
+                                    <div class="row cardContent">
+                                        <div class="date col-lg-5">
+                                            <p>{{ date('d M,Y', strtotime($blog->created_at)) }}</p>
+                                        </div>
+                                        <div class=" col-lg-1"></div>
+                                        
+                                        @if($blog->status == 1)
+                                        <div class="date btn btn-success col-lg-5">
+                                            <p style="color:white;">Approved</p>
+                                        </div>
+                                        @else
+                                        <div class="date btn btn-danger col-lg-5">
+                                            <p style="color:white;">Pending</p>
+                                        </div>
+                                        @endif
 
-                                    <h4>{{$blog->title}}</h4>
-                                    <p class="short_description">{{$blog->short_description}}</p>
-                                    <a href="{{ route('lawyer.blog',$blog->id) }}">Read More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
+                                        <h4>{{$blog->title}}</h4>
+                                        <p class="short_description w-100">{{ \Illuminate\Support\Str::limit($blog->short_description, 100, $end='...') }} </p>
+                                        <a class="d-block" href="{{ route('lawyer.blog',$blog->id) }}">Read More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

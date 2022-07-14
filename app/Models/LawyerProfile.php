@@ -25,4 +25,19 @@ class LawyerProfile extends Model
     {
         return $this->belongsTo(Country::class);
     }
+
+    public function partise_area_3()
+    {
+        return $this->belongsTo(PartiseArea::class,'partise_area','id');
+    }
+
+    public function partise_area_1()
+    {
+        return $this->belongsTo(PartiseArea::class,'secondary_partise_area','id');
+    }
+
+    public function partise_area_2()
+    {
+        return $this->belongsTo(PartiseArea::class,'third_partise_area','id');
+    }
 }

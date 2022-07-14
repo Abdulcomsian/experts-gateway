@@ -102,7 +102,7 @@ Dashboard
                     <div class="col-lg-4">
                         <div class="subscribe_plane">
                             <h4>Subscribed Plans</h4>
-                            <div class="price_div">
+                            {{-- <div class="price_div">
                                 <div class="package_name_image">
                                     <img src="../assets/img/starter.svg" alt="" class="img-fluid">
                                     <div class="name_div">
@@ -111,6 +111,16 @@ Dashboard
                                     </div>
                                 </div>
                                 <p class="price_package">200/mo</p>
+                            </div> --}}
+                            <div class="price_div">
+                                <div class="package_name_image">
+                                    <img src="{{asset('assets/img/starter.svg') }}" alt="" class="img-fluid">
+                                    <div class="name_div">
+                                        <p>Free</p>
+                                        <span>Monthly</span>
+                                    </div>
+                                </div>
+                                {{-- <p class="price_package">200/mo</p> --}}
                             </div>
                             <div class="recommended_plane">
                                 <span class="recommended_text">Recommended Plan</span>
@@ -145,10 +155,10 @@ Dashboard
                                 font-family: MoskauMedium;">Approved</h6>
                             </div>
                             <div class="progress_div">
-                                <p class="percentage_text"><span>80% </span>complete</p>
+                                <p class="percentage_text"><span>100% </span>complete</p>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                                    aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="100"
+                                    aria-valuemin="0" aria-valuemax="100" style="width:100%">
                                     </div>
                                   </div>
                             </div>
@@ -164,41 +174,67 @@ Dashboard
                                     </li>
                                     <li>
                                         <p>LOCATION <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>You have increased your chance of being found by users in U.A.E Dubai</span>
+                                        <span>You have increased your chance of being found by users in {{$city->name}}, {{$country->name}}</span>
                                     </li>
                                     <li>
-                                        <p>LANGAGUE <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>You have increased your chance of being found by users who speak Arabic and English</span>
+                                        <p>LANGUAGE <i class="fa fa-check" aria-hidden="true"></i></p>
+                                        <span>You have increased your chance of being found by users who speak 
+                                            @foreach($lawyer_language as $language)
+                                                {{$language->language->name}}
+                                                @if(!($loop->last))
+                                                ,
+                                                @endif
+                                            @endforeach
+                                        </span>
                                     </li>
                                     <li>
                                         <p>EDUCATION <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>You specified <b>“LLM”</b> as your primary practice area</span>
+                                        <span>You specified 
+                                            <b>
+                                                “@foreach($lawyer_educations as $education)
+                                                    {{$education->education->education_name}}
+                                                    @if(!($loop->last))
+                                                    ,
+                                                    @endif
+                                                @endforeach"
+                                            </b> as your primary practice area</span>
                                     </li>
                                     <li>
                                         <p>MEMBERSHIP AND ASSOCIATIONS <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>You are associated with <b>“King & Wood Mallesons”</b></span>
+                                        <span>You are associated with <b>“
+                                            @foreach($lawyer_memberships as $membership)
+                                            {{$membership->membership->membership_name}}
+                                            @if(!($loop->last))
+                                            ,
+                                            @endif
+                                        @endforeach
+                                        ”</b></span>
                                     </li>
                                     <li>
                                         <p>PRIMARY PRACTICE AREA <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>You specified <b>“Corporate Law</b> as your primary practice area</span>
+                                        <span>You specified <b>“{{ $lawyer_profile->partise_area_3->name }}"</b> as your primary practice area</span>
                                     </li>
+                                    @if($lawyer_profile->secondary_partise_area != null)
                                     <li>
-                                        <p style="color: #ED2456;">SECONDARY PRACTICE AREA</p>
-                                        <span>Adding a secondary practice area will increase you changes of getting hired by 3x</span>
+                                        <p style="color: #ED2456;">SECONDARY PRACTICE AREA <i class="fa fa-check" aria-hidden="true"></i></p>
+                                        <span>"{{ $lawyer_profile->partise_area_1->name }}" is  secondary practice area that will increase you changes of getting hired by 3x</span>
                                     </li>
+                                    @endif
+                                    @if($lawyer_profile->third_partise_area != null)
                                     <li>
-                                        <p style="color: #ED2456;">THIRD PRACTICE AREA</p>
-                                        <span>Adding a secondary practice area will increase you changes of getting hired by 4x</span>
+                                        <p style="color: #ED2456;">THIRD PRACTICE AREA <i class="fa fa-check" aria-hidden="true"></i></p>
+                                        <span>"{{ $lawyer_profile->partise_area_2->name }}" is secondary practice area will increase you changes of getting hired by 4x</span>
                                     </li>
+                                    @endif
                                 </ul>
-                                <button>Complete Profile</button>
+                                {{-- <button>Complete Profile</button> --}}
                             </div>
                         </div>
-                        <div class="profile_agre">
+                        {{-- <div class="profile_agre">
                             <h3 class="sec_title">PARTNER PROGRAM AGREEMENT</h3>
                             <p class="sec_para">You need to confirm acceptance of the Partner Program Agreement</p>
                             <a href="#" class="btn btn_red_grad">VIEW AGREEMENT</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

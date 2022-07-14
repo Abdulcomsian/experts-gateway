@@ -17,9 +17,11 @@ $(".tabNextBtn").click(function(){
 })
 $(".userProfile").click(function(){
   if($(".dropDownMenu").css("opacity")==0){
-    $(".dropDownMenu").css("opacity","1")
+    $(".dropDownMenu").css("opacity","1");
+    $(".dropDownMenu").css("z-index","99")
   } else{
-    $(".dropDownMenu").css("opacity","0")
+    $(".dropDownMenu").css("opacity","0");
+    $(".dropDownMenu").css("z-index","0")
   }
 })
 $(".nextBtn").click(function(){

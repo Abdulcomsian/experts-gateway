@@ -129,6 +129,7 @@ header .userDiv div.userProfile {
     float: right;
     height: 32px;
     position: relative;
+    cursor: pointer;
 }
 
 header .userDiv div img {
@@ -709,6 +710,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     width: 100%;
     max-width: 160px;
     padding: 3px;
+    margin-top: 10px;
 }
 
 .leatestNews .newsCard .cardContent .date p,
@@ -738,6 +740,8 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     color: #ED2456;
     font-size: 20px;
     font-family: MoskauMedium;
+    position: absolute;
+    bottom: 20px;
 }
 
 .leatestNews .newsCard .cardContent a img,
@@ -1030,14 +1034,13 @@ footer .newsLetter .formDiv button {
     margin: auto;
 }
 
-.bolgSection .blogCard .cardContent h4 {
-    height: 110px;
-}
 
 .bolgSection .blogCard {
     margin-bottom: 80px;
-    border: 0.4000000059604645px solid #707070;
+    border: 0.4000000059604645px solid #70707029;
     background-color: #fff;
+    height: 530px;
+    position: relative;
 }
 
 .bolgSection .blogCard .cardContent {
@@ -1590,7 +1593,10 @@ footer .newsLetter .formDiv button {
     width: 100%;
     height: 300px;
     background-size: cover;
+    /* <<<<<<< HEAD */
     /* cursor: pointer; */
+    /* =======cursor: pointer; */
+    /* >>>>>>>48a2f301f9fb82225e955ba726a36740f6cde0ed */
 }
 
 .uploadProfileP {
@@ -2103,8 +2109,7 @@ footer .newsLetter .formDiv button {
 
 .mainFixedService {
     width: 100%;
-    max-width: 80%;
-    margin: auto;
+    max-width: 92%;
 }
 
 .mainFixedService .relatedService .multiRelatedService {
@@ -2334,10 +2339,6 @@ footer .newsLetter .formDiv button {
 .mainFixedService .bolgSection .multiBlog {
     max-width: 100%;
     margin-top: 0px !important;
-}
-
-.mainFixedService .bolgSection .multiBlog h4 {
-    margin-bottom: 80px;
 }
 
 /************* Edit - Profile - CSS ************/
@@ -3597,7 +3598,7 @@ main .expertBanner .searchBox {
     right: 0px;
     background-color: #fff;
     box-shadow: 0px 3px 6px #01254814;
-    z-index: 99;
+    z-index: 0;
     border-radius: 4px;
     top: 35px;
     opacity: 0;
@@ -5177,7 +5178,7 @@ form button[type="submit"] {
     }
 
     main .mainBanner .bannerLeft {
-        padding: 250px 50px 0px;
+        padding: 190px 50px 0px;
     }
 
     footer .socialList ul li {
@@ -5712,7 +5713,7 @@ form button[type="submit"] {
     }
 
     main .mainBanner .bannerLeft {
-        padding: 250px 55px 0px;
+        padding: 180px 55px 0px;
     }
 
     main .mainBanner .searchBox {

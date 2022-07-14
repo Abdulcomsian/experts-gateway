@@ -3,19 +3,32 @@
 Expert Gateway
 @endsection
 @section('content') 
-
+<style>
+    main .mainBanner .searchBox div select{
+        background: transparent;
+    }
+    .ourService p, .experts p {
+        line-height: 120%;
+    }
+    .aboutUs .aboutUsContent .notes:before {
+         height: 88%;
+    }
+</style>
 <main>
     <div class="mainBanner">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="bannerLeft">
-                        <h3>Welcome</h3>
-                        <p>Advisory Exellence Is The<br> Definitive Guide To Leading<br> Experts Throughout The
-                            World</p>
-                        <button>
+                        <!-- <h3>Welcome</h3> -->
+                        <!-- <p>Advisory Exellence Is The<br> Definitive Guide To Leading<br> Experts Throughout The
+                            World</p> -->
+                        <p>Find An Expert Lawyer Wherever You Are In The World</p>
+                        <span class="d-block">If you need legal advice, we make finding the best lawyer near you easy. We only list top law firms and practitioners, so you can always put your trust in an Experts Gateway vetted lawyer. </span>
+                        <span class="d-block">To get started, select your location and the type of legal help you need.</span>
+                        <!-- <button>
                             <a style="color: #ef1d31 !important;" href="{{ url('/about-us') }}">Learn More</a>
-                        </button>
+                        </button> -->
                         <div class="searchBox desktopHide">
                             <div class="countryDiv">
                                 <select name="" id="">
@@ -89,10 +102,8 @@ Expert Gateway
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Our Services</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam id nibh ut efficitur.
-                        Proin congue interdum lacus, sed ornare augue viverra sit amet. In pulvinar augue ac urna
-                        tristique viverra. Aliquam eu scelerisque orci.</p>
+                    <h2>Our Legal Services</h2>
+                    <p>Experts Gateway partners cover a wide range of legal specialisms. Because every country has its own laws and regulations, we work with top local lawyers and law firms. Here are some of the main legal services available to you. </p>
                 </div>
             </div>
             <div class="sliderDiv">
@@ -223,13 +234,9 @@ Expert Gateway
                 <div class="col-lg-6">
                     <div class="aboutUsContent">
                         <h5>About Us</h5>
-                        <h2>Experts Gateway</h2>
-                        <p class="notes">Lorem ipsum dolor sit amet, consectetur adipiscg elit. Sed aliquam id nibh
-                            ut efficitur. Proin congue interdum lacus, sed ornare augue.</p>
-                        <p>Hfn pulvinar augue ac urna tristique viverra. Aliquam eu sce lerisque orci. Integer
-                            maximus sapien ac erat euismod lacin ia. Maecenas dui leo, auctor eu neqafue vel,
-                            aliqufet finibuas odio. Pellentesque efficitur volutpat ex a blandit. Sed vestibu lum
-                            pharetra ex id feugiat.</p>
+                        <h2Experts Gateway</h2>
+                        <p class="notes">You never know when or where you might need legal advice. But finding a top lawyer when you’re away from home is difficult, time-consuming and potentially risky.</p>
+                        <p>HExperts Gateway is here to help. We partner with some of the best lawyers from around the world, carefully vetted to ensure they provide top quality advice and representation. Whatever kind of assistance you need, wherever you are, we’ll connect with a top local law expert. </p>
                         <a href="{{ url('/about-us') }}">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
                     </div>
                 </div>
@@ -240,10 +247,9 @@ Expert Gateway
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>All Experts</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam id nibh ut efficitur.
-                        Proin congue interdum lacus, sed ornare augue viverra sit amet. In pulvinar augue ac urna
-                        tristique viverra. Aliquam eu scelerisque orci.</p>
+                    <h2>Only Top-Rated Experts </h2>
+                    <p class="mb-5">We carry out rigorous quality assurance checks on all the lawyers and law firms who apply to work with us. Only the top 1% of applicants make it through our selection process. That means you’ll have the peace of mind that comes from knowing you’re working with a true expert.</p>
+                    <a href="{{ url('/experts') }}"  class="expertBtn text-white">Find An Expert</a>
                 </div>
             </div>
             @if(count($lawyers) > 0)
@@ -285,8 +291,9 @@ Expert Gateway
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Advisory Excellence Profiles<br> The Best Advisers Around The Globe</h2>
-                    <a href="{{ url('/experts') }}" class="expertBtn">Find An Expert</a>
+                    <!-- <h2>Advisory Excellence Profiles<br> The Best Advisers Around The Globe</h2> -->
+                    <h2>Become An Official Experts Gateway Legal Partner </h2>
+                    <!-- <a href="{{ url('/experts') }}" class="expertBtn">Find An Expert</a> -->
                     <a href="{{ route('lawyer-register') }}">Apply For Membership</a>
                 </div>
             </div>
@@ -360,7 +367,8 @@ Expert Gateway
             <div class="row">
                 <div class="col-lg-6">
                     <div class="informationContent">
-                        <h2>Request Information</h2>
+                        <h2>Not sure what kind of legal assistance you need?</h2>
+                        <p>Fill in the form below and tell us where you are and your current legal situation. We’ll get back to you with our recommendations for a suitable expert. </p>
                         <div class="formDiv">
                             <form action="">
                                 <div class="row">
@@ -406,7 +414,7 @@ Expert Gateway
                     <div class="imgText">
                         <img src="{{ asset('assets/img/information.png')}}" alt="" class="img-fluid">
                         <div class="imgTextMiddle">
-                            <p>Legal Advice<br> Across the<br> Globe</p>
+                            <p>Legal Advice <br> Wherever You <br> Are</p>
                         </div>
                     </div>
                 </div>

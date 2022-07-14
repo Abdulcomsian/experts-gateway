@@ -740,7 +740,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     color: #ED2456;
     font-size: 20px;
     font-family: MoskauMedium;
-    position:absolute;
+    position: absolute;
     bottom: 20px;
 }
 
@@ -1593,7 +1593,10 @@ footer .newsLetter .formDiv button {
     width: 100%;
     height: 300px;
     background-size: cover;
-    cursor: pointer;
+    /* <<<<<<< HEAD */
+    /* cursor: pointer; */
+    /* =======cursor: pointer; */
+    /* >>>>>>>48a2f301f9fb82225e955ba726a36740f6cde0ed */
 }
 
 .uploadProfileP {
@@ -5175,7 +5178,7 @@ form button[type="submit"] {
     }
 
     main .mainBanner .bannerLeft {
-        padding: 250px 50px 0px;
+        padding: 190px 50px 0px;
     }
 
     footer .socialList ul li {
@@ -5710,7 +5713,7 @@ form button[type="submit"] {
     }
 
     main .mainBanner .bannerLeft {
-        padding: 250px 55px 0px;
+        padding: 180px 55px 0px;
     }
 
     main .mainBanner .searchBox {
@@ -7516,6 +7519,10 @@ form button[type="submit"] {
 
     .blogDetailCard .card .cardContent .dateLikeDiv .date {
         padding: 3px;
+    }
+
+    .profileDiv .editProfileBox .profileImg img {
+        height: auto !important;
     }
 
 }

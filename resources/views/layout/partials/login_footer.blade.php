@@ -5,9 +5,10 @@
                 <div class="col-lg-6">
                     <div class="newLetterContent">
                         <p>Subscribe to</p>
-                        <h2>Our Newsletter</h2>
+                        <h2>Who is the newsletter for? Lawyers?</h2>
                     </div>
                 </div>
+                
                 @if (session('alert'))
                     <div class="alert alert-success">
                         {{ session('alert') }}

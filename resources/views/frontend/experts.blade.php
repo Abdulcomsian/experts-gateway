@@ -78,6 +78,7 @@ Experts
             <div class="row"  id="result">
                 @if(count($lawyers) > 0)
                 @foreach($lawyers as $lawyer)
+                 @if(isset($lawyer['lawyer_profile'][0]))
                 <div class="col-lg-4" id="card">
                     <a href="{{ route('expert-detail',$lawyer['lawyer_profile'][0]->id) }}">
                         <div class="expertCard">
@@ -129,6 +130,7 @@ Experts
                         </div>
                     </a>
                 </div>
+                 @endif
                 @endforeach
                 @endif
             </div>
@@ -309,14 +311,18 @@ Experts
                                         <p>Education: 
                                             <span>
                                                 @php
+                                                    if(isset($lawyer['lawyer_profile'][0])){
                                                     $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
+                                                    }
                                                 @endphp
+                                                @if(isset($lawyer_educations) && count($lawyer_educations )>0)
                                                 @foreach($lawyer_educations as $education)
                                                     {{$education->education->education_name}}
                                                     @if(!($loop->last))
                                                     ,
                                                     @endif
                                                 @endforeach
+                                                @endif
                                             </span>
                                         </p>
                                     </div>

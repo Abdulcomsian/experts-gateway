@@ -253,9 +253,11 @@ Expert Gateway
                 </div>
             </div>
             @if(count($lawyers) > 0)
+
             <div class="sliderDiv">
                 <div class="expertSlider">
                     @foreach($lawyers as $key=>$lawyer)
+                     @if(isset($lawyer['lawyer_profile'][0]))
                     <a style="color: black" href="{{ route('expert-detail',$lawyer['lawyer_profile'][0]->id)}}">
                         <div class="sliderBox">
                             <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" width="352px" height="378px">
@@ -281,6 +283,7 @@ Expert Gateway
                             </div>
                         </div>
                     </a>
+                    @endif
                     @endforeach
                 </div>
             </div>

@@ -112,14 +112,25 @@ class FrontendController extends Controller
         //     ->get();
         //     dd($data);
 
-         $data = DB::table('lawyers_has_expertises')
-            ->leftJoin('lawyer_profiles', 'lawyer_profiles.id', '=', 'lawyers_has_expertises.lawyer_profile_id')
+         // $data = DB::table('lawyers_has_expertises')
+         //    ->leftJoin('lawyer_profiles', 'lawyer_profiles.id', '=', 'lawyers_has_expertises.lawyer_profile_id')
+         //    ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
+         //    ->leftJoin('expertises', 'lawyers_has_expertises.expertise_id', '=', 'expertises.id')
+         //    ->select('lawyer_profiles.*','users.f_name as f_name','users.l_name as l_name','expertises.name as expertises_name')
+         //    ->where('lawyers_has_expertises.expertise_id',$search_expert)
+         //    ->where('users.id','lawyer_profiles.user_id')
+         //    ->get();
+         
+         $data = DB::table('lawyers_has_educations')
+            ->leftJoin('lawyer_profiles', 'lawyer_profiles.id', '=', 'lawyers_has_educations.lawyer_profile_id')
             ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
-            ->leftJoin('expertises', 'lawyers_has_expertises.expertise_id', '=', 'expertises.id')
-            ->select('lawyer_profiles.*','users.f_name as f_name','users.l_name as l_name','expertises.name as expertises_name')
-            ->where('lawyers_has_expertises.expertise_id',$search_expert)
-            // ->where('users.id','lawyer_profiles.user_id')
+            ->leftJoin('education', 'lawyers_has_educations.education_id', '=', 'education.id')
+            ->select('lawyer_profiles.*','users.f_name as f_name','users.l_name as l_name','education.education_name as education_name')
+            ->where('lawyers_has_educations.education_id',$search_expert)
+            //->where('users.id','lawyer_profiles.user_id')
             ->get();
+
+            
         return json_encode($data);
     }
 

@@ -23,11 +23,10 @@ Experts
                                     <option value="Expertise">Expertise</option>
                                 </select>
                                 <div class="btnDiv">
-                                    <button><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid">
+                                    <button><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid" onclick="fetchData()">
                                         Search</button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
@@ -274,7 +273,6 @@ Experts
 
         //Search Url
         const url = "{{ route('search_expert') }}" + "?search_expert=" + val;
-
         fetch(url)
         .then((resp) => resp.json()) //Transform the data into json
         .then(function(data){
@@ -285,68 +283,73 @@ Experts
             let experts = data;
 
             document.getElementById('result').innerHTML = ``;
-            experts.map(function(expert){
+            if(experts=="")
+                {
+                     document.getElementById('result').innerHTML = `No Result Found`;
+                }
+                else{
+                     experts.map(function(expert){
                 
-                document.getElementById('result').innerHTML += `
-                    <div class="col-lg-4" id="card">
-                        <a href="expert-detail/${expert.id}">
-                            <div class="expertCard">
-                                <img src="lawyer_profile/${expert.image}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
-                                <div class="cardContet">
-                                    <div class="rating">
-                                        <p>
-                                            <i class="fa fa-star"></i>
-                                            <span>4.1</span>
-                                        </p>
-                                    </div>
-                                    <div class="cardBody">
-                                        <h3>${expert.f_name} ${expert.l_name}</h3>
-                                    <p>${expert.title}</p>
-                                    </div>
-                                    <div class="line">
-                                        <img src="{{ asset('assets/img/line.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="cardFooter">
-                                        <p>Address: <span>${expert.address}</span></p>
-                                        <p>Education: 
-                                            <span>
-                                                @php
-                                                    if(isset($lawyer['lawyer_profile'][0])){
-                                                    $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
-                                                    }
-                                                @endphp
-                                                @if(isset($lawyer_educations) && count($lawyer_educations )>0)
-                                                @foreach($lawyer_educations as $education)
-                                                    {{$education->education->education_name}}
-                                                    @if(!($loop->last))
-                                                    ,
+                    document.getElementById('result').innerHTML += `
+                        <div class="col-lg-4" id="card">
+                            <a href="expert-detail/${expert.id}">
+                                <div class="expertCard">
+                                    <img src="lawyer_profile/${expert.image}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
+                                    <div class="cardContet">
+                                        <div class="rating">
+                                            <p>
+                                                <i class="fa fa-star"></i>
+                                                <span>4.1</span>
+                                            </p>
+                                        </div>
+                                        <div class="cardBody">
+                                            <h3>${expert.f_name} ${expert.l_name}</h3>
+                                        <p>${expert.title}</p>
+                                        </div>
+                                        <div class="line">
+                                            <img src="{{ asset('assets/img/line.png') }}" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="cardFooter">
+                                            <p>Address: <span>${expert.address}</span></p>
+                                            <p>Education: 
+                                                <span>
+                                                    @php
+                                                        if(isset($lawyer['lawyer_profile'][0])){
+                                                        $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
+                                                        }
+                                                    @endphp
+                                                    @if(isset($lawyer_educations) && count($lawyer_educations )>0)
+                                                    @foreach($lawyer_educations as $education)
+                                                        {{$education->education->education_name}}
+                                                        @if(!($loop->last))
+                                                        ,
+                                                        @endif
+                                                    @endforeach
                                                     @endif
-                                                @endforeach
-                                                @endif
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <div class="contactDiv">
-                                        <ul>
-                                            <li>
-                                                <button><img src="{{ asset('assets/img/recentQuestionIcon.png') }}" alt=""> ASK A QUESTION</button>
-                                            </li>
-                                            <li>
-                                                <button><img src="{{ asset('assets/img/chatIcon.svg') }}" alt=""> CHAT</button>
-                                            </li>
-                                            <li>
-                                                <button><img src="{{ asset('assets/img/request.png') }}" alt=""> REQUEST CALLBACK</button>
-                                            </li>
-                                        </ul>
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class="contactDiv">
+                                            <ul>
+                                                <li>
+                                                    <button><img src="{{ asset('assets/img/recentQuestionIcon.png') }}" alt=""> ASK A QUESTION</button>
+                                                </li>
+                                                <li>
+                                                    <button><img src="{{ asset('assets/img/chatIcon.svg') }}" alt=""> CHAT</button>
+                                                </li>
+                                                <li>
+                                                    <button><img src="{{ asset('assets/img/request.png') }}" alt=""> REQUEST CALLBACK</button>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                `;
-
-                 
-                }); 
+                            </a>
+                        </div>
+                    `;
+                     
+                    });
+            }
                     
         })
         .catch(function(error){

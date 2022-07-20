@@ -12,22 +12,29 @@ Experts
                         <h3>Experts</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed<br> aliquam id nibh ut
                             efficitur. Proin congue interdum lacus, sed<br> ornare augue viverra sit amet.</p>
-                        <div class="searchBox desktopHide">
-                            <div class="countryDiv">
-                                <select name="" id="">
-                                    <option value="Country">Country</option>
-                                </select>
-                            </div>
-                            <div class="expertiseDiv">
-                                <select name="" id="">
-                                    <option value="Expertise">Expertise</option>
-                                </select>
-                                <div class="btnDiv">
-                                    <button><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid" onclick="fetchData()">
-                                        Search</button>
+                             <form action="{{route('experts')}}">
+                                <div class="searchBox desktopHide">
+                                    <div class="countryDiv">
+                                        <select name="country" id="">
+                                            <option value="">Select Country</option>
+                                             @foreach($countries as $country)
+                                                <option value="{{$country->id}}">{{$country->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="expertiseDiv">
+                                        <select name="search_expert" id="search_expert">
+                                            <option disabled selected>Select Education</option>
+                                            @foreach($educations as $education)
+                                            <option value="{{$education->id}}">{{$education->education_name}}</option>
+                                            @endforeach
+                                        </select>
+                                        <div class="btnDiv">
+                                            <button type="submit"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid"> Search</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            </form>
                     </div>
 
                 </div>
@@ -41,8 +48,11 @@ Experts
         <form action="{{route('experts')}}">
         <div class="searchBox mobileHide">
             <div class="countryDiv">
-                <select name="" id="">
-                    <option value="Country">Country</option>
+                <select name="country" id="">
+                    <option value="">Select Country</option>
+                     @foreach($countries as $country)
+                        <option value="{{$country->id}}">{{$country->name}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="expertiseDiv">

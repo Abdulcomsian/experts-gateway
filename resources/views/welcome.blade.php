@@ -29,24 +29,30 @@ Expert Gateway
                         <!-- <button>
                             <a style="color: #ef1d31 !important;" href="{{ url('/about-us') }}">Learn More</a>
                         </button> -->
-                        <div class="searchBox desktopHide">
-                            <div class="countryDiv">
-                                <select name="" id="">
-                                    <option value="Country">Country</option>
-                                </select>
-                            </div>
-                            <div class="expertiseDiv">
-                                <select name="" id="">
-                                    <option value="Expertise">Expertise</option>
-                                </select>
-                                <div class="btnDiv">
-                                    <button><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid">
-                                        <a style="color: #fff;" href="./fixed-free.html">Search</a>
-                                    </button>
+                        <form action="{{route('experts')}}">
+                            <div class="searchBox desktopHide">
+                                <div class="countryDiv">
+                                    <select name="country" id="">
+                                        <option value="">Select Country</option>
+                                        @foreach($countries as $country)
+                                        <option value="{{$country->id}}">{{$country->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                            </div>
+                                <div class="expertiseDiv">
+                                    <select name="search_expert" id="">
+                                        <option value="">Select Education</option>
+                                         @foreach($educations as $education)
+                                         <option value="{{$education->id}}">{{$education->education_name}}</option>
+                                         @endforeach
+                                    </select>
+                                    <div class="btnDiv">
+                                        <button type="submit"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid">Search</button>
+                                    </div>
+                                </div>
 
-                        </div>
+                            </div>
+                        </form>
                     </div>
 
                 </div>
@@ -86,15 +92,18 @@ Expert Gateway
             
                 <div class="countryDiv">
                     <select name="country" id="">
-                        <option value="Country">Country</option>
+                        <option value="">Select Country</option>
+                        @foreach($countries as $country)
+                        <option value="{{$country->id}}">{{$country->name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="expertiseDiv">
                     <select name="search_expert" id="">
-                        <option value="">Expertise</option>
+                        <option value="">Select Education</option>
                          @foreach($educations as $education)
                          <option value="{{$education->id}}">{{$education->education_name}}</option>
-                        @endforeach
+                         @endforeach
                     </select>
                     <div class="btnDiv">
                         <button type="submit"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid">Search</button>

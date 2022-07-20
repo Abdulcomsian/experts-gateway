@@ -25,9 +25,10 @@ class FrontendController extends Controller
     {
         $contact_us = ContactUs::first();
         $news = News::latest()->take(10)->get();
+         $educations = Education::get();
         $fixed_services = FixedService::where('status',1)->get();
         $lawyers = User::with('lawyer_profile')->whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
-        return view('welcome' , compact('contact_us','fixed_services','news','lawyers'));
+        return view('welcome' , compact('contact_us','fixed_services','news','lawyers','educations'));
     }
 
     public function about_us()
@@ -39,14 +40,29 @@ class FrontendController extends Controller
         return view('frontend.about_us',compact('about_us','contact_us','news','fixed_services'));
     }
 
-    public function experts()
+    public function experts(Request $request)
     {
         $contact_us = ContactUs::first();
         $educations = Education::get();
         $memberships = Membership::get();
         $news = News::latest()->take(10)->get();
-        $lawyers = User::with('lawyer_profile')->whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
-        return view('frontend.experts' , compact('contact_us','news','lawyers','educations','memberships'));
+        if($request->search_expert){
+            $searchparm='';
+             $lawyers = DB::table('lawyers_has_educations')
+            ->leftJoin('lawyer_profiles', 'lawyer_profiles.id', '=', 'lawyers_has_educations.lawyer_profile_id')
+            ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
+            ->leftJoin('education', 'lawyers_has_educations.education_id', '=', 'education.id')
+            ->select('lawyer_profiles.*','users.f_name as f_name','users.l_name as l_name','education.education_name as education_name')
+            ->where('lawyers_has_educations.education_id',$request->search_expert)
+            ->get();
+            // dd($lawyers);
+             return view('frontend.experts' , compact('contact_us','news','lawyers','educations','memberships','searchparm'));   
+        }
+        else{
+            $lawyers = User::with('lawyer_profile')->whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
+            return view('frontend.experts' , compact('contact_us','news','lawyers','educations','memberships'));
+        }
+        
     }
 
     public function contact_us()
@@ -112,15 +128,24 @@ class FrontendController extends Controller
         //     ->get();
         //     dd($data);
 
-         $data = DB::table('lawyers_has_expertises')
-            ->leftJoin('lawyer_profiles', 'lawyer_profiles.id', '=', 'lawyers_has_expertises.lawyer_profile_id')
+         // $data = DB::table('lawyers_has_expertises')
+         //    ->leftJoin('lawyer_profiles', 'lawyer_profiles.id', '=', 'lawyers_has_expertises.lawyer_profile_id')
+         //    ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
+         //    ->leftJoin('expertises', 'lawyers_has_expertises.expertise_id', '=', 'expertises.id')
+         //    ->select('lawyer_profiles.*','users.f_name as f_name','users.l_name as l_name','expertises.name as expertises_name')
+         //    ->where('lawyers_has_expertises.expertise_id',$search_expert)
+         //    ->where('users.id','lawyer_profiles.user_id')
+         //    ->get();
+       
+         $data = DB::table('lawyers_has_educations')
+            ->leftJoin('lawyer_profiles', 'lawyer_profiles.id', '=', 'lawyers_has_educations.lawyer_profile_id')
             ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
-            ->leftJoin('expertises', 'lawyers_has_expertises.expertise_id', '=', 'expertises.id')
-            ->select('lawyer_profiles.*','users.f_name as f_name','users.l_name as l_name','expertises.name as expertises_name')
-            ->where('lawyers_has_expertises.expertise_id',$search_expert)
-            // ->where('users.id','lawyer_profiles.user_id')
-            ->get();
-        return json_encode($data);
+            ->leftJoin('education', 'lawyers_has_educations.education_id', '=', 'education.id')
+            ->select('lawyer_profiles.*','users.f_name as f_name','users.l_name as l_name','education.education_name as education_name')
+            ->where('lawyers_has_educations.education_id',$search_expert)
+            //->where('users.id','lawyer_profiles.user_id')
+            ->get();   
+           return json_encode($data);
     }
 
     public function expert_detail($id)

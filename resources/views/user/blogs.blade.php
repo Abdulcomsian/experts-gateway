@@ -53,7 +53,7 @@ blog
                                     </div>
                                     <div style="color: #212529">
                                     <h4>{{$blog->title}}</h4>
-                                    {{ $blog->short_description }}
+                                       {{\Illuminate\Support\Str::limit($blog->short_description,20,'...')}}
                                     </div>
                                     </a><br>
                                     <a href="{{ route('all-blog',$blog->id) }}">Read More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>

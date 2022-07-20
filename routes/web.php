@@ -71,7 +71,8 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     //Blogs
     Route::get('/blogs', [App\Http\Controllers\blogController::class, 'index'])->name('admin.blogs');
     Route::post('/update_blog_status/{id}', [App\Http\Controllers\blogController::class, 'update_blog_status'])->name('update-blog-status');   
-
+    Route::get('create-blog', [App\Http\Controllers\blogController::class, 'create_blog'])->name('admin.create.blog');
+    Route::post('save-blog', [App\Http\Controllers\blogController::class, 'save_blog'])->name('admin.save.blog');
     Route::get('/show/{id}', [App\Http\Controllers\blogController::class, 'show'])->name('blog.show');
     Route::get('/edit_blog/{id}', [App\Http\Controllers\blogController::class, 'edit'])->name('blog.edit');
 

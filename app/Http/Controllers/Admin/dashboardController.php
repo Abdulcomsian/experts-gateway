@@ -79,7 +79,7 @@ class dashboardController extends Controller
             'body'  => $request->mail_message,
             ];
             // dd("first");
-            Mail::to($user->email)->send(new LawyerApprovedMAil($details));
+            //Mail::to($user->email)->send(new LawyerApprovedMAil($details));
         }
         elseif($user->status == '1')
         {

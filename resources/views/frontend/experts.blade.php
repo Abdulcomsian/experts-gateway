@@ -76,61 +76,117 @@ Experts
         <div class="multiBlog">
             <div class="row"  id="result">
                 @if(count($lawyers) > 0)
-                @foreach($lawyers as $lawyer)
-                 @if(isset($lawyer['lawyer_profile'][0]))
-                <div class="col-lg-4" id="card">
-                    <a href="{{ route('expert-detail',$lawyer['lawyer_profile'][0]->id) }}">
-                        <div class="expertCard">
-                            <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
-                            <div class="cardContet">
-                                <div class="rating">
-                                    <p>
-                                        <i class="fa fa-star"></i>
-                                        <span>4.1</span>
-                                    </p>
+                    @if(!isset($searchparm))
+                        @foreach($lawyers as $lawyer)
+                             @if(isset($lawyer['lawyer_profile'][0]) )
+                                <div class="col-lg-4" id="card">
+                                    <a href="{{ route('expert-detail',$lawyer['lawyer_profile'][0]->id) }}">
+                                        <div class="expertCard">
+                                            <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
+                                            <div class="cardContet">
+                                                <div class="rating">
+                                                    <p>
+                                                        <i class="fa fa-star"></i>
+                                                        <span>4.1</span>
+                                                    </p>
+                                                </div>
+                                                <div class="cardBody">
+                                                    <h3>{{$lawyer->f_name}} {{$lawyer->l_name}}</h3>
+                                                <p>{{$lawyer['lawyer_profile'][0]->title}}</p>
+                                                </div>
+                                                <div class="line">
+                                                    <img src="{{ asset('assets/img/line.png') }}" alt="" class="img-fluid">
+                                                </div>
+                                                <div class="cardFooter">
+                                                    <p>Address: <span>{{$lawyer['lawyer_profile'][0]->address}}</span></p>
+                                                    <p>Education: 
+                                                        <span>
+                                                            @php
+                                                                $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
+                                                            @endphp
+                                                            @foreach($lawyer_educations as $education)
+                                                                {{$education->education->education_name}}
+                                                                @if(!($loop->last))
+                                                                ,
+                                                                @endif
+                                                            @endforeach
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="contactDiv">
+                                                    <ul>
+                                                        <li>
+                                                            <button><img src="{{ asset('assets/img/recentQuestionIcon.png') }}" alt=""> ASK A QUESTION</button>
+                                                        </li>
+                                                        <li>
+                                                            <button><img src="{{ asset('assets/img/chatIcon.svg') }}" alt=""> CHAT</button>
+                                                        </li>
+                                                        <li>
+                                                            <button><img src="{{ asset('assets/img/request.png') }}" alt=""> REQUEST CALLBACK</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="cardBody">
-                                    <h3>{{$lawyer->f_name}} {{$lawyer->l_name}}</h3>
-                                <p>{{$lawyer['lawyer_profile'][0]->title}}</p>
-                                </div>
-                                <div class="line">
-                                    <img src="{{ asset('assets/img/line.png') }}" alt="" class="img-fluid">
-                                </div>
-                                <div class="cardFooter">
-                                    <p>Address: <span>{{$lawyer['lawyer_profile'][0]->address}}</span></p>
-                                    <p>Education: 
-                                        <span>
-                                            @php
-                                                $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
-                                            @endphp
-                                            @foreach($lawyer_educations as $education)
-                                                {{$education->education->education_name}}
-                                                @if(!($loop->last))
-                                                ,
-                                                @endif
-                                            @endforeach
-                                        </span>
-                                    </p>
-                                </div>
-                                <div class="contactDiv">
-                                    <ul>
-                                        <li>
-                                            <button><img src="{{ asset('assets/img/recentQuestionIcon.png') }}" alt=""> ASK A QUESTION</button>
-                                        </li>
-                                        <li>
-                                            <button><img src="{{ asset('assets/img/chatIcon.svg') }}" alt=""> CHAT</button>
-                                        </li>
-                                        <li>
-                                            <button><img src="{{ asset('assets/img/request.png') }}" alt=""> REQUEST CALLBACK</button>
-                                        </li>
-                                    </ul>
+                                @endif
+                        @endforeach
+                    @else
+                    @foreach($lawyers as $lawyer)
+                    <div class="col-lg-4" id="card">
+                        <a href="{{ route('expert-detail',$lawyer->id) }}">
+                            <div class="expertCard">
+                                <img src="{{asset('lawyer_profile/'.$lawyer->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
+                                <div class="cardContet">
+                                    <div class="rating">
+                                        <p>
+                                            <i class="fa fa-star"></i>
+                                            <span>4.1</span>
+                                        </p>
+                                    </div>
+                                    <div class="cardBody">
+                                        <h3>{{$lawyer->f_name}} {{$lawyer->l_name}}</h3>
+                                    <p>{{$lawyer->title ?? ''}}</p>
+                                    </div>
+                                    <div class="line">
+                                        <img src="{{ asset('assets/img/line.png') }}" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="cardFooter">
+                                        <p>Address: <span>{{$lawyer->address}}</span></p>
+                                        <p>Education: 
+                                            <span>
+                                                @php
+                                                    $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer->id)->get();
+                                                @endphp
+                                                @foreach($lawyer_educations as $education)
+                                                    {{$education->education->education_name}}
+                                                    @if(!($loop->last))
+                                                    ,
+                                                    @endif
+                                                @endforeach
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="contactDiv">
+                                        <ul>
+                                            <li>
+                                                <button><img src="{{ asset('assets/img/recentQuestionIcon.png') }}" alt=""> ASK A QUESTION</button>
+                                            </li>
+                                            <li>
+                                                <button><img src="{{ asset('assets/img/chatIcon.svg') }}" alt=""> CHAT</button>
+                                            </li>
+                                            <li>
+                                                <button><img src="{{ asset('assets/img/request.png') }}" alt=""> REQUEST CALLBACK</button>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                 @endif
-                @endforeach
+                        </a>
+                    </div>
+                     @endforeach
+                    @endif
                 @endif
             </div>
         </div>
@@ -314,7 +370,7 @@ Experts
                                             <p>Education: 
                                                 <span>
                                                     @php
-                                                        if(isset($lawyer['lawyer_profile'][0])){
+                                                        if(!isset($searchparm) && isset($lawyer['lawyer_profile'][0])){
                                                         $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
                                                         }
                                                     @endphp

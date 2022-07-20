@@ -81,22 +81,29 @@ Expert Gateway
                 </li>
             </ul>
         </div>
+        <form action="{{route('experts')}}">
         <div class="searchBox mobileHide">
-            <div class="countryDiv">
-                <select name="" id="">
-                    <option value="Country">Country</option>
-                </select>
-            </div>
-            <div class="expertiseDiv">
-                <select name="" id="">
-                    <option value="Expertise">Expertise</option>
-                </select>
-                <div class="btnDiv">
-                    <button><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid">  <a style="color: #fff;" href="./fixed-free.html">Search</a></button>
+            
+                <div class="countryDiv">
+                    <select name="country" id="">
+                        <option value="Country">Country</option>
+                    </select>
                 </div>
-            </div>
+                <div class="expertiseDiv">
+                    <select name="search_expert" id="">
+                        <option value="">Expertise</option>
+                         @foreach($educations as $education)
+                         <option value="{{$education->id}}">{{$education->education_name}}</option>
+                        @endforeach
+                    </select>
+                    <div class="btnDiv">
+                        <button type="submit"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid">Search</button>
+                    </div>
+                </div>
+          
 
         </div>
+         </form>
     </div>
     <div class="ourService">
         <div class="container-fluid">

@@ -38,6 +38,7 @@ Experts
                 </div>
             </div>
         </div>
+        <form action="{{route('experts')}}">
         <div class="searchBox mobileHide">
             <div class="countryDiv">
                 <select name="" id="">
@@ -52,11 +53,13 @@ Experts
                     @endforeach
                 </select>
                 <div class="btnDiv">
-                    <button onclick="fetchData()"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid"> Search</button>
+                    <button type="submit"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid"> Search</button>
                 </div>
             </div>
 
+
         </div>
+        </form>
     </div>
     <div class="bolgSection">
         <div class="sortingDiv">
@@ -187,6 +190,8 @@ Experts
                     </div>
                      @endforeach
                     @endif
+                @else
+                <h3>No Record Found!</h3>
                 @endif
             </div>
         </div>

@@ -55,7 +55,7 @@ class aboutUsController extends Controller
             $extensions =$image->extension();
 
             $image_name =time().'.'. $extensions;
-            $image->move('about_us/',$image_name);
+            $image->move(public_path('about_us/'),$image_name);
             $about_us->image=$image_name;
         }
         $about_us->save();
@@ -84,7 +84,7 @@ class aboutUsController extends Controller
             $extensions =$image->extension();
 
             $image_name =time().'.'. $extensions;
-            $image->move('about_us/',$image_name);
+            $image->move(public_path('about_us/'),$image_name);
             $about_us->image=$image_name;
         }
         $about_us->save();

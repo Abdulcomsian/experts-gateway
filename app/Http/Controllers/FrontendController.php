@@ -16,6 +16,7 @@ use App\Models\FixedService;
 use App\Models\LawyersHasLanguage;
 use App\Models\LawyersHasEducation;
 use App\Models\LawyersHasMembership;
+use App\Models\Country;
 use Spatie\Permission\Models\Role;
 use DB;
 
@@ -25,10 +26,11 @@ class FrontendController extends Controller
     {
         $contact_us = ContactUs::first();
         $news = News::latest()->take(10)->get();
-         $educations = Education::get();
+        $educations = Education::get();
         $fixed_services = FixedService::where('status',1)->get();
         $lawyers = User::with('lawyer_profile')->whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
-        return view('welcome' , compact('contact_us','fixed_services','news','lawyers','educations'));
+        $countries=Country::get();
+        return view('welcome' , compact('contact_us','fixed_services','news','lawyers','educations','countries'));
     }
 
     public function about_us()
@@ -46,6 +48,7 @@ class FrontendController extends Controller
         $educations = Education::get();
         $memberships = Membership::get();
         $news = News::latest()->take(10)->get();
+        $countries=Country::get();
         if($request->search_expert){
             $searchparm='';
              $lawyers = DB::table('lawyers_has_educations')
@@ -54,13 +57,13 @@ class FrontendController extends Controller
             ->leftJoin('education', 'lawyers_has_educations.education_id', '=', 'education.id')
             ->select('lawyer_profiles.*','users.f_name as f_name','users.l_name as l_name','education.education_name as education_name')
             ->where('lawyers_has_educations.education_id',$request->search_expert)
+            ->where('lawyer_profiles.country',$request->country)
             ->get();
-            // dd($lawyers);
-             return view('frontend.experts' , compact('contact_us','news','lawyers','educations','memberships','searchparm'));   
+             return view('frontend.experts' , compact('contact_us','news','lawyers','educations','memberships','searchparm','countries'));   
         }
         else{
             $lawyers = User::with('lawyer_profile')->whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
-            return view('frontend.experts' , compact('contact_us','news','lawyers','educations','memberships'));
+            return view('frontend.experts' , compact('contact_us','news','lawyers','educations','memberships','countries'));
         }
         
     }

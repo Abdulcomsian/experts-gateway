@@ -69,7 +69,7 @@ class blogController extends Controller
             $extensions =$image->extension();
 
             $image_name =time().'.'. $extensions;
-            $image->move('blogs/',$image_name);
+            $image->move(public_path('blogs/'),$image_name);
             $blog->image=$image_name;
         }
         $blog->status=1;
@@ -102,7 +102,7 @@ class blogController extends Controller
             $extensions =$image->extension();
 
             $image_name =time().'.'. $extensions;
-            $image->move('blogs/',$image_name);
+            $image->move(public_path('blogs/'),$image_name);
             $blog->image=$image_name;
         }
         $blog->save();

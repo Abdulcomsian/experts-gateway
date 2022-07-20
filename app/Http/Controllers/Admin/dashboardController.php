@@ -90,7 +90,7 @@ class dashboardController extends Controller
             'body'  => 'Your application has been approved by the admin. You can now login to your account.',
             ];
             // dd("second");
-            Mail::to($user->email)->send(new LawyerApprovedMAil($details));
+            //Mail::to($user->email)->send(new LawyerApprovedMAil($details));
         }
         toastSuccess('Successfully Update Status');
         return redirect('admin/lawyer_applications');

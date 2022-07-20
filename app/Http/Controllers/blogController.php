@@ -15,7 +15,7 @@ class blogController extends Controller
     public function index()
     {
         $user_id = Auth::id();
-        $blogs = Blog::get();
+        $blogs = Blog::latest()->get();
         return view('admin.blog.index',compact('blogs'));
     }
 

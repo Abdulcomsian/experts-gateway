@@ -39,6 +39,44 @@ class blogController extends Controller
             return view('blogs.add_blog', compact('lawyer','expertises','blogs'));
         
     }
+    //admin create blog
+    public function create_blog()
+    {
+            $user_id = Auth::id();
+            $expertises = Expertise::get();
+            return view('admin.blog.create_blog', compact('expertises'));
+    }
+    //admin save blog
+    public function save_blog(Request $request)
+    {
+        $user_id = Auth::id();
+        $this->validate($request,[  
+            'image'=>'required', 
+            'title'=>'required', 
+            'short_description'=>'required', 
+            'expertise_id'=>'required', 
+            'description'=>'required', 
+        ]);
+        $blog= new Blog;
+        $blog->title = $request->title;
+        $blog->user_id = $user_id;
+        $blog->expertise_id = $request->expertise_id;
+        $blog->description = $request->description;
+        $blog->short_description = $request->short_description;
+        if($request->hasfile('image'))
+        {
+            $image = $request->file('image');
+            $extensions =$image->extension();
+
+            $image_name =time().'.'. $extensions;
+            $image->move('blogs/',$image_name);
+            $blog->image=$image_name;
+        }
+        $blog->status=1;
+        $blog->save();
+        toastSuccess('Successfully Added');
+        return redirect('admin/index');
+    }
 
     public function store(Request $request)
     {

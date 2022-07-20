@@ -75,7 +75,7 @@ class blogController extends Controller
         $blog->status=1;
         $blog->save();
         toastSuccess('Successfully Added');
-        return redirect('admin/index');
+        return redirect('admin/blogs');
     }
 
     public function store(Request $request)

@@ -68,7 +68,7 @@ class FixedServiceController extends Controller
             $extensions =$image->extension();
 
             $image_name =time().'.'. $extensions;
-            $image->move('fixed_service/',$image_name);
+            $image->move(public_path('fixed_service/'),$image_name);
             $fixed_service->image=$image_name;
         }
         $fixed_service->save();

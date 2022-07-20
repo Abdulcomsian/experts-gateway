@@ -49,7 +49,7 @@ class NewsController extends Controller
             $extensions =$image->extension();
 
             $image_name =time().'.'. $extensions;
-            $image->move('news/',$image_name);
+            $image->move(public_path('news/'),$image_name);
             $new->image=$image_name;
         }
         $new->save();
@@ -83,7 +83,7 @@ class NewsController extends Controller
             $extensions =$image->extension();
 
             $image_name =time().'.'. $extensions;
-            $image->move('news/',$image_name);
+            $image->move(public_path('news/'),$image_name);
             $new->image=$image_name;
         }
         $new->save();

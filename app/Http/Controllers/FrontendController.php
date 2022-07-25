@@ -17,6 +17,7 @@ use App\Models\LawyersHasLanguage;
 use App\Models\LawyersHasEducation;
 use App\Models\LawyersHasMembership;
 use App\Models\Country;
+use App\Models\PartiseArea;
 use Spatie\Permission\Models\Role;
 use DB;
 
@@ -27,10 +28,11 @@ class FrontendController extends Controller
         $contact_us = ContactUs::first();
         $news = News::latest()->take(10)->get();
         $educations = Education::get();
+        $PartiseArea=PartiseArea::get();
         $fixed_services = FixedService::where('status',1)->get();
         $lawyers = User::with('lawyer_profile')->whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
         $countries=Country::get();
-        return view('welcome' , compact('contact_us','fixed_services','news','lawyers','educations','countries'));
+        return view('welcome' , compact('contact_us','fixed_services','news','lawyers','educations','countries','PartiseArea'));
     }
 
     public function about_us()
@@ -46,6 +48,7 @@ class FrontendController extends Controller
     {
         $contact_us = ContactUs::first();
         $educations = Education::get();
+        $PartiseArea=PartiseArea::get();
         $memberships = Membership::get();
         $news = News::latest()->take(10)->get();
         $countries=Country::get();
@@ -54,16 +57,16 @@ class FrontendController extends Controller
              $lawyers = DB::table('lawyers_has_educations')
             ->leftJoin('lawyer_profiles', 'lawyer_profiles.id', '=', 'lawyers_has_educations.lawyer_profile_id')
             ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
-            ->leftJoin('education', 'lawyers_has_educations.education_id', '=', 'education.id')
-            ->select('lawyer_profiles.*','users.f_name as f_name','users.l_name as l_name','education.education_name as education_name')
-            ->where('lawyers_has_educations.education_id',$request->search_expert)
+            ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
+            ->select('lawyer_profiles.*','users.f_name as f_name','users.l_name as l_name','partise_areas.name as practicename')
+             ->where('lawyer_profiles.partise_area',$request->search_expert)
             ->where('lawyer_profiles.country',$request->country)
             ->get();
-             return view('frontend.experts' , compact('contact_us','news','lawyers','educations','memberships','searchparm','countries'));   
+             return view('frontend.experts' , compact('contact_us','news','lawyers','educations','memberships','searchparm','countries','PartiseArea'));   
         }
         else{
             $lawyers = User::with('lawyer_profile')->whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
-            return view('frontend.experts' , compact('contact_us','news','lawyers','educations','memberships','countries'));
+            return view('frontend.experts' , compact('contact_us','news','lawyers','educations','memberships','countries','PartiseArea'));
         }
         
     }

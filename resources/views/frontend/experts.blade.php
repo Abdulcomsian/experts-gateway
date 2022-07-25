@@ -24,10 +24,10 @@ Experts
                                     </div>
                                     <div class="expertiseDiv">
                                         <select name="search_expert" id="search_expert">
-                                            <option disabled selected>Select Education</option>
-                                            @foreach($educations as $education)
-                                            <option value="{{$education->id}}">{{$education->education_name}}</option>
-                                            @endforeach
+                                            <option value="">Select Practise Area</option>
+                                             @foreach($PartiseArea as $area)
+                                             <option value="{{$area->id}}">{{$area->name}}</option>
+                                             @endforeach
                                         </select>
                                         <div class="btnDiv">
                                             <button type="submit"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid"> Search</button>
@@ -57,10 +57,10 @@ Experts
             </div>
             <div class="expertiseDiv">
                 <select name="search_expert" id="search_expert">
-                    <option disabled selected>Select Education</option>
-                    @foreach($educations as $education)
-                    <option value="{{$education->id}}">{{$education->education_name}}</option>
-                    @endforeach
+                     <option value="">Select Practise Area</option>
+                     @foreach($PartiseArea as $area)
+                     <option value="{{$area->id}}">{{$area->name}}</option>
+                     @endforeach
                 </select>
                 <div class="btnDiv">
                     <button type="submit"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid"> Search</button>

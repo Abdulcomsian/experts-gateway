@@ -41,9 +41,9 @@ Expert Gateway
                                 </div>
                                 <div class="expertiseDiv">
                                     <select name="search_expert" id="">
-                                        <option value="">Select Education</option>
-                                         @foreach($educations as $education)
-                                         <option value="{{$education->id}}">{{$education->education_name}}</option>
+                                        <option value="">Select Practise Area</option>
+                                         @foreach($PartiseArea as $area)
+                                         <option value="{{$area->id}}">{{$area->name}}</option>
                                          @endforeach
                                     </select>
                                     <div class="btnDiv">
@@ -100,9 +100,9 @@ Expert Gateway
                 </div>
                 <div class="expertiseDiv">
                     <select name="search_expert" id="">
-                        <option value="">Select Education</option>
-                         @foreach($educations as $education)
-                         <option value="{{$education->id}}">{{$education->education_name}}</option>
+                        <option value="">Select Practise Area</option>
+                         @foreach($PartiseArea as $area)
+                         <option value="{{$area->id}}">{{$area->name}}</option>
                          @endforeach
                     </select>
                     <div class="btnDiv">

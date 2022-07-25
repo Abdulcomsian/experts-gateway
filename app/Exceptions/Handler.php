@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Exceptions;
+use Exception;
+use Throwable;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -32,6 +34,19 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        //
+        return "hello";
     }
+
+    public function render($request, Throwable $exception)
+    {
+        if($exception->getMessage()=='This action is unauthorized.')
+        {
+            return redirect('/');
+        }
+        
+
+        return parent::render($request, $exception); // all the other exceptions
+    }
+
+    
 }

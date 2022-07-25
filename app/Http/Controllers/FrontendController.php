@@ -54,8 +54,7 @@ class FrontendController extends Controller
         $countries=Country::get();
         if($request->search_expert){
             $searchparm='';
-             $lawyers = DB::table('lawyers_has_educations')
-            ->leftJoin('lawyer_profiles', 'lawyer_profiles.id', '=', 'lawyers_has_educations.lawyer_profile_id')
+             $lawyers = DB::table('lawyer_profiles')
             ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
             ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
             ->select('lawyer_profiles.*','users.f_name as f_name','users.l_name as l_name','partise_areas.name as practicename')

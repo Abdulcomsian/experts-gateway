@@ -32,7 +32,7 @@ Expert Gateway
                         <form action="{{route('experts')}}">
                             <div class="searchBox desktopHide">
                                 <div class="countryDiv">
-                                    <select name="country" id="">
+                                    <select name="country" id="" required="required">
                                         <option value="">Select Country</option>
                                         @foreach($countries as $country)
                                         <option value="{{$country->id}}">{{$country->name}}</option>
@@ -40,8 +40,8 @@ Expert Gateway
                                     </select>
                                 </div>
                                 <div class="expertiseDiv">
-                                    <select name="search_expert" id="">
-                                        <option value="">Select Practise Area</option>
+                                    <select name="search_expert" id="" required="required">
+                                        <option value="">Select practice Area</option>
                                          @foreach($PartiseArea as $area)
                                          <option value="{{$area->id}}">{{$area->name}}</option>
                                          @endforeach
@@ -91,7 +91,7 @@ Expert Gateway
         <div class="searchBox mobileHide">
             
                 <div class="countryDiv">
-                    <select name="country" id="">
+                    <select name="country" id="" required="required">
                         <option value="">Select Country</option>
                         @foreach($countries as $country)
                         <option value="{{$country->id}}">{{$country->name}}</option>
@@ -99,8 +99,8 @@ Expert Gateway
                     </select>
                 </div>
                 <div class="expertiseDiv">
-                    <select name="search_expert" id="">
-                        <option value="">Select Practise Area</option>
+                    <select name="search_expert" id="" required="required">
+                        <option value="">Select practice Area</option>
                          @foreach($PartiseArea as $area)
                          <option value="{{$area->id}}">{{$area->name}}</option>
                          @endforeach

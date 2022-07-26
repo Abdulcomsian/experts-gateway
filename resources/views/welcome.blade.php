@@ -41,7 +41,7 @@ Expert Gateway
                                 </div>
                                 <div class="expertiseDiv">
                                     <select name="search_expert" id="" required="required">
-                                        <option value="">Select practice Area</option>
+                                        <option value="">Select Practice Area</option>
                                          @foreach($PartiseArea as $area)
                                          <option value="{{$area->id}}">{{$area->name}}</option>
                                          @endforeach
@@ -100,7 +100,7 @@ Expert Gateway
                 </div>
                 <div class="expertiseDiv">
                     <select name="search_expert" id="" required="required">
-                        <option value="">Select practice Area</option>
+                        <option value="">Select Practice Area</option>
                          @foreach($PartiseArea as $area)
                          <option value="{{$area->id}}">{{$area->name}}</option>
                          @endforeach

@@ -24,7 +24,7 @@ Experts
                                     </div>
                                     <div class="expertiseDiv">
                                         <select name="search_expert" id="search_expert" required="required">
-                                            <option value="">Select practice Area</option>
+                                            <option value="">Select Practice Area</option>
                                              @foreach($PartiseArea as $area)
                                              <option value="{{$area->id}}">{{$area->name}}</option>
                                              @endforeach
@@ -57,7 +57,7 @@ Experts
             </div>
             <div class="expertiseDiv">
                 <select name="search_expert" id="search_expert" required="required">
-                     <option value="">Select practice Area</option>
+                     <option value="">Select Practice Area</option>
                      @foreach($PartiseArea as $area)
                      <option value="{{$area->id}}">{{$area->name}}</option>
                      @endforeach

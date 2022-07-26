@@ -1077,16 +1077,16 @@ footer .newsLetter .formDiv button {
 
 .blogDetailCard {
     background: #f8f9f9;
-    height: 950px;
+    height: auto !important;
 }
 
 .blogDetailCard .card {
     width: 100%;
     max-width: 70%;
     margin: auto;
-    position: absolute;
+    /* position: absolute;
     top: -300px;
-    left: 15%;
+    left: 15%; */
 }
 
 .blogDetailCard .card .cardContent {
@@ -5064,9 +5064,9 @@ form button[type="submit"] {
         font-size: 18px;
     }
 
-    .blogDetailCard {
+    /* .blogDetailCard {
         height: 800px;
-    }
+    } */
 
     .relatedService .multiRelatedService .card .cardFooter h4 {
         font-size: 35px;
@@ -5937,9 +5937,10 @@ form button[type="submit"] {
         padding: 60px;
     }
 
+    /* 
     .blogDetailCard {
         height: 750px;
-    }
+    } */
 
     .bolgSection .multiBlog {
         max-width: 100%;
@@ -7341,9 +7342,9 @@ form button[type="submit"] {
         font-size: 16px;
     }
 
-    .blogDetailCard {
+    /* .blogDetailCard {
         height: 950px;
-    }
+    } */
 
     .blogDetailCard .card .cardContent .dateLikeDiv .date,
     .orderSection .orderHeader p,

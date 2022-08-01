@@ -373,7 +373,7 @@ Profile building
                                         </div>
                                         <div class="sendApproval">
                                             <img src="{{asset('assets/img/approval.png') }}" alt="" class="img-fluid">
-                                            <p>We need to validate everything here. Please give us some time to respond.</p>
+                                            <p>We need to validate everything here. Please Give us 24 hours to come back to you.</p>
                                         </div>
                                     </div>
                                 </div>

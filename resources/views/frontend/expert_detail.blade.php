@@ -7,10 +7,10 @@ Experts
     <div class="profileDiv expertDetailProfile">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="editProfileBox">
                         <div class="profileImg">
-                            <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" style="width: 790px !important; height: 230px !important;" alt="" class="img-fluid">
+                            <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" style="width: 100% !important; height: 230px !important;" alt="" class="img-fluid">
 
                         </div>
                         <div class="editProfile">
@@ -201,12 +201,12 @@ Experts
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <!-- <div class="col-lg-4">
                     <div class="hireDiv">
                         <ul>
                             <li>
                                 <img src="../assets/img/recentQuestionIcon.png" alt="" class="img-fluid">
-                                <span>ASK A QUESTION</span>
+                                <span>ASK A testing QUESTION</span>
                             </li>
                             <li>
                                 <img src="../assets/img/chatIcon.svg" alt="" class="img-fluid">
@@ -222,7 +222,7 @@ Experts
                             
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="fixedFreeService">
                 <div class="container-fluid">

@@ -5,7 +5,7 @@
                 <div class="col-lg-6">
                     <div class="newLetterContent">
                         <p>Subscribe to</p>
-                        <h2>Who is the newsletter for? Lawyers?</h2>
+                        <h2>Lawyers, sign up to our newletter today</h2>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@
                     <div class="logo">
                         <img src="{{asset('assets/img/logoFooter.png')}}" alt="" class="img-fluid">
                     </div>
-                    <div class="socialList">
+                    <div class="socialList d-none">
                         <ul>
                             <li>
                                 <a href="{{ $contact_us->facebook_link ?? '#'}}">

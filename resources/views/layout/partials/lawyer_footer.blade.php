@@ -31,7 +31,7 @@
                     <div class="logo">
                         <img src="{{ asset('assets/img/logoFooter.png') }}" alt="" class="img-fluid">
                     </div>
-                    <div class="socialList">
+                    <div class="socialList d-none">
                         <ul>
                             <li>
                                 <a href="{{ $contact_us->facebook_link ?? '#'}}">

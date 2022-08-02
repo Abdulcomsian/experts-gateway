@@ -66,23 +66,43 @@ Expert Gateway
         <div class="clientBox">
             <ul>
                 <li>
-                    <div class="clientDetailBox">
+                    <div class="d-flex align-items-center clientDetailBox">
                         <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                        <div class="ml-2">
+                            <p class="mb-0">jhon smith</p>
+                            <small class="text-dark-50">lawyer</small>
+                        </div>
+
                     </div>
                 </li>
                 <li>
-                    <div class="clientDetailBox">
+                    <div class="d-flex align-items-center clientDetailBox">
                         <img src="{{ asset('assets/img/client2.png') }}" alt="" class="img-fluid">
+                        <div class="ml-2">
+                            <p class="mb-0">jhon smith</p>
+                            <small class="text-dark-50">lawyer</small>
+                        </div>
+
                     </div>
                 </li>
                 <li>
-                    <div class="clientDetailBox">
+                    <div class="d-flex align-items-center clientDetailBox">
                         <img src="{{ asset('assets/img/client3.png') }}" alt="" class="img-fluid">
+                        <div class="ml-2">
+                            <p class="mb-0">jhon smith</p>
+                            <small class="text-dark-50">lawyer</small>
+                        </div>
+
                     </div>
                 </li>
                 <li>
-                    <div class="clientDetailBox">
+                    <div class="d-flex align-items-center clientDetailBox">
                         <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                        <div class="ml-2">
+                            <p class="mb-0">jhon smith</p>
+                            <small class="text-dark-50">lawyer</small>
+                        </div>
+
                     </div>
                 </li>
             </ul>
@@ -387,7 +407,7 @@ Expert Gateway
                 <div class="col-lg-6">
                     <div class="informationContent">
                         <h2>Not sure what kind of legal assistance you need?</h2>
-                        <p>Fill in the form below and tell us where you are and your current legal situation. We’ll get back to you with our recommendations for a suitable expert. </p>
+                        <p class="mb-4">Fill in the form below and tell us where you are and your current legal situation. We’ll get back to you with our recommendations for a suitable expert. </p>
                         <div class="formDiv">
                             <form action="">
                                 <div class="row">
@@ -413,6 +433,13 @@ Expert Gateway
                                     <div class="col-lg-6">
                                         <div class="inputDiv">
                                             <input type="text" name="phone" id="phone" placeholder="Phone">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-lg-12">
+                                        <div class="inputDiv">
+                                            <input type="text" name="practice" id="practice" placeholder="Practice Area">
                                         </div>
                                     </div>
                                 </div>

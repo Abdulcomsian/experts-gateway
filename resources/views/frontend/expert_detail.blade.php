@@ -92,7 +92,7 @@ Experts
                             </div>
                         </div>
                     </div>
-                    <div class="recentQuestionDiv">
+                    <div class="recentQuestionDiv mt-5">
                         <h4><img src="../assets/img/recentQuestionIcon.png" alt="" class="img-fluid"> RECENT
                             QUESTIONS ANSWERED</h4>
                         <div class="accordiansDiv">

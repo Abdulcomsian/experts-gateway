@@ -63,7 +63,7 @@ News
                             <tr>
                                 @foreach($news as $new)
                                 <td>{{$new->title}}</td>
-                                <td>{!! $new->description !!}</td>
+                                <td style="max-width: 400px">{!! $new->description !!}</td>
                                 <td><img src="{{asset('news/'.$new->image)}}" width="100px" height="100px"></td>
                                 <td class="text-end">
 

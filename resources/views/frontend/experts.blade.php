@@ -104,7 +104,8 @@ Experts
                                                     </p>
                                                 </div>
                                                 <div class="cardBody">
-                                                    <h3>{{$lawyer->f_name}} {{$lawyer->l_name}}</h3>
+                                                    {{-- <h3>{{$lawyer->f_name}} {{$lawyer->l_name}}</h3> --}}
+                                                    <h3>{{ substr($lawyer->f_name." ".$lawyer->l_name, 0,  15) }}</h3>
                                                 <p>{{$lawyer['lawyer_profile'][0]->title}}</p>
                                                 </div>
                                                 <div class="line">
@@ -255,13 +256,15 @@ Experts
                         <div class="newsSlider">
                             @foreach($news as $new)
                             <div class="newsCard">
-                                <img src="{{asset('news/'.$new->image)}}" width="223px" height="162px" alt="" class="img-fluid">
+                                <img src="{{asset('news/'.$new->image)}}" width="223px" height="162px" alt="" class="img-flui">
                                 <div class="cardContent">
                                     <div class="date">
                                         <p>{{ date('Y/m/d', strtotime($new->created_at)) }}</p>
                                     </div>
                                     <h4>{{$new->title}}</h4>
-                                    {!! $new->description !!}
+                                    <div class="breakWorld">
+                                        {!! $new->description !!}
+                                    </div>
                                     <!-- <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a> -->
                                 </div>
                             </div>

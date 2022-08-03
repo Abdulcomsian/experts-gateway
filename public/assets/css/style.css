@@ -304,6 +304,10 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 }
 
 /************ Our - Services - CSS ***************/
+.leatestNews .sliderDiv {
+    right: 0 !important;
+}
+
 .ourService,
 .experts {
     padding: 200px 0px;
@@ -695,6 +699,15 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 .leatestNews .newsCard {
     width: 33%;
     margin: 0px 25px;
+}
+
+.breakWorld {
+    height: 150px;
+    overflow: hidden;
+}
+
+.breakWorld p {
+    word-break: break-all;
 }
 
 .leatestNews .newsCard .cardContent,

@@ -2,7 +2,15 @@
 @section('title')
 Expert Gateway
 @endsection
+@section('styles')
+ <!-- Link Swiper's CSS -->
+ <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+@endsection
 @section('content') 
+ 
 <style>
     main .mainBanner .searchBox div select{
         background: transparent;
@@ -12,6 +20,13 @@ Expert Gateway
     }
     .aboutUs .aboutUsContent .notes:before {
          height: 88%;
+    }
+    .clientBox{
+        height: 350px;
+    }
+    .profileSlide {
+        height: 100%;
+        overflow: hidden;
     }
 </style>
 <main>
@@ -64,7 +79,7 @@ Expert Gateway
             </div>
         </div>
         <div class="clientBox">
-            <ul>
+            <!-- <ul>
                 <li>
                     <div class="d-flex align-items-center clientDetailBox">
                         <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
@@ -72,7 +87,6 @@ Expert Gateway
                             <p class="mb-0">jhon smith</p>
                             <small class="text-dark-50">lawyer</small>
                         </div>
-
                     </div>
                 </li>
                 <li>
@@ -105,7 +119,67 @@ Expert Gateway
 
                     </div>
                 </li>
-            </ul>
+            </ul> -->
+                <!-- Swiper -->
+                <div class="swiper mySwiper profileSlide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="d-flex align-items-center clientDetailBox">
+                                <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                                <div class="ml-2">
+                                    <p class="mb-0">jhon smith</p>
+                                    <small class="text-dark-50">lawyer</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="d-flex align-items-center clientDetailBox">
+                                <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                                <div class="ml-2">
+                                    <p class="mb-0">jhon smith</p>
+                                    <small class="text-dark-50">lawyer</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="d-flex align-items-center clientDetailBox">
+                                <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                                <div class="ml-2">
+                                    <p class="mb-0">jhon smith</p>
+                                    <small class="text-dark-50">lawyer</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="d-flex align-items-center clientDetailBox">
+                                <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                                <div class="ml-2">
+                                    <p class="mb-0">jhon smith</p>
+                                    <small class="text-dark-50">lawyer</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="d-flex align-items-center clientDetailBox">
+                                <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                                <div class="ml-2">
+                                    <p class="mb-0">jhon smith</p>
+                                    <small class="text-dark-50">lawyer</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="d-flex align-items-center clientDetailBox">
+                                <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                                <div class="ml-2">
+                                    <p class="mb-0">jhon smith</p>
+                                    <small class="text-dark-50">lawyer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
         </div>
         <form action="{{route('experts')}}">
         <div class="searchBox mobileHide">
@@ -270,7 +344,7 @@ Expert Gateway
                 <div class="col-lg-6">
                     <div class="aboutUsContent">
                         <h5>About Us</h5>
-                        <h2Experts Gateway</h2>
+                        <h2>Experts Gateway</h2>
                         <p class="notes">You never know when or where you might need legal advice. But finding a top lawyer when you’re away from home is difficult, time-consuming and potentially risky.</p>
                         <p>Experts Gateway is here to help. We partner with some of the best lawyers from around the world, carefully vetted to ensure they provide top quality advice and representation. Whatever kind of assistance you need, wherever you are, we’ll connect with a top local law expert. </p>
                         <a href="{{ url('/about-us') }}">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
@@ -468,8 +542,25 @@ Expert Gateway
         </div>
     </div>
 </main>
-    
 @endsection
 
 @section('js')
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+       <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".profileSlide", {
+        direction: "vertical",
+        slidesPerView: 4,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
 @endsection

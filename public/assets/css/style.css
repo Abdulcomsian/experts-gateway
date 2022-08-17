@@ -1663,8 +1663,12 @@ footer .newsLetter .formDiv button {
     opacity: 1;
 }
 
-#phone {
-    padding-left: 100px !important;
+/* #phone {
+    padding-left: 0px !important;
+} */
+
+main .mainBanner .bannerRight{
+    height: 64vh;
 }
 
 .line {
@@ -5761,7 +5765,11 @@ form button[type="submit"] {
     }
 
     .findExpert {
-        padding: 200px 100px;
+        padding: 200px 100px 0;
+    }
+
+    .newsCard .cardContent p{
+        word-break: break-all;
     }
 
 }

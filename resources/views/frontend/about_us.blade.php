@@ -31,7 +31,11 @@ About Us
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-8">
-                    {!! $about_us->description ?? '' !!}
+
+                    <!-- {!! $about_us->description ?? '' !!} -->
+                    <p>Experts Gateway is the “go-to” portal for finding legal advice. Here we make it simple to find the legal expert you need. We showcase one expert in that practice area, that has been carefully vetted, in their chosen country and jurisdiction. At Experts Gateway we founded this idea, because we live in an age of over use of ‘feedback’. When looking for advice on a situation, usually time is under pressure, you need to be confident of the choice you do make, not just have an abundance of choice. This helps you focus on working with the legal representative on your case, your needs and how you need help. We have worked extensively to vet and find both a cultural and professional fit for our network. We want to ensure that lawyers are both approachable and knowledgeable, but resilient and open.</p>
+                    <p>This is how the network was built. We have carefully grown the network up to 2000 lawyers, representing both the core practice areas and a healthy share of the more bespoke areas of law. We connect these lawyers with vibrants community both in person and digitally to enable them to share work, grow and learn with like minded peers of their industries. This is important for our clients to know, as they will feel that the whole network is behind helping you find a complete solution for your enquiry.</p>
+                    <p> We look forward to welcoming you to using Experts Gateway! Please reach out to us any time, we would love to help!</p>
                     <div class="multiBtn">
                         <a href="{{ url('/experts') }}" class="findExpertBtn">Find An Expert</a>
                         <a href="{{ route('lawyer-register') }}" class="applyMemberShip">Apply Fot Membership</a>
@@ -75,9 +79,7 @@ About Us
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Our Services</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam id nibh ut efficitur.
-                        Proin congue interdum lacus, sed ornare augue viverra sit amet. In pulvinar augue ac urna
-                        tristique viverra. Aliquam eu scelerisque orci.</p>
+                    <p>At Experts Gateway we help provide a platform connecting you to a number of practice areas and services. These are listed below and have a description and thorough analysis of where the practice area is and the trends we are seeing. </p>
                 </div>
             </div>
             <div class="sliderDiv">

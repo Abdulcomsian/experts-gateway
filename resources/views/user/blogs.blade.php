@@ -10,7 +10,7 @@ blog
                     <div class="col-lg-6">
                         <div class="bannerLeft">
                             <h2 class="commonHeading">Blog</h2>
-                            <p class="commonPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed<br> aliquam id nibh ut efficitur. Proin congue interdum lacus, sed<br> ornare augue viverra sit amet.</p>
+                            <p class="commonPara">Our blog and insight section gives you access to updates and perspectives from all over the current trends and topics. Here we showcase legal perspectives, detailed run throughs and short form takeaways for the consumer. </p>
                         </div>
 
                     </div>

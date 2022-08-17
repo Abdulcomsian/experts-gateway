@@ -10,8 +10,7 @@ Experts
                 <div class="col-lg-6">
                     <div class="bannerLeft expertBannerLeft">
                         <h3>Experts</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed<br> aliquam id nibh ut
-                            efficitur. Proin congue interdum lacus, sed<br> ornare augue viverra sit amet.</p>
+                        <p>Search for your legal expert here! In the search filter, use the country of which you need legal expertise from, then the practice area that you need the expert to guide you in. From the results, you can reach out to the lawyer directly. </p>
                              <form action="{{route('experts')}}">
                                 <div class="searchBox desktopHide">
                                     <div class="countryDiv">

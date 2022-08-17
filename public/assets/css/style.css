@@ -1667,9 +1667,9 @@ footer .newsLetter .formDiv button {
     padding-left: 0px !important;
 } */
 
-main .mainBanner .bannerRight{
+/* main .mainBanner .bannerRight{
     height: 64vh;
-}
+} */
 
 .line {
     width: 100%;
@@ -5765,7 +5765,7 @@ form button[type="submit"] {
     }
 
     .findExpert {
-        padding: 200px 100px 0;
+        padding: 200px 100px 80px;
     }
 
     .newsCard .cardContent p{

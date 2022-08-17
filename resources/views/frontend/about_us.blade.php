@@ -11,16 +11,17 @@ About Us
                 <div class="col-lg-6">
                     <div class="bannerLeft aboutUsLeft">
                         <h3>About <span>Us</span></h3>
-                        <p style="width:374px;">{{$about_us->title ?? ''}}</p>
+                        <!-- <p style="width:374px;">{{$about_us->title ?? ''}}</p> -->
+                        <p style="width:374px;">Experts Gateway Provides You With The Best Advisers Around The Globe</p>
                     </div>
 
                 </div>
                 <div class="col-lg-6" style="padding: 0px;">
                     <div class="bannerRight">
                         @if (isset($about_us->image))
-                        <img src="{{asset('about_us/'.$about_us->image ) }}" style="width: 675pxs; height: 393px;" alt="" class="img-fluid">
+                        <img src="{{asset('about_us/'.$about_us->image ) }}" style="width: 675pxs;" alt="" class="img-fluid">
                         @else
-                        <img src="{{ asset('assets/img/aboutUsBanner.png') }}" style="width: 675pxs; height: 393px;" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/aboutUsBanner.png') }}" style="width: 675pxs;" alt="" class="img-fluid">
                         @endif
                     </div>
                 </div>

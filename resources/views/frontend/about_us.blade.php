@@ -18,9 +18,9 @@ About Us
                 <div class="col-lg-6" style="padding: 0px;">
                     <div class="bannerRight">
                         @if (isset($about_us->image))
-                        <img src="{{asset('about_us/'.$about_us->image ) }}" style="width: 675pxs; height: 393px;" alt="" class="img-fluid">
+                        <img src="{{asset('about_us/'.$about_us->image ) }}" style="width: 675pxs;" alt="" class="img-fluid">
                         @else
-                        <img src="{{ asset('assets/img/aboutUsBanner.png') }}" style="width: 675pxs; height: 393px;" alt="" class="img-fluid">
+                        <img src="{{ asset('assets/img/aboutUsBanner.png') }}" style="width: 675pxs;" alt="" class="img-fluid">
                         @endif
                     </div>
                 </div>
@@ -177,6 +177,7 @@ About Us
         </div>
     </div>
     <div class="excellence">
+        <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2>Advisory Excellence Profiles<br> The Best Advisers Around The Globe</h2>
@@ -184,6 +185,8 @@ About Us
                 <a href="{{ route('lawyer-register') }}">Apply For Membership</a>
             </div>
         </div>
+        </div>
+        
     </div>
     @if(count($fixed_services) > 0)
     <div class="fixedService">

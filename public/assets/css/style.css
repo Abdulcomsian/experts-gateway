@@ -310,7 +310,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 
 .ourService,
 .experts {
-    padding: 200px 0px;
+    padding: 150px 0px;
 }
 
 .ourService h2,
@@ -426,7 +426,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     background-image: url(../img/aboutUs.png);
     background-position: center;
     background-size: cover;
-    padding: 150px 0px;
+    padding: 100px 0px;
 }
 
 .aboutUs .multiBox {
@@ -964,7 +964,7 @@ footer .newsLetter .formDiv button {
 
 .contactBanner .bannerRight,
 .commonBanner .bannerRight {
-    height: auto !important;
+    height: auto;
 }
 
 .contactDetail {
@@ -1667,9 +1667,9 @@ footer .newsLetter .formDiv button {
     padding-left: 0px !important;
 } */
 
-main .mainBanner .bannerRight{
+/* main .mainBanner .bannerRight{
     height: 64vh;
-}
+} */
 
 .line {
     width: 100%;
@@ -4593,6 +4593,24 @@ form button[type="submit"] {
 }
 
 @media screen and (max-width: 1600px) {
+    .bolgSection{
+        padding: 60px 90px;
+    }
+    .multiBlog .expertCard{
+        margin-bottom: 30px;
+    }
+    .findExpert {
+        padding: 100px 100px;
+    }
+    .requestInformation{
+        padding: 100px 100px 200px;
+    }
+    .ourService, .experts{
+        padding: 100px 0px;
+    }
+    .aboutUs{
+        padding: 60px 0px;
+    }
     .on-boarding-main .on-boarding-left-bar .tab-pills-div ul li.active a {
         font-size: 20px;
     }
@@ -5001,7 +5019,7 @@ form button[type="submit"] {
     }
 
     .excellence {
-        padding: 150px 0px;
+        padding: 100px 0px;
     }
 
     .experts .expertSlider .sliderbox .expertHeader h4 {
@@ -5195,7 +5213,7 @@ form button[type="submit"] {
     }
 
     main .mainBanner .bannerLeft {
-        padding: 190px 50px 0px;
+        padding: 250px 50px 0px;
     }
 
     footer .socialList ul li {
@@ -6149,6 +6167,10 @@ form button[type="submit"] {
 }
 
 @media screen and (max-width: 992px) {
+    
+    main .mainBanner .bannerRight{
+        display: block !important;
+    }
     .insight_article_section .cardContent .course_list {
         display: block;
     }
@@ -6657,6 +6679,13 @@ form button[type="submit"] {
     .insight_article_section .card {
         top: -100px !important;
     }
+    .blogBanner .bannerLeft{
+        position: absolute !important;
+        left: 0px !important;  
+    }
+    main .mainBanner.contactBanner .bannerRight{
+        display: none !important;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -6855,7 +6884,7 @@ form button[type="submit"] {
     }
 
     .bolgSection {
-        padding: 100px 40px;
+        padding: 60px 40px;
     }
 
     .bolgSection .selectDiv {
@@ -6953,8 +6982,9 @@ form button[type="submit"] {
         align-items: initial;
     }
 
-    .experts {
-        padding: 100px 0px;
+    .experts,
+    .excellence{
+        padding: 60px 0px;
     }
 
     .experts .expertSlider .sliderbox .expertHeader h4,
@@ -7012,7 +7042,8 @@ form button[type="submit"] {
 
 @media screen and (max-width: 580px) {
     footer .newsLetter .formDiv button {
-        right: 20px;
+        right: 40px;
+        padding: 0px;
     }
 
     .profileDiv .editProfileBox .editProfile .listDiv ul {
@@ -7149,7 +7180,7 @@ form button[type="submit"] {
     }
 
     .findExpert {
-        padding: 100px 20px;
+        padding: 60px 20px;
     }
 
     .findExpert .aboutUs {
@@ -7420,13 +7451,17 @@ form button[type="submit"] {
     }
 
     .requestInformation {
-        padding: 120px 0px;
+        padding: 60px 0px 150px;
     }
-
+    footer .newsLetter .formDiv input{
+        font-size: 14px;
+    }
     .requestInformation .imgText .imgTextMiddle p {
         font-size: 11px;
     }
-
+    .requestInformation .inputDiv{
+        margin-bottom: 0px;
+    }
     .experts .expertSlider .slick-track {
         height: 58% !important;
     }
@@ -7487,7 +7522,7 @@ form button[type="submit"] {
     }
 
     .ourService {
-        padding: 100px 0px;
+        padding: 60px 0px;
     }
 
     main .mainBanner .bannerLeft p br {
@@ -7495,9 +7530,11 @@ form button[type="submit"] {
     }
 
     main .mainBanner .bannerLeft {
-        padding: 200px 40px 0px;
+        padding: 150px 20px 0px;
     }
-
+    .aboutUs{
+        padding: 60px 0px;
+    }
     main .mainBanner .bannerLeft p {
         font-size: 25px;
     }

@@ -76,10 +76,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/experts') }}">Experts</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('services') }}">Services</a>
                         
-                    </li>
+                    </li> -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Apply</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">

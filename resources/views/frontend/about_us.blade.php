@@ -12,7 +12,7 @@ About Us
                     <div class="bannerLeft aboutUsLeft">
                         <h3>About <span>Us</span></h3>
                         <!-- <p style="width:374px;">{{$about_us->title ?? ''}}</p> -->
-                        <p style="width:374px;">Experts Gateway Provides You With The Best Advisers Around The Globe</p>
+                        <p style="width:90%;">Experts Gateway Provides You With The Best Advisers Around The Globe</p>
                     </div>
 
                 </div>

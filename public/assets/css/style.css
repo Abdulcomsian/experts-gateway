@@ -517,6 +517,9 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 }
 
 /********* Expert - Slider - CSS *********/
+.experts .sliderDiv .line{
+    margin: 10px 0px;
+}
 .experts .expertSlider .sliderbox {
     width: 33.3%;
     background: #fff;
@@ -738,6 +741,8 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     font-size: 30px;
     font-family: MoskauMedium;
     margin: 20px 0px;
+    height: 50px;
+    overflow: hidden;
 }
 
 .leatestNews .newsCard .cardContent p,
@@ -774,6 +779,8 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 .newsSlider .slick-slide img {
     display: initial;
     width: 100%;
+    min-width: 240px;
+    min-height: 240px;
 }
 
 .newsSlider .slick-active+.slick-active~.slick-slide {
@@ -5484,7 +5491,7 @@ form button[type="submit"] {
     }
 
     .leatestNews .leatesNewContent {
-        max-width: 65%;
+        max-width: 78%;
     }
 
     .ourService h2,

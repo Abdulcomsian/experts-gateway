@@ -34,6 +34,7 @@ class dashboardController extends Controller
 
     public function profile()
     {
+
         $user_id = Auth::id();
         $lawyer = User::where('id',$user_id)->first();
         $languages = Language::get();
@@ -48,6 +49,7 @@ class dashboardController extends Controller
         $city = null;
         if($lawyer_profile)
         {
+
             $city = City::where('id',$lawyer_profile->city)->first();
             $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
             $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
@@ -66,12 +68,15 @@ class dashboardController extends Controller
 
         }
         else{
+
             if($lawyer->status == 0)
             {
+
                return view('lawyer.build_profile',compact('lawyer','countries','languages','educations','memberships','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','states','countries')); 
             }
             elseif($lawyer->status == 2)
             {
+                 
                 return view('lawyer.profile',compact('lawyer'));
             }
         }

@@ -517,11 +517,24 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 }
 
 /********* Expert - Slider - CSS *********/
+.experts .sliderDiv .expertAbout,
+.experts .sliderDiv .expertHeader{
+    text-align: center;
+}
+.experts .expertSlider .sliderBox{
+    background: #fff;
+    margin: 0px 15px;
+    transition: all .5s;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+.experts .sliderDiv img{
+    margin: auto;
+}
 .experts .sliderDiv .line{
     margin: 10px 0px;
 }
 .experts .expertSlider .sliderbox {
-    width: 33.3%;
     background: #fff;
     margin: 0px 15px;
     transition: all .5s;
@@ -752,7 +765,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     margin-bottom: 25px;
     font-family: GelionRegular;
     min-height: 20px;
-    max-height: 45px;
+    height: 45px;
     overflow: hidden;
 }
 
@@ -783,7 +796,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     display: initial;
     width: 100%;
     min-width: 240px;
-    min-height: 240px;
+    height: 240px;
 }
 
 .newsSlider .slick-active+.slick-active~.slick-slide {
@@ -849,7 +862,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 /************* Footer - CSS **************/
 footer {
     background: #032231 0% 0% no-repeat padding-box;
-    padding: 200px 200px 70px;
+    padding: 300px 200px 70px;
     position: relative;
 }
 
@@ -1044,10 +1057,12 @@ footer .newsLetter .formDiv button {
 
 .bolgSection .multiBlog .blogCard img {
     width: 100%;
+    height: 240px;
 }
 
 .bolgSection .multiBlog .blogCard .cardContent img {
     width: auto;
+    height: auto !important;
 }
 
 .bolgSection .multiBlog {
@@ -2777,7 +2792,7 @@ main .mainBanner .registerAuthRightBox {
 }
 
 .expertDetailProfile {
-    padding: 450px 250px 200px;
+    padding: 450px 250px 100px;
 }
 
 .recentQuestionDiv,
@@ -4603,6 +4618,12 @@ form button[type="submit"] {
 }
 
 @media screen and (max-width: 1600px) {
+    footer {
+        padding: 200px 200px 70px;
+    }
+    .profileDiv.expertDetailProfile{
+        padding: 350px 150px 100px; 
+    }
     .bolgSection{
         padding: 60px 90px;
     }
@@ -5267,6 +5288,9 @@ form button[type="submit"] {
 }
 
 @media screen and (max-width: 1440px) {
+    .profileDiv.expertDetailProfile {
+        padding: 250px 150px 100px;
+    }
     .expertDetailProfile .editProfileBox {
         top: -44px;
     }

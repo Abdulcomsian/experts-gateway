@@ -224,7 +224,7 @@ Experts
                     </div>
                 </div> -->
             </div>
-            <div class="fixedFreeService">
+            <!-- <div class="fixedFreeService">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
@@ -266,7 +266,7 @@ Experts
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </main>

@@ -462,7 +462,7 @@ Expert Gateway
                                         <p>{{ date('Y/m/d', strtotime($new->created_at)) }}</p>
                                     </div>
                                     <h4>{{$new->title}}</h4>
-                                    {{\Str::words($new->description,15)}}
+                                    {{!! \Str::words($new->description,15) !!}}
                                     <!-- <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a> -->
                                 </div>
                             </div>

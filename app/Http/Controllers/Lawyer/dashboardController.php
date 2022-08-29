@@ -146,7 +146,7 @@ class dashboardController extends Controller
                 $extensions =$image->extension();
 
                 $image_name =time().'.'. $extensions;
-                $image->move('lawyer_profile/',$image_name);
+                $image->move(public_path('lawyer_cover_image/'),$image_name);
                 $lawyer_profile->image=$image_name;
             }
             if($request->hasfile('b_image'))
@@ -155,7 +155,7 @@ class dashboardController extends Controller
                 $c_extensions =$c_image->extension();
 
                 $image_c_name =time().'.'. $c_extensions;
-                $c_image->move('lawyer_cover_image/',$image_c_name);
+                $c_image->move(public_path('lawyer_cover_image/'),$image_c_name);
                 $lawyer_profile->b_image=$image_c_name;
             }
             $lawyer_profile->save();
@@ -352,7 +352,7 @@ class dashboardController extends Controller
             $extensions =$image->extension();
 
             $image_name =time().'.'. $extensions;
-            $image->move('lawyer_profile/',$image_name);
+            $image->move(public_path('lawyer_cover_image/'),$image_name);
             $lawyer_profile->image=$image_name;
         }
         if($request->hasfile('b_image'))
@@ -361,7 +361,7 @@ class dashboardController extends Controller
             $c_extensions =$c_image->extension();
 
             $image_c_name =time().'.'. $c_extensions;
-            $c_image->move('lawyer_cover_image/',$image_c_name);
+            $c_image->move(public_path('lawyer_cover_image/'),$image_c_name);
             $lawyer_profile->b_image=$image_c_name;
         }
         $lawyer_profile->save();

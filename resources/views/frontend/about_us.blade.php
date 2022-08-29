@@ -11,7 +11,8 @@ About Us
                 <div class="col-lg-6">
                     <div class="bannerLeft aboutUsLeft">
                         <h3>About <span>Us</span></h3>
-                        <p style="width:374px;">{{$about_us->title ?? ''}}</p>
+                        <!-- <p style="width:374px;">{{$about_us->title ?? ''}}</p> -->
+                        <p style="width:374px;">Experts Gateway Provides You With The Best Advisers Around The Globe</p>
                     </div>
 
                 </div>

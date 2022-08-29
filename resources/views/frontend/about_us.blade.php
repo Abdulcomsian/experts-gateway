@@ -239,7 +239,7 @@ About Us
                                         <p>{{ date('Y/m/d', strtotime($new->created_at)) }}</p>
                                     </div>
                                     <h4>{{$new->title}}</h4>
-                                    {!! $new->description !!}
+                                    {!! \Str::words(str_replace('&nbsp;', ' ', $new->description),10) !!}
                                     <!-- <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a> -->
                                 </div>
                             </div>

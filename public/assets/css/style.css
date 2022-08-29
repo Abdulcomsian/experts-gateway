@@ -751,6 +751,9 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     font-size: 20px;
     margin-bottom: 25px;
     font-family: GelionRegular;
+    min-height: 20px;
+    max-height: 45px;
+    overflow: hidden;
 }
 
 .leatestNews .newsCard .cardContent a,

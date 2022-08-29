@@ -3,31 +3,34 @@
 Expert Gateway
 @endsection
 @section('styles')
- <!-- Link Swiper's CSS -->
- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 @endsection
-@section('content') 
- 
+@section('content')
+
 <style>
-    main .mainBanner .searchBox div select{
+    main .mainBanner .searchBox div select {
         background: transparent;
     }
-    .ourService p, .experts p {
+
+    .ourService p,
+    .experts p {
         line-height: 120%;
     }
+
     .aboutUs .aboutUsContent .notes:before {
-         height: 88%;
+        height: 88%;
     }
-    .clientBox{
+
+    .clientBox {
         height: 350px;
     }
+
     .profileSlide {
         height: 100%;
         overflow: hidden;
     }
+
 </style>
 <main>
     <div class="mainBanner">
@@ -39,8 +42,11 @@ Expert Gateway
                         <!-- <p>Advisory Exellence Is The<br> Definitive Guide To Leading<br> Experts Throughout The
                             World</p> -->
                         <p>Find An Expert Lawyer Wherever You Are In The World</p>
-                        <span class="d-block">If you need legal advice, we make finding the best lawyer near you easy. We only list top law firms and practitioners, so you can always put your trust in an Experts Gateway vetted lawyer. </span>
-                        <span class="d-block">To get started, select your location and the type of legal help you need.</span>
+                        <span class="d-block">If you need legal advice, we make finding the best lawyer near you easy.
+                            We only list top law firms and practitioners, so you can always put your trust in an Experts
+                            Gateway vetted lawyer. </span>
+                        <span class="d-block">To get started, select your location and the type of legal help you
+                            need.</span>
                         <!-- <button>
                             <a style="color: #ef1d31 !important;" href="{{ url('/about-us') }}">Learn More</a>
                         </button> -->
@@ -57,12 +63,13 @@ Expert Gateway
                                 <div class="expertiseDiv">
                                     <select name="search_expert" id="" required="required">
                                         <option value="">Select Practice Area</option>
-                                         @foreach($PartiseArea as $area)
-                                         <option value="{{$area->id}}">{{$area->name}}</option>
-                                         @endforeach
+                                        @foreach($PartiseArea as $area)
+                                        <option value="{{$area->id}}">{{$area->name}}</option>
+                                        @endforeach
                                     </select>
                                     <div class="btnDiv">
-                                        <button type="submit"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid">Search</button>
+                                        <button type="submit"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}"
+                                                alt="" class="img-fluid">Search</button>
                                     </div>
                                 </div>
 
@@ -120,70 +127,70 @@ Expert Gateway
                     </div>
                 </li>
             </ul> -->
-                <!-- Swiper -->
-                <div class="swiper mySwiper profileSlide">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="d-flex align-items-center clientDetailBox">
-                                <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                                <div class="ml-2">
-                                    <p class="mb-0">jhon smith</p>
-                                    <small class="text-dark-50">lawyer</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="d-flex align-items-center clientDetailBox">
-                                <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                                <div class="ml-2">
-                                    <p class="mb-0">jhon smith</p>
-                                    <small class="text-dark-50">lawyer</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="d-flex align-items-center clientDetailBox">
-                                <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                                <div class="ml-2">
-                                    <p class="mb-0">jhon smith</p>
-                                    <small class="text-dark-50">lawyer</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="d-flex align-items-center clientDetailBox">
-                                <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                                <div class="ml-2">
-                                    <p class="mb-0">jhon smith</p>
-                                    <small class="text-dark-50">lawyer</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="d-flex align-items-center clientDetailBox">
-                                <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                                <div class="ml-2">
-                                    <p class="mb-0">jhon smith</p>
-                                    <small class="text-dark-50">lawyer</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="d-flex align-items-center clientDetailBox">
-                                <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                                <div class="ml-2">
-                                    <p class="mb-0">jhon smith</p>
-                                    <small class="text-dark-50">lawyer</small>
-                                </div>
+            <!-- Swiper -->
+            <div class="swiper mySwiper profileSlide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="d-flex align-items-center clientDetailBox">
+                            <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                            <div class="ml-2">
+                                <p class="mb-0">jhon smith</p>
+                                <small class="text-dark-50">lawyer</small>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide">
+                        <div class="d-flex align-items-center clientDetailBox">
+                            <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                            <div class="ml-2">
+                                <p class="mb-0">jhon smith</p>
+                                <small class="text-dark-50">lawyer</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="d-flex align-items-center clientDetailBox">
+                            <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                            <div class="ml-2">
+                                <p class="mb-0">jhon smith</p>
+                                <small class="text-dark-50">lawyer</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="d-flex align-items-center clientDetailBox">
+                            <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                            <div class="ml-2">
+                                <p class="mb-0">jhon smith</p>
+                                <small class="text-dark-50">lawyer</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="d-flex align-items-center clientDetailBox">
+                            <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                            <div class="ml-2">
+                                <p class="mb-0">jhon smith</p>
+                                <small class="text-dark-50">lawyer</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="d-flex align-items-center clientDetailBox">
+                            <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
+                            <div class="ml-2">
+                                <p class="mb-0">jhon smith</p>
+                                <small class="text-dark-50">lawyer</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
         <form action="{{route('experts')}}">
-        <div class="searchBox mobileHide">
-            
+            <div class="searchBox mobileHide">
+
                 <div class="countryDiv">
                     <select name="country" id="" required="required">
                         <option value="">Select Country</option>
@@ -195,25 +202,28 @@ Expert Gateway
                 <div class="expertiseDiv">
                     <select name="search_expert" id="" required="required">
                         <option value="">Select Practice Area</option>
-                         @foreach($PartiseArea as $area)
-                         <option value="{{$area->id}}">{{$area->name}}</option>
-                         @endforeach
+                        @foreach($PartiseArea as $area)
+                        <option value="{{$area->id}}">{{$area->name}}</option>
+                        @endforeach
                     </select>
                     <div class="btnDiv">
-                        <button type="submit"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt="" class="img-fluid">Search</button>
+                        <button type="submit"><img src="{{ asset('assets/img/searchBtnIcon.svg') }}" alt=""
+                                class="img-fluid">Search</button>
                     </div>
                 </div>
-          
 
-        </div>
-         </form>
+
+            </div>
+        </form>
     </div>
     <div class="ourService">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Our Legal Services</h2>
-                    <p>Experts Gateway partners cover a wide range of legal specialisms. Because every country has its own laws and regulations, we work with top local lawyers and law firms. Here are some of the main legal services available to you. </p>
+                    <p>Experts Gateway partners cover a wide range of legal specialisms. Because every country has its
+                        own laws and regulations, we work with top local lawyers and law firms. Here are some of the
+                        main legal services available to you. </p>
                 </div>
             </div>
             <div class="sliderDiv">
@@ -226,7 +236,8 @@ Expert Gateway
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""
+                                class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
@@ -237,7 +248,8 @@ Expert Gateway
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""
+                                class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
@@ -248,7 +260,8 @@ Expert Gateway
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""
+                                class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
@@ -259,7 +272,8 @@ Expert Gateway
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""
+                                class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
@@ -270,7 +284,8 @@ Expert Gateway
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""
+                                class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
@@ -281,7 +296,8 @@ Expert Gateway
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""
+                                class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
@@ -292,7 +308,8 @@ Expert Gateway
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""
+                                class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                     <div class="serviceBox">
@@ -303,7 +320,8 @@ Expert Gateway
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
                         </p>
-                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
+                        <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""
+                                class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
                 </div>
@@ -345,9 +363,14 @@ Expert Gateway
                     <div class="aboutUsContent">
                         <h5>About Us</h5>
                         <h2>Experts Gateway</h2>
-                        <p class="notes">You never know when or where you might need legal advice. But finding a top lawyer when you’re away from home is difficult, time-consuming and potentially risky.</p>
-                        <p>Experts Gateway is here to help. We partner with some of the best lawyers from around the world, carefully vetted to ensure they provide top quality advice and representation. Whatever kind of assistance you need, wherever you are, we’ll connect with a top local law expert. </p>
-                        <a href="{{ url('/about-us') }}">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a>
+                        <p class="notes">You never know when or where you might need legal advice. But finding a top
+                            lawyer when you’re away from home is difficult, time-consuming and potentially risky.</p>
+                        <p>Experts Gateway is here to help. We partner with some of the best lawyers from around the
+                            world, carefully vetted to ensure they provide top quality advice and representation.
+                            Whatever kind of assistance you need, wherever you are, we’ll connect with a top local law
+                            expert. </p>
+                        <a href="{{ url('/about-us') }}">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}"
+                                alt=""></a>
                     </div>
                 </div>
             </div>
@@ -358,19 +381,24 @@ Expert Gateway
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Only Top-Rated Experts </h2>
-                    <p class="mb-5">We carry out rigorous quality assurance checks on all the lawyers and law firms who apply to work with us. Only the top 1% of applicants make it through our selection process. That means you’ll have the peace of mind that comes from knowing you’re working with a true expert.</p>
-                    <a href="{{ url('/experts') }}"  class="expertBtn text-white">Find An Expert</a>
+                    <p class="mb-5">We carry out rigorous quality assurance checks on all the lawyers and law firms who
+                        apply to work with us. Only the top 1% of applicants make it through our selection process. That
+                        means you’ll have the peace of mind that comes from knowing you’re working with a true expert.
+                    </p>
+                    <a href="{{ url('/experts') }}" class="expertBtn text-white">Find An Expert</a>
                 </div>
             </div>
+         
             @if(count($lawyers) > 0)
 
             <div class="sliderDiv">
                 <div class="expertSlider">
                     @foreach($lawyers as $key=>$lawyer)
-                     @if(isset($lawyer['lawyer_profile'][0]))
+                    @if(isset($lawyer['lawyer_profile'][0]))
                     <a style="color: black" href="{{ route('expert-detail',$lawyer['lawyer_profile'][0]->id)}}">
-                        <div class="sliderBox">
-                            <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" width="352px" height="378px">
+                        <div class="sliderbox">
+                            <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" width="352px"
+                                height="378px">
                             <div class="expertHeader">
                                 <h4>{{$lawyer->f_name}} {{$lawyer->l_name}}</h4>
                                 {{-- <p>{{$lawyer['lawyer_profile'][0]->title}}</p> --}}
@@ -380,16 +408,17 @@ Expert Gateway
                             <div class="expertAbout">
                                 <p><strong>Address:</strong> <span>{{$lawyer['lawyer_profile'][0]->address}}</span></p>
                                 <p><strong>Education:</strong> <span>
-                                    @php
-                                        $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
-                                    @endphp
-                                    @foreach($lawyer_educations as $education)
+                                        @php
+                                        $lawyer_educations =
+                                        App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
+                                        @endphp
+                                        @foreach($lawyer_educations as $education)
                                         {{$education->education->education_name}}
                                         @if(!($loop->last))
                                         ,
                                         @endif
-                                    @endforeach
-                                </span></p>
+                                        @endforeach
+                                    </span></p>
                             </div>
                         </div>
                     </a>
@@ -425,13 +454,16 @@ Expert Gateway
                     @if($fixed_services)
                     @foreach($fixed_services as $fixed_service)
                     <div class="serviceBox">
-                        <img src="{{asset('fixed_service/'.$fixed_service->image)}}" width="auto" height="auto" alt="" class="img-fluid">
+                        <img src="{{asset('fixed_service/'.$fixed_service->image)}}" width="auto" height="auto" alt=""
+                            class="img-fluid">
                         <h4>{{$fixed_service->title}}</h4>
                         <p>{{$fixed_service->expertise->name}}</p><br>
                         <div class="priceDiv">
-                            <p>Fixed Price: <span>${{$fixed_service->price}}</span> &nbsp; &nbsp; &nbsp;/{{$fixed_service->time_limit}}</p>
+                            <p>Fixed Price: <span>${{$fixed_service->price}}</span> &nbsp; &nbsp;
+                                &nbsp;/{{$fixed_service->time_limit}}</p>
                         </div>
-                        <a href="{{ route('fixed_service_detail', $fixed_service->id) }}">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
+                        <a href="{{ route('fixed_service_detail', $fixed_service->id) }}">Learn More <img
+                                src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                     </div>
                     @endforeach
                     @endif
@@ -456,13 +488,14 @@ Expert Gateway
                         <div class="newsSlider">
                             @foreach($news as $new)
                             <div class="newsCard">
-                                <img src="{{asset('news/'.$new->image)}}" width="223px" height="162px" alt="" class="img-fluid">
+                                <img src="{{asset('news/'.$new->image)}}" width="223px" height="162px" alt=""
+                                    class="img-fluid">
                                 <div class="cardContent">
                                     <div class="date">
                                         <p>{{ date('Y/m/d', strtotime($new->created_at)) }}</p>
                                     </div>
                                     <h4>{{$new->title}}</h4>
-                                    
+
                                     {!! \Str::words(str_replace('&nbsp;', ' ', $new->description),10) !!}
                                     <!-- <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a> -->
                                 </div>
@@ -482,7 +515,8 @@ Expert Gateway
                 <div class="col-lg-6">
                     <div class="informationContent">
                         <h2>Not sure what kind of legal assistance you need?</h2>
-                        <p class="mb-4">Fill in the form below and tell us where you are and your current legal situation. We’ll get back to you with our recommendations for a suitable expert. </p>
+                        <p class="mb-4">Fill in the form below and tell us where you are and your current legal
+                            situation. We’ll get back to you with our recommendations for a suitable expert. </p>
                         <div class="formDiv">
                             <form action="">
                                 <div class="row">
@@ -494,8 +528,7 @@ Expert Gateway
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="inputDiv">
-                                            <input type="text" name="last_name" id="last_name"
-                                                placeholder="Last Name">
+                                            <input type="text" name="last_name" id="last_name" placeholder="Last Name">
                                         </div>
                                     </div>
                                 </div>
@@ -512,9 +545,10 @@ Expert Gateway
                                     </div>
                                 </div>
                                 <div class="row">
-                                <div class="col-lg-12">
+                                    <div class="col-lg-12">
                                         <div class="inputDiv">
-                                            <input type="text" name="practice" id="practice" placeholder="Practice Area">
+                                            <input type="text" name="practice" id="practice"
+                                                placeholder="Practice Area">
                                         </div>
                                     </div>
                                 </div>
@@ -546,22 +580,23 @@ Expert Gateway
 @endsection
 
 @section('js')
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-       <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".profileSlide", {
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".profileSlide", {
         direction: "vertical",
         slidesPerView: 4,
         loop: true,
         autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
+            delay: 2500,
+            disableOnInteraction: false,
         },
         pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
+            el: ".swiper-pagination",
+            clickable: true,
         },
-      });
-    </script>
+    });
+
+</script>
 @endsection

@@ -117,7 +117,7 @@ Show Lawyer Profile
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     <p>
-                                                        {{$country->name}}
+                                                        {{$country->name ?? ''}}
                                                     </p>
                                                 </div><br><br>
                                                 <!--end::Input group-->
@@ -130,7 +130,7 @@ Show Lawyer Profile
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     <p>
-                                                        {{$state->name}}
+                                                        {{$state->name ?? ''}}
                                                     </p>
                                                 </div><br><br>
                                                 <!--end::Input group-->
@@ -143,7 +143,7 @@ Show Lawyer Profile
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     <p>
-                                                        {{$city->name}}
+                                                        {{$city->name ?? ''}}
                                                     </p>
                                                 </div><br><br>
                                                 <!--end::Input group-->
@@ -157,7 +157,7 @@ Show Lawyer Profile
                                                     <!--begin::Input group-->
                                                     <div class="mb-5">
                                                         <p>
-                                                            {{$lawyer_profile->partise_area}}
+                                                            {{$lawyer_profile->partise_area ?? ''}}
                                                         </p>
                                                     </div>
                                                 </div> --}}

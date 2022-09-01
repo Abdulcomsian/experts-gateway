@@ -70,7 +70,7 @@ Contact Us Detail
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Phone Number </label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="number" class="form-control form-control-solid" value="{{old('phone')}}" placeholder="Enter Phone Number" name="phone">
+                                                    <input type="text" class="form-control form-control-solid" value="{{old('phone')}}" placeholder="Enter Phone Number" name="phone">
                                                     <div style="color:red;">{{$errors->first('phone')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->
@@ -82,7 +82,7 @@ Contact Us Detail
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Office Number (optional)</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="number" class="form-control form-control-solid" value="{{old('phone_1')}}" placeholder="Enter Office Number" name="phone_1">
+                                                    <input type="text" class="form-control form-control-solid" value="{{old('phone_1')}}" placeholder="Enter Office Number" name="phone_1">
                                                     <div style="color:red;">{{$errors->first('phone_1')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->

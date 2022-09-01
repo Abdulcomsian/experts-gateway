@@ -44,7 +44,7 @@ class ContactUsController extends Controller
         // dd($request->file('image'));
         $this->validate($request,[ 
             'address'=>'required', 
-            'phone'=>'required|max:16|min:11', 
+            'phone'=>'required|max:18|min:11', 
             'email'=>'required|email', 
             'linkedin_link'=>'required|url', 
             'instagram_link'=>'required|url', 
@@ -73,7 +73,7 @@ class ContactUsController extends Controller
          // dd($request->all(),$id);
         $this->validate($request,[ 
             'address'=>'required', 
-            'phone'=>'required|max:16|min:11', 
+            'phone'=>'required|max:18|min:11', 
             'email'=>'required|email', 
             'linkedin_link'=>'required|url', 
             'instagram_link'=>'required|url', 

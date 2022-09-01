@@ -17,6 +17,7 @@ class CreateContactUsTable extends Migration
             $table->id();
             $table->string('address');
             $table->text('phone');
+            $table->text('phone_1')->nullable();
             $table->string('email');
             $table->string('linkedin_link')->nullable();
             $table->string('instagram_link')->nullable();

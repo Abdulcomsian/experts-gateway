@@ -795,7 +795,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 .newsSlider .slick-slide img {
     display: initial;
     width: 100%;
-    min-width: 240px;
+    min-width: 206px;
     height: 240px;
 }
 

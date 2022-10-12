@@ -33,7 +33,7 @@ Practice Area
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Practice Area Name</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" class="form-control form-control-solid" name="name" value="{{old('name')}}" placeholder="Enter Practice Area Name" />
+                                                    <input type="text" class="form-control form-control-solid" name="name" value="{{old('name')}}" placeholder="Enter Practice Area Name" required />
                                                     <div style="color:red;">{{$errors->first('name')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->

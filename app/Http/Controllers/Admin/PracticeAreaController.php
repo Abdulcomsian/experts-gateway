@@ -41,8 +41,9 @@ class PracticeAreaController extends Controller
             PartiseArea::create([
                 'name' =>$request->name
             ]);
+
             toastSuccess('Successfully Added');
-            return Redirect::back();
+             return redirect('admin/practice-area');
         } catch (\Exception $exception) {
             toastError($exception->getMessage());
             return Redirect::back();
@@ -89,7 +90,7 @@ class PracticeAreaController extends Controller
         try{
             PartiseArea::find($id)->update(['name'=>$request->name]);
             toastSuccess('Successfully Updated');
-            return Redirect::back();
+            return redirect('admin/practice-area');
         } catch (\Exception $exception) {
             toastError($exception->getMessage());
             return Redirect::back();

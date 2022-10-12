@@ -283,11 +283,11 @@ $(".orderSection .tabDiv ul li").click(function () {
   $(this).addClass("active");
 });
 var input = document.querySelector("#phone");
-// window.intlTelInput(input, {
-//   separateDialCode: true,
-// });
-// $(document).ready(function () {
-//   $(".js-example-basic-multiple").select2();
+window.intlTelInput(input, {
+  separateDialCode: true,
+});
+$(document).ready(function () {
+  $(".js-example-basic-multiple").select2();
  
-// });
+});
 

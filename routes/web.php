@@ -83,6 +83,10 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     //language
     Route::resource('language', App\Http\Controllers\Admin\languageController::class);
 
+    //Patactice Area
+    //language
+    Route::resource('practice-area', App\Http\Controllers\Admin\PracticeAreaController::class);
+
     //expertise
     Route::resource('expertise', App\Http\Controllers\Admin\expertiseController::class);
 

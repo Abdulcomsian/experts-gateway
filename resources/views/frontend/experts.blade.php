@@ -201,7 +201,7 @@ Experts
                      @endforeach
                     @endif
                 @else
-                <h3>No Record Found!</h3>
+                <h3>We don't have lawyers with selected expertise, Please <a href="{{url('/contact-us')}}">Contact Us</a>!</h3>
                 @endif
             </div>
         </div>

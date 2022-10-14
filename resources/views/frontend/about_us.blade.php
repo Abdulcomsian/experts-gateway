@@ -43,29 +43,29 @@ About Us
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="aboutUs">
+                    <div class="aboutUs" id="counters_1">
                         <div class="multiBox">
                             <div class="">
                                 <div class="commonBox active">
-                                    <h2>10K+</h2>
+                                    <h2><span class="counter" data-TargetNum="10">10</span>K+</h2>
                                     <p>Active Members</p>
                                 </div>
                                 <div class="commonBox">
-                                    <h2>10</h2>
+                                    <h2><span class="counter" data-TargetNum="10">10</span></h2>
                                     <p>Years of excellence</p>
                                 </div>
                                 <div class="commonBox active">
-                                    <h2>150</h2>
+                                    <h2><span class="counter" data-TargetNum="150">150</span></h2>
                                     <p>Key countries</p>
                                 </div>
                             </div>
                             <div style="margin-left: 30px;">
                                 <div class="commonBox">
-                                    <h2>10%</h2>
+                                    <h2><span class="counter" data-TargetNum="10">10</span>%</h2>
                                     <p>Trust rating</p>
                                 </div>
                                 <div class="commonBox">
-                                    <h2>200</h2>
+                                    <h2><span class="counter" data-TargetNum="200">200</span></h2>
                                     <p>Areas of expertise</p>
                                 </div>
                             </div>
@@ -315,4 +315,21 @@ About Us
 @endsection
 
 @section('js')
+
+<!-- load jquery 3 cdn -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- load local script -->
+<script src="{{ asset('assets/js/animated-counter/multi-animated-counter.js') }}"></script>
+
+<script>
+    // must be an array, could have only one element
+let visibilityIds = ['#counters_1']; 
+
+// default counter class
+let counterClass = '.counter';
+
+// default animation speed
+let defaultSpeed = 2000; 
+</script>
+
 @endsection

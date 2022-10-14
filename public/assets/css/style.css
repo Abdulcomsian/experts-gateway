@@ -42,8 +42,6 @@
     src: url("../fonts/Gelion-SemiBold.ttf");
 }
 
-
-
 .desktopHide {
     display: none !important;
 }
@@ -93,17 +91,16 @@ a:hover {
 .commonPara {
     font-size: 24px !important;
     font-family: GelionRegular !important;
-
 }
 
 .learnMore {
-    color: #ED2456;
+    color: #ed2456;
     font-size: 20px;
     font-family: MoskauMedium;
 }
 
 .learnMore:hover {
-    color: #ED2456 !important;
+    color: #ed2456 !important;
 }
 
 header {
@@ -122,7 +119,7 @@ header .userDiv {
 }
 
 header .userDiv div.userProfile {
-    border: 2px solid #2F2F2F;
+    border: 2px solid #2f2f2f;
     border-radius: 5px;
     position: relative;
     width: 77px;
@@ -169,7 +166,7 @@ header #collapsibleNavbar .nav-item .nav-link.active {
 }
 
 header .navbar-toggler {
-    border: 2px solid #2F2F2F;
+    border: 2px solid #2f2f2f;
 }
 
 header .navbar-toggler .navbar-toggler-icon {
@@ -258,7 +255,6 @@ main .mainBanner .searchBox {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 main .mainBanner .searchBox .countryDiv {
@@ -289,7 +285,11 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv {
 
 main .mainBanner .searchBox .expertiseDiv .btnDiv button {
     background: rgb(234, 42, 124);
-    background: linear-gradient(90deg, rgba(234, 42, 124, 1) 0%, rgba(239, 29, 48, 1) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(234, 42, 124, 1) 0%,
+        rgba(239, 29, 48, 1) 100%
+    );
     border: none;
     padding: 10px 30px;
     font-size: 26px;
@@ -340,7 +340,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 }
 
 .ourService .sliderDiv .serviceBox {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 0px 17px #01254814;
     opacity: 1;
     padding: 30px;
@@ -348,7 +348,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     max-width: 25%;
     margin: 10px;
     height: 450px;
-    transition: all .5s;
+    transition: all 0.5s;
     cursor: pointer;
     position: relative;
 }
@@ -367,7 +367,12 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     height: 6px;
     width: 100%;
     background: rgb(239, 29, 48);
-    background: linear-gradient(310deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        310deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 100%,
+        rgba(234, 42, 124, 1) 100%
+    );
     position: absolute;
     left: 0px;
     bottom: 0px;
@@ -378,7 +383,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     font-size: 21px;
     margin-top: 24px;
     margin-bottom: 37px;
-    color: #49616D;
+    color: #49616d;
 }
 
 .ourService .sliderDiv .serviceBox h2 {
@@ -406,7 +411,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     position: absolute;
     bottom: 40px;
     display: none;
-    transition: all .5s;
+    transition: all 0.5s;
     align-items: center;
 }
 
@@ -439,7 +444,12 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 
 .aboutUs .multiBox .commonBox {
     background: rgb(34, 64, 79);
-    background: linear-gradient(310deg, rgba(34, 64, 79, 1) 0%, rgba(61, 90, 104, 1) 100%, rgba(88, 115, 129, 1) 100%);
+    background: linear-gradient(
+        310deg,
+        rgba(34, 64, 79, 1) 0%,
+        rgba(61, 90, 104, 1) 100%,
+        rgba(88, 115, 129, 1) 100%
+    );
     width: 260px;
     height: 200px;
     display: flex;
@@ -494,7 +504,12 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     content: "";
     width: 4px;
     background: rgb(239, 29, 48);
-    background: linear-gradient(310deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        310deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 100%,
+        rgba(234, 42, 124, 1) 100%
+    );
     position: absolute;
     position: absolute;
     left: 0px;
@@ -509,7 +524,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 }
 
 .aboutUs .aboutUsContent a {
-    background: -webkit-linear-gradient(#EF1D30 0%, #ED2456 61%, #EA2A7C 100%);
+    background: -webkit-linear-gradient(#ef1d30 0%, #ed2456 61%, #ea2a7c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 20px;
@@ -518,26 +533,26 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 
 /********* Expert - Slider - CSS *********/
 .experts .sliderDiv .expertAbout,
-.experts .sliderDiv .expertHeader{
+.experts .sliderDiv .expertHeader {
     text-align: center;
 }
-.experts .expertSlider .sliderBox{
+.experts .expertSlider .sliderBox {
     background: #fff;
     margin: 0px 15px;
-    transition: all .5s;
+    transition: all 0.5s;
     padding-bottom: 20px;
     cursor: pointer;
 }
-.experts .sliderDiv img{
+.experts .sliderDiv img {
     margin: auto;
 }
-.experts .sliderDiv .line{
+.experts .sliderDiv .line {
     margin: 10px 0px;
 }
 .experts .expertSlider .sliderbox {
     background: #fff;
     margin: 0px 15px;
-    transition: all .5s;
+    transition: all 0.5s;
     padding-bottom: 20px;
     cursor: pointer;
 }
@@ -569,12 +584,12 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     text-align: center;
     font-size: 18px;
     color: #000;
-    opacity: .3;
+    opacity: 0.3;
     margin: 0px;
 }
 
 .experts .expertSlider .sliderbox .expertAbout p {
-    color: #75858D;
+    color: #75858d;
     font-size: 21px;
     font-family: GelionRegular;
     text-align: center;
@@ -615,16 +630,20 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 
 .expertBtn {
     background: rgb(239, 29, 48);
-    background: linear-gradient(310deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        310deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 100%,
+        rgba(234, 42, 124, 1) 100%
+    );
     border: none !important;
     padding: 28px 30px !important;
-
 }
 
 /********** Fixed - Price - CSS ************/
 .fixedService {
     padding: 150px 0px;
-    background: #FAFAFA 0% 0% no-repeat padding-box;
+    background: #fafafa 0% 0% no-repeat padding-box;
 }
 
 .fixedService .sliderDiv {
@@ -668,7 +687,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 }
 
 .fixedService .serviceBox a {
-    background: -webkit-linear-gradient(#EF1D30 0%, #ED2456 61%, #EA2A7C 100%);
+    background: -webkit-linear-gradient(#ef1d30 0%, #ed2456 61%, #ea2a7c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 20px;
@@ -742,6 +761,16 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     margin-top: 10px;
 }
 
+.leatestNews .newsCard .cardContent .date {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.leatestNews .newsCard .cardContent h4 {
+    margin-top: 0 !important;
+}
+
 .leatestNews .newsCard .cardContent .date p,
 .blogCard .cardContent .date p {
     font-size: 16px;
@@ -753,14 +782,14 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 .blogCard .cardContent h4 {
     font-size: 30px;
     font-family: MoskauMedium;
-    margin: 20px 0px;
-    height: 50px;
+    margin: 0px 0px 15px;
+    /* height: 50px; */
     overflow: hidden;
 }
 
 .leatestNews .newsCard .cardContent p,
 .blogCard .cardContent p {
-    color: #49616D;
+    color: #49616d;
     font-size: 20px;
     margin-bottom: 25px;
     font-family: GelionRegular;
@@ -771,7 +800,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 
 .leatestNews .newsCard .cardContent a,
 .blogCard .cardContent a {
-    color: #ED2456;
+    color: #ed2456;
     font-size: 20px;
     font-family: MoskauMedium;
     position: absolute;
@@ -799,14 +828,14 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     height: 240px;
 }
 
-.newsSlider .slick-active+.slick-active~.slick-slide {
+.newsSlider .slick-active + .slick-active ~ .slick-slide {
     opacity: 0.5;
 }
 
 /********* Request - Information - CSS **********/
 .requestInformation {
     padding: 170px;
-    background: #F4F4F4 0% 0% no-repeat padding-box;
+    background: #f4f4f4 0% 0% no-repeat padding-box;
     opacity: 1;
 }
 
@@ -835,7 +864,12 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 .requestInformation .informationContent .formDiv button,
 .mainBanner .formDiv button {
     background: rgb(239, 29, 48);
-    background: linear-gradient(310deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        310deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 100%,
+        rgba(234, 42, 124, 1) 100%
+    );
     font-size: 26px;
     color: #fff !important;
     padding: 20px 40px;
@@ -901,13 +935,13 @@ footer .navigationList {
 
 footer .navigationList li a {
     display: block;
-    color: #7C8996;
+    color: #7c8996;
     padding-bottom: 10px;
 }
 
 footer hr {
     margin-top: 120px;
-    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 60px;
 }
 
@@ -924,7 +958,7 @@ footer .copyRight ul li {
 footer .copyRight ul li a {
     font-family: GelionRegular;
     font-size: 18px;
-    color: #7C8996;
+    color: #7c8996;
 }
 
 footer .copyRight ul li a span {
@@ -933,7 +967,7 @@ footer .copyRight ul li a span {
 }
 
 footer .newsLetter {
-    background: #11394C 0% 0% no-repeat padding-box;
+    background: #11394c 0% 0% no-repeat padding-box;
     box-shadow: 0px -25px 65px #0c2f5205;
     position: absolute;
     top: -90px;
@@ -942,7 +976,6 @@ footer .newsLetter {
     max-width: 80%;
 
     padding: 40px;
-
 }
 
 footer .newsLetter .newLetterContent p {
@@ -976,7 +1009,6 @@ footer .newsLetter .formDiv button {
     right: 30px;
     background: transparent;
     border: none;
-
 }
 
 /************** Contact - Us - CSS **********/
@@ -991,7 +1023,7 @@ footer .newsLetter .formDiv button {
 }
 
 .contactDetail {
-    background: #F4F4F4 0% 0% no-repeat padding-box;
+    background: #f4f4f4 0% 0% no-repeat padding-box;
     padding: 180px 300px;
 }
 
@@ -1011,7 +1043,7 @@ footer .newsLetter .formDiv button {
 .contactDetail .contactBox a {
     font-size: 18px;
     font-family: GelionRegular;
-    color: #11394C;
+    color: #11394c;
 }
 
 .contactDetail .contactBox a {
@@ -1071,7 +1103,6 @@ footer .newsLetter .formDiv button {
     max-width: 80%;
     margin: auto;
 }
-
 
 .bolgSection .blogCard {
     margin-bottom: 80px;
@@ -1151,7 +1182,7 @@ footer .newsLetter .formDiv button {
 }
 
 .blogDetailCard .card .cardContent .dateLikeDiv span i {
-    color: #95989A;
+    color: #95989a;
     margin-right: 12px;
 }
 
@@ -1175,7 +1206,7 @@ footer .newsLetter .formDiv button {
 
 .relatedService {
     padding: 100px 0px;
-    background: #F8F9FA 0% 0% no-repeat padding-box;
+    background: #f8f9fa 0% 0% no-repeat padding-box;
     opacity: 1;
 }
 
@@ -1210,7 +1241,7 @@ footer .newsLetter .formDiv button {
 .relatedService .multiRelatedService .card .cardContent .tag {
     font-size: 20px;
     font-family: GelionRegular;
-    color: #75858D;
+    color: #75858d;
 }
 
 .relatedService .multiRelatedService .card .cardContent .line {
@@ -1277,7 +1308,7 @@ footer .newsLetter .formDiv button {
 }
 
 .orderSection .tabDiv ul li.active a {
-    border-bottom: 4px solid #EF1D31;
+    border-bottom: 4px solid #ef1d31;
     color: #022331;
     opacity: 1;
 }
@@ -1330,11 +1361,11 @@ footer .newsLetter .formDiv button {
     padding: 30px 80px 150px;
     background: #fff;
     box-shadow: 0px 18px 49px #01254814;
-    transition: all .5s linear;
+    transition: all 0.5s linear;
 }
 
 .orderSection .orderContent span {
-    color: #ED2149;
+    color: #ed2149;
     font-size: 18px;
     font-family: GelionMedium;
 }
@@ -1348,7 +1379,7 @@ footer .newsLetter .formDiv button {
 
 .orderSection .orderContent .tag {
     font-size: 20px;
-    color: #75858D;
+    color: #75858d;
     font-family: GelionRegular;
 }
 
@@ -1410,8 +1441,8 @@ footer .newsLetter .formDiv button {
 }
 
 .orderSection .orderContent .orderDetaill ul li .numberIcon p {
-    color: #EC2661;
-    opacity: .36;
+    color: #ec2661;
+    opacity: 0.36;
     font-size: 21px;
     font-family: GelionSemiBold;
 }
@@ -1427,10 +1458,9 @@ footer .newsLetter .formDiv button {
 }
 
 .orderSection .orderContent .orderDetaill ul li .orderInfo span {
-    color: #75858D;
+    color: #75858d;
     font-size: 18px;
     font-family: GelionRegular;
-
 }
 
 .orderSection .orderContent .orderDescription p {
@@ -1500,7 +1530,12 @@ footer .newsLetter .formDiv button {
 
 .orderSection .orderContent .multiBtn button.acceptBtn {
     background: rgb(239, 29, 48);
-    background: linear-gradient(310deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        310deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 100%,
+        rgba(234, 42, 124, 1) 100%
+    );
     border: none;
     color: #fff;
     padding: 8px 49px;
@@ -1550,7 +1585,12 @@ footer .newsLetter .formDiv button {
     font-size: 22px;
     left: 20%;
     background: rgb(239, 29, 48);
-    background: linear-gradient(310deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        310deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 100%,
+        rgba(234, 42, 124, 1) 100%
+    );
     border: none;
     color: #fff;
     padding: 15px 49px;
@@ -1558,7 +1598,7 @@ footer .newsLetter .formDiv button {
 }
 
 #current_order .orderHeader {
-    background: #F7F7F7 0% 0% no-repeat padding-box;
+    background: #f7f7f7 0% 0% no-repeat padding-box;
     opacity: 1;
     position: relative;
 }
@@ -1574,12 +1614,12 @@ footer .newsLetter .formDiv button {
 }
 
 .profileDiv {
-    background: #F6F7F8;
+    background: #f6f7f8;
     padding: 350px 100px 200px;
 }
 
 .profileDiv h5 {
-    color: #EE2143;
+    color: #ee2143;
     font-size: 30px;
     font-family: MoskauMedium;
 }
@@ -1587,7 +1627,7 @@ footer .newsLetter .formDiv button {
 .profileBox {
     box-shadow: 0px 17px 49px #00000029;
     margin-top: 50px;
-    background: #FAFAFA;
+    background: #fafafa;
 }
 
 .profileBox .profileBoxHeader {
@@ -1612,7 +1652,6 @@ footer .newsLetter .formDiv button {
     z-index: 999999;
     position: relative;
     cursor: pointer;
-
 }
 
 .profileBox .profileBoxHeader .uploadCover {
@@ -1674,7 +1713,7 @@ footer .newsLetter .formDiv button {
     border: none;
     width: 100% !important;
     font-size: 19px;
-    color: #5D6D75;
+    color: #5d6d75;
     font-family: MoskauMedium;
 }
 
@@ -1682,7 +1721,11 @@ footer .newsLetter .formDiv button {
     width: 100%;
 }
 
-.profileBox .profileFormDiv .inputDiv .iti--separate-dial-code .iti__selected-flag {
+.profileBox
+    .profileFormDiv
+    .inputDiv
+    .iti--separate-dial-code
+    .iti__selected-flag {
     background-color: transparent;
     box-shadow: 0px 6px 16px #03223108;
     opacity: 1;
@@ -1721,7 +1764,8 @@ footer .newsLetter .formDiv button {
     font-family: GelionRegular;
 }
 
-.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default.select2-container--focus
+    .select2-selection--multiple,
 .select2-container--default .select2-selection--multiple {
     border: none !important;
 }
@@ -1736,14 +1780,18 @@ footer .newsLetter .formDiv button {
     top: 28px;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background: #F4F4F4 0% 0% no-repeat padding-box !important;
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice {
+    background: #f4f4f4 0% 0% no-repeat padding-box !important;
     border: none !important;
     font-size: 18px !important;
     font-family: GelionRegular;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice__remove {
     border: none !important;
 }
 
@@ -1754,12 +1802,16 @@ footer .newsLetter .formDiv button {
     margin-bottom: 36px;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice {
     padding-left: initial !important;
     padding-right: 20px !important;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice__remove {
     left: initial !important;
     right: 0px;
 }
@@ -1770,7 +1822,12 @@ footer .newsLetter .formDiv button {
     float: right;
     margin-top: 50px;
     background: rgb(239, 29, 48);
-    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        313deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 100%,
+        rgba(234, 42, 124, 1) 100%
+    );
     color: #fff;
     font-size: 26px;
     font-family: MoskauMedium;
@@ -1818,19 +1875,19 @@ footer .newsLetter .formDiv button {
 .unanswerdDiv span.commonSpan {
     border: 1px solid #ededed;
     font-size: 10px;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     padding: 5px;
     margin-right: 15px;
     position: relative;
     top: 25px;
-    color: #676C71;
+    color: #676c71;
     opacity: 1;
 }
 
 .postAnswere {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 6px 16px #03223108;
-    border: 1px solid #0000000D;
+    border: 1px solid #0000000d;
     opacity: 1;
     width: 100%;
     margin-top: 60px;
@@ -1852,7 +1909,12 @@ footer .newsLetter .formDiv button {
     float: right;
     margin-top: 50px;
     background: rgb(239, 29, 48);
-    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        313deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 100%,
+        rgba(234, 42, 124, 1) 100%
+    );
     color: #fff;
     font-size: 26px;
     font-family: MoskauMedium;
@@ -1880,7 +1942,7 @@ footer .newsLetter .formDiv button {
 
 .accordiansDiv .card {
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .accordiansDiv .card .card-body {
@@ -1957,7 +2019,7 @@ footer .newsLetter .formDiv button {
 }
 
 .callRequest .header {
-    background: #F7F7F7 0% 0% no-repeat padding-box;
+    background: #f7f7f7 0% 0% no-repeat padding-box;
     opacity: 1;
     padding: 25px 35px;
 }
@@ -2056,7 +2118,7 @@ footer .newsLetter .formDiv button {
 
 .fixedServiceDiv .banner .tagLine .textDiv span {
     font-size: 21px;
-    color: #D3D3D3;
+    color: #d3d3d3;
     font-family: GelionRegular;
     font-size: 20px;
 }
@@ -2124,7 +2186,7 @@ footer .newsLetter .formDiv button {
 
 .fixedServiceDiv .contentDiv ul li::before {
     content: "\2022";
-    color: #ED2456;
+    color: #ed2456;
     font-weight: bold;
     display: inline-block;
     width: 1em;
@@ -2181,7 +2243,7 @@ footer .newsLetter .formDiv button {
     border: none;
     width: 100% !important;
     font-size: 19px;
-    color: #5D6D75;
+    color: #5d6d75;
     font-family: MoskauMedium;
     box-shadow: 0px 6px 16px #03223108;
     opacity: 1;
@@ -2193,7 +2255,7 @@ footer .newsLetter .formDiv button {
     right: 20px;
     top: 25px;
     font-size: 18px;
-    color: #5D6D75;
+    color: #5d6d75;
     opacity: 47%;
     font-family: MoskauMedium;
 }
@@ -2204,7 +2266,7 @@ footer .newsLetter .formDiv button {
     border: none;
     width: 50% !important;
     font-size: 19px;
-    color: #5D6D75;
+    color: #5d6d75;
     font-family: MoskauMedium;
     box-shadow: 0px 6px 16px #03223108;
     opacity: 1;
@@ -2223,7 +2285,6 @@ footer .newsLetter .formDiv button {
     right: 0px;
     z-index: 999999;
     cursor: pointer;
-
 }
 
 .createFixedService .formDiv .uploadDiv p {
@@ -2238,7 +2299,6 @@ footer .newsLetter .formDiv button {
     margin-right: 0px !important;
     margin: auto;
     text-align: center;
-
 }
 
 .mainFixedService .relatedService .multiRelatedService .line {
@@ -2286,14 +2346,14 @@ footer .newsLetter .formDiv button {
 }
 
 .mainFixedService .earning .readingItems .commonDiv {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     border: 1px solid rgb(112 112 112 / 37%);
     padding: 35px;
 }
 
 .mainFixedService .earning .readingItems .commonDiv p {
     font-size: 18px;
-    color: #ED2456;
+    color: #ed2456;
     font-family: MoskauMedium;
 }
 
@@ -2321,7 +2381,7 @@ footer .newsLetter .formDiv button {
 }
 
 .mainFixedService .earning .graphDiv .graphHeader .reading p {
-    color: #7C828A;
+    color: #7c828a;
     font-size: 18px;
     font-family: MoskauMedium;
 }
@@ -2490,7 +2550,7 @@ footer .newsLetter .formDiv button {
 }
 
 .profileDiv .subscribe_plane {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 17px 49px #03223112;
     margin-top: 90px;
     padding: 40px;
@@ -2542,7 +2602,7 @@ footer .newsLetter .formDiv button {
 .profileDiv .subscribe_plane .recommended_plane .recommended_text {
     font-size: 14px;
     font-family: MoskauMedium;
-    color: #ED2456;
+    color: #ed2456;
 }
 
 .profileDiv .subscribe_plane .recommended_plane .pay_buy {
@@ -2597,14 +2657,26 @@ footer .newsLetter .formDiv button {
     border: 1px solid;
 }
 
-.profileDiv .subscribe_plane .recommended_plane .select_package ul li span span {
-    color: #EE2144;
+.profileDiv
+    .subscribe_plane
+    .recommended_plane
+    .select_package
+    ul
+    li
+    span
+    span {
+    color: #ee2144;
     font-family: GelionMedium;
 }
 
 .profileDiv .subscribe_plane .recommended_plane .select_package button {
     background: rgb(239, 29, 48);
-    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        313deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 100%,
+        rgba(234, 42, 124, 1) 100%
+    );
     width: 100%;
     color: #fff;
     padding: 10px 0px;
@@ -2616,7 +2688,7 @@ footer .newsLetter .formDiv button {
 }
 
 .profileDiv .profile_score {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 17px 49px #03223112;
     padding: 40px;
 }
@@ -2637,8 +2709,7 @@ footer .newsLetter .formDiv button {
 }
 
 .profileDiv .profile_score .progress .progress-bar {
-    background-color: #EE2144;
-    ;
+    background-color: #ee2144;
 }
 
 .profileDiv .profile_score .profile_list {
@@ -2663,7 +2734,9 @@ footer .newsLetter .formDiv button {
 }
 
 .btn_red_grad {
-    background: transparent linear-gradient(302deg, #EF1D30 0%, #ED2456 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
+    background: transparent
+        linear-gradient(302deg, #ef1d30 0%, #ed2456 61%, #ea2a7c 100%) 0% 0%
+        no-repeat padding-box;
     width: 214px;
     max-width: 100%;
     color: #fff;
@@ -2679,7 +2752,7 @@ footer .newsLetter .formDiv button {
 .profile_agre .sec_title {
     font-size: 17px;
     letter-spacing: 0px;
-    color: #0A0A0A;
+    color: #0a0a0a;
     text-transform: uppercase;
     opacity: 0.9;
     font-family: GelionRegular;
@@ -2699,7 +2772,7 @@ footer .newsLetter .formDiv button {
 }
 
 .profileDiv .profile_score .profile_list li p i {
-    color: #21B876;
+    color: #21b876;
 }
 
 .profileDiv .profile_score .profile_list button {
@@ -2774,7 +2847,7 @@ main .mainBanner .registerAuthRightBox {
 .completed {
     font-size: 24px !important;
     font-family: GelionMedium !important;
-    color: #50774D !important;
+    color: #50774d !important;
     position: absolute;
     right: 0px;
     text-transform: uppercase;
@@ -2817,7 +2890,7 @@ main .mainBanner .registerAuthRightBox {
 
 .recentQuestionDiv .accordiansDiv .card-header button {
     font-size: 16px;
-    color: #ED2456;
+    color: #ed2456;
     font-family: GelionRegular;
 }
 
@@ -2891,7 +2964,7 @@ main .mainBanner .registerAuthRightBox {
 .expertDetailProfile .hireDiv {
     position: relative;
     z-index: 999;
-    background: #FFFFFF;
+    background: #ffffff;
     top: -140px;
     box-shadow: 0px 6px 16px #03223108;
     opacity: 1;
@@ -2915,7 +2988,12 @@ main .mainBanner .registerAuthRightBox {
     padding: 5px 63px;
     border: none;
     background: rgb(239, 29, 48);
-    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        313deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 100%,
+        rgba(234, 42, 124, 1) 100%
+    );
     color: #fff;
     font-size: 26px;
     font-family: MoskauMedium;
@@ -2930,7 +3008,6 @@ main .mainBanner .registerAuthRightBox {
     padding: 350px;
     position: relative;
     background-color: #f0f2f4;
-
 }
 
 .thankYouPayment {
@@ -2948,7 +3025,7 @@ main .mainBanner .registerAuthRightBox {
 }
 
 .thankYouPayment h2 span {
-    color: #ED2149;
+    color: #ed2149;
 }
 
 .thankYouPayment p {
@@ -2982,7 +3059,7 @@ main .mainBanner .registerAuthRightBox {
 }
 
 .mainBanner .aboutUsLeft h3 span {
-    color: #ED2149;
+    color: #ed2149;
 }
 
 .mainBanner .aboutUsLeft p {
@@ -3023,7 +3100,12 @@ main .mainBanner .registerAuthRightBox {
 
 .findExpert .findExpertBtn {
     background: rgb(239, 29, 48);
-    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        313deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 100%,
+        rgba(234, 42, 124, 1) 100%
+    );
     color: #fff;
 }
 
@@ -3042,7 +3124,12 @@ main .mainBanner .registerAuthRightBox {
 
 .findExpert .aboutUs .multiBox .active {
     background: rgb(239, 29, 48);
-    background: linear-gradient(313deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 100%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        313deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 100%,
+        rgba(234, 42, 124, 1) 100%
+    );
 }
 
 /***************** Experts - CSS ****************/
@@ -3070,7 +3157,7 @@ main .expertBanner .searchBox {
 
 .multiBlog .expertCard .cardContet .cardBody,
 .multiBlog .expertCard .cardContet .cardFooter {
-    transition: top .3s linear;
+    transition: top 0.3s linear;
     position: relative;
     top: 0px;
 }
@@ -3083,7 +3170,7 @@ main .expertBanner .searchBox {
 .multiBlog .expertCard .cardContet .contactDiv {
     padding: 20px;
     opacity: 0;
-    transition: all .5s;
+    transition: all 0.5s;
 }
 
 .multiBlog .expertCard .cardContet .contactDiv ul {
@@ -3118,7 +3205,7 @@ main .expertBanner .searchBox {
 }
 
 .multiBlog .expertCard .cardContet .rating i {
-    color: #EFD232;
+    color: #efd232;
 }
 
 .multiBlog .expertCard .cardContet .rating span {
@@ -3143,7 +3230,7 @@ main .expertBanner .searchBox {
 }
 
 .multiBlog .expertCard .cardContet .cardFooter p {
-    color: #75858D;
+    color: #75858d;
     font-size: 20px;
     font-family: GelionRegular;
 }
@@ -3154,7 +3241,7 @@ main .expertBanner .searchBox {
 
 /**************** Fixed - Free - CSS ***************/
 .fixedBanner .fixedBannerLeft h3 span {
-    color: #ED2149;
+    color: #ed2149;
 }
 
 .fixedBanner .searchBox {
@@ -3190,7 +3277,7 @@ main .expertBanner .searchBox {
 }
 
 .fixedFreeDetail .buyServiceDiv .header {
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
     padding: 30px;
 }
 
@@ -3227,12 +3314,26 @@ main .expertBanner .searchBox {
     margin-left: 10px;
 }
 
-.fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation h4 {
+.fixedFreeDetail
+    .buyServiceDiv
+    .contentDiv
+    ul
+    li
+    .userDetail
+    .nameDesignation
+    h4 {
     font-size: 22px;
     font-family: GelionRegular;
 }
 
-.fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation p {
+.fixedFreeDetail
+    .buyServiceDiv
+    .contentDiv
+    ul
+    li
+    .userDetail
+    .nameDesignation
+    p {
     color: #032231;
     font-family: GelionRegular;
     font-size: 14px;
@@ -3289,7 +3390,7 @@ main .expertBanner .searchBox {
 
 .applyHeader .breadcrum ul li.active a,
 .applyHeader .breadcrum ul li.active {
-    color: #ED2456;
+    color: #ed2456;
 }
 
 .readyToStart {
@@ -3314,7 +3415,7 @@ main .expertBanner .searchBox {
 }
 
 .readyToStart .formDiv .inputDiv input {
-    border: 2px solid #E5E8EA;
+    border: 2px solid #e5e8ea;
     opacity: 1;
     width: 100%;
     padding: 23px;
@@ -3372,7 +3473,7 @@ main .expertBanner .searchBox {
     position: relative;
     font-size: 20px;
     font-family: MoskauMedium;
-    color: #5D6D75;
+    color: #5d6d75;
 }
 
 .whoRecive .formDiv .inputBtnDiv button,
@@ -3386,14 +3487,19 @@ main .expertBanner .searchBox {
     letter-spacing: 7px;
     text-transform: uppercase;
     font-family: MoskauMedium;
-    color: #ED2456;
+    color: #ed2456;
     cursor: pointer;
 }
 
 .paymentBtn {
     position: relative !important;
     background: rgb(239, 29, 48);
-    background: linear-gradient(270deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 70%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        270deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 70%,
+        rgba(234, 42, 124, 1) 100%
+    );
     font-size: 26px;
     color: #fff;
     border: none;
@@ -3443,7 +3549,7 @@ main .expertBanner .searchBox {
     padding: 12.5px;
     border-radius: 100%;
     background-color: #fff;
-    transition: all .5s linear;
+    transition: all 0.5s linear;
     height: 60px;
 }
 
@@ -3462,15 +3568,15 @@ main .expertBanner .searchBox {
 }
 
 .serviceBuy .staper .listDiv li.active {
-    border-color: #EF1E32;
+    border-color: #ef1e32;
 }
 
 .serviceBuy .staper .listDiv li.active a {
-    color: #EF1E32;
+    color: #ef1e32;
 }
 
 .serviceBuy .staper .listDiv li.complete {
-    background-color: #EF1E32;
+    background-color: #ef1e32;
 }
 
 .serviceBuy .staper .listDiv li.complete img.imgWhiteTick {
@@ -3483,7 +3589,7 @@ main .expertBanner .searchBox {
 }
 
 .serviceBuy .staper .listDiv li.afterComplete {
-    border-color: #EF1E32;
+    border-color: #ef1e32;
 }
 
 .serviceBuy .staper .listDiv li.afterComplete .imgRedTick {
@@ -3526,7 +3632,7 @@ main .expertBanner .searchBox {
 .buyNowService .orderSummary span {
     font-size: 20px;
     font-family: GelionRegular;
-    color: #75858D;
+    color: #75858d;
 }
 
 .buyNowService .orderSummary .summaryDetail {
@@ -3552,7 +3658,7 @@ main .expertBanner .searchBox {
 }
 
 .buyNowService .orderSummary .summaryDetail .payable h2 span {
-    color: #7B7B7B;
+    color: #7b7b7b;
     font-size: 18px;
     font-family: GelionMedium;
 }
@@ -3603,7 +3709,12 @@ main .expertBanner .searchBox {
 
 .serviceContent .formBtnDiv button {
     background: rgb(239, 29, 48);
-    background: linear-gradient(270deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 70%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        270deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 70%,
+        rgba(234, 42, 124, 1) 100%
+    );
     padding: 20px 110px;
     font-size: 26px;
     color: #fff;
@@ -3618,7 +3729,7 @@ main .expertBanner .searchBox {
 .applyDiv .tab-pane .multiSelect label {
     margin-bottom: 30px;
     font-family: MoskauMedium;
-    color: #5D6D75;
+    color: #5d6d75;
     font-size: 18px;
 }
 
@@ -3644,7 +3755,7 @@ main .expertBanner .searchBox {
     border-radius: 4px;
     top: 35px;
     opacity: 0;
-    transition: all .5s linear;
+    transition: all 0.5s linear;
 }
 
 .dropDownMenu .line {
@@ -3705,12 +3816,20 @@ main .expertBanner .searchBox {
 
 .applyDiv .pillsDiv ul li:hover {
     background: rgb(234, 42, 124);
-    background: linear-gradient(90deg, rgba(234, 42, 124, 1) 0%, rgba(239, 29, 48, 1) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(234, 42, 124, 1) 0%,
+        rgba(239, 29, 48, 1) 100%
+    );
 }
 
 .applyDiv .pillsDiv ul li a.active {
     background: rgb(234, 42, 124);
-    background: linear-gradient(90deg, rgba(234, 42, 124, 1) 0%, rgba(239, 29, 48, 1) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(234, 42, 124, 1) 0%,
+        rgba(239, 29, 48, 1) 100%
+    );
     color: #fff;
 }
 
@@ -3748,7 +3867,7 @@ main .expertBanner .searchBox {
 }
 
 .applyDiv .tab-pane .commonTabDiv {
-    background: #FAFAFA;
+    background: #fafafa;
     padding: 30px;
 }
 
@@ -3763,7 +3882,7 @@ main .expertBanner .searchBox {
     border: none;
     width: 100% !important;
     font-size: 19px;
-    color: #5D6D75;
+    color: #5d6d75;
     font-family: MoskauMedium;
 }
 
@@ -3773,7 +3892,12 @@ main .expertBanner .searchBox {
 
 .applyDiv .contentDiv button {
     background: rgb(239, 29, 48);
-    background: linear-gradient(270deg, rgba(239, 29, 48, 1) 0%, rgba(237, 36, 86, 1) 70%, rgba(234, 42, 124, 1) 100%);
+    background: linear-gradient(
+        270deg,
+        rgba(239, 29, 48, 1) 0%,
+        rgba(237, 36, 86, 1) 70%,
+        rgba(234, 42, 124, 1) 100%
+    );
     padding: 15px 80px;
     font-size: 26px;
     color: #fff;
@@ -3831,7 +3955,6 @@ main .expertBanner .searchBox {
     font-family: GelionRegular;
     font-size: 20px;
     color: #000;
-
 }
 
 .pricingDiv .pricingFooter {
@@ -3866,7 +3989,11 @@ main .expertBanner .searchBox {
 
 .recommendedLawyer .buyNow button {
     background: rgb(234, 42, 124);
-    background: linear-gradient(90deg, rgba(234, 42, 124, 1) 0%, rgba(239, 29, 48, 1) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(234, 42, 124, 1) 0%,
+        rgba(239, 29, 48, 1) 100%
+    );
     border: none;
     padding: 10px 30px;
     font-size: 26px;
@@ -3909,7 +4036,7 @@ main .expertBanner .searchBox {
     font-size: 23px;
     color: #032231;
     font-family: MoskauMedium;
-    opacity: .54;
+    opacity: 0.54;
 }
 
 .on-boarding-main .on-boarding-left-bar .progress-div .percentage-text {
@@ -3923,7 +4050,7 @@ main .expertBanner .searchBox {
 }
 
 .on-boarding-main .on-boarding-left-bar .progress-div .progress .progress-bar {
-    background-color: #EE2144;
+    background-color: #ee2144;
 }
 
 .on-boarding-main .on-boarding-left-bar .tab-pills-div {
@@ -3942,23 +4069,28 @@ main .expertBanner .searchBox {
     display: block;
     margin-bottom: 33px;
     color: #032231;
-    border-left: 3px solid #D5D5D5;
+    border-left: 3px solid #d5d5d5;
 }
 
 .imageTab {
     display: none;
-    transition: all .5s linear;
+    transition: all 0.5s linear;
 }
 
-.on-boarding-main .on-boarding-left-bar .tab-pills-div ul li.active+.imageTab {
+.on-boarding-main
+    .on-boarding-left-bar
+    .tab-pills-div
+    ul
+    li.active
+    + .imageTab {
     display: block;
     margin-bottom: 50px;
     margin-top: 20px;
 }
 
 .on-boarding-main .on-boarding-left-bar .tab-pills-div ul li.active a {
-    color: #EE2144;
-    border-color: #EE2144;
+    color: #ee2144;
+    border-color: #ee2144;
     font-size: 25px;
 }
 
@@ -3969,7 +4101,7 @@ main .expertBanner .searchBox {
 }
 
 .on-boarding-main .pills-div-main .uploadBanner {
-    background-color: #F0F7FA;
+    background-color: #f0f7fa;
     height: 220px;
     position: relative;
 }
@@ -4027,7 +4159,7 @@ main .expertBanner .searchBox {
 }
 
 .on-boarding-main .pills-div-main .profile-div {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 17px 49px #03223112;
     border: undefined solid #010101;
     opacity: 1;
@@ -4080,20 +4212,57 @@ main .expertBanner .searchBox {
     margin-bottom: 32px;
 }
 
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv label {
+.on-boarding-main
+    .pills-div-main
+    .profile-div
+    .tabContent
+    .formDiv
+    .inputDiv
+    label {
     font-size: 18px;
     font-family: GelionBold;
 }
 
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv label i {
-    color: #89969B;
+.on-boarding-main
+    .pills-div-main
+    .profile-div
+    .tabContent
+    .formDiv
+    .inputDiv
+    label
+    i {
+    color: #89969b;
 }
 
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv input,
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv textarea,
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .multiSelect .select2,
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputDiv select {
-    border: 2px solid #E5E8EA;
+.on-boarding-main
+    .pills-div-main
+    .profile-div
+    .tabContent
+    .formDiv
+    .inputDiv
+    input,
+.on-boarding-main
+    .pills-div-main
+    .profile-div
+    .tabContent
+    .formDiv
+    .inputDiv
+    textarea,
+.on-boarding-main
+    .pills-div-main
+    .profile-div
+    .tabContent
+    .formDiv
+    .multiSelect
+    .select2,
+.on-boarding-main
+    .pills-div-main
+    .profile-div
+    .tabContent
+    .formDiv
+    .inputDiv
+    select {
+    border: 2px solid #e5e8ea;
     padding: 15px 18px;
     color: #607681;
     font-size: 16px;
@@ -4101,7 +4270,13 @@ main .expertBanner .searchBox {
     width: 100%;
 }
 
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .multiSelect .select2 {
+.on-boarding-main
+    .pills-div-main
+    .profile-div
+    .tabContent
+    .formDiv
+    .multiSelect
+    .select2 {
     margin-bottom: 15px;
 }
 
@@ -4114,13 +4289,22 @@ main .expertBanner .searchBox {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 999999;
 }
 
 form button[type="submit"] {
-    background: transparent linear-gradient(311deg, #EF1D30 0%, var(--unnamed-color-ed2456) 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
-    background: transparent linear-gradient(311deg, #EF1D30 0%, #ED2456 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
+    background: transparent
+        linear-gradient(
+            311deg,
+            #ef1d30 0%,
+            var(--unnamed-color-ed2456) 61%,
+            #ea2a7c 100%
+        )
+        0% 0% no-repeat padding-box;
+    background: transparent
+        linear-gradient(311deg, #ef1d30 0%, #ed2456 61%, #ea2a7c 100%) 0% 0%
+        no-repeat padding-box;
     border: none;
     padding: 15px 62px;
     font-size: 18px;
@@ -4130,17 +4314,34 @@ form button[type="submit"] {
     cursor: pointer;
 }
 
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton select {
+.on-boarding-main
+    .pills-div-main
+    .profile-div
+    .tabContent
+    .formDiv
+    .inputButton
+    select {
     width: 80%;
 }
 
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton {
+.on-boarding-main
+    .pills-div-main
+    .profile-div
+    .tabContent
+    .formDiv
+    .inputButton {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.on-boarding-main .pills-div-main .profile-div .tabContent .formDiv .inputButton button {
+.on-boarding-main
+    .pills-div-main
+    .profile-div
+    .tabContent
+    .formDiv
+    .inputButton
+    button {
     background: #fff;
     color: #000;
     border: 1px solid;
@@ -4176,7 +4377,7 @@ form button[type="submit"] {
 }
 
 .multipleMemberShip .commonBox {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 18px 49px #01254814;
     opacity: 1;
     padding: 40px 25px;
@@ -4200,7 +4401,7 @@ form button[type="submit"] {
 
 .multipleMemberShip .commonBox .priceDiv span {
     font-size: 12px;
-    color: #49616D;
+    color: #49616d;
     opacity: 0.84;
     font-family: GelionSemiBold;
 }
@@ -4219,7 +4420,7 @@ form button[type="submit"] {
 .multipleMemberShip .commonBox .packageDetail p,
 .multipleMemberShip .commonBox .list_div p,
 .multipleMemberShip .commonBox .list_div ul li {
-    color: #49616D;
+    color: #49616d;
     font-size: 12px;
     font-family: GelionRegular;
 }
@@ -4261,7 +4462,7 @@ form button[type="submit"] {
 
 .multipleMemberShip .commonBox .savePrice li span span {
     opacity: 1;
-    color: #EE2144;
+    color: #ee2144;
 }
 
 .multipleMemberShip .commonBox .savePrice ul {
@@ -4279,8 +4480,17 @@ form button[type="submit"] {
 
 .multipleMemberShip .commonBox button {
     width: 100%;
-    background: transparent linear-gradient(311deg, #EF1D30 0%, var(--unnamed-color-ed2456) 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
-    background: transparent linear-gradient(311deg, #EF1D30 0%, #ED2456 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
+    background: transparent
+        linear-gradient(
+            311deg,
+            #ef1d30 0%,
+            var(--unnamed-color-ed2456) 61%,
+            #ea2a7c 100%
+        )
+        0% 0% no-repeat padding-box;
+    background: transparent
+        linear-gradient(311deg, #ef1d30 0%, #ed2456 61%, #ea2a7c 100%) 0% 0%
+        no-repeat padding-box;
     border: none;
     padding: 15px 62px;
     font-size: 18px;
@@ -4335,7 +4545,7 @@ form button[type="submit"] {
 }
 
 .insight_Section .tab_div .tab-pane .img_div .text_div {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 17px 49px #00000029;
     padding: 15px 25px;
     min-height: 105px;
@@ -4372,7 +4582,7 @@ form button[type="submit"] {
 }
 
 .popular_topics .multi_topics .topics_box {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 18px 49px #01254814;
     opacity: 1;
     padding: 30px;
@@ -4386,7 +4596,7 @@ form button[type="submit"] {
 
 .popular_topics .multi_topics .topics_box a {
     font-size: 24px;
-    color: #ED2456;
+    color: #ed2456;
 }
 
 .tab_div .multiple_course {
@@ -4401,7 +4611,7 @@ form button[type="submit"] {
 }
 
 .tab_div .multiple_course .course_box .course_content {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 17px 49px #00000029;
     border: 0.4000000059604645px solid rgb(112 112 112 / 30%);
     padding: 12px 20px;
@@ -4438,7 +4648,7 @@ form button[type="submit"] {
 
 .insight_article_section .cardContent .course_content .list_div ul li i {
     margin-right: 8px;
-    color: #21B876;
+    color: #21b876;
 }
 
 .tab_div .multiple_course .course_box .course_content .course_rating,
@@ -4448,8 +4658,12 @@ form button[type="submit"] {
 }
 
 .tab_div .multiple_course .course_box .course_content .course_rating .freeBadge,
-.insight_article_section .cardContent .course_content .course_rating .freeBadge {
-    background: #ED2456 0% 0% no-repeat padding-box;
+.insight_article_section
+    .cardContent
+    .course_content
+    .course_rating
+    .freeBadge {
+    background: #ed2456 0% 0% no-repeat padding-box;
     font-size: 14px;
     font-family: GelionBold;
     text-transform: uppercase;
@@ -4465,7 +4679,7 @@ form button[type="submit"] {
 
 .tab_div .multiple_course .course_box .course_content .course_rating p i,
 .insight_article_section .cardContent .course_content .course_rating p i {
-    color: #EFD232;
+    color: #efd232;
 }
 
 .tab_div .multiple_course .course_box .course_content .course_description,
@@ -4473,14 +4687,14 @@ form button[type="submit"] {
     font-family: GelionRegular;
     font-size: 18px;
     margin-bottom: 30px;
-    color: #49616D;
+    color: #49616d;
 }
 
 .tab_div .multiple_course .course_box .course_content .week_text,
 .insight_article_section .cardContent .course_content .week_text {
     font-family: GelionRegular;
     font-size: 18px;
-    color: #49616D;
+    color: #49616d;
 }
 
 .insight_article_section .cardContent .course_list {
@@ -4507,8 +4721,17 @@ form button[type="submit"] {
 }
 
 .insight_article_section .cardContent .course_content button {
-    background: transparent linear-gradient(311deg, #EF1D30 0%, var(--unnamed-color-ed2456) 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
-    background: transparent linear-gradient(311deg, #EF1D30 0%, #ED2456 61%, #EA2A7C 100%) 0% 0% no-repeat padding-box;
+    background: transparent
+        linear-gradient(
+            311deg,
+            #ef1d30 0%,
+            var(--unnamed-color-ed2456) 61%,
+            #ea2a7c 100%
+        )
+        0% 0% no-repeat padding-box;
+    background: transparent
+        linear-gradient(311deg, #ef1d30 0%, #ed2456 61%, #ea2a7c 100%) 0% 0%
+        no-repeat padding-box;
     border: none;
     padding: 15px 62px;
     font-size: 18px;
@@ -4535,15 +4758,6 @@ form button[type="submit"] {
     margin: 0px;
     margin-bottom: 60px;
 }
-
-
-
-
-
-
-
-
-
 
 .slick-prev:before,
 .slick-next:before {
@@ -4621,25 +4835,26 @@ form button[type="submit"] {
     footer {
         padding: 200px 200px 70px;
     }
-    .profileDiv.expertDetailProfile{
-        padding: 350px 150px 100px; 
+    .profileDiv.expertDetailProfile {
+        padding: 350px 150px 100px;
     }
-    .bolgSection{
+    .bolgSection {
         padding: 60px 90px;
     }
-    .multiBlog .expertCard{
+    .multiBlog .expertCard {
         margin-bottom: 30px;
     }
     .findExpert {
         padding: 100px 100px;
     }
-    .requestInformation{
+    .requestInformation {
         padding: 100px 100px 200px;
     }
-    .ourService, .experts{
+    .ourService,
+    .experts {
         padding: 100px 0px;
     }
-    .aboutUs{
+    .aboutUs {
         padding: 60px 0px;
     }
     .on-boarding-main .on-boarding-left-bar .tab-pills-div ul li.active a {
@@ -4752,7 +4967,6 @@ form button[type="submit"] {
         font-size: 20px;
     }
 
-
     .orderSection .orderContent .orderDescription p,
     .pricingDiv .pricingBody .listDiv ul li a,
     .pricingDiv .pricingBody p,
@@ -4859,7 +5073,6 @@ form button[type="submit"] {
         padding-left: 100px;
     } */
 
-
     .mainBanner .aboutUsLeft h3 {
         font-size: 45px !important;
         margin-bottom: 40px !important;
@@ -4869,7 +5082,6 @@ form button[type="submit"] {
         font-size: 18px;
         margin-bottom: 20px;
     }
-
 
     .mainBanner .aboutUsLeft p {
         font-size: 40px !important;
@@ -5112,7 +5324,6 @@ form button[type="submit"] {
     }
 
     .ourService .sliderDiv .serviceBox h2,
-    .leatestNews .newsCard .cardContent h4,
     .bolgSection .blogCard .cardContent h4,
     .blogDetailCard .card .cardContent h4,
     .unanswerdDiv .questionDiv p,
@@ -5121,12 +5332,22 @@ form button[type="submit"] {
         font-size: 24px;
     }
 
+    .leatestNews .newsCard .cardContent h4 {
+        font-size: 18px;
+    }
+
     .ourService .sliderDiv .serviceBox p,
     .aboutUs .multiBox .commonBox p,
     .blogDetailCard .card .cardContent p,
     .relatedService .multiRelatedService .card .cardContent .tag,
-
-    .fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation h4 {
+    .fixedFreeDetail
+        .buyServiceDiv
+        .contentDiv
+        ul
+        li
+        .userDetail
+        .nameDesignation
+        h4 {
         font-size: 18px;
     }
 
@@ -5159,7 +5380,7 @@ form button[type="submit"] {
 
     main .mainBanner .searchBox {
         width: 55%;
-        bottom: 18%;
+        bottom: 2%;
     }
 
     main .mainBanner .clientBox {
@@ -5252,8 +5473,6 @@ form button[type="submit"] {
         height: 65px;
     }
 
-
-
     .contactDetail {
         padding: 150px 200px;
     }
@@ -5264,7 +5483,14 @@ form button[type="submit"] {
     }
 
     .relatedService .multiRelatedService .card .cardContent .line,
-    .fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation p {
+    .fixedFreeDetail
+        .buyServiceDiv
+        .contentDiv
+        ul
+        li
+        .userDetail
+        .nameDesignation
+        p {
         font-size: 12px;
     }
 
@@ -5371,7 +5597,14 @@ form button[type="submit"] {
     .aboutUs .multiBox .commonBox p,
     .blogDetailCard .card .cardContent p,
     .relatedService .multiRelatedService .card .cardContent .tag,
-    .fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation h4,
+    .fixedFreeDetail
+        .buyServiceDiv
+        .contentDiv
+        ul
+        li
+        .userDetail
+        .nameDesignation
+        h4,
     .recentBlog .bolgSection .blogCard .cardContent h4 {
         font-size: 16px !important;
     }
@@ -5616,11 +5849,9 @@ form button[type="submit"] {
         padding: 250px 100px 100px;
     }
 
-
     .applyHeader .logo img {
         left: -50px;
     }
-
 
     .applyHeader .logo img {
         width: 300px;
@@ -5820,14 +6051,12 @@ form button[type="submit"] {
         padding: 200px 100px 80px;
     }
 
-    .newsCard .cardContent p{
+    .newsCard .cardContent p {
         word-break: break-all;
     }
-
 }
 
 @media screen and (max-width: 1310px) {
-
     .mainBanner .aboutUsLeft h3,
     .expertBanner .expertBannerLeft h3,
     .fixedBanner .fixedBannerLeft h3 {
@@ -5982,13 +6211,12 @@ form button[type="submit"] {
     }
 
     .multiBlog .expertCard .cardContet .cardBody h3 {
-        font-size: 24px
+        font-size: 24px;
     }
 
     .findExpert .aboutUs .multiBox {
         padding-left: 0px;
     }
-
 
     .paymentDiv {
         padding: 350px 100px;
@@ -6143,7 +6371,14 @@ form button[type="submit"] {
     .aboutUs .multiBox .commonBox p,
     .blogDetailCard .card .cardContent p,
     .relatedService .multiRelatedService .card .cardContent .tag,
-    .fixedFreeDetail .buyServiceDiv .contentDiv ul li .userDetail .nameDesignation h4 {
+    .fixedFreeDetail
+        .buyServiceDiv
+        .contentDiv
+        ul
+        li
+        .userDetail
+        .nameDesignation
+        h4 {
         font-size: 14px;
     }
 
@@ -6201,8 +6436,7 @@ form button[type="submit"] {
 }
 
 @media screen and (max-width: 992px) {
-    
-    main .mainBanner .bannerRight{
+    main .mainBanner .bannerRight {
         display: block !important;
     }
     .insight_article_section .cardContent .course_list {
@@ -6328,7 +6562,6 @@ form button[type="submit"] {
         padding: 10px !important;
 
         top: 80px;
-
     }
 
     .mainFixedService .earning .opertionDiv {
@@ -6343,7 +6576,7 @@ form button[type="submit"] {
     }
 
     .expertBanner .expertBannerLeft h3 {
-        margin-bottom: 40px !important
+        margin-bottom: 40px !important;
     }
 
     .mainFixedService .earning .readingItems .commonDiv {
@@ -6445,7 +6678,6 @@ form button[type="submit"] {
     .bolgSection .paginationDiv {
         margin-top: 0px;
         max-width: 100%;
-
     }
 
     .bolgSection .paginationDiv .paginationList ul {
@@ -6713,17 +6945,16 @@ form button[type="submit"] {
     .insight_article_section .card {
         top: -100px !important;
     }
-    .blogBanner .bannerLeft{
+    .blogBanner .bannerLeft {
         position: absolute !important;
-        left: 0px !important;  
+        left: 0px !important;
     }
-    main .mainBanner.contactBanner .bannerRight{
+    main .mainBanner.contactBanner .bannerRight {
         display: none !important;
     }
 }
 
 @media screen and (max-width: 768px) {
-
     .profileBox .profileBoxHeader .uploadCover.uploadCoverBg {
         height: 180px;
     }
@@ -6731,11 +6962,11 @@ form button[type="submit"] {
     .uploadProfileP {
         width: 130px !important;
         height: 130px;
-        transform: translateY(-63px)
+        transform: translateY(-63px);
     }
 
     .profileBox .aboutProfile {
-        padding: 0px
+        padding: 0px;
     }
 
     .insight_article_section {
@@ -6745,7 +6976,6 @@ form button[type="submit"] {
     .insight_article_section .card {
         left: 0px !important;
         top: 0px !important;
-
     }
 
     .insight_article_section .card .cardContent h4 {
@@ -6859,7 +7089,6 @@ form button[type="submit"] {
     .fixedServiceDiv .banner .tagLine .priceText h4 {
         font-size: 30px;
     }
-
 
     .unanswerdDiv,
     .answereDiv {
@@ -7009,7 +7238,11 @@ form button[type="submit"] {
 
     header #collapsibleNavbar {
         background: rgb(234, 42, 124);
-        background: linear-gradient(90deg, rgba(234, 42, 124, 1) 0%, rgba(239, 29, 48, 1) 100%);
+        background: linear-gradient(
+            90deg,
+            rgba(234, 42, 124, 1) 0%,
+            rgba(239, 29, 48, 1) 100%
+        );
     }
 
     header #collapsibleNavbar .navbar-nav {
@@ -7017,7 +7250,7 @@ form button[type="submit"] {
     }
 
     .experts,
-    .excellence{
+    .excellence {
         padding: 60px 0px;
     }
 
@@ -7195,13 +7428,11 @@ form button[type="submit"] {
         padding: 150px 20px 100px;
     }
 
-
     .applyHeader .logo img {
         width: 200px;
     }
 
     .applyHeader {
-
         flex-direction: column-reverse;
     }
 
@@ -7238,7 +7469,6 @@ form button[type="submit"] {
         z-index: 0 !important;
     }
 
-
     .registerAuthBox .applyForMembership span,
     .registerAuthBox .applyForMembership button {
         font-size: 10px !important;
@@ -7270,8 +7500,6 @@ form button[type="submit"] {
     .recentBlog .slick-prev {
         right: 60px !important;
     }
-
-
 
     .profileDiv .editProfileBox .editProfile .listDiv ul li span {
         font-size: 10px;
@@ -7380,11 +7608,9 @@ form button[type="submit"] {
         padding: 30px 10px;
     }
 
-
     .profileDiv h5 {
         font-size: 24px;
     }
-
 
     .markedCompleted {
         max-width: 50%;
@@ -7403,7 +7629,6 @@ form button[type="submit"] {
     .subHeader h4 {
         font-size: 30px;
     }
-
 
     .orderSection .orderHeader {
         padding: 15px;
@@ -7487,13 +7712,13 @@ form button[type="submit"] {
     .requestInformation {
         padding: 60px 0px 150px;
     }
-    footer .newsLetter .formDiv input{
+    footer .newsLetter .formDiv input {
         font-size: 14px;
     }
     .requestInformation .imgText .imgTextMiddle p {
         font-size: 11px;
     }
-    .requestInformation .inputDiv{
+    .requestInformation .inputDiv {
         margin-bottom: 0px;
     }
     .experts .expertSlider .slick-track {
@@ -7546,7 +7771,6 @@ form button[type="submit"] {
         display: none;
     }
 
-
     .aboutUs .multiBox .commonBox p {
         font-size: 14px;
     }
@@ -7566,7 +7790,7 @@ form button[type="submit"] {
     main .mainBanner .bannerLeft {
         padding: 150px 20px 0px;
     }
-    .aboutUs{
+    .aboutUs {
         padding: 60px 0px;
     }
     main .mainBanner .bannerLeft p {
@@ -7617,7 +7841,6 @@ form button[type="submit"] {
     .profileDiv .editProfileBox .profileImg img {
         height: auto !important;
     }
-
 }
 
 /* @media screen and (max-width: 414px) {
@@ -7645,4 +7868,19 @@ form button[type="submit"] {
 .profileAvatar img.cover {
     width: 100%;
     border-radius: 0;
+}
+
+.leatestNews .newsCard .cardContent .date {
+    height: 32px;
+}
+
+.leatestNews .newsCard .cardContent {
+    padding: 16px 15px;
+}
+
+.blogCard .cardContent .date {
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 30px;
 }

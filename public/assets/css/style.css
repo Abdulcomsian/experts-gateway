@@ -6063,12 +6063,11 @@ form button[type="submit"] {
     }
 }
 
-@media (min-width: 1400px){
+@media (min-width: 1400px) {
     main .mainBanner .searchBox {
-    position: relative;
-    margin-top: -6% !important;
+        position: relative;
+        margin-top: -6% !important;
     }
-}
 }
 
 @media screen and (max-width: 1310px) {

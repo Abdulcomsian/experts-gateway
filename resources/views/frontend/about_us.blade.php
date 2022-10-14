@@ -43,29 +43,29 @@ About Us
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="aboutUs">
-                        <div class="multiBox" id="counters_4">
+                    <div class="aboutUs" id="counters_1">
+                        <div class="multiBox">
                             <div class="">
                                 <div class="commonBox active">
-                                    <h2 id="counters_1"><span class="counter" data-TargetNum="10">10</span>K+</h2>
+                                    <h2><span class="counter" data-TargetNum="10">10</span>K+</h2>
                                     <p>Active Members</p>
                                 </div>
                                 <div class="commonBox">
-                                    <h2 id="counters_1"><span class="counter" data-TargetNum="10">10</span></h2>
+                                    <h2><span class="counter" data-TargetNum="10">10</span></h2>
                                     <p>Years of excellence</p>
                                 </div>
                                 <div class="commonBox active">
-                                    <h2 id="counters_3"><span class="counter" data-TargetNum="150">150</span></h2>
+                                    <h2><span class="counter" data-TargetNum="150">150</span></h2>
                                     <p>Key countries</p>
                                 </div>
                             </div>
                             <div style="margin-left: 30px;">
                                 <div class="commonBox">
-                                    <h2 id="counters_4"><span class="counter" data-TargetNum="10">10</span>%</h2>
+                                    <h2><span class="counter" data-TargetNum="10">10</span>%</h2>
                                     <p>Trust rating</p>
                                 </div>
                                 <div class="commonBox">
-                                    <h2 id="counters_5"><span class="counter" data-TargetNum="200">200</span></h2>
+                                    <h2><span class="counter" data-TargetNum="200">200</span></h2>
                                     <p>Areas of expertise</p>
                                 </div>
                             </div>
@@ -323,7 +323,7 @@ About Us
 
 <script>
     // must be an array, could have only one element
-let visibilityIds = ['#counters_4']; 
+let visibilityIds = ['#counters_1']; 
 
 // default counter class
 let counterClass = '.counter';

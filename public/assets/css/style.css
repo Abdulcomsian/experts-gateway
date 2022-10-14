@@ -249,9 +249,9 @@ main .mainBanner .searchBox {
     width: 57%;
     background: #fff;
     box-shadow: 0px 18px 49px #01254814;
-    position: absolute;
-    bottom: 5%;
-    left: 4%;
+    /* position: absolute; */
+    /* bottom: 5%; */
+    margin-left: 4%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -700,7 +700,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 
 /********** Leatest - News - CSS ************/
 .leatestNews {
-    padding: 170px 0px;
+    padding: 100px 0px 0;
     overflow: hidden;
 }
 
@@ -712,7 +712,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
 
 .leatestNews .leatesNewContent {
     width: 100%;
-    max-width: 60%;
+    max-width: 80%;
     margin-right: 0px !important;
     margin: auto;
 }
@@ -940,7 +940,7 @@ footer .navigationList li a {
 }
 
 footer hr {
-    margin-top: 120px;
+    margin-top: 80px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 60px;
 }
@@ -5789,6 +5789,13 @@ form button[type="submit"] {
     }
 }
 
+@media (min-width: 1024px) {
+    main .mainBanner .searchBox {
+        position: relative;
+        margin-top: -9%;
+    }
+}
+
 @media screen and (max-width: 1400px) {
     .applyDiv .pillsDiv ul li a {
         font-size: 14px;
@@ -5963,7 +5970,7 @@ form button[type="submit"] {
     }
 
     .leatestNews {
-        padding: 120px 0px;
+        padding: 120px 0px 0px;
         overflow: hidden;
     }
 
@@ -6017,7 +6024,7 @@ form button[type="submit"] {
     }
 
     main .mainBanner .searchBox {
-        left: 5%;
+        margin-left: 5%;
         bottom: 1%;
     }
 
@@ -6053,6 +6060,13 @@ form button[type="submit"] {
 
     .newsCard .cardContent p {
         word-break: break-all;
+    }
+}
+
+@media (min-width: 1400px) {
+    main .mainBanner .searchBox {
+        position: relative;
+        margin-top: -6% !important;
     }
 }
 
@@ -6325,7 +6339,7 @@ form button[type="submit"] {
     }
 
     main .mainBanner .searchBox {
-        left: 4%;
+        margin-left: 4%;
     }
 
     header {
@@ -6816,7 +6830,7 @@ form button[type="submit"] {
     main .mainBanner .searchBox {
         position: relative;
         width: 100%;
-        left: 0%;
+        margin-left: 0%;
         bottom: 0%;
         margin-top: 100px;
     }

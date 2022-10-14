@@ -476,14 +476,14 @@ Expert Gateway
     <div class="leatestNews">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-4">
                     <div class="leatesNewContent">
                         <h2>Latest News</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam id nibh utitur Proin
                             congue interdum lacus.</p>
                     </div>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-8">
                     <div class="sliderDiv">
                         <div class="newsSlider">
                             @foreach($news as $new)

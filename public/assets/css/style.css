@@ -328,7 +328,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     width: 100%;
     max-width: 70%;
     margin: auto;
-    line-height: 39px;
+    height: 30px;
 }
 
 .ourService .sliderDiv,
@@ -345,7 +345,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     opacity: 1;
     padding: 30px;
     width: 100%;
-    max-width: 25%;
+    max-width: none;
     margin: 10px;
     height: 450px;
     transition: all 0.5s;

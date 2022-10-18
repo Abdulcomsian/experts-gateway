@@ -18,6 +18,7 @@ use App\Models\LawyersHasEducation;
 use App\Models\LawyersHasMembership;
 use App\Models\Country;
 use App\Models\PartiseArea;
+use App\Models\Service;
 use Spatie\Permission\Models\Role;
 use DB;
 
@@ -40,8 +41,9 @@ class FrontendController extends Controller
         $about_us = AboutUs::first();
         $contact_us = ContactUs::first();
         $news = News::latest()->take(10)->get();
+        $services = Service::latest()->take(10)->get();
         $fixed_services = FixedService::where('status',1)->get();
-        return view('frontend.about_us',compact('about_us','contact_us','news','fixed_services'));
+        return view('frontend.about_us',compact('about_us','contact_us','news','fixed_services','services'));
     }
 
     public function experts(Request $request)
@@ -82,6 +84,12 @@ class FrontendController extends Controller
         $expertises = Expertise::get();
         return view('frontend.services' , compact('services','expertises'));
     }  
+
+    public function service_detail($id)
+    {
+        $service=Service::find($id);
+        return view('frontend.service-detail' , compact('service'));
+    }
 
     public function search(Request $request)
     {

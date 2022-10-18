@@ -47,7 +47,7 @@ Route::get('/about-us', [App\Http\Controllers\FrontendController::class, 'about_
 Route::get('/all-blogs', [App\Http\Controllers\blogController::class, 'blogs'])->name('all-blogs');
 Route::get('/all-blog/{id}', [App\Http\Controllers\blogController::class, 'client_blog'])->name('all-blog');
 Route::get('/fixed-service-detail/{id}', [App\Http\Controllers\Lawyer\FixedServiceController::class, 'service_detail'])->name('fixed_service_detail');
-
+Route::get('/service-details/{id}',[App\Http\Controllers\FrontendController::class, 'service_detail']);
 
 Route::get('/lawyer-register', function () {
     $contact_us = ContactUs::first();
@@ -84,8 +84,10 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     Route::resource('language', App\Http\Controllers\Admin\languageController::class);
 
     //Patactice Area
-    //language
     Route::resource('practice-area', App\Http\Controllers\Admin\PracticeAreaController::class);
+
+    //Service
+    Route::resource('services', App\Http\Controllers\Admin\ServicesController::class);
 
     //expertise
     Route::resource('expertise', App\Http\Controllers\Admin\expertiseController::class);

@@ -1,6 +1,6 @@
 @extends('layout.admin_panel.master')
 @section('title')
-Practice Area
+Add Service
 @endsection
 @push('styles')
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -23,37 +23,62 @@ Practice Area
                             <!--begin::Card body-->
                             <div class="card-body p-12">
                                 <!--begin::Form-->
-                                <form action="{{ route('practice-area.update',$partisearea->id) }}" method="post" >
-                                @method('PUT')
+                                <form action="{{ route('services.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                 <!--begin::Wrapper-->
+                                    <!--begin::Wrapper-->
                                     <div class="d-flex flex-column align-items-start flex-xxl-row">
 
                                         <!--begin::Input group-->
                                         <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Enter invoice number">
-                                            <span class="fs-2x fw-bolder text-gray-800">Edit Practice Area</span>
+                                            <span class="fs-2x fw-bolder text-gray-800">Add Service</span>
                                         </div>
                                         <!--end::Input group-->
                                     </div>
                                     <!--end::Top-->
                                     <!--begin::Separator-->
                                     <div class="separator separator-dashed my-10"></div>
+                                    <!--end::Separator-->
+                                    <!--begin::Wrapper-->
                                     <div class="mb-0">
                                         <!--begin::Row-->
                                         <div class="row gx-10 mb-5">
                                             <!--begin::Col-->
-                                            <div class="col-lg-12">
-                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Practice Area Name</label>
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Title</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" class="form-control form-control-solid" name="name"  value="{{$partisearea->name}}" placeholder="Enter Practice Area Name" required />
-                                                    <div style="color:red;">{{$errors->first('name')}}</div> <br>
+                                                    <input type="text" class="form-control form-control-solid" name="title" value="{{old('title')}}" placeholder="Enter Title" />
+                                                    <div style="color:red;">{{$errors->first('title')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Image</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <input type="file" class="form-control form-control-solid" name="image" accept="image/*"/>
+                                                    <div style="color:red;">{{$errors->first('image')}}</div> <br>
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <!--end::Col-->
+
+                                            <!--begin::Col-->
+                                            <div class="col-lg-12">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Description</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <textarea required class="ckeditor form-control" name="description"></textarea>
+                                                    <div style="color:red;">{{$errors->first('description')}}</div> <br>
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div><br>
+                                            <!--end::Col-->
 
                                             <button type="submit" class="btn btn-primary updateBtn">
-                                                Update
+                                                Save
                                             </button>
                                             <!--end::Col-->
                                             </div>
@@ -78,4 +103,13 @@ Practice Area
         <!--end::Post-->
     </div>
     <!--end::Content--> 
+@endsection
+
+@section('script')
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
+</script>
 @endsection

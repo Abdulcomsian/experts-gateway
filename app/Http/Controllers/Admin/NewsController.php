@@ -31,7 +31,6 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-           // dd($request->all());
         $user_id = Auth::id();
         $this->validate($request,[  
             'title'=>'required', 

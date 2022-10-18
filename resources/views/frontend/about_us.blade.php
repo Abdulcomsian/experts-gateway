@@ -85,62 +85,22 @@ About Us
             </div>
             <div class="sliderDiv">
                 <div class="serviceSlider">
+                    @foreach($services as $service)
                     <div class="serviceBox">
                         <div class="boxHeader">
-                            <img src="{{ asset('assets/img/finance.png') }}" alt="" class="img-fluid">
-                            <h2>Banking & Finance Law</h2>
+                            <img src="{{asset('services/'.$service->image)}}" alt="" class="img-fluid " style="height: 56px" >
+                            <h2>{{$service->title}}</h2>
                             <div class="line"></div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
-                        </p>
-                        <a href="">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
+                        @php 
+                        $desc=str_replace(['<p>', '</p>'], '', $service->description);
+                        @endphp
+                        <p> {!! \Str::words(str_replace('&nbsp;', ' ', $desc),10) !!}</p>
+                        <a href="{{url('/service-details',$service->id)}}">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
-                    <div class="serviceBox">
-                        <div class="boxHeader">
-                            <img src="{{ asset('assets/img/civil.png') }}" alt="" class="img-fluid">
-                            <h2>Civil Litigation</h2>
-                            <div class="line"></div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
-                        </p>
-                        <a href="">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
-                        <div class="border"></div>
-                    </div>
-                    <div class="serviceBox">
-                        <div class="boxHeader">
-                            <img src="{{ asset('assets/img/commercial.png') }}" alt="" class="img-fluid">
-                            <h2>Commercial Litigation</h2>
-                            <div class="line"></div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
-                        </p>
-                        <a href="">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
-                        <div class="border"></div>
-                    </div>
-                    <div class="serviceBox">
-                        <div class="boxHeader">
-                            <img src="{{ asset('assets/img/arbitration.png') }}" alt="" class="img-fluid">
-                            <h2>Arbitration</h2>
-                            <div class="line"></div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
-                        </p>
-                        <a href="">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
-                        <div class="border"></div>
-                    </div>
-                    <div class="serviceBox">
-                        <div class="boxHeader">
-                            <img src="{{ asset('assets/img/finance.png') }}" alt="" class="img-fluid">
-                            <h2>Banking & Finance Law</h2>
-                            <div class="line"></div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
-                        </p>
-                        <a href="">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
-                        <div class="border"></div>
-                    </div>
-                    <div class="serviceBox">
+                    @endforeach
+                    <!-- <div class="serviceBox">
                         <div class="boxHeader">
                             <img src="{{ asset('assets/img/civil.png') }}" alt="" class="img-fluid">
                             <h2>Civil Litigation</h2>
@@ -151,10 +111,10 @@ About Us
                         <a href="">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
-                    <div class="serviceBox">
+                     <div class="serviceBox">
                         <div class="boxHeader">
-                            <img src="{{ asset('assets/img/commercial.png') }}" alt="" class="img-fluid">
-                            <h2>Commercial Litigation</h2>
+                            <img src="{{ asset('assets/img/civil.png') }}" alt="" class="img-fluid">
+                            <h2>Civil Litigation</h2>
                             <div class="line"></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
@@ -162,10 +122,10 @@ About Us
                         <a href="">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
-                    <div class="serviceBox">
+                     <div class="serviceBox">
                         <div class="boxHeader">
-                            <img src="{{ asset('assets/img/arbitration.png') }}" alt="" class="img-fluid">
-                            <h2>Arbitration</h2>
+                            <img src="{{ asset('assets/img/civil.png') }}" alt="" class="img-fluid">
+                            <h2>Civil Litigation</h2>
                             <div class="line"></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
@@ -173,6 +133,28 @@ About Us
                         <a href="">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
                         <div class="border"></div>
                     </div>
+                     <div class="serviceBox">
+                        <div class="boxHeader">
+                            <img src="{{ asset('assets/img/civil.png') }}" alt="" class="img-fluid">
+                            <h2>Civil Litigation</h2>
+                            <div class="line"></div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
+                        </p>
+                        <a href="">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
+                        <div class="border"></div>
+                    </div>
+                     <div class="serviceBox">
+                        <div class="boxHeader">
+                            <img src="{{ asset('assets/img/civil.png') }}" alt="" class="img-fluid">
+                            <h2>Civil Litigation</h2>
+                            <div class="line"></div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adi iscing elit Sed aliquam id nibh ut efficitur.
+                        </p>
+                        <a href="">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt="" class="img-fluid"></a>
+                        <div class="border"></div>
+                    </div> -->
                 </div>
             </div>
         </div>

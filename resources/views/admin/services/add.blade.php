@@ -65,6 +65,18 @@ Add Service
                                             </div>
                                             <!--end::Col-->
 
+                                             <!--begin::Col-->
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Featured Image</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <input type="file" class="form-control form-control-solid" name="feature_image" accept="image/*"/>
+                                                    <div style="color:red;">{{$errors->first('feature_image')}}</div> <br>
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <!--end::Col-->
+
                                             <!--begin::Col-->
                                             <div class="col-lg-12">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Description</label>

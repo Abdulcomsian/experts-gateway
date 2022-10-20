@@ -57,6 +57,14 @@ class ServicesController extends Controller
                 $image->move(public_path('services/'),$image_name);
                 $service->image=$image_name;
             }
+            if($request->hasfile('feature_image'))
+            {
+                $image = $request->file('feature_image');
+                $extensions =$image->extension();
+                $image_name =time().'.'. $extensions;
+                $image->move(public_path('services/'),$image_name);
+                $service->feature_image=$image_name;
+            }
             $service->save();
             toastSuccess('Successfully Added');
             return redirect('admin/services');
@@ -116,6 +124,15 @@ class ServicesController extends Controller
                 $image_name =time().'.'. $extensions;
                 $image->move(public_path('services/'),$image_name);
                 $service->image=$image_name;
+            }
+            if($request->hasfile('feature_image'))
+            {
+                $image = $request->file('feature_image');
+                $extensions =$image->extension();
+
+                $image_name =time().'.'. $extensions;
+                $image->move(public_path('services/'),$image_name);
+                $service->feature_image=$image_name;
             }
             $service->save();
             toastSuccess('Successfully Updated');

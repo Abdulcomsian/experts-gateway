@@ -44,6 +44,7 @@ class ServicesController extends Controller
             'image'=>'required',    
 
         ]);
+         
         try {
             $service= new Service;
             $service->title = $request->title;

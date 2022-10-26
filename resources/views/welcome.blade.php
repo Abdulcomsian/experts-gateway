@@ -487,7 +487,7 @@ Expert Gateway
                     <div class="sliderDiv">
                         <div class="newsSlider">
                             @foreach($news as $new)
-                            <div class="card">
+                            <div class="card mx-3">
                                 <img src="{{asset('news/'.$new->image)}}" width="223px !important" height="162px" alt=""
                                     class="img-fluid">
                                 <div class="cardContent card-body d-flex flex-column">

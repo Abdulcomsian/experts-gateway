@@ -328,7 +328,6 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     width: 100%;
     max-width: 70%;
     margin: auto;
-    height: 30px;
 }
 
 .ourService .sliderDiv,
@@ -6252,7 +6251,7 @@ form button[type="submit"] {
         padding: 60px;
     }
 
-    /* 
+    /*
     .blogDetailCard {
         height: 750px;
     } */

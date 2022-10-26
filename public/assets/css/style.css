@@ -1086,6 +1086,10 @@ footer .newsLetter .formDiv button {
     width: 30%;
 }
 
+.newSlider .silk-slide {
+    height: 75%;
+}
+
 .bolgSection .multiBlog .blogCard img {
     width: 100%;
     height: 240px;

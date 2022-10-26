@@ -825,6 +825,7 @@ main .mainBanner .searchBox .expertiseDiv .btnDiv button img {
     width: 100%;
     min-width: 206px;
     height: 240px;
+    object-fit: cover;
 }
 
 .newsSlider .slick-active + .slick-active ~ .slick-slide {

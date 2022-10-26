@@ -9,8 +9,8 @@ blog
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="card">
-                            <img src="{{asset('blogs/'.$blog->image)}}" style="height: 330px !important;" alt="" class="img-fluid">
+                        <div class="card my-md-5">
+                            <img src="{{asset('blogs/'.$blog->image)}}" style="height: 330px !important;" alt="" class="img-fluid m-md-5">
                             <div class="cardContent">
                                 <div class="dateLikeDiv">
                                     <p class="date">{{ date('d M,Y', strtotime($blog->created_at)) }}</p> <span><i class="fa fa-heart-o"></i> 1,556

@@ -2,7 +2,7 @@
 @section('title')
 About Us
 @endsection
-@section('content') 
+@section('content')
 
 <main>
     <div class="mainBanner aboutBanner">
@@ -39,7 +39,7 @@ About Us
                     <p> We look forward to welcoming you to using Experts Gateway! Please reach out to us any time, we would love to help!</p>
                     <div class="multiBtn">
                         <a href="{{ url('/experts') }}" class="findExpertBtn">Find An Expert</a>
-                        <a href="{{ route('lawyer-register') }}" class="applyMemberShip">Apply Fot Membership</a>
+                        <a href="{{ route('lawyer-register') }}" class="applyMemberShip">Apply For Membership</a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -92,7 +92,7 @@ About Us
                             <h2>{{$service->title}}</h2>
                             <div class="line"></div>
                         </div>
-                        @php 
+                        @php
                         $desc=str_replace(['<p>', '</p>'], '', $service->description);
                         @endphp
                         <p> {!! \Str::words(str_replace('&nbsp;', ' ', $desc),10) !!}</p>
@@ -169,7 +169,7 @@ About Us
             </div>
         </div>
         </div>
-        
+
     </div>
     @if(count($fixed_services) > 0)
     <div class="fixedService">
@@ -293,7 +293,7 @@ About Us
         </div>
     </div>
 </main>
-    
+
 @endsection
 
 @section('js')
@@ -305,13 +305,13 @@ About Us
 
 <script>
     // must be an array, could have only one element
-let visibilityIds = ['#counters_1']; 
+let visibilityIds = ['#counters_1'];
 
 // default counter class
 let counterClass = '.counter';
 
 // default animation speed
-let defaultSpeed = 2000; 
+let defaultSpeed = 2000;
 </script>
 
 @endsection

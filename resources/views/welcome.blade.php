@@ -388,7 +388,7 @@ Expert Gateway
                     <a href="{{ url('/experts') }}" class="expertBtn text-white">Find An Expert</a>
                 </div>
             </div>
-         
+
             @if(count($lawyers) > 0)
 
             <div class="sliderDiv">
@@ -487,20 +487,31 @@ Expert Gateway
                     <div class="sliderDiv">
                         <div class="newsSlider">
                             @foreach($news as $new)
-                            <div class="newsCard">
+                            <div class="card">
                                 <img src="{{asset('news/'.$new->image)}}" width="223px !important" height="162px" alt=""
                                     class="img-fluid">
-                                <div class="cardContent">
+                                <div class="cardContent card-body d-flex flex-column">
                                     <div class="date">
                                         <p>{{ date('Y/m/d', strtotime($new->created_at)) }}</p>
                                     </div>
-                                    <h4>{{$new->title}}</h4>
-                                    @php 
-                                    $formatted_text = str_replace(['<p>', '</p>'], '',  $new->description);
-                                    @endphp
-                                    {!! \Str::words(str_replace('&nbsp;', ' ', $formatted_text),10) !!}
-                                    <!-- <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a> -->
+                                    <h4 class="card-title">{{$new->title}}</h4>
+                                    <p class="card-text mb-4">@php
+                                            $formatted_text = str_replace(['<p>', '</p>'], '',  $new->description);
+                                        @endphp
+                                        {!! \Str::words(str_replace('&nbsp;', ' ', $formatted_text),10) !!}</p>
+
                                 </div>
+{{--                                <div class="cardContent">--}}
+{{--                                    <div class="date">--}}
+{{--                                        <p>{{ date('Y/m/d', strtotime($new->created_at)) }}</p>--}}
+{{--                                    </div>--}}
+{{--                                    <h4>{{$new->title}}</h4>--}}
+{{--                                    @php--}}
+{{--                                    $formatted_text = str_replace(['<p>', '</p>'], '',  $new->description);--}}
+{{--                                    @endphp--}}
+{{--                                    {!! \Str::words(str_replace('&nbsp;', ' ', $formatted_text),10) !!}--}}
+{{--                                    <!-- <a href="./aboutUs.html">Learn More <img src="{{ asset('assets/img/sliderArrow.png') }}" alt=""></a> -->--}}
+{{--                                </div>--}}
                             </div>
                             @endforeach
 
@@ -589,13 +600,13 @@ Expert Gateway
 
 <script>
     // must be an array, could have only one element
-let visibilityIds = ['#counters_1']; 
+let visibilityIds = ['#counters_1'];
 
 // default counter class
 let counterClass = '.counter';
 
 // default animation speed
-let defaultSpeed = 2000; 
+let defaultSpeed = 2000;
 </script>
 
 <!-- Swiper JS -->

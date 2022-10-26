@@ -25,7 +25,7 @@ blog
                 </div>
             </div>
         </div>
-        <div class="relatedService">
+        {{--<div class="relatedService">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -94,7 +94,7 @@ blog
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
         <div class="requestInformation">
             <div class="container-fluid">
                 <div class="row">

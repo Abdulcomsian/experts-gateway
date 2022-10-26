@@ -35,7 +35,7 @@ Route::post('get-cities-by-state',[App\Http\Controllers\CountryStateCityControll
 
 Route::post('newsletter',[App\Http\Controllers\NewsLetterController::class, 'store']);
 
-Auth::routes();  
+Auth::routes();
 
 Route::get('/lawyer-login', function () {
     $contact_us = ContactUs::first();
@@ -58,9 +58,9 @@ Route::get('/lawyer-register', function () {
     }
     else
     {
-      return view('auth/lawyer_register',compact('contact_us'));  
+      return view('auth/lawyer_register',compact('contact_us'));
     }
-    
+
 })->name('lawyer-register');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -68,9 +68,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 /*****************ADMIN ROUTES*******************/
 Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\Admin\dashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/profile-edit', [App\Http\Controllers\Admin\dashboardController::class, 'editProfile'])->name('edit_profile');
+    Route::post('/profile-update', [App\Http\Controllers\Admin\dashboardController::class, 'updateProfile'])->name('profile_update');
     //Blogs
     Route::get('/blogs', [App\Http\Controllers\blogController::class, 'index'])->name('admin.blogs');
-    Route::post('/update_blog_status/{id}', [App\Http\Controllers\blogController::class, 'update_blog_status'])->name('update-blog-status');   
+    Route::post('/update_blog_status/{id}', [App\Http\Controllers\blogController::class, 'update_blog_status'])->name('update-blog-status');
     Route::get('create-blog', [App\Http\Controllers\blogController::class, 'create_blog'])->name('admin.create.blog');
     Route::post('save-blog', [App\Http\Controllers\blogController::class, 'save_blog'])->name('admin.save.blog');
     Route::get('/show/{id}', [App\Http\Controllers\blogController::class, 'show'])->name('blog.show');
@@ -103,7 +105,7 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 
     //lawyer_applications
     Route::get('/lawyer_applications', [App\Http\Controllers\Admin\dashboardController::class, 'lawyer_applications'])->name('admin.lawyer-applications');
-    Route::post('/update_lawyer_status/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_lawyer_status'])->name('update-lawyer-status');   
+    Route::post('/update_lawyer_status/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_lawyer_status'])->name('update-lawyer-status');
 
     Route::get('/LawyerProfileShow/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'lawyer_profile_show'])->name('LawyerProfile.show');
     Route::get('/edit_lawyer_profile/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'edit_lawyer_profile'])->name('LawyerProfile.edit');
@@ -124,7 +126,7 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 
     Route::get('/fixed-service', [App\Http\Controllers\Admin\FixedServiceController::class, 'index'])->name('admin.fixed-service');
     Route::get('/fixed-service-detail/{id}', [App\Http\Controllers\Admin\FixedServiceController::class, 'service_detail'])->name('fixed_service.show');
-    Route::post('/update_service_status/{id}', [App\Http\Controllers\Admin\FixedServiceController::class, 'update_service_status'])->name('update-service-status'); 
+    Route::post('/update_service_status/{id}', [App\Http\Controllers\Admin\FixedServiceController::class, 'update_service_status'])->name('update-service-status');
     Route::get('/edit-fixed-service/{id}', [App\Http\Controllers\Admin\FixedServiceController::class, 'edit'])->name('admin.edit-fixed-service');
     Route::put('/update_fixed_service/{id}', [App\Http\Controllers\Admin\FixedServiceController::class, 'update'])->name('admin.update-fixed-service');
 
@@ -159,8 +161,8 @@ Route::prefix('lawyer')->middleware(['auth','can:lawyer'])->group(function(){
     Route::post('/profile-store-4', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_store_4'])->name('profile.store_4');
     Route::post('/profile-update-4/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_update_4'])->name('profile.update_4');
 
-    Route::post('/profile-store-5', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_store_5'])->name('profile.store_5');  
-    Route::post('/submit_approval', [App\Http\Controllers\Lawyer\dashboardController::class, 'submit_approval'])->name('profile.submit-for-approval');  
+    Route::post('/profile-store-5', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_store_5'])->name('profile.store_5');
+    Route::post('/submit_approval', [App\Http\Controllers\Lawyer\dashboardController::class, 'submit_approval'])->name('profile.submit-for-approval');
     Route::post('/profile_update_5/{id}', [App\Http\Controllers\Lawyer\dashboardController::class, 'profile_update_5'])->name('profile.update_5');
 
     //edit lawyer profile

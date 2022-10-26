@@ -19,6 +19,7 @@ use App\Models\LawyersHasExpertise;
 use App\Models\LawyersHasLanguage;
 use App\Mail\LawyerApprovedMAil;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
 use App\Models\{Country,State,City};
 
@@ -59,7 +60,7 @@ class dashboardController extends Controller
         $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
         $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
         return view('admin.lawyer.show', compact('lawyer_profile','languages','lawyer_language','lawyer_educations','lawyer_memberships','country','state','city'));
-        
+
     }
 
     public function update_lawyer_status(Request $request,$id)
@@ -69,7 +70,7 @@ class dashboardController extends Controller
         $user= User::find($id);
         $user->status = $request->status;
         $user->save();
-        
+
         if($user->status == '0')
         {
             $details = [
@@ -94,7 +95,7 @@ class dashboardController extends Controller
         }
         toastSuccess('Successfully Update Status');
         return redirect('admin/lawyer_applications');
-        
+
         // } catch (\Exception $exception) {
         //     // dd($exception->getMessage());
         //     toastError('Something went wrong, try again');
@@ -116,24 +117,24 @@ class dashboardController extends Controller
         $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
         $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
         return view('admin.lawyer.edit', compact('lawyer_profile','user','lawyer_language','languages','educations','memberships','lawyer_educations','lawyer_memberships','countries','city','states'));
-        
+
     }
 
     public function update_lawyer_profile(Request $request,$id)
     {
         $user_id = Auth::id();
-        $this->validate($request,[ 
-            'f_name'=>'required', 
-            'l_name'=>'required', 
-            // 'title'=>'required', 
-            'description'=>'required', 
-            'address'=>'required', 
-            'education_id'=>'required', 
-            'language_id'=>'required', 
-            'membership_id'=>'required', 
-            'country'=>'required', 
-            'state'=>'required', 
-            'city'=>'required', 
+        $this->validate($request,[
+            'f_name'=>'required',
+            'l_name'=>'required',
+            // 'title'=>'required',
+            'description'=>'required',
+            'address'=>'required',
+            'education_id'=>'required',
+            'language_id'=>'required',
+            'membership_id'=>'required',
+            'country'=>'required',
+            'state'=>'required',
+            'city'=>'required',
 
         ]);
         $lawyer= LawyerProfile::where('id',$id)->first();
@@ -173,7 +174,7 @@ class dashboardController extends Controller
         LawyersHasLanguage::where('lawyer_profile_id',$id)->delete();
         LawyersHasEducation::where('lawyer_profile_id',$id)->delete();
         LawyersHasMembership::where('lawyer_profile_id',$id)->delete();
-        
+
         foreach($request->language_id as $language)
         {
             $lawyer_language = new LawyersHasLanguage;
@@ -206,7 +207,7 @@ class dashboardController extends Controller
     {
         $user = user::where('id',$id)->first();
         return view('admin.user.edit', compact('user'));
-        
+
     }
 
     public function update_user(Request $request,$id)
@@ -214,22 +215,22 @@ class dashboardController extends Controller
         $user_id = Auth::id();
         if($request->phone_input != null)
         {
-           $this->validate($request,[ 
-            'f_name'=>'required', 
-            'l_name'=>'required', 
-            'email'=>'required', 
-            'phone'=>'required', 
-            'phone_input'=>'required', 
-            'country'=>'required', 
+           $this->validate($request,[
+            'f_name'=>'required',
+            'l_name'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'phone_input'=>'required',
+            'country'=>'required',
 
-        ]); 
+        ]);
         }
         else
         {
-            $this->validate($request,[ 
-                'f_name'=>'required', 
-                'l_name'=>'required', 
-                'email'=>'required', 
+            $this->validate($request,[
+                'f_name'=>'required',
+                'l_name'=>'required',
+                'email'=>'required',
 
             ]);
         }
@@ -241,7 +242,7 @@ class dashboardController extends Controller
             $user->email = $request->email;
             $user->phone = $request->phone_input;
             $user->country = $request->country;
-            
+
             $user->save();
         }
         else
@@ -250,7 +251,7 @@ class dashboardController extends Controller
             $user->f_name = $request->f_name;
             $user->l_name = $request->l_name;
             $user->email = $request->email;
-            
+
             $user->save();
         }
 
@@ -264,6 +265,36 @@ class dashboardController extends Controller
         // dd($id);
         $user = User::find($id);
         return view('admin.user.show', compact('user'));
-        
+
     }
+
+    public function editProfile()
+    {
+        $user = Auth::user();
+        return view('admin.profile.edit',['user' => $user]);
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $this->validate($request, [
+            'f_name' => 'required|max:255',
+            'l_name' => 'required|max:255',
+            'email' => 'required|unique:users,email,'.Auth::user()->id,
+            'password' => 'max:100|confirmed',
+        ]);
+        if(!empty($request->password)) {
+            $password = bcrypt($request->password);
+        } else{
+            $password = bcrypt($request->password);
+        }
+        $user = User::findorfail(Auth::user()->id);
+        $user->f_name = $request->f_name;
+        $user->l_name = $request->l_name;
+        $user->email = $request->email;
+        $user->password = $password;
+        $user->save();
+        Session::flash('success', 'Profile Update Successfully!');
+        return redirect()->back();
+    }
+
 }

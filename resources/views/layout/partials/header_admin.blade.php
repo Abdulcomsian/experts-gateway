@@ -1,9 +1,9 @@
 	<!-- Main Wrapper -->
 	<div class="main-wrapper">
-		
+
 		<!-- Header -->
 		<div class="header">
-		
+
 			<!-- Logo -->
 			<div class="header-left">
 				<a href="/demo/screens/assessment/public" class="logo">
@@ -14,21 +14,21 @@
 				</a>
 			</div>
 			<!-- /Logo -->
-			
+
 			<a href="javascript:void(0);" id="toggle_btn">
 				<i class="fe fe-text-align-left"></i>
 			</a>
-			
+
 			<div class="top-nav-search">
-				
+
 			</div>
-			
+
 			<!-- Mobile Menu Toggle -->
 			<a class="mobile_btn" id="mobile_btn">
 				<i class="fa fa-bars"></i>
 			</a>
 			<!-- /Mobile Menu Toggle -->
-			
+
 			<!-- Header Right Menu -->
 			<ul class="nav user-menu">
 				<!-- User Menu -->
@@ -46,7 +46,7 @@
 								<p class="text-muted mb-0">Administrator</p>
 							</div>
 						</div>
-						<a class="dropdown-item" href="profile">My Profile</a>
+						<a href="{{route('edit_profile')}}" class="dropdown-item">My Profile</a>
 						<a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -59,9 +59,9 @@
 					</div>
 				</li>
 				<!-- /User Menu -->
-				
+
 			</ul>
 			<!-- /Header Right Menu -->
-			
+
 		</div>
 		<!-- /Header -->

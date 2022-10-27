@@ -12,9 +12,9 @@ class languageController extends Controller
 {
     public function index()
     {
-        $languages = Language::get();
+        $languages = Language::paginate(10);
         return view('admin.language.index', compact('languages'));
-    }      
+    }
 
     public function create()
     {
@@ -40,8 +40,8 @@ class languageController extends Controller
     public function store(Request $request)
     {
         // dd($request->file('image'));
-        $this->validate($request,[ 
-            'name'=>'required', 
+        $this->validate($request,[
+            'name'=>'required',
             'language_slug'=>'required|unique:languages,name,'.$request->id,
         ]);
         try {
@@ -61,8 +61,8 @@ class languageController extends Controller
     public function update(Request $request,$id)
     {
          // dd($request->all(),$id);
-        $this->validate($request,[ 
-            'name'=>'required', 
+        $this->validate($request,[
+            'name'=>'required',
         ]);
         $language= Language::find($id);
         $language->name = $request->name;
@@ -70,7 +70,7 @@ class languageController extends Controller
         $language->save();
         toastSuccess('Successfully Update');
         return redirect('admin/language');
-        
+
     }
 
     public function destroy($id)

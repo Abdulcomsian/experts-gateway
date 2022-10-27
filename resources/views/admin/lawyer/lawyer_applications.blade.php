@@ -43,8 +43,8 @@ Lawyer Applications
                                 <td>{{$lawyer_profile->address}}</td>
 
                                 <td>
-                                    @if($lawyer_profile->user->status == 1) 
-                                        Approved                   
+                                    @if($lawyer_profile->user->status == 1)
+                                        Approved
                                     @elseif($lawyer_profile->user->status == 0)
                                         Pending
                                     @endif
@@ -56,9 +56,9 @@ Lawyer Applications
                                     <a href="{{route('LawyerProfile.show',$lawyer_profile->user->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a><br><br>
 
                                     <a href="{{route('LawyerProfile.edit',$lawyer_profile->user->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
-                                    
+
                                 </td>
-                                
+
                             </tr>
                             @endforeach
 							@else
@@ -67,6 +67,13 @@ Lawyer Applications
 		                      </tr>
 		                      @endif
                             </tbody>
+                            <tfoot>
+                            <tr>
+                                <td colspan="7">
+                                    {{ $lawyer_profiles->links() }}
+                                </td>
+                            </tr>
+                            </tfoot>
                             <!--end::Table body-->
                         </table>
                         <!--end::Table-->
@@ -79,5 +86,5 @@ Lawyer Applications
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection

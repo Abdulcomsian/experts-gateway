@@ -15,7 +15,7 @@ class blogController extends Controller
     public function index()
     {
         $user_id = Auth::id();
-        $blogs = Blog::latest()->get();
+        $blogs = Blog::latest()->paginate(10);
         return view('admin.blog.index',compact('blogs'));
     }
 
@@ -37,7 +37,7 @@ class blogController extends Controller
             $expertises = Expertise::get();
             $blogs = Blog::get();
             return view('blogs.add_blog', compact('lawyer','expertises','blogs'));
-        
+
     }
     //admin create blog
     public function create_blog()
@@ -50,12 +50,12 @@ class blogController extends Controller
     public function save_blog(Request $request)
     {
         $user_id = Auth::id();
-        $this->validate($request,[  
-            'image'=>'required', 
-            'title'=>'required', 
-            'short_description'=>'required', 
-            'expertise_id'=>'required', 
-            'description'=>'required', 
+        $this->validate($request,[
+            'image'=>'required',
+            'title'=>'required',
+            'short_description'=>'required',
+            'expertise_id'=>'required',
+            'description'=>'required',
         ]);
         $blog= new Blog;
         $blog->title = $request->title;
@@ -81,13 +81,13 @@ class blogController extends Controller
     public function store(Request $request)
     {
         $user_id = Auth::id();
-        $this->validate($request,[  
-            'image'=>'required', 
-            'title'=>'required', 
-            'short_description'=>'required', 
-            'expertise_id'=>'required', 
-            'description'=>'required', 
-            //'short_description'=>'required', 
+        $this->validate($request,[
+            'image'=>'required',
+            'title'=>'required',
+            'short_description'=>'required',
+            'expertise_id'=>'required',
+            'description'=>'required',
+            //'short_description'=>'required',
 
         ]);
         $blog= new Blog;
@@ -114,7 +114,7 @@ class blogController extends Controller
     {
         $user_id = Auth::id();
         $blog = Blog::where('id',$id)->first();
-        
+
         $lawyer = User::where('id',$user_id)->first();
         return view('lawyer.blog', compact('blog','lawyer'));
     }
@@ -142,7 +142,7 @@ class blogController extends Controller
         $blog->save();
         toastSuccess('Successfully Update Status');
         return redirect('admin/blogs');
-        
+
         } catch (\Exception $exception) {
             // dd($exception->getMessage());
             toastError('Something went wrong, try again');
@@ -165,11 +165,11 @@ class blogController extends Controller
     public function update(Request $request,$blog)
     {
         $user_id = Auth::id();
-        $this->validate($request,[ 
-            'title'=>'required', 
-            'short_description'=>'required', 
-            'expertise_id'=>'required', 
-            'description'=>'required', 
+        $this->validate($request,[
+            'title'=>'required',
+            'short_description'=>'required',
+            'expertise_id'=>'required',
+            'description'=>'required',
 
         ]);
         try {
@@ -198,18 +198,18 @@ class blogController extends Controller
 
     public function destroy(Request $request , $id)
     {
-        
+
         $filePath = Blog::FindorFail($id);
         // Blog::FindorFail($id)->delete();
 
         $filePath = public_path("blogs").'/' . $filePath->image;
         @unlink($filePath);
-               
+
         toastr()->success('Successfully Deleted');
         return back();
-        
-        
-    }  
 
-   
+
+    }
+
+
 }

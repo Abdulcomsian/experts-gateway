@@ -45,9 +45,9 @@ Lawyer Applications
                                     <a href="{{route('user.show',$user->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a>
 
                                     <a href="{{route('user.edit',$user->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
-                                    
+
                                 </td>
-                                
+
                             </tr>
                             @endforeach
 							@else
@@ -56,6 +56,13 @@ Lawyer Applications
 		                      </tr>
 		                      @endif
                             </tbody>
+                            <tfoot>
+                            <tr>
+                                <td colspan="6s">
+                                    {{ $users->links() }}
+                                </td>
+                            </tr>
+                            </tfoot>
                             <!--end::Table body-->
                         </table>
                         <!--end::Table-->
@@ -68,5 +75,5 @@ Lawyer Applications
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection

@@ -82,6 +82,13 @@ Language
 		                      </tr>
 		                      @endif
                             </tbody>
+                            <tfoot>
+                               <tr>
+                                   <td colspan="3">
+                                       {{ $languages->links() }}
+                                   </td>
+                               </tr>
+                            </tfoot>
                             <!--end::Table body-->
                         </table>
                         <!--end::Table-->
@@ -94,5 +101,5 @@ Language
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection

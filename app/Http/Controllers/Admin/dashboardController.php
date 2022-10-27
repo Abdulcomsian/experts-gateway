@@ -34,14 +34,14 @@ class dashboardController extends Controller
     public function lawyer_applications()
     {
         $user_id = Auth::id();
-        $lawyer_profiles = LawyerProfile::where('complete','2')->orderBy('id','DESC')->get();
+        $lawyer_profiles = LawyerProfile::where('complete','2')->orderBy('id','DESC')->paginate(10);
         return view('admin.lawyer.lawyer_applications',compact('lawyer_profiles'));
     }
 
     public function users()
     {
         $user_id = Auth::id();
-        $users = Role::where('name', 'User')->first()->users()->get();
+        $users = Role::where('name', 'User')->first()->users()->paginate(10);
         return view('admin.user.index',compact('users'));
     }
 

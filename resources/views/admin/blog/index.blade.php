@@ -67,14 +67,14 @@ Blogs
                                 <td><img src="{{asset('blogs/'.$blog->image)}}" width="100px" height="100px"></td>
                                 <td>{{$blog->user->f_name}} {{$blog->user->l_name}}</td>
                                 <td>
-                                    @if($blog->status == 1) 
+                                    @if($blog->status == 1)
                                     <form action="{{ route('update-blog-status', $blog->id) }}" method="POST">
-                                        @csrf()                         
+                                        @csrf()
                                         <button type="submit" class="btn btn-success" name="status" value="0">Active</button>
-                                    </form>                    
+                                    </form>
                                     @else
                                         <form action="{{ route('update-blog-status', $blog->id) }}" method="POST">
-                                            @csrf()                             
+                                            @csrf()
                                             <button type="submit" class="btn btn-danger" name="status" value="1">Inactive</button>
                                         </form>
                                     @endif
@@ -97,9 +97,16 @@ Blogs
 							@else
 							<tr>
 		                        <td colspan="3" style="text-align: center;"><strong> No Blogs Created Yet </strong></td>
-		                      </tr>
+                            </tr>
 		                      @endif
                             </tbody>
+                            <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    {{ $blogs->links() }}
+                                </td>
+                            </tr>
+                            </tfoot>
                             <!--end::Table body-->
                         </table>
                         <!--end::Table-->
@@ -112,5 +119,5 @@ Blogs
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection

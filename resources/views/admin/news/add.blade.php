@@ -70,7 +70,7 @@ Add News
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Description</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <textarea required class="ckeditor form-control" name="description"></textarea>
+                                                    <textarea required class="ckeditor form-control" name="description">{{old('description')}}</textarea>
                                                     <div style="color:red;">{{$errors->first('description')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->
@@ -102,7 +102,7 @@ Add News
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection
 
 @section('script')

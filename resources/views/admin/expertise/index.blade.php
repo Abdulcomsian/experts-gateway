@@ -66,13 +66,14 @@ Expertise
                                 <td class="text-end">
 
                                     <!-- <a href="{{route('expertise.show',$expertise->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a> -->
-
-                                    <a href="{{route('expertise.edit',$expertise->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
-                                    <form method="POST" action="{{ route('expertise.destroy', $expertise->id) }}"  id="form_{{$expertise->id}}" >
-                                    @method('Delete')
-                                    @csrf()
-                                    <button type="submit" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-danger edit-quiz"><i class="fa fa-trash"></i></button>
-                                    </form>
+                                    <div class="btn-group">
+                                        <a href="{{route('expertise.edit',$expertise->id)}}" class="btn btn-sm bg-primary mx-1 edit-quiz"><i class="fa fa-edit"></i></a>
+                                        <form method="POST" action="{{ route('expertise.destroy', $expertise->id) }}"  id="form_{{$expertise->id}}" >
+                                        @method('Delete')
+                                        @csrf()
+                                        <button type="submit" class="btn btn-sm bg-danger mx-1 edit-quiz"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach
@@ -94,5 +95,5 @@ Expertise
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection

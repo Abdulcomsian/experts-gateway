@@ -67,9 +67,10 @@ About Us
                                 <td>{!! $about_us->description !!}</td>
                                 <td><img src="{{asset('about_us/'.$about_us->image)}}" width="100px" height="100px"></td>
                                 <td class="text-end">
-
-                                    <a href="{{route('about_us.edit',$about_us->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
-                                    <!-- <form method="POST" action="{{ route('about_us.destroy', $about_us->id) }}"  id="form_{{$about_us->id}}" >
+                                    <div class="btn-group">
+                                        <a href="{{route('about_us.edit',$about_us->id)}}" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
+                                    </div>
+                                        <!-- <form method="POST" action="{{ route('about_us.destroy', $about_us->id) }}"  id="form_{{$about_us->id}}" >
                                     @method('Delete')
                                     @csrf()
                                     <button type="submit" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-danger edit-quiz"><i class="fa fa-trash"></i></button>
@@ -94,5 +95,5 @@ About Us
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection

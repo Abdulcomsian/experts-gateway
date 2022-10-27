@@ -64,12 +64,14 @@ Services
                                 <td style="max-width: 400px">{!! $service->description !!}</td>
                                 <td><img src="{{asset('services/'.$service->image)}}" width="100px" height="100px"></td>
                                 <td class="text-end">
-                                    <a href="{{route('services.edit',$service->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
-                                    <form method="POST" action="{{ route('services.destroy', $service->id) }}"  id="form_{{$service->id}}" >
-                                    @method('Delete')
-                                    @csrf()
-                                    <button type="submit" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-danger edit-quiz"><i class="fa fa-trash"></i></button>
-                                    </form>
+                                    <div class="btn-group">
+                                        <a href="{{route('services.edit',$service->id)}}" class="btn btn-sm bg-primary edit-quiz mx-1"><i class="fa fa-edit"></i></a>
+                                        <form method="POST" action="{{ route('services.destroy', $service->id) }}"  id="form_{{$service->id}}" >
+                                        @method('Delete')
+                                        @csrf()
+                                        <button type="submit" class="btn btn-sm bg-danger edit-quiz mx-1"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach
@@ -91,5 +93,5 @@ Services
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection

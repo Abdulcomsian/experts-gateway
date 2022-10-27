@@ -41,11 +41,13 @@ Lawyer Applications
                                 <td>{{$user->country}}</td>
                                 <td>{{$user->phone}}</td>
                                 <td class="text-end">
+                                    <div class="btn-group">
 
-                                    <a href="{{route('user.show',$user->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a>
+                                        <a href="{{route('user.show',$user->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a>
 
-                                    <a href="{{route('user.edit',$user->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
+                                        <a href="{{route('user.edit',$user->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
 
+                                    </div>
                                 </td>
 
                             </tr>

@@ -86,104 +86,20 @@ Expert Gateway
             </div>
         </div>
         <div class="clientBox">
-            <!-- <ul>
-                <li>
-                    <div class="d-flex align-items-center clientDetailBox">
-                        <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                        <div class="ml-2">
-                            <p class="mb-0">jhon smith</p>
-                            <small class="text-dark-50">lawyer</small>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="d-flex align-items-center clientDetailBox">
-                        <img src="{{ asset('assets/img/client2.png') }}" alt="" class="img-fluid">
-                        <div class="ml-2">
-                            <p class="mb-0">jhon smith</p>
-                            <small class="text-dark-50">lawyer</small>
-                        </div>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="d-flex align-items-center clientDetailBox">
-                        <img src="{{ asset('assets/img/client3.png') }}" alt="" class="img-fluid">
-                        <div class="ml-2">
-                            <p class="mb-0">jhon smith</p>
-                            <small class="text-dark-50">lawyer</small>
-                        </div>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="d-flex align-items-center clientDetailBox">
-                        <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                        <div class="ml-2">
-                            <p class="mb-0">jhon smith</p>
-                            <small class="text-dark-50">lawyer</small>
-                        </div>
-
-                    </div>
-                </li>
-            </ul> -->
             <!-- Swiper -->
             <div class="swiper mySwiper profileSlide">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="d-flex align-items-center clientDetailBox">
-                            <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                            <div class="ml-2">
-                                <p class="mb-0">jhon smith</p>
-                                <small class="text-dark-50">lawyer</small>
+                    @foreach($home_sliders as $home_slider)
+                        <div class="swiper-slide">
+                            <div class="d-flex align-items-center clientDetailBox">
+                                <img src="{{ asset('home_slider/'.$home_slider->image) }}" alt="" class="img-fluid" style="object-fit: contain">
+                                <div class="ml-2">
+                                    <p class="mb-0">{{$home_slider->name}}</p>
+                                    <small class="text-dark-50">{{$home_slider->type}}</small>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="d-flex align-items-center clientDetailBox">
-                            <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                            <div class="ml-2">
-                                <p class="mb-0">jhon smith</p>
-                                <small class="text-dark-50">lawyer</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="d-flex align-items-center clientDetailBox">
-                            <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                            <div class="ml-2">
-                                <p class="mb-0">jhon smith</p>
-                                <small class="text-dark-50">lawyer</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="d-flex align-items-center clientDetailBox">
-                            <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                            <div class="ml-2">
-                                <p class="mb-0">jhon smith</p>
-                                <small class="text-dark-50">lawyer</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="d-flex align-items-center clientDetailBox">
-                            <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                            <div class="ml-2">
-                                <p class="mb-0">jhon smith</p>
-                                <small class="text-dark-50">lawyer</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="d-flex align-items-center clientDetailBox">
-                            <img src="{{ asset('assets/img/client1.png') }}" alt="" class="img-fluid">
-                            <div class="ml-2">
-                                <p class="mb-0">jhon smith</p>
-                                <small class="text-dark-50">lawyer</small>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="swiper-pagination"></div>
             </div>

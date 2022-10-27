@@ -215,6 +215,22 @@
                     </a>
                 </div>
                 <div class="menu-item">
+                    <a class="menu-link" href="{{ route('home-slider.index') }}">
+                        <span class="menu-icon">
+                                <!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
+                                <span class="svg-icon svg-icon-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                         viewBox="0 0 24 24" version="1.1">
+                                        <polygon fill="#000000" opacity="0.3" points="5 3 19 3 23 8 1 8"/>
+                                        <polygon fill="#000000" points="23 8 12 20 1 8"/>
+                                    </svg>
+                                </span>
+                            <!--end::Svg Icon-->
+                            </span>
+                        <span class="menu-title">Home Slider</span>
+                    </a>
+                </div>
+                <div class="menu-item">
                     @if(Route::is('admin.services') )
                     <a class="menu-link active" href="{{ url('/admin/services-area') }}">
                     @else
@@ -318,7 +334,7 @@
                         <span class="menu-title">Contact Us</span>
                     </a>
                 </div>
-                
+
             </div>
             <!--end::Menu-->
         </div>

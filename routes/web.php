@@ -130,6 +130,8 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
     Route::get('/edit-fixed-service/{id}', [App\Http\Controllers\Admin\FixedServiceController::class, 'edit'])->name('admin.edit-fixed-service');
     Route::put('/update_fixed_service/{id}', [App\Http\Controllers\Admin\FixedServiceController::class, 'update'])->name('admin.update-fixed-service');
 
+    //home slider
+    Route::resource('home-slider', App\Http\Controllers\Admin\HomeSliderController::class);
 });
 
 /*****************User ROUTES*******************/

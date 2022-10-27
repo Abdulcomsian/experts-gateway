@@ -81,15 +81,15 @@ Contact Us
                                 <td>{{$contact_us->twitter_link}}</td>
                                 <td>{{$contact_us->linkedin_link}}</td> -->
                                 <td class="text-end">
-
-                                    <a href="{{route('contact_us.show',$contact_us->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a>
-
-                                    <a href="{{route('contact_us.edit',$contact_us->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
-                                    <form method="POST" action="{{ route('contact_us.destroy', $contact_us->id) }}"  id="form_{{$contact_us->id}}" >
-                                    @method('Delete')
-                                    @csrf()
-                                    <button type="submit" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-danger edit-quiz"><i class="fa fa-trash"></i></button>
-                                    </form>
+                                    <div class="btn-group">
+                                        <a href="{{route('contact_us.show',$contact_us->id)}}" class="btn btn-sm bg-warning edit-quiz mx-1"><i class="fa fa-eye"></i></a>
+                                        <a href="{{route('contact_us.edit',$contact_us->id)}}" class="btn btn-sm bg-primary edit-quiz mx-1"><i class="fa fa-edit"></i></a>
+                                        <form method="POST" action="{{ route('contact_us.destroy', $contact_us->id) }}"  id="form_{{$contact_us->id}}" >
+                                        @method('Delete')
+                                        @csrf()
+                                        <button type="submit" class="btn btn-sm bg-danger edit-quiz mx-1"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
 							@else
@@ -110,5 +110,5 @@ Contact Us
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection

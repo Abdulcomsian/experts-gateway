@@ -43,28 +43,26 @@ Fixed Price Service
                                 <td>{{$fixed_service->expertise->name}}</td>
 
                                 <td>
-                                    @if($fixed_service->status == 1) 
-                                    <form action="{{ route('update-service-status', $fixed_service->id) }}" method="POST">
-                                        @csrf()                         
-                                        <button type="submit" class="btn btn-success" name="status" value="0">Approved</button>
-                                    </form>                    
-                                    @elseif($fixed_service->status == 0)
-                                        <form action="{{ route('update-service-status', $fixed_service->id) }}" method="POST">
-                                            @csrf()                             
-                                            <button type="submit" class="btn btn-danger" name="status" value="1">Pending</button>
+                                        @if($fixed_service->status == 1)
+                                            <form action="{{ route('update-service-status', $fixed_service->id) }}" method="POST">
+                                            @csrf()
+                                            <button type="submit" class="btn btn-success mx-1" name="status" value="0">Approved</button>
                                         </form>
-                                    @endif
-
-
+                                        @elseif($fixed_service->status == 0)
+                                            <form action="{{ route('update-service-status', $fixed_service->id) }}" method="POST">
+                                                @csrf()
+                                                <button type="submit" class="btn btn-danger mx-1" name="status" value="1">Pending</button>
+                                            </form>
+                                        @endif
                                 </td>
                                 <td class="text-end">
+                                    <div class="btn-group">
+                                        <a href="{{route('fixed_service.show',$fixed_service->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz mx-1"><i class="fa fa-eye"></i></a><br><br>
 
-                                    <a href="{{route('fixed_service.show',$fixed_service->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a><br><br>
-
-                                    <a href="{{route('admin.edit-fixed-service',$fixed_service->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
-                                    
+                                        <a href="{{route('admin.edit-fixed-service',$fixed_service->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz mx-1"><i class="fa fa-edit"></i></a>
+                                    </div>
                                 </td>
-                                
+
                             </tr>
                             @endforeach
 							@else
@@ -85,5 +83,5 @@ Fixed Price Service
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection

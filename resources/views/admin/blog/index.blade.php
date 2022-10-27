@@ -82,15 +82,16 @@ Blogs
 
                                 </td>
                                 <td class="text-end">
+                                    <div class="btn-group">
+                                        <a href="{{route('blog.show',$blog->id)}}" class="btn btn-sm btn-rounded bg-warning mx-1"><i class="fa fa-eye"></i></a>
 
-                                    <a href="{{route('blog.show',$blog->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a>
-
-                                    <a href="{{route('blog.edit',$blog->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
-                                    <form method="POST" action="{{ route('blog.destroy', $blog->id) }}"  id="form_{{$blog->id}}" >
-                                    @method('Delete')
-                                    @csrf()
-                                    <button type="submit" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-danger edit-quiz"><i class="fa fa-trash"></i></button>
-                                    </form>
+                                        <a href="{{route('blog.edit',$blog->id)}}" class="btn btn-sm btn-circle bg-primary mx-1"><i class="fa fa-edit"></i></a>
+                                        <a onclick="event.preventDefault(); document.getElementById('form_{{$blog->id}}').submit();"  class="btn btn-sm btn-circle bg-danger mx-1"><i class="fa fa-trash"></i></a>
+                                        <form method="POST" action="{{ route('blog.destroy', $blog->id) }}"  id="form_{{$blog->id}}" >
+                                            @method('Delete')
+                                            @csrf()
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach

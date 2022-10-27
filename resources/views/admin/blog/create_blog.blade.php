@@ -47,9 +47,9 @@ Dashboard
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Title</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <input type="text" class="form-control form-control-solid" name="title"  placeholder="Title" />
+                                                    <input type="text" class="form-control form-control-solid" name="title" value="{{old('title')}}"  placeholder="Title" />
                                                     <div style="color:red;">
-                                                    {{$errors->first('title')}}</div> 
+                                                    {{$errors->first('title')}}</div>
                                                     <br>
                                                 </div>
                                                 <!--end::Input group-->
@@ -73,8 +73,8 @@ Dashboard
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     <select name="expertise_id" class="form-control form-control-solid" id="expertise_id">
-                                                        @foreach($expertises as $expertise)                                              
-                                                        <option value="{{$expertise->id}}"  >{{$expertise->name}}</option>
+                                                        @foreach($expertises as $expertise)
+                                                        <option value="{{$expertise->id}}" >{{$expertise->name}}</option>
                                                         @endforeach
                                                     </select>
                                                     <div style="color:red;">{{$errors->first('expertise_id')}}</div> <br>
@@ -87,8 +87,8 @@ Dashboard
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Short Description</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <textarea name="short_description" id="short_description" class="form-control form-control-solid" cols="20" rows="5" style="border:1px solid #d9d9d9;" 
-                                                    placeholder="Short Description" ></textarea>
+                                                    <textarea name="short_description" id="short_description" class="form-control form-control-solid" cols="20" rows="5" style="border:1px solid #d9d9d9;"
+                                                    placeholder="Short Description" >{{old('short_description')}}</textarea>
                                                     <div style="color:red;">{{$errors->first('short_description')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->
@@ -99,7 +99,7 @@ Dashboard
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Description</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
-                                                    <textarea class="ckeditor form-control" name="description"></textarea>
+                                                    <textarea class="ckeditor form-control" name="description">{{old('description')}}</textarea>
                                                     <div style="color:red;">{{$errors->first('description')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->
@@ -130,7 +130,7 @@ Dashboard
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection
 
 @section('script')

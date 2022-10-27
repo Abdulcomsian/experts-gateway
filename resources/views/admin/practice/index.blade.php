@@ -60,13 +60,14 @@ Practice Area
                                 @foreach($PartiseArea as $area)
                                 <td>{{$area->name}}</td>
                                 <td class="text-end">
-
-                                    <a href="{{route('practice-area.edit',$area->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
-                                    <form method="POST" action="{{ route('practice-area.destroy', $area->id) }}"  id="form_{{$area->id}}" >
-                                    @method('Delete')
-                                    @csrf()
-                                    <button type="submit" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-danger edit-quiz"><i class="fa fa-trash"></i></button>
-                                    </form>
+                                    <div class="btn-group">
+                                        <a href="{{route('practice-area.edit',$area->id)}}" class="btn btn-sm bg-primary edit-quiz mx-1"><i class="fa fa-edit"></i></a>
+                                        <form method="POST" action="{{ route('practice-area.destroy', $area->id) }}"  id="form_{{$area->id}}" >
+                                        @method('Delete')
+                                        @csrf()
+                                        <button type="submit" class="btn btn-sm bg-danger edit-quiz mx-1"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach
@@ -88,5 +89,5 @@ Practice Area
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection

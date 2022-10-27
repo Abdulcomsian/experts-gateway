@@ -198,13 +198,14 @@ class blogController extends Controller
 
     public function destroy(Request $request , $id)
     {
-
-        $filePath = Blog::FindorFail($id);
+        $blog = Blog::findorfail($id);
         // Blog::FindorFail($id)->delete();
-
-        $filePath = public_path("blogs").'/' . $filePath->image;
-        @unlink($filePath);
-
+        if($blog->image)
+        {
+            $filePath = public_path("blogs").'/' . $blog->image;
+            @unlink($filePath);
+        }
+        $blog->delete();
         toastr()->success('Successfully Deleted');
         return back();
 

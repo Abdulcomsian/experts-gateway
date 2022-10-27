@@ -18,6 +18,7 @@ use App\Models\LawyersHasEducation;
 use App\Models\LawyersHasMembership;
 use App\Models\Country;
 use App\Models\PartiseArea;
+use App\Models\HomeSlider;
 use App\Models\Service;
 use Spatie\Permission\Models\Role;
 use DB;
@@ -34,7 +35,8 @@ class FrontendController extends Controller
         $lawyers = User::with('lawyer_profile')->whereHas('roles', function($q){ $q->where('name', 'Lawyer'); } )->where('status',1)->get();
         $services = Service::latest()->take(10)->get();
         $countries=Country::get();
-        return view('welcome' , compact('services','contact_us','fixed_services','news','lawyers','educations','countries','PartiseArea'));
+        $home_sliders=HomeSlider::get();
+        return view('welcome' , compact('home_sliders','services','contact_us','fixed_services','news','lawyers','educations','countries','PartiseArea'));
     }
 
     public function about_us()

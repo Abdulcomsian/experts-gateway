@@ -2,11 +2,10 @@
 @push('styles')
 
 @endpush
-@section('content') 
-
+@section('content')
 <main>
     <div class="readyToStart">
-        <h4 class="commonHeading">Ready to Start Your Journey?</h4>
+        {{--<h4 class="commonHeading">Ready to Start Your Journey?</h4>
         <div class="formDiv">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
@@ -45,12 +44,31 @@
                 <div class="btnDiv">
                     <button class="formBtn" style="cursor: pointer;">Sign Up Now</button>
                 </div>
-                
+
             </form>
-        </div>
+        </div>--}}
+        <div id="signup-embed"></div>
+        <script>
+            var o_signup_options = {
+                "id": "Outseta",
+                "domain": "experts-gateway.outseta.com",
+                "load": "auth",
+                "auth": {
+                    "widgetMode": "register",
+                    "planFamilyUid": "A9345RW0",
+                    "skipPlanOptions": true,
+                    "id": "signup_embed",
+                    "mode": "embed",
+                    "selector": "#signup-embed"
+                }
+            };
+        </script>
+        <script src="https://cdn.outseta.com/outseta.min.js"
+                data-options="o_signup_options">
+        </script>
     </div>
 </main>
-    
+
 @endsection
 
 @section('js')

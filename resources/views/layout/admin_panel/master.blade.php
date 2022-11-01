@@ -24,16 +24,22 @@ License: For each use you must have a valid license purchased only from above li
     <!--end::Fonts-->
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
     <link href="{{asset('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/css/styles.css')}}" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
-
+    <script>
+        var o_options = {
+            domain: 'experts-gateway.outseta.com'
+        };
+    </script>
+    <script src="https://cdn.outseta.com/outseta.min.js"
+            data-options="o_options">
+    </script>
     {{-- Page Specific Styles        --}}
     @yield('css')
     @stack('styles')
-
 </head>
 <!--end::Head-->
 <!--begin::Body-->

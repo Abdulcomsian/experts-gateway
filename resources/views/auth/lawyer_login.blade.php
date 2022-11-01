@@ -1,14 +1,37 @@
 @extends('layout.loginlayout')
 
-@section('content') 
-
+@section('content')
 <main>
     <div class="mainBanner registerBanner">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="bannerLeft registerAuthBox">
-                        <p>Lawyer Login</p>
+                        <div id="login-embed"></div>
+                        <script>
+                            var o_login_options = {
+                                "id": "Outseta",
+                                "domain": "experts-gateway.outseta.com",
+                                "load": "auth",
+                                "auth": {
+                                    "widgetMode": "login",
+                                    "id": "login_embed",
+                                    "mode": "embed",
+                                    "selector": "#login-embed"
+                                }
+                            };
+                        </script>
+                        <script src="https://cdn.outseta.com/outseta.min.js"
+                                data-options="o_login_options">
+                        </script>
+                        <div class="line">
+                            <img src="{{asset('assets/img/line.png') }}" alt="" class="img-fluid">
+                        </div>
+                        <div class="applyForMembership">
+                            <span>Want to register as a Lawyer?</span>
+                            <a href="{{ route('lawyer-register') }}"><button style="cursor: pointer;">Apply</button></a>
+                        </div>
+                        {{--<p>Lawyer Login</p>
                         <div class="formDiv">
                             <form method="POST" action="{{ route('login') }}">
                             @csrf
@@ -43,12 +66,12 @@
                                         @endif
                                     </div>
                                     <div class="col-lg-6 text-right">
-                                        
+
                                         <button type="submit" class="formBtn" style="cursor: pointer;margin: 0px;">
                                             {{ __('Login') }}
                                         </button>
                                     </div>
-                                    
+
                                 </div>
                             </form>
                         </div>
@@ -58,7 +81,8 @@
                         <div class="applyForMembership">
                             <span>Want to register as a Lawyer?</span>
                             <a href="{{ route('lawyer-register') }}"><button style="cursor: pointer;">Apply</button></a>
-                        </div>
+                        </div>--}}
+
                     </div>
 
                 </div>
@@ -129,7 +153,7 @@
         </div>
     </div>
 </main>
-    
+
 @endsection
 
 @section('js')

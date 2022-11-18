@@ -23,7 +23,7 @@ Dashboard
                                         <img src="{{asset('lawyer_profile/'.$lawyer_profile->image)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
                                     </div>
                                     <div class="userProfile">
-                                        <h4>{{$lawyer->f_name}} {{$lawyer->l_name}}</h4>
+                                        <h4>{{$lawyer->f_name ?? ''}} {{$lawyer->l_name ?? ''}}</h4>
                                         {{-- <p>{{$lawyer_profile->title}}</p> --}}
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@ Dashboard
                                             <div class="imgDiv">
                                                 <img src="../assets/img/locationIcon.png" alt="" class="img-fluid">
                                             </div>
-                                            <span>{{$lawyer_profile->address}} , {{$country->name}} , {{$state->name}} , {{$city->name}}</span>
+                                            <span>{{$lawyer_profile->address ?? ''}} , {{$country->name ?? ''}} , {{$state->name ?? ''}} , {{$city->name ?? ''}}</span>
                                         </li>
                                         <li style="width: 30%;">
                                             <div class="imgDiv">
@@ -174,11 +174,11 @@ Dashboard
                                     </li>
                                     <li>
                                         <p>LOCATION <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>You have increased your chance of being found by users in {{$city->name}}, {{$country->name}}</span>
+                                        <span>You have increased your chance of being found by users in {{$city->name ?? ''}}, {{$country->name ?? ''}}</span>
                                     </li>
                                     <li>
                                         <p>LANGUAGE <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>You have increased your chance of being found by users who speak 
+                                        <span>You have increased your chance of being found by users who speak
                                             @foreach($lawyer_language as $language)
                                                 {{$language->language->name}}
                                                 @if(!($loop->last))
@@ -189,7 +189,7 @@ Dashboard
                                     </li>
                                     <li>
                                         <p>EDUCATION <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>You specified 
+                                        <span>You specified
                                             <b>
                                                 “@foreach($lawyer_educations as $education)
                                                     {{$education->education->education_name}}

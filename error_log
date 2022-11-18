@@ -1,0 +1,2 @@
+[01-Nov-2022 11:29:39 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 4096 bytes) in /home/portfolio/public_html/expert/database/seeders/CitiesTableSeeder.php on line 19937
+[01-Nov-2022 11:29:39 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 32768 bytes) in /home/portfolio/public_html/expert/vendor/laravel/framework/src/Illuminate/Auth/SessionGuard.php on line 492

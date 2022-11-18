@@ -9,7 +9,7 @@
                 </span>
                 <div class="dropDownMenu">
                     <ul>
-                        @if(Auth::user()->f_name)
+                        @if(Auth::user())
                         <li>
                             <span>{{ Auth::user()->f_name }}</span>
                         </li>
@@ -20,6 +20,12 @@
                                 <a href="./order/index.html">My Orders</a>
                             </span>
                         </li> -->
+                        @if(Auth::user()->hasRole('Lawyer'))
+                            <li>
+                                <img src="{{ asset('assets/img/myOrder.png') }}" alt="" class="img-fluid">
+                                <span><a href="{{ route('lawyer.dashboard') }}">My Dashboard</a></span>
+                            </li>
+                        @endif
                         <li>
                             <img src="{{ asset('assets/img/loginIcon.png') }}" alt="" class="img-fluid">
                             <span>
@@ -78,7 +84,7 @@
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('services') }}">Services</a>
-                        
+
                     </li> -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Apply</a>

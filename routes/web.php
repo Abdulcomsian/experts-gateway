@@ -43,6 +43,8 @@ Route::get('/lawyer-login', function () {
 })->name('lawyer-login');
 
 Route::get('/about-us', [App\Http\Controllers\FrontendController::class, 'about_us'])->name('about-us');
+Route::get('/loader', [App\Http\Controllers\FrontendController::class, 'loader'])->name('loader');
+Route::post('/lawyer-login', [App\Http\Controllers\FrontendController::class, 'lawyer_login'])->name('lawyer_login');
 
 Route::get('/all-blogs', [App\Http\Controllers\blogController::class, 'blogs'])->name('all-blogs');
 Route::get('/all-blog/{id}', [App\Http\Controllers\blogController::class, 'client_blog'])->name('all-blog');

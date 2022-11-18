@@ -1,6 +1,6 @@
 @extends('layout.lawyerlayout')
 @section('title')
-Dashboard
+    Dashboard
 @endsection
 @section('content')
     <main>
@@ -63,9 +63,17 @@ Dashboard
                                 </div>
                                 <div class="editProfileContent">
                                     <h4>profile</h4>
-                                    <p>Aaron Bourke is a Dubai-based lawyer who has gained exceptional knowledge and proficiency in Employment law, Real Estate, Succession, Commercial & Corporate laws. </p>
-                                    <p>He has gained expertise in legal drafting, vetting and reviewing commercial contracts, especially agreements for construction and installation companies wills drafting in all three jurisdictions in UAE, with specific attention to probate procedures. He has effectively held a number of negotiation and settlement meetings for both individuals and corporate clients.</p>
-                                    <p>After obtaining a master’s degree in Corporate law and taxation she joined as an Assistant Professor in one of the premium law schools in India and dealt successfully with various aspects of taxation. </p>
+                                    <p>Aaron Bourke is a Dubai-based lawyer who has gained exceptional knowledge and
+                                        proficiency in Employment law, Real Estate, Succession, Commercial & Corporate
+                                        laws. </p>
+                                    <p>He has gained expertise in legal drafting, vetting and reviewing commercial
+                                        contracts, especially agreements for construction and installation companies
+                                        wills drafting in all three jurisdictions in UAE, with specific attention to
+                                        probate procedures. He has effectively held a number of negotiation and
+                                        settlement meetings for both individuals and corporate clients.</p>
+                                    <p>After obtaining a master’s degree in Corporate law and taxation she joined as an
+                                        Assistant Professor in one of the premium law schools in India and dealt
+                                        successfully with various aspects of taxation. </p>
                                     <p>Currently, he is associated with King & Wood Mallesons</p>
                                     <div class="line">
                                         <img src="../assets/img/line.png" alt="" class="img-fluid">
@@ -86,8 +94,28 @@ Dashboard
                             </div>
                         </div>
                     </div>
+{{--                    <div class="col-lg-12">--}}
+{{--                        <div id="profile-embed"></div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
     </main>
+@endsection
+@section('script')
+    <script>
+        var o_profile_options = {
+            "id": "Outseta",
+            "domain": "experts-gateway.outseta.com",
+            "load": "profile",
+            "profile": {
+                "id": "profile_embed",
+                "mode": "embed",
+                "selector": "#profile-embed"
+            }
+        };
+    </script>
+    <script src="https://cdn.outseta.com/outseta.min.js"
+            data-options="o_profile_options">
+    </script>
 @endsection

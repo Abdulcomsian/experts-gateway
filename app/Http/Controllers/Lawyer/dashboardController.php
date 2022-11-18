@@ -13,9 +13,9 @@ use App\Models\LawyerProfile;
 use App\Models\LawyersHasEducation;
 use App\Models\Education;
 use App\Models\Membership;
-use App\Models\Country;  
-use App\Models\State;  
-use App\Models\City;  
+use App\Models\Country;
+use App\Models\State;
+use App\Models\City;
 use App\Models\LawyersHasMembership;
 use App\Models\LawyersHasLanguage;
 use Validator;
@@ -34,7 +34,6 @@ class dashboardController extends Controller
 
     public function profile()
     {
-
         $user_id = Auth::id();
         $lawyer = User::where('id',$user_id)->first();
         $languages = Language::get();
@@ -49,14 +48,13 @@ class dashboardController extends Controller
         $city = null;
         if($lawyer_profile)
         {
-
             $city = City::where('id',$lawyer_profile->city)->first();
             $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
             $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
             $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
             if($lawyer->status == 0)
             {
-               return view('lawyer.build_profile',compact('countries','lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','languages','educations','memberships','lawyer_profile','city','states','countries')); 
+               return view('lawyer.build_profile',compact('countries','lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','languages','educations','memberships','lawyer_profile','city','states','countries'));
             }
             elseif($lawyer->status == 1)
             {
@@ -68,24 +66,22 @@ class dashboardController extends Controller
 
         }
         else{
-
             if($lawyer->status == 0)
             {
 
-               return view('lawyer.build_profile',compact('lawyer','countries','languages','educations','memberships','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','states','countries')); 
+               return view('lawyer.build_profile',compact('lawyer','countries','languages','educations','memberships','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','states','countries'));
             }
             elseif($lawyer->status == 2)
             {
-                 
                 return view('lawyer.profile',compact('lawyer'));
             }
         }
-        
+
     }
 
     public function profile_store_1(Request $request)
     {
-    //    dd($request->all()); 
+    //    dd($request->all());
         $messages = [
             'f_name.required' => 'Please Enter First Name',
             'l_name.required' => 'Please Enter Last Name',
@@ -171,8 +167,8 @@ class dashboardController extends Controller
             $user->save();
             return response()->json(['success'=>'Profile Created Successfully','complete'=>$lawyer_profile->complete]);
         }
-        
-            
+
+
     }
 
     public function profile_store_2(Request $request)
@@ -272,11 +268,11 @@ class dashboardController extends Controller
 
             return response()->json(['success'=>'Profile Created Successfully','complete'=>$lawyer_profile->complete]);
 
-            
+
         }
     }
 
-    
+
     protected function errorResponse($message = null, $code, $redirectURL = null)
     {
         return response()->json([
@@ -301,7 +297,7 @@ class dashboardController extends Controller
         ];
 
         // dd($details);
-   
+
     \Mail::to('admin@gmail.com')->send(new \App\Mail\ApprovalMail($details));
 
         toastSuccess('Successfully Updated');
@@ -328,19 +324,19 @@ class dashboardController extends Controller
     {
         // dd($request->all(),$id);
         $user_id = Auth::id();
-        $this->validate($request,[ 
-            'f_name'=>'required', 
-            'l_name'=>'required', 
-            // 'title'=>'required', 
-            'description'=>'required', 
-            'address'=>'required', 
-            // 'expertise_id'=>'required', 
-            'language_id'=>'required', 
-            'education_id'=>'required', 
-            'membership_id'=>'required', 
-            'country'=>'required', 
-            'state'=>'required', 
-            'city'=>'required', 
+        $this->validate($request,[
+            'f_name'=>'required',
+            'l_name'=>'required',
+            // 'title'=>'required',
+            'description'=>'required',
+            'address'=>'required',
+            // 'expertise_id'=>'required',
+            'language_id'=>'required',
+            'education_id'=>'required',
+            'membership_id'=>'required',
+            'country'=>'required',
+            'state'=>'required',
+            'city'=>'required',
 
         ]);
         $lawyer= LawyerProfile::where('id',$id)->first();
@@ -378,7 +374,7 @@ class dashboardController extends Controller
         LawyersHasLanguage::where('lawyer_profile_id',$id)->delete();
         LawyersHasEducation::where('lawyer_profile_id',$id)->delete();
         LawyersHasMembership::where('lawyer_profile_id',$id)->delete();
-        
+
         foreach($request->language_id as $language)
         {
             $lawyer_language = new LawyersHasLanguage;
@@ -402,7 +398,7 @@ class dashboardController extends Controller
             $lawyer_membership->lawyer_profile_id = $lawyer->id;
             $lawyer_membership->save();
         }
-        
+
 
         toastSuccess('Successfully Updated');
         return redirect('lawyer/profile');
@@ -421,7 +417,7 @@ class dashboardController extends Controller
         $user_id = Auth::id();
         $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
         $lawyer = User::where('id',$user_id)->first();
-        return view('lawyer.earning',compact('lawyer_profile','lawyer'));   
+        return view('lawyer.earning',compact('lawyer_profile','lawyer'));
     }
 
     public function public_question()
@@ -429,7 +425,7 @@ class dashboardController extends Controller
         $user_id = Auth::id();
         $lawyer_profile= LawyerProfile::where('user_id',$user_id)->first();
         $lawyer = User::where('id',$user_id)->first();
-        return view('lawyer.public_question',compact('lawyer_profile','lawyer'));   
+        return view('lawyer.public_question',compact('lawyer_profile','lawyer'));
     }
 
     public function insights()
@@ -446,6 +442,6 @@ class dashboardController extends Controller
         {
             $blogs = 0;
         }
-        return view('lawyer.insights',compact('lawyer_profile','lawyer','blogs','latest_blog'));   
+        return view('lawyer.insights',compact('lawyer_profile','lawyer','blogs','latest_blog'));
     }
 }

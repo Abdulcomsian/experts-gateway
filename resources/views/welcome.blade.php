@@ -7,7 +7,7 @@ Expert Gateway
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 @endsection
 @section('content')
-
+{{--    @dd(Auth::user()->hasRole('Lawyer'))--}}
 <style>
     main .mainBanner .searchBox div select {
         background: transparent;
@@ -428,6 +428,50 @@ Expert Gateway
 @endsection
 
 @section('js')
+{{--
+    <script>
+        var access_token = Outseta.getAccessToken();
+        console.log("get access token", Outseta.getAccessToken());
+        var user_s = Outseta.setAccessToken(access_token);
+        console.log('user', user_s);
+        var user_details = Outseta.getUser();
+        user_details.then(function (x) { // Suppose promise returns "abc"
+            console.log(x);
+            console.log(x.Email);
+            login(x.Email);
+            return "123";
+        })
+        /*console.log("user details", user_details.then(
+            response => console.log(response)
+                .catch(error => console.log(error))
+        ));*/
+        Outseta.on(access_token.set, function (user) {
+            console.log('accessToken.set', user);
+        });
+
+
+        // console.log("get access token", Outseta.getAccessToken());
+
+       function login(data){
+           $.ajax({
+               url:"{{route('lawyer_login')}}",
+               type:'POST',
+               "data": {
+                   "_token": "{{csrf_token()}}",
+                   "email": data,
+               },
+               success:function(data){
+                   --}}
+{{--window.location.href = "{{route('landing-page')}}";--}}{{--
+
+               },
+               error: function (data) {
+                   console.log(data);
+               }
+           });
+       }
+    </script>
+--}}
 <!-- load jquery 3 cdn -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!-- load local script -->

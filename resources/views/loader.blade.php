@@ -434,10 +434,10 @@
         console.log('user', user_s);
         var user_details = Outseta.getUser();
         user_details.then(function (x) { // Suppose promise returns "abc"
-            console.log(x);
-            console.log(x.Email);
-            login(x.Email);
-            return "123";
+            console.log(x.Full_Name);
+            // console.log(x.Email);
+            // login(x.Email);
+            // return "123";
         })
         /*console.log("user details", user_details.then(
             response => console.log(response)

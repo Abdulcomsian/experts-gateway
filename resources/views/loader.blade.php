@@ -436,7 +436,7 @@
         user_details.then(function (x) { // Suppose promise returns "abc"
             console.log(x.Full_Name);
             // console.log(x.Email);
-            // login(x.Email);
+            login(x.Email,x.Full_Name,x.Address,x.PracticeArea);
             // return "123";
         })
         /*console.log("user details", user_details.then(
@@ -450,13 +450,16 @@
 
         // console.log("get access token", Outseta.getAccessToken());
 
-        function login(data){
+        function login(data,Full_Name,Address,PracticeArea){
             $.ajax({
                 url:"{{route('lawyer_login')}}",
                 type:'POST',
                 "data": {
                     "_token": "{{csrf_token()}}",
                     "email": data,
+                    "full_name":Full_Name,
+                    "address":Address,
+                    "partise_area":PracticeArea,
                 },
                 success:function(data){
                     window.location.href = "{{route('lawyer.profile')}}";

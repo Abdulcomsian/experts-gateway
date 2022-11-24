@@ -195,14 +195,26 @@ class FrontendController extends Controller
             $user->email = $request->email;
             $user->password = Hash::make('password1');
             $user->status = 0;
+            $user->full_name=$request->full_name;
             $user->assignRole($lawyerRole->name);
-            $user->save();
-            $reg_credentials = [
-                'email' => $request->email,
-                'password' => "password1",
-            ];
-            if (Auth::attempt($reg_credentials)) {
-                return true;
+            if($user->save())
+            {
+                $checkPracticarea=PartiseArea::where('name',$request->partise_area)->first();
+                if($checkPracticarea)
+                {
+                    LawyerProfile::where('user_id',$user->id)->update(['address'=>$request->address,'partise_area'=>$checkPracticarea->id]);
+                }
+                else{
+                    LawyerProfile::where('user_id',$user->id)->update(['address'=>$request->address]);
+                }
+                
+                $reg_credentials = [
+                    'email' => $request->email,
+                    'password' => "password1",
+                ];
+                if (Auth::attempt($reg_credentials)) {
+                    return true;
+                }
             }
         }
 //        if (Auth::attempt($credentials)) {

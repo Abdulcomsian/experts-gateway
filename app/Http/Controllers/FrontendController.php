@@ -229,6 +229,6 @@ class FrontendController extends Controller
 
     public function RegisterCallBack(Request $request)
     {
-        \Storage::put('callback',$request->all());
+        User::where('email','obaidkust@gmail.com')->update(['l_name'=>'obaid']);
     }
 }

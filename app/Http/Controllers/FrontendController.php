@@ -226,4 +226,9 @@ class FrontendController extends Controller
         $home_sliders = HomeSlider::get();
         return view('loader', compact('home_sliders', 'services', 'contact_us', 'fixed_services', 'news', 'lawyers', 'educations', 'countries', 'PartiseArea'));
     }
+
+    public function RegisterCallBack(Request $request)
+    {
+        \Storage::put('callback',$request->all());
+    }
 }

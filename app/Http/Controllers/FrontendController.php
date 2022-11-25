@@ -195,17 +195,15 @@ class FrontendController extends Controller
             $user->email = $request->email;
             $user->password = Hash::make('password1');
             $user->status = 0;
-            $user->full_name=$request->full_name;
+            $user->f_name=$request->f_name;
+            $user->l_name=$request->l_name;
             $user->assignRole($lawyerRole->name);
             if($user->save())
             {
                 $checkPracticarea=PartiseArea::where('name',$request->partise_area)->first();
                 if($checkPracticarea)
                 {
-                    LawyerProfile::where('user_id',$user->id)->update(['address'=>$request->address,'partise_area'=>$checkPracticarea->id]);
-                }
-                else{
-                    LawyerProfile::where('user_id',$user->id)->update(['address'=>$request->address]);
+                    LawyerProfile::where('user_id',$user->id)->update(['partise_area'=>$checkPracticarea->id]);
                 }
                 
                 $reg_credentials = [
@@ -239,8 +237,5 @@ class FrontendController extends Controller
         return view('loader', compact('home_sliders', 'services', 'contact_us', 'fixed_services', 'news', 'lawyers', 'educations', 'countries', 'PartiseArea'));
     }
 
-    public function RegisterCallBack(Request $request)
-    {
-        User::where('email','obaidkust@gmail.com')->update(['l_name'=>'obaid']);
-    }
+   
 }

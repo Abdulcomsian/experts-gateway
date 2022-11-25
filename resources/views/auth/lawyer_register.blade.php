@@ -1,6 +1,8 @@
 @extends('layout.registerlayout')
 @push('styles')
-
+<style type="text/css">
+   
+</style>
 @endpush
 @section('content')
 <main>

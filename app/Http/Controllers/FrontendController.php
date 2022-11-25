@@ -237,5 +237,12 @@ class FrontendController extends Controller
         return view('loader', compact('home_sliders', 'services', 'contact_us', 'fixed_services', 'news', 'lawyers', 'educations', 'countries', 'PartiseArea'));
     }
 
+
+    //thank you after successfull regsiter
+    public function ThankYou()
+    {
+        return view('thankyou');
+    }
+
    
 }

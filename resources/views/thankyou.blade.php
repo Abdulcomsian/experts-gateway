@@ -389,7 +389,7 @@ svg {
         <img src="https://assets.website-files.com/5fb73a40b459b8605103611a/5fdb70b4ff7820da2f76e1a5_outseta-logomark.svg" loading="lazy" width="48" alt="" class="margin-bottom-6">
         <h3 class="text-color-white margin-bottom-12">Great! Now check your inbox.</h3>
         <div class="text-medium margin-bottom-6 w-richtext">
-            <p>We just sent you an email to complete the sign-up process &amp; set your password. Please check your spam folder if you haven’t received it within a few minutes.</p><p>Need some help? Shoot us a note at support@expertsgateay.com. We're here to help!</p></div>
+            <p>We just sent you an email to complete the sign-up process &amp; set your password. Please check your spam folder if you haven’t received it within a few minutes.</p><p>Need some help? Shoot us a note at support@expertsgateway.com. We're here to help!</p></div>
 </div>
 </div>
 </body>

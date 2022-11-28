@@ -20,6 +20,7 @@ use App\Models\Country;
 use App\Models\PartiseArea;
 use App\Models\HomeSlider;
 use App\Models\Service;
+use App\Models\HomeNumber;
 use Spatie\Permission\Models\Role;
 use DB;
 use Auth;
@@ -40,7 +41,8 @@ class FrontendController extends Controller
         $services = Service::latest()->take(10)->get();
         $countries = Country::get();
         $home_sliders = HomeSlider::get();
-        return view('welcome', compact('home_sliders', 'services', 'contact_us', 'fixed_services', 'news', 'lawyers', 'educations', 'countries', 'PartiseArea'));
+        $home_numbers=HomeNumber::first();
+        return view('welcome', compact('home_sliders', 'services', 'contact_us', 'fixed_services', 'news', 'lawyers', 'educations', 'countries', 'PartiseArea','home_numbers'));
     }
 
     public function about_us()
@@ -50,7 +52,8 @@ class FrontendController extends Controller
         $news = News::latest()->take(10)->get();
         $services = Service::latest()->take(10)->get();
         $fixed_services = FixedService::where('status', 1)->get();
-        return view('frontend.about_us', compact('about_us', 'contact_us', 'news', 'fixed_services', 'services'));
+        $home_numbers=HomeNumber::first();
+        return view('frontend.about_us', compact('about_us', 'contact_us', 'news', 'fixed_services', 'services','home_numbers'));
     }
 
     public function experts(Request $request)

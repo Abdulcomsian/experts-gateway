@@ -135,6 +135,9 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 
     //home slider
     Route::resource('home-slider', App\Http\Controllers\Admin\HomeSliderController::class);
+    //home page number rolling up
+    Route::resource('home-number', App\Http\Controllers\Admin\HomeNumberController::class);
+
 });
 
 /*****************User ROUTES*******************/

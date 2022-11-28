@@ -170,25 +170,25 @@ Expert Gateway
                     <div class="multiBox"  id="counters_1">
                         <div class="">
                             <div class="commonBox" >
-                                <h2><span class="counter" data-TargetNum="10"></span>K+</h2>
+                                <h2><span class="counter" data-TargetNum="{{$home_numbers->active_members ?? 10}}"></span>K+</h2>
                                 <p>Active Members</p>
                             </div>
                             <div class="commonBox" id="counters_2">
-                                <h2 class="counter" data-TargetNum="10"></h2>
+                                <h2 class="counter" data-TargetNum="{{$home_numbers->years_of_excellence ?? 10}}"></h2>
                                 <p>Years of excellence</p>
                             </div>
                             <div class="commonBox" id="counters_3">
-                                <h2 class="counter" data-TargetNum="150">150</h2>
+                                <h2 class="counter" data-TargetNum="{{$home_numbers->key_countries ?? 150}}">150</h2>
                                 <p>Key countries</p>
                             </div>
                         </div>
                         <div style="margin-left: 30px;">
                             <div class="commonBox" id="counters_4">
-                                <h2><span  class="counter" data-TargetNum="10">10</span>%</h2>
+                                <h2><span  class="counter" data-TargetNum="{{$home_numbers->trust_rating ?? 10}}">10</span>%</h2>
                                 <p>Trust rating</p>
                             </div>
                             <div class="commonBox"  id="counters_5">
-                                <h2 class="counter" data-TargetNum="200">200</h2>
+                                <h2 class="counter" data-TargetNum="{{$home_numbers->areas_of_expertise ?? 200}}">200</h2>
                                 <p>Areas of expertise</p>
                             </div>
                         </div>

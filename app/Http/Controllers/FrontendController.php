@@ -200,6 +200,7 @@ class FrontendController extends Controller
             $user->status = 0;
             $user->f_name=$request->f_name;
             $user->l_name=$request->l_name;
+            $user->country=$request->country;
             $user->assignRole($lawyerRole->name);
             if($user->save())
             {

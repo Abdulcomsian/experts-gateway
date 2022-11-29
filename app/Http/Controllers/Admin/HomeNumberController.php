@@ -50,7 +50,7 @@ class HomeNumberController extends Controller
             $all_inputs=$request->except('_token');
             $home_number = HomeNumber::create($all_inputs);
             Session::flash('success', 'Successfully Added');
-            return redirect()->back();
+            return redirect('admin/home-number');
         } catch (\Exception $exception) {
             Session::flash('error', $exception->getMessage());
             return Redirect::back();

@@ -212,18 +212,18 @@ Dashboard
                                     </li>
                                     <li>
                                         <p>PRIMARY PRACTICE AREA <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>You specified <b>“{{ $lawyer_profile->partise_area_3->name }}"</b> as your primary practice area</span>
+                                        <span>You specified <b>“{{ $lawyer_profile->partise_area_3->name ?? '' }}"</b> as your primary practice area</span>
                                     </li>
                                     @if($lawyer_profile->secondary_partise_area != null)
                                     <li>
                                         <p style="color: #ED2456;">SECONDARY PRACTICE AREA <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>"{{ $lawyer_profile->partise_area_1->name }}" is  secondary practice area that will increase you changes of getting hired by 3x</span>
+                                        <span>"{{ $lawyer_profile->partise_area_1->name ?? '' }}" is  secondary practice area that will increase you changes of getting hired by 3x</span>
                                     </li>
                                     @endif
                                     @if($lawyer_profile->third_partise_area != null)
                                     <li>
                                         <p style="color: #ED2456;">THIRD PRACTICE AREA <i class="fa fa-check" aria-hidden="true"></i></p>
-                                        <span>"{{ $lawyer_profile->partise_area_2->name }}" is secondary practice area will increase you changes of getting hired by 4x</span>
+                                        <span>"{{ $lawyer_profile->partise_area_2->name ?? '' }}" is secondary practice area will increase you changes of getting hired by 4x</span>
                                     </li>
                                     @endif
                                 </ul>

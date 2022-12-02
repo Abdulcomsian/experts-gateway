@@ -73,7 +73,7 @@ Edit Lawyer Profile
                                                 <div class="mb-5">
                                                     <select name="country" class="form-control" id="country-dropdown">
                                                         <option value="">Select Country</option>
-                                                        
+
                                                         @foreach ($countries as $country)
                                                         @if($lawyer_profile)
                                                         @if($country->id == $lawyer_profile->country)
@@ -99,7 +99,7 @@ Edit Lawyer Profile
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     <select class="form-control" name="state" class="" id="state-dropdown">
-                                                                
+
                                                         @foreach ($states as $state)
                                                         @if($lawyer_profile)
                                                         @if($state->id == $lawyer_profile->state)
@@ -180,7 +180,7 @@ Edit Lawyer Profile
                                                             <option disabled> Select Education</option>
                                                             @foreach($educations as $education)
                                                             @foreach($lawyer_educations as $l_education)
-                                                            @php 
+                                                            @php
                                                             $selected="";
                                                             if($l_education->education_id == $education->id ){
                                                                 $selected="selected";
@@ -188,7 +188,7 @@ Edit Lawyer Profile
                                                             }
                                                             @endphp
                                                             @endforeach
-                                                            <option value="{{$education->id}}" {{$selected}}>{{$education->education_name}}</option>
+                                                            <option value="{{$education->id}}" {{$selected ?? ''}}>{{$education->education_name}}</option>
                                                             @endforeach
                                                         </select>
                                                         <div style="color:red;">{{$errors->first('expertise_id')}}</div> <br>
@@ -206,7 +206,7 @@ Edit Lawyer Profile
                                                         <option disabled> Select Language</option>
                                                         @foreach($languages as $language)
                                                             @foreach($lawyer_language as $l_language)
-                                                            @php 
+                                                            @php
                                                             $selected="";
                                                             if($l_language->language_id == $language->id ){
                                                                 $selected="selected";
@@ -215,7 +215,7 @@ Edit Lawyer Profile
                                                             @endphp
                                                             @endforeach
                                                         <option value="{{$language->id}}"
-                                                            {{$selected}} >{{$language->name}}</option>
+                                                            {{$selected ?? ''}} >{{$language->name}}</option>
                                                         @endforeach
                                                     </select>
                                                     <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
@@ -260,13 +260,13 @@ Edit Lawyer Profile
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     <div class="multiSelect">
-                                                    <table class="table" id="dynamic_field">  
-                                                        <tr>  
+                                                    <table class="table" id="dynamic_field">
+                                                        <tr>
                                                             <td style="width:80%"><input type="text" name="education[]" value="{{$lawyer_profile->education}}" placeholder="Enter Education" class="form-control education_list" />
-                                                            </td>  
-                                                            <td style="width:20%;"><button style="padding: 7px !important; margin-top:2px;" type="button" name="add_edu" id="add_edu" class="btn btn-success">Add More</button></td>  
+                                                            </td>
+                                                            <td style="width:20%;"><button style="padding: 7px !important; margin-top:2px;" type="button" name="add_edu" id="add_edu" class="btn btn-success">Add More</button></td>
                                                             <div style="color:red;">{{$errors->first('education')}}</div> <br>
-                                                        </tr>  
+                                                        </tr>
                                                     </table>
                                                 </div>
                                                 <!--end::Input group-->
@@ -282,7 +282,7 @@ Edit Lawyer Profile
                                                         <option disabled> Select Language</option>
                                                         @foreach($memberships as $membership)
                                                             @foreach($lawyer_memberships as $l_membership)
-                                                            @php 
+                                                            @php
                                                             $selected="";
                                                             if($l_membership->membership_id == $membership->id ){
                                                                 $selected="selected";
@@ -291,7 +291,7 @@ Edit Lawyer Profile
                                                             @endphp
                                                             @endforeach
                                                         <option value="{{$membership->id}}"
-                                                            {{$selected}} >{{$membership->membership_name}}</option>
+                                                            {{$selected ?? ''}} >{{$membership->membership_name}}</option>
                                                         @endforeach
                                                     </select>
                                                 <!--end::Input group-->
@@ -299,7 +299,7 @@ Edit Lawyer Profile
                                             </div>
                                             <!--end::Col-->
 
-                                            
+
                                             <div class="col-lg-4 offset-md-4">
                                                 <button type="submit" class="btn btn-primary ">
                                                     Update Lawyer Profile
@@ -327,7 +327,7 @@ Edit Lawyer Profile
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection
 
 @section('script')
@@ -343,18 +343,18 @@ Edit Lawyer Profile
         type: "POST",
         data: {
         country_id: country_id,
-        _token: '{{csrf_token()}}' 
+        _token: '{{csrf_token()}}'
         },
         dataType : 'json',
         success: function(result){
-        $('#state-dropdown').html('<option value="">Select State</option>'); 
+        $('#state-dropdown').html('<option value="">Select State</option>');
         $.each(result.states,function(key,value){
         $("#state-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
         });
-        $('#city-dropdown').html('<option value="">Select State First</option>'); 
+        $('#city-dropdown').html('<option value="">Select State First</option>');
         }
         });
-        });    
+        });
         $('#state-dropdown').on('change', function() {
         var state_id = this.value;
         $("#city-dropdown").html('');
@@ -363,11 +363,11 @@ Edit Lawyer Profile
         type: "POST",
         data: {
         state_id: state_id,
-        _token: '{{csrf_token()}}' 
+        _token: '{{csrf_token()}}'
         },
         dataType : 'json',
         success: function(result){
-        $('#city-dropdown').html('<option value="">Select City</option>'); 
+        $('#city-dropdown').html('<option value="">Select City</option>');
         $.each(result.cities,function(key,value){
         $("#city-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
         });
@@ -400,36 +400,36 @@ Edit Lawyer Profile
 
     });
 
-    $(document).ready(function(){      
-      var i=1;  
+    $(document).ready(function(){
+      var i=1;
 
-      $('#add').click(function(){  
-           i++;  
-           $('#dynamic_field_membership').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="membership[]" placeholder="Enter Membership & Association Law" class="form-control membership_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
-      });  
+      $('#add').click(function(){
+           i++;
+           $('#dynamic_field_membership').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="membership[]" placeholder="Enter Membership & Association Law" class="form-control membership_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');
+      });
 
 
-      $(document).on('click', '.btn_remove', function(){  
-           var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
-      });  
+      $(document).on('click', '.btn_remove', function(){
+           var button_id = $(this).attr("id");
+           $('#row'+button_id+'').remove();
+      });
 
     });
 
-    $(document).ready(function(){      
-      var j=1;  
+    $(document).ready(function(){
+      var j=1;
 
 
-      $('#add_edu').click(function(){  
-           j++;  
-           $('#dynamic_field').append('<tr id="row'+j+'" class="dynamic-added"><td><input type="text" name="education[]" placeholder="Enter Education" class="form-control education_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+j+'" class="btn btn-danger btn_remove_edu">X</button></td></tr>');  
-      });  
+      $('#add_edu').click(function(){
+           j++;
+           $('#dynamic_field').append('<tr id="row'+j+'" class="dynamic-added"><td><input type="text" name="education[]" placeholder="Enter Education" class="form-control education_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+j+'" class="btn btn-danger btn_remove_edu">X</button></td></tr>');
+      });
 
 
-      $(document).on('click', '.btn_remove_edu', function(){  
-           var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
-      });  
+      $(document).on('click', '.btn_remove_edu', function(){
+           var button_id = $(this).attr("id");
+           $('#row'+button_id+'').remove();
+      });
 
     });
 

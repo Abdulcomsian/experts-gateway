@@ -13,6 +13,7 @@ use App\Models\LawyerProfile;
 use App\Models\LawyersHasEducation;
 use App\Models\Education;
 use App\Models\Membership;
+use App\Models\PartiseArea;
 use App\Models\Country;
 use App\Models\State;
 use App\Models\City;
@@ -45,6 +46,7 @@ class dashboardController extends Controller
         $lawyer_educations =null;
         $lawyer_memberships =null;
         $countries = Country::get();
+        $practice_areas = PartiseArea::get();
         $city = null;
         if($lawyer_profile)
         {
@@ -61,7 +63,7 @@ class dashboardController extends Controller
                 $country = Country::where('id',$lawyer_profile->country)->first();
                 $state = State::where('id',$lawyer_profile->state)->first();
                 $city = City::where('id',$lawyer_profile->city)->first();
-                return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','state','country'));
+                return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','state','country','practice_areas'));
             }
 
         }

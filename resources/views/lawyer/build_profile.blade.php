@@ -71,7 +71,7 @@ Profile building
                                     <div class="formDiv">
                                         <form id="profile-form">
                                             @csrf
-                                         
+
                                             <div class="uploadBanner">
                                                 <div class="upload_banner_img">
                                                     @if($lawyer_profile)
@@ -86,7 +86,7 @@ Profile building
                                                     <input type="file" id="b_image" name="b_image" value="{{$lawyer_profile->b_image ??'' }}" id="b_image" accept="image/*" class="upload_banner_img">
                                                     <span class="text-primary" id="b_imageName"></span>
                                                     <span class="text-danger b_image_valid"></span><br>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="tabContent">
@@ -189,7 +189,7 @@ Profile building
                                                                 {{$selected="";}}
                                                                 @foreach($languages as $language)
                                                                 @foreach($lawyer_language as $l_language)
-                                                                @php 
+                                                                @php
                                                                 $selected="";
                                                                 if($l_language->language_id == $language->id ){
                                                                     $selected="selected";
@@ -215,7 +215,7 @@ Profile building
                                                             <label for="">Country <i class="fa fa-info-circle" aria-hidden="true"></i></label>
                                                             <select name="country" id="country-dropdown">
                                                                 <option value="">Select Country</option>
-                                                                
+
                                                                 @foreach ($countries as $country)
                                                                 @if($lawyer_profile)
                                                                 @if($country->id == $lawyer_profile->country)
@@ -236,7 +236,7 @@ Profile building
                                                         <div class="inputDiv second_form">
                                                             <label for="">State <i class="fa fa-info-circle" aria-hidden="true"></i></label>
                                                             <select name="state" class="" id="state-dropdown">
-                                                                
+
                                                                 @foreach ($states as $state)
                                                                 @if($lawyer_profile)
                                                                 @if($state->id == $lawyer_profile->state)
@@ -271,10 +271,10 @@ Profile building
                                                         <div class="inputDiv second_form">
                                                             <label for="">Primary Practice Area <i class="fa fa-info-circle" aria-hidden="true"></i></label>
                                                             <select name="partise_area" id="partise_area">
-                                                                <option value="">Select Primary Practice Area,</option>
-                                                                <option value="1">Rawalpindi Kachari</option>
-                                                                <option value="2">Rawalpindi Lower Court</option>
-                                                                <option value="3">Rawalpindi High Court</option>
+                                                                <option value="" selected>Select Primary Practice Area,</option>
+                                                                @foreach($practice_areas as $row)
+                                                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                                                @endforeach
                                                             </select>
                                                             <span class="text-danger partise_area_valid"></span>
                                                         </div>
@@ -283,10 +283,10 @@ Profile building
                                                         <div class="inputDiv second_form">
                                                             <label for="">Secondary Practice Area <i class="fa fa-info-circle" aria-hidden="true"></i></label>
                                                             <select name="secondary_partise_area" id="secondary_partise_area">
-                                                                <option value="">Select Secondary Practice Area,</option>
-                                                                <option value="1">Rawalpindi Kachari</option>
-                                                                <option value="2">Rawalpindi Lower Court</option>
-                                                                <option value="3">Rawalpindi High Court</option>
+                                                                <option value="" selected>Select Secondary Practice Area,</option>
+                                                                @foreach($practice_areas as $row)
+                                                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                                                @endforeach
                                                             </select>
                                                         </div>
                                                     </div>
@@ -294,10 +294,10 @@ Profile building
                                                         <div class="inputDiv second_form">
                                                             <label for="">Third Practice Area <i class="fa fa-info-circle" aria-hidden="true"></i></label>
                                                             <select name="third_partise_area" id="third_partise_area">
-                                                                <option value="">Select Third Practice Area,</option>
-                                                                <option value="1">Rawalpindi Kachari</option>
-                                                                <option value="2">Rawalpindi Lower Court</option>
-                                                                <option value="3">Rawalpindi High Court</option>
+                                                                <option value="" selected>Select Third Practice Area,</option>
+                                                                @foreach($practice_areas as $row)
+                                                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                                                @endforeach
                                                             </select>
                                                         </div>
                                                     </div>
@@ -310,7 +310,7 @@ Profile building
                                                                     {{$selected="";}}
                                                                     @foreach($educations as $education)
                                                                     @foreach($lawyer_educations as $l_education)
-                                                                    @php 
+                                                                    @php
                                                                     $selected="";
                                                                     if($l_education->education_id == $education->id ){
                                                                         $selected="selected";
@@ -341,7 +341,7 @@ Profile building
                                                                     {{$selected="";}}
                                                                     @foreach($memberships as $membership)
                                                                     @foreach($lawyer_memberships as $l_membership)
-                                                                    @php 
+                                                                    @php
                                                                     $selected="";
                                                                     if($l_membership->membership_id == $membership->id ){
                                                                         $selected="selected";
@@ -563,18 +563,18 @@ url:"{{url('get-states-by-country')}}",
 type: "POST",
 data: {
 country_id: country_id,
-_token: '{{csrf_token()}}' 
+_token: '{{csrf_token()}}'
 },
 dataType : 'json',
 success: function(result){
-$('#state-dropdown').html('<option value="">Select State</option>'); 
+$('#state-dropdown').html('<option value="">Select State</option>');
 $.each(result.states,function(key,value){
 $("#state-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
 });
-$('#city-dropdown').html('<option value="">Select State First</option>'); 
+$('#city-dropdown').html('<option value="">Select State First</option>');
 }
 });
-});    
+});
 $('#state-dropdown').on('change', function() {
 var state_id = this.value;
 $("#city-dropdown").html('');
@@ -583,11 +583,11 @@ url:"{{url('get-cities-by-state')}}",
 type: "POST",
 data: {
 state_id: state_id,
-_token: '{{csrf_token()}}' 
+_token: '{{csrf_token()}}'
 },
 dataType : 'json',
 success: function(result){
-$('#city-dropdown').html('<option value="">Select City</option>'); 
+$('#city-dropdown').html('<option value="">Select City</option>');
 $.each(result.cities,function(key,value){
 $("#city-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
 });
@@ -630,7 +630,7 @@ $('#image').on('propertychange input', function (e) { $('#imageName').text(this.
        $('.main-wrapper').addClass('active')
         $.ajax({
             type: "POST",
-            enctype: 'multipart/form-data', 
+            enctype: 'multipart/form-data',
             url: "{{ route('profile.store_1') }}",
             data: new FormData(this),
             processData: false,
@@ -638,7 +638,7 @@ $('#image').on('propertychange input', function (e) { $('#imageName').text(this.
             success: function (data) {
                 $('.main-wrapper').removeClass('active');
                 $('.first_form input:not(#linkedin_url)').val('');
-                $('.first_form textarea').val('');   
+                $('.first_form textarea').val('');
                 $(".ck-editor__editable_inline").val('').trigger('change');
                 if(data.complete == 1){
                     $('.progress-bar').css('width', '50%');
@@ -655,8 +655,8 @@ $('#image').on('propertychange input', function (e) { $('#imageName').text(this.
                 $('html, body').animate({
                     scrollTop: $("#lawyer_info").offset().top
                 }, 100);
-                
-                
+
+
             },
             error: function (data) {
                 $('.main-wrapper').removeClass('active');
@@ -689,7 +689,7 @@ $('#image').on('propertychange input', function (e) { $('#imageName').text(this.
                 else{
                     $('.dob_valid').text('');
                 }
-                if($('#b_image').val() == ''){ 
+                if($('#b_image').val() == ''){
 
                     $('.b_image_valid').text(errors.message.b_image);
                 }
@@ -738,7 +738,7 @@ $('#image').on('propertychange input', function (e) { $('#imageName').text(this.
                 $("#education_id").val('').trigger('change');
                 $("#membership_id").val('').trigger('change');
                 if(data.complete == 1){
-                    
+
                     $('.progress-bar').css('width', '50%');
                     $('.percentage-text').text('50%');
                 }else if(data.complete == 2){
@@ -787,11 +787,11 @@ $('#image').on('propertychange input', function (e) { $('#imageName').text(this.
                 else{
                     $('.education_id_valid').text('');
                 }
-                
+
             }
         });
     });
 
-    
+
 </script>
 @endsection

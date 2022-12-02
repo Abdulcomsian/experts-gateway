@@ -56,14 +56,14 @@ class dashboardController extends Controller
             $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
             if($lawyer->status == 0)
             {
-               return view('lawyer.build_profile',compact('countries','lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','languages','educations','memberships','lawyer_profile','city','states','countries'));
+               return view('lawyer.build_profile',compact('countries','lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','languages','educations','memberships','lawyer_profile','city','states','countries','practice_areas'));
             }
             elseif($lawyer->status == 1)
             {
                 $country = Country::where('id',$lawyer_profile->country)->first();
                 $state = State::where('id',$lawyer_profile->state)->first();
                 $city = City::where('id',$lawyer_profile->city)->first();
-                return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','state','country','practice_areas'));
+                return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','state','country'));
             }
 
         }
@@ -71,7 +71,7 @@ class dashboardController extends Controller
             if($lawyer->status == 0)
             {
 
-               return view('lawyer.build_profile',compact('lawyer','countries','languages','educations','memberships','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','states','countries'));
+               return view('lawyer.build_profile',compact('lawyer','countries','languages','educations','memberships','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','states','countries','practice_areas'));
             }
             elseif($lawyer->status == 2)
             {

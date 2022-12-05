@@ -61,12 +61,18 @@ Dashboard
                                                     @endif
                                                 @endforeach</span>
                                         </li>
-                                        {{--<li style="width: 30%; margin-bottom: 0;">
+                                        <li style="width: 30%; margin-bottom: 0;">
                                             <div class="imgDiv">
                                                 <img src="../assets/img/lawIcon.png" alt="" class="img-fluid">
                                             </div>
-                                            <span>Corporate Law</span>
-                                        </li>--}}
+                                            <span>{{$lawyer->phone ?? ''}}</span>
+                                        </li>
+                                        <li style="width: 70%; margin-top: 4px;">
+                                            <div class="imgDiv">
+                                                <img src="../assets/img/consultantIcon.png" alt="" class="img-fluid">
+                                            </div>
+                                            <span>{{$lawyer->email ?? ''}}</span>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="line">

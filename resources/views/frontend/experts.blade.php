@@ -2,7 +2,7 @@
 @section('title')
 Experts
 @endsection
-@section('content') 
+@section('content')
 <main class="expertMain">
     <div class="mainBanner expertBanner">
         <div class="container-fluid">
@@ -22,7 +22,7 @@ Experts
                                         </select>
                                     </div>
                                     <div class="expertiseDiv">
-                                        <select name="search_expert" id="search_expert" required="required">
+                                        <select name="search_expert" id="search_expert">
                                             <option value="">Select Practice Area</option>
                                              @foreach($PartiseArea as $area)
                                              <option value="{{$area->id}}">{{$area->name}}</option>
@@ -55,7 +55,7 @@ Experts
                 </select>
             </div>
             <div class="expertiseDiv">
-                <select name="search_expert" id="search_expert" style="background-color: transparent;" required="required">
+                <select name="search_expert" id="search_expert" style="background-color: transparent;">
                      <option value="">Select Practice Area</option>
                      @foreach($PartiseArea as $area)
                      <option value="{{$area->id}}">{{$area->name}}</option>
@@ -97,10 +97,10 @@ Experts
                                             <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
                                             <div class="cardContet">
                                                 <div class="rating">
-                                                    <p>
+                                                   {{-- <p>
                                                         <i class="fa fa-star"></i>
                                                         <span>4.1</span>
-                                                    </p>
+                                                    </p>--}}
                                                 </div>
                                                 <div class="cardBody">
                                                     {{-- <h3>{{$lawyer->f_name}} {{$lawyer->l_name}}</h3> --}}
@@ -112,7 +112,7 @@ Experts
                                                 </div>
                                                 <div class="cardFooter">
                                                     <p>Address: <span>{{$lawyer['lawyer_profile'][0]->address}}</span></p>
-                                                    <p>Education: 
+                                                    <p>Education:
                                                         <span>
                                                             @php
                                                                 $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer['lawyer_profile'][0]->id)->get();
@@ -126,7 +126,7 @@ Experts
                                                         </span>
                                                     </p>
                                                 </div>
-                                                <div class="contactDiv">
+                                                {{--<div class="contactDiv">
                                                     <ul>
                                                         <li>
                                                             <button><img src="{{ asset('assets/img/recentQuestionIcon.png') }}" alt=""> ASK A QUESTION</button>
@@ -138,7 +138,7 @@ Experts
                                                             <button><img src="{{ asset('assets/img/request.png') }}" alt=""> REQUEST CALLBACK</button>
                                                         </li>
                                                     </ul>
-                                                </div>
+                                                </div>--}}
                                             </div>
                                         </div>
                                     </a>
@@ -153,10 +153,10 @@ Experts
                                 <img src="{{asset('lawyer_profile/'.$lawyer->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
                                 <div class="cardContet">
                                     <div class="rating">
-                                        <p>
+                                        {{--<p>
                                             <i class="fa fa-star"></i>
                                             <span>4.1</span>
-                                        </p>
+                                        </p>--}}
                                     </div>
                                     <div class="cardBody">
                                         <h3>{{$lawyer->f_name}} {{$lawyer->l_name}}</h3>
@@ -167,7 +167,7 @@ Experts
                                     </div>
                                     <div class="cardFooter">
                                         <p>Address: <span>{{$lawyer->address}}</span></p>
-                                        <p>Education: 
+                                        <p>Education:
                                             <span>
                                                 @php
                                                     $lawyer_educations = App\Models\LawyersHasEducation::where('lawyer_profile_id',$lawyer->id)->get();
@@ -181,7 +181,7 @@ Experts
                                             </span>
                                         </p>
                                     </div>
-                                    <div class="contactDiv">
+                                    {{--<div class="contactDiv">
                                         <ul>
                                             <li>
                                                 <button><img src="{{ asset('assets/img/recentQuestionIcon.png') }}" alt=""> ASK A QUESTION</button>
@@ -193,7 +193,7 @@ Experts
                                                 <button><img src="{{ asset('assets/img/request.png') }}" alt=""> REQUEST CALLBACK</button>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div>--}}
                                 </div>
                             </div>
                         </a>
@@ -362,7 +362,7 @@ Experts
                 }
                 else{
                      experts.map(function(expert){
-                
+
                     document.getElementById('result').innerHTML += `
                         <div class="col-lg-4" id="card">
                             <a href="expert-detail/${expert.id}">
@@ -384,7 +384,7 @@ Experts
                                         </div>
                                         <div class="cardFooter">
                                             <p>Address: <span>${expert.address}</span></p>
-                                            <p>Education: 
+                                            <p>Education:
                                                 <span>
                                                     @php
                                                         if(!isset($searchparm) && isset($lawyer['lawyer_profile'][0])){
@@ -402,28 +402,28 @@ Experts
                                                 </span>
                                             </p>
                                         </div>
-                                        <div class="contactDiv">
-                                            <ul>
-                                                <li>
-                                                    <button><img src="{{ asset('assets/img/recentQuestionIcon.png') }}" alt=""> ASK A QUESTION</button>
-                                                </li>
-                                                <li>
-                                                    <button><img src="{{ asset('assets/img/chatIcon.svg') }}" alt=""> CHAT</button>
-                                                </li>
-                                                <li>
-                                                    <button><img src="{{ asset('assets/img/request.png') }}" alt=""> REQUEST CALLBACK</button>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        {{--<div class="contactDiv">--}}
+                                        {{--    <ul>--}}
+                                        {{--        <li>--}}
+                                        {{--            <button><img src="{{ asset('assets/img/recentQuestionIcon.png') }}" alt=""> ASK A QUESTION</button>--}}
+                                        {{--        </li>--}}
+                                        {{--        <li>--}}
+                                        {{--            <button><img src="{{ asset('assets/img/chatIcon.svg') }}" alt=""> CHAT</button>--}}
+                                        {{--        </li>--}}
+                                        {{--        <li>--}}
+                                        {{--            <button><img src="{{ asset('assets/img/request.png') }}" alt=""> REQUEST CALLBACK</button>--}}
+                                        {{--        </li>--}}
+                                        {{--    </ul>--}}
+                                        {{--</div>--}}
                                     </div>
                                 </div>
                             </a>
                         </div>
                     `;
-                     
+
                     });
             }
-                    
+
         })
         .catch(function(error){
             console.log(error);

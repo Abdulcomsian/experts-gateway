@@ -64,15 +64,26 @@ class FrontendController extends Controller
         $memberships = Membership::get();
         $news = News::latest()->take(10)->get();
         $countries = Country::get();
-        if ($request->search_expert) {
+        if ($request->country) {
             $searchparm = '';
-            $lawyers = DB::table('lawyer_profiles')
-                ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
-                ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
-                ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename')
-                ->where('lawyer_profiles.partise_area', $request->search_expert)
-                ->where('lawyer_profiles.country', $request->country)
+            if($request->country AND $request->search_expert){
+                $lawyers = DB::table('lawyer_profiles')
+                    ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
+                    ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
+                    ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename')
+                    ->where('lawyer_profiles.country', $request->country)
+                    ->where('lawyer_profiles.partise_area', $request->search_expert)
+                    ->get();
+            } else {
+                $lawyers = DB::table('lawyer_profiles')
+                    ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
+                    ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
+                    ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename')
+                    ->where('lawyer_profiles.country', $request->country)
+//                ->where('lawyer_profiles.partise_area', $request->search_expert)
                 ->get();
+            }
+
             return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'searchparm', 'countries', 'PartiseArea'));
         } else {
             $lawyers = User::with('lawyer_profile')->whereHas('roles', function ($q) {
@@ -209,7 +220,7 @@ class FrontendController extends Controller
                 {
                     LawyerProfile::where('user_id',$user->id)->update(['partise_area'=>$checkPracticarea->id]);
                 }
-                
+
                 $reg_credentials = [
                     'email' => $request->email,
                     'password' => "password1",
@@ -248,5 +259,5 @@ class FrontendController extends Controller
         return view('thankyou');
     }
 
-   
+
 }

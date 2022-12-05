@@ -2,7 +2,7 @@
 @section('title')
 Experts
 @endsection
-@section('content') 
+@section('content')
 <main>
     <div class="profileDiv expertDetailProfile">
         <div class="container-fluid">
@@ -92,6 +92,7 @@ Experts
                             </div>
                         </div>
                     </div>
+{{--
                     <div class="recentQuestionDiv mt-5">
                         <h4><img src="../assets/img/recentQuestionIcon.png" alt="" class="img-fluid"> RECENT
                             QUESTIONS ANSWERED</h4>
@@ -176,6 +177,7 @@ Experts
                             </div>
                         </div>
                     </div>
+--}}
                     <div class="recentBlog">
                         <h4><img src="../assets/img/recentBlogIcon.png" alt="" class="img-fluid"> RECENT BLOG POSTS
                         </h4>
@@ -219,7 +221,7 @@ Experts
                         </ul>
                         <div class="btnDiv text-center">
                             <button>Hire</button>
-                            
+
                         </div>
                     </div>
                 </div> -->

@@ -83,14 +83,14 @@ class dashboardController extends Controller
 
     public function profile_store_1(Request $request)
     {
-    //    dd($request->all());
+        $image = LawyerProfile::where('user_id',Auth::id())->first();
         $messages = [
             'f_name.required' => 'Please Enter First Name',
             'l_name.required' => 'Please Enter Last Name',
             'gender.required' => 'Please Enter Gender',
             'dob.required' => 'Please Enter Date of Birth',
-            'image.required' => 'Please provide a profile picture',
-            'b_image.required' => 'Please provide your background image',
+            /*'image.required' => 'Please provide a profile picture',
+            'b_image.required' => 'Please provide your background image',*/
             'description.required' => 'Enter Description here',
         ];
 
@@ -99,12 +99,20 @@ class dashboardController extends Controller
             'l_name' => 'required',
             'gender' => 'required',
             'dob' => 'required',
-            'image' => 'required',
-            'b_image' => 'required',
+            /*'image' => 'required',
+            'b_image' => 'required',*/
             'linkedin_url' => 'required',
             'description' => 'required|max:10000',
         ];
-
+        if(!$image->image){
+            $messages['image'] = 'Please provide a profile picture';
+            $validatorRules['image'] = 'required';
+        }
+        if(!$image->b_image){
+            $messages['b_image'] = 'Please provide your background image';
+            $validatorRules['b_image'] = 'required';
+        }
+//        dd($validatorRules);
         $validator = Validator::make($request->all(), $validatorRules, $messages);
 
         ### On fail returns responses ###
@@ -149,7 +157,7 @@ class dashboardController extends Controller
                 $extensions =$image->extension();
 
                 $image_name =time().'.'. $extensions;
-                $image->move(public_path('lawyer_cover_image/'),$image_name);
+                $image->move(public_path('lawyer_profile/'),$image_name);
                 $lawyer_profile->image=$image_name;
             }
             if($request->hasfile('b_image'))

@@ -119,13 +119,16 @@ Profile building
                                                                 <span class="text-danger l_name_valid"></span>
                                                             </div>
                                                         </div>
+{{--                                                        @dd($lawyer_profile->gender)--}}
                                                         <div class="col-lg-6">
                                                             <div class="inputDiv first_form">
                                                                 <label for="">Gender</label>
                                                                 <select name="gender" id="gender">
-                                                                    <option selected disabled value=""> Select Gender</option>
-                                                                    <option value="Male"> Male</option>
-                                                                    <option value="Female"> Female</option>
+                                                                    @if(!$lawyer_profile->gender)
+                                                                    <option disabled value=""> Select Gender</option>
+                                                                    @endif
+                                                                    <option value="Male" {{($lawyer_profile->gender == "Male") ? 'selected' : ''}}> Male</option>
+                                                                    <option value="Female" {{($lawyer_profile->gender == "Female") ? 'selected' : ''}}> Female</option>
                                                                 </select>
                                                                 <span class="text-danger gender_valid"></span>
                                                             </div>
@@ -175,7 +178,7 @@ Profile building
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv second_form">
-                                                            <label for="">Location</label>
+                                                            <label for="">Company Address</label>
                                                             <input type="text" name="address" id="address" value="{{$lawyer_profile->address ?? ''}}" placeholder="Enter Your Location">
                                                             <span class="text-danger address_valid"></span>
                                                         </div>

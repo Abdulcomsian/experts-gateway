@@ -8,7 +8,7 @@ Dashboard
         <h5>Public Questions & Call Requests</h5>
         <div class="questionsContactDiv">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="unanswerdDiv">
                         <h4>Unanswered Questions</h4>
                         <div class="questionDiv">
@@ -93,7 +93,7 @@ Dashboard
                                                            <h4>Aaron Bourke</h4>
                                                            <p>King & Wood Mallesons</p>
                                                        </div>
-                                                       
+
                                                    </div>
                                                    <button>Edit</button>
                                                </div>
@@ -110,7 +110,7 @@ Dashboard
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                {{--<div class="col-lg-4">
                     <div class="callRequest">
                         <div class="header">
                             <p>CALL REQUESTS</p>
@@ -181,7 +181,7 @@ Dashboard
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--}}
             </div>
         </div>
     </div>

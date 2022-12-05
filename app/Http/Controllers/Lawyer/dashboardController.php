@@ -338,7 +338,7 @@ class dashboardController extends Controller
             'membership_id'=>'required',
             'country'=>'required',
             'state'=>'required',
-            'city'=>'required',
+//            'city'=>'required',
 
         ]);
         $lawyer= LawyerProfile::where('id',$id)->first();

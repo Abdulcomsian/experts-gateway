@@ -61,12 +61,12 @@ Dashboard
                                                     @endif
                                                 @endforeach</span>
                                         </li>
-                                        <li style="width: 30%; margin-bottom: 0;">
+                                        {{--<li style="width: 30%; margin-bottom: 0;">
                                             <div class="imgDiv">
                                                 <img src="../assets/img/lawIcon.png" alt="" class="img-fluid">
                                             </div>
                                             <span>Corporate Law</span>
-                                        </li>
+                                        </li>--}}
                                     </ul>
                                 </div>
                                 <div class="line">
@@ -173,7 +173,7 @@ Dashboard
                                         <span>You’ve included a profile picture, which helps you receive up to 21x more profile views</span>
                                     </li>
                                     <li>
-                                        <p>LOCATION <i class="fa fa-check" aria-hidden="true"></i></p>
+                                        <p>COMPANY ADDRESS <i class="fa fa-check" aria-hidden="true"></i></p>
                                         <span>You have increased your chance of being found by users in {{$city->name ?? ''}}, {{$country->name ?? ''}}</span>
                                     </li>
                                     <li>

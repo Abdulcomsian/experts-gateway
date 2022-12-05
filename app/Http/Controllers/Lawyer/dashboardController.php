@@ -70,8 +70,7 @@ class dashboardController extends Controller
         else{
             if($lawyer->status == 0)
             {
-
-               return view('lawyer.build_profile',compact('lawyer','countries','languages','educations','memberships','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','states','countries','practice_areas'));
+                return view('lawyer.build_profile',compact('lawyer','countries','languages','educations','memberships','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','states','countries','practice_areas'));
             }
             elseif($lawyer->status == 2)
             {
@@ -89,6 +88,7 @@ class dashboardController extends Controller
             'l_name.required' => 'Please Enter Last Name',
             'gender.required' => 'Please Enter Gender',
             'dob.required' => 'Please Enter Date of Birth',
+            'dob.required' => 'Please Enter Phone Number',
             /*'image.required' => 'Please provide a profile picture',
             'b_image.required' => 'Please provide your background image',*/
             'description.required' => 'Enter Description here',
@@ -101,14 +101,15 @@ class dashboardController extends Controller
             'dob' => 'required',
             /*'image' => 'required',
             'b_image' => 'required',*/
+            'phone_number' => 'required',
             'linkedin_url' => 'required',
             'description' => 'required|max:10000',
         ];
-        if(!$image->image){
+        if($image AND !$image->image){
             $messages['image'] = 'Please provide a profile picture';
             $validatorRules['image'] = 'required';
         }
-        if(!$image->b_image){
+        if($image AND !$image->b_image){
             $messages['b_image'] = 'Please provide your background image';
             $validatorRules['b_image'] = 'required';
         }
@@ -171,9 +172,10 @@ class dashboardController extends Controller
             }
             $lawyer_profile->save();
 
-            $user= User::where('id',$user_id)->first();
+            $user = User::where('id',$user_id)->first();
             $user->f_name = $request->f_name;
             $user->l_name = $request->l_name;
+            $user->phone = $request->phone_number;
             $user->save();
             return response()->json(['success'=>'Profile Created Successfully','complete'=>$lawyer_profile->complete]);
         }

@@ -193,6 +193,12 @@ class FrontendController extends Controller
 
     public function lawyer_login(Request $request)
     {
+//        $practice_area = PartiseArea::where('name', $request->partise_area)->first();
+        /*if(!$practice_area){
+            $practice_area = new PartiseArea();
+            $practice_area->name = $request->partise_area;
+            $practice_area->save();
+        }*/
         $credentials = [
             'email' => $request->email,
             'password' => "password1",
@@ -219,6 +225,10 @@ class FrontendController extends Controller
                 if($checkPracticarea)
                 {
                     LawyerProfile::where('user_id',$user->id)->update(['partise_area'=>$checkPracticarea->id]);
+                } else{
+                    $practice_area = new PartiseArea();
+                    $practice_area->name = $request->partise_area;
+                    $practice_area->save();
                 }
 
                 $reg_credentials = [

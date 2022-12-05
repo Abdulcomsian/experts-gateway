@@ -119,16 +119,13 @@ Profile building
                                                                 <span class="text-danger l_name_valid"></span>
                                                             </div>
                                                         </div>
-{{--                                                        @dd($lawyer_profile->gender)--}}
                                                         <div class="col-lg-6">
                                                             <div class="inputDiv first_form">
                                                                 <label for="">Gender</label>
                                                                 <select name="gender" id="gender">
-                                                                    @if(!$lawyer_profile->gender)
-                                                                    <option disabled value=""> Select Gender</option>
-                                                                    @endif
-                                                                    <option value="Male" {{($lawyer_profile->gender == "Male") ? 'selected' : ''}}> Male</option>
-                                                                    <option value="Female" {{($lawyer_profile->gender == "Female") ? 'selected' : ''}}> Female</option>
+                                                                    <option disabled value="" selected> Select Gender</option>
+                                                                    <option value="Male" {{($lawyer_profile AND $lawyer_profile->gender == "Male") ? 'selected' : ''}}> Male</option>
+                                                                    <option value="Female" {{($lawyer_profile AND $lawyer_profile->gender == "Female") ? 'selected' : ''}}> Female</option>
                                                                 </select>
                                                                 <span class="text-danger gender_valid"></span>
                                                             </div>
@@ -143,7 +140,14 @@ Profile building
                                                                 <span class="text-danger dob_valid"></span>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-12">
+                                                        <div class="col-lg-6">
+                                                            <div class="inputDiv first_form">
+                                                                <label for="">Phone Number</label>
+                                                                <input type="text" name="phone_number" id="phone_number" value="{{$lawyer->phone ?? ''}}" placeholder="Enter Your Phone Number">
+                                                                <span class="text-danger phone_number"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
                                                             <div class="inputDiv first_form">
                                                                 <label for="">LinkedIn url</label>
                                                                 <input type="url" name="linkedin_url" id="linkedin_url" value="{{$lawyer_profile->linkedin_url ?? ''}}" placeholder="Enter Your LinkedIn url">

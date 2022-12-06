@@ -65,9 +65,12 @@ class dashboardController extends Controller
 
     public function update_lawyer_status(Request $request,$id)
     {
-        //  dd($request->all());
         // try {
-        $user= User::find($id);
+        $user= User::findorfail($id);
+        if($user->status == '2'){
+            $user->delete();
+            return redirect(route('admin.lawyer-applications'));
+        }
         $user->status = $request->status;
         $user->save();
 

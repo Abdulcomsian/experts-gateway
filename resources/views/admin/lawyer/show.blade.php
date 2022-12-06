@@ -24,7 +24,7 @@ Show Lawyer Profile
                             <!--begin::Card body-->
                             <div class="card-body p-12">
                                 <!--begin::Form-->
-                                
+
                                     <!--begin::Wrapper-->
                                     <div class="d-flex flex-column align-items-start flex-xxl-row">
 
@@ -92,7 +92,7 @@ Show Lawyer Profile
                                                 <!--end::Input group-->
                                             </div>
                                             <!--end::Col-->
-                                            
+
                                             <!--begin::Col-->
                                             <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Language</label>
@@ -203,8 +203,8 @@ Show Lawyer Profile
                                                             ,
                                                             @endif
                                                         @endforeach
-                                                    </p> 
-                                                        
+                                                    </p>
+
                                                 </div>
                                                 <!--end::Input group-->
                                             </div><br>
@@ -229,36 +229,38 @@ Show Lawyer Profile
                                             <!--end::Col-->
 
                                             <!--begin::Col-->
-                                            
+
                                             <!--end::Col-->
                                             <!--begin::Col-->
                                             <div class="col-lg-12">
                                                 <form action="{{ route('update-lawyer-status', $lawyer_profile->user->id) }}" method="POST">
-                                                    @csrf()  
-                                                    <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Lawyer Status</label>
-                                                    <input type="hidden" name="status" value="{{$lawyer_profile->user->status}}"> 
+                                                    @csrf()
+                                                    <label class="form-label fs-6 fw-bolder text-gray
+                                                    -700 mb-3">Lawyer Status</label>
+                                                    <input type="hidden" name="status" value="{{$lawyer_profile->user->status}}">
                                                     <select name="status" id="status" required class="form-control">
                                                         <option value="">Select Status</option>
                                                         <option value="1">Approved</option>
                                                         <option value="0">Reject</option>
+                                                        <option value="2">Delete</option>
                                                     </select><br>
                                                     <input type="text" name="mail_message" placeholder="Reason" class="form-control reason" style="display: none;"><br>
                                                     <button type="submit" class="btn btn-primary">Update</button>
                                                 </form>
-                                                
-                                                
 
-                                                {{-- @if($lawyer_profile->user->status == 1) 
+
+
+                                                {{-- @if($lawyer_profile->user->status == 1)
                                                 <form action="{{ route('update-lawyer-status', $lawyer_profile->user->id) }}" method="POST">
-                                                    @csrf()                         
+                                                    @csrf()
                                                     <button type="submit" class="btn btn-success" name="status" value="0">Approved</button>
-                                                </form>                    
+                                                </form>
                                                 @elseif($lawyer_profile->user->status == 0)
                                                     <form action="{{ route('update-lawyer-status', $lawyer_profile->user->id) }}" method="POST">
-                                                        @csrf() 
-                                                        <label class="form-label fs-6 fw-bolder text-gray-900 mb-3"><strong> Reason</strong></label>       
-                                                        <input type="text" name="mail_message" required class="form-control" placeholder="Enter Reason of Rejection">   
-                                                        <br>                  
+                                                        @csrf()
+                                                        <label class="form-label fs-6 fw-bolder text-gray-900 mb-3"><strong> Reason</strong></label>
+                                                        <input type="text" name="mail_message" required class="form-control" placeholder="Enter Reason of Rejection">
+                                                        <br>
                                                         <button type="submit" class="btn btn-danger" name="status" value="1">Pending</button>
                                                     </form>
                                                 @endif --}}
@@ -285,7 +287,7 @@ Show Lawyer Profile
         </div>
         <!--end::Post-->
     </div>
-    <!--end::Content--> 
+    <!--end::Content-->
 @endsection
 
 @section('script')
@@ -299,8 +301,8 @@ Show Lawyer Profile
         }else{
             $('.reason').hide();
         }
-       
-    }); 
+
+    });
     $(document).ready(function() {
         // Select2 Multiple
         $('.select2-multiple').select2({
@@ -319,36 +321,36 @@ Show Lawyer Profile
 
     });
 
-    $(document).ready(function(){      
-      var i=1;  
+    $(document).ready(function(){
+      var i=1;
 
-      $('#add').click(function(){  
-           i++;  
-           $('#dynamic_field_membership').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="membership[]" placeholder="Enter Membership & Association Law" class="form-control membership_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
-      });  
+      $('#add').click(function(){
+           i++;
+           $('#dynamic_field_membership').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="membership[]" placeholder="Enter Membership & Association Law" class="form-control membership_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');
+      });
 
 
-      $(document).on('click', '.btn_remove', function(){  
-           var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
-      });  
+      $(document).on('click', '.btn_remove', function(){
+           var button_id = $(this).attr("id");
+           $('#row'+button_id+'').remove();
+      });
 
     });
 
-    $(document).ready(function(){      
-      var j=1;  
+    $(document).ready(function(){
+      var j=1;
 
 
-      $('#add_edu').click(function(){  
-           j++;  
-           $('#dynamic_field').append('<tr id="row'+j+'" class="dynamic-added"><td><input type="text" name="education[]" placeholder="Enter Education" class="form-control education_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+j+'" class="btn btn-danger btn_remove_edu">X</button></td></tr>');  
-      });  
+      $('#add_edu').click(function(){
+           j++;
+           $('#dynamic_field').append('<tr id="row'+j+'" class="dynamic-added"><td><input type="text" name="education[]" placeholder="Enter Education" class="form-control education_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+j+'" class="btn btn-danger btn_remove_edu">X</button></td></tr>');
+      });
 
 
-      $(document).on('click', '.btn_remove_edu', function(){  
-           var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
-      });  
+      $(document).on('click', '.btn_remove_edu', function(){
+           var button_id = $(this).attr("id");
+           $('#row'+button_id+'').remove();
+      });
 
     });
 

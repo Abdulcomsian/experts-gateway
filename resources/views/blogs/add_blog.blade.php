@@ -46,7 +46,7 @@ Blog
                             <div class="col-lg-12">
                                 <div class="inputDiv">
                                     <label>Short Description</label>
-                                    <textarea name="short_description" id="short_description" cols="20" rows="5" style="border:1px solid #d9d9d9;" 
+                                    <textarea name="short_description" id="short_description" cols="20" rows="5" style="border:1px solid #d9d9d9;"
                                         placeholder="Short Description"></textarea>
                                         <div style="color:red;">{{$errors->first('short_description')}}</div> <br>
                                 </div>
@@ -77,7 +77,7 @@ Blog
                                             <p>{{ date('d M,Y', strtotime($blog->created_at)) }}</p>
                                         </div>
                                         <div class=" col-lg-1"></div>
-                                        
+
                                         @if($blog->status == 1)
                                         <div class="date btn btn-success col-lg-5">
                                             <p style="color:white;">Approved</p>

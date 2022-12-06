@@ -221,6 +221,11 @@ class FrontendController extends Controller
             $user->assignRole($lawyerRole->name);
             if($user->save())
             {
+                $lawyer_profile = new LawyerProfile();
+                $lawyer_profile->user_id = $user->id;
+                $lawyer_profile->package_name = $request->package_name;
+                $lawyer_profile->save();
+//                $lawyer_profile = LawyerProfile::findorfail($lawyer_profile->id);
                 $checkPracticarea=PartiseArea::where('name',$request->partise_area)->first();
                 if($checkPracticarea)
                 {
@@ -229,6 +234,7 @@ class FrontendController extends Controller
                     $practice_area = new PartiseArea();
                     $practice_area->name = $request->partise_area;
                     $practice_area->save();
+                    LawyerProfile::where('user_id',$user->id)->update(['partise_area'=>$practice_area->id]);
                 }
 
                 $reg_credentials = [

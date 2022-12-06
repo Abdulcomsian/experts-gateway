@@ -61,15 +61,17 @@ Dashboard
                                                     @endif
                                                 @endforeach</span>
                                         </li>
+                                    </ul>
+                                    <ul>
                                         <li style="width: 30%; margin-bottom: 0;">
                                             <div class="imgDiv">
-                                                <img src="../assets/img/lawIcon.png" alt="" class="img-fluid">
+                                                <img src="../assets/img/phone2.png" alt="" class="img-fluid" style="width:20px">
                                             </div>
                                             <span>{{$lawyer->phone ?? ''}}</span>
                                         </li>
                                         <li style="width: 70%; margin-top: 4px;">
                                             <div class="imgDiv">
-                                                <img src="../assets/img/consultantIcon.png" alt="" class="img-fluid">
+                                                <img src="../assets/img/email2.png" alt="" class="img-fluid" style="width:20px">
                                             </div>
                                             <span>{{$lawyer->email ?? ''}}</span>
                                         </li>
@@ -122,7 +124,7 @@ Dashboard
                                 <div class="package_name_image">
                                     <img src="{{asset('assets/img/starter.svg') }}" alt="" class="img-fluid">
                                     <div class="name_div">
-                                        <p>Free</p>
+                                        <p>{{$lawyer_profile->package_name ?? ''}}</p>
                                         <span>Monthly</span>
                                     </div>
                                 </div>

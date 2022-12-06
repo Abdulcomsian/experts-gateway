@@ -26,6 +26,7 @@ class CreateLawyerProfilesTable extends Migration
             $table->longText('b_image')->nullable();
             $table->longText('image')->nullable();
             $table->string('partise_area')->nullable();
+            $table->string('package_name')->nullable();
             $table->string('secondary_partise_area')->nullable();
             $table->string('third_partise_area')->nullable();
             $table->longText('membership_id')->nullable();

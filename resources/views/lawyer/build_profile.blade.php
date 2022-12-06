@@ -273,14 +273,14 @@ Profile building
                                                             </select>
                                                         </div>
                                                     </div>
-
+{{--                                                    @dd($lawyer_profile)--}}
                                                     <div class="col-lg-6">
                                                         <div class="inputDiv second_form">
                                                             <label for="">Primary Practice Area <i class="fa fa-info-circle" aria-hidden="true"></i></label>
                                                             <select name="partise_area" id="partise_area">
                                                                 <option value="" selected>Select Primary Practice Area,</option>
                                                                 @foreach($practice_areas as $row)
-                                                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                                                    <option value="{{$row->id}}" {{($lawyer_profile AND $lawyer_profile->partise_area == $row->id) ? 'selected' : ''}}>{{$row->name}}</option>
                                                                 @endforeach
                                                             </select>
                                                             <span class="text-danger partise_area_valid"></span>

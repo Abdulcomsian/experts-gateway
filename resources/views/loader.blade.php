@@ -436,8 +436,8 @@
         console.log("User Details",user_details)
         user_details.then(function (x) { // Suppose promise returns "abc"
             console.log(x);
-            console.log(x.Account.PracticeArea);
-            login(x.Email,x.First_Name,x.Last_Name,x.Account.PracticeArea,x.Country);
+            console.log(x.Account.CurrentSubscription.Plan.Name);
+            login(x.Email,x.First_Name,x.Last_Name,x.Account.PracticeArea,x.Country,x.Account.CurrentSubscription.Plan.Name);
             // return "123";
         })
         /*console.log("user details", user_details.then(
@@ -451,7 +451,7 @@
 
         // console.log("get access token", Outseta.getAccessToken());
 
-        function login(data,First_Name,Last_Name,PracticeArea,Country){
+        function login(data,First_Name,Last_Name,PracticeArea,Country,PackageName){
             $.ajax({
                 url:"{{route('lawyer_login')}}",
                 type:'POST',
@@ -462,6 +462,7 @@
                     "l_name":Last_Name,
                     "partise_area":PracticeArea,
                     "country":Country,
+                    "package_name":PackageName,
                 },
                 success:function(data){
                     window.location.href = "{{route('lawyer.profile')}}";

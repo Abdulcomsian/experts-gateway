@@ -17,8 +17,8 @@ class CreateLawyersHasMembershipsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('membership_id');
             $table->unsignedBigInteger('lawyer_profile_id')->nullable();
-            $table->foreign('membership_id')->references('id')->on('memberships');
-            $table->foreign('lawyer_profile_id')->references('id')->on('lawyer_profiles');
+            $table->foreign('membership_id')->references('id')->on('memberships')->onDelete('cascade');
+            $table->foreign('lawyer_profile_id')->references('id')->on('lawyer_profiles')->onDelete('cascade');
             $table->timestamps();
         });
     }

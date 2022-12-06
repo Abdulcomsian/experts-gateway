@@ -17,8 +17,8 @@ class CreateLawyersHasLanguagesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('language_id');
             $table->unsignedBigInteger('lawyer_profile_id')->nullable();
-            $table->foreign('language_id')->references('id')->on('languages');
-            $table->foreign('lawyer_profile_id')->references('id')->on('lawyer_profiles');
+            $table->foreign('language_id')->references('id')->on('languages')->onDelete('cascade');
+            $table->foreign('lawyer_profile_id')->references('id')->on('lawyer_profiles')->onDelete('cascade');
             $table->timestamps();
         });
     }

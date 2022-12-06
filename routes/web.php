@@ -187,4 +187,3 @@ Route::prefix('lawyer')->middleware(['auth','can:lawyer'])->group(function(){
 
     Route::get('/orders', [App\Http\Controllers\Lawyer\dashboardController::class, 'orders'])->name('lawyer.orders');
 });
-

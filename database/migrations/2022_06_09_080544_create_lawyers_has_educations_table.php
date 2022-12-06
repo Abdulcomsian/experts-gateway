@@ -17,8 +17,8 @@ class CreateLawyersHasEducationsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('education_id');
             $table->unsignedBigInteger('lawyer_profile_id')->nullable();
-            $table->foreign('education_id')->references('id')->on('education');
-            $table->foreign('lawyer_profile_id')->references('id')->on('lawyer_profiles');
+            $table->foreign('education_id')->references('id')->on('education')->onDelete('cascade');
+            $table->foreign('lawyer_profile_id')->references('id')->on('lawyer_profiles')->onDelete('cascade');
             $table->timestamps();
         });
     }

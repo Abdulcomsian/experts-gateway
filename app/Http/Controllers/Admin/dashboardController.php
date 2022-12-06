@@ -67,7 +67,7 @@ class dashboardController extends Controller
     {
         // try {
         $user= User::findorfail($id);
-        if($user->status == '2'){
+        if($request->status == '2'){
             $user->delete();
             return redirect(route('admin.lawyer-applications'));
         }

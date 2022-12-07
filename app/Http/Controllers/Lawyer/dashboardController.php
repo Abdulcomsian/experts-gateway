@@ -186,7 +186,7 @@ class dashboardController extends Controller
     public function profile_store_2(Request $request)
     {
         $messages = [
-            'partise_area.required' => 'Please provide your partise area',
+            'partise_area.required' => 'Please provide your practice area',
             'address.required' => 'Please provide your address',
             'language_id.required' => 'Please provide Language',
             'membership_id.required' => 'Please provide membership',

@@ -249,7 +249,7 @@ Profile building
                                                                     @if($lawyer_profile AND $state->id == $lawyer_profile->state)
                                                                     <option value="{{$state->id}}" selected>{{$state->name}}</option>
                                                                     @else
-                                                                        <option value="{{$state->id}}">{{$state->name}}</option>
+                                                                        <option disabled selected>Select State</option>
                                                                     @endif
 {{--                                                                @else--}}
 {{--                                                                <option value="{{$state->id}}">{{$state->name}}</option>--}}

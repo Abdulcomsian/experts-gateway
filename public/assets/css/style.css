@@ -3088,7 +3088,7 @@ main .mainBanner .registerAuthRightBox {
 }
 
 .findExpert p:nth-child(2) {
-    font-family: GelionLight;
+    font-family: GelionRegular;
 }
 
 .findExpert a {

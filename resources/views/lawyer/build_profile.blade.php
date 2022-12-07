@@ -96,9 +96,9 @@ Profile building
                                                         <input type="file" name="image" value="{{$lawyer_profile->image ?? '' }}" id="image" accept="image/*" class="upload_user_img">
                                                         <span class="text-primary" id="imageName"></span>
                                                         <span class="text-danger image_valid"></span>
-                                                        @if($lawyer_profile)
+                                                        @if($lawyer_profile AND $lawyer_profile->image)
                                                         <div class="profileAvatar">
-                                                            <img style="width: 140px !important; height: 140px !important; border-radius: 84px;" src="{{asset('lawyer_profile/' .$lawyer_profile->image)}}" alt="" class="img-fluid">
+                                                            <img style="width: 140px !important; height: 140px !important; border-radius: 84px;" src="{{asset('lawyer_profile/' .$lawyer_profile->image)}}" class="img-fluid">
                                                         </div>
                                                         @endif
                                                     </div>
@@ -245,17 +245,15 @@ Profile building
                                                             <select name="state" class="" id="state-dropdown">
 
                                                                 @foreach ($states as $state)
-                                                                @if($lawyer_profile)
-                                                                @if($state->id == $lawyer_profile->state)
-                                                                <option value="{{$state->id}}" selected>
-                                                                {{$state->name}}
-                                                                </option>
-                                                                @else
-                                                                    <option value="{{$state->id}}">{{$state->name}}</option>
-                                                                @endif
-                                                                @else
-                                                                <option value="{{$state->id}}">{{$state->name}}</option>
-                                                                @endif
+{{--                                                                @if($lawyer_profile)--}}
+                                                                    @if($lawyer_profile AND $state->id == $lawyer_profile->state)
+                                                                    <option value="{{$state->id}}" selected>{{$state->name}}</option>
+                                                                    @else
+                                                                        <option value="{{$state->id}}">{{$state->name}}</option>
+                                                                    @endif
+{{--                                                                @else--}}
+{{--                                                                <option value="{{$state->id}}">{{$state->name}}</option>--}}
+{{--                                                                @endif--}}
                                                                 @endforeach
 
                                                             </select>

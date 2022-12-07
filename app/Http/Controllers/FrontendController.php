@@ -193,12 +193,7 @@ class FrontendController extends Controller
 
     public function lawyer_login(Request $request)
     {
-//        $practice_area = PartiseArea::where('name', $request->partise_area)->first();
-        /*if(!$practice_area){
-            $practice_area = new PartiseArea();
-            $practice_area->name = $request->partise_area;
-            $practice_area->save();
-        }*/
+
         $credentials = [
             'email' => $request->email,
             'password' => "password1",

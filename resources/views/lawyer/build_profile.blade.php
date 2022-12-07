@@ -4,6 +4,12 @@ Profile building
 @endsection
 @push('styles')
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style>
+    label{
+        font-size: 18px;
+        font-family: GelionBold;
+    }
+</style>
 @endpush
 @section('content')
 <main>

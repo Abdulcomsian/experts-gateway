@@ -153,7 +153,7 @@ Dashboard
                                 {{-- <p class="price_package">200/mo</p> --}}
                             </div>
                             <div class="recommended_plane">
-                                <span class="recommended_text">Recommended Plan</span>
+                                <span class="recommended_text"></span>
                                 <div class="pay_buy">
                                     <div class="image_package">
                                         <img src="../assets/img/package.png" alt="" class="img-fluid">

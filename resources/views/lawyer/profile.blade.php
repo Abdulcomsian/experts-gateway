@@ -152,28 +152,28 @@ Dashboard
                                 </div>
                                 {{-- <p class="price_package">200/mo</p> --}}
                             </div>
-                            <div class="recommended_plane">
-                                <span class="recommended_text"></span>
-                                <div class="pay_buy">
-                                    <div class="image_package">
-                                        <img src="../assets/img/package.png" alt="" class="img-fluid">
-                                        <p>Pro</p>
-                                    </div>
-                                    <div class="select_package">
-                                        <ul>
-                                            <li>
-                                                <p>Pay Monthly</p>
-                                                <span>AED 200/mo</span>
-                                            </li>
-                                            <li class="active">
-                                                <p>Pay Annually Upfront</p>
-                                                <span>AED 2160/yr <span>SAVE 10%</span></span>
-                                            </li>
-                                        </ul>
-                                        <button>Upgrade</button>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="recommended_plane">--}}
+{{--                                <span class="recommended_text"></span>--}}
+{{--                                <div class="pay_buy">--}}
+{{--                                    <div class="image_package">--}}
+{{--                                        <img src="../assets/img/package.png" alt="" class="img-fluid">--}}
+{{--                                        <p>Pro</p>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="select_package">--}}
+{{--                                        <ul>--}}
+{{--                                            <li>--}}
+{{--                                                <p>Pay Monthly</p>--}}
+{{--                                                <span>AED 200/mo</span>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="active">--}}
+{{--                                                <p>Pay Annually Upfront</p>--}}
+{{--                                                <span>AED 2160/yr <span>SAVE 10%</span></span>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                        <button>Upgrade</button>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
                         <div class="profile_score">
                             <div class="d-flex justify-content-between">

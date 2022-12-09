@@ -224,6 +224,7 @@ class dashboardController extends Controller
             $lawyer_profile->country = $request->country;
             $lawyer_profile->state = $request->state;
             $lawyer_profile->city = $request->city;
+            $lawyer_profile->firm_name = $request->firm_name;
             if($request->secondary_partise_area)
             {
                 $lawyer_profile->secondary_partise_area = $request->secondary_partise_area;
@@ -247,6 +248,15 @@ class dashboardController extends Controller
             }
             else{
                 $lawyer_profile->complete = 1;
+            }
+            if($request->hasfile('firm_logo'))
+            {
+                $image = $request->file('firm_logo');
+                $extensions =$image->extension();
+
+                $image_name =time().'.'. $extensions;
+                $image->move(public_path('lawyer_profile/'),$image_name);
+                $lawyer_profile->firm_logo=$image_name;
             }
             $lawyer_profile->save();
 

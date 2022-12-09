@@ -374,6 +374,30 @@ Profile building
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="inputDiv second_form">
+                                                            <label for="">Firm Name</label>
+                                                            <div class="inputButton second_form flex-column align-items-start">
+                                                                <input type="text" name="firm_name" id="firm_name" value="{{$lawyer_profile->firm_name ?? ''}}" placeholder="Enter Firm Name">
+                                                                {{-- <Button>ADD MORE</Button> --}}
+                                                                <span class="text-danger membership_id_valid d-block"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="inputDiv second_form">
+                                                            <label for="">Firm Logo</label>
+                                                            <div class="inputButton second_form flex-column align-items-start">
+                                                                <input type="file" name="firm_logo" id="firm_logo" placeholder="Enter Firm Logo">
+                                                                @if($lawyer_profile && $lawyer_profile->firm_logo)
+                                                                    <div class="profileAvatar">
+                                                                        <img style="width: 140px !important; height: 140px !important; border-radius: 84px;" src="{{asset('lawyer_profile/' .$lawyer_profile->firm_logo)}}" alt="" class="img-fluid">
+                                                                    </div>
+                                                                @endif
+                                                                <span class="text-danger membership_id_valid d-block"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-12 text-center">

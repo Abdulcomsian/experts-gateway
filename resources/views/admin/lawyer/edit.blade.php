@@ -298,7 +298,30 @@ Edit Lawyer Profile
                                                 </div><br>
                                             </div>
                                             <!--end::Col-->
-
+                                            <!--begin::Col-->
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Firm Name</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <input type="text" class="form-control" name="firm_name" value="{{$lawyer_profile->firm_name}}">
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Firm Logo</label>
+                                                <!--begin::Input group-->
+                                                    <div class="mb-5">
+                                                        <input type="file" class="form-control form-control-solid" name="firm_logo" value="{{$lawyer_profile->firm_logo}}" accept="image/*"/>
+                                                        @if($lawyer_profile->firm_logo)
+                                                            <div class="profileAvatar">
+                                                                <img style="width: 140px !important; height: 140px !important; border-radius: 84px;" src="{{asset('lawyer_profile/' .$lawyer_profile->firm_logo)}}" alt="" class="img-fluid">
+                                                            </div>
+                                                        @endif
+                                                        <div style="color:red;">{{$errors->first('firm_logo')}}</div> <br>
+                                                    </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <!--end::Col-->
 
                                             <div class="col-lg-4 offset-md-4">
                                                 <button type="submit" class="btn btn-primary ">

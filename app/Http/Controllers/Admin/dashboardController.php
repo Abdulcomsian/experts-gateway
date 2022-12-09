@@ -148,6 +148,7 @@ class dashboardController extends Controller
         $lawyer_profile->country = $request->country;
         $lawyer_profile->state = $request->state;
         $lawyer_profile->city = $request->city;
+        $lawyer_profile->firm_name = $request->firm_name;
         // $lawyer_profile->education = implode($request->education, ',');
         // $lawyer_profile->membership = implode($request->membership, ',');
         if($request->hasfile('image'))
@@ -158,6 +159,15 @@ class dashboardController extends Controller
             $image_name =time().'.'. $extensions;
             $image->move(public_path('lawyer_profile/'),$image_name);
             $lawyer_profile->image=$image_name;
+        }
+        if($request->hasfile('firm_logo'))
+        {
+            $image = $request->file('firm_logo');
+            $extensions =$image->extension();
+
+            $image_name =time().'.'. $extensions;
+            $image->move(public_path('lawyer_profile/'),$image_name);
+            $lawyer_profile->firm_logo=$image_name;
         }
         if($request->hasfile('b_image'))
         {

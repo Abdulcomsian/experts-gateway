@@ -87,11 +87,11 @@ Experts
                                             <span>{{$lawyer_profile->partise_area_1->name ?? ''}}</span>
                                         </li>
                                         <li style="width: 50%;">
-                                            <span><h6 style="text-transform: uppercase;" class="mr-md-3">Secondary Practice Area:</h6></span>
+                                            <span><h6 style="text-transform: uppercase;" class="mr-md-3 font-weight-bold">Secondary Practice Area:</h6></span>
                                             <span>{{$lawyer_profile->partise_area_2->name ?? ''}}</span>
                                         </li>
                                         <li style="width: 100%; margin-bottom: 0;">
-                                            <span><h6 style="text-transform: uppercase;" class="mr-md-3">Third Practice Area:</h6></span>
+                                            <span><h6 style="text-transform: uppercase;" class="mr-md-3 font-weight-bold">Third Practice Area:</h6></span>
                                             <span>{{$lawyer_profile->partise_area_3->name ?? ''}}</span>
                                         </li>
                                     </ul>
@@ -121,6 +121,24 @@ Experts
                                     @foreach($lawyer_memberships as $membership)
                                         <li>-{{$membership->membership->membership_name}}</li>
                                     @endforeach
+                                </ul>
+                                <div class="line">
+                                    <img src="../assets/img/line.png" alt="" class="img-fluid">
+                                </div>
+                                <h4>Firm Details</h4>
+                                <ul>
+                                    <li>
+                                        -{{$lawyer_profile->firm_name ?? ''}}
+                                    </li>
+                                    <li>
+                                        -Firm Logo
+                                        @if($lawyer_profile && $lawyer_profile->firm_logo)
+                                            <div class="profileAvatar">
+                                                <img style="width: 140px !important; height: 140px !important; border-radius: 84px;" src="{{asset('lawyer_profile/' .$lawyer_profile->firm_logo)}}" alt="" class="img-fluid">
+                                            </div>
+                                        @endif
+                                    </li>
+
                                 </ul>
                             </div>
                         </div>

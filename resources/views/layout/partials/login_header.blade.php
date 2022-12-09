@@ -23,8 +23,12 @@
                         @if(Auth::user()->hasRole('Lawyer'))
                             <li>
                                 <img src="{{ asset('assets/img/myOrder.png') }}" alt="" class="img-fluid">
-                                <span><a href="{{ route('lawyer.dashboard') }}">My Dashboard</a></span>
+                                <span><a href="{{ route('lawyer.profile') }}">My Profile</a></span>
                             </li>
+                            {{--<li>
+                                <img src="{{ asset('assets/img/myOrder.png') }}" alt="" class="img-fluid">
+                                <span><a href="{{ route('lawyer.dashboard') }}">My Dashboard</a></span>
+                            </li>--}}
                         @endif
                         <li>
                             <img src="{{ asset('assets/img/loginIcon.png') }}" alt="" class="img-fluid">

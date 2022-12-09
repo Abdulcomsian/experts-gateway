@@ -3,6 +3,15 @@
 Experts
 @endsection
 @section('content')
+    <style>
+        .userDetail2{
+            position: absolute;
+            top: -30px;
+            display: flex;
+            align-items: center;
+            right: 6%;
+        }
+    </style>
 <main>
     <div class="profileDiv expertDetailProfile">
         <div class="container-fluid">
@@ -23,6 +32,15 @@ Experts
                                     <h4>{{$lawyer_profile->user->f_name}} {{$lawyer_profile->user->l_name}}</h4>
                                 </div>
                             </div>
+                            <div class="userDetail2">
+                                <div class="userProfile">
+                                    <h4>{{$lawyer_profile->firm_name}}</h4>
+                                </div>
+                                <div class="avatar">
+                                    <img src="{{asset('lawyer_profile/'.$lawyer_profile->firm_logo)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
+                                </div>
+                            </div>
+
                             <a href="{{$lawyer_profile->linkedin_url}}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
                             <div class="line">
                                 <img src="../assets/img/line.png" alt="" class="img-fluid">
@@ -122,7 +140,7 @@ Experts
                                         <li>-{{$membership->membership->membership_name}}</li>
                                     @endforeach
                                 </ul>
-                                <div class="line">
+                                {{--<div class="line">
                                     <img src="../assets/img/line.png" alt="" class="img-fluid">
                                 </div>
                                 <h4>Firm Details</h4>
@@ -139,7 +157,7 @@ Experts
                                         @endif
                                     </li>
 
-                                </ul>
+                                </ul>--}}
                             </div>
                         </div>
                     </div>

@@ -3,6 +3,15 @@
 Dashboard
 @endsection
 @section('content')
+    <style>
+        .userDetail2{
+            position: absolute;
+            top: -30px;
+            display: flex;
+            align-items: center;
+            right: 6%;
+        }
+    </style>
     <main>
         <div class="profileDiv">
             <div class="container-fluid">
@@ -25,6 +34,14 @@ Dashboard
                                     <div class="userProfile">
                                         <h4>{{$lawyer->f_name ?? ''}} {{$lawyer->l_name ?? ''}}</h4>
                                         {{-- <p>{{$lawyer_profile->title}}</p> --}}
+                                    </div>
+                                </div>
+                                <div class="userDetail2">
+                                    <div class="userProfile">
+                                        <h4>{{$lawyer_profile->firm_name}}</h4>
+                                    </div>
+                                    <div class="avatar">
+                                        <img src="{{asset('lawyer_profile/'.$lawyer_profile->firm_logo)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
                                     </div>
                                 </div>
                                 <a href="{{$lawyer_profile->linkedin_url}}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>

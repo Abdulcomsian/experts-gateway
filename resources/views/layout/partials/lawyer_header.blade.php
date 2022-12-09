@@ -75,7 +75,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('lawyer.fixed-service') }}">Fixed Services</a>
                     </li>--}}
-                    <li class="nav-item">
+                    {{--<li class="nav-item">
                         <a class="nav-link" href="{{ route('lawyer.public_question') }}">Public Questions & Call Requests</a>
                     </li>
 
@@ -85,7 +85,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="#">Community</a>
-                    </li>
+                    </li>--}}
                     @endif
                 </ul>
             </div>

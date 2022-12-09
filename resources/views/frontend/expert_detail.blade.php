@@ -178,30 +178,29 @@ Experts
                         </div>
                     </div>
 --}}
-                    <div class="recentBlog">
-                        <h4><img src="../assets/img/recentBlogIcon.png" alt="" class="img-fluid"> RECENT BLOG POSTS
-                        </h4>
-                        <div class="bolgSection">
-                            <div class="recentBlogSlider">
-                                @if(count($blogs) > 0)
-                                @foreach($blogs as $blog)
-                                <div class="blogCard">
-                                    <img src="{{asset('blogs/'.$blog->image)}}" style="width: 208px; height: 128px;" alt="" class="img-fluid">
-                                    <div class="cardContent">
-                                        <div class="date">
-                                            <p>{{ date('d M,Y', strtotime($blog->created_at)) }}</p>
+                    @if(count($blogs) > 0)
+                        <div class="recentBlog">
+                            <h4><img src="../assets/img/recentBlogIcon.png" alt="" class="img-fluid"> RECENT BLOG POSTS
+                            </h4>
+                            <div class="bolgSection">
+                                <div class="recentBlogSlider">
+                                    @foreach($blogs as $blog)
+                                    <div class="blogCard">
+                                        <img src="{{asset('blogs/'.$blog->image)}}" style="width: 208px; height: 128px;" alt="" class="img-fluid">
+                                        <div class="cardContent">
+                                            <div class="date">
+                                                <p>{{ date('d M,Y', strtotime($blog->created_at)) }}</p>
+                                            </div>
+                                            <h4>{{$blog->title}}</h4>
+                                            <p>{{Illuminate\Support\Str::limit($blog->short_description,60) }}</p>
+                                            <a href="{{ route('all-blog', $blog->id) }}">Read More <img src="../assets/img/sliderArrow.png" alt=""></a>
                                         </div>
-                                        <h4>{{$blog->title}}</h4>
-                                        <p>{{Illuminate\Support\Str::limit($blog->short_description,60) }}</p>
-                                        <a href="{{ route('all-blog', $blog->id) }}">Read More <img src="../assets/img/sliderArrow.png" alt=""></a>
                                     </div>
+                                    @endforeach
                                 </div>
-                                @endforeach
-                                @endif
                             </div>
-
                         </div>
-                    </div>
+                    @endif
                 </div>
                 <!-- <div class="col-lg-4">
                     <div class="hireDiv">

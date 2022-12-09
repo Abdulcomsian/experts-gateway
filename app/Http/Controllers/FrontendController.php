@@ -74,7 +74,7 @@ class FrontendController extends Controller
                     ->where('lawyer_profiles.country', $request->country)
                     ->where('lawyer_profiles.partise_area', $request->search_expert)
                     ->get();
-            } else {
+            } elseif($request->country) {
                 $lawyers = DB::table('lawyer_profiles')
                     ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
                     ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
@@ -82,6 +82,13 @@ class FrontendController extends Controller
                     ->where('lawyer_profiles.country', $request->country)
 //                ->where('lawyer_profiles.partise_area', $request->search_expert)
                 ->get();
+            } else{
+               $lawyers = DB::table('lawyer_profiles')
+                    ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
+                    ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
+                    ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename')
+                    ->where('lawyer_profiles.partise_area', $request->search_expert)
+                    ->get();
             }
 
             return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'searchparm', 'countries', 'PartiseArea'));
@@ -183,12 +190,13 @@ class FrontendController extends Controller
     public function expert_detail($id)
     {
         $lawyer_profile = LawyerProfile::find($id);
+        $lawyer = User::where('id',$lawyer_profile->user_id)->first();
         $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id', $lawyer_profile->id)->get();
         $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id', $lawyer_profile->id)->get();
         $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id', $lawyer_profile->id)->get();
         $blogs = Blog::where('user_id', $lawyer_profile->user_id)->where('status', 1)->get();
         $fixed_services = FixedService::where('user_id', $lawyer_profile->user_id)->where('status', 1)->get();
-        return view('frontend.expert_detail', compact('lawyer_profile', 'lawyer_language', 'blogs', 'fixed_services', 'lawyer_educations', 'lawyer_memberships'));
+        return view('frontend.expert_detail', compact('lawyer_profile', 'lawyer', 'lawyer_language', 'blogs', 'fixed_services', 'lawyer_educations', 'lawyer_memberships'));
     }
 
     public function lawyer_login(Request $request)

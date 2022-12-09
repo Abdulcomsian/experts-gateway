@@ -8,6 +8,7 @@ Experts
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
+{{--                    @dd($lawyer)--}}
                     <div class="editProfileBox">
                         <div class="profileImg">
                             <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" style="width: 100% !important; height: 230px !important;" alt="" class="img-fluid">
@@ -47,22 +48,54 @@ Experts
                                             @endforeach
                                         </span>
                                     </li>
-                                    <li>
+                                    <li style="width: 70%; margin-bottom: 0;">
                                         <div class="imgDiv">
                                             <img src="../assets/img/consultantIcon.png" alt="" class="img-fluid">
                                         </div>
-                                        <span>
-                                            {{-- {{$lawyer_profile->partise_area}} , {{$lawyer_profile->secondary_partise_area ?? ''}} , {{$lawyer_profile->third_partise_area ?? ''}} --}}
-                                            Corporate Law
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <div class="imgDiv">
-                                            <img src="../assets/img/lawIcon.png" alt="" class="img-fluid">
-                                        </div>
-                                        <span>Corporate Law</span>
+                                        <span>@foreach($lawyer_educations as $education)
+                                                {{$education->education->education_name}}
+                                                @if(!($loop->last))
+                                                    ,
+                                                @endif
+                                            @endforeach</span>
                                     </li>
                                 </ul>
+                                <ul>
+                                    <li style="width: 30%; margin-bottom: 0;">
+                                        <div class="imgDiv">
+                                            <img src="{{asset('assets/img/phone3.png')}}" alt="" class="img-fluid" style="width:20px">
+                                        </div>
+                                        <span>{{$lawyer->phone ?? ''}}</span>
+                                    </li>
+                                    <li style="width: 70%; margin-top: 4px;">
+                                        <div class="imgDiv">
+                                            <img src="{{asset('assets/img/email3.png')}}" alt="" class="img-fluid" style="width:20px">
+                                        </div>
+                                        <span>{{$lawyer->email ?? ''}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="line">
+                                <img src="../assets/img/line.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="editProfileContent">
+                                <h4>Practice Area</h4>
+                                <div class="listDiv">
+                                    <ul>
+                                        <li style="width: 50%;">
+                                            <span><h6 style="text-transform: uppercase;" class="mr-md-3 font-weight-bold">Primary Practice Area:</h6></span>
+                                            <span>{{$lawyer_profile->partise_area_1->name ?? ''}}</span>
+                                        </li>
+                                        <li style="width: 50%;">
+                                            <span><h6 style="text-transform: uppercase;" class="mr-md-3">Secondary Practice Area:</h6></span>
+                                            <span>{{$lawyer_profile->partise_area_2->name ?? ''}}</span>
+                                        </li>
+                                        <li style="width: 100%; margin-bottom: 0;">
+                                            <span><h6 style="text-transform: uppercase;" class="mr-md-3">Third Practice Area:</h6></span>
+                                            <span>{{$lawyer_profile->partise_area_3->name ?? ''}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="line">
                                 <img src="../assets/img/line.png" alt="" class="img-fluid">

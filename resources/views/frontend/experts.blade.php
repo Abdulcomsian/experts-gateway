@@ -14,7 +14,7 @@ Experts
                              <form action="{{route('experts')}}">
                                 <div class="searchBox desktopHide">
                                     <div class="countryDiv">
-                                        <select name="country" id="" required="required">
+                                        <select name="country" id="">
                                             <option value="">Select Country</option>
                                              @foreach($countries as $country)
                                                 <option value="{{$country->id}}">{{$country->name}}</option>
@@ -47,7 +47,7 @@ Experts
         <form action="{{route('experts')}}">
         <div class="searchBox mobileHide">
             <div class="countryDiv">
-                <select name="country" id="" style="background-color: transparent;"  required="required">
+                <select name="country" id="" style="background-color: transparent;">
                     <option value="">Select Country</option>
                      @foreach($countries as $country)
                         <option value="{{$country->id}}">{{$country->name}}</option>

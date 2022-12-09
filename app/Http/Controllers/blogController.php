@@ -35,7 +35,7 @@ class blogController extends Controller
             $user_id = Auth::id();
             $lawyer = User::where('id',$user_id)->first();
             $expertises = Expertise::get();
-            $blogs = Blog::get();
+            $blogs = Blog::where('user_id',$user_id)->get();
             return view('blogs.add_blog', compact('lawyer','expertises','blogs'));
 
     }

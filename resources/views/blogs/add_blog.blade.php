@@ -31,7 +31,6 @@ Blog
                                 </div>
                             </div>
 
-
                             <div class="col-lg-12">
                                 <div class="form-group inputDiv">
                                     <select name="expertise_id" id="expertise_id">
@@ -63,7 +62,8 @@ Blog
                     </form>
                 </div>
             </div>
-            <div class="bolgSection">
+            @if($blogs>0)
+                <div class="bolgSection">
                 <div class="multiBlog">
                     <h4 class="commonHeading text-center">My blog posts</h4>
                     <div class="row">
@@ -99,6 +99,7 @@ Blog
                     </div>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </main>

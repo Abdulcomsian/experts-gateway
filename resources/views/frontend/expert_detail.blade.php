@@ -21,9 +21,9 @@ Experts
                                 </div>
                                 <div class="userProfile">
                                     <h4>{{$lawyer_profile->user->f_name}} {{$lawyer_profile->user->l_name}}</h4>
-                                    {{-- <p>{{$lawyer_profile->title}}</p> --}}
                                 </div>
                             </div>
+                            <a href="{{$lawyer_profile->linkedin_url}}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
                             <div class="line">
                                 <img src="../assets/img/line.png" alt="" class="img-fluid">
                             </div>

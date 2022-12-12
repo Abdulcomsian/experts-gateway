@@ -2527,7 +2527,7 @@ footer .newsLetter .formDiv button {
 
 .profileDiv .editProfileBox .editProfile .listDiv ul li span {
     color: #848484;
-    font-size: 16px;
+    font-size: 14px;
     font-family: GelionRegular;
 }
 
@@ -7903,3 +7903,27 @@ form button[type="submit"] {
     border: none;
     height: 30px;
 }
+/**************************** New - CSS */
+.profileDiv .editProfileBox .editProfile .userDetail .userProfile{
+    margin-left: 14px;
+}
+.profileDiv .editProfileBox .editProfile .userDetail .userProfile h4{
+    font-size: 31px;
+}
+.profileDiv .editProfileBox .editProfile .userDetail .userProfile .firm_name{
+    font-size: 14px;
+}
+.social-icon {
+    color: #EB276A;
+}
+.firm_img{
+    top: 40px !important;
+}
+.profileDiv .editProfileBox .editProfile .listDiv ul li{
+    width: 30%;
+}
+.contact-list li span,
+.contact-list li .imgDiv i{
+    color: #EA2A7C !important;
+}
+ 

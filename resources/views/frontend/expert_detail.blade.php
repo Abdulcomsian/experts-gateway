@@ -30,23 +30,20 @@ Experts
                                 </div>
                                 <div class="userProfile">
                                     <h4>{{$lawyer_profile->user->f_name}} {{$lawyer_profile->user->l_name}}</h4>
+                                    <h4 class="firm_name">{{$lawyer_profile->firm_name}}</h4>
+                                    <a class="social-icon" href="{{$lawyer_profile->linkedin_url}}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                             @if($lawyer_profile->firm_logo)
                                 <div class="userDetail2">
-                                    <div class="userProfile">
-                                        <h4>{{$lawyer_profile->firm_name}}</h4>
-                                    </div>
-                                    <div class="avatar">
-                                        <img src="{{asset('lawyer_profile/'.$lawyer_profile->firm_logo)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
+                                    <div class="avatar firm_img">
+                                        <img src="{{asset('lawyer_profile/'.$lawyer_profile->firm_logo)}}" alt="" style="width:60px; height:60px; border-radius:75px;" class="img-fluid">
                                     </div>
                                 </div>
                             @endif
 
-                            <a href="{{$lawyer_profile->linkedin_url}}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                            <div class="line">
-                                <img src="../assets/img/line.png" alt="" class="img-fluid">
-                            </div>
+                            
+                            <hr>
                             <div class="listDiv">
                                 <ul>
                                     <li>
@@ -80,23 +77,23 @@ Experts
                                             @endforeach</span>
                                     </li>
                                 </ul>
-                                <ul>
+                                <hr>
+                                <ul class='contact-list'>
+                                    
                                     <li style="width: 30%; margin-bottom: 0;">
-                                        <div class="imgDiv">
-                                            <img src="{{asset('assets/img/phone3.png')}}" alt="" class="img-fluid" style="width:20px">
-                                        </div>
+                                    <div class="imgDiv">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                    </div>
                                         <span>{{$lawyer->phone ?? ''}}</span>
                                     </li>
                                     <li style="width: 70%; margin-top: 4px;">
                                         <div class="imgDiv">
-                                            <img src="{{asset('assets/img/email3.png')}}" alt="" class="img-fluid" style="width:20px">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
                                         </div>
                                         <span>{{$lawyer->email ?? ''}}</span>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="line">
-                                <img src="../assets/img/line.png" alt="" class="img-fluid">
+                                <hr>
                             </div>
                             <div class="editProfileContent">
                                 <h4>Practice Area</h4>

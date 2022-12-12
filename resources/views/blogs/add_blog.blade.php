@@ -62,7 +62,7 @@ Blog
                     </form>
                 </div>
             </div>
-            @if($blogs>0)
+            @if(count($blogs)>0)
                 <div class="bolgSection">
                 <div class="multiBlog">
                     <h4 class="commonHeading text-center">My blog posts</h4>

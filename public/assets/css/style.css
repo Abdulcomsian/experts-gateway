@@ -6974,6 +6974,9 @@ form button[type="submit"] {
 }
 
 @media screen and (max-width: 768px) {
+    .profileDiv.expertDetailProfile {
+        padding: 250px 50px 100px !important;
+    }
     .profileBox .profileBoxHeader .uploadCover.uploadCoverBg {
         height: 180px;
     }
@@ -7327,6 +7330,16 @@ form button[type="submit"] {
 }
 
 @media screen and (max-width: 580px) {
+    .profileDiv.expertDetailProfile {
+        padding: 150px 0px 100px !important;
+    }
+    .profileDiv .editProfileBox .editProfile .userDetail {
+        display: block;
+    }
+    footer .newsLetter .formDiv button {
+        right: 40px;
+        padding: 0px;
+    }
     footer .newsLetter .formDiv button {
         right: 40px;
         padding: 0px;

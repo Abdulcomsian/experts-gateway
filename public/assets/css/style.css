@@ -6974,6 +6974,9 @@ form button[type="submit"] {
 }
 
 @media screen and (max-width: 768px) {
+    .profileDiv.expertDetailProfile {
+        padding: 250px 50px 100px !important;
+    }
     .profileBox .profileBoxHeader .uploadCover.uploadCoverBg {
         height: 180px;
     }
@@ -7327,6 +7330,12 @@ form button[type="submit"] {
 }
 
 @media screen and (max-width: 580px) {
+    .profileDiv.expertDetailProfile {
+        padding: 150px 0px 100px !important;
+    }
+    .profileDiv .editProfileBox .editProfile .userDetail {
+        display: block;
+    }
     footer .newsLetter .formDiv button {
         right: 40px;
         padding: 0px;
@@ -7525,7 +7534,7 @@ form button[type="submit"] {
     }
 
     .profileDiv .editProfileBox .editProfile {
-        padding: 100px 20px;
+        padding: 220px 20px;
     }
 
     .profileDiv .editProfileBox .editProfile .avatar {
@@ -7538,9 +7547,16 @@ form button[type="submit"] {
     }
 
     .profileDiv .editProfileBox .editProfile .userDetail {
-        top: -10px;
+        top: -40px;
     }
 
+    .userDetail2{
+        top: 8% !important;
+    }
+    .firm_img img{
+        width: 30px !important;
+        height: 30px !important;
+    }
     .createBlog .formDiv .uploadDiv p {
         width: 60%;
     }

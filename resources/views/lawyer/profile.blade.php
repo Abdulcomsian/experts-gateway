@@ -33,26 +33,23 @@ Dashboard
                                     </div>
                                     <div class="userProfile">
                                         <h4>{{$lawyer->f_name ?? ''}} {{$lawyer->l_name ?? ''}}</h4>
+                                        <h4 class="firm_name">{{$lawyer_profile->firm_name}}</h4>
+                                        <a class="social-icon" href="{{$lawyer_profile->linkedin_url}}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
                                         {{-- <p>{{$lawyer_profile->title}}</p> --}}
                                     </div>
                                 </div>
                                 @if($lawyer_profile->firm_logo)
                                     <div class="userDetail2">
-                                        <div class="userProfile">
-                                            <h4>{{$lawyer_profile->firm_name}}</h4>
-                                        </div>
-                                        <div class="avatar">
-                                            <img src="{{asset('lawyer_profile/'.$lawyer_profile->firm_logo)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
+                                        <div class="avatar firm_img">
+                                            <img src="{{asset('lawyer_profile/'.$lawyer_profile->firm_logo)}}" alt="" style="width:60px; height:60px; border-radius:75px;" class="img-fluid">
                                         </div>
                                     </div>
                                 @endif
-                                <a href="{{$lawyer_profile->linkedin_url}}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                                <div class="line">
-                                    <img src="../assets/img/line.png" alt="" class="img-fluid">
-                                </div>
+                                
+                                <hr>
                                 <div class="listDiv">
                                     <ul>
-                                        <li style="width: 70%;">
+                                        <li style="width: 50%;">
                                             <div class="imgDiv">
                                                 <img src="../assets/img/locationIcon.png" alt="" class="img-fluid">
                                             </div>
@@ -82,38 +79,37 @@ Dashboard
                                                 @endforeach</span>
                                         </li>
                                     </ul>
-                                    <ul>
+                                    <hr>
+                                    <ul class='contact-list'>
                                         <li style="width: 30%; margin-bottom: 0;">
                                             <div class="imgDiv">
-                                                <img src="{{asset('assets/img/phone3.png')}}" alt="" class="img-fluid" style="width:20px">
+                                                <i class="fa fa-phone" aria-hidden="true"></i>
                                             </div>
                                             <span>{{$lawyer->phone ?? ''}}</span>
                                         </li>
-                                        <li style="width: 70%; margin-top: 4px;">
-                                            <div class="imgDiv">
-                                                <img src="{{asset('assets/img/email3.png')}}" alt="" class="img-fluid" style="width:20px">
-                                            </div>
+                                        <li style="width: 70%; margin: 0px;">
+                                        <div class="imgDiv">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </div>
                                             <span>{{$lawyer->email ?? ''}}</span>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="line">
-                                    <img src="../assets/img/line.png" alt="" class="img-fluid">
-                                </div>
+                                <hr>
                                 <div class="editProfileContent">
                                     <h4>Practice Area</h4>
                                     <div class="listDiv">
                                         <ul>
                                             <li style="width: 50%;">
-                                                    <span><h6 style="text-transform: uppercase;" class="mr-md-3 font-weight-bold">Primary Practice Area:</h6></span>
+                                                    <span><h6 style="text-transform: uppercase; font-size: 14px;" class="mr-md-3 font-weight-bold">Primary Practice Area:</h6></span>
                                                 <span>{{$lawyer_profile->partise_area_1->name ?? ''}}</span>
                                             </li>
                                             <li style="width: 50%;">
-                                                <span><h6 style="text-transform: uppercase;" class="mr-md-3 font-weight-bold">Secondary Practice Area:</h6></span>
+                                                <span><h6 style="text-transform: uppercase; font-size: 14px;" class="mr-md-3 font-weight-bold">Secondary Practice Area:</h6></span>
                                                 <span>{{$lawyer_profile->partise_area_2->name ?? ''}}</span>
                                             </li>
                                             <li style="width: 100%; margin-bottom: 0;">
-                                                <span><h6 style="text-transform: uppercase;" class="mr-md-3 font-weight-bold">Third Practice Area:</h6></span>
+                                                <span><h6 style="text-transform: uppercase; font-size: 14px;" class="mr-md-3 font-weight-bold">Third Practice Area:</h6></span>
                                                 <span>{{$lawyer_profile->partise_area_3->name ?? ''}}</span>
                                             </li>
                                         </ul>

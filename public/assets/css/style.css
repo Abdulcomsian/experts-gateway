@@ -7928,5 +7928,9 @@ form button[type="submit"] {
 }
 
 .toast-message{
-    color: black;
+    color: white;
+}
+
+.toast-success{
+    background-color: #28a745!important;
 }

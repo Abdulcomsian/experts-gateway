@@ -331,7 +331,7 @@
                                                 <h4 class="card-title">{{$new->title}}</h4>
                                                 <p class="card-text mb-4">@php
                                                         $formatted_text = str_replace(['<p>', '</p>'], '',  $new->description);
-                                                    @endphp
+{{--                                                    @endphp--}}
                                                     {!! \Str::words(str_replace('&nbsp;', ' ', $formatted_text),10) !!}</p>
 
                                             </div>
@@ -465,7 +465,7 @@
                     "package_name":PackageName,
                 },
                 success:function(data){
-                    // window.location.href = "{{route('lawyer.profile')}}";
+                     window.location.href = "{{route('lawyer.profile')}}";
                 },
                 error: function (data) {
                     console.log(data);

@@ -52,7 +52,7 @@
             </div>
         </div>
         <nav class="navbar navbar-expand-md">
-            <a class="navbar-brand" href="{{url('/lawyer/profile')}}">
+            <a class="navbar-brand" href="{{route('landing-page')}}">
                 <img src="{{ asset('assets/img/logo.png') }}" alt="" class="img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

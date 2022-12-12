@@ -36,14 +36,16 @@ Dashboard
                                         {{-- <p>{{$lawyer_profile->title}}</p> --}}
                                     </div>
                                 </div>
-                                <div class="userDetail2">
-                                    <div class="userProfile">
-                                        <h4>{{$lawyer_profile->firm_name}}</h4>
+                                @if($lawyer_profile->firm_logo)
+                                    <div class="userDetail2">
+                                        <div class="userProfile">
+                                            <h4>{{$lawyer_profile->firm_name}}</h4>
+                                        </div>
+                                        <div class="avatar">
+                                            <img src="{{asset('lawyer_profile/'.$lawyer_profile->firm_logo)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
+                                        </div>
                                     </div>
-                                    <div class="avatar">
-                                        <img src="{{asset('lawyer_profile/'.$lawyer_profile->firm_logo)}}" alt="" style="width:160px; height:160px; border-radius:75px;" class="img-fluid">
-                                    </div>
-                                </div>
+                                @endif
                                 <a href="{{$lawyer_profile->linkedin_url}}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
                                 <div class="line">
                                     <img src="../assets/img/line.png" alt="" class="img-fluid">

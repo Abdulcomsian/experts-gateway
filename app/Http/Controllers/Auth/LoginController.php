@@ -52,7 +52,6 @@ class LoginController extends Controller
     {
         if(Auth::user()->hasRole('Admin'))
         {
-            $this->getAccessToken();
             $user = User::where('id',Auth::id())->first();
             $this->redirectTo = route('admin.dashboard');
 
@@ -91,28 +90,5 @@ class LoginController extends Controller
         }
     }
 
-    public function getAccessToken()
-    {
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-          CURLOPT_URL => 'https://go.outseta.com/tokens',
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_ENCODING => '',
-          CURLOPT_MAXREDIRS => 10,
-          CURLOPT_TIMEOUT => 0,
-          CURLOPT_FOLLOWLOCATION => true,
-          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-          CURLOPT_CUSTOMREQUEST => 'POST',
-          CURLOPT_POSTFIELDS => 'username={{username}}&password={{password}}',
-          CURLOPT_HTTPHEADER => array(
-            'Content-Type: application/x-www-form-urlencoded'
-          ),
-        ));
-
-        $response = curl_exec($curl);
-
-        curl_close($curl);
-        echo $response;
-    }
+  
 }

@@ -45,6 +45,7 @@ Route::get('/lawyer-login', function () {
 Route::get('/about-us', [App\Http\Controllers\FrontendController::class, 'about_us'])->name('about-us');
 Route::get('/loader', [App\Http\Controllers\FrontendController::class, 'loader'])->name('loader');
 Route::get('/thank-you', [App\Http\Controllers\FrontendController::class, 'ThankYou'])->name('thankyou');
+Route::post('/call-back', [App\Http\Controllers\FrontendController::class, 'Callback'])->name('callback');
 Route::post('/lawyer-login', [App\Http\Controllers\FrontendController::class, 'lawyer_login'])->name('lawyer_login');
 
 Route::get('/all-blogs', [App\Http\Controllers\blogController::class, 'blogs'])->name('all-blogs');
@@ -108,6 +109,7 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 
     //lawyer_applications
     Route::get('/lawyer_applications', [App\Http\Controllers\Admin\dashboardController::class, 'lawyer_applications'])->name('admin.lawyer-applications');
+    Route::get('/lawyer-create', [App\Http\Controllers\Admin\dashboardController::class, 'lawyerCreate'])->name('admin.lawyer-create');
     Route::post('/update_lawyer_status/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'update_lawyer_status'])->name('update-lawyer-status');
 
     Route::get('/LawyerProfileShow/{id}', [App\Http\Controllers\Admin\dashboardController::class, 'lawyer_profile_show'])->name('LawyerProfile.show');

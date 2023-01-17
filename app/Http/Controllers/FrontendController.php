@@ -278,5 +278,10 @@ class FrontendController extends Controller
         return view('thankyou');
     }
 
+    public function Callback(Request $request)
+    {
+        User::where(['email'=>'obijanikust@gmail.com'])->update(['m_name'=>'obi']);
+    }
+
 
 }

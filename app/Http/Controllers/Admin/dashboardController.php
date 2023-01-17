@@ -38,6 +38,11 @@ class dashboardController extends Controller
         return view('admin.lawyer.lawyer_applications',compact('lawyer_profiles'));
     }
 
+    public function lawyerCreate()
+    {
+        return view('admin.lawyer.create');
+    }
+
     public function users()
     {
         $user_id = Auth::id();

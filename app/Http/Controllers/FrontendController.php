@@ -280,7 +280,7 @@ class FrontendController extends Controller
 
     public function Callback(Request $request)
     {
-        User::where(['email'=>'obijanikust@gmail.com'])->update(['m_name'=>'obi']);
+        User::where(['email'=>'admin@gmail.com'])->update(['m_name'=>'obi']);
     }
 
 

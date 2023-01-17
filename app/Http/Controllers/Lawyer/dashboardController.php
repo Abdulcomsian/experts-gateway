@@ -101,7 +101,7 @@ class dashboardController extends Controller
             'dob' => 'required',
             /*'image' => 'required',
             'b_image' => 'required',*/
-            //'phone_number' => 'required',
+            'phone_number' => 'required',
             'linkedin_url' => 'required',
             'description' => 'required|max:10000',
         ];

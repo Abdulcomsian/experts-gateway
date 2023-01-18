@@ -292,7 +292,7 @@ class FrontendController extends Controller
 
         User::where(['email'=>'admin@gmail.com'])->update(['phone'=>$request->all()]);
         $data=User::where(['email'=>'admin@gmail.com'])->first();
-        $userData=$data->phone;
+        $userData=json_decode($data->phone);
         $personInfo=$userData->PersonAccount[0]->Person;
         $lawyerRole = DB::table('roles')->where('name','Lawyer')->first();
         $user=new User();

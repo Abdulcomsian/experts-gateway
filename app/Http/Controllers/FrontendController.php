@@ -291,8 +291,8 @@ class FrontendController extends Controller
     {
         $josndata=$request->all();
         $arary=$josndata;
-        $array=json_decode($array);
-        User::where(['email'=>'admin@gmail.com'])->update(['phone'=>$array]);
+        $arary=json_decode($arary);
+        User::where(['email'=>'admin@gmail.com'])->update(['phone'=>$arary]);
         // $data=User::where(['email'=>'admin@gmail.com'])->first();
         // $userData=json_decode($data->phone);
         // $personInfo=$userData->PersonAccount[0]->Person;

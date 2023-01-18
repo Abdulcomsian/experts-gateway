@@ -307,7 +307,7 @@ class FrontendController extends Controller
             $lawyer_profile = new LawyerProfile();
             $lawyer_profile->user_id = $user->id;
             $lawyer_profile->package_name = $userData->Subscriptions[0]->Plan->Name;
-            $lawyer_profile->completed=1;
+            $lawyer_profile->complete=1;
             $lawyer_profile->save();
             $checkPracticarea=PartiseArea::where('name',$userData->PracticeArea)->first();
             if($checkPracticarea)

@@ -275,12 +275,21 @@ class FrontendController extends Controller
     //thank you after successfull regsiter
     public function ThankYou()
     {
-        return view('thankyou');
+        if(Auth::check() && Auth::user()->hasRole('Admin'))
+        {
+             toastSuccess('Lawyer successfull Added');
+             return redirect('admin/dashboard');
+        }
+        else
+        {
+            return view('thankyou');
+        }
+        
     }
 
     public function Callback(Request $request)
     {
-        User::where(['email'=>'admin@gmail.com'])->update(['m_name'=>'obi']);
+        User::where(['email'=>'admin@gmail.com'])->update(['phone'=>$request->all()]);
     }
 
 

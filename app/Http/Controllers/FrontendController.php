@@ -298,7 +298,7 @@ class FrontendController extends Controller
         $user=new User();
         $user->email=$personInfo->Email;
         $user->f_name=$personInfo->First_Name;
-        $user->m_name=$personInfo->Last_Name;
+        $user->l_name=$personInfo->Last_Name;
         $user->country=$userData->BillingAddress->Country;
         $user->password=Hash::make('password1');
         $user->assignRole($lawyerRole->name);
@@ -307,7 +307,7 @@ class FrontendController extends Controller
             $lawyer_profile = new LawyerProfile();
             $lawyer_profile->user_id = $user->id;
             $lawyer_profile->package_name = $userData->Subscriptions[0]->Plan->Name;
-            $lawyer_profile->complete=1;
+            $lawyer_profile->complete=2;
             $lawyer_profile->save();
             $checkPracticarea=PartiseArea::where('name',$userData->PracticeArea)->first();
             if($checkPracticarea)

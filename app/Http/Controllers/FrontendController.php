@@ -290,10 +290,10 @@ class FrontendController extends Controller
     public function Callback(Request $request)
     {
 
-        // User::where(['email'=>'admin@gmail.com'])->update(['phone'=>$request->all()]);
-        // $data=User::where(['email'=>'admin@gmail.com'])->first();
-        $userData=$request->all();
-        $personInfo=$userData->PersonAccount->Person;
+        User::where(['email'=>'admin@gmail.com'])->update(['phone'=>$request->all()]);
+        $data=User::where(['email'=>'admin@gmail.com'])->first();
+        $userData=$data->phone;
+        $personInfo=$userData->PersonAccount[0]->Person;
         $lawyerRole = DB::table('roles')->where('name','Lawyer')->first();
         $user=new User();
         $user->email=$personInfo->Email;
@@ -306,7 +306,7 @@ class FrontendController extends Controller
         {
             $lawyer_profile = new LawyerProfile();
             $lawyer_profile->user_id = $user->id;
-            $lawyer_profile->package_name = $userData->Subscriptions->Plan->Name;
+            $lawyer_profile->package_name = $userData->Subscriptions[0]->Plan->Name;
             $lawyer_profile->complete=2;
             $lawyer_profile->save();
             $checkPracticarea=PartiseArea::where('name',$userData->PracticeArea)->first();

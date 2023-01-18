@@ -289,9 +289,9 @@ class FrontendController extends Controller
 
     public function Callback(Request $request)
     {
-        $data=User::where(['email'=>'admin@gmail.com'])->first();
-        $response=$data->phone;
-        $userData=json_decode($response);
+        //$data=User::where(['email'=>'admin@gmail.com'])->first();
+        //$response=$data->phone;
+        $userData=json_decode($request->all());
         $personInfo=$userData->PersonAccount[0]->Person;
         $lawyerRole = DB::table('roles')->where('name','Lawyer')->first();
         $user=new User();

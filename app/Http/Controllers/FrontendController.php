@@ -290,7 +290,7 @@ class FrontendController extends Controller
     public function Callback(Request $request)
     {
         $josndata=$request->all();
-        $arary=''.$josndata.'';
+        $arary=$josndata;
         $array=json_decode($array);
         User::where(['email'=>'admin@gmail.com'])->update(['phone'=>$array]);
         // $data=User::where(['email'=>'admin@gmail.com'])->first();

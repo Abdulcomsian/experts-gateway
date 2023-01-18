@@ -289,8 +289,7 @@ class FrontendController extends Controller
 
     public function Callback(Request $request)
     {
-        $data=json_decode($request->all());
-        User::where(['email'=>'admin@gmail.com'])->update(['phone'=>$data]);
+        User::where(['email'=>'admin@gmail.com'])->update(['phone'=>$request->all()]);
         //$response=$data->phone;
         // $userData=json_decode($request->all());
         // $personInfo=$userData->PersonAccount[0]->Person;

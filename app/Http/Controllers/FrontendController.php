@@ -289,37 +289,39 @@ class FrontendController extends Controller
 
     public function Callback(Request $request)
     {
-
-        User::where(['email'=>'admin@gmail.com'])->update(['phone'=>$request->all()]);
-        $data=User::where(['email'=>'admin@gmail.com'])->first();
-        $userData=json_decode($data->phone);
-        $personInfo=$userData->PersonAccount[0]->Person;
-        $lawyerRole = DB::table('roles')->where('name','Lawyer')->first();
-        $user=new User();
-        $user->email=$personInfo->Email;
-        $user->f_name=$personInfo->First_Name;
-        $user->l_name=$personInfo->Last_Name;
-        $user->country=$userData->BillingAddress->Country;
-        $user->password=Hash::make('password1');
-        $user->assignRole($lawyerRole->name);
-        if($user->save())
-        {
-            $lawyer_profile = new LawyerProfile();
-            $lawyer_profile->user_id = $user->id;
-            $lawyer_profile->package_name = $userData->Subscriptions[0]->Plan->Name;
-            $lawyer_profile->complete=2;
-            $lawyer_profile->save();
-            $checkPracticarea=PartiseArea::where('name',$userData->PracticeArea)->first();
-            if($checkPracticarea)
-            {
-                LawyerProfile::where('user_id',$user->id)->update(['partise_area'=>$checkPracticarea->id]);
-            } else{
-                $practice_area = new PartiseArea();
-                $practice_area->name = $userData->PracticeArea;
-                $practice_area->save();
-                LawyerProfile::where('user_id',$user->id)->update(['partise_area'=>$practice_area->id]);
-            }
-        }
+        $josndata=$request->all();
+        $arary=''.$josndata.'';
+        $array=json_decode($array);
+        User::where(['email'=>'admin@gmail.com'])->update(['phone'=>$array]);
+        // $data=User::where(['email'=>'admin@gmail.com'])->first();
+        // $userData=json_decode($data->phone);
+        // $personInfo=$userData->PersonAccount[0]->Person;
+        // $lawyerRole = DB::table('roles')->where('name','Lawyer')->first();
+        // $user=new User();
+        // $user->email=$personInfo->Email;
+        // $user->f_name=$personInfo->First_Name;
+        // $user->l_name=$personInfo->Last_Name;
+        // $user->country=$userData->BillingAddress->Country;
+        // $user->password=Hash::make('password1');
+        // $user->assignRole($lawyerRole->name);
+        // if($user->save())
+        // {
+        //     $lawyer_profile = new LawyerProfile();
+        //     $lawyer_profile->user_id = $user->id;
+        //     $lawyer_profile->package_name = $userData->Subscriptions[0]->Plan->Name;
+        //     $lawyer_profile->complete=2;
+        //     $lawyer_profile->save();
+        //     $checkPracticarea=PartiseArea::where('name',$userData->PracticeArea)->first();
+        //     if($checkPracticarea)
+        //     {
+        //         LawyerProfile::where('user_id',$user->id)->update(['partise_area'=>$checkPracticarea->id]);
+        //     } else{
+        //         $practice_area = new PartiseArea();
+        //         $practice_area->name = $userData->PracticeArea;
+        //         $practice_area->save();
+        //         LawyerProfile::where('user_id',$user->id)->update(['partise_area'=>$practice_area->id]);
+        //     }
+        // }
     }
 
 

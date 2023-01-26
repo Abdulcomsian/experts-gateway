@@ -156,7 +156,7 @@ class dashboardController extends Controller
         $lawyer_profile->state = $request->state;
         $lawyer_profile->city = $request->city;
         $lawyer_profile->partise_area = $request->partise_area;
-        $lawyer_profile->firm_name = $request->firm_name;
+        //$lawyer_profile->firm_name = $request->firm_name;
         // $lawyer_profile->education = implode($request->education, ',');
         // $lawyer_profile->membership = implode($request->membership, ',');
         if($request->hasfile('image'))
@@ -194,6 +194,7 @@ class dashboardController extends Controller
         {
             $lawyer_profile->third_partise_area = $request->third_partise_area;
         }
+      
         $lawyer_profile->save();
 
         $user= User::where('id',$lawyer->user_id)->first();

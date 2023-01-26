@@ -191,7 +191,7 @@ Edit Lawyer Profile
                                                             <option value="{{$education->id}}" {{$selected ?? ''}}>{{$education->education_name}}</option>
                                                             @endforeach
                                                         </select>
-                                                        <div style="color:red;">{{$errors->first('expertise_id')}}</div> <br>
+                                                        <div style="color:red;">{{$errors->first('education_id')}}</div> <br>
                                                     </div>
                                                 </div>
                                                 <!--end::Input group-->
@@ -233,7 +233,7 @@ Edit Lawyer Profile
                                                                     <option value="{{$row->id}}" {{($lawyer_profile AND $lawyer_profile->partise_area == $row->id) ? 'selected' : ''}}>{{$row->name}}</option>
                                                                 @endforeach
                                                     </select>
-                                                    <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
+                                                   
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -244,10 +244,10 @@ Edit Lawyer Profile
                                                     <select class="form-control" name="secondary_partise_area">
                                                         <option value=""> Select Practice Area</option>
                                                          @foreach($practice_areas as $row)
-                                                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                                                    <option value="{{$row->id}}" {{($lawyer_profile AND $lawyer_profile->secondary_partise_area == $row->id) ? 'selected' : ''}}>{{$row->name}}</option>
                                                         @endforeach
                                                     </select>
-                                                    <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
+                                                   
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -258,10 +258,10 @@ Edit Lawyer Profile
                                                     <select class="form-control" name="third_partise_area">
                                                         <option value=""> Select Practice Area</option>
                                                          @foreach($practice_areas as $row)
-                                                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                                                    <option value="{{$row->id}}" {{($lawyer_profile AND $lawyer_profile->third_partise_area == $row->id) ? 'selected' : ''}}>{{$row->name}}</option>
                                                          @endforeach
                                                     </select>
-                                                    <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
+                                                    
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -337,6 +337,7 @@ Edit Lawyer Profile
                                                             {{$selected ?? ''}} >{{$membership->membership_name}}</option>
                                                         @endforeach
                                                     </select>
+                                                    <div style="color:red;">{{$errors->first('membership_id')}}</div> <br>
                                                 <!--end::Input group-->
                                                 </div><br>
                                             </div>

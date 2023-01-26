@@ -77,7 +77,9 @@ Lawyer Applications
                                 </td>
                                 <td class="text-end">
                                     <div class="btn-group">
-
+                                        <a href="{{url('experts',$lawyer_profile->id)}}" class="btn btn-sm btn-primary edit-quiz" style="height: 33px; margin-left: 10px" title="view profile" target="_blank">
+                                           <i class="fa fa-user" ></i>
+                                        </a>
                                         <a href="{{route('LawyerProfile.show',$lawyer_profile->user->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a><br><br>
 
                                         <a href="{{route('LawyerProfile.edit',$lawyer_profile->user->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>

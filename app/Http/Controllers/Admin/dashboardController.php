@@ -17,6 +17,7 @@ use App\Models\Membership;
 use App\Models\LawyersHasMembership;
 use App\Models\LawyersHasExpertise;
 use App\Models\LawyersHasLanguage;
+use App\Models\PartiseArea;
 use App\Mail\LawyerApprovedMAil;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -124,7 +125,8 @@ class dashboardController extends Controller
         $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
         $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
         $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
-        return view('admin.lawyer.edit', compact('lawyer_profile','user','lawyer_language','languages','educations','memberships','lawyer_educations','lawyer_memberships','countries','city','states'));
+        $practice_areas = PartiseArea::get();
+        return view('admin.lawyer.edit', compact('lawyer_profile','user','lawyer_language','languages','educations','memberships','lawyer_educations','lawyer_memberships','countries','city','states','practice_areas'));
 
     }
 
@@ -153,6 +155,7 @@ class dashboardController extends Controller
         $lawyer_profile->country = $request->country;
         $lawyer_profile->state = $request->state;
         $lawyer_profile->city = $request->city;
+        $lawyer_profile->partise_area = $request->partise_area;
         $lawyer_profile->firm_name = $request->firm_name;
         // $lawyer_profile->education = implode($request->education, ',');
         // $lawyer_profile->membership = implode($request->membership, ',');
@@ -182,6 +185,14 @@ class dashboardController extends Controller
             $image_c_name =time().'.'. $c_extensions;
             $c_image->move(public_path('lawyer_cover_image/'),$image_c_name);
             $lawyer_profile->b_image=$image_c_name;
+        }
+        if($request->secondary_partise_area)
+        {
+            $lawyer_profile->secondary_partise_area = $request->secondary_partise_area;
+        }
+        if($request->third_partise_area)
+        {
+            $lawyer_profile->third_partise_area = $request->third_partise_area;
         }
         $lawyer_profile->save();
 

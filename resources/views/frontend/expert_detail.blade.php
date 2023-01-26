@@ -105,11 +105,11 @@ Experts
                                         </li>
                                         <li style="width: 50%;">
                                             <span><h6 style="text-transform: uppercase;" class="mr-md-3 font-weight-bold">Secondary Practice Area:</h6></span>
-                                            <span>{{$lawyer_profile->partise_area_2->name ?? ''}}</span>
+                                            {{--<span>{{$lawyer_profile->partise_area_2->name ?? ''}}</span>--}}
                                         </li>
                                         <li style="width: 100%; margin-bottom: 0;">
                                             <span><h6 style="text-transform: uppercase;" class="mr-md-3 font-weight-bold">Third Practice Area:</h6></span>
-                                            <span>{{$lawyer_profile->partise_area_3->name ?? ''}}</span>
+                                            {{--<span>{{$lawyer_profile->partise_area_3->name ?? ''}}</span>--}}
                                         </li>
                                     </ul>
                                 </div>

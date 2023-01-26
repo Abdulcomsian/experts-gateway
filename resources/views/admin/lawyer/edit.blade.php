@@ -221,8 +221,51 @@ Edit Lawyer Profile
                                                     <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->
-                                            </div><br>
+                                            </div>
                                             <!--end::Col-->
+                                            <div class="col-lg-4">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Primary Practice Area</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <select class="form-control" name="partise_area">
+                                                        <option value="" disabled> Select Practice Area</option>
+                                                                @foreach($practice_areas as $row)
+                                                                    <option value="{{$row->id}}" {{($lawyer_profile AND $lawyer_profile->partise_area == $row->id) ? 'selected' : ''}}>{{$row->name}}</option>
+                                                                @endforeach
+                                                    </select>
+                                                    <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Secondary Practice Area</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <select class="form-control" name="secondary_partise_area">
+                                                        <option value=""> Select Practice Area</option>
+                                                         @foreach($practice_areas as $row)
+                                                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Third Practice Area</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <select class="form-control" name="third_partise_area">
+                                                        <option value=""> Select Practice Area</option>
+                                                         @foreach($practice_areas as $row)
+                                                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                                         @endforeach
+                                                    </select>
+                                                    <div style="color:red;">{{$errors->first('language_id')}}</div> <br>
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            
 
                                             <!--begin::Col-->
                                             <div class="col-lg-6">

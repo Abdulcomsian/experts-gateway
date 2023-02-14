@@ -111,7 +111,7 @@ Experts
                                                     <img src="{{ asset('assets/img/line.png') }}" alt="" class="img-fluid">
                                                 </div>
                                                 <div class="cardFooter">
-                                                    <p>Address: <span>{{$lawyer['lawyer_profile'][0]->address}}</span></p>
+                                                    {{--<p>Address: <span>{{$lawyer['lawyer_profile'][0]->address}}</span></p>
                                                     <p>Education:
                                                         <span>
                                                             @php
@@ -124,7 +124,9 @@ Experts
                                                                 @endif
                                                             @endforeach
                                                         </span>
-                                                    </p>
+                                                    </p>--}}
+                                                    <p><strong>Country:</strong> {{$lawyer['lawyer_profile'][0]->countryList->name}} <span></span></p>
+                                                    <p><strong>Area of Expertise:</strong> {{$lawyer['lawyer_profile'][0]->partise_area_1->name}} <span></span></p>
                                                 </div>
                                                 {{--<div class="contactDiv">
                                                     <ul>
@@ -166,7 +168,7 @@ Experts
                                         <img src="{{ asset('assets/img/line.png') }}" alt="" class="img-fluid">
                                     </div>
                                     <div class="cardFooter">
-                                        <p>Address: <span>{{$lawyer->address}}</span></p>
+                                        {{--<p>Address: <span>{{$lawyer->address}}</span></p>
                                         <p>Education:
                                             <span>
                                                 @php
@@ -179,7 +181,9 @@ Experts
                                                     @endif
                                                 @endforeach
                                             </span>
-                                        </p>
+                                        </p>--}}
+                                        <p><strong>Country:</strong> {{$lawyer->countryname}} <span></span></p>
+                                        <p><strong>Area of Expertise:</strong> {{$lawyer->practicename}} <span></span></p>
                                     </div>
                                     {{--<div class="contactDiv">
                                         <ul>

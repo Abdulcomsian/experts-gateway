@@ -102,8 +102,9 @@ class FrontendController extends Controller
         if ($request->country) {
             $lawyers = DB::table('lawyer_profiles')
                 ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
+                ->leftJoin('countries', 'lawyer_profiles.country', '=', 'countries.id')
                 ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'partise_areas.id')
-                ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename')
+                ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename', 'countries.name as countryname')
                 ->where('lawyer_profiles.country', $request->country);
             if ($request->search_expert) {
                 $lawyers->where('lawyer_profiles.partise_area', $request->search_expert);

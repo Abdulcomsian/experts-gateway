@@ -132,6 +132,7 @@ class dashboardController extends Controller
 
     public function update_lawyer_profile(Request $request,$id)
     {
+//        dd($request);
         $user_id = Auth::id();
         $this->validate($request,[
             'f_name'=>'required',
@@ -156,6 +157,7 @@ class dashboardController extends Controller
         $lawyer_profile->state = $request->state;
         $lawyer_profile->city = $request->city;
         $lawyer_profile->partise_area = $request->partise_area;
+        $lawyer_profile->linkedin_url = $request->linkedin_url;
         //$lawyer_profile->firm_name = $request->firm_name;
         // $lawyer_profile->education = implode($request->education, ',');
         // $lawyer_profile->membership = implode($request->membership, ',');
@@ -194,12 +196,13 @@ class dashboardController extends Controller
         {
             $lawyer_profile->third_partise_area = $request->third_partise_area;
         }
-      
+
         $lawyer_profile->save();
 
         $user= User::where('id',$lawyer->user_id)->first();
         $user->f_name = $request->f_name;
         $user->l_name = $request->l_name;
+        $user->phone = $request->phone;
         $user->save();
         LawyersHasLanguage::where('lawyer_profile_id',$id)->delete();
         LawyersHasEducation::where('lawyer_profile_id',$id)->delete();
@@ -230,6 +233,7 @@ class dashboardController extends Controller
         }
 
         toastSuccess('Successfully Updated');
+        Session::flash('success', 'Successfully Updated');
         return Redirect::back();
     }
 

@@ -23,7 +23,7 @@ Dashboard
                         </div>
                         <div class="editProfileBox">
                             <div class="profileImg">
-                                <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" style="height: 300px !important;" alt="" class="img-fluid">
+                                <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" style="height: 300px !important; object-fit: cover;" alt="" class="img-fluid">
 
                             </div>
                             <div class="editProfile">
@@ -45,7 +45,7 @@ Dashboard
                                         </div>
                                     </div>
                                 @endif
-                                
+
                                 <hr>
                                 <div class="listDiv">
                                     <ul>
@@ -163,7 +163,7 @@ Dashboard
                                     <img src="{{asset('assets/img/starter.svg') }}" alt="" class="img-fluid">
                                     <div class="name_div">
                                         <p>{{$lawyer_profile->package_name ?? ''}}</p>
-                                        <span>Monthly</span>
+{{--                                        <span>Monthly</span>--}}
                                     </div>
                                 </div>
                                 {{-- <p class="price_package">200/mo</p> --}}

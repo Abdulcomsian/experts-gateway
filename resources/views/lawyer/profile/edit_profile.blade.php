@@ -38,7 +38,7 @@ Edit Profile
                     </div>
                 </div>
                 <div class="profileFormDiv pt-0">
-                    
+
                         <div class="row">
                             <div class="col-lg-6">
                                 <label>First Name</label>
@@ -65,7 +65,7 @@ Edit Profile
                                 <div class="inputDiv">
                                     <select name="country" id="country-dropdown">
                                         <option value="">Select Country</option>
-                                        
+
                                         @foreach ($countries as $country)
                                         @if($lawyer_profile)
                                         @if($country->id == $lawyer_profile->country)
@@ -87,7 +87,7 @@ Edit Profile
                                 <label>State</label>
                                 <div class="inputDiv">
                                     <select name="state" class="" id="state-dropdown">
-                                                                
+
                                         @foreach ($states as $state)
                                         @if($lawyer_profile)
                                         @if($state->id == $lawyer_profile->state)
@@ -117,6 +117,20 @@ Edit Profile
                                         @endif
                                     </select>
                                     <div style="color:red;">{{$errors->first('city')}}</div> <br>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Phone No</label>
+                                <div class="inputDiv">
+                                    <input type="text" placeholder="phone" name="phone" value="{{$lawyer_profile->user->phone}}">
+                                    <div style="color:red;">{{$errors->first('phone')}}</div> <br>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Linkedin Url</label>
+                                <div class="inputDiv">
+                                    <input type="url" placeholder="LinkedIn Profile Url" name="linkedin_url" value="{{$lawyer_profile->linkedin_url}}">
+                                    <div style="color:red;">{{$errors->first('linkedin_url')}}</div> <br>
                                 </div>
                             </div>
                             {{-- <div class="col-lg-6">
@@ -163,7 +177,7 @@ Edit Profile
                                         <option disabled> Select Expertises</option>
                                         @foreach($educations as $eduction)
                                         @foreach($lawyer_educations as $l_eduction)
-                                        @php 
+                                        @php
                                         $selected="";
                                         if($l_eduction->education_id == $eduction->id ){
                                             $selected="selected";
@@ -184,7 +198,7 @@ Edit Profile
                                     <option disabled> Select Language</option>
                                     @foreach($languages as $language)
                                         @foreach($lawyer_language as $l_language)
-                                        @php 
+                                        @php
                                         $selected="";
                                         if($l_language->language_id == $language->id ){
                                             $selected="selected";
@@ -223,7 +237,7 @@ Edit Profile
                                         <option disabled> Select Eductions</option>
                                         @foreach($educations as $education)
                                             @foreach($lawyer_educations as $l_education)
-                                            @php 
+                                            @php
                                             $selected="";
                                             if($l_education->education_id == $education->id ){
                                                 $selected="selected";
@@ -250,7 +264,7 @@ Edit Profile
                                         <option disabled> Select Eductions</option>
                                         @foreach($memberships as $membership)
                                             @foreach($lawyer_memberships as $l_membership)
-                                            @php 
+                                            @php
                                             $selected="";
                                             if($l_membership->membership_id == $membership->id ){
                                                 $selected="selected";
@@ -287,18 +301,18 @@ Edit Profile
         type: "POST",
         data: {
         country_id: country_id,
-        _token: '{{csrf_token()}}' 
+        _token: '{{csrf_token()}}'
         },
         dataType : 'json',
         success: function(result){
-        $('#state-dropdown').html('<option value="">Select State</option>'); 
+        $('#state-dropdown').html('<option value="">Select State</option>');
         $.each(result.states,function(key,value){
         $("#state-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
         });
-        $('#city-dropdown').html('<option value="">Select State First</option>'); 
+        $('#city-dropdown').html('<option value="">Select State First</option>');
         }
         });
-        });    
+        });
         $('#state-dropdown').on('change', function() {
         var state_id = this.value;
         $("#city-dropdown").html('');
@@ -307,11 +321,11 @@ Edit Profile
         type: "POST",
         data: {
         state_id: state_id,
-        _token: '{{csrf_token()}}' 
+        _token: '{{csrf_token()}}'
         },
         dataType : 'json',
         success: function(result){
-        $('#city-dropdown').html('<option value="">Select City</option>'); 
+        $('#city-dropdown').html('<option value="">Select City</option>');
         $.each(result.cities,function(key,value){
         $("#city-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
         });
@@ -331,36 +345,36 @@ Edit Profile
         $('.js-example-basic-multiple').select2();
     });
 
-    $(document).ready(function(){      
-      var i=1;  
+    $(document).ready(function(){
+      var i=1;
 
-      $('#add').click(function(){  
-           i++;  
-           $('#dynamic_field_membership').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="membership[]" placeholder="Enter Membership & Association Law" class="form-control membership_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
-      });  
+      $('#add').click(function(){
+           i++;
+           $('#dynamic_field_membership').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="membership[]" placeholder="Enter Membership & Association Law" class="form-control membership_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');
+      });
 
 
-      $(document).on('click', '.btn_remove', function(){  
-           var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
-      });  
+      $(document).on('click', '.btn_remove', function(){
+           var button_id = $(this).attr("id");
+           $('#row'+button_id+'').remove();
+      });
 
     });
 
-    $(document).ready(function(){      
-      var j=1;  
+    $(document).ready(function(){
+      var j=1;
 
 
-      $('#add_edu').click(function(){  
-           j++;  
-           $('#dynamic_field').append('<tr id="row'+j+'" class="dynamic-added"><td><input type="text" name="education[]" placeholder="Enter Education" class="form-control education_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+j+'" class="btn btn-danger btn_remove_edu">X</button></td></tr>');  
-      });  
+      $('#add_edu').click(function(){
+           j++;
+           $('#dynamic_field').append('<tr id="row'+j+'" class="dynamic-added"><td><input type="text" name="education[]" placeholder="Enter Education" class="form-control education_list" /></td><td><button style="padding: 7px !important; margin-top:2px;" type="button" name="remove" id="'+j+'" class="btn btn-danger btn_remove_edu">X</button></td></tr>');
+      });
 
 
-      $(document).on('click', '.btn_remove_edu', function(){  
-           var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
-      });  
+      $(document).on('click', '.btn_remove_edu', function(){
+           var button_id = $(this).attr("id");
+           $('#row'+button_id+'').remove();
+      });
 
       let x = 0;
       $('.uploadCoverBg').click(function(){

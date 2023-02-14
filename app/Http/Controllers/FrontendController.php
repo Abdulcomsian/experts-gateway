@@ -64,32 +64,52 @@ class FrontendController extends Controller
         $memberships = Membership::get();
         $news = News::latest()->take(10)->get();
         $countries = Country::get();
+        $searchparm = '';
+        /* if ($request->country) {
+             $searchparm = '';
+             if($request->country AND $request->search_expert){
+                 $lawyers = DB::table('lawyer_profiles')
+                     ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
+                     ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
+                     ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename')
+                     ->where('lawyer_profiles.country', $request->country)
+                     ->where('lawyer_profiles.partise_area', $request->search_expert)
+                     ->get();
+             } elseif($request->country) {
+                 $lawyers = DB::table('lawyer_profiles')
+                     ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
+                     ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
+                     ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename')
+                     ->where('lawyer_profiles.country', $request->country)
+ //                ->where('lawyer_profiles.partise_area', $request->search_expert)
+                 ->get();
+             } else{
+                $lawyers = DB::table('lawyer_profiles')
+                     ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
+                     ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
+                     ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename')
+                     ->where('lawyer_profiles.partise_area', $request->search_expert)
+                     ->get();
+             }
+             return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'searchparm', 'countries', 'PartiseArea'));
+         } else {
+             $lawyers = User::with('lawyer_profile')->whereHas('roles', function ($q) {
+                 $q->where('name', 'Lawyer');
+             })->where('status', 1)->get();
+             return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'countries', 'PartiseArea'));
+         }*/
+
         if ($request->country) {
-            $searchparm = '';
-            if($request->country AND $request->search_expert){
-                $lawyers = DB::table('lawyer_profiles')
-                    ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
-                    ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
-                    ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename')
-                    ->where('lawyer_profiles.country', $request->country)
-                    ->where('lawyer_profiles.partise_area', $request->search_expert)
-                    ->get();
-            } elseif($request->country) {
-                $lawyers = DB::table('lawyer_profiles')
-                    ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
-                    ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
-                    ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename')
-                    ->where('lawyer_profiles.country', $request->country)
-//                ->where('lawyer_profiles.partise_area', $request->search_expert)
-                ->get();
-            } else{
-               $lawyers = DB::table('lawyer_profiles')
-                    ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
-                    ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'lawyer_profiles.id')
-                    ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename')
-                    ->where('lawyer_profiles.partise_area', $request->search_expert)
-                    ->get();
+            $lawyers = DB::table('lawyer_profiles')
+                ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
+                ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'partise_areas.id')
+                ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename')
+                ->where('lawyer_profiles.country', $request->country);
+            if ($request->search_expert) {
+                $lawyers->where('lawyer_profiles.partise_area', $request->search_expert);
             }
+
+            $lawyers = $lawyers->get();
 
             return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'searchparm', 'countries', 'PartiseArea'));
         } else {
@@ -284,7 +304,7 @@ class FrontendController extends Controller
         {
             return view('thankyou');
         }
-        
+
     }
 
     public function Callback(Request $request)

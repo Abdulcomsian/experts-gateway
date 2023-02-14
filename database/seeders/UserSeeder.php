@@ -45,6 +45,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('password1')
             ]);
 
+
             $user = User::create([
                 'f_name' => 'User First Name',
                 'l_name' => 'User Last Name',
@@ -55,9 +56,17 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('password1')
             ]);
 
-            
+            $lawyer1 = User::create([
+                'f_name' => 'Lawyer F_name',
+                'l_name' => 'Lawyer L_name',
+                'email' => 'lawyer2@gmail.com',
+                'status' => '1',
+                'password' => Hash::make('password1')
+            ]);
+
             $admin->assignRole($adminRole->name);
             $lawyer->assignRole($lawyerRole->name);
+            $lawyer1->assignRole($lawyerRole->name);
             $user->assignRole($userRole->name);
         }
     }

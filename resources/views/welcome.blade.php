@@ -241,7 +241,7 @@ Expert Gateway
                             <div class="line">
                                 .................................................................................</div>
                             <div class="expertAbout">
-                                <p><strong>Address:</strong> <span>{{$lawyer['lawyer_profile'][0]->address}}</span></p>
+                                {{--<p><strong>Address:</strong> <span>{{$lawyer['lawyer_profile'][0]->address}}</span></p>
                                 <p><strong>Education:</strong> <span>
                                         @php
                                         $lawyer_educations =
@@ -253,7 +253,8 @@ Expert Gateway
                                         ,
                                         @endif
                                         @endforeach
-                                    </span></p>
+                                    </span></p>--}}
+                                <p><strong>Area of Expertise:</strong>{{}} <span></span></p>
                             </div>
                         </div>
                     </a>

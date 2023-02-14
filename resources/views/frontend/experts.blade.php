@@ -17,7 +17,7 @@ Experts
                                         <select name="country" id="">
                                             <option value="">Select Country</option>
                                              @foreach($countries as $country)
-                                                <option value="{{$country->id}}">{{$country->name}}</option>
+                                                <option value="{{$country->id}}" {{ request()->country == $country->id ? 'selected' : '' }}>{{$country->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -25,7 +25,7 @@ Experts
                                         <select name="search_expert" id="search_expert">
                                             <option value="">Select Practice Area</option>
                                              @foreach($PartiseArea as $area)
-                                             <option value="{{$area->id}}">{{$area->name}}</option>
+                                                <option value="{{$area->id}}" {{ request()->search_expert == $area->id ? 'selected' : '' }}>{{$area->name}}</option>
                                              @endforeach
                                         </select>
                                         <div class="btnDiv">
@@ -50,7 +50,7 @@ Experts
                 <select name="country" id="" style="background-color: transparent;">
                     <option value="">Select Country</option>
                      @foreach($countries as $country)
-                        <option value="{{$country->id}}">{{$country->name}}</option>
+                        <option value="{{$country->id}}" {{ request()->country == $country->id ? 'selected' : '' }}>{{$country->name}}</option>
                     @endforeach
                 </select>
             </div>
@@ -58,7 +58,7 @@ Experts
                 <select name="search_expert" id="search_expert" style="background-color: transparent;">
                      <option value="">Select Practice Area</option>
                      @foreach($PartiseArea as $area)
-                     <option value="{{$area->id}}">{{$area->name}}</option>
+                     <option value="{{$area->id}}" {{ request()->search_expert == $area->id ? 'selected' : '' }}>{{$area->name}}</option>
                      @endforeach
                 </select>
                 <div class="btnDiv">

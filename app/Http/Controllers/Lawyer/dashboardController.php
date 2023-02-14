@@ -369,6 +369,7 @@ class dashboardController extends Controller
         $lawyer_profile->country = $request->country;
         $lawyer_profile->state = $request->state;
         $lawyer_profile->city = $request->city;
+        $lawyer_profile->linkedin_url = $request->linkedin_url;
         if($request->hasfile('image'))
         {
             $image = $request->file('image');
@@ -392,6 +393,7 @@ class dashboardController extends Controller
         $user= User::where('id',$lawyer->user_id)->first();
         $user->f_name = $request->f_name;
         $user->l_name = $request->l_name;
+        $user->phone = $request->phone;
         $user->save();
         LawyersHasLanguage::where('lawyer_profile_id',$id)->delete();
         LawyersHasEducation::where('lawyer_profile_id',$id)->delete();
@@ -423,7 +425,8 @@ class dashboardController extends Controller
 
 
         toastSuccess('Successfully Updated');
-        return redirect('lawyer/profile');
+        return redirect()->back();
+//        return redirect('lawyer/profile');
     }
 
     public function orders()

@@ -246,7 +246,7 @@ Edit Profile
                                             @endphp
                                             @endforeach
                                         <option value="{{$education->id}}"
-                                            {{$selected}} >{{$education->education_name}}</option>
+                                            {{$selected ?? ''}} >{{$education->education_name}}</option>
                                         @endforeach
                                     </select>
                                     <div style="color:red;">{{$errors->first('education_id')}}</div> <br>
@@ -273,7 +273,7 @@ Edit Profile
                                             @endphp
                                             @endforeach
                                         <option value="{{$membership->id}}"
-                                            {{$selected}} >{{$membership->membership_name}}</option>
+                                            {{$selected ?? ''}} >{{$membership->membership_name}}</option>
                                         @endforeach
                                     </select>
                                     <div style="color:red;">{{$errors->first('membership_id')}}</div> <br>

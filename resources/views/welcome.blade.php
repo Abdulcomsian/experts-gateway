@@ -254,7 +254,9 @@ Expert Gateway
                                         @endif
                                         @endforeach
                                     </span></p>--}}
-                                <p><strong>Area of Expertise:</strong>{{}} <span></span></p>
+{{--                                @dd($lawyer['lawyer_profile'][0]->name)--}}
+{{--                                <p><strong>Country:</strong>{{$lawyer->lawyer_profile->country->name ?? ''}} <span></span></p>--}}
+{{--                                <p><strong>Area of Expertise:</strong><span></span></p>--}}
                             </div>
                         </div>
                     </a>

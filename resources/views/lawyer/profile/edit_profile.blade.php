@@ -207,7 +207,7 @@ Edit Profile
                                         @endphp
                                         @endforeach
                                     <option value="{{$language->id}}"
-                                        {{$selected}} >{{$language->name}}</option>
+                                        {{$selected ?? ''}} >{{$language->name}}</option>
                                     @endforeach
                                 </select>
                                 <div style="color:red;">{{$errors->first('language_id')}}</div> <br>

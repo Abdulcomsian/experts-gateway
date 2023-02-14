@@ -494,12 +494,13 @@ let defaultSpeed = 2000;
 <script>
     var swiper = new Swiper(".profileSlide", {
         direction: "vertical",
-        slidesPerView: 4,
+        slidesPerView: 3,
         loop: true,
         autoplay: {
-            delay: 2500,
+            delay: 2000,
             disableOnInteraction: false,
         },
+
         pagination: {
             el: ".swiper-pagination",
             clickable: true,

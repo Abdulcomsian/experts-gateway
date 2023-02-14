@@ -21,9 +21,9 @@ class LawyerProfile extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function country()
+    public function countryList()
     {
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(Country::class, 'country', 'id');
     }
 
     public function partise_area_3()

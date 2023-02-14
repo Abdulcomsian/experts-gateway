@@ -35,7 +35,7 @@ class FrontendController extends Controller
         $educations = Education::get();
         $PartiseArea = PartiseArea::get();
         $fixed_services = FixedService::where('status', 1)->get();
-        $lawyers = User::with('lawyer_profile')->whereHas('roles', function ($q) {
+        $lawyers = User::with('lawyer_profile','lawyer_profile.countryList')->whereHas('roles', function ($q) {
             $q->where('name', 'Lawyer');
         })->where('status', 1)->get();
         $services = Service::latest()->take(10)->get();

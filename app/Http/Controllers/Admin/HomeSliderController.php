@@ -7,6 +7,7 @@ use App\Models\HomeSlider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use App\Models\User;
 
 class HomeSliderController extends Controller
 {
@@ -28,7 +29,10 @@ class HomeSliderController extends Controller
      */
     public function create()
     {
-        return view('admin.home_slider.add');
+        $lawyers = User::whereHas('roles', function ($query) {
+            $query->where('role_id', 2);
+        })->get();
+        return view('admin.home_slider.add', ['lawyers' => $lawyers]);
     }
 
     /**

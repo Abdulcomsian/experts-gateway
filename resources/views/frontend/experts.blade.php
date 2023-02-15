@@ -182,8 +182,8 @@ Experts
                                                 @endforeach
                                             </span>
                                         </p>--}}
-                                        <p><strong>Country:</strong> {{$lawyer->single_lawyer_profile->countryList->name}} <span></span></p>
-                                        <p><strong>Area of Expertise:</strong> {{$lawyer->single_lawyer_profile->partise_area_1->name}} <span></span></p>
+                                        <p><strong>Country:</strong> {{$lawyer->single_lawyer_profile->countryList->name ?? ''}} <span></span></p>
+                                        <p><strong>Area of Expertise:</strong> {{$lawyer->single_lawyer_profile->partise_area_1->name ?? ''}} <span></span></p>
                                     </div>
                                     {{--<div class="contactDiv">
                                         <ul>

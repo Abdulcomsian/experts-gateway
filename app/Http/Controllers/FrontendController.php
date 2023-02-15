@@ -100,26 +100,28 @@ class FrontendController extends Controller
              return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'countries', 'PartiseArea'));
          }*/
 
-        if ($request->country) {
-            $lawyers = DB::table('lawyer_profiles')
-                ->leftJoin('users', 'lawyer_profiles.user_id', '=', 'users.id')
-                ->leftJoin('countries', 'lawyer_profiles.country', '=', 'countries.id')
-                ->leftJoin('partise_areas', 'lawyer_profiles.partise_area', '=', 'partise_areas.id')
-                ->select('lawyer_profiles.*', 'users.f_name as f_name', 'users.l_name as l_name', 'partise_areas.name as practicename', 'countries.name as countryname')
-                ->where('lawyer_profiles.country', $request->country);
-            if ($request->search_expert) {
-                $lawyers->where('lawyer_profiles.partise_area', $request->search_expert);
-            }
-
-            $lawyers = $lawyers->get();
-
-            return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'searchparm', 'countries', 'PartiseArea'));
-        } else {
-            $lawyers = User::with('lawyer_profile')->whereHas('roles', function ($q) {
+        $query = User::with('lawyer_profile')
+            ->whereHas('roles', function ($q) {
                 $q->where('name', 'Lawyer');
-            })->where('status', 1)->get();
-            return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'countries', 'PartiseArea'));
+            })
+            ->where('status', 1);
+
+        if ($request->country) {
+            $query->whereHas('lawyer_profile', function ($q) use ($request) {
+                $q->where('country', $request->country);
+            });
         }
+
+        if ($request->search_expert) {
+            $query->whereHas('lawyer_profile', function ($q) use ($request) {
+                $q->where('partise_area', $request->search_expert);
+            });
+        }
+
+        $lawyers = $query->get();
+
+        return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'searchparm', 'countries', 'PartiseArea'));
+
 
     }
 

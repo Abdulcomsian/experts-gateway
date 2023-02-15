@@ -89,13 +89,13 @@ Expert Gateway
             <!-- Swiper -->
             <div class="swiper mySwiper profileSlide">
                 <div class="swiper-wrapper">
-                    @foreach($home_sliders as $home_slider)
+                    @foreach($featured_lawyers as $featured_lawyer)
                         <div class="swiper-slide">
                             <div class="d-flex align-items-center clientDetailBox">
-                                <img src="{{ asset('home_slider/'.$home_slider->image) }}" alt="" class="img-fluid" style="object-fit: contain">
+                                <img src="{{ asset('home_slider/'.$featured_lawyer->image) }}" alt="" class="img-fluid" style="object-fit: contain">
                                 <div class="ml-2">
-                                    <p class="mb-0">{{$home_slider->name}}</p>
-                                    <small class="text-dark-50">{{$home_slider->type}}</small>
+                                    <p class="mb-0">{{$featured_lawyer->user->f_name ." ".$featured_lawyer->user->l_name}}</p>
+                                    <small class="text-dark-50">{{$featured_lawyer->partise_area}}</small>
                                 </div>
                             </div>
                         </div>

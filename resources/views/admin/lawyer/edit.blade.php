@@ -5,7 +5,11 @@ Edit Lawyer Profile
 @push('styles')
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 @endpush
+@section('script')
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+@endsection
 @section('content')
    <!--begin::Content-->
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -476,6 +480,15 @@ Edit Lawyer Profile
                                                     </div>
                                                 <!--end::Input group-->
                                             </div>
+                                            <div class="col-lg-6">
+                                                <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Home Slider</label>
+                                                <!--begin::Input group-->
+                                                <div class="mb-5">
+                                                    <input type="checkbox" {{ $lawyer_profile->is_featured ? 'checked' : '' }} name="is_featured" data-toggle="toggle" data-on="Enabled" data-off="Disabled" data-onstyle="success" data-offstyle="danger">
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+
                                             <!--end::Col-->
 
                                             <div class="col-lg-4 offset-md-4">

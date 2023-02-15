@@ -158,6 +158,11 @@ class dashboardController extends Controller
         $lawyer_profile->city = $request->city;
         $lawyer_profile->partise_area = $request->partise_area;
         $lawyer_profile->linkedin_url = $request->linkedin_url;
+        $is_featured = 0;
+        if($request->is_featured == 'on'){
+            $is_featured = 1;
+        }
+        $lawyer_profile->is_featured = $is_featured;
         //$lawyer_profile->firm_name = $request->firm_name;
         // $lawyer_profile->education = implode($request->education, ',');
         // $lawyer_profile->membership = implode($request->membership, ',');

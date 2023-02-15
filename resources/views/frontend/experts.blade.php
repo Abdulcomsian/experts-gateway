@@ -92,9 +92,10 @@ Experts
                         @foreach($lawyers as $lawyer)
                              @if(isset($lawyer['lawyer_profile'][0]) )
                                 <div class="col-lg-4" id="card">
-                                    <a href="{{ route('expert-detail',$lawyer['lawyer_profile'][0]->id) }}">
                                         <div class="expertCard">
-                                            <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
+                                            <a href="{{ route('expert-detail',$lawyer['lawyer_profile'][0]->id) }}">
+                                                <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
+                                            </a>
                                             <div class="cardContet">
                                                 <div class="rating">
                                                    {{-- <p>
@@ -143,7 +144,6 @@ Experts
                                                 </div>--}}
                                             </div>
                                         </div>
-                                    </a>
                                 </div>
                                 @endif
                         @endforeach

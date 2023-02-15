@@ -94,8 +94,7 @@ Experts
                                 <div class="col-lg-4" id="card">
                                         <div class="expertCard">
                                             <a href="{{ route('expert-detail',$lawyer['lawyer_profile'][0]->id) }}">
-                                                <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
-                                            </a>
+                                            <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
                                             <div class="cardContet">
                                                 <div class="rating">
                                                    {{-- <p>
@@ -144,6 +143,7 @@ Experts
                                                 </div>--}}
                                             </div>
                                         </div>
+                                    </a>
                                 </div>
                                 @endif
                         @endforeach

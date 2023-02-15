@@ -5161,7 +5161,7 @@ form button[type="submit"] {
 
     .profileBox .profileBoxHeader .uploadCover p {
         top: 16%;
-        left: 16%;
+        left: 4%;
         font-size: 22px;
     }
 
@@ -7904,33 +7904,33 @@ form button[type="submit"] {
     height: 30px;
 }
 /**************************** New - CSS */
-.profileDiv .editProfileBox .editProfile .userDetail .userProfile{
+.profileDiv .editProfileBox .editProfile .userDetail .userProfile {
     margin-left: 14px;
 }
-.profileDiv .editProfileBox .editProfile .userDetail .userProfile h4{
+.profileDiv .editProfileBox .editProfile .userDetail .userProfile h4 {
     font-size: 31px;
 }
-.profileDiv .editProfileBox .editProfile .userDetail .userProfile .firm_name{
+.profileDiv .editProfileBox .editProfile .userDetail .userProfile .firm_name {
     font-size: 14px;
 }
 .social-icon {
-    color: #EB276A;
+    color: #eb276a;
 }
-.firm_img{
+.firm_img {
     top: 40px !important;
 }
-.profileDiv .editProfileBox .editProfile .listDiv ul li{
+.profileDiv .editProfileBox .editProfile .listDiv ul li {
     width: 30%;
 }
 .contact-list li span,
-.contact-list li .imgDiv i{
-    color: #EA2A7C !important;
+.contact-list li .imgDiv i {
+    color: #ea2a7c !important;
 }
 
-.toast-message{
+.toast-message {
     color: white;
 }
 
-.toast-success{
-    background-color: #28a745!important;
+.toast-success {
+    background-color: #28a745 !important;
 }

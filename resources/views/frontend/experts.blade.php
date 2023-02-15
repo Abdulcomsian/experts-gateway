@@ -89,7 +89,7 @@ Experts
             <div class="row"  id="result">
                 @if(count($lawyers) > 0)
                     @if(!isset($searchparm))
-                        @foreach($lawyers as $lawyer)
+                    @foreach($lawyers as $lawyer)
                              @if(isset($lawyer['lawyer_profile'][0]) )
                                 <div class="col-lg-4" id="card">
                                         <div class="expertCard">
@@ -150,9 +150,9 @@ Experts
                     @else
                     @foreach($lawyers as $lawyer)
                     <div class="col-lg-4" id="card">
-                        <a href="{{ route('expert-detail',$lawyer->id) }}">
+                        <a href="{{ route('expert-detail',$lawyer->single_lawyer_profile->id) }}">
                             <div class="expertCard">
-                                <img src="{{asset('lawyer_profile/'.$lawyer->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
+                                <img src="{{asset('lawyer_profile/'.$lawyer->single_lawyer_profile->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
                                 <div class="cardContet">
                                     <div class="rating">
                                         {{--<p>
@@ -182,8 +182,8 @@ Experts
                                                 @endforeach
                                             </span>
                                         </p>--}}
-                                        <p><strong>Country:</strong> {{$lawyer->countryname}} <span></span></p>
-                                        <p><strong>Area of Expertise:</strong> {{$lawyer->practicename}} <span></span></p>
+                                        <p><strong>Country:</strong> {{$lawyer->single_lawyer_profile->countryList->name}} <span></span></p>
+                                        <p><strong>Area of Expertise:</strong> {{$lawyer->single_lawyer_profile->partise_area_1->name}} <span></span></p>
                                     </div>
                                     {{--<div class="contactDiv">
                                         <ul>

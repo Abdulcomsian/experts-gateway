@@ -20,7 +20,7 @@ class User extends Authenticatable
      */
 
     protected $guarded = [];
-    
+
     // protected $fillable = [
     //     'name', 'email', 'password',
     // ];
@@ -62,5 +62,10 @@ class User extends Authenticatable
     public function fixed_service()
     {
         return $this->hasMany(FixedService::class);
+    }
+
+    public function single_lawyer_profile()
+    {
+        return $this->hasOne(LawyerProfile::class);
     }
 }

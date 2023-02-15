@@ -100,7 +100,7 @@ class FrontendController extends Controller
              return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'countries', 'PartiseArea'));
          }*/
 
-        $query = User::with('lawyer_profile')
+        $query = User::with('lawyer_profile','single_lawyer_profile', 'lawyer_profile.countryList')
             ->whereHas('roles', function ($q) {
                 $q->where('name', 'Lawyer');
             })

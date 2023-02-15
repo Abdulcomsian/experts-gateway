@@ -94,7 +94,7 @@ Experts
                                 <div class="col-lg-4" id="card">
                                         <div class="expertCard">
                                             <a href="{{ route('expert-detail',$lawyer['lawyer_profile'][0]->id) }}">
-                                            <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
+                                            <img src="{{asset('lawyer_profile/'.$lawyer['lawyer_profile'][0]->image)}}" style="width:100%;height:275px !important; object-fit: contain;background-color: #f3f2f2;" alt="" class="img-fluid">
                                             <div class="cardContet">
                                                 <div class="rating">
                                                    {{-- <p>
@@ -152,7 +152,7 @@ Experts
                     <div class="col-lg-4" id="card">
                         <a href="{{ route('expert-detail',$lawyer->single_lawyer_profile->id) }}">
                             <div class="expertCard">
-                                <img src="{{asset('lawyer_profile/'.$lawyer->single_lawyer_profile->image)}}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
+                                <img src="{{asset('lawyer_profile/'.$lawyer->single_lawyer_profile->image)}}" style="width:100%;height:275px !important; object-fit: contain;background-color: #f3f2f2;" alt="" class="img-fluid">
                                 <div class="cardContet">
                                     <div class="rating">
                                         {{--<p>
@@ -371,7 +371,7 @@ Experts
                         <div class="col-lg-4" id="card">
                             <a href="expert-detail/${expert.id}">
                                 <div class="expertCard">
-                                    <img src="lawyer_profile/${expert.image}" style="width:292px;height:275px !important;" alt="" class="img-fluid">
+                                    <img src="lawyer_profile/${expert.image}" style="width:100%;height:275px !important; object-fit: contain;background-color: #f3f2f2;" alt="" class="img-fluid">
                                     <div class="cardContet">
                                         <div class="rating">
                                             <p>

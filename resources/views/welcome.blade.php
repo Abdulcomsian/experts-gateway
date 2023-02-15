@@ -92,8 +92,8 @@ Expert Gateway
                     @foreach($featured_lawyers as $featured_lawyer)
                             <div class="swiper-slide">
                                 <div class="d-flex align-items-center clientDetailBox">
-                                    <a href="{{ route('expert-detail',$featured_lawyer)}}">
-                                        <img src="{{ asset('lawyer_profile/'.$featured_lawyer->image) }}" alt="" class="img-fluid" style="object-fit: contain">
+                                    <a href="{{ route('expert-detail',$featured_lawyer)}}" style="width:40px; height: 40px">
+                                        <img src="{{ asset('lawyer_profile/'.$featured_lawyer->image) }}" alt="" class="img-fluid" style="width:100%; height: 100%">
                                     </a>
                                     <div class="ml-2">
                                         <p class="mb-0">{{$featured_lawyer->user->f_name ." ".$featured_lawyer->user->l_name}}</p>

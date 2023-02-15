@@ -254,8 +254,8 @@ Expert Gateway
                                         @endif
                                         @endforeach
                                     </span></p>--}}
-                                <p><strong>Country:</strong> {{$lawyer['lawyer_profile'][0]->countryList->name}} <span></span></p>
-                                <p><strong>Area of Expertise:</strong> {{$lawyer['lawyer_profile'][0]->partise_area_1->name}} <span></span></p>
+                                <p><strong>Country:</strong> {{$lawyer['lawyer_profile'][0]->countryList->name ?? ''}} <span></span></p>
+                                <p><strong>Area of Expertise:</strong> {{$lawyer['lawyer_profile'][0]->partise_area_1->name ?? ''}} <span></span></p>
                             </div>
                         </div>
                     </a>

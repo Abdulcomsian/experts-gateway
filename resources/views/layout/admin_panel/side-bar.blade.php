@@ -214,7 +214,7 @@
                         <span class="menu-title">Practice Area</span>
                     </a>
                 </div>
-                <div class="menu-item">
+                {{--<div class="menu-item">
                     <a class="menu-link" href="{{ route('home-slider.index') }}">
                         <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotone/Design/Sketch.svg-->
@@ -229,7 +229,7 @@
                             </span>
                         <span class="menu-title">Home Slider</span>
                     </a>
-                </div>
+                </div>--}}
                 <div class="menu-item">
                     <a class="menu-link" href="{{ route('home-number.index') }}">
                         <span class="menu-icon">

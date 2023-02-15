@@ -167,7 +167,7 @@ Experts
                                     <div class="line">
                                         <img src="{{ asset('assets/img/line.png') }}" alt="" class="img-fluid">
                                     </div>
-                                    <div class="cardFooter">
+                                    <div class="cardFooter pb-md-5">
                                         {{--<p>Address: <span>{{$lawyer->address}}</span></p>
                                         <p>Education:
                                             <span>

@@ -90,15 +90,17 @@ Expert Gateway
             <div class="swiper mySwiper profileSlide">
                 <div class="swiper-wrapper">
                     @foreach($featured_lawyers as $featured_lawyer)
-                        <div class="swiper-slide">
-                            <div class="d-flex align-items-center clientDetailBox">
-                                <img src="{{ asset('lawyer_profile/'.$featured_lawyer->image) }}" alt="" class="img-fluid" style="object-fit: contain">
-                                <div class="ml-2">
-                                    <p class="mb-0">{{$featured_lawyer->user->f_name ." ".$featured_lawyer->user->l_name}}</p>
-                                    <small class="text-dark-50">{{$featured_lawyer->partise_area_1->name}}</small>
+                        <a href="{{ route('expert-detail',$featured_lawyer)}}">
+                            <div class="swiper-slide">
+                                <div class="d-flex align-items-center clientDetailBox">
+                                    <img src="{{ asset('lawyer_profile/'.$featured_lawyer->image) }}" alt="" class="img-fluid" style="object-fit: contain">
+                                    <div class="ml-2">
+                                        <p class="mb-0">{{$featured_lawyer->user->f_name ." ".$featured_lawyer->user->l_name}}</p>
+                                        <small class="text-dark-50">{{$featured_lawyer->partise_area_1->name}}</small>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
                 <div class="swiper-pagination"></div>

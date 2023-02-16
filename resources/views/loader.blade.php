@@ -465,7 +465,7 @@
                     "package_name":PackageName,
                 },
                 success:function(data){
-                     window.location.href = "{{route('lawyer.profile')}}";
+                     {{--window.location.href = "{{route('lawyer.profile')}}";--}}
                 },
                 error: function (data) {
                     console.log(data);

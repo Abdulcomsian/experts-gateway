@@ -77,12 +77,12 @@ Profile building
                                     <div class="formDiv">
                                         <form id="profile-form">
                                             @csrf
-
                                             <div class="uploadBanner">
                                                 <div class="upload_banner_img">
                                                     @if($lawyer_profile)
                                                     <img src="{{asset('lawyer_cover_image/' .$lawyer_profile->b_image ?? '')}}" alt="" class="img-fluid">
                                                     @endif
+
                                                 </div>
                                                 <!-- @if($lawyer_profile)
                                                 <img src="{{asset('lawyer_cover_image/' .$lawyer_profile->b_image ?? '')}}" alt="" class="img-fluid">
@@ -91,17 +91,17 @@ Profile building
                                                     <p>Upload Cover Image</p>
                                                     <input type="file" id="b_image" name="b_image" value="{{$lawyer_profile->b_image ??'' }}" id="b_image" accept="image/*" class="upload_banner_img">
                                                     <span class="text-primary" id="b_imageName"></span>
-                                                    <span class="text-danger b_image_valid"></span><br>
 
                                                 </div>
                                             </div>
+                                            <span class="text-danger b_image_valid" id="b_image_valid"></span><br>
                                             <div class="tabContent">
                                                 <div class="uplodProfilePhoto">
                                                     <div class="uploadPhoto first_form">
                                                         <p>Upload <br>Profile Image</p>
-                                                        <input type="file" name="image" value="{{$lawyer_profile->image ?? '' }}" id="image" accept="image/*" class="upload_user_img">
+                                                        <input type="file" name="image" value="{{$lawyer_profile->image ?? '' }}" id="image" accept="image/*" class="upload_user_img" required max="5000000">
                                                         <span class="text-primary" id="imageName"></span>
-                                                        <span class="text-danger image_valid"></span>
+                                                        <span class="text-danger image_valid" id="image_valid">Recommended Size for Profile Image is 160 x 160</span>
                                                         @if($lawyer_profile AND $lawyer_profile->image)
                                                         <div class="profileAvatar">
                                                             <img style="width: 140px !important; height: 140px !important; border-radius: 84px;" src="{{asset('lawyer_profile/' .$lawyer_profile->image)}}" class="img-fluid">
@@ -168,7 +168,7 @@ Profile building
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row mb-md-5">
                                                         <div class="col-lg-12 text-center">
                                                             <button type="submit" class="saveButton">SAVE</button>
                                                         </div>
@@ -399,7 +399,7 @@ Profile building
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                <div class="row mb-md-5">
                                                     <div class="col-lg-12 text-center">
                                                         <button type="submit" class="submitButton">SUBMIT</button>
                                                     </div>
@@ -661,6 +661,8 @@ $('#image').on('propertychange input', function (e) { $('#imageName').text(this.
     });
 
     $('#profile-form').submit(function(e){
+        // Get the file input element
+
         e.preventDefault();
        $('.main-wrapper').addClass('active')
         $.ajax({
@@ -827,6 +829,46 @@ $('#image').on('propertychange input', function (e) { $('#imageName').text(this.
         });
     });
 
+const fileInput = document.getElementById('b_image');
 
+// Add an event listener to the file input
+fileInput.addEventListener('change', function() {
+    const fileSize = this.files[0].size; // Get the size of the selected file
+
+    const maxSize = 1000000; // Set the maximum file size in bytes
+
+    if (fileSize > maxSize) {
+        // Display an error message
+        const errorMessage = 'The background image is too big. Please select a file smaller than 1MB.';
+        document.getElementById('b_image_valid').textContent = errorMessage;
+
+        // Reset the file input value
+        this.value = '';
+    } else {
+        // Clear any existing error message
+        document.getElementById('b_image_valid').textContent = '';
+    }
+});
+
+const fileInput2 = document.getElementById('image');
+
+// Add an event listener to the file input
+fileInput2.addEventListener('change', function() {
+    const fileSize = this.files[0].size; // Get the size of the selected file
+
+    const maxSize = 1000000; // Set the maximum file size in bytes
+
+    if (fileSize > maxSize) {
+        // Display an error message
+        const errorMessage = 'The Profile image is too big. Please select a file smaller than 1MB.';
+        document.getElementById('image_valid').textContent = errorMessage;
+
+        // Reset the file input value
+        this.value = '';
+    } else {
+        // Clear any existing error message
+        document.getElementById('image_valid').textContent = '';
+    }
+});
 </script>
 @endsection

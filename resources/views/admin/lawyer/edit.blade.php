@@ -376,6 +376,7 @@ Edit Lawyer Profile
                                                     <div class="profileAvatar">
                                                         <img style="width: 140px !important; height: 140px !important; border-radius: 84px;" src="{{asset('lawyer_profile/' .$lawyer_profile->image)}}" alt="" class="img-fluid">
                                                     </div>
+                                                    <div style="color:red;">Recommended Size is 160 x 160</div>
                                                     <div style="color:red;">{{$errors->first('image')}}</div> <br>
                                                 </div>
                                                 <!--end::Input group-->

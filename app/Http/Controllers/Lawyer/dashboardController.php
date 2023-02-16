@@ -33,7 +33,7 @@ class dashboardController extends Controller
         return view('lawyer.dashboard.index');
     }
 
-    public function profile()
+    /*public function profile()
     {
         $user_id = Auth::id();
         $lawyer = User::where('id',$user_id)->first();
@@ -78,7 +78,44 @@ class dashboardController extends Controller
             }
         }
 
+    }*/
+    public function profile()
+    {
+        $user_id = Auth::id();
+        $lawyer = User::where('id',$user_id)->first();
+        $lawyer_profile = LawyerProfile::where('user_id',$user_id)->first();
+        $languages = Language::get();
+        $educations = Education::get();
+        $memberships = Membership::get();
+        $states = State::get();
+        $lawyer_language =null;
+        $lawyer_educations =null;
+        $lawyer_memberships =null;
+        $countries = Country::get();
+        $practice_areas = PartiseArea::get();
+        $city = null;
+
+        if($lawyer_profile)
+        {
+            $city = City::where('id',$lawyer_profile->city)->first();
+            $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id',$lawyer_profile->id)->get();
+            $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id',$lawyer_profile->id)->get();
+            $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id',$lawyer_profile->id)->get();
+        }
+
+        $country = Country::where('id', $lawyer_profile ? $lawyer_profile->country : -1)->first();
+        $state = State::where('id', $lawyer_profile ? $lawyer_profile->state : -1)->first();
+        $city = City::where('id', $lawyer_profile ? $lawyer_profile->city : -1)->first();
+
+        if ($lawyer->status == 0) {
+            return view('lawyer.build_profile',compact('countries','lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','languages','educations','memberships','lawyer_profile','city','states','countries','practice_areas'));
+        } elseif ($lawyer->status == 1 && $lawyer_profile) {
+            return view('lawyer.profile',compact('lawyer','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','state','country'));
+        } else {
+            return view('lawyer.build_profile',compact('lawyer','countries','languages','educations','memberships','lawyer_profile','lawyer_language','lawyer_educations','lawyer_memberships','city','states','countries','practice_areas'));
+        }
     }
+
 
     public function profile_store_1(Request $request)
     {

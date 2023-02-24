@@ -27,6 +27,7 @@
                                     <!-- <div class="profileAvatar">
                                     <img src="{{asset('lawyer_cover_image/'.$lawyer_profile->b_image)}}" alt="" class="img-fluid cover">
                                 </div> -->
+                                <span class="text-danger b_image_valid " id="cover_image_valid" style="position: absolute;top: 14px;right: 53px;">Recomended Dimension for the image is 850X220</span><br>
                                 </div>
                             </div>
                         </div>
@@ -34,11 +35,11 @@
                             <div class="profileBoxHeader p-0">
                                 <div class="uploadCover uploadProfileP"
                                      style="background-image: url({{asset('lawyer_profile/'.$lawyer_profile->image)}})">
-                                    <input type="file" name="image" id="image" class="w-100 h-100" accept="image/*">
+                                    <input type="file" name="image" id="profileImage" class="w-100 h-100" accept="image/*">
                                     @if(empty($lawyer_profile->image))
                                         <p class="">Upload Profile Image</p>
                                     @endif
-
+                                    <span class="text-danger image_valid " id="image_valid">Recommended Size for Profile Image is 360 x 360</span>
                                 </div>
                                 <!-- <div class="profileAvatar">
                                     <img src="" alt="" width="200px" class="img-fluid">
@@ -415,6 +416,164 @@
                 }
             })
         });
+
+    const fileInput = document.getElementById('b_image');
+
+    // Add an event listener to the file input
+    fileInput.addEventListener('change', function() {
+        const fileSize = this.files[0].size; // Get the size of the selected file
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        alert("2342dwsdf")
+
+
+        console.log(this)
+        let imagewidth = 0;
+        let imageHeight = 0;
+
+        const img2 = new Image();
+        img2.onload = function() {
+                imagewidth = this.naturalWidth;
+                imageHeight = this.naturalHeight;
+                console.log(imagewidth);
+                console.log(imageHeight);
+                console.log(`Image dimensions: ${imagewidth} x ${imageHeight}`);
+
+                const containerWidth = 350;
+                const containerHeight = 350;
+
+            if (fileSize > maxSize ) {
+                document.getElementById('cover_image_valid').classList.remove('d-none');
+                // Display an error message
+                const errorMessage = 'Please select a file smaller than 1MB.';
+                document.getElementById('cover_image_valid').textContent = errorMessage;
+                // document.getElementById('image_valid').classList.remove('d-none');
+                
+                
+                // Reset the file input value
+                this.value = '';
+                return;
+            }
+            // else if (imagewidth > containerWidth || imageHeight > containerHeight) {
+                //     alert('Size matter');
+                //     // const errorMessage = 'Recomended Dimension for the image is 160X160';
+                //     // document.getElementById('image_valid').textContent = errorMessage;
+                //     // document.getElementById('image_valid').classList.remove('d-none');
+                // } 
+                else {
+                document.getElementById('cover_image_valid').classList.add('d-none');
+                alert('Profile image uploaded')
+                reader.onload = function() {
+                const image = new Image();
+                image.src = reader.result;
+                document.getElementById('profilImageContainer').appendChild(image);
+    };
+                // Clear any existing error message
+                document.getElementById('image_valid').textContent = '';
+                document.getElementById('image_valid').classList.add('d-none');
+            }
+            };
+            img2.src = URL.createObjectURL(this.files[0]);
+        
+
+            var maxSize = 1000000; // Set the maximum file size in bytes
+        
+        // const maxSize = 1000000; // Set the maximum file size in bytes
+
+        // if (fileSize > maxSize) {
+        //     // Display an error message
+        //     const errorMessage = 'The Profile image is too big. Please select a file smaller than 1MB.';
+        //     document.getElementById('image_valid').textContent = errorMessage;
+
+        //     // Reset the file input value
+        //     this.value = '';
+        // } else {
+        //     // Clear any existing error message
+        //     document.getElementById('image_valid').textContent = '';
+        // }
+});
+
+
+
+const fileInput2 = document.getElementById('profileImage');
+
+    // Add an event listener to the file input
+    fileInput2.addEventListener('change', function() {
+        const fileSize = this.files[0].size; // Get the size of the selected file
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        alert("2342dwsdf")
+
+
+        console.log(this)
+        let imagewidth = 0;
+        let imageHeight = 0;
+
+        const img2 = new Image();
+        img2.onload = function() {
+                imagewidth = this.naturalWidth;
+                imageHeight = this.naturalHeight;
+                console.log(imagewidth);
+                console.log(imageHeight);
+                console.log(`Image dimensions: ${imagewidth} x ${imageHeight}`);
+
+                const containerWidth = 350;
+                const containerHeight = 350;
+
+            if (fileSize > maxSize ) {
+                document.getElementById('image_valid').classList.remove('d-none');
+                // Display an error message
+                const errorMessage = 'Please select a file smaller than 1MB.';
+                document.getElementById('image_valid').textContent = errorMessage;
+                // document.getElementById('image_valid').classList.remove('d-none');
+                
+                
+                // Reset the file input value
+                this.value = '';
+                return;
+            }
+            // else if (imagewidth > containerWidth || imageHeight > containerHeight) {
+                //     alert('Size matter');
+                //     // const errorMessage = 'Recomended Dimension for the image is 160X160';
+                //     // document.getElementById('image_valid').textContent = errorMessage;
+                //     // document.getElementById('image_valid').classList.remove('d-none');
+                // } 
+                else {
+                document.getElementById('image_valid').classList.add('d-none');
+                alert('Profile image uploaded')
+                reader.onload = function() {
+                const image = new Image();
+                image.src = reader.result;
+                document.querySelector('.uploadProfileP').appendChild(image);
+    };
+                // Clear any existing error message
+                document.getElementById('image_valid').textContent = '';
+                document.getElementById('image_valid').classList.add('d-none');
+            }
+            };
+            img2.src = URL.createObjectURL(this.files[0]);
+        
+
+            var maxSize = 1000000; // Set the maximum file size in bytes
+        
+        // const maxSize = 1000000; // Set the maximum file size in bytes
+
+        // if (fileSize > maxSize) {
+        //     // Display an error message
+        //     const errorMessage = 'The Profile image is too big. Please select a file smaller than 1MB.';
+        //     document.getElementById('image_valid').textContent = errorMessage;
+
+        //     // Reset the file input value
+        //     this.value = '';
+        // } else {
+        //     // Clear any existing error message
+        //     document.getElementById('image_valid').textContent = '';
+        // }
+});
+
+
     </script>
 @endsection
 

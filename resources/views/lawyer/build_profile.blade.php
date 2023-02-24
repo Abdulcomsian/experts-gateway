@@ -89,22 +89,22 @@ Profile building
                                                 @endif -->
                                                 <div class="uploadImgBanner first_form">
                                                     <p>Upload Cover Image</p>
-                                                    <input type="file" id="b_image" name="b_image" value="{{$lawyer_profile->b_image ??'' }}" id="b_image" accept="image/*" class="upload_banner_img">
+                                                    <input type="file"  name="b_image" value="{{$lawyer_profile->b_image ??'' }}" id="b_image" accept="image/*" class="upload_banner_img">
                                                     <span class="text-primary" id="b_imageName"></span>
 
+                                                    <span class="text-danger b_image_valid " id="b_image_valid">Recomended Dimension for the image is 850X220</span><br>
                                                 </div>
                                             </div>
-                                            <span class="text-danger b_image_valid" id="b_image_valid"></span><br>
                                             <div class="tabContent">
                                                 <div class="uplodProfilePhoto">
                                                     <div class="uploadPhoto first_form">
                                                         <p>Upload <br>Profile Image</p>
                                                         <input type="file" name="image" value="{{$lawyer_profile->image ?? '' }}" id="image" accept="image/*" class="upload_user_img" required max="5000000">
                                                         <span class="text-primary" id="imageName"></span>
-                                                        <span class="text-danger image_valid" id="image_valid">Recommended Size for Profile Image is 160 x 160</span>
+                                                        <span class="text-danger image_valid " id="image_valid">Recommended Size for Profile Image is 360 x 360</span>
                                                         @if($lawyer_profile AND $lawyer_profile->image)
                                                         <div class="profileAvatar">
-                                                            <img style="width: 140px !important; height: 140px !important; border-radius: 84px;" src="{{asset('lawyer_profile/' .$lawyer_profile->image)}}" class="img-fluid">
+                                                            <img style="width: 140px !important; height: 140px !important; border-radius: 84px; position: absolute; left: 349px;bottom: 46px;" src="{{asset('lawyer_profile/' .$lawyer_profile->image)}}" class="img-fluid">
                                                         </div>
                                                         @endif
                                                     </div>
@@ -588,6 +588,7 @@ Profile building
 @endsection
 @section('script')
 <script type="text/javascript">
+"use strict"
 
 $(document).ready(function() {
 $('#country-dropdown').on('change', function() {
@@ -632,7 +633,7 @@ $("#city-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>
 });
 
 function loadBannerImg(){
-    console.log("here")
+    alert("here")
     $('.upload_banner').attr('src', URL.createObjectURL(event.target.files[0]));
     $(".upload_banner").css("opacity","1");
     $(".on-boarding-main .pills-div-main .uploadBanner .uploadImgBanner input").css("width","100%");
@@ -650,8 +651,9 @@ function loadBannerImg(){
     });
 
     // $('#b_image').input(alert('hello'));
-    $('#b_image').on('propertychange input', function (e) { $('#b_imageName').text(this.value.split('\\')[2]
-) });
+    // $('#b_image').on('propertychange input', function (e) { 
+    //     $('#b_imageName').text(this.value.split('\\')[2])
+    // });
 
 $('#image').on('propertychange input', function (e) { $('#imageName').text(this.value.split('\\')[2]
 ) });
@@ -830,45 +832,128 @@ $('#image').on('propertychange input', function (e) { $('#imageName').text(this.
     });
 
 const fileInput = document.getElementById('b_image');
+const bannerImageContainer = document.querySelector('.uploadBanner')
 
 // Add an event listener to the file input
 fileInput.addEventListener('change', function() {
     const fileSize = this.files[0].size; // Get the size of the selected file
+    console.log(fileSize);
+    // const containerWidth = bannerImageContainer.clientWidth + 10;
+    // const containerHeight = bannerImageContainer.clientHeight + 10;
+    let imagewidth = 0;
+    let imageHeight = 0
 
-    const maxSize = 1000000; // Set the maximum file size in bytes
 
-    if (fileSize > maxSize) {
+    // console.log("Container Width",containerWidth, containerHeight)
+
+
+    const img = new Image();
+    img.onload = function() {
+            imagewidth = this.naturalWidth;
+            imageHeight = this.naturalHeight;
+            console.log(imagewidth);
+            console.log(imageHeight);
+            console.log(`Image dimensions: ${imagewidth} x ${imageHeight}`);
+
+            const containerWidth = bannerImageContainer.clientWidth + 10;
+        const containerHeight = bannerImageContainer.clientHeight + 10;
+
+        if (fileSize > maxSize ) {
+            document.getElementById('b_image_valid').classList.remove('d-none');
         // Display an error message
         const errorMessage = 'The background image is too big. Please select a file smaller than 1MB.';
         document.getElementById('b_image_valid').textContent = errorMessage;
-
+        // document.getElementById('b_image_valid').classList.remove('d-none');
+        
+        
         // Reset the file input value
         this.value = '';
-    } else {
-        // Clear any existing error message
-        document.getElementById('b_image_valid').textContent = '';
-    }
+        return;
+        }
+        // else if (imagewidth > containerWidth || imageHeight > containerHeight) {
+        //     // const errorMessage = 'Recomended Dimension for the image is 850X220';
+        //     // document.getElementById('b_image_valid').textContent = errorMessage;
+        //     // document.getElementById('b_image_valid').classList.remove('d-none');
+        // } 
+        else {
+            // Clear any existing error message
+            alert('image uploaded')
+            document.getElementById('b_image_valid').textContent = '';
+            document.getElementById('b_image_valid').classList.add('d-none');
+        }
+        };
+        img.src = URL.createObjectURL(this.files[0]);
+    
+
+        var maxSize = 1000000; // Set the maximum file size in bytes
+
+    
 });
+
 
 const fileInput2 = document.getElementById('image');
 
 // Add an event listener to the file input
 fileInput2.addEventListener('change', function() {
     const fileSize = this.files[0].size; // Get the size of the selected file
+    console.log(this)
+    let imagewidth = 0;
+    let imageHeight = 0;
 
-    const maxSize = 1000000; // Set the maximum file size in bytes
+    const img2 = new Image();
+    img2.onload = function() {
+            imagewidth = this.naturalWidth;
+            imageHeight = this.naturalHeight;
+            console.log(imagewidth);
+            console.log(imageHeight);
+            console.log(`Image dimensions: ${imagewidth} x ${imageHeight}`);
 
-    if (fileSize > maxSize) {
+            const containerWidth = 350;
+            const containerHeight = 350;
+
+        if (fileSize > maxSize ) {
+            document.getElementById('image_valid').classList.remove('d-none');
         // Display an error message
-        const errorMessage = 'The Profile image is too big. Please select a file smaller than 1MB.';
+        const errorMessage = 'Please select a file smaller than 1MB.';
         document.getElementById('image_valid').textContent = errorMessage;
-
+        // document.getElementById('image_valid').classList.remove('d-none');
+        
+        
         // Reset the file input value
         this.value = '';
-    } else {
-        // Clear any existing error message
-        document.getElementById('image_valid').textContent = '';
-    }
+        return;
+        }
+        // else if (imagewidth > containerWidth || imageHeight > containerHeight) {
+        //     alert('Size matter');
+        //     // const errorMessage = 'Recomended Dimension for the image is 160X160';
+        //     // document.getElementById('image_valid').textContent = errorMessage;
+        //     // document.getElementById('image_valid').classList.remove('d-none');
+        // } 
+        else {
+            alert('Profile image uploaded')
+            // Clear any existing error message
+            document.getElementById('image_valid').textContent = '';
+            document.getElementById('image_valid').classList.add('d-none');
+        }
+        };
+        img2.src = URL.createObjectURL(this.files[0]);
+    
+
+        var maxSize = 1000000; // Set the maximum file size in bytes
+    
+    // const maxSize = 1000000; // Set the maximum file size in bytes
+
+    // if (fileSize > maxSize) {
+    //     // Display an error message
+    //     const errorMessage = 'The Profile image is too big. Please select a file smaller than 1MB.';
+    //     document.getElementById('image_valid').textContent = errorMessage;
+
+    //     // Reset the file input value
+    //     this.value = '';
+    // } else {
+    //     // Clear any existing error message
+    //     document.getElementById('image_valid').textContent = '';
+    // }
 });
 </script>
 @endsection

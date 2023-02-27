@@ -103,7 +103,7 @@ Profile building
                                                         <span class="text-primary" id="imageName"></span>
                                                         <span class="text-danger image_valid " id="image_valid">Recommended Size for Profile Image is 360 x 360</span>
                                                         @if($lawyer_profile AND $lawyer_profile->image)
-                                                        <div class="profileAvatar">
+                                                        <div class="profileAvatar" id="profilImageContainer">
                                                             <img style="width: 140px !important; height: 140px !important; border-radius: 84px; position: absolute; left: 349px;bottom: 46px;" src="{{asset('lawyer_profile/' .$lawyer_profile->image)}}" class="img-fluid">
                                                         </div>
                                                         @endif
@@ -834,6 +834,7 @@ $('#image').on('propertychange input', function (e) { $('#imageName').text(this.
 const fileInput = document.getElementById('b_image');
 const bannerImageContainer = document.querySelector('.uploadBanner')
 
+
 // Add an event listener to the file input
 fileInput.addEventListener('change', function() {
     const fileSize = this.files[0].size; // Get the size of the selected file
@@ -896,6 +897,11 @@ const fileInput2 = document.getElementById('image');
 // Add an event listener to the file input
 fileInput2.addEventListener('change', function() {
     const fileSize = this.files[0].size; // Get the size of the selected file
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+
+
     console.log(this)
     let imagewidth = 0;
     let imageHeight = 0;
@@ -931,6 +937,11 @@ fileInput2.addEventListener('change', function() {
         // } 
         else {
             alert('Profile image uploaded')
+            reader.onload = function() {
+            const image = new Image();
+            image.src = reader.result;
+            document.getElementById('profilImageContainer').appendChild(image);
+  };
             // Clear any existing error message
             document.getElementById('image_valid').textContent = '';
             document.getElementById('image_valid').classList.add('d-none');

@@ -1,6 +1,29 @@
 @extends('layout.loginlayout')
 @push('styles')
+<style>
+    .inputDiv {
+        display: flex;
+        flex-direction: column;
+    }
 
+    #phone {
+        width: 100%;
+    }
+
+    .iti {
+        width: 100%;
+    }
+
+    .iti__flag-container {
+        position: absolute;
+        width: 42% !important;
+    }
+
+    .custom-padding{
+        padding-left: 83px !important;;
+    }
+
+</style>
 @endpush
 @section('content') 
 
@@ -39,19 +62,21 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="inputDiv">
-                                            <input type="hidden" class="form-control" id="phone_submit" name="phone" >
-                                            <input id="phone" type="text" class="form-control  @error('phone_input') is-invalid @enderror" name="phone_input" value="{{ old('phone_input') }}" autocomplete="phone_input">
-                                                <div style="color:red;">{{$errors->first('phone_input')}}</div> <br>
+                                            <input type="hidden" name="phone_number" id="phone_number_org" value="">
+                                            <input type="hidden" name="country" id="selected_country" value="">
+                                            <input id="phone" type="tel" class="form-control custom-padding" placeholder="Enter your phone number">
+                                            {{-- <input id="phone" type="text" class="form-control  @error('phone_input') is-invalid @enderror" name="phone_input" value="{{ old('phone_input') }}" autocomplete="phone_input"> --}}
+                                            <div style="color:red;">{{$errors->first('phone_number')}}</div> <br>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6" style="display: none;">
+                                    {{-- <div class="col-lg-6" style="display: none;">
                                             <div class="form-group">
                                                 <select name="country" class="countries order-alpha" id="countryId">
                                                 <option>Select Country</option>
                                                 </select>
                                                 
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     <div class="col-lg-6">
                                         <div class="inputDiv">
                                             <input type="password" name="password" id="password" placeholder="Password" value="{{ old('password') }}">

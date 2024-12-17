@@ -7,7 +7,7 @@
 @section('content')
 <main>
     <div class="readyToStart">
-        {{--<h4 class="commonHeading">Ready to Start Your Journey?</h4>
+        <h4 class="commonHeading">Ready to Start Your Journey?</h4>
         <div class="formDiv">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
@@ -48,8 +48,8 @@
                 </div>
 
             </form>
-        </div>--}}
-        <div id="signup-embed"></div>
+        </div>
+        {{-- <div id="signup-embed"></div>
         <script>
             var o_signup_options = {
                 "id": "Outseta",
@@ -67,7 +67,7 @@
         </script>
         <script src="https://cdn.outseta.com/outseta.min.js"
                 data-options="o_signup_options">
-        </script>
+        </script> --}}
     </div>
 </main>
 

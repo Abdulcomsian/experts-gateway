@@ -15,7 +15,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="inputDiv">
-                                            <input id="email" type="email" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
+                                            <input id="email" type="email" name="email" value="{{ old('email') }}" autocomplete="email" autofocus placeholder="Enter your email">
 
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="inputDiv">
-                                            <input id="password" type="password" name="password" autocomplete="current-password">
+                                            <input id="password" type="password" name="password" autocomplete="current-password" placeholder="Enter your password">
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">

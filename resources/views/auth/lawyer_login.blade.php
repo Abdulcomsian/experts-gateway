@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="bannerLeft registerAuthBox">
-                        <div id="login-embed"></div>
+                        {{-- <div id="login-embed"></div>
                         <script>
                             var o_login_options = {
                                 "id": "Outseta",
@@ -23,22 +23,15 @@
                         </script>
                         <script src="https://cdn.outseta.com/outseta.min.js"
                                 data-options="o_login_options">
-                        </script>
-                        <div class="line">
-                            <img src="{{asset('assets/img/line.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="applyForMembership">
-                            <span>Want to register as a Lawyer?</span>
-                            <a href="{{ route('lawyer-register') }}"><button style="cursor: pointer;">Apply</button></a>
-                        </div>
-                        {{--<p>Lawyer Login</p>
+                        </script> --}}
+                        <p>Lawyer Login</p>
                         <div class="formDiv">
                             <form method="POST" action="{{ route('login') }}">
                             @csrf
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="inputDiv">
-                                            <input id="email" type="email" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
+                                            <input id="email" type="email" name="email" value="{{ old('email') }}" autocomplete="email" autofocus placeholder="Enter your email">
 
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -49,7 +42,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="inputDiv">
-                                            <input id="password" type="password" name="password" autocomplete="current-password">
+                                            <input id="password" type="password" name="password" autocomplete="current-password" placeholder="Enter your password">
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -75,13 +68,14 @@
                                 </div>
                             </form>
                         </div>
+                        
                         <div class="line">
                             <img src="{{asset('assets/img/line.png') }}" alt="" class="img-fluid">
                         </div>
                         <div class="applyForMembership">
                             <span>Want to register as a Lawyer?</span>
                             <a href="{{ route('lawyer-register') }}"><button style="cursor: pointer;">Apply</button></a>
-                        </div>--}}
+                        </div>
 
                     </div>
 

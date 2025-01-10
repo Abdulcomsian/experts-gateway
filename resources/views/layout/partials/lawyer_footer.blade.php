@@ -131,7 +131,7 @@
                     <a href="">Privacy Policy</a>
                 </li>
                 <li>
-                    <a href="">Team and Conditions</a>
+                    <a href="">Terms and Conditions</a>
                 </li>
             </ul>
         </div>

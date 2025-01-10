@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Models\ContactUs;
-use Auth;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -46,7 +46,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $contact_us = ContactUs::first();
-        return view('auth.register',compact('contact_us'));
+        return view('auth.register', compact('contact_us'));
     }
 
     /**
@@ -57,26 +57,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        if($data['type'] == 'lawyer'){
+        if ($data['type'] == 'lawyer') {
             return Validator::make($data, [
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                 'password' => ['required', 'string', 'min:6', 'confirmed'],
 
             ]);
-
-        }
-        else
-        {
+        } else {
             return Validator::make($data, [
                 'f_name' => ['required', 'string', 'max:255'],
                 'l_name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                 'password' => ['required', 'string', 'min:6', 'confirmed'],
                 'phone_number' => ['required', 'numeric'],
-            ]); 
+            ]);
         }
-        
     }
 
     /**
@@ -87,56 +83,47 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-            if($data['type'] == 'lawyer'){
-                $splitName = explode(' ', $data['name'], 2); 
-                
-                    $user = User::create([
-                        'f_name' => $splitName['0'],
-                        'l_name' => $splitName['1'] ?? '',
-                        'email' => $data['email'],
-                        'status' => 0,
-                        'password' => Hash::make($data['password']),
-                    ]);
+        if ($data['type'] == 'lawyer') {
+            $splitName = explode(' ', $data['name'], 2);
 
-                    $user->assignRole('Lawyer'); 
-                
-               
-            }
-            else{
-                $user = User::create([
-                    'f_name' => $data['f_name'],
-                    'l_name' => $data['l_name'],
-                    'email' => $data['email'],
-                    'country' => $data['country'],
-                    'phone' => $data['phone_number'],
-                    'status' => 1,
-                    'password' => Hash::make($data['password']),
-                ]);
+            $user = User::create([
+                'f_name' => $splitName['0'],
+                'l_name' => $splitName['1'] ?? '',
+                'email' => $data['email'],
+                'status' => 0,
+                'password' => Hash::make($data['password']),
+            ]);
 
-                $user->assignRole('User');
-            }
+            $user->assignRole('Lawyer');
+            $user->sendEmailVerificationNotification();
+        } else {
+            $user = User::create([
+                'f_name' => $data['f_name'],
+                'l_name' => $data['l_name'],
+                'email' => $data['email'],
+                'country' => $data['country'],
+                'phone' => $data['phone_number'],
+                'status' => 1,
+                'password' => Hash::make($data['password']),
+            ]);
+
+            $user->assignRole('User');
+        }
 
         return $user;
     }
 
     public function redirectTo()
     {
-        if(Auth::user()->hasRole('User'))
-        {
+        if (Auth::user()->hasRole('User')) {
             $this->redirectTo = route('landing-page');
 
             return $this->redirectTo;
-        }
-
-        elseif(Auth::user()->hasRole('Lawyer'))
-        {
+        } elseif (Auth::user()->hasRole('Lawyer')) {
             $this->redirectTo = route('lawyer.profile');
 
             return $this->redirectTo;
-        }
-
-        else
-        {
+        } else {
             $this->redirectTo = route('admin.dashboard');
 
             return $this->redirectTo;

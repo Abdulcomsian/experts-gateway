@@ -17,8 +17,8 @@ class HomeNumberController extends Controller
      */
     public function index()
     {
-       $home_numbers=HomeNumber::get();
-        return view('admin.home_number.index',compact('home_numbers'));
+        $home_numbers = HomeNumber::get();
+        return view('admin.home_number.index', compact('home_numbers'));
     }
 
     /**
@@ -39,15 +39,15 @@ class HomeNumberController extends Controller
      */
     public function store(Request $request)
     {
-         $this->validate($request,[
-            'active_members'=>'required',
-            'years_of_excellence'=>'required',
-            'key_countries'=>'required',
-            'trust_rating'=>'required',
-            'areas_of_expertise'=>'required'
+        $this->validate($request, [
+            'active_members' => 'required',
+            'years_of_excellence' => 'required',
+            'key_countries' => 'required',
+            'trust_rating' => 'required',
+            'areas_of_expertise' => 'required'
         ]);
         try {
-            $all_inputs=$request->except('_token');
+            $all_inputs = $request->except('_token');
             $home_number = HomeNumber::create($all_inputs);
             Session::flash('success', 'Successfully Added');
             return redirect('admin/home-number');
@@ -77,8 +77,8 @@ class HomeNumberController extends Controller
     public function edit($id)
     {
         try {
-            $home_number=HomeNumber::find($id);
-            return view('admin.home_number.edit',compact('home_number'));
+            $home_number = HomeNumber::find($id);
+            return view('admin.home_number.edit', compact('home_number'));
         } catch (\Exception $exception) {
             toastError($exception->getMessage());
             return Redirect::back();
@@ -94,20 +94,20 @@ class HomeNumberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'active_members'=>'required',
-            'years_of_excellence'=>'required',
-            'key_countries'=>'required',
-            'trust_rating'=>'required',
-            'areas_of_expertise'=>'required'
+        $this->validate($request, [
+            'active_members' => 'required',
+            'years_of_excellence' => 'required',
+            'key_countries' => 'required',
+            'trust_rating' => 'required',
+            'areas_of_expertise' => 'required'
         ]);
-        try{
-            $all_inputs=$request->except('_token','put');
-            $home_number=HomeNumber::find($id)->update($all_inputs);
+        try {
+            $all_inputs = $request->except('_token', 'put');
+            $home_number = HomeNumber::find($id)->update($all_inputs);
             Session::flash('success', 'Successfully Updated');
             return redirect()->back();
         } catch (\Exception $exception) {
-           Session::flash('error', $exception->getMessage());
+            Session::flash('error', $exception->getMessage());
             return Redirect::back();
         }
     }
@@ -121,7 +121,7 @@ class HomeNumberController extends Controller
     public function destroy($id)
     {
         HomeNumber::findorfail($id)->delete();
-       Session::flash('success', 'Successfully Deleted');
+        Session::flash('success', 'Successfully Deleted');
         return back();
     }
 }

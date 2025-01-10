@@ -21,15 +21,12 @@ class languageController extends Controller
         return view('admin.language.add');
     }
 
-    public function show($id)
-    {
-
-    }
+    public function show($id) {}
 
     public function edit($id)
     {
         try {
-            $language = Language::where('id',$id)->first();
+            $language = Language::where('id', $id)->first();
             return view('admin.language.edit', compact('language'));
         } catch (\Exception $exception) {
             toastError($exception->getMessage());
@@ -40,15 +37,15 @@ class languageController extends Controller
     public function store(Request $request)
     {
         // dd($request->file('image'));
-        $this->validate($request,[
-            'name'=>'required',
-            'language_slug'=>'required|unique:languages,name,'.$request->id,
+        $this->validate($request, [
+            'name' => 'required',
+            'language_slug' => 'required|unique:languages,name,' . $request->id,
         ]);
         try {
-        $language= new Language;
-        $language->name = $request->name;
-        $language->language_slug = $request->language_slug;
-        $language->save();
+            $language = new Language;
+            $language->name = $request->name;
+            $language->language_slug = $request->language_slug;
+            $language->save();
             toastSuccess('Successfully Added');
             return redirect('admin/language');
         } catch (\Exception $exception) {
@@ -58,19 +55,18 @@ class languageController extends Controller
         }
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
-         // dd($request->all(),$id);
-        $this->validate($request,[
-            'name'=>'required',
+        // dd($request->all(),$id);
+        $this->validate($request, [
+            'name' => 'required',
         ]);
-        $language= Language::find($id);
+        $language = Language::find($id);
         $language->name = $request->name;
         $language->language_slug = $request->language_slug;
         $language->save();
         toastSuccess('Successfully Update');
         return redirect('admin/language');
-
     }
 
     public function destroy($id)

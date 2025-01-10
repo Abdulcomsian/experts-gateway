@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\PartiseArea;
 use Illuminate\Support\Facades\Redirect;
+
 class PracticeAreaController extends Controller
 {
     /**
@@ -13,10 +14,10 @@ class PracticeAreaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function index()
+    public function index()
     {
-        $PartiseArea=PartiseArea::get();
-        return view('admin.practice.index',compact('PartiseArea'));
+        $PartiseArea = PartiseArea::get();
+        return view('admin.practice.index', compact('PartiseArea'));
     }
 
     /**
@@ -26,7 +27,7 @@ class PracticeAreaController extends Controller
      */
     public function create()
     {
-         return view('admin.practice.add');
+        return view('admin.practice.add');
     }
 
     /**
@@ -39,11 +40,11 @@ class PracticeAreaController extends Controller
     {
         try {
             PartiseArea::create([
-                'name' =>$request->name
+                'name' => $request->name
             ]);
 
             toastSuccess('Successfully Added');
-             return redirect('admin/practice-area');
+            return redirect('admin/practice-area');
         } catch (\Exception $exception) {
             toastError($exception->getMessage());
             return Redirect::back();
@@ -70,8 +71,8 @@ class PracticeAreaController extends Controller
     public function edit($id)
     {
         try {
-             $partisearea=PartiseArea::find($id);
-             return view('admin.practice.edit',compact('partisearea'));
+            $partisearea = PartiseArea::find($id);
+            return view('admin.practice.edit', compact('partisearea'));
         } catch (\Exception $exception) {
             toastError($exception->getMessage());
             return Redirect::back();
@@ -87,8 +88,8 @@ class PracticeAreaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try{
-            PartiseArea::find($id)->update(['name'=>$request->name]);
+        try {
+            PartiseArea::find($id)->update(['name' => $request->name]);
             toastSuccess('Successfully Updated');
             return redirect('admin/practice-area');
         } catch (\Exception $exception) {
@@ -105,7 +106,7 @@ class PracticeAreaController extends Controller
      */
     public function destroy($id)
     {
-         try{
+        try {
             PartiseArea::find($id)->delete();
             toastSuccess('Successfully Deleted');
             return Redirect::back();

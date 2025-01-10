@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Models\ContactUs;
-use App\Http\Controllers\LinkedinController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ Route::post('get-cities-by-state',[App\Http\Controllers\CountryStateCityControll
 
 Route::post('newsletter',[App\Http\Controllers\NewsLetterController::class, 'store']);
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/lawyer-login', function () {
     $contact_us = ContactUs::first();
@@ -149,7 +149,7 @@ Route::prefix('user')->middleware(['auth','can:user'])->group(function(){
 
 
 /*****************Lawyer ROUTES*******************/
-Route::prefix('lawyer')->middleware(['auth','can:lawyer'])->group(function(){
+Route::prefix('lawyer')->middleware(['auth','can:lawyer','verified'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\Lawyer\dashboardController::class, 'index'])->name('lawyer.dashboard');
     Route::get('/earning', [App\Http\Controllers\Lawyer\dashboardController::class, 'earning'])->name('lawyer.earning');
     Route::get('/public_question', [App\Http\Controllers\Lawyer\dashboardController::class, 'public_question'])->name('lawyer.public_question');

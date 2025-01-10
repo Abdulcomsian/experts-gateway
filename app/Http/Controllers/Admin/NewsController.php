@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\User;
-use Auth;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class NewsController extends Controller
@@ -16,7 +16,7 @@ class NewsController extends Controller
         $user_id = Auth::id();
         $news = News::get();
         return view('admin.news.index', compact('news'));
-    }      
+    }
 
     public function create()
     {
@@ -32,24 +32,23 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $user_id = Auth::id();
-        $this->validate($request,[  
-            'title'=>'required', 
-            'description'=>'required',    
-            'image'=>'required',    
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required',
 
         ]);
 
-        $new= new News;
+        $new = new News;
         $new->title = $request->title;
         $new->description = $request->description;
-        if($request->hasfile('image'))
-        {
+        if ($request->hasfile('image')) {
             $image = $request->file('image');
-            $extensions =$image->extension();
+            $extensions = $image->extension();
 
-            $image_name =time().'.'. $extensions;
-            $image->move(public_path('news/'),$image_name);
-            $new->image=$image_name;
+            $image_name = time() . '.' . $extensions;
+            $image->move(public_path('news/'), $image_name);
+            $new->image = $image_name;
         }
         $new->save();
 
@@ -63,27 +62,26 @@ class NewsController extends Controller
         return view('admin.news.edit', compact('new'));
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
-          // dd($request->all(),$id);
+        // dd($request->all(),$id);
         $user_id = Auth::id();
-        $this->validate($request,[  
-            'title'=>'required', 
-            'description'=>'required',    
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
 
         ]);
 
-        $new= News::find($id);
+        $new = News::find($id);
         $new->title = $request->title;
         $new->description = $request->description;
-        if($request->hasfile('image'))
-        {
+        if ($request->hasfile('image')) {
             $image = $request->file('image');
-            $extensions =$image->extension();
+            $extensions = $image->extension();
 
-            $image_name =time().'.'. $extensions;
-            $image->move(public_path('news/'),$image_name);
-            $new->image=$image_name;
+            $image_name = time() . '.' . $extensions;
+            $image->move(public_path('news/'), $image_name);
+            $new->image = $image_name;
         }
         $new->save();
 

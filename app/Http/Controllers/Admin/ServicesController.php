@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Service;
-use Auth;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+
 class ServicesController extends Controller
 {
     /**
@@ -16,8 +17,8 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $services=Service::get();
-        return view('admin.services.index',compact('services'));
+        $services = Service::get();
+        return view('admin.services.index', compact('services'));
     }
 
     /**
@@ -38,33 +39,31 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-         $this->validate($request,[  
-            'title'=>'required', 
-            'description'=>'required',    
-            'image'=>'required',    
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required',
 
         ]);
-         
+
         try {
-            $service= new Service;
+            $service = new Service;
             $service->title = $request->title;
             $service->description = $request->description;
-            $service->user_id=Auth::user()->id;
-            if($request->hasfile('image'))
-            {
+            $service->user_id = Auth::user()->id;
+            if ($request->hasfile('image')) {
                 $image = $request->file('image');
-                $extensions =$image->extension();
-                $image_name =time().'.'. $extensions;
-                $image->move(public_path('services/'),$image_name);
-                $service->image=$image_name;
+                $extensions = $image->extension();
+                $image_name = time() . '.' . $extensions;
+                $image->move(public_path('services/'), $image_name);
+                $service->image = $image_name;
             }
-            if($request->hasfile('feature_image'))
-            {
+            if ($request->hasfile('feature_image')) {
                 $image = $request->file('feature_image');
-                $extensions =$image->extension();
-                $image_name =time().'.'. $extensions;
-                $image->move(public_path('services/'),$image_name);
-                $service->feature_image=$image_name;
+                $extensions = $image->extension();
+                $image_name = time() . '.' . $extensions;
+                $image->move(public_path('services/'), $image_name);
+                $service->feature_image = $image_name;
             }
             $service->save();
             toastSuccess('Successfully Added');
@@ -94,7 +93,7 @@ class ServicesController extends Controller
      */
     public function edit($id)
     {
-         $service = Service::find($id);
+        $service = Service::find($id);
         return view('admin.services.edit', compact('service'));
     }
 
@@ -108,37 +107,35 @@ class ServicesController extends Controller
     public function update(Request $request, $id)
     {
         $user_id = Auth::id();
-        $this->validate($request,[  
-            'title'=>'required', 
-            'description'=>'required',    
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
 
         ]);
         try {
-            $service= Service::find($id);
+            $service = Service::find($id);
             $service->title = $request->title;
             $service->description = $request->description;
-            if($request->hasfile('image'))
-            {
+            if ($request->hasfile('image')) {
                 $image = $request->file('image');
-                $extensions =$image->extension();
+                $extensions = $image->extension();
 
-                $image_name =time().'.'. $extensions;
-                $image->move(public_path('services/'),$image_name);
-                $service->image=$image_name;
+                $image_name = time() . '.' . $extensions;
+                $image->move(public_path('services/'), $image_name);
+                $service->image = $image_name;
             }
-            if($request->hasfile('feature_image'))
-            {
+            if ($request->hasfile('feature_image')) {
                 $image = $request->file('feature_image');
-                $extensions =$image->extension();
+                $extensions = $image->extension();
 
-                $image_name =time().'.'. $extensions;
-                $image->move(public_path('services/'),$image_name);
-                $service->feature_image=$image_name;
+                $image_name = time() . '.' . $extensions;
+                $image->move(public_path('services/'), $image_name);
+                $service->feature_image = $image_name;
             }
             $service->save();
             toastSuccess('Successfully Updated');
             return redirect('admin/services');
-         } catch (\Exception $exception) {
+        } catch (\Exception $exception) {
             toastError($exception->getMessage());
             return Redirect::back();
         }

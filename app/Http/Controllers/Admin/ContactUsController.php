@@ -15,7 +15,7 @@ class ContactUsController extends Controller
     {
         $contact_us = ContactUs::first();
         return view('admin.contact_us.index', compact('contact_us'));
-    }      
+    }
 
     public function create()
     {
@@ -24,14 +24,14 @@ class ContactUsController extends Controller
 
     public function show($id)
     {
-        $contact_us = ContactUs::where('id',$id)->first();
+        $contact_us = ContactUs::where('id', $id)->first();
         return view('admin.contact_us.show', compact('contact_us'));
     }
 
     public function edit($id)
     {
         try {
-            $contact_us = ContactUs::where('id',$id)->first();
+            $contact_us = ContactUs::where('id', $id)->first();
             return view('admin.contact_us.edit', compact('contact_us'));
         } catch (\Exception $exception) {
             toastError($exception->getMessage());
@@ -42,20 +42,20 @@ class ContactUsController extends Controller
     public function store(Request $request)
     {
         // dd($request->file('image'));
-        $this->validate($request,[ 
-            'address'=>'required', 
-            'phone'=>'required|max:18|min:11', 
-            'email'=>'required|email', 
-            'linkedin_link'=>'required|url', 
-            'instagram_link'=>'required|url', 
-            'facebook_link'=>'required|url', 
-            'twitter_link'=>'required|url', 
+        $this->validate($request, [
+            'address' => 'required',
+            'phone' => 'required|max:18|min:11',
+            'email' => 'required|email',
+            'linkedin_link' => 'required|url',
+            'instagram_link' => 'required|url',
+            'facebook_link' => 'required|url',
+            'twitter_link' => 'required|url',
         ]);
 
-        $contact_us= new ContactUs;
+        $contact_us = new ContactUs;
         $contact_us->address = $request->address;
         $contact_us->phone = $request->phone;
-        if($request->phone_1){
+        if ($request->phone_1) {
             $contact_us->phone_1 = $request->phone_1;
         }
         $contact_us->email = $request->email;
@@ -68,22 +68,22 @@ class ContactUsController extends Controller
         return redirect('admin/contact_us');
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
-         // dd($request->all(),$id);
-        $this->validate($request,[ 
-            'address'=>'required', 
-            'phone'=>'required|max:18|min:11', 
-            'email'=>'required|email', 
-            'linkedin_link'=>'required|url', 
-            'instagram_link'=>'required|url', 
-            'facebook_link'=>'required|url', 
-            'twitter_link'=>'required|url', 
+        // dd($request->all(),$id);
+        $this->validate($request, [
+            'address' => 'required',
+            'phone' => 'required|max:18|min:11',
+            'email' => 'required|email',
+            'linkedin_link' => 'required|url',
+            'instagram_link' => 'required|url',
+            'facebook_link' => 'required|url',
+            'twitter_link' => 'required|url',
         ]);
-        $contact_us= ContactUs::find($id);
+        $contact_us = ContactUs::find($id);
         $contact_us->address = $request->address;
         $contact_us->phone = $request->phone;
-        if($request->phone_1){
+        if ($request->phone_1) {
             $contact_us->phone_1 = $request->phone_1;
         }
         $contact_us->email = $request->email;
@@ -94,7 +94,6 @@ class ContactUsController extends Controller
         $contact_us->save();
         toastSuccess('Successfully Update');
         return redirect('admin/contact_us');
-        
     }
 
     public function destroy($id)

@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable,HasRoles,HasApiTokens;
 
@@ -21,9 +21,19 @@ class User extends Authenticatable
 
     protected $guarded = [];
 
-    // protected $fillable = [
-    //     'name', 'email', 'password',
-    // ];
+    protected $fillable = [
+        'f_name',
+        'm_name',
+        'l_name',
+        'name',
+        'email',
+        'phone',
+        'country',
+        'password',
+        'status',
+        'dob',
+        'full_name',
+    ];
 
     /**
      * The attributes that should be hidden for arrays.

@@ -2,28 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\AboutUs;
-use App\Models\ContactUs;
+use App\Models\Blog;
 use App\Models\News;
 use App\Models\User;
-use App\Models\Blog;
-use App\Models\LawyerProfile;
-use App\Models\Expertise;
+use App\Models\AboutUs;
+use App\Models\Country;
+use App\Models\Service;
+use App\Models\ContactUs;
 use App\Models\Education;
+use App\Models\Expertise;
+use App\Models\HomeNumber;
+use App\Models\HomeSlider;
 use App\Models\Membership;
+use App\Models\PartiseArea;
 use App\Models\FixedService;
+use Illuminate\Http\Request;
+use App\Models\LawyerProfile;
 use App\Models\LawyersHasLanguage;
+use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 use App\Models\LawyersHasEducation;
 use App\Models\LawyersHasMembership;
-use App\Models\Country;
-use App\Models\PartiseArea;
-use App\Models\HomeSlider;
-use App\Models\Service;
-use App\Models\HomeNumber;
-use Spatie\Permission\Models\Role;
-use DB;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class FrontendController extends Controller
@@ -35,15 +35,15 @@ class FrontendController extends Controller
         $educations = Education::get();
         $PartiseArea = PartiseArea::get();
         $fixed_services = FixedService::where('status', 1)->get();
-        $lawyers = User::with('lawyer_profile','lawyer_profile.countryList')->whereHas('roles', function ($q) {
+        $lawyers = User::with('lawyer_profile', 'lawyer_profile.countryList')->whereHas('roles', function ($q) {
             $q->where('name', 'Lawyer');
         })->where('status', 1)->get();
         $services = Service::latest()->take(10)->get();
         $countries = Country::get();
         $home_sliders = HomeSlider::get();
-        $home_numbers=HomeNumber::first();
+        $home_numbers = HomeNumber::first();
         $featured_lawyers = LawyerProfile::with('user')->where('is_featured', 1)->get();
-        return view('welcome', compact('home_sliders', 'services', 'contact_us', 'fixed_services', 'news', 'lawyers', 'educations', 'countries', 'PartiseArea','home_numbers', 'featured_lawyers'));
+        return view('welcome', compact('home_sliders', 'services', 'contact_us', 'fixed_services', 'news', 'lawyers', 'educations', 'countries', 'PartiseArea', 'home_numbers', 'featured_lawyers'));
     }
 
     public function about_us()
@@ -53,8 +53,8 @@ class FrontendController extends Controller
         $news = News::latest()->take(10)->get();
         $services = Service::latest()->take(10)->get();
         $fixed_services = FixedService::where('status', 1)->get();
-        $home_numbers=HomeNumber::first();
-        return view('frontend.about_us', compact('about_us', 'contact_us', 'news', 'fixed_services', 'services','home_numbers'));
+        $home_numbers = HomeNumber::first();
+        return view('frontend.about_us', compact('about_us', 'contact_us', 'news', 'fixed_services', 'services', 'home_numbers'));
     }
 
     public function experts(Request $request)
@@ -100,7 +100,7 @@ class FrontendController extends Controller
              return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'countries', 'PartiseArea'));
          }*/
 
-        $query = User::with('lawyer_profile','single_lawyer_profile', 'lawyer_profile.countryList')
+        $query = User::with('lawyer_profile', 'single_lawyer_profile', 'lawyer_profile.countryList')
             ->whereHas('roles', function ($q) {
                 $q->where('name', 'Lawyer');
             })
@@ -121,8 +121,6 @@ class FrontendController extends Controller
         $lawyers = $query->get();
 
         return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'searchparm', 'countries', 'PartiseArea'));
-
-
     }
 
     public function contact_us()
@@ -214,7 +212,7 @@ class FrontendController extends Controller
     public function expert_detail($id)
     {
         $lawyer_profile = LawyerProfile::find($id);
-        $lawyer = User::where('id',$lawyer_profile->user_id)->first();
+        $lawyer = User::where('id', $lawyer_profile->user_id)->first();
         $lawyer_language = LawyersHasLanguage::with('language')->where('lawyer_profile_id', $lawyer_profile->id)->get();
         $lawyer_educations = LawyersHasEducation::where('lawyer_profile_id', $lawyer_profile->id)->get();
         $lawyer_memberships = LawyersHasMembership::where('lawyer_profile_id', $lawyer_profile->id)->get();
@@ -237,31 +235,29 @@ class FrontendController extends Controller
                 return true;
             }
         } else {
-            $lawyerRole = DB::table('roles')->where('name','Lawyer')->first();
+            $lawyerRole = DB::table('roles')->where('name', 'Lawyer')->first();
             $user = new User();
             $user->email = $request->email;
             $user->password = Hash::make('password1');
             $user->status = 0;
-            $user->f_name=$request->f_name;
-            $user->l_name=$request->l_name;
-            $user->country=$request->country;
+            $user->f_name = $request->f_name;
+            $user->l_name = $request->l_name;
+            $user->country = $request->country;
             $user->assignRole($lawyerRole->name);
-            if($user->save())
-            {
+            if ($user->save()) {
                 $lawyer_profile = new LawyerProfile();
                 $lawyer_profile->user_id = $user->id;
                 $lawyer_profile->package_name = $request->package_name;
                 $lawyer_profile->save();
-//                $lawyer_profile = LawyerProfile::findorfail($lawyer_profile->id);
-                $checkPracticarea=PartiseArea::where('name',$request->partise_area)->first();
-                if($checkPracticarea)
-                {
-                    LawyerProfile::where('user_id',$user->id)->update(['partise_area'=>$checkPracticarea->id]);
-                } else{
+                //                $lawyer_profile = LawyerProfile::findorfail($lawyer_profile->id);
+                $checkPracticarea = PartiseArea::where('name', $request->partise_area)->first();
+                if ($checkPracticarea) {
+                    LawyerProfile::where('user_id', $user->id)->update(['partise_area' => $checkPracticarea->id]);
+                } else {
                     $practice_area = new PartiseArea();
                     $practice_area->name = $request->partise_area;
                     $practice_area->save();
-                    LawyerProfile::where('user_id',$user->id)->update(['partise_area'=>$practice_area->id]);
+                    LawyerProfile::where('user_id', $user->id)->update(['partise_area' => $practice_area->id]);
                 }
 
                 $reg_credentials = [
@@ -273,9 +269,9 @@ class FrontendController extends Controller
                 }
             }
         }
-//        if (Auth::attempt($credentials)) {
-//            return true;
-//        }
+        //        if (Auth::attempt($credentials)) {
+        //            return true;
+        //        }
         return false;
     }
 
@@ -299,52 +295,44 @@ class FrontendController extends Controller
     //thank you after successfull regsiter
     public function ThankYou()
     {
-        if(Auth::check() && Auth::user()->hasRole('Admin'))
-        {
-             toastSuccess('Lawyer successfull Added');
-             return redirect('admin/dashboard');
-        }
-        else
-        {
+        if (Auth::check() && Auth::user()->hasRole('Admin')) {
+            toastSuccess('Lawyer successfull Added');
+            return redirect('admin/dashboard');
+        } else {
             return view('thankyou');
         }
-
     }
 
     public function Callback(Request $request)
     {
 
-        User::where(['email'=>'admin@gmail.com'])->update(['phone'=>$request->all()]);
-        $data=User::where(['email'=>'admin@gmail.com'])->first();
-        $userData=json_decode($data->phone);
-        $personInfo=$userData->PersonAccount[0]->Person;
-        $lawyerRole = DB::table('roles')->where('name','Lawyer')->first();
-        $user=new User();
-        $user->email=$personInfo->Email;
-        $user->f_name=$personInfo->First_Name;
-        $user->l_name=$personInfo->Last_Name;
-        $user->country=$userData->BillingAddress->Country;
-        $user->password=Hash::make('password1');
+        User::where(['email' => 'admin@gmail.com'])->update(['phone' => $request->all()]);
+        $data = User::where(['email' => 'admin@gmail.com'])->first();
+        $userData = json_decode($data->phone);
+        $personInfo = $userData->PersonAccount[0]->Person;
+        $lawyerRole = DB::table('roles')->where('name', 'Lawyer')->first();
+        $user = new User();
+        $user->email = $personInfo->Email;
+        $user->f_name = $personInfo->First_Name;
+        $user->l_name = $personInfo->Last_Name;
+        $user->country = $userData->BillingAddress->Country;
+        $user->password = Hash::make('password1');
         $user->assignRole($lawyerRole->name);
-        if($user->save())
-        {
+        if ($user->save()) {
             $lawyer_profile = new LawyerProfile();
             $lawyer_profile->user_id = $user->id;
             $lawyer_profile->package_name = $userData->Subscriptions[0]->Plan->Name;
-            $lawyer_profile->complete=2;
+            $lawyer_profile->complete = 2;
             $lawyer_profile->save();
-            $checkPracticarea=PartiseArea::where('name',$userData->PracticeArea)->first();
-            if($checkPracticarea)
-            {
-                LawyerProfile::where('user_id',$user->id)->update(['partise_area'=>$checkPracticarea->id]);
-            } else{
+            $checkPracticarea = PartiseArea::where('name', $userData->PracticeArea)->first();
+            if ($checkPracticarea) {
+                LawyerProfile::where('user_id', $user->id)->update(['partise_area' => $checkPracticarea->id]);
+            } else {
                 $practice_area = new PartiseArea();
                 $practice_area->name = $userData->PracticeArea;
                 $practice_area->save();
-                LawyerProfile::where('user_id',$user->id)->update(['partise_area'=>$practice_area->id]);
+                LawyerProfile::where('user_id', $user->id)->update(['partise_area' => $practice_area->id]);
             }
         }
     }
-
-
 }

@@ -15,6 +15,6 @@ rel="stylesheet">
 <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/slick-theme.css')}}">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-@toastr_css
+{{-- @toastr_css --}}
 @stack('styles')
   

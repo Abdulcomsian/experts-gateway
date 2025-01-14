@@ -265,30 +265,55 @@ Experts
                     <div class="informationContent">
                         <h2>Request Information</h2>
                         <div class="formDiv">
-                            <form action="">
+                            <form action="{{route('notify.admin')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="inputDiv">
                                             <input type="text" name="first_name" id="first_name"
-                                                placeholder="First Name">
+                                                placeholder="First Name" required>
+                                        @error("first_name")
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="inputDiv">
-                                            <input type="text" name="last_name" id="last_name"
-                                                placeholder="Last Name">
+                                            <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
+                                            @error("last_name")
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="inputDiv">
-                                            <input type="text" name="email" id="email" placeholder="Email">
+                                            <input type="text" name="email" id="email" placeholder="Email" required>
+                                            @error("email")
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </div>
+                                        
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="inputDiv">
-                                            <input type="text" name="phone" id="phone" placeholder="Phone">
+                                            <input type="text" name="phone" id="phone" placeholder="Phone" required>
+                                            @error("phone")
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="inputDiv">
+                                            <input type="text" name="practice" id="practice"
+                                                placeholder="Practice Area" required>
+                                            @error("practice")
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -296,11 +321,11 @@ Experts
                                     <div class="col-lg-12">
                                         <div class="inputDiv">
                                             <textarea name="message" id="message" placeholder="Message" cols="30"
-                                                rows="10"></textarea>
+                                                rows="10" required></textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <button>Submit Now</button>
+                                <button type="submit">Submit Now</button>
                             </form>
                         </div>
                     </div>

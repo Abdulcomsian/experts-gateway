@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\FrontendController;
 use App\Models\ContactUs;
 use Illuminate\Support\Facades\Auth;
@@ -104,6 +105,7 @@ Route::prefix('admin')->middleware(['auth','can:admin'])->group(function(){
 
     //contact us
     Route::resource('contact_us', App\Http\Controllers\Admin\ContactUsController::class);
+    Route::post('notify-admin', [ContactUsController::class, 'notifyAdmin'])->name('notify.admin');
 
     //news
     Route::resource('news', App\Http\Controllers\Admin\NewsController::class);

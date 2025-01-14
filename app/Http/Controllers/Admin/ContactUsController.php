@@ -6,8 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Language;
 use App\Models\ContactUs;
+use App\Notifications\ContactUsNotification;
 use Auth;
+use Notification;
 use Illuminate\Support\Facades\Redirect;
+use Psy\TabCompletion\Matcher\FunctionDefaultParametersMatcher;
+use Yoeunes\Toastr\Facades\Toastr;
 
 class ContactUsController extends Controller
 {
@@ -105,6 +109,33 @@ class ContactUsController extends Controller
             // dd($exception->getMessage());
             toastError($exception->getMessage());
             return Redirect::back();
+        }
+    }
+
+    public function notifyAdmin(Request $request){
+        $request->validate([
+            'first_name' => "required",
+            'last_name' => "required",
+            'email' => "required|email",
+            'phone' => "required",
+            'practice' => "required",
+            "message" => "required",
+        ]);
+
+        try{
+            $name  = $request->first_name . " "  . $request->last_name;
+            $email = $request->email;
+            $phone = $request->phone;
+            $practice = $request->practice;
+            $message = $request->message;
+
+            Notification::route("mail", env('CONTACT_EMAIL'))->notify(new ContactUsNotification($name, $email, $phone, $practice, $message));
+
+            toastr()->success("Message Delivered Successfully!");
+            return redirect()->back();
+        }catch(\Exception $e){
+            toastr()->error('Something went wrong!');
+            return redirect()->back();
         }
     }
 }

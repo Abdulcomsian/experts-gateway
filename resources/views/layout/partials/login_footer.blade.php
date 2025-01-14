@@ -24,7 +24,10 @@
                         <form method="post" action="{{url('newsletter')}}">
                             @csrf
                             <div class="inputBtn">
-                                <input type="text" name="subscriber_email" id="email" placeholder="Enter Your Email Address">
+                                <input type="text" name="subscriber_email" id="email" placeholder="Enter Your Email Address" required>
+                                @error("subscriber_email")
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                                 <button type="submit">
                                     <img src="{{asset('assets/img/sliderArrow.png')}}" alt="" class="img-fluid">
                                 </button>
@@ -89,6 +92,7 @@
                                     Experts
                                 </a>
                             </li>
+                            @if(!Auth::check())
                             <li>
                                 <a href="{{ route('lawyer-register') }}">
                                     Apply as Lawyer
@@ -99,11 +103,7 @@
                                     Apply as Client
                                 </a>
                             </li>
-                            <li>
-                                <a href="">
-                                    News
-                                </a>
-                            </li>
+                            @endif
                         </ul>
                     </div>
                 </div>

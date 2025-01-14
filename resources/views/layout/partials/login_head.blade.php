@@ -16,6 +16,6 @@ rel="stylesheet">
 <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/slick-theme.css')}}">
 
-@toastr_css
+{{-- @toastr_css --}}
 @stack('styles')
   

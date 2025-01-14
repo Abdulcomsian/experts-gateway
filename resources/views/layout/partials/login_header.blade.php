@@ -90,6 +90,7 @@
                         <a class="nav-link" href="{{ route('services') }}">Services</a>
 
                     </li> -->
+                    @if(!Auth::check())
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Apply</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -97,6 +98,7 @@
                           <a class="dropdown-item" href="{{route('register') }}">Apply as Client</a>
                         </div>
                     </li>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('all-blogs') }}">Blog</a>
                     </li>

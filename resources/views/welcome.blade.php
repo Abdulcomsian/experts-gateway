@@ -109,7 +109,7 @@ Expert Gateway
             <div class="searchBox mobileHide">
 
                 <div class="countryDiv">
-                    <select name="country" id="">
+                    <select name="country" id="" required>
                         <option value="">Select Country</option>
                         @foreach($countries as $country)
                         <option value="{{$country->id}}">{{$country->name}}</option>
@@ -369,37 +369,55 @@ Expert Gateway
                         <p class="mb-4">Fill in the form below and tell us where you are and your current legal
                             situation. We’ll get back to you with our recommendations for a suitable expert. </p>
                         <div class="formDiv">
-                            <form action="">
+                            <form action="{{route('notify.admin')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="inputDiv">
                                             <input type="text" name="first_name" id="first_name"
-                                                placeholder="First Name">
+                                                placeholder="First Name" required>
+                                        @error("first_name")
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="inputDiv">
-                                            <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+                                            <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
+                                            @error("last_name")
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="inputDiv">
-                                            <input type="text" name="email" id="email" placeholder="Email">
+                                            <input type="text" name="email" id="email" placeholder="Email" required>
+                                            @error("email")
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </div>
+                                        
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="inputDiv">
-                                            <input type="text" name="phone" id="phone" placeholder="Phone">
+                                            <input type="text" name="phone" id="phone" placeholder="Phone" required>
+                                            @error("phone")
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="inputDiv">
                                             <input type="text" name="practice" id="practice"
-                                                placeholder="Practice Area">
+                                                placeholder="Practice Area" required>
+                                            @error("practice")
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -407,11 +425,11 @@ Expert Gateway
                                     <div class="col-lg-12">
                                         <div class="inputDiv">
                                             <textarea name="message" id="message" placeholder="Message" cols="30"
-                                                rows="10"></textarea>
+                                                rows="10" required></textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <button>Submit Now</button>
+                                <button type="submit">Submit Now</button>
                             </form>
                         </div>
                     </div>

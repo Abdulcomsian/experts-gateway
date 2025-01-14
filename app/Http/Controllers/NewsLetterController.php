@@ -18,7 +18,6 @@ class NewsLetterController extends Controller
             'subscriber_email' => 'required|email',
 
         ]);
-        // dd(Newsletter::getMember('rajaatif927@gmail.com'));
         if (Newsletter::isSubscribed($request->subscriber_email)) {
             return redirect()->back()->with('failure', 'Sorry! You have already subscribed ');
         } else {

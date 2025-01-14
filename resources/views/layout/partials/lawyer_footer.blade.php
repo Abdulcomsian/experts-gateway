@@ -82,11 +82,11 @@
                                     Apply
                                 </a>
                             </li> --}}
-                            <li>
+                            {{-- <li>
                                 <a href="">
                                     News
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>

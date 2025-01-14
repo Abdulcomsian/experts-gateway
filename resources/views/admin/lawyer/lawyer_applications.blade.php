@@ -19,7 +19,7 @@ Lawyer Applications
                                 <!--end::Filter-->
                                 <!--begin::Add user-->
                                 <a href="{{route('admin.lawyer-create')}}">
-                                <button type="button" class="btn btn-primary">
+                                {{-- <button type="button" class="btn btn-primary">
                                     <!--begin::Svg Icon | path: icons/duotone/Navigation/Plus.svg-->
                                     <span class="svg-icon svg-icon-2">
                                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -28,7 +28,7 @@ Lawyer Applications
                                                     </svg>
                                                 </span>
                                     Add Lawyer
-                                </button>
+                                </button> --}}
                                 </a>
                                 <!--end::Add user-->
                             </div>

@@ -72,7 +72,6 @@ Expert Gateway
                                                 alt="" class="img-fluid">Search</button>
                                     </div>
                                 </div>
-
                             </div>
                         </form>
                     </div>

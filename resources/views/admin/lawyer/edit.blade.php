@@ -481,14 +481,14 @@ Edit Lawyer Profile
                                                     </div>
                                                 <!--end::Input group-->
                                             </div>
-                                            <div class="col-lg-6">
+                                            {{-- <div class="col-lg-6">
                                                 <label class="form-label fs-6 fw-bolder text-gray-700 mb-3">Home Slider</label>
                                                 <!--begin::Input group-->
                                                 <div class="mb-5">
                                                     <input type="checkbox" {{ $lawyer_profile->is_featured ? 'checked' : '' }} name="is_featured" data-toggle="toggle" data-on="Enabled" data-off="Disabled" data-onstyle="success" data-offstyle="danger">
                                                 </div>
                                                 <!--end::Input group-->
-                                            </div>
+                                            </div> --}}
 
                                             <!--end::Col-->
 

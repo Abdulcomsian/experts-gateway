@@ -71,7 +71,7 @@ Experts
         </form>
     </div>
     <div class="bolgSection">
-        <div class="sortingDiv">
+        {{-- <div class="sortingDiv">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -84,7 +84,7 @@ Experts
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="multiBlog">
             <div class="row"  id="result">
                 @if(count($lawyers) > 0)
@@ -209,34 +209,12 @@ Experts
                 @endif
             </div>
         </div>
-        <div class="paginationDiv" style="display: none">
+        <div class="paginationDiv">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="paginationList">
-                            <ul>
-                                <li>
-                                    <img src="{{ asset('assets/img/leftIcon.png') }}" alt="">
-                                </li>
-                                <li>
-                                    <a href="">1</a>
-                                </li>
-                                <li>
-                                    <a href="">2</a>
-                                </li>
-                                <li>
-                                    <a href="">3</a>
-                                </li>
-                                <li>
-                                    <a href="">4</a>
-                                </li>
-                                <li>
-                                    <a href="">5</a>
-                                </li>
-                                <li>
-                                    <img src="{{ asset('assets/img/rightIcon.png') }}" alt="">
-                                </li>
-                            </ul>
+                            {{$lawyers->links()}}
                         </div>
                     </div>
                 </div>

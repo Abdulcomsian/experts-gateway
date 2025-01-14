@@ -104,7 +104,7 @@
                         <a class="nav-link" href="{{ route('contact-us') }}">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ url('/experts') }}">
                             <img src="{{asset('assets/img/searchIcon.png')}}" alt="" class="img-fluid">
                         </a>
                     </li>

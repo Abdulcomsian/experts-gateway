@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use App\Models\ContactUs;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;

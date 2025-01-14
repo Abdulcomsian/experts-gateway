@@ -35,7 +35,8 @@ class dashboardController extends Controller
     public function lawyer_applications()
     {
         $user_id = Auth::id();
-        $lawyer_profiles = LawyerProfile::where('complete', '2')->orderBy('id', 'DESC')->paginate(10);
+        $lawyer_profiles = LawyerProfile::with('user')->where('complete', '2')->orderBy('id', 'DESC')
+        ->paginate(10);
         return view('admin.lawyer.lawyer_applications', compact('lawyer_profiles'));
     }
 

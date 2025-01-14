@@ -60,29 +60,27 @@ Lawyer Applications
                             @if(count($lawyer_profiles) > 0)
                             <tr>
                                 @foreach($lawyer_profiles as $lawyer_profile)
-                                <td>{{$lawyer_profile->user->f_name}}</td>
-                                <td>{{$lawyer_profile->user->l_name}}</td>
-                                <td>{{$lawyer_profile->user->email}}</td>
+                                <td>{{$lawyer_profile->user->f_name ?? ''}}</td>
+                                <td>{{$lawyer_profile->user->l_name ?? ''}}</td>
+                                <td>{{$lawyer_profile->user->email ?? ''}}</td>
                                 <td><img src="{{asset('lawyer_profile/'.$lawyer_profile->image)}}" width="100px" height="100px"></td>
                                 <td>{{$lawyer_profile->address}}</td>
 
                                 <td>
-                                    @if($lawyer_profile->user->status == 1)
+                                    @if(!empty($lawyer_profile->user->status) && $lawyer_profile->user->status == 1)
                                         Approved
-                                    @elseif($lawyer_profile->user->status == 0)
+                                    @elseif(!empty($lawyer_profile->user->status) && $lawyer_profile->user->status == 0)
                                         Pending
                                     @endif
-
-
                                 </td>
                                 <td class="text-end">
                                     <div class="btn-group">
-                                        <a href="{{url('experts',$lawyer_profile->id)}}" class="btn btn-sm btn-primary edit-quiz" style="height: 33px; margin-left: 10px" title="view profile" target="_blank">
+                                        <a href="{{url('experts',$lawyer_profile->id ?? '')}}" class="btn btn-sm btn-primary edit-quiz" style="height: 33px; margin-left: 10px" title="view profile" target="_blank">
                                            <i class="fa fa-user" ></i>
                                         </a>
-                                        <a href="{{route('LawyerProfile.show',$lawyer_profile->user->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a><br><br>
+                                        <a href="{{route('LawyerProfile.show',$lawyer_profile->user->id ?? '')}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-warning edit-quiz"><i class="fa fa-eye"></i></a><br><br>
 
-                                        <a href="{{route('LawyerProfile.edit',$lawyer_profile->user->id)}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
+                                        <a href="{{route('LawyerProfile.edit',$lawyer_profile->user->id ?? '')}}" style="height: 33px; margin-left: 10px" class="btn btn-sm bg-primary edit-quiz"><i class="fa fa-edit"></i></a>
 
                                     </div>
                                 </td>

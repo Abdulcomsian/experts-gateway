@@ -42,7 +42,8 @@ class FrontendController extends Controller
         $countries = Country::get();
         $home_sliders = HomeSlider::get();
         $home_numbers = HomeNumber::first();
-        $featured_lawyers = LawyerProfile::with('user')->where('is_featured', 1)->get();
+        // $featured_lawyers = LawyerProfile::with('user')->where('is_featured', 1)->get();
+        $featured_lawyers = LawyerProfile::with('user')->latest()->limit(5)->get();
         return view('welcome', compact('home_sliders', 'services', 'contact_us', 'fixed_services', 'news', 'lawyers', 'educations', 'countries', 'PartiseArea', 'home_numbers', 'featured_lawyers'));
     }
 
@@ -118,7 +119,7 @@ class FrontendController extends Controller
             });
         }
 
-        $lawyers = $query->get();
+        $lawyers = $query->paginate(9);
 
         return view('frontend.experts', compact('contact_us', 'news', 'lawyers', 'educations', 'memberships', 'searchparm', 'countries', 'PartiseArea'));
     }
